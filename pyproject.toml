@@ -1,0 +1,12 @@
+[project]
+name = "kua-calculator"
+version = "0.1.0"
+description = "Free single-page Kua number calculator. Returns East/West group and the eight personal directions with plain-English meanings."
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=3.0",
+    "markdown>=3.6",
+]
+
+[tool.uv]
+package = false

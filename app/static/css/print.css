@@ -1,0 +1,165 @@
+/* ============================================================
+   print.css
+   Linked from base.html with media="print" so it only applies
+   when the page is printed (or saved to PDF). Goal: the result
+   card prints clean on one A4/Letter page, in greyscale-friendly
+   form, with no nav/form clutter and no decorative backgrounds.
+   ============================================================ */
+
+@media print {
+  @page {
+    margin: 14mm 16mm;
+    size: auto;
+  }
+
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  /* Hide everything that isn't the result. */
+  .site-header,
+  .site-nav,
+  .site-footer,
+  .hero,
+  .kua-form,
+  .form-actions,
+  .privacy-note,
+  .couples-toggle-row,
+  .methodology-strip,
+  .embed-shell .site-header,
+  button { display: none !important; }
+
+  /* Reveal a print-only title from the brand name. */
+  body::before {
+    content: "Kua Calculator - your personal directions";
+    display: block;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 14pt;
+    margin-bottom: 6mm;
+    border-bottom: 1pt solid #000;
+    padding-bottom: 3mm;
+  }
+
+  .result { padding: 0 !important; }
+  .result[hidden] { display: block !important; }
+
+  .result-card {
+    box-shadow: none !important;
+    border: 1pt solid #000 !important;
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 6mm !important;
+    border-radius: 0 !important;
+    page-break-inside: avoid;
+    animation: none !important;
+  }
+
+  .result-card::before { display: none !important; }
+
+  .result-header {
+    grid-template-columns: auto 1fr;
+    gap: 4mm 8mm;
+    padding-bottom: 4mm;
+    border-bottom: 0.5pt solid #555;
+  }
+
+  .result-eyebrow { font-size: 8pt; }
+
+  .result-kua {
+    color: #000 !important;
+    font-size: 36pt;
+  }
+
+  .group-badge {
+    border: 0.5pt solid #000 !important;
+    background: #fff !important;
+    color: #000 !important;
+    padding: 1mm 3mm !important;
+  }
+
+  .result-line { font-size: 11pt; }
+  .result-subhead {
+    font-size: 12pt;
+    margin: 4mm 0 2mm 0;
+    border-bottom: 0.5pt solid #888;
+    padding-bottom: 1mm;
+  }
+
+  .direction-list { gap: 1.5mm; }
+
+  .direction-row {
+    grid-template-columns: 18mm 1fr auto !important;
+    grid-template-areas:
+      "compass quality badge"
+      "compass meaning meaning" !important;
+    padding: 2mm 3mm !important;
+    background: #fff !important;
+    border: 0.5pt solid #aaa !important;
+    border-left: 1.5pt solid #000 !important;
+    border-radius: 0 !important;
+    page-break-inside: avoid;
+    gap: 0.5mm 3mm !important;
+  }
+
+  .direction-row[data-favourable="true"] {
+    border-left-style: solid !important;
+  }
+
+  .direction-row[data-favourable="false"] {
+    border-left-style: dashed !important;
+  }
+
+  .direction-arrow { color: #000 !important; font-size: 14pt; }
+
+  .quality-pinyin { font-size: 10pt; }
+  .quality-hanzi { display: none; }
+  .quality-gloss { font-size: 9pt; color: #444; }
+
+  .direction-meaning {
+    font-size: 9.5pt;
+    color: #222;
+  }
+
+  .direction-badge span {
+    background: #fff !important;
+    color: #000 !important;
+    border: 0.5pt solid #000 !important;
+    font-size: 7.5pt !important;
+    padding: 0.5mm 2mm !important;
+  }
+
+  /* Favourable/unfavourable distinguishable in greyscale: icon already
+     differs (★ vs ×), and the left-border style differs (solid vs dashed). */
+
+  .shared-rooms {
+    background: #fff !important;
+    border: 0.5pt solid #555 !important;
+    padding: 3mm !important;
+    margin-top: 4mm !important;
+  }
+
+  .shared-group {
+    background: #fff !important;
+    padding: 2mm 3mm !important;
+    border-left: 1pt solid #000 !important;
+    margin-bottom: 2mm !important;
+  }
+
+  .shared-group-good { border-left-style: solid !important; }
+  .shared-group-bad { border-left-style: dashed !important; }
+  .shared-group-mixed { border-left-style: dotted !important; }
+
+  .shared-list li {
+    background: #fff !important;
+    border: 0.5pt solid #ccc !important;
+    page-break-inside: avoid;
+  }
+
+  /* Avoid widows/orphans across pages where possible. */
+  h1, h2, h3, h4 { page-break-after: avoid; }
+  a { text-decoration: none; color: #000; }
+}

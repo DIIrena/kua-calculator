@@ -1,0 +1,168 @@
+{
+  "project": "kua-calculator",
+  "branchName": "ralph/kua-calculator-mvp",
+  "description": "Free single-page web tool that returns Kua number, East/West group, and eight personal directions with plain-English meanings. Flask + vanilla JS. Self-contained methodology page (chapter 6 copy). Optional couples mode. Embeddable.",
+  "userStories": [
+    {
+      "id": "SCAFFOLD-001",
+      "title": "Flask skeleton and project files",
+      "description": "Stand up the Flask app shell so subsequent tasks have a working substrate. Routes for /, /methodology, /embed wired with empty templates. Static asset folders created. Deps locked.",
+      "acceptanceCriteria": [
+        "app/app.py exists and Flask app instance is named 'app'.",
+        "Routes registered for '/', '/methodology', '/embed' (templates may be stubs at this stage).",
+        "templates/base.html defines a single layout with title block, meta block, and content block.",
+        "static/css/main.css and static/css/print.css exist (may be empty placeholders).",
+        "static/js/kua.js, directions.js, ui.js exist (may be empty placeholders).",
+        "pyproject.toml declares flask and markdown as deps via uv-compatible PEP 621 format.",
+        "README.md documents `uv run flask --app app.app run` as the dev command.",
+        ".gitignore excludes .venv/, __pycache__/, *.pyc, .env."
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": "All routes and template/static stubs in place. /embed sets frame-ancestors '*' from the route handler so it can ship before EMBED-001 polishes the slim layout."
+    },
+    {
+      "id": "METHODOLOGY-001",
+      "title": "Copy chapter 6 into content/methodology.md and render at /methodology",
+      "description": "Copy projects/feng-shui/content/06-compass-school.md verbatim into projects/kua-calculator/content/methodology.md. Render it as HTML via the markdown package at /methodology. Inline SVGs from the source must render as-is (markdown package must allow raw HTML).",
+      "acceptanceCriteria": [
+        "content/methodology.md exists and matches chapter 6 verbatim.",
+        "GET /methodology returns 200 and renders the markdown as HTML.",
+        "Inline SVG diagrams from the source render visibly.",
+        "Headings render with anchor-friendly IDs so deep links from the result page work (e.g. #5-the-kua-number).",
+        "Page uses the base template (header, footer, brand styles)."
+      ],
+      "priority": 2,
+      "passes": true,
+      "notes": "Python-markdown extras+toc gives heading IDs that match the anchors SEO-001 will deep-link to (#5-the-kua-number, #6-the-eight-mansions-ba-zhai, #east-group-and-west-group). md_in_html (from 'extra') lets the inline SVG figures pass through unchanged."
+    },
+    {
+      "id": "KUA-LOGIC-001",
+      "title": "Pure client-side Kua calculation module",
+      "description": "Implement static/js/kua.js with the calculation logic. Exposes a single function `calculateKua(year, gender)` that returns an integer 1..9 with the Kua 5 reassignment rules handled. Includes the post-2000 formula variant. Pure function, no DOM dependencies.",
+      "acceptanceCriteria": [
+        "Function `calculateKua(year, gender)` exported on window (or as ES module).",
+        "Male 1978 returns 4.",
+        "Female 1985 returns 9.",
+        "Male born when reduction yields 5 returns 2 (Kua 5 male reassignment).",
+        "Female born when sum yields 5 returns 8 (Kua 5 female reassignment).",
+        "Post-2000 male uses (9 - reduced digit) instead of (10 - reduced digit).",
+        "Post-2000 female uses (reduced digit + 6) instead of (reduced digit + 5).",
+        "Function validates year is a 4-digit integer >= 1900 and <= current year + 1, throws TypeError otherwise.",
+        "Function returns East-or-West group as a second exported helper `kuaGroup(kua)` returning 'east' or 'west'."
+      ],
+      "priority": 3,
+      "passes": true,
+      "notes": "Verified manually against chapter 6 examples: male 1978 -> 4, female 1985 -> 9, male 1995 -> 5 then reassigned to 2, female 1990 -> 5 then reassigned to 8. Post-2000 variants tested with year 2003 (male->6, female->9)."
+    },
+    {
+      "id": "DIRECTIONS-001",
+      "title": "8-Kua direction-quality lookup table with plain-English meanings",
+      "description": "Implement static/js/directions.js with the data structure mapping every Kua number to its 8 directional qualities (Sheng Qi, Tian Yi, Yan Nian, Fu Wei, Huo Hai, Wu Gui, Liu Sha, Jue Ming). Each direction includes the compass label, the pinyin name, the English gloss, and a one-line plain-English meaning. Honest framing throughout.",
+      "acceptanceCriteria": [
+        "Export `directionsForKua(kua)` returning an object with keys for all 8 compass directions (N, NE, E, SE, S, SW, W, NW).",
+        "Each direction object includes: { quality, pinyin, gloss, meaning, favourable }.",
+        "All four favourable qualities (Sheng Qi, Tian Yi, Yan Nian, Fu Wei) and four unfavourable (Huo Hai, Wu Gui, Liu Sha, Jue Ming) appear for every Kua.",
+        "Plain-English meanings use 'supports the conditions for' language, never 'will' or 'guarantees'.",
+        "Kua 4 male example from chapter 6 verifies: SE=Sheng Qi, E=Tian Yi, S=Yan Nian, N=Fu Wei, SW=Huo Hai, NE=Wu Gui, NW=Liu Sha, W=Jue Ming.",
+        "Kua 9 example from chapter 6 verifies: E=Sheng Qi, SE=Tian Yi, N=Yan Nian, S=Fu Wei, W=Huo Hai, NW=Wu Gui, SW=Liu Sha, NE=Jue Ming."
+      ],
+      "priority": 4,
+      "passes": true,
+      "notes": "Kua 4 and 9 mappings verified position-by-position against chapter 6. The other six Kuas use the cultural-commons Eight Mansions table, preserving the East/West group structure (East-group favourable always lands in {N,S,E,SE}; West-group favourable always lands in {NE,SW,W,NW}). Also added orderedDirectionsForKua so UI-001 can render favourable-first without re-sorting."
+    },
+    {
+      "id": "UI-001",
+      "title": "Input form and single-occupant result card",
+      "description": "Build the calculator landing template with an input form (birth year, gender) and a result card that appears in-page (no navigation) when the user submits. Result card shows Kua number, group, all 8 directions sorted favourable-first, with the plain-English meanings. Form validates input and shows clear errors. Distinctive editorial typography (Fraunces + Spectral) on a parchment palette.",
+      "acceptanceCriteria": [
+        "templates/index.html renders a form with year (number input, min=1900, max=current+1) and gender (radio buttons).",
+        "All inputs have visible labels (no placeholder-only labels).",
+        "Submit button uses an action-oriented label ('Calculate my Kua number').",
+        "Form validates client-side; error messages appear beside the offending field, not just at top.",
+        "On submit, result card is populated and scrolled into view; page does not navigate.",
+        "Result card shows: Kua number, group, headline summary line, then 8-row direction table.",
+        "Each direction row shows compass (N/NE/...), pinyin name, English gloss, plain-English meaning, and a favourable/unfavourable badge with contrast >= 4.5:1.",
+        "Favourable rows visually distinct from unfavourable (colour + icon, never colour alone).",
+        "Typography uses Fraunces (display) and Spectral (body) via Google Fonts.",
+        "Palette: parchment #f4ede2 background, ink #2b261f primary text, terra-cotta #b06a45 primary accent, sage #5e7355 secondary accent.",
+        "All interactive elements show a visible focus ring (2-4px).",
+        "Touch targets >= 44px on the form and result CTAs.",
+        "No console errors when calculating Male 1978 or Female 1985."
+      ],
+      "priority": 5,
+      "passes": true,
+      "notes": "Editorial / classical aesthetic landed: Fraunces display + Spectral body, parchment palette, decorative thin-rule eyebrow, gradient accent bar across the top of the result card. Radio buttons use a label-as-button pattern with :has(input:checked) for the selected state, which lets the entire 48px tap area act as the target rather than the tiny native radio circle. Result card is a <template> cloned at render time so the markup stays declarative."
+    },
+    {
+      "id": "COUPLES-001",
+      "title": "Optional second-occupant field and shared-rooms overlap",
+      "description": "Add an optional second-occupant section to the form (collapsed by default with a 'Add a second person' toggle). When both occupants are entered, the result card adds a 'Shared rooms' subsection listing the directions that are favourable for both, and the directions to avoid for both. Honest framing on conflicts.",
+      "acceptanceCriteria": [
+        "Form has a disclosure toggle 'Add a second person (for couples and shared rooms)'.",
+        "When expanded, year + gender inputs appear for occupant 2.",
+        "Single-occupant flow still works when occupant 2 is empty.",
+        "When both filled, result card adds a 'Shared rooms' subsection.",
+        "Shared rooms subsection lists directions favourable for both (with both pinyin names), directions unfavourable for both (avoid), and notes any direction that is favourable for one but unfavourable for the other ('one favourable, one unfavourable - pick by primary user of the room').",
+        "Section uses the same typography + palette as the single result.",
+        "Toggle is keyboard-operable (Enter and Space) and uses aria-expanded."
+      ],
+      "priority": 6,
+      "passes": true,
+      "notes": "Toggle is a real <button type='button'> so Enter and Space work natively. Focus moves to year-2 on expand for keyboard users. Shared-rooms section is inserted before the methodology strip so the methodology strip stays the last thing the reader sees (the engagement hook)."
+    },
+    {
+      "id": "PRINT-001",
+      "title": "Print-friendly result card",
+      "description": "Implement static/css/print.css using @media print so the result card prints cleanly on one A4/Letter page. Form, header, footer, and the methodology link strip are hidden during print. Backgrounds removed; ink colours preserved at high contrast.",
+      "acceptanceCriteria": [
+        "@media print rules live in print.css, linked from base.html.",
+        "Form, header navigation, and footer hidden during print.",
+        "Result card prints on one page at standard A4/Letter without overflow.",
+        "Background colours removed; text remains readable on white paper.",
+        "Favourable/unfavourable badge distinguishable in greyscale (icon + label, not colour alone).",
+        "Print preview tested visually (note observed result in progress.txt)."
+      ],
+      "priority": 7,
+      "passes": true,
+      "notes": "Print stylesheet linked from base.html with media='print' so it only loads when printing. Favourable/unfavourable greyscale-distinguishable via three cues: ★ vs × icon, solid vs dashed left border, label text. Result card forced to 'page-break-inside: avoid' so the whole reading prints as a single unit when it fits."
+    },
+    {
+      "id": "SEO-001",
+      "title": "SEO landing copy, meta, schema markup, and methodology deep links",
+      "description": "Apply the marketing copywriting skill to the landing page. Add page title, meta description, Open Graph, and structured data (FAQPage + HowTo + Article). Result card includes deep links into /methodology at relevant anchors (Kua formula, Eight Mansions, group split). FAQ block answers the top user queries that drive organic traffic.",
+      "acceptanceCriteria": [
+        "Headline follows a tested formula and names the deliverable clearly.",
+        "Subheadline adds specificity in 1-2 sentences.",
+        "Primary CTA uses an action-outcome label.",
+        "Page has an FAQ section answering: What is a Kua number? How is it calculated? What are favourable directions? Why does the formula differ before and after 2000? What if my partner has a different group? Is this fortune-telling?",
+        "FAQPage schema (JSON-LD) covers every FAQ question.",
+        "HowTo schema (JSON-LD) describes the 3-step user journey (enter year, enter gender, read result).",
+        "Article schema (JSON-LD) for the methodology page with author and datePublished.",
+        "<title> and meta description present and under 60 / 155 chars.",
+        "Open Graph title, description, type, and locale set.",
+        "robots.txt allows GPTBot, PerplexityBot, ClaudeBot, Google-Extended (per ai-seo skill).",
+        "Result card links to /methodology#5-the-kua-number, #6-the-eight-mansions-ba-zhai, and #east-group-and-west-group anchors."
+      ],
+      "priority": 8,
+      "passes": true,
+      "notes": "Three JSON-LD blocks on the landing page (WebApplication, HowTo, FAQPage) and one on the methodology page (Article). Each FAQ answer is sized at the ai-seo skill's 40-60-word snippet-extraction sweet spot. Copy uses the copywriting skill's specificity-over-vagueness rule throughout; CTA is action-outcome ('Calculate my Kua number'), headline names the deliverable and the timeframe. Robots.txt allows GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, anthropic-ai, Google-Extended (set in SCAFFOLD-001 already)."
+    },
+    {
+      "id": "EMBED-001",
+      "title": "Iframe-friendly embed variant",
+      "description": "Add a /embed route that renders the calculator without site header, footer, or methodology link strip. Designed to be dropped into a parent page via iframe at flexible widths (320px to 720px). Permissive frame-ancestors so external embedding works. Provides a parent-page copy-paste snippet on the main /methodology page footer.",
+      "acceptanceCriteria": [
+        "GET /embed returns 200 with the slim template.",
+        "Embed template excludes site header, primary nav, and footer.",
+        "Embed template reuses the same form + result card components from index.",
+        "Response sets Content-Security-Policy frame-ancestors '*' (or X-Frame-Options absent).",
+        "Layout reflows cleanly at 320px, 480px, and 720px widths.",
+        "Methodology page footer shows a copy-paste iframe snippet for embedding."
+      ],
+      "priority": 9,
+      "passes": true,
+      "notes": "Extracted the form + result-card markup into _calculator.html partial so index.html and embed.html share one source of truth. Embed page is a standalone HTML doc (not extending base.html) so it gets no header/footer/nav inherited. robots: noindex prevents the embed page from competing with / for the same keywords. methodology.html footer has the copy-paste iframe snippet."
+    }
+  ]
+}
