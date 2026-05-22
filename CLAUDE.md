@@ -39,8 +39,9 @@ Output targets: app/ (Flask app, templates, static), content/methodology.md
 Do NOT:         - Use em dashes anywhere (workspace rule).
                 - Promise outcomes. Use "supports the conditions for" language,
                   never "will give you" or "guarantees."
-                - Translate or paraphrase chapter 6. Copy verbatim into
-                  methodology.md (internal authorship for both projects).
+                - (Phase 2, 2026-05-21) The chapter-6-verbatim rule is retired.
+                  methodology.md is now independently authored for this project
+                  and intentionally diverges from feng-shui chapter 6.
                 - Add analytics, trackers, or third-party scripts. The page must
                   be embeddable in arbitrary parent sites with no dependencies.
 Conventions:    - File naming: lowercase-hyphens for templates and static files.
@@ -48,11 +49,14 @@ Conventions:    - File naming: lowercase-hyphens for templates and static files.
                 - Accessibility-first: labels for all inputs, aria where needed,
                   visible focus rings, semantic landmarks, 4.5:1 minimum contrast.
                 - Print stylesheet via @media print, not separate template.
-                - Distinctive typography (Fraunces display + Spectral body).
-                  Never default to Inter/Roboto/Arial.
-                - Palette inherits feng-shui dashboard: parchment background
-                  (#f4ede2), ink (#2b261f), terra-cotta accent (#b06a45),
-                  sage secondary (#5e7355).
+                - Typography: Hanken Grotesk (all interface and text) +
+                  Bilbo Swash Caps (the brand signature only). Never default
+                  to Inter/Roboto/Arial.
+                - Palette: warm naturals, the unity-of-opposites concept.
+                  Cream #f1e9d8 canvas, sand #e0d3b8, paper #fbf7ee cards,
+                  olive green #4f5a36 (logo and accents), clay #be6b43, deep ink
+                  #2a271e counterweight. Logo: assets/logo.svg. Full system
+                  in brand/BRAND_BOOK.md.
 ```
 
 ## Hard rules
@@ -78,7 +82,7 @@ For each task in `prd.json`:
 - All acceptance criteria in `prd.json` met.
 - Zero em dashes.
 - Zero outcome promises in copy.
-- For UI: 4.5:1 contrast on all text, visible focus rings, keyboard-operable, labels on every input.
+- For UI: 4.5:1 contrast on all text, visible focus rings, keyboard-operable, labels on every input. The current natural palette meets this with no exceptions; see brand/BRAND_BOOK.md.
 - For routes: `uv run flask --app app.app run` loads the page without console errors.
 
 ## Env vars

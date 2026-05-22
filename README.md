@@ -37,8 +37,8 @@ Default URL: http://localhost:5000
 
 ## Design
 
-- Palette: parchment `#f4ede2`, ink `#2b261f`, terra-cotta `#b06a45`, sage `#5e7355`.
-- Display font: Fraunces. Body font: Spectral. Both via Google Fonts.
+- Palette: warm naturals - cream `#f1e9d8`, sand `#e0d3b8`, sage green `#6e7a4f`, clay `#be6b43`, deep ink `#2a271e`. Full system in `brand/BRAND_BOOK.md`.
+- Typeface: Hanken Grotesk throughout, with Bilbo Swash Caps for the "My Feng Shui Home" signature. Via Google Fonts.
 - No tracking. No analytics. No external JS dependencies (calculation is client-side vanilla JS).
 
 ## Tests

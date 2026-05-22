@@ -36,8 +36,8 @@
   body::before {
     content: "Kua Calculator - your personal directions";
     display: block;
-    font-family: "Fraunces", Georgia, serif;
-    font-weight: 600;
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    font-weight: 700;
     font-size: 14pt;
     margin-bottom: 6mm;
     border-bottom: 1pt solid #000;

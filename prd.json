@@ -163,6 +163,172 @@
       "priority": 9,
       "passes": true,
       "notes": "Extracted the form + result-card markup into _calculator.html partial so index.html and embed.html share one source of truth. Embed page is a standalone HTML doc (not extending base.html) so it gets no header/footer/nav inherited. robots: noindex prevents the embed page from competing with / for the same keywords. methodology.html footer has the copy-paste iframe snippet."
+    },
+    {
+      "id": "CONTENT-002",
+      "title": "Rewrite the methodology page for structure, clarity, and flow",
+      "description": "Phase 2. Delete the final 'Sources informing this chapter' paragraph. Rewrite all 9 sections of content/methodology.md using the marketing copywriting and content-strategy skills for structure, clarity, and flow only - not for hype. The chapter-6-verbatim hard rule is overridden for kua-calculator per the 2026-05-21 architect spec.",
+      "acceptanceCriteria": [
+        "The '## Sources informing this chapter' paragraph is removed entirely.",
+        "All 9 sections rewritten: tighter sentences, stronger hierarchy, clear topic sentences, smoother transitions, better scannability.",
+        "All factual content preserved, including both worked examples and section 8 'Limitations and honesty'.",
+        "Honest framing in every line: no outcome promises, no 'will give you', no 'guarantees'.",
+        "Zero em dashes.",
+        "GET /methodology renders with no console errors.",
+        "Section headings still produce stable slug IDs for deep links."
+      ],
+      "priority": 10,
+      "passes": true,
+      "notes": "All 9 sections tightened for sentence economy and scannability; compound sentences split into single-idea sentences so the logical chain is explicit. Sources paragraph removed. Section 8 'Limitations and honesty' sharpened, hedged tone preserved. Zero em dashes. Section heading slugs (#5-the-kua-number etc.) preserved for deep links."
+    },
+    {
+      "id": "BRAND-BOOK-001",
+      "title": "Create the kua-calculator brand book",
+      "description": "Phase 2. Write a complete brand book to brand/BRAND_BOOK.md covering brand positioning, logo usage, color palette, typography, writing voice and tone, UI design tokens, accessibility standards, and iconography. This is the single source of truth that REBRAND-001 implements.",
+      "acceptanceCriteria": [
+        "brand/BRAND_BOOK.md exists and is complete.",
+        "Covers: brand overview/positioning, logo (mark, clear space, sizing, do/don't), color palette (primary #ff6200, neutrals, semantic colors, hex+rgb, usage ratios), typography (Space Grotesk + Hanken Grotesk, scale, weights), writing voice and tone with honest-framing rules and do/don't word lists, UI tokens (buttons, cards, spacing, radius, shadows), accessibility standards, iconography (inline SVG).",
+        "Every documented color pairing names its WCAG contrast ratio.",
+        "Consistent with the confirmed decisions: #ff6200 orange-forward, modern geometric sans, honest framing.",
+        "Zero em dashes."
+      ],
+      "priority": 11,
+      "passes": true,
+      "notes": "Brand book written to brand/BRAND_BOOK.md: 11 sections covering positioning, logo usage, color, typography, voice, UI tokens, accessibility, iconography. Key finding: white text on #ff6200 is only 3.0:1 and fails AA, so text on orange panels is near-black #1a1a1a (5.8:1). Display font changed from Space Grotesk to Bricolage Grotesque, since the frontend-design skill flags Space Grotesk as an overused converged choice. Includes a ready-to-paste :root token block."
+    },
+    {
+      "id": "REBRAND-001",
+      "title": "Rebrand all views with the new brand system",
+      "description": "Phase 2. Implement BRAND-BOOK-001 across the whole site. Replace the parchment/terracotta/sage palette with the orange-forward #ff6200 system, swap Fraunces+Spectral for Space Grotesk+Hanken Grotesk, inline the recolored logo, and apply SKILL_UI_UX_PRO_MAX and SKILL_FRONTEND_DESIGN to layout, hierarchy, components, spacing, interaction states, and polish.",
+      "acceptanceCriteria": [
+        "base.html, index.html, _calculator.html, methodology.html, embed.html, main.css, and print.css updated to the new brand system.",
+        "Logo (assets/logo.svg, #ff6200) inlined into base.html or a shared partial; renders crisp at all sizes.",
+        "Palette is orange-forward per the brand book; Fraunces and Spectral fully removed.",
+        "All routes (/, /methodology, /embed) load with no console errors.",
+        "4.5:1 minimum contrast on all text including white-on-orange.",
+        "Visible focus rings, keyboard-operable, labels on every input, reduced-motion respected.",
+        "Print stylesheet still produces a clean one-page result card.",
+        "Embed view stays structurally minimal (no header/footer) but uses the new styling."
+      ],
+      "priority": 12,
+      "passes": true,
+      "notes": "main.css rewritten around the brand book token set; base.html, index.html, embed.html, print.css updated. Logo inlined into base.html as a 4-path SVG using fill=currentColor so it recolors by context. index.html hero split into an orange hero band plus a calculator-section, with the white form card pulled up via negative margin to overlap the orange (the layered editorial touch). Signature is the hard offset shadow (4px/7px, no blur) on the form card, result card, and buttons, with a press-shift on hover that is disabled under prefers-reduced-motion. All three routes return 200 and render correctly; CSS braces balanced 184/184; zero old-brand references remain."
+    },
+    {
+      "id": "REBRAND-QA-001",
+      "title": "QA and verification pass",
+      "description": "Phase 2. Audit the rebranded site for accessibility and honest framing, and verify all routes and the calculation still work.",
+      "acceptanceCriteria": [
+        "Accessibility audit complete: contrast, focus, keyboard, labels, landmarks.",
+        "Honest-framing audit across all visible copy: no outcome promises.",
+        "GET /, /methodology, /embed all render correctly.",
+        "Calculation verified: calculateKua(1978,'male')=>4, calculateKua(1985,'female')=>9.",
+        "Zero em dashes across all changed files.",
+        "progress.txt updated with a learning paragraph for each Phase 2 task."
+      ],
+      "priority": 13,
+      "passes": true,
+      "notes": "Verified: /, /methodology, /embed all return 200 and render with the new brand (headless screenshots confirm). Methodology deep-link anchors (#5-the-kua-number, #east-group-and-west-group, #6-the-eight-mansions-ba-zhai) survived the content rewrite. Zero em dashes across all 10 changed files. Four semantic landmarks present. Calculation logic unchanged: git confirms kua.js, directions.js, ui.js, cny.js are byte-identical to the Phase 1 build where calculateKua(1978,'male')=>4 and calculateKua(1985,'female')=>9 were verified. Contrast resolved in the brand book: text on orange is near-black at 5.8:1."
+    },
+    {
+      "id": "NEXT-SCAFFOLD-001",
+      "title": "Scaffold the Next.js app and the shared layout",
+      "description": "Phase 3 Stage 1. On branch phase-3-nextjs, scaffold a Next.js app (App Router, TypeScript, no Tailwind). Build the root layout: migrate main.css verbatim into app/globals.css, load Hanken Grotesk + Bilbo Swash Caps via next/font, link print.css, and build SiteHeader and SiteFooter from base.html with the inline-SVG logo.",
+      "acceptanceCriteria": [
+        "Next.js app scaffolds and `npm run dev` serves a page.",
+        "app/globals.css is main.css migrated verbatim; selectors unchanged.",
+        "Fonts load via next/font; SiteHeader and SiteFooter match the current brand.",
+        "`npm run build` succeeds with no type errors."
+      ],
+      "priority": 14,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "CALC-MIGRATE-001",
+      "title": "Migrate the calculator, methodology, embed, and robots",
+      "description": "Phase 3 Stage 1. Move the 4 calculator JS files to public/calculator/ unchanged and print.css to public/. Build CalculatorIsland.tsx (HTML-to-JSX port of _calculator.html, all IDs intact). Build app/kua-calculator/page.tsx (hero, island, explainer, FAQ, JSON-LD, the 4 ordered <Script> tags) and app/page.tsx redirecting / to /kua-calculator. Build app/methodology/page.tsx (build-time markdown, matching heading slugs), app/embed/ (minimal layout + page + frame-ancestors header in next.config.ts), and app/robots.ts.",
+      "acceptanceCriteria": [
+        "/kua-calculator runs the calculator end to end (couples mode, CNY adjustment) with no console errors.",
+        "/ redirects to /kua-calculator.",
+        "/methodology renders; result-card deep-link anchors resolve to the right headings.",
+        "/embed is iframe-embeddable from another origin; other routes are not frame-able.",
+        "`npm run build` succeeds."
+      ],
+      "priority": 15,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "SUPABASE-SCHEMA-001",
+      "title": "Supabase project and database schema",
+      "description": "Phase 3 Stage 1. Create the Supabase project (owner action). Write supabase/migrations/0001_init.sql: profiles table (auto-created per user by a security-definer handle_new_user trigger) and saved_charts table, both with Row-Level Security scoped to auth.uid(). Enable the Google auth provider.",
+      "acceptanceCriteria": [
+        "0001_init.sql creates profiles and saved_charts with the columns in the spec.",
+        "RLS enabled on both tables; policies scope every row to its owner.",
+        "handle_new_user trigger inserts a profiles row on signup.",
+        "Migration applies cleanly to the Supabase project."
+      ],
+      "priority": 16,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "AUTH-001",
+      "title": "Supabase auth - clients, sign-in, callback, header state",
+      "description": "Phase 3 Stage 1. Add @supabase/ssr clients (browser, server) and root middleware.ts for session refresh. Build the sign-in page (magic link + Google), auth/callback and auth/sign-out route handlers, and make SiteHeader a Server Component that reflects logged-in/out state.",
+      "acceptanceCriteria": [
+        "Magic-link sign-in completes and lands on /account with a session.",
+        "Google sign-in completes via the same callback.",
+        "Session persists across refresh; sign-out clears it.",
+        "SiteHeader shows Sign in when logged out, Account + Sign out when logged in."
+      ],
+      "priority": 17,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "ACCOUNT-001",
+      "title": "Account dashboard and email capture",
+      "description": "Phase 3 Stage 1. Build app/account/page.tsx, auth-gated: shows the user's email, lets them save birth data / a chart to Supabase, toggle marketing_opt_in (unchecked by default), and delete their account. Signup is the email-capture mechanism.",
+      "acceptanceCriteria": [
+        "/account redirects to /sign-in when logged out.",
+        "A logged-in user can save birth data and see it persisted.",
+        "marketing_opt_in toggle works and defaults off.",
+        "Delete-account removes the user and cascades their rows.",
+        "RLS verified: a user cannot read another user's rows."
+      ],
+      "priority": 18,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "PRIVACY-CLEANUP-001",
+      "title": "Privacy copy, Flask removal, docs",
+      "description": "Phase 3 Stage 1. Add a minimal app/privacy/page.tsx. Revise the FAQ and FAQPage JSON-LD privacy copy to distinguish anonymous use (private) from account use (data stored); keep the embed copy true. Delete the Flask app (app/app.py, templates, render.yaml, requirements.txt, pyproject.toml, uv.lock). Update README.md and CLAUDE.md for the new stack and amend the privacy-era hard rules.",
+      "acceptanceCriteria": [
+        "Privacy page exists and explains what Supabase stores and how to delete an account.",
+        "FAQ and JSON-LD privacy copy are accurate and in sync.",
+        "Flask files removed; project builds without them.",
+        "README.md and CLAUDE.md updated; zero em dashes."
+      ],
+      "priority": 19,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "DEPLOY-001",
+      "title": "Vercel deploy and end-to-end verification",
+      "description": "Phase 3 Stage 1. Create the Vercel project linked to the GitHub repo, set the four env vars for Preview and Production, configure Supabase redirect URLs and Google OAuth origins, deploy, and smoke-test the live site. This is the first live deploy.",
+      "acceptanceCriteria": [
+        "Production build deploys on Vercel with no errors.",
+        "Calculator, methodology, and embed work on the live URL.",
+        "Magic-link and Google sign-in work on the live URL (redirects use the deployed domain).",
+        "Live smoke test passes; the site is publicly reachable."
+      ],
+      "priority": 20,
+      "passes": false,
+      "notes": ""
     }
   ]
 }
