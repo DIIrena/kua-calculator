@@ -1,90 +1,94 @@
 # kua-calculator
 
 Workspace brief: see [../../CLAUDE.md](../../CLAUDE.md).
-Architect spec: see [spec/architect-2026-05-13.md](spec/architect-2026-05-13.md).
+Architect spec: see [spec/architect-2026-05-22.md](spec/architect-2026-05-22.md) (Phase 3). Earlier: [spec/architect-2026-05-13.md](spec/architect-2026-05-13.md).
 
-A free single-page web tool that returns a reader's Kua number, East/West group, and the eight personal directions (four favourable, four unfavourable) with plain-English meanings. Top-of-funnel acquisition channel for the feng-shui dashboard. Inputs: birth year + gender, optional second occupant for couples.
+A free web tool that returns a reader's Kua number, East/West group, and the eight personal directions (four favourable, four unfavourable) with plain-English meanings. The first product of My Feng Shui Home. Top-of-funnel acquisition channel. As of Phase 3 it also offers an optional free account (email capture) for saving and emailing a chart.
+
+## Stack (Phase 3 onward)
+
+Next.js (App Router, TypeScript) on Vercel + Supabase. Flask and Render are retired. The calculation is unchanged vanilla JS reused as a static island. No build step beyond `next build`.
 
 ## Files in this project
 
 | File / folder | Purpose |
 |---|---|
-| `prd.json` | Ralph task list. 9 tasks. |
+| `prd.json` | Ralph task list. |
 | `progress.txt` | Append-only learnings log. One paragraph per finished task. |
-| `spec/architect-2026-05-13.md` | Architect spec. |
-| `content/methodology.md` | Self-contained copy of feng-shui chapter 6 (compass school deep-dive). Rendered at `/methodology`. |
-| `app/app.py` | Flask app entry. |
-| `app/templates/` | base, index (calculator), result, methodology, embed. |
-| `app/static/css/main.css` | Screen styles. |
-| `app/static/css/print.css` | Print-friendly result card. |
-| `app/static/js/kua.js` | Calculation logic, client-side. |
-| `app/static/js/directions.js` | 8-Kua direction-quality table + plain-English text. |
-| `app/static/js/ui.js` | Form handling, result rendering, couples overlap. |
-| `pyproject.toml` | uv-managed Python deps (flask, markdown). |
+| `spec/` | Architect specs. |
+| `content/methodology.md` | Self-contained Compass School deep-dive. Rendered at `/methodology` at build time. |
+| `app/layout.tsx` | Root layout: `<html>`, fonts (`next/font`), `globals.css`. |
+| `app/(site)/` | Route group with the SiteHeader / SiteFooter chrome: calculator, methodology, sign-in, account, privacy. |
+| `app/embed/` | Chrome-free iframe-embeddable calculator. |
+| `app/auth/` | `callback` and `sign-out` route handlers. |
+| `app/globals.css` | Screen styles (migrated from the old `main.css`). |
+| `app/robots.ts` | AI-bot policy. |
+| `components/` | `SiteHeader`, `SiteFooter`, `CalculatorIsland`, `CalculatorScripts`, `AuthForm`. |
+| `lib/supabase/` | `client`, `server`, `middleware` Supabase clients. |
+| `lib/markdown.ts` | Build-time markdown rendering (remark + remark-gfm + rehype-slug). |
+| `proxy.ts` | Refreshes the Supabase session each request (Next 16 renamed `middleware` to `proxy`). |
+| `public/calculator/` | The four calculator JS files (`cny`, `directions`, `kua`, `ui`), reused byte-for-byte. |
+| `public/print.css` | Print-friendly result card. |
+| `supabase/migrations/0001_init.sql` | Schema: `profiles`, `saved_charts`, RLS, `handle_new_user` trigger. |
+| `.env.example` | Documents the four environment variables. |
 | `README.md` | Run + deploy instructions. |
-| `.gitignore` | Excludes `.venv/`, `__pycache__/`, `*.pyc`, `.env`. |
 
 ## Shared agent context
 
 ```
-Project:        kua-calculator (top-of-funnel feng shui acquisition tool)
+Project:        kua-calculator (first product of My Feng Shui Home)
 Client:         Internal
 Brand voice:    Calm, authoritative, clear. Practical not woo. Plain English.
                 Honest framing: Kua is a structured decision tool, not a fortune.
-                Inherits voice from projects/feng-shui/content/00-scope.md.
-Tech stack:     Python 3 + Flask, vanilla HTML/CSS/JS, uv for deps,
-                markdown rendered server-side, calculation logic client-side JS.
-                No build step. No framework. No external image files.
-Output targets: app/ (Flask app, templates, static), content/methodology.md
+Tech stack:     Next.js (App Router, TypeScript), Vercel, Supabase (auth +
+                Postgres + RLS). Markdown rendered at build time. The Kua
+                calculation is client-side vanilla JS, reused unchanged.
+Output targets: app/, components/, lib/, public/, supabase/, content/
 Do NOT:         - Use em dashes anywhere (workspace rule).
-                - Promise outcomes. Use "supports the conditions for" language,
-                  never "will give you" or "guarantees."
-                - (Phase 2, 2026-05-21) The chapter-6-verbatim rule is retired.
-                  methodology.md is now independently authored for this project
-                  and intentionally diverges from feng-shui chapter 6.
-                - Add analytics, trackers, or third-party scripts. The page must
-                  be embeddable in arbitrary parent sites with no dependencies.
-Conventions:    - File naming: lowercase-hyphens for templates and static files.
-                - One module per concern in static/js (kua.js, directions.js, ui.js).
-                - Accessibility-first: labels for all inputs, aria where needed,
-                  visible focus rings, semantic landmarks, 4.5:1 minimum contrast.
-                - Print stylesheet via @media print, not separate template.
-                - Typography: Hanken Grotesk (all interface and text) +
-                  Bilbo Swash Caps (the brand signature only). Never default
-                  to Inter/Roboto/Arial.
-                - Palette: warm naturals, the unity-of-opposites concept.
-                  Cream #f1e9d8 canvas, sand #e0d3b8, paper #fbf7ee cards,
-                  olive green #4f5a36 (logo and accents), clay #be6b43, deep ink
-                  #2a271e counterweight. Logo: assets/logo.svg. Full system
-                  in brand/BRAND_BOOK.md.
+                - Promise outcomes. Use "supports the conditions for" language.
+                - Add analytics or trackers to the calculator core or /embed.
+                  Those must stay embeddable with no third-party dependencies.
+Conventions:    - Accessibility-first: labels for all inputs, aria where needed,
+                  visible focus rings, semantic landmarks, 4.5:1 min contrast.
+                - Typography: Hanken Grotesk (interface) + Bilbo Swash Caps
+                  (signature only). Loaded via next/font/google.
+                - Palette: warm naturals. Cream #f1e9d8 canvas, sand #e0d3b8,
+                  paper #fbf7ee cards, olive green #4f5a36, clay #be6b43,
+                  deep ink #2a271e. Full system in brand/BRAND_BOOK.md.
 ```
 
 ## Hard rules
 
 - No em dashes anywhere. Use " - " or rephrase.
 - Honest framing in every line of copy. No outcome promises.
-- Calculation runs entirely client-side in vanilla JS. Server does not see birth data.
-- No external JS dependencies. No CDN scripts. No tracking pixels.
-- Inline SVG only, no PNG/JPG files in static/.
+- The Kua **calculation** runs entirely client-side in vanilla JS. The
+  calculator core and the `/embed` widget never send birth data anywhere and
+  carry no third-party dependencies.
+- **The account layer (sign-in, account, dashboard) deliberately uses Supabase
+  and stores account-holder data**: the email a user signs up with, and the
+  birth data / charts they choose to save. This is intentional and was
+  approved in Phase 3. It does not apply to anonymous calculator use or to
+  `/embed`, which remain privacy-pure. Privacy copy must keep this distinction
+  clear (see `app/(site)/privacy/page.tsx` and the calculator FAQ).
+- Inline SVG only, no raster images.
 - Accessibility checks at every UI task: contrast, focus, keyboard, labels.
 
 ## Per-task protocol (Ralph)
 
-For each task in `prd.json`:
-
-1. Implement to the acceptance criteria.
-2. Self-review: read the changed files, verify acceptance criteria pass, run mental UX + accessibility check.
-3. Edit `prd.json` and set `passes: true` on the task.
-4. Append one paragraph to `progress.txt` in the format: `Task ID - 2026-05-13 - [what was learned or noticed].` Lead with the learning, not the action.
+For each task in `prd.json`: implement to the acceptance criteria, self-review,
+set `passes: true`, append one paragraph to `progress.txt` leading with the
+learning. (`prd.json` / `progress.txt` are owned by the parent session during
+the Phase 3 staged build.)
 
 ## Acceptance bar (every task)
 
-- All acceptance criteria in `prd.json` met.
-- Zero em dashes.
-- Zero outcome promises in copy.
-- For UI: 4.5:1 contrast on all text, visible focus rings, keyboard-operable, labels on every input. The current natural palette meets this with no exceptions; see brand/BRAND_BOOK.md.
-- For routes: `uv run flask --app app.app run` loads the page without console errors.
+- All acceptance criteria in `prd.json` met. Zero em dashes. Zero outcome promises.
+- For UI: 4.5:1 contrast, visible focus rings, keyboard-operable, labels on every input.
+- For routes: `npm run build` succeeds and `npm run start` serves the page without errors.
 
 ## Env vars
 
-None. The calculator is fully self-contained.
+Four, documented in `.env.example`: `NEXT_PUBLIC_SUPABASE_URL`,
+`NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`,
+`NEXT_PUBLIC_SITE_URL`. The public pages build and run with placeholders;
+only live auth needs real keys. Never commit `.env.local`.

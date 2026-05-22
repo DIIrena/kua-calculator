@@ -241,8 +241,8 @@
         "`npm run build` succeeds with no type errors."
       ],
       "priority": 14,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Next.js 16 (App Router, TS, Turbopack) scaffolded on the phase-3-nextjs branch. main.css migrated verbatim into app/globals.css; fonts via next/font/google; SiteHeader/SiteFooter ported. npm run build and npm run lint pass clean. Note: Next 16 renamed the middleware convention to proxy.ts."
     },
     {
       "id": "CALC-MIGRATE-001",
@@ -256,8 +256,8 @@
         "`npm run build` succeeds."
       ],
       "priority": 15,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Calculator reused unchanged: the 4 JS files copied byte-for-byte to public/calculator/, markup ported to CalculatorIsland.tsx with IDs intact, loaded via next/script in order. /kua-calculator, /methodology, /embed all render (verified on a production server); / redirects 307 to /kua-calculator. Calc confirmed: 1978 male=>Kua 4, 1985 female=>Kua 9, CNY adjustment works. Methodology heading slugs match the result-card deep links. /embed sends frame-ancestors *; other routes frame-ancestors 'self'. A (site) route group was used so /embed renders chrome-free (nested layouts wrap, not replace)."
     },
     {
       "id": "SUPABASE-SCHEMA-001",
@@ -313,8 +313,8 @@
         "README.md and CLAUDE.md updated; zero em dashes."
       ],
       "priority": 19,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "app/(site)/privacy/page.tsx added. FAQ + FAQPage JSON-LD privacy copy revised to distinguish anonymous use (private) from account use (data stored); the calculator privacy-note kept verbatim since it stays accurate (the calculator JS never auto-saves). Flask fully removed (app.py, templates, static, render.yaml, requirements.txt, pyproject.toml, uv.lock, .venv). README.md and CLAUDE.md rewritten for the Next.js + Supabase stack; CLAUDE.md hard rules amended to record the account layer's deliberate use of Supabase."
     },
     {
       "id": "DEPLOY-001",

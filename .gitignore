@@ -1,8 +1,22 @@
+# Next.js
+node_modules/
+.next/
+next-env.d.ts
+out/
+
+# Environment - never commit real keys
+.env
+.env*.local
+
+# Editor / OS
+.DS_Store
+
+# Build artifacts
+dist/
+build/
+
+# Python (retired Flask app - kept so any leftover venv is ignored)
 .venv/
 __pycache__/
 *.pyc
-.env
-.DS_Store
 *.egg-info/
-dist/
-build/
