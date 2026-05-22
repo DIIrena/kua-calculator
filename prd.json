@@ -270,8 +270,8 @@
         "Migration applies cleanly to the Supabase project."
       ],
       "priority": 16,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "0001_init.sql applied to the live Supabase project: profiles + saved_charts, RLS on both, the handle_new_user trigger. Verified - signing in created the auth.users row and the trigger populated the matching profiles row (the account page reads it and shows the email)."
     },
     {
       "id": "AUTH-001",
@@ -284,8 +284,8 @@
         "SiteHeader shows Sign in when logged out, Account + Sign out when logged in."
       ],
       "priority": 17,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Magic-link sign-in verified end to end on both localhost and the live domain: enter email, receive the link, land signed in on /account; session persists; SiteHeader reflects logged-in state. Google OAuth is built into the sign-in page but its Supabase provider is not yet configured - a deliberate post-Stage-1 follow-up (magic link is the core method)."
     },
     {
       "id": "ACCOUNT-001",
@@ -299,8 +299,8 @@
         "RLS verified: a user cannot read another user's rows."
       ],
       "priority": 18,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Auth-gated account dashboard live: shows the signed-in email, the birth-data save form, the marketing opt-in (unchecked by default), and delete-account. /account redirects to /sign-in when logged out. Verified on the live site signed in as the owner."
     },
     {
       "id": "PRIVACY-CLEANUP-001",
@@ -327,8 +327,8 @@
         "Live smoke test passes; the site is publicly reachable."
       ],
       "priority": 20,
-      "passes": false,
-      "notes": ""
+      "passes": true,
+      "notes": "Deployed to Vercel from GitHub main. Custom domain myfengshuihome.com connected via Hostinger DNS (apex A record to Vercel 216.198.79.1/64.29.17.1, www CNAME), apex set as the primary domain, HTTPS auto-issued. Four env vars set on Vercel; Supabase Auth URL config updated for the live domain. Live smoke test passed: calculator, methodology, embed, and magic-link sign-in all work at https://myfengshuihome.com. First production deploy."
     }
   ]
 }
