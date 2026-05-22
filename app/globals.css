@@ -156,7 +156,7 @@ a:hover { color: var(--clay-deep); }
 .brand-name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.7rem;
+  font-size: 1.38rem;
   letter-spacing: -0.01em;
   color: var(--green);
 }
@@ -1304,7 +1304,7 @@ a:hover { color: var(--clay-deep); }
 
 @media (max-width: 600px) {
   .brand-mark { width: 50px; height: 50px; }
-  .brand-name { font-size: 1.35rem; }
+  .brand-name { font-size: 1.18rem; }
   .brand-sub { font-size: 1rem; }
   .site-header { gap: var(--space-3); }
 }

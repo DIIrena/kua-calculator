@@ -239,82 +239,59 @@ export default function CalculatorIsland() {
         {/* Populated by ui.js */}
       </section>
 
-      <template id="result-template">
-        <article className="result-card">
-          <header className="result-header">
-            <div className="result-summary">
-              <p className="result-eyebrow">Your Kua</p>
-              <p className="result-kua">
-                <span data-bind="kua"></span>
-              </p>
-              <p className="result-group">
-                <span className="group-badge" data-bind="group-badge"></span>
-              </p>
-            </div>
-            <p className="result-line" data-bind="summary"></p>
-          </header>
+      {/* The two <template> elements are rendered as raw HTML via
+          dangerouslySetInnerHTML. Setting innerHTML on a <template> populates
+          its .content fragment (which ui.js clones), and React does not try to
+          hydrate the children - this avoids a hydration mismatch. */}
+      <template
+        id="result-template"
+        dangerouslySetInnerHTML={{
+          __html: `
+            <article class="result-card">
+              <header class="result-header">
+                <div class="result-summary">
+                  <p class="result-eyebrow">Your Kua</p>
+                  <p class="result-kua"><span data-bind="kua"></span></p>
+                  <p class="result-group"><span class="group-badge" data-bind="group-badge"></span></p>
+                </div>
+                <p class="result-line" data-bind="summary"></p>
+              </header>
+              <p class="cny-notice" data-bind="cny-notice" hidden></p>
+              <h2 class="result-subhead">Your eight personal directions</h2>
+              <ol class="direction-list" data-bind="directions"></ol>
+              <aside class="methodology-strip">
+                <h3>Want the methodology?</h3>
+                <p>Read the full deep-dive on the Compass School and the Eight Mansions system that produces this result.</p>
+                <p class="strip-links">
+                  <a href="/methodology#5-the-kua-number" target="_blank" rel="noopener">How the Kua number works</a>
+                  <a href="/methodology#east-group-and-west-group" target="_blank" rel="noopener">East and West groups</a>
+                  <a href="/methodology#6-the-eight-mansions-ba-zhai" target="_blank" rel="noopener">The Eight Mansions</a>
+                </p>
+              </aside>
+            </article>
+          `,
+        }}
+      />
 
-          <p className="cny-notice" data-bind="cny-notice" hidden></p>
-
-          <h2 className="result-subhead">Your eight personal directions</h2>
-          <ol className="direction-list" data-bind="directions"></ol>
-
-          <aside className="methodology-strip">
-            <h3>Want the methodology?</h3>
-            <p>
-              Read the full deep-dive on the Compass School and the Eight
-              Mansions system that produces this result.
-            </p>
-            <p className="strip-links">
-              <a
-                href="/methodology#5-the-kua-number"
-                target="_blank"
-                rel="noopener"
-              >
-                How the Kua number works
-              </a>
-              <a
-                href="/methodology#east-group-and-west-group"
-                target="_blank"
-                rel="noopener"
-              >
-                East and West groups
-              </a>
-              <a
-                href="/methodology#6-the-eight-mansions-ba-zhai"
-                target="_blank"
-                rel="noopener"
-              >
-                The Eight Mansions
-              </a>
-            </p>
-          </aside>
-        </article>
-      </template>
-
-      <template id="direction-row-template">
-        <li className="direction-row" data-favourable="">
-          <div className="direction-compass">
-            <span className="direction-arrow" aria-hidden="true"></span>
-            <span className="direction-label" data-bind="compassLabel"></span>
-          </div>
-          <div className="direction-quality">
-            <p className="quality-pinyin">
-              <span data-bind="pinyin"></span>{" "}
-              <span
-                className="quality-hanzi"
-                data-bind="hanzi"
-                aria-hidden="true"
-              ></span>
-            </p>
-            <p className="quality-gloss" data-bind="gloss"></p>
-          </div>
-          <p className="direction-meaning" data-bind="meaning"></p>
-          <p className="direction-badge">
-            <span data-bind="badge"></span>
-          </p>
-        </li>
-      </template>
+      <template
+        id="direction-row-template"
+        dangerouslySetInnerHTML={{
+          __html: `
+            <li class="direction-row" data-favourable="">
+              <div class="direction-compass">
+                <span class="direction-arrow" aria-hidden="true"></span>
+                <span class="direction-label" data-bind="compassLabel"></span>
+              </div>
+              <div class="direction-quality">
+                <p class="quality-pinyin"><span data-bind="pinyin"></span> <span class="quality-hanzi" data-bind="hanzi" aria-hidden="true"></span></p>
+                <p class="quality-gloss" data-bind="gloss"></p>
+              </div>
+              <p class="direction-meaning" data-bind="meaning"></p>
+              <p class="direction-badge"><span data-bind="badge"></span></p>
+            </li>
+          `,
+        }}
+      />
     </>
   );
 }
