@@ -2095,3 +2095,204 @@ a:hover { color: var(--clay-deep); }
     color: #000000 !important;
   }
 }
+
+/* ============================================================
+   /account brand mark, embedded calculator, compare form,
+   /account/compare/[a]/[b] route.
+   ============================================================ */
+
+/* --- BrandMark used on /account --- */
+.account-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-3) 0 var(--space-6);
+  padding: var(--space-4) 0;
+  color: var(--green);
+}
+
+.account-brand-mark {
+  display: inline-flex;
+  width: 96px;
+  height: 96px;
+  color: var(--green);
+}
+
+.account-brand-mark svg { width: 100%; height: 100%; display: block; }
+
+.account-brand-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1.65rem;
+  color: var(--green);
+  line-height: 1;
+}
+
+/* --- Calculator embedded on /account --- */
+.account-section-calc .account-calculator-wrap {
+  margin-top: var(--space-4);
+}
+
+/* --- Compare form inside saved-charts section --- */
+.compare-form-wrap {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px dashed var(--hairline);
+}
+
+.compare-form-heading {
+  font: 600 1.1rem var(--font-display);
+  color: var(--ink);
+  margin: 0 0 var(--space-2);
+}
+
+.compare-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-4) 0;
+}
+
+.compare-form select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font: 400 1rem var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+}
+
+.compare-form select:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+
+/* --- /account/compare/[a]/[b] page --- */
+.compare-page {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-7);
+}
+
+.compare-heading {
+  font: 700 2rem/1.15 var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.compare-intro {
+  color: var(--ink-2);
+  margin: var(--space-2) 0 var(--space-6);
+  font-size: 1.05rem;
+}
+
+.compare-people {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-7);
+}
+
+.compare-person {
+  padding: var(--space-5);
+  background: var(--paper);
+  border: var(--border);
+  border-radius: var(--radius-md);
+}
+
+.compare-person-name {
+  font: 600 1.2rem var(--font-display);
+  color: var(--ink);
+  margin: 0;
+}
+
+.compare-person-meta {
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  margin: var(--space-1) 0 var(--space-4);
+}
+
+.compare-person-link {
+  margin: var(--space-3) 0 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.compare-person-link a {
+  color: var(--green-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.compare-group {
+  margin: var(--space-6) 0;
+  padding: var(--space-5);
+  background: var(--paper);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  border-left-width: 6px;
+}
+
+.compare-group-good {
+  border-left-color: var(--green);
+}
+
+.compare-group-bad {
+  border-left-color: var(--clay-deep);
+  border-left-style: dashed;
+}
+
+.compare-group-mixed {
+  border-left-color: var(--ink-2);
+}
+
+.compare-group-heading {
+  font: 600 1.25rem var(--font-display);
+  color: var(--ink);
+  margin: 0 0 var(--space-2);
+}
+
+.compare-group-desc {
+  color: var(--ink-2);
+  margin: 0 0 var(--space-4);
+  font-size: 0.98rem;
+}
+
+.compare-group-empty {
+  color: var(--ink-2);
+  margin: 0;
+  font-style: italic;
+}
+
+.compare-group-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.compare-group-row {
+  padding: var(--space-3) var(--space-4);
+  background: var(--cream);
+  border-radius: var(--radius-sm);
+}
+
+.compare-group-compass {
+  margin: 0;
+  font: 600 1rem var(--font-display);
+  color: var(--ink);
+}
+
+.compare-group-detail {
+  margin: var(--space-1) 0 0;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.compare-actions {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: var(--border);
+}

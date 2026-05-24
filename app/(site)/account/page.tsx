@@ -5,6 +5,10 @@ import { auth } from "@/auth";
 import { createAdminClient } from "@/lib/supabase/server";
 import { saveDetails, deleteAccount } from "./actions";
 import { deleteChart } from "@/app/actions/save-chart";
+import { compareCharts } from "@/app/actions/compare-charts";
+import BrandMark from "@/components/BrandMark";
+import CalculatorIsland from "@/components/CalculatorIsland";
+import CalculatorScripts from "@/components/CalculatorScripts";
 
 export const metadata: Metadata = {
   title: "Your account | My Feng Shui Home",
@@ -97,9 +101,26 @@ export default async function AccountPage() {
       <p className="eyebrow">My Feng Shui Home</p>
       <h1 style={{ marginTop: 0 }}>Your account</h1>
 
+      <BrandMark />
+
       <section className="account-section">
         <h2>Signed in as</h2>
         <p className="account-email">{profile.email ?? sessionEmail}</p>
+      </section>
+
+      <section
+        className="account-section account-section-calc"
+        aria-labelledby="calc-heading"
+      >
+        <h2 id="calc-heading">Calculate a new chart</h2>
+        <p>
+          Run a chart for yourself, your partner, a child, or anyone else.
+          Saving keeps the chart on your account so you can compare it with
+          others later.
+        </p>
+        <div className="account-calculator-wrap">
+          <CalculatorIsland isSignedIn={true} />
+        </div>
       </section>
 
       <section className="account-section">
@@ -242,6 +263,56 @@ export default async function AccountPage() {
             })}
           </ul>
         )}
+
+        {charts.length >= 2 ? (
+          <div className="compare-form-wrap">
+            <h3 className="compare-form-heading">
+              Compare two charts
+            </h3>
+            <p>
+              Pick two of your saved charts to see directions favourable for
+              both, directions to avoid for both, and conflicts to assign
+              by primary user.
+            </p>
+            <form action={compareCharts} className="compare-form">
+              <div className="compare-form-grid">
+                <div className="field">
+                  <label className="field-label" htmlFor="chart_a">
+                    First chart
+                  </label>
+                  <select id="chart_a" name="chart_a" required defaultValue="">
+                    <option value="" disabled>
+                      Choose a chart...
+                    </option>
+                    {charts.map((c) => (
+                      <option key={c.id} value={c.id}>
+                        {c.label ?? `Kua ${c.kua_number ?? "?"} chart`}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="field">
+                  <label className="field-label" htmlFor="chart_b">
+                    Second chart
+                  </label>
+                  <select id="chart_b" name="chart_b" required defaultValue="">
+                    <option value="" disabled>
+                      Choose a chart...
+                    </option>
+                    {charts.map((c) => (
+                      <option key={c.id} value={c.id}>
+                        {c.label ?? `Kua ${c.kua_number ?? "?"} chart`}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              <button type="submit" className="cta-primary">
+                Compare these charts
+              </button>
+            </form>
+          </div>
+        ) : null}
       </section>
 
       <section className="account-section">
@@ -258,6 +329,8 @@ export default async function AccountPage() {
           </div>
         </form>
       </section>
+
+      <CalculatorScripts />
     </div>
   );
 }
