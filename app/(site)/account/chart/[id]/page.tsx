@@ -66,6 +66,9 @@ export default async function ChartViewPage(
     {} as Record<Compass, Direction>,
   );
 
+  const favourable = result.directions.filter((d) => d.favourable);
+  const avoid = result.directions.filter((d) => !d.favourable);
+
   const birthDate =
     data.birth_year && data.birth_month && data.birth_day
       ? `${MONTHS[data.birth_month - 1]} ${data.birth_day}, ${data.birth_year}`
@@ -107,18 +110,25 @@ export default async function ChartViewPage(
         <p className="chart-cny-notice">{result.cnyAdjustment.message}</p>
       ) : null}
 
-      <section className="chart-section" aria-labelledby="diagram-heading">
+      <section className="chart-section" aria-labelledby="favourable-heading">
+        <h2 id="favourable-heading" className="chart-section-heading">
+          Your four favourable directions
+        </h2>
+        <DirectionDetailCards rows={favourable} />
+      </section>
+
+      <section className="chart-section chart-section-diagram" aria-labelledby="diagram-heading">
         <h2 id="diagram-heading" className="chart-section-heading">
-          The bagua chart
+          Your bagua chart
         </h2>
         <BaguaDiagram kua={result.kua} directionsByCompass={byCompass} />
       </section>
 
-      <section className="chart-section" aria-labelledby="cards-heading">
-        <h2 id="cards-heading" className="chart-section-heading">
-          Your eight directions in detail
+      <section className="chart-section" aria-labelledby="avoid-heading">
+        <h2 id="avoid-heading" className="chart-section-heading">
+          Your four directions to avoid
         </h2>
-        <DirectionDetailCards rows={result.directions} />
+        <DirectionDetailCards rows={avoid} />
       </section>
 
       <section className="chart-actions-section no-print" aria-label="Chart actions">

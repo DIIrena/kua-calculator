@@ -210,10 +210,9 @@ export default function BaguaDiagram({ kua, directionsByCompass }: Props) {
         })}
       </svg>
       <figcaption className="bagua-caption">
-        Olive panels mark your four favourable directions; clay panels mark
-        the four to avoid. North is at the top. The detailed table below
-        explains why each direction is favourable or not, with practical
-        suggestions.
+        Pale green panels are your four favourable directions; pale clay
+        panels are the four to avoid. North is at the top. The cards above
+        and below explain each one with practical suggestions.
       </figcaption>
     </figure>
   );

@@ -17,6 +17,8 @@
   --green-deep:  #3c4429;   /* darker olive - links, hover */
   --clay:        #be6b43;   /* warm clay - the kinetic pop */
   --clay-deep:   #9c5331;   /* darker clay */
+  --green-soft:  #c8d0b2;   /* pale sage - chart favourable fill (AAA with ink) */
+  --clay-soft:   #ebcab6;   /* pale peach - chart avoid fill (AAA with ink) */
   --ink:         #2a271e;   /* deep near-black - text, the dark counterweight */
   --ink-2:       #5f5848;   /* soft brown-grey - secondary text */
   --hairline:    #cfc4ab;   /* soft borders, rules */
@@ -1822,31 +1824,32 @@ a:hover { color: var(--clay-deep); }
 }
 
 .bagua-seg-favourable {
-  fill: var(--green);
+  /* Pale sage; dark ink text passes AAA (>=9:1). Softer brand-natural
+     look than solid olive. */
+  fill: var(--green-soft);
   stroke: var(--paper);
   stroke-width: 2;
 }
 
 .bagua-seg-avoid {
-  /* clay-deep keeps paper-on-bg contrast above 5:1; the lighter --clay
-     accent is used elsewhere on the chart page for visual lightness. */
-  fill: var(--clay-deep);
+  /* Pale peach; dark ink text passes AAA. */
+  fill: var(--clay-soft);
   stroke: var(--paper);
   stroke-width: 2;
 }
 
 .bagua-compass-label {
-  fill: var(--paper);
+  fill: var(--ink);
   font: 700 24px var(--font-display);
 }
 
 .bagua-quality-label {
-  fill: var(--paper);
+  fill: var(--ink);
   font: 600 16px var(--font-display);
 }
 
 .bagua-icon {
-  fill: var(--paper);
+  fill: var(--ink);
   font: 700 20px var(--font-display);
 }
 
@@ -2105,13 +2108,13 @@ a:hover { color: var(--clay-deep); }
 }
 
 .direction-card[data-favourable="true"] .direction-card-badge {
-  color: var(--paper);
-  background: var(--green);
+  color: var(--ink);
+  background: var(--green-soft);
 }
 
 .direction-card[data-favourable="false"] .direction-card-badge {
-  color: var(--paper);
-  background: var(--clay-deep);
+  color: var(--ink);
+  background: var(--clay-soft);
 }
 
 .direction-card-quality {
@@ -2259,32 +2262,35 @@ a:hover { color: var(--clay-deep); }
     color: #000000 !important;
   }
 
-  /* --- Section blocks: tight, no big gaps --- */
+  /* --- Section blocks: tight, no big gaps. The favourable/avoid
+         badges on each card already say which group it is, so the
+         section headings are redundant in print and hidden. --- */
   .chart-section {
-    margin: 8pt 0;
+    margin: 6pt 0;
     page-break-inside: avoid;
   }
   .chart-section-heading {
-    margin: 0 0 4pt;
-    font-size: 10pt;
-    color: #000000 !important;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    display: none !important;
   }
 
-  /* --- Bagua diagram: compact, centered --- */
-  .bagua-figure { display: block; text-align: center; }
+  /* --- Bagua diagram: compact, centered. The on-screen caption is
+         hidden too; in print the cards above/below already explain
+         the colour code. --- */
+  .bagua-figure { display: block; text-align: center; margin: 0; }
   .bagua-svg {
-    width: 70mm !important;
-    max-width: 70mm !important;
+    width: 78mm !important;
+    max-width: 78mm !important;
     height: auto;
     margin: 0 auto;
   }
-  .bagua-seg-favourable { fill: #4f5a36 !important; }
-  .bagua-seg-avoid       { fill: #9c5331 !important; }
+  /* Pale tints with dark ink text - matches the on-screen softer look,
+     prints cleanly in colour, and still distinguishes greyscale via the
+     star / cross icons and the dashed border on avoid cards. */
+  .bagua-seg-favourable { fill: #c8d0b2 !important; }
+  .bagua-seg-avoid       { fill: #ebcab6 !important; }
   .bagua-compass-label,
   .bagua-quality-label,
-  .bagua-icon            { fill: #ffffff !important; }
+  .bagua-icon            { fill: #2a271e !important; }
   .bagua-centre          { fill: #2a271e !important; }
   .bagua-centre-eyebrow,
   .bagua-centre-kua      { fill: #ffffff !important; }
@@ -2320,10 +2326,10 @@ a:hover { color: var(--clay-deep); }
   .direction-card-badge {
     font-size: 7pt !important;
     padding: 1pt 5pt !important;
-    color: #ffffff !important;
+    color: #2a271e !important;
   }
-  .direction-card[data-favourable="true"]  .direction-card-badge { background: #4f5a36 !important; }
-  .direction-card[data-favourable="false"] .direction-card-badge { background: #9c5331 !important; }
+  .direction-card[data-favourable="true"]  .direction-card-badge { background: #c8d0b2 !important; }
+  .direction-card[data-favourable="false"] .direction-card-badge { background: #ebcab6 !important; }
 
   .direction-card-quality-pinyin { font-size: 8.5pt !important; color: #000000 !important; }
   .direction-card-quality-gloss  { font-size: 7.5pt !important; }
