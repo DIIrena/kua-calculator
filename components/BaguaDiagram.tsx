@@ -84,22 +84,6 @@ export default function BaguaDiagram({ kua, directionsByCompass }: Props) {
           avoid. Centre shows your Kua number.
         </desc>
 
-        {/* North arrow above the octagon */}
-        <g className="bagua-north">
-          <polygon
-            points={`${CENTER_X},32 ${CENTER_X - 14},58 ${CENTER_X + 14},58`}
-            className="bagua-north-arrow"
-          />
-          <text
-            x={CENTER_X}
-            y={20}
-            textAnchor="middle"
-            className="bagua-north-label"
-          >
-            N
-          </text>
-        </g>
-
         {/* Soft background disc behind the octagon */}
         <circle
           cx={CENTER_X}
