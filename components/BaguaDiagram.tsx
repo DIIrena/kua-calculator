@@ -1,9 +1,13 @@
 import type { Direction } from "@/lib/directions";
 
 // Inline-SVG bagua / octagon chart. 8 pie-slice segments centered on North,
-// going clockwise (N, NE, E, SE, S, SW, W, NW). Each segment is filled
-// olive when favourable, clay when avoid; both with cream text and a
+// going clockwise (N, NE, E, SE, S, SW, W, NW). Favourable segments fill
+// olive; avoid segments fill clay-deep; both with paper text and a
 // redundant icon (star or cross) so the chart reads in greyscale print.
+//
+// Cardinal direction labels (N, E, S, W) are emphasised larger than
+// intercardinal labels (NE, SE, SW, NW). A small north arrow sits above
+// the diagram so the orientation is unambiguous.
 
 type Props = {
   kua: number;
@@ -21,16 +25,18 @@ const ANGLES: Record<string, number> = {
   W: 270,
   NW: 315,
 };
+const CARDINAL = new Set(["N", "E", "S", "W"]);
 
-// Geometry: viewBox 480x480, center at 240,240. Outer radius 200, inner
-// radius 70 (so segments are donuts, not pure wedges - leaves room for
-// the center "Kua N" disc).
-const CENTER = 240;
-const R_OUTER = 200;
-const R_INNER = 70;
-const R_LABEL_TOP = 165; // compass abbreviation
-const R_LABEL_MID = 130; // pinyin
-const R_ICON = 95; // star or cross
+// Geometry: viewBox 560x600 (extra vertical room for the north arrow
+// above the octagon). Octagon centered at 280,310. Outer radius 220.
+const CENTER_X = 280;
+const CENTER_Y = 310;
+const R_OUTER = 220;
+const R_INNER = 76;
+const R_LABEL_TOP = 178;   // compass abbreviation inside the segment
+const R_LABEL_MID = 138;   // pinyin
+const R_ICON = 100;        // star or cross
+const R_RING_LABEL = 260;  // full direction name outside the octagon
 
 const HALF_ANGLE_DEG = 22.5;
 const HALF_ANGLE_RAD = (HALF_ANGLE_DEG * Math.PI) / 180;
@@ -50,12 +56,11 @@ function segmentPath(): string {
   ].join(" ");
 }
 
-// Outer ring labels (N, NE, ...) drawn outside the octagon as reference.
 function ringLabelPos(angleDeg: number, r: number): { x: number; y: number } {
   const rad = (angleDeg * Math.PI) / 180;
   return {
-    x: CENTER + r * Math.sin(rad),
-    y: CENTER - r * Math.cos(rad),
+    x: CENTER_X + r * Math.sin(rad),
+    y: CENTER_Y - r * Math.cos(rad),
   };
 }
 
@@ -67,23 +72,44 @@ export default function BaguaDiagram({ kua, directionsByCompass }: Props) {
   return (
     <figure className="bagua-figure">
       <svg
-        viewBox="0 0 480 480"
+        viewBox="0 0 560 600"
         role="img"
         aria-labelledby={`${titleId} ${descId}`}
         className="bagua-svg"
       >
         <title id={titleId}>Bagua chart for Kua {kua}</title>
         <desc id={descId}>
-          Eight-direction chart. Olive panels mark your four favourable
-          directions; clay panels mark the four to avoid. Centre shows your
-          Kua number.
+          Eight-direction chart with North at the top. Olive panels mark
+          your four favourable directions; clay panels mark the four to
+          avoid. Centre shows your Kua number.
         </desc>
 
-        {/* Cream background disc for the octagon footprint */}
-        <circle cx={CENTER} cy={CENTER} r={R_OUTER + 8} className="bagua-bg" />
+        {/* North arrow above the octagon */}
+        <g className="bagua-north">
+          <polygon
+            points={`${CENTER_X},32 ${CENTER_X - 14},58 ${CENTER_X + 14},58`}
+            className="bagua-north-arrow"
+          />
+          <text
+            x={CENTER_X}
+            y={20}
+            textAnchor="middle"
+            className="bagua-north-label"
+          >
+            N
+          </text>
+        </g>
+
+        {/* Soft background disc behind the octagon */}
+        <circle
+          cx={CENTER_X}
+          cy={CENTER_Y}
+          r={R_OUTER + 10}
+          className="bagua-bg"
+        />
 
         {/* 8 segments */}
-        <g transform={`translate(${CENTER} ${CENTER})`}>
+        <g transform={`translate(${CENTER_X} ${CENTER_Y})`}>
           {ORDER.map((compass) => {
             const angle = ANGLES[compass];
             const dir = directionsByCompass[compass];
@@ -93,9 +119,6 @@ export default function BaguaDiagram({ kua, directionsByCompass }: Props) {
               : "bagua-seg bagua-seg-avoid";
             const icon = dir.favourable ? "★" : "✕";
 
-            // Inside a rotated <g>, "up" is the segment's center axis.
-            // Positive y in the local frame goes down, so labels at
-            // negative y sit toward the outer edge along that axis.
             return (
               <g
                 key={compass}
@@ -103,7 +126,6 @@ export default function BaguaDiagram({ kua, directionsByCompass }: Props) {
                 className="bagua-segment-group"
               >
                 <path d={SEG} className={fillClass} />
-                {/* compass abbreviation */}
                 <text
                   x={0}
                   y={-R_LABEL_TOP}
@@ -113,7 +135,6 @@ export default function BaguaDiagram({ kua, directionsByCompass }: Props) {
                 >
                   {compass}
                 </text>
-                {/* pinyin */}
                 <text
                   x={0}
                   y={-R_LABEL_MID}
@@ -123,7 +144,6 @@ export default function BaguaDiagram({ kua, directionsByCompass }: Props) {
                 >
                   {dir.pinyin}
                 </text>
-                {/* favourable/avoid icon */}
                 <text
                   x={0}
                   y={-R_ICON}
@@ -140,18 +160,23 @@ export default function BaguaDiagram({ kua, directionsByCompass }: Props) {
         </g>
 
         {/* Centre disc with the Kua number */}
-        <circle cx={CENTER} cy={CENTER} r={R_INNER - 4} className="bagua-centre" />
+        <circle
+          cx={CENTER_X}
+          cy={CENTER_Y}
+          r={R_INNER - 4}
+          className="bagua-centre"
+        />
         <text
-          x={CENTER}
-          y={CENTER - 14}
+          x={CENTER_X}
+          y={CENTER_Y - 16}
           className="bagua-centre-eyebrow"
           textAnchor="middle"
         >
           Your Kua
         </text>
         <text
-          x={CENTER}
-          y={CENTER + 18}
+          x={CENTER_X}
+          y={CENTER_Y + 20}
           className="bagua-centre-kua"
           textAnchor="middle"
           dominantBaseline="central"
@@ -159,18 +184,25 @@ export default function BaguaDiagram({ kua, directionsByCompass }: Props) {
           {kua}
         </text>
 
-        {/* Compass-direction reference labels just outside the octagon */}
+        {/* Full direction names outside the octagon. Cardinal direction
+            labels (North, East, South, West) are emphasised larger than
+            the intercardinals (Northeast etc.) so the compass reading is
+            unambiguous. */}
         {ORDER.map((compass) => {
-          const pos = ringLabelPos(ANGLES[compass], R_OUTER + 28);
+          const pos = ringLabelPos(ANGLES[compass], R_RING_LABEL);
+          const isCardinal = CARDINAL.has(compass);
           return (
             <text
               key={"ring-" + compass}
               x={pos.x}
               y={pos.y}
-              className="bagua-ring-label"
+              className={
+                isCardinal
+                  ? "bagua-ring-label bagua-ring-label-cardinal"
+                  : "bagua-ring-label"
+              }
               textAnchor="middle"
               dominantBaseline="central"
-              aria-hidden="true"
             >
               {directionsByCompass[compass]?.compassLabel ?? compass}
             </text>
@@ -178,9 +210,10 @@ export default function BaguaDiagram({ kua, directionsByCompass }: Props) {
         })}
       </svg>
       <figcaption className="bagua-caption">
-        Olive panels are your four favourable directions; clay panels are the
-        four to avoid. The same information appears as a table below for
-        screen readers and quick reference.
+        Olive panels mark your four favourable directions; clay panels mark
+        the four to avoid. North is at the top. The detailed table below
+        explains why each direction is favourable or not, with practical
+        suggestions.
       </figcaption>
     </figure>
   );

@@ -14,9 +14,14 @@ export type Direction = {
   gloss: string;
   meaning: string;
   favourable: boolean;
+  why: string;
+  bullets: string[];
 };
 
-const QUALITIES: Record<QualityCode, Omit<Direction, "compass" | "compassLabel">> = {
+// QUALITY_DETAILS is exported so the chart view page can look up `why` and
+// `bullets` from the qualityCode for charts saved before these fields
+// existed in the snapshot.
+export const QUALITY_DETAILS: Record<QualityCode, Omit<Direction, "compass" | "compassLabel">> = {
   SQ: {
     qualityCode: "SQ",
     pinyin: "Sheng Qi",
@@ -25,6 +30,13 @@ const QUALITIES: Record<QualityCode, Omit<Direction, "compass" | "compassLabel">
     favourable: true,
     meaning:
       "Your most energising direction. Face it at your desk for ambitious work, or point your bed's headboard this way if you want to wake energetic.",
+    why:
+      "Traditionally the strongest of the four favourable directions. Said to support growth, recognition, and ambitious work.",
+    bullets: [
+      "Face this direction at your desk for projects you want to push forward",
+      "Open the front door this way if the floor plan allows",
+      "Display a vision board, aspirational art, or career milestones on this wall",
+    ],
   },
   TY: {
     qualityCode: "TY",
@@ -34,6 +46,13 @@ const QUALITIES: Record<QualityCode, Omit<Direction, "compass" | "compassLabel">
     favourable: true,
     meaning:
       "Your restorative direction. Practitioners often prioritise it for the bedroom over Sheng Qi. Also a steady choice for the dining seat.",
+    why:
+      "The healing direction. Traditionally chosen for recovery, restorative sleep, and family health.",
+    bullets: [
+      "Point your bed's headboard this way for restorative sleep",
+      "Seat the head of the household here at the dining table",
+      "Keep wellness items (vitamins, first aid) in a cabinet on this wall",
+    ],
   },
   YN: {
     qualityCode: "YN",
@@ -43,6 +62,13 @@ const QUALITIES: Record<QualityCode, Omit<Direction, "compass" | "compassLabel">
     favourable: true,
     meaning:
       "Your relationship direction. The traditional choice for a couple's bed orientation and for any seat where steady connection matters.",
+    why:
+      "The relationship direction. Traditionally chosen by couples and elders for partnerships and connections that age well.",
+    bullets: [
+      "Orient a couple's bed this way for steady connection",
+      "Use this corner for shared rituals: coffee, conversation, reading together",
+      "Display family photos and meaningful relationship objects here",
+    ],
   },
   FW: {
     qualityCode: "FW",
@@ -52,6 +78,13 @@ const QUALITIES: Record<QualityCode, Omit<Direction, "compass" | "compassLabel">
     favourable: true,
     meaning:
       "Your anchor direction. Use it for study, meditation, and deep-focus work where calm matters more than energy.",
+    why:
+      "The anchor direction. Traditionally associated with calm, deep focus, and self-knowledge.",
+    bullets: [
+      "Set up a meditation cushion or reading chair here",
+      "Position your study desk to face this direction",
+      "Use this area for morning routines and quiet practice",
+    ],
   },
   HH: {
     qualityCode: "HH",
@@ -61,6 +94,13 @@ const QUALITIES: Record<QualityCode, Omit<Direction, "compass" | "compassLabel">
     favourable: false,
     meaning:
       "The mildest direction to avoid. A hobby corner is fine here, but keep your main desk and bed elsewhere.",
+    why:
+      "The mildest of the four directions to avoid. Traditionally associated with small setbacks and minor friction.",
+    bullets: [
+      "Keep your main desk and bed away from this direction",
+      "A storage cupboard or seasonal-items corner is appropriate",
+      "Hobby supplies or rarely-used items are fine here; primary functions are not",
+    ],
   },
   WG: {
     qualityCode: "WG",
@@ -70,6 +110,13 @@ const QUALITIES: Record<QualityCode, Omit<Direction, "compass" | "compassLabel">
     favourable: false,
     meaning:
       "Associated with arguments and friction. Avoid placing a conference seat or difficult-conversation chair here. Storage is a better use.",
+    why:
+      "Traditionally associated with arguments, miscommunication, and lost items.",
+    bullets: [
+      "Don't site a couch or chair used for difficult conversations here",
+      "Avoid pointing the bed this way",
+      "Laundry, cleaning supplies, and utility storage are appropriate uses",
+    ],
   },
   LS: {
     qualityCode: "LS",
@@ -79,6 +126,13 @@ const QUALITIES: Record<QualityCode, Omit<Direction, "compass" | "compassLabel">
     favourable: false,
     meaning:
       "Avoid anchoring important functions here. Hallways, utility rooms, or rarely-entered spaces are an appropriate use.",
+    why:
+      "Traditionally associated with mishaps, accidents, and broken plans.",
+    bullets: [
+      "Hallways, corridors, and pass-through spaces are appropriate uses",
+      "Avoid placing the bed or main desk here",
+      "Closets and deep storage rooms work; active rooms do not",
+    ],
   },
   JM: {
     qualityCode: "JM",
@@ -88,8 +142,18 @@ const QUALITIES: Record<QualityCode, Omit<Direction, "compass" | "compassLabel">
     favourable: false,
     meaning:
       "Traditionally the most inauspicious direction for you. Don't sleep with your head pointing here, and don't face it at your main work seat. A bathroom or storage room is the standard 'containment' use.",
+    why:
+      "Traditionally the most inauspicious of the four directions to avoid. Said to drain energy and slow plans.",
+    bullets: [
+      "Bathrooms and storage rooms are the traditional containment uses",
+      "Never sleep with your head pointing this way",
+      "Don't face this direction from your main work seat",
+    ],
   },
 };
+
+// Back-compat alias so existing imports keep working.
+const QUALITIES = QUALITY_DETAILS;
 
 const COMPASS_LABEL: Record<Compass, string> = {
   N: "North",

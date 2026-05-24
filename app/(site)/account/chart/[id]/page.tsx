@@ -4,7 +4,8 @@ import Link from "next/link";
 import { auth } from "@/auth";
 import { createAdminClient } from "@/lib/supabase/server";
 import BaguaDiagram from "@/components/BaguaDiagram";
-import DirectionTable from "@/components/DirectionTable";
+import DirectionDetailCards from "@/components/DirectionDetailCards";
+import BrandMark from "@/components/BrandMark";
 import ChartPrintButton from "@/components/ChartPrintButton";
 import { deleteChart } from "@/app/actions/save-chart";
 import type { Direction, Compass } from "@/lib/directions";
@@ -78,7 +79,14 @@ export default async function ChartViewPage(
 
   return (
     <div className="page-narrow chart-page">
-      <p className="eyebrow">My Feng Shui Home</p>
+      {/* Print-only header: brand mark + tagline + Kua Calculator subhead.
+          Hidden on screen via CSS; visible at the top of the printed page. */}
+      <div className="print-only chart-print-header">
+        <BrandMark />
+        <p className="chart-print-subhead">Kua Calculator</p>
+      </div>
+
+      <p className="eyebrow no-print">My Feng Shui Home</p>
       <h1 className="chart-heading" style={{ marginTop: 0 }}>
         {data.label ? data.label : `Kua ${result.kua} chart`}
       </h1>
@@ -106,14 +114,14 @@ export default async function ChartViewPage(
         <BaguaDiagram kua={result.kua} directionsByCompass={byCompass} />
       </section>
 
-      <section className="chart-section" aria-labelledby="table-heading">
-        <h2 id="table-heading" className="chart-section-heading">
-          Your eight directions
+      <section className="chart-section" aria-labelledby="cards-heading">
+        <h2 id="cards-heading" className="chart-section-heading">
+          Your eight directions in detail
         </h2>
-        <DirectionTable rows={result.directions} />
+        <DirectionDetailCards rows={result.directions} />
       </section>
 
-      <section className="chart-actions-section" aria-label="Chart actions">
+      <section className="chart-actions-section no-print" aria-label="Chart actions">
         <div className="chart-actions-row">
           <ChartPrintButton />
           <Link href="/account" className="chart-back-link">
@@ -128,6 +136,9 @@ export default async function ChartViewPage(
           </button>
         </form>
       </section>
+
+      {/* Print-only footer with the canonical site URL. */}
+      <p className="print-only chart-print-footer">myfengshuihome.com</p>
     </div>
   );
 }

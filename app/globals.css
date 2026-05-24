@@ -1867,8 +1867,15 @@ a:hover { color: var(--clay-deep); }
 }
 
 .bagua-ring-label {
+  fill: var(--ink-2);
+  font: 500 12px var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+.bagua-ring-label-cardinal {
   fill: var(--ink);
-  font: 600 12px var(--font-display);
+  font: 700 15px var(--font-display);
+  letter-spacing: 0.04em;
 }
 
 .bagua-caption {
@@ -2010,52 +2017,269 @@ a:hover { color: var(--clay-deep); }
   gap: var(--space-3);
 }
 
-/* --- Print: chart view fits on one page; chrome stripped --- */
+/* --- Screen / print visibility utilities --- */
+.print-only { display: none; }
+@media print { .no-print { display: none !important; } .print-only { display: block; } }
+
+/* --- North arrow above the bagua --- */
+.bagua-north-arrow { fill: var(--ink); }
+.bagua-north-label {
+  fill: var(--ink);
+  font: 600 14px var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+/* --- Direction detail cards (rich grid below the diagram) --- */
+.direction-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.direction-card {
+  padding: var(--space-4) var(--space-5);
+  background: var(--paper);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  border-left-width: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.direction-card[data-favourable="true"] {
+  border-left-color: var(--green);
+}
+.direction-card[data-favourable="false"] {
+  border-left-color: var(--clay-deep);
+  border-left-style: dashed;
+}
+
+.direction-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.direction-card-compass {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.direction-card-arrow {
+  font: 600 1.6rem/1 var(--font-display);
+  color: var(--ink);
+  width: 28px;
+  text-align: center;
+}
+
+.direction-card-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.direction-card-name-full {
+  margin: 0;
+  font: 600 1.05rem var(--font-display);
+  color: var(--ink);
+}
+
+.direction-card-name-abbrev {
+  margin: 2px 0 0;
+  font: 500 0.78rem var(--font-display);
+  color: var(--ink-2);
+  letter-spacing: 0.06em;
+}
+
+.direction-card-badge {
+  margin: 0;
+  padding: 4px 10px;
+  font: 600 0.78rem var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.direction-card[data-favourable="true"] .direction-card-badge {
+  color: var(--paper);
+  background: var(--green);
+}
+
+.direction-card[data-favourable="false"] .direction-card-badge {
+  color: var(--paper);
+  background: var(--clay-deep);
+}
+
+.direction-card-quality {
+  margin-top: var(--space-1);
+}
+
+.direction-card-quality-pinyin {
+  margin: 0;
+  font: 600 1rem var(--font-display);
+  color: var(--ink);
+}
+
+.direction-card-quality-hanzi {
+  font-weight: 400;
+  color: var(--ink-2);
+  margin-left: var(--space-2);
+}
+
+.direction-card-quality-gloss {
+  margin: 2px 0 0;
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 0.9rem;
+}
+
+.direction-card-why {
+  margin: var(--space-2) 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.direction-card-why-label {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.direction-card-bullets {
+  margin: var(--space-2) 0 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 4px;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.direction-card-bullets li::marker {
+  color: var(--green);
+}
+
+.direction-card[data-favourable="false"] .direction-card-bullets li::marker {
+  color: var(--clay-deep);
+}
+
+/* --- Print-only header / footer wrappers on the chart page --- */
+.chart-print-header { text-align: center; }
+.chart-print-subhead {
+  margin: 0;
+  font: 600 14pt var(--font-display);
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.chart-print-footer {
+  margin-top: var(--space-5);
+  text-align: center;
+  color: var(--ink-2);
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   Print: one A4 page layout for /account/chart/[id]
+   Order: brand header -> Kua Calculator subhead -> person info
+   -> bagua diagram -> 8 detail cards (2x4 grid) -> footer URL.
+   ============================================================ */
 @media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm;
+  }
+
   .site-header,
   .site-footer,
   .chart-actions-section,
-  .save-chart-cta {
+  .save-chart-cta,
+  .bagua-caption {
     display: none !important;
   }
 
-  body {
-    background: #ffffff;
-    color: #000000;
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
   }
 
   .chart-page {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* --- Print-only brand header --- */
+  .chart-print-header {
+    margin: 0 0 6pt;
+    padding-bottom: 6pt;
+    border-bottom: 0.5pt solid #888888;
+  }
+  .chart-print-header .account-brand {
+    margin: 0;
     padding: 0;
-    max-width: 100%;
+    gap: 4pt;
+  }
+  .chart-print-header .account-brand-mark {
+    width: 36pt;
+    height: 36pt;
+    color: #4f5a36;
+  }
+  .chart-print-header .account-brand-script {
+    font-size: 16pt;
+    color: #4f5a36;
+  }
+  .chart-print-subhead {
+    margin-top: 2pt;
+    font-size: 10pt;
+    color: #4f5a36;
   }
 
+  /* --- Person info / heading --- */
   .chart-heading {
-    font-size: 22pt;
+    margin: 8pt 0 2pt;
+    font-size: 16pt;
+    color: #000000 !important;
   }
-
   .chart-meta,
-  .chart-summary,
+  .chart-summary {
+    margin: 2pt 0;
+    font-size: 9pt;
+    color: #000000 !important;
+  }
   .chart-cny-notice {
-    color: #000000;
+    margin: 4pt 0;
+    padding: 4pt 6pt;
+    background: #f4ede2 !important;
+    border-left: 2pt solid #4f5a36 !important;
+    font-size: 8.5pt;
+    color: #000000 !important;
   }
 
+  /* --- Section blocks: tight, no big gaps --- */
   .chart-section {
-    margin: 14pt 0;
+    margin: 8pt 0;
     page-break-inside: avoid;
   }
-
   .chart-section-heading {
-    font-size: 14pt;
-    margin-bottom: 8pt;
+    margin: 0 0 4pt;
+    font-size: 10pt;
+    color: #000000 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
+  /* --- Bagua diagram: compact, centered --- */
+  .bagua-figure { display: block; text-align: center; }
   .bagua-svg {
-    max-width: 420px;
+    width: 70mm !important;
+    max-width: 70mm !important;
+    height: auto;
+    margin: 0 auto;
   }
-
-  /* Keep colour on the bagua segments so the printed chart still reads
-     visually; modern browsers print SVG fills well. The icon + label
-     redundancy guarantees greyscale fallback. */
   .bagua-seg-favourable { fill: #4f5a36 !important; }
   .bagua-seg-avoid       { fill: #9c5331 !important; }
   .bagua-compass-label,
@@ -2065,34 +2289,54 @@ a:hover { color: var(--clay-deep); }
   .bagua-centre-eyebrow,
   .bagua-centre-kua      { fill: #ffffff !important; }
   .bagua-bg              { fill: #ffffff !important; }
-  .bagua-ring-label      { fill: #000000 !important; }
-  .bagua-caption         { color: #444444; }
+  .bagua-ring-label,
+  .bagua-ring-label-cardinal,
+  .bagua-north-arrow,
+  .bagua-north-label     { fill: #000000 !important; }
 
-  .chart-direction-list {
-    gap: 6pt;
+  /* --- Detail cards: 2 columns x 4 rows, very compact --- */
+  .direction-cards-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 4pt !important;
   }
-
-  .chart-direction-row {
+  .direction-card {
     background: #ffffff !important;
-    border: 1px solid #888888 !important;
-    border-left-width: 4pt !important;
-    padding: 8pt 10pt !important;
+    border: 0.5pt solid #888888 !important;
+    border-left-width: 3pt !important;
+    border-radius: 2pt !important;
+    padding: 4pt 6pt !important;
+    gap: 1pt !important;
     page-break-inside: avoid;
   }
+  .direction-card[data-favourable="true"]  { border-left-color: #4f5a36 !important; }
+  .direction-card[data-favourable="false"] { border-left-color: #9c5331 !important; border-left-style: dashed !important; }
 
-  .chart-direction-row[data-favourable="true"] {
-    border-left-color: #4f5a36 !important;
+  .direction-card-arrow {
+    font-size: 12pt !important;
+    width: 14pt;
   }
-
-  .chart-direction-row[data-favourable="false"] {
-    border-left-color: #be6b43 !important;
-    border-left-style: dashed !important;
+  .direction-card-name-full  { font-size: 9pt !important; color: #000000 !important; }
+  .direction-card-name-abbrev{ font-size: 7pt !important; }
+  .direction-card-badge {
+    font-size: 7pt !important;
+    padding: 1pt 5pt !important;
+    color: #ffffff !important;
   }
+  .direction-card[data-favourable="true"]  .direction-card-badge { background: #4f5a36 !important; }
+  .direction-card[data-favourable="false"] .direction-card-badge { background: #9c5331 !important; }
 
-  .chart-quality-pinyin,
-  .chart-direction-meaning,
-  .chart-compass-abbrev {
-    color: #000000 !important;
+  .direction-card-quality-pinyin { font-size: 8.5pt !important; color: #000000 !important; }
+  .direction-card-quality-gloss  { font-size: 7.5pt !important; }
+  .direction-card-why            { font-size: 7.5pt !important; line-height: 1.3 !important; color: #000000 !important; margin-top: 2pt !important; }
+  .direction-card-bullets        { font-size: 7.5pt !important; line-height: 1.25 !important; padding-left: 10pt !important; gap: 1pt !important; color: #000000 !important; margin-top: 2pt !important; }
+
+  /* --- Footer URL --- */
+  .chart-print-footer {
+    margin-top: 8pt;
+    padding-top: 4pt;
+    border-top: 0.5pt solid #888888;
+    font-size: 8pt;
+    color: #4f5a36 !important;
   }
 }
 
