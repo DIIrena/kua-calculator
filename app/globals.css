@@ -2199,9 +2199,12 @@ a:hover { color: var(--clay-deep); }
    -> bagua diagram -> 8 detail cards (2x4 grid) -> footer URL.
    ============================================================ */
 @media print {
+  /* Tight top margin so the brand mark and titles sit at the top
+     of the page; comfortable side and bottom margins so the chart
+     and the avoid cards have breathing room. */
   @page {
     size: A4 portrait;
-    margin: 8mm 10mm;
+    margin: 4mm 10mm 8mm 10mm;
   }
 
   .site-header,
@@ -2229,11 +2232,11 @@ a:hover { color: var(--clay-deep); }
     max-width: 100% !important;
   }
 
-  /* --- Print-only brand header: pinned to top, tight --- */
+  /* --- Print-only brand header: flush against the top of the page --- */
   .chart-print-header {
     flex-shrink: 0;
-    margin: 0 0 2pt;
-    padding-bottom: 2pt;
+    margin: 0 0 1pt;
+    padding: 0 0 2pt;
     border-bottom: 0.5pt solid #888888;
   }
   .chart-print-header .account-brand {
@@ -2260,7 +2263,7 @@ a:hover { color: var(--clay-deep); }
   .eyebrow { display: none !important; }
   .chart-heading {
     flex-shrink: 0;
-    margin: 3pt 0 1pt;
+    margin: 2pt 0 1pt;
     font-size: 13pt;
     color: #000000 !important;
   }
