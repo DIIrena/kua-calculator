@@ -1686,8 +1686,30 @@ a:hover { color: var(--clay-deep); }
 
 /* --- Chart view page --- */
 .chart-page {
+  /* Wider than the default .page-narrow so the 4-cards-per-row
+     layout fits cleanly. Narrow viewports still wrap. */
   padding-top: var(--space-6);
   padding-bottom: var(--space-7);
+  max-width: 1080px;
+}
+
+/* Chart-view direction cards: force 4 cards across on wide
+   viewports to match the PDF layout; wrap gracefully when there
+   is not enough width (3, 2, 1 columns). */
+.chart-page .direction-cards-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 880px) {
+  .chart-page .direction-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-page .direction-cards-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .chart-heading {
@@ -2305,25 +2327,40 @@ a:hover { color: var(--clay-deep); }
     margin-top: 2pt !important;
   }
   .chart-section-diagram {
+    /* Flex-grows to absorb all remaining vertical space between the
+       favourable card row and the avoid card row. The bagua centred
+       inside scales by height to fill it. */
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
     margin: 3pt 0 !important;
     display: flex !important;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
   .chart-section-avoid {
-    /* Pushes itself (and the footer) to the bottom of the flex column,
-       leaving the upper group packed at the top. */
-    margin-top: auto !important;
+    /* No margin-top: auto needed; the diagram's flex-grow already
+       pushes the avoid row down to the bottom. */
+    margin-top: 3pt !important;
   }
 
-  /* --- Bagua diagram: large central feature. Capped at 145mm so
-         the bottom row of cards stays comfortable. --- */
-  .bagua-figure { display: block; text-align: center; margin: 0; }
+  /* --- Bagua diagram: fills the whole grown diagram section. The
+         SVG scales by height so it expands until either the available
+         vertical space or the 170mm width cap is reached. --- */
+  .bagua-figure {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .bagua-svg {
-    width: 100% !important;
-    max-width: 145mm !important;
-    height: auto;
-    margin: 0 auto;
+    height: 100% !important;
+    width: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    margin: 0;
   }
   /* Pale tints with dark ink text - matches the on-screen softer look,
      prints cleanly in colour, and still distinguishes greyscale via the
