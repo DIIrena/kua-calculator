@@ -1854,18 +1854,22 @@ a:hover { color: var(--clay-deep); }
 }
 
 .bagua-centre {
-  fill: var(--ink);
+  /* White centre saves printer ink and reads cleanly against the
+     soft sage / peach segment fills. */
+  fill: #ffffff;
+  stroke: var(--hairline);
+  stroke-width: 1;
 }
 
 .bagua-centre-eyebrow {
-  fill: var(--cream);
+  fill: var(--ink-2);
   font: 500 11px var(--font-display);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .bagua-centre-kua {
-  fill: var(--cream);
+  fill: var(--ink);
   font: 700 36px var(--font-display);
 }
 
@@ -2194,7 +2198,7 @@ a:hover { color: var(--clay-deep); }
 @media print {
   @page {
     size: A4 portrait;
-    margin: 10mm 12mm;
+    margin: 8mm 10mm;
   }
 
   .site-header,
@@ -2215,50 +2219,52 @@ a:hover { color: var(--clay-deep); }
     max-width: 100% !important;
   }
 
-  /* --- Print-only brand header --- */
+  /* --- Print-only brand header: tight, single-line look --- */
   .chart-print-header {
-    margin: 0 0 6pt;
-    padding-bottom: 6pt;
+    margin: 0 0 4pt;
+    padding-bottom: 3pt;
     border-bottom: 0.5pt solid #888888;
   }
   .chart-print-header .account-brand {
     margin: 0;
     padding: 0;
-    gap: 4pt;
+    gap: 2pt;
   }
   .chart-print-header .account-brand-mark {
-    width: 36pt;
-    height: 36pt;
+    width: 26pt;
+    height: 26pt;
     color: #4f5a36;
   }
   .chart-print-header .account-brand-script {
-    font-size: 16pt;
+    font-size: 14pt;
     color: #4f5a36;
   }
   .chart-print-subhead {
-    margin-top: 2pt;
-    font-size: 10pt;
+    margin-top: 1pt;
+    font-size: 8.5pt;
     color: #4f5a36;
   }
 
-  /* --- Person info / heading --- */
+  /* --- Person info / heading: very tight --- */
   .chart-heading {
-    margin: 8pt 0 2pt;
-    font-size: 16pt;
+    margin: 4pt 0 1pt;
+    font-size: 13pt;
     color: #000000 !important;
   }
   .chart-meta,
   .chart-summary {
-    margin: 2pt 0;
-    font-size: 9pt;
+    margin: 1pt 0;
+    font-size: 8pt;
+    line-height: 1.3;
     color: #000000 !important;
   }
   .chart-cny-notice {
-    margin: 4pt 0;
-    padding: 4pt 6pt;
+    margin: 2pt 0;
+    padding: 2pt 4pt;
     background: #f4ede2 !important;
     border-left: 2pt solid #4f5a36 !important;
-    font-size: 8.5pt;
+    font-size: 7pt;
+    line-height: 1.25;
     color: #000000 !important;
   }
 
@@ -2266,7 +2272,7 @@ a:hover { color: var(--clay-deep); }
          badges on each card already say which group it is, so the
          section headings are redundant in print and hidden. --- */
   .chart-section {
-    margin: 6pt 0;
+    margin: 3pt 0;
     page-break-inside: avoid;
   }
   .chart-section-heading {
@@ -2278,8 +2284,8 @@ a:hover { color: var(--clay-deep); }
          the colour code. --- */
   .bagua-figure { display: block; text-align: center; margin: 0; }
   .bagua-svg {
-    width: 78mm !important;
-    max-width: 78mm !important;
+    width: 60mm !important;
+    max-width: 60mm !important;
     height: auto;
     margin: 0 auto;
   }
@@ -2291,57 +2297,76 @@ a:hover { color: var(--clay-deep); }
   .bagua-compass-label,
   .bagua-quality-label,
   .bagua-icon            { fill: #2a271e !important; }
-  .bagua-centre          { fill: #2a271e !important; }
-  .bagua-centre-eyebrow,
-  .bagua-centre-kua      { fill: #ffffff !important; }
+  /* White centre saves printer ink. */
+  .bagua-centre          { fill: #ffffff !important; stroke: #cfc4ab !important; stroke-width: 1 !important; }
+  .bagua-centre-eyebrow  { fill: #5f5848 !important; }
+  .bagua-centre-kua      { fill: #2a271e !important; }
   .bagua-bg              { fill: #ffffff !important; }
   .bagua-ring-label,
   .bagua-ring-label-cardinal,
   .bagua-north-arrow,
   .bagua-north-label     { fill: #000000 !important; }
 
-  /* --- Detail cards: 2 columns x 4 rows, very compact --- */
+  /* --- Detail cards: 2 columns x 2 rows per section, very compact --- */
   .direction-cards-grid {
     grid-template-columns: 1fr 1fr !important;
-    gap: 4pt !important;
+    gap: 3pt !important;
   }
   .direction-card {
     background: #ffffff !important;
-    border: 0.5pt solid #888888 !important;
-    border-left-width: 3pt !important;
+    border: 0.4pt solid #888888 !important;
+    border-left-width: 2.5pt !important;
     border-radius: 2pt !important;
-    padding: 4pt 6pt !important;
-    gap: 1pt !important;
+    padding: 3pt 5pt !important;
+    gap: 0 !important;
     page-break-inside: avoid;
   }
   .direction-card[data-favourable="true"]  { border-left-color: #4f5a36 !important; }
   .direction-card[data-favourable="false"] { border-left-color: #9c5331 !important; border-left-style: dashed !important; }
 
-  .direction-card-arrow {
-    font-size: 12pt !important;
-    width: 14pt;
+  .direction-card-header {
+    align-items: flex-start;
   }
-  .direction-card-name-full  { font-size: 9pt !important; color: #000000 !important; }
-  .direction-card-name-abbrev{ font-size: 7pt !important; }
+  .direction-card-arrow {
+    font-size: 10pt !important;
+    width: 12pt;
+    line-height: 1 !important;
+  }
+  .direction-card-name-full  { font-size: 8pt !important; color: #000000 !important; line-height: 1.1 !important; }
+  .direction-card-name-abbrev{ font-size: 6.5pt !important; line-height: 1.1 !important; margin-top: 0 !important; }
   .direction-card-badge {
-    font-size: 7pt !important;
-    padding: 1pt 5pt !important;
+    font-size: 6.5pt !important;
+    padding: 0.5pt 4pt !important;
     color: #2a271e !important;
+    line-height: 1.2 !important;
   }
   .direction-card[data-favourable="true"]  .direction-card-badge { background: #c8d0b2 !important; }
   .direction-card[data-favourable="false"] .direction-card-badge { background: #ebcab6 !important; }
 
-  .direction-card-quality-pinyin { font-size: 8.5pt !important; color: #000000 !important; }
-  .direction-card-quality-gloss  { font-size: 7.5pt !important; }
-  .direction-card-why            { font-size: 7.5pt !important; line-height: 1.3 !important; color: #000000 !important; margin-top: 2pt !important; }
-  .direction-card-bullets        { font-size: 7.5pt !important; line-height: 1.25 !important; padding-left: 10pt !important; gap: 1pt !important; color: #000000 !important; margin-top: 2pt !important; }
+  .direction-card-quality { margin-top: 1pt !important; }
+  .direction-card-quality-pinyin { font-size: 7.5pt !important; line-height: 1.15 !important; color: #000000 !important; margin: 0 !important; }
+  .direction-card-quality-gloss  { font-size: 6.5pt !important; line-height: 1.15 !important; margin: 0 !important; }
+  .direction-card-why {
+    font-size: 7pt !important;
+    line-height: 1.2 !important;
+    color: #000000 !important;
+    margin: 1.5pt 0 0 !important;
+  }
+  .direction-card-bullets {
+    font-size: 7pt !important;
+    line-height: 1.18 !important;
+    padding-left: 9pt !important;
+    gap: 0 !important;
+    color: #000000 !important;
+    margin: 1.5pt 0 0 !important;
+  }
 
   /* --- Footer URL --- */
   .chart-print-footer {
-    margin-top: 8pt;
-    padding-top: 4pt;
+    margin-top: 4pt;
+    padding-top: 3pt;
     border-top: 0.5pt solid #888888;
-    font-size: 8pt;
+    font-size: 7.5pt;
     color: #4f5a36 !important;
   }
 }
