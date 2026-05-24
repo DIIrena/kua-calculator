@@ -214,9 +214,28 @@
       var occ1 = buildOccupant(o1.data);
       var occ2 = (o2.data && o2.hasInput && o2.data.yearRaw && o2.data.gender) ? buildOccupant(o2.data) : null;
       renderResult(occ1, occ2);
+      revealSaveChartCta(occ1);
     } catch (err) {
       showError("date-1", err.message || "Sorry, something went wrong. Check your inputs and try again.");
     }
+  }
+
+  // Show the save-chart CTA section (signed-in: Save form; signed-out:
+  // sign-in invitation). Populates the form's hidden inputs from
+  // occupant 1 so the server action gets the same date/gender the
+  // calculation used. Silently no-ops on pages without the CTA (/embed).
+  function revealSaveChartCta(occ1) {
+    var cta = document.getElementById("save-chart-cta");
+    if (!cta) return;
+    cta.hidden = false;
+    var yearInput = document.getElementById("save-year");
+    var monthInput = document.getElementById("save-month");
+    var dayInput = document.getElementById("save-day");
+    var genderInput = document.getElementById("save-gender");
+    if (yearInput) yearInput.value = String(occ1.year);
+    if (monthInput) monthInput.value = String(occ1.month);
+    if (dayInput) dayInput.value = String(occ1.day);
+    if (genderInput) genderInput.value = occ1.gender;
   }
 
   function initCouplesToggle() {

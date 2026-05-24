@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { auth } from "@/auth";
 import CalculatorIsland from "@/components/CalculatorIsland";
 import CalculatorScripts from "@/components/CalculatorScripts";
 
@@ -135,7 +136,9 @@ const faqJsonLd = {
   ],
 };
 
-export default function KuaCalculatorPage() {
+export default async function KuaCalculatorPage() {
+  const session = await auth();
+  const isSignedIn = Boolean(session?.user?.id);
   return (
     <>
       <section className="hero" aria-labelledby="hero-heading">
@@ -179,7 +182,7 @@ export default function KuaCalculatorPage() {
         aria-label="Kua number calculator"
       >
         <div className="calculator-inner">
-          <CalculatorIsland />
+          <CalculatorIsland isSignedIn={isSignedIn} />
         </div>
       </section>
 

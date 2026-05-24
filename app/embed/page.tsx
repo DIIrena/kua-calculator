@@ -15,7 +15,7 @@ export default function EmbedPage() {
   return (
     <div className="embed-shell">
       <div className="embed-inner">
-        <CalculatorIsland />
+        <CalculatorIsland showSaveCta={false} />
       </div>
       <p className="embed-tagline">
         <a href="/methodology" target="_blank" rel="noopener">

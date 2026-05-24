@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { createAdminClient } from "@/lib/supabase/server";
 import { saveDetails, deleteAccount } from "./actions";
+import { deleteChart } from "@/app/actions/save-chart";
 
 export const metadata: Metadata = {
   title: "Your account | My Feng Shui Home",
@@ -193,17 +195,51 @@ export default async function AccountPage() {
         <h2>Your saved charts</h2>
         {charts.length === 0 ? (
           <p>
-            You have not saved any charts yet. Saving a chart is part of
-            Stage 2 of the build.
+            You haven&apos;t saved any charts yet.{" "}
+            <Link href="/kua-calculator">Run the calculator</Link> and use
+            &ldquo;Save my chart&rdquo; on the result card to keep one here.
           </p>
         ) : (
           <ul className="account-saved-list">
-            {charts.map((c) => (
-              <li key={c.id}>
-                {c.label ?? "Chart"} - Kua {c.kua_number ?? "?"} (
-                {c.kua_group ?? "group unknown"})
-              </li>
-            ))}
+            {charts.map((c) => {
+              const groupLabel =
+                c.kua_group === "east"
+                  ? "East group"
+                  : c.kua_group === "west"
+                    ? "West group"
+                    : "Group unknown";
+              const created = new Date(c.created_at).toLocaleDateString(
+                undefined,
+                { year: "numeric", month: "short", day: "numeric" },
+              );
+              return (
+                <li key={c.id} className="saved-chart-row">
+                  <div className="saved-chart-main">
+                    <p className="saved-chart-title">
+                      {c.label ?? `Kua ${c.kua_number ?? "?"} chart`}
+                    </p>
+                    <p className="saved-chart-meta">
+                      Kua {c.kua_number ?? "?"} · {groupLabel} · Saved{" "}
+                      {created}
+                    </p>
+                  </div>
+                  <div className="saved-chart-actions">
+                    <Link
+                      href={`/account/chart/${c.id}`}
+                      className="cta-secondary"
+                    >
+                      View
+                    </Link>
+                    <form action={deleteChart}>
+                      <input type="hidden" name="id" value={c.id} />
+                      <button type="submit" className="btn-danger-sm">
+                        Delete
+                      </button>
+                    </form>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         )}
       </section>

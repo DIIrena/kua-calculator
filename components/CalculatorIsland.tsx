@@ -1,9 +1,28 @@
 /* Static JSX port of app/templates/_calculator.html.
    No logic lives here. Every element id is preserved exactly so the
    vanilla ui.js (loaded from /public/calculator/) can select on them.
-   The two <template> elements are cloned by ui.js at render time. */
+   The two <template> elements are cloned by ui.js at render time.
 
-export default function CalculatorIsland() {
+   `isSignedIn` toggles the save-chart CTA: signed-in users see a
+   Save form; everyone else sees a soft sign-in invitation. The CTA
+   container (#save-chart-cta) is hidden until ui.js reveals it after
+   a successful calculation. */
+
+import { saveChart } from "@/app/actions/save-chart";
+
+type Props = {
+  // showSaveCta=false omits the save-chart section entirely (used by /embed,
+  // which stays account-free per the project hard rules).
+  showSaveCta?: boolean;
+  // isSignedIn switches the save CTA between a Save form (signed-in) and a
+  // soft sign-in invitation. Ignored when showSaveCta is false.
+  isSignedIn?: boolean;
+};
+
+export default function CalculatorIsland({
+  showSaveCta = true,
+  isSignedIn = false,
+}: Props) {
   return (
     <>
       <form id="kua-form" className="kua-form" noValidate>
@@ -238,6 +257,64 @@ export default function CalculatorIsland() {
       <section id="result" className="result" aria-live="polite" hidden>
         {/* Populated by ui.js */}
       </section>
+
+      {showSaveCta ? (
+      <section
+        id="save-chart-cta"
+        className="save-chart-cta"
+        aria-label="Save this chart"
+        hidden
+      >
+        {isSignedIn ? (
+          <form
+            id="save-chart-form"
+            action={saveChart}
+            className="save-chart-form"
+          >
+            {/* ui.js populates these hidden inputs after the calculation. */}
+            <input type="hidden" name="year" id="save-year" />
+            <input type="hidden" name="month" id="save-month" />
+            <input type="hidden" name="day" id="save-day" />
+            <input type="hidden" name="gender" id="save-gender" />
+
+            <div className="field save-chart-label-field">
+              <label className="field-label" htmlFor="save-label">
+                Name this chart (optional)
+              </label>
+              <input
+                id="save-label"
+                name="label"
+                type="text"
+                maxLength={80}
+                placeholder="e.g. Mine, or Alex"
+              />
+            </div>
+
+            <button type="submit" className="cta-primary">
+              Save my chart
+            </button>
+            <p className="save-chart-note">
+              Saving keeps this chart on your account so you can view, print,
+              or email it later.
+            </p>
+          </form>
+        ) : (
+          <div className="save-chart-signin">
+            <h3>Save this chart to your account</h3>
+            <p>
+              Create a free account to keep this chart, view a printable
+              version, and email it to yourself. The calculator stays free
+              either way.
+            </p>
+            <p className="save-chart-actions">
+              <a href="/sign-in" className="cta-primary">
+                Sign in to save
+              </a>
+            </p>
+          </div>
+        )}
+      </section>
+      ) : null}
 
       {/* The two <template> elements are rendered as raw HTML via
           dangerouslySetInnerHTML. Setting innerHTML on a <template> populates

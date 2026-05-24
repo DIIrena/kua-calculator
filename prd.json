@@ -329,6 +329,121 @@
       "priority": 20,
       "passes": true,
       "notes": "Deployed to Vercel from GitHub main. Custom domain myfengshuihome.com connected via Hostinger DNS (apex A record to Vercel 216.198.79.1/64.29.17.1, www CNAME), apex set as the primary domain, HTTPS auto-issued. Four env vars set on Vercel; Supabase Auth URL config updated for the live domain. Live smoke test passed: calculator, methodology, embed, and magic-link sign-in all work at https://myfengshuihome.com. First production deploy."
+    },
+    {
+      "id": "CHART-VISUAL-001",
+      "title": "Inline-SVG bagua diagram component",
+      "description": "Stage 2. Build components/BaguaDiagram.tsx: an inline SVG octagon with 8 pie-slice segments arranged clockwise from North (N, NE, E, SE, S, SW, W, NW). Each segment colour-coded olive (favourable) or clay (avoid) with paper-coloured text and a redundant icon (star or cross) so the chart reads in greyscale print. Center disc shows 'Kua N'.",
+      "acceptanceCriteria": [
+        "components/BaguaDiagram.tsx exists and renders a single SVG.",
+        "Eight segments in compass order from North clockwise.",
+        "Favourable panels use --green; avoid panels use --clay-deep (paper-on-clay-deep is 5.3:1 AA).",
+        "Each segment shows compass abbreviation, quality pinyin, and a star or cross icon.",
+        "SVG has role='img' with <title> and <desc> for assistive tech.",
+        "Component is a server component (no client JS).",
+        "Renders without console errors at /account/chart/[id]."
+      ],
+      "priority": 21,
+      "passes": true,
+      "notes": "8 segments rendered via a single donut-segment path rotated by 45-degree increments. Inner radius 70, outer 200, label radii 95/130/165. Avoid panels use --clay-deep instead of --clay to keep paper-on-bg contrast above AA (the lighter --clay accent is used elsewhere on the chart page for visual lightness, as a left border on the table rows). Title and desc IDs are tied to aria-labelledby. The bagua-caption explains the colour code in words so the diagram never relies on colour alone."
+    },
+    {
+      "id": "CHART-TABLE-001",
+      "title": "Color-coded direction table component",
+      "description": "Stage 2. Build components/DirectionTable.tsx: an ordered list of the 8 directions (favourable-first), each row showing compass, pinyin + hanzi, English gloss, plain-English meaning, and a favourable/avoid badge. Olive accent for favourable rows; clay dashed accent for avoid rows. Greyscale-safe through icon + label text.",
+      "acceptanceCriteria": [
+        "components/DirectionTable.tsx renders an <ol> with one row per direction.",
+        "Rows are passed in already-ordered favourable-first.",
+        "Favourable rows have a solid olive left border; avoid rows have a dashed clay left border.",
+        "Each row includes star or cross icon plus 'Favourable' or 'Avoid' text so colour is never the only cue.",
+        "Compass abbreviation visible to sighted users with the full compass label below (e.g., NE / Northeast).",
+        "All text meets 4.5:1 contrast in screen view."
+      ],
+      "priority": 22,
+      "passes": true,
+      "notes": "Grid layout 80px compass column + content column with three rows (quality, meaning, badge). The badge uses uppercase letter-spacing for typographic emphasis. The hanzi is aria-hidden because pinyin already conveys the name. Rows are styled by data-favourable attribute so the same component is reused unchanged on the chart view page."
+    },
+    {
+      "id": "CHART-SAVE-001",
+      "title": "Save my chart - server action and CTA on the calculator",
+      "description": "Stage 2. Port the kua / directions / cny calculation to TypeScript (lib/kua.ts, lib/directions.ts, lib/cny.ts) so the server is the source of truth for the persisted chart. Add app/actions/save-chart.ts with saveChart and deleteChart server actions. Add a save-chart CTA section to CalculatorIsland (conditional on a new isSignedIn prop): a Save form with hidden inputs populated by ui.js after a successful calculation, plus a soft sign-in invitation for signed-out visitors. Embed page passes showSaveCta=false to stay account-free.",
+      "acceptanceCriteria": [
+        "lib/kua.ts, lib/directions.ts, lib/cny.ts exist and produce identical results to the client JS for the chapter-6 worked examples.",
+        "app/actions/save-chart.ts exports saveChart and deleteChart server actions.",
+        "saveChart recomputes the chart server-side from year/month/day/gender; the client cannot persist a mismatched chart.",
+        "CalculatorIsland accepts isSignedIn and showSaveCta props.",
+        "When signed in, the save form shows after a successful calculation and the optional label input lets the user name the chart.",
+        "When signed out, a soft 'Sign in to save' CTA appears instead.",
+        "Embed route passes showSaveCta=false; the embed remains account-free.",
+        "ui.js populates #save-year, #save-month, #save-day, #save-gender after each successful calculation."
+      ],
+      "priority": 23,
+      "passes": true,
+      "notes": "The TS port mirrors the JS algorithm and the same lookup tables; both files exist intentionally because the client must stay zero-dep for the embed/privacy guarantee and the server is the persistence source of truth. saveChart redirects to /account/chart/[new-id] on success. deleteChart scopes by both id and user_id so a forged id cannot delete another user's chart. ui.js revealSaveChartCta is a no-op on pages without the CTA (embed), so the calculator JS stays unchanged in behaviour there."
+    },
+    {
+      "id": "CHART-VIEW-001",
+      "title": "Chart view route /account/chart/[id]",
+      "description": "Stage 2. Build app/(site)/account/chart/[id]/page.tsx: auth-gated route that fetches a saved_charts row by id scoped by user_id, renders BaguaDiagram + DirectionTable from the stored result jsonb, with the CNY adjustment notice when applicable. Includes a Print button (client component) and a Delete form.",
+      "acceptanceCriteria": [
+        "/account/chart/[id] returns 404 when the chart does not exist OR when it belongs to a different user.",
+        "Bagua diagram and direction table render side-by-side / stacked from result.directions.",
+        "Chart heading uses the saved label when present; otherwise 'Kua N chart'.",
+        "Birth date and gender shown as metadata.",
+        "CNY adjustment notice rendered when result.cnyAdjustment.adjusted is true or null.",
+        "Print button triggers window.print() via a small client component.",
+        "Delete form posts to deleteChart and redirects back to /account.",
+        "Page builds clean (no console errors)."
+      ],
+      "priority": 24,
+      "passes": true,
+      "notes": "The route is a Server Component except for the ChartPrintButton client island. The chart view scopes every query by user_id at the database call (no RLS to lean on; access control lives in the server code). result.directions stored at save time is a frozen snapshot - the chart is not recomputed when viewed, which means future copy edits to lib/directions.ts will not retroactively change saved charts (and that is the correct behaviour for a saved artefact)."
+    },
+    {
+      "id": "CHART-LIST-001",
+      "title": "Account dashboard lists saved charts with view and delete",
+      "description": "Stage 2. Update app/(site)/account/page.tsx to render a real list of saved charts (title, Kua number, group, save date) each with a 'View' link and a small 'Delete' button. Empty state explains how to save a chart.",
+      "acceptanceCriteria": [
+        "When the user has no charts, the empty state explains how to save one and links to /kua-calculator.",
+        "When the user has charts, each row shows title (label or Kua N chart), Kua number, group label, formatted save date, View link, and Delete button.",
+        "View link navigates to /account/chart/[id].",
+        "Delete posts to deleteChart and immediately removes the row.",
+        "Layout works on narrow viewports (rows wrap)."
+      ],
+      "priority": 25,
+      "passes": true,
+      "notes": "The same deleteChart server action is reused from the chart view page. Rows are styled with a wrap-friendly flex layout so the View + Delete buttons drop below the title on narrow widths. The Delete button uses the smaller btn-danger-sm so the destructive action does not dominate the row."
+    },
+    {
+      "id": "CHART-PRINT-001",
+      "title": "Print stylesheet for the chart page",
+      "description": "Stage 2. Add @media print rules to globals.css so /account/chart/[id] prints cleanly on one A4/Letter page: site header, footer, action buttons hidden; bagua segments keep colour so the chart is readable in colour and falls back gracefully in greyscale via icon + dashed border redundancy.",
+      "acceptanceCriteria": [
+        "@media print block exists in app/globals.css.",
+        "Site header, site footer, .chart-actions-section, and .save-chart-cta are hidden during print.",
+        "Bagua SVG forced fills keep brand colours when colour printing.",
+        "Direction table rows use page-break-inside: avoid.",
+        "Print typography uses pt units consistent with print conventions."
+      ],
+      "priority": 26,
+      "passes": true,
+      "notes": "Folded into globals.css rather than a separate /public/chart-print.css file because Next.js routes the bundle through next/font and globals.css; a sibling print stylesheet would need a separate <link> in the (site) layout. The print rules force brand colours on the bagua fills (browsers strip background colours by default in print) so the colour-coded chart still reads in colour-print scenarios; the icon + dashed border redundancy guarantees the greyscale fallback."
+    },
+    {
+      "id": "CHART-A11Y-001",
+      "title": "Accessibility pass on the new chart surfaces",
+      "description": "Stage 2. Verify the new chart components meet the project bar: 4.5:1 contrast for body text, visible focus rings, keyboard-operable controls, labels on every input, landmarks intact.",
+      "acceptanceCriteria": [
+        "All text on bagua segments meets at least 4.5:1 contrast (verified by changing avoid panels from --clay to --clay-deep).",
+        "BaguaDiagram exposes role='img' with linked title and desc.",
+        "Direction table semantic markup uses <ol> with one <li> per row.",
+        "Save form, delete forms, and print button are all keyboard-operable with visible focus rings.",
+        "Chart view page heading hierarchy is h1 -> h2 -> h3 with no skipped levels.",
+        "Decorative icons (compass arrows, star/cross inside coloured panels) are aria-hidden so screen readers do not double-announce alongside the 'Favourable'/'Avoid' label text."
+      ],
+      "priority": 27,
+      "passes": true,
+      "notes": "The contrast gotcha was the bagua avoid panels: paper #fbf7ee on --clay #be6b43 measured ~3.85:1 (fails AA Body for the 14-16px labels). Switched to --clay-deep #9c5331 which gives 5.33:1 AA Body. The lighter --clay is still used as the left-border accent on the direction-table avoid rows because borders are not text and have no contrast threshold. The chart-direction-row dashed border on avoid rows is the second greyscale cue, and the 'Avoid' badge text is the third."
     }
   ]
 }

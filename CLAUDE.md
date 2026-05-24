@@ -28,6 +28,14 @@ Next.js (App Router, TypeScript) on Vercel. **Auth.js v5 (NextAuth)** runs on th
 | `components/` | `SiteHeader`, `SiteFooter`, `CalculatorIsland`, `CalculatorScripts`, `AuthForm`, `SignOutButton`. |
 | `lib/supabase/server.ts` | Service-role Supabase DB client. No auth wiring. |
 | `lib/markdown.ts` | Build-time markdown rendering (remark + remark-gfm + rehype-slug). |
+| `lib/kua.ts` | Server-side port of the Kua calculation (Stage 2). |
+| `lib/directions.ts` | Server-side port of the Eight Mansions lookup (Stage 2). |
+| `lib/cny.ts` | Server-side port of the Chinese New Year adjustment (Stage 2). |
+| `components/BaguaDiagram.tsx` | Inline-SVG bagua chart (Stage 2). |
+| `components/DirectionTable.tsx` | Color-coded direction table (Stage 2). |
+| `components/ChartPrintButton.tsx` | Tiny client component triggering window.print() (Stage 2). |
+| `app/actions/save-chart.ts` | Server actions: saveChart, deleteChart (Stage 2). |
+| `app/(site)/account/chart/[id]/page.tsx` | Auth-gated chart view: bagua + table + print + delete (Stage 2). |
 | `public/calculator/` | The four calculator JS files (`cny`, `directions`, `kua`, `ui`), reused byte-for-byte. |
 | `public/print.css` | Print-friendly result card. |
 | `supabase/migrations/0001_init.sql` | Original schema (superseded by 0002). |

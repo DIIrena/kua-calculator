@@ -1625,3 +1625,473 @@ a:hover { color: var(--clay-deep); }
   border-radius: var(--radius-sm);
   font-size: 0.98rem;
 }
+
+/* ============================================================
+   Stage 2 - Chart save CTA, bagua diagram, direction table,
+   chart view page, saved-chart list. Greyscale-safe; no colour
+   is ever the only cue (icons + label text reinforce status).
+   ============================================================ */
+
+/* --- Save-chart CTA below the calculator result --- */
+.save-chart-cta {
+  margin-top: var(--space-6);
+  padding: var(--space-5) var(--space-5);
+  background: var(--paper);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.save-chart-form .save-chart-label-field {
+  margin-bottom: var(--space-4);
+}
+
+.save-chart-form input[type="text"] {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font: 400 1rem var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+}
+
+.save-chart-form input[type="text"]:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+
+.save-chart-note {
+  margin: var(--space-3) 0 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+
+.save-chart-signin h3 {
+  margin: 0 0 var(--space-2) 0;
+  font: 600 1.15rem/1.3 var(--font-display);
+  color: var(--ink);
+}
+
+.save-chart-signin p {
+  color: var(--ink-2);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.save-chart-signin .save-chart-actions {
+  margin: var(--space-4) 0 0 0;
+}
+
+/* --- Chart view page --- */
+.chart-page {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-7);
+}
+
+.chart-heading {
+  font: 700 2rem/1.15 var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.chart-meta {
+  color: var(--ink-2);
+  margin: var(--space-2) 0 var(--space-2) 0;
+  font-size: 0.98rem;
+}
+
+.chart-summary {
+  margin: var(--space-2) 0 var(--space-5) 0;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.chart-cny-notice {
+  margin: 0 0 var(--space-5) 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--cream);
+  border-left: 3px solid var(--green);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--ink-2);
+}
+
+.chart-section {
+  margin: var(--space-6) 0;
+}
+
+.chart-section-heading {
+  font: 600 1.4rem/1.3 var(--font-display);
+  color: var(--ink);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.chart-actions-section {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: var(--border);
+  display: grid;
+  gap: var(--space-5);
+}
+
+.chart-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.chart-back-link {
+  color: var(--green-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.chart-back-link:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.chart-delete-form {
+  /* Sits below the action row so accidental deletes are harder. */
+}
+
+/* --- Secondary CTA used by chart actions and saved-chart View links --- */
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-5);
+  min-height: 44px;
+  font: 600 0.95rem var(--font-display);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.cta-secondary:hover {
+  background: var(--cream);
+}
+
+.cta-secondary:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+
+.btn-danger-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  min-height: 36px;
+  font: 600 0.9rem var(--font-display);
+  color: var(--clay-deep);
+  background: transparent;
+  border: 1px solid var(--clay-deep);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.btn-danger-sm:hover { background: rgba(156, 83, 49, 0.08); }
+.btn-danger-sm:focus-visible {
+  outline: 3px solid var(--clay-deep);
+  outline-offset: 2px;
+}
+
+/* --- Bagua diagram (inline SVG) --- */
+.bagua-figure {
+  margin: 0;
+  display: grid;
+  gap: var(--space-3);
+  justify-items: center;
+}
+
+.bagua-svg {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+}
+
+.bagua-bg {
+  fill: var(--paper);
+}
+
+.bagua-seg-favourable {
+  fill: var(--green);
+  stroke: var(--paper);
+  stroke-width: 2;
+}
+
+.bagua-seg-avoid {
+  /* clay-deep keeps paper-on-bg contrast above 5:1; the lighter --clay
+     accent is used elsewhere on the chart page for visual lightness. */
+  fill: var(--clay-deep);
+  stroke: var(--paper);
+  stroke-width: 2;
+}
+
+.bagua-compass-label {
+  fill: var(--paper);
+  font: 700 24px var(--font-display);
+}
+
+.bagua-quality-label {
+  fill: var(--paper);
+  font: 600 16px var(--font-display);
+}
+
+.bagua-icon {
+  fill: var(--paper);
+  font: 700 20px var(--font-display);
+}
+
+.bagua-centre {
+  fill: var(--ink);
+}
+
+.bagua-centre-eyebrow {
+  fill: var(--cream);
+  font: 500 11px var(--font-display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bagua-centre-kua {
+  fill: var(--cream);
+  font: 700 36px var(--font-display);
+}
+
+.bagua-ring-label {
+  fill: var(--ink);
+  font: 600 12px var(--font-display);
+}
+
+.bagua-caption {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  text-align: center;
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+/* --- Direction table on the chart page --- */
+.chart-direction-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.chart-direction-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-areas:
+    "compass quality"
+    "compass meaning"
+    "compass badge";
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-4);
+  background: var(--paper);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  border-left-width: 6px;
+}
+
+.chart-direction-row[data-favourable="true"] {
+  border-left-color: var(--green);
+}
+
+.chart-direction-row[data-favourable="false"] {
+  border-left-color: var(--clay);
+  border-left-style: dashed;
+}
+
+.chart-direction-compass {
+  grid-area: compass;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.chart-compass-abbrev {
+  font: 700 1.6rem/1 var(--font-display);
+  color: var(--ink);
+}
+
+.chart-compass-label {
+  font-size: 0.8rem;
+  color: var(--ink-2);
+  margin-top: var(--space-1);
+}
+
+.chart-direction-quality {
+  grid-area: quality;
+}
+
+.chart-quality-pinyin {
+  margin: 0;
+  font: 600 1.05rem var(--font-display);
+  color: var(--ink);
+}
+
+.chart-quality-hanzi {
+  font-weight: 400;
+  color: var(--ink-2);
+  margin-left: var(--space-2);
+}
+
+.chart-quality-gloss {
+  margin: 0;
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 0.9rem;
+}
+
+.chart-direction-meaning {
+  grid-area: meaning;
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.chart-direction-badge {
+  grid-area: badge;
+  margin: 0;
+  font: 600 0.85rem var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.chart-direction-row[data-favourable="true"] .chart-direction-badge {
+  color: var(--green-deep);
+}
+
+.chart-direction-row[data-favourable="false"] .chart-direction-badge {
+  color: var(--clay-deep);
+}
+
+/* --- Saved-chart list rows in /account --- */
+.saved-chart-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) !important;
+}
+
+.saved-chart-main {
+  flex: 1 1 240px;
+}
+
+.saved-chart-title {
+  margin: 0;
+  font: 600 1.05rem var(--font-display);
+  color: var(--ink);
+}
+
+.saved-chart-meta {
+  margin: var(--space-1) 0 0 0;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+}
+
+.saved-chart-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* --- Print: chart view fits on one page; chrome stripped --- */
+@media print {
+  .site-header,
+  .site-footer,
+  .chart-actions-section,
+  .save-chart-cta {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .chart-page {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .chart-heading {
+    font-size: 22pt;
+  }
+
+  .chart-meta,
+  .chart-summary,
+  .chart-cny-notice {
+    color: #000000;
+  }
+
+  .chart-section {
+    margin: 14pt 0;
+    page-break-inside: avoid;
+  }
+
+  .chart-section-heading {
+    font-size: 14pt;
+    margin-bottom: 8pt;
+  }
+
+  .bagua-svg {
+    max-width: 420px;
+  }
+
+  /* Keep colour on the bagua segments so the printed chart still reads
+     visually; modern browsers print SVG fills well. The icon + label
+     redundancy guarantees greyscale fallback. */
+  .bagua-seg-favourable { fill: #4f5a36 !important; }
+  .bagua-seg-avoid       { fill: #9c5331 !important; }
+  .bagua-compass-label,
+  .bagua-quality-label,
+  .bagua-icon            { fill: #ffffff !important; }
+  .bagua-centre          { fill: #2a271e !important; }
+  .bagua-centre-eyebrow,
+  .bagua-centre-kua      { fill: #ffffff !important; }
+  .bagua-bg              { fill: #ffffff !important; }
+  .bagua-ring-label      { fill: #000000 !important; }
+  .bagua-caption         { color: #444444; }
+
+  .chart-direction-list {
+    gap: 6pt;
+  }
+
+  .chart-direction-row {
+    background: #ffffff !important;
+    border: 1px solid #888888 !important;
+    border-left-width: 4pt !important;
+    padding: 8pt 10pt !important;
+    page-break-inside: avoid;
+  }
+
+  .chart-direction-row[data-favourable="true"] {
+    border-left-color: #4f5a36 !important;
+  }
+
+  .chart-direction-row[data-favourable="false"] {
+    border-left-color: #be6b43 !important;
+    border-left-style: dashed !important;
+  }
+
+  .chart-quality-pinyin,
+  .chart-direction-meaning,
+  .chart-compass-abbrev {
+    color: #000000 !important;
+  }
+}
