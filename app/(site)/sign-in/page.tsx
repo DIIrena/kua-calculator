@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import AuthForm from "@/components/AuthForm";
-import { createClient } from "@/lib/supabase/server";
+import { auth } from "@/auth";
 
 export const metadata: Metadata = {
   title: "Sign in | My Feng Shui Home",
@@ -13,17 +13,13 @@ export const metadata: Metadata = {
 // Sign-in page. If the visitor is already signed in, send them to their
 // account. Otherwise show the magic-link + Google form.
 export default async function SignInPage() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  if (url && !url.includes("PLACEHOLDER")) {
-    try {
-      const supabase = await createClient();
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (user) redirect("/account");
-    } catch {
-      // Supabase not reachable; fall through to the form.
-    }
+  try {
+    const session = await auth();
+    if (session?.user) redirect("/account");
+  } catch {
+    // Auth not reachable (placeholder env vars, network blip). Fall
+    // through to the form, which surfaces a friendly error if signing
+    // in is not configured.
   }
 
   return (

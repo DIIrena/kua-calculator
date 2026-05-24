@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { auth } from "@/auth";
+import { createAdminClient } from "@/lib/supabase/server";
 import { saveDetails, deleteAccount } from "./actions";
 
 export const metadata: Metadata = {
@@ -32,21 +33,23 @@ const MONTHS = [
 ];
 
 // Auth-gated dashboard. Server Component. Redirects to /sign-in when there
-// is no session. Shows the account email, lets the holder save their birth
-// data, toggle the marketing opt-in, and delete their account.
+// is no NextAuth session. Reads and writes profiles + saved_charts via the
+// service-role Supabase client, scoping every query by session.user.id.
+// The marketing opt-in cookie set at sign-in is consumed in auth.ts
+// events.signIn, so this page only reads.
 export default async function AccountPage() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
-  // With placeholder env vars there is no real auth; show a clear notice
-  // instead of crashing so the page still builds and renders.
+  // With placeholder env vars there is no real auth or DB; show a clear
+  // notice instead of crashing so the page still builds and renders.
   if (!url || url.includes("PLACEHOLDER")) {
     return (
       <div className="page-narrow">
         <div className="account-section">
           <h2>Account not connected yet</h2>
           <p>
-            The account features need a Supabase project. Once the site owner
-            connects Supabase and sets the environment variables, sign-in and
+            The account features need Supabase and Auth.js to be configured.
+            Once the site owner sets the environment variables, sign-in and
             this dashboard go live.
           </p>
         </div>
@@ -54,23 +57,24 @@ export default async function AccountPage() {
     );
   }
 
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const session = await auth();
+  if (!session?.user?.id) redirect("/sign-in");
 
-  if (!user) redirect("/sign-in");
+  const userId = session.user.id;
+  const sessionEmail = session.user.email ?? null;
 
-  const { data: profileData } = await supabase
+  const admin = createAdminClient();
+
+  const { data: profileData } = await admin
     .from("profiles")
     .select(
       "email, birth_year, birth_month, birth_day, gender, marketing_opt_in",
     )
-    .eq("id", user.id)
+    .eq("id", userId)
     .single();
 
   const profile: Profile = profileData ?? {
-    email: user.email ?? null,
+    email: sessionEmail,
     birth_year: null,
     birth_month: null,
     birth_day: null,
@@ -78,10 +82,10 @@ export default async function AccountPage() {
     marketing_opt_in: false,
   };
 
-  const { data: chartsData } = await supabase
+  const { data: chartsData } = await admin
     .from("saved_charts")
     .select("id, kua_number, kua_group, label, created_at")
-    .eq("user_id", user.id)
+    .eq("user_id", userId)
     .order("created_at", { ascending: false });
 
   const charts: SavedChart[] = chartsData ?? [];
@@ -93,7 +97,7 @@ export default async function AccountPage() {
 
       <section className="account-section">
         <h2>Signed in as</h2>
-        <p className="account-email">{profile.email ?? user.email}</p>
+        <p className="account-email">{profile.email ?? sessionEmail}</p>
       </section>
 
       <section className="account-section">
