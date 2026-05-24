@@ -110,7 +110,7 @@ export default async function ChartViewPage(
         <p className="chart-cny-notice">{result.cnyAdjustment.message}</p>
       ) : null}
 
-      <section className="chart-section" aria-labelledby="favourable-heading">
+      <section className="chart-section chart-section-favourable" aria-labelledby="favourable-heading">
         <h2 id="favourable-heading" className="chart-section-heading">
           Your four favourable directions
         </h2>
@@ -124,7 +124,7 @@ export default async function ChartViewPage(
         <BaguaDiagram kua={result.kua} directionsByCompass={byCompass} />
       </section>
 
-      <section className="chart-section" aria-labelledby="avoid-heading">
+      <section className="chart-section chart-section-avoid" aria-labelledby="avoid-heading">
         <h2 id="avoid-heading" className="chart-section-heading">
           Your four directions to avoid
         </h2>

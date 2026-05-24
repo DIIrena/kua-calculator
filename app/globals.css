@@ -2286,10 +2286,11 @@ a:hover { color: var(--clay-deep); }
     color: #000000 !important;
   }
 
-  /* --- Section blocks. Favourable cards pinned near the top, avoid
-         cards pinned near the bottom, diagram section grows to fill
-         the middle so the bagua is as large as possible. Section
-         headings hidden (the cards' badges convey the group). --- */
+  /* --- Section blocks. Header + favourable cards + bagua all pack
+         together at the top of the page; the avoid-cards section
+         pushes itself to the bottom via margin-top: auto so the
+         footer URL sits at the very bottom edge. Section headings
+         hidden (the cards' badges convey the group). --- */
   .chart-section {
     flex-shrink: 0;
     margin: 2pt 0;
@@ -2298,13 +2299,19 @@ a:hover { color: var(--clay-deep); }
   .chart-section-heading {
     display: none !important;
   }
+  .chart-section-favourable {
+    margin-top: 2pt !important;
+  }
   .chart-section-diagram {
-    flex: 1 1 auto !important;
+    margin: 3pt 0 !important;
     display: flex !important;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 4pt 0 !important;
+  }
+  .chart-section-avoid {
+    /* Pushes itself (and the footer) to the bottom of the flex column,
+       leaving the upper group packed at the top. */
+    margin-top: auto !important;
   }
 
   /* --- Bagua diagram: as big as the middle section allows, capped
