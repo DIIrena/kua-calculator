@@ -7,6 +7,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { calculateKua, kuaGroup, type Gender } from "@/lib/kua";
 import { orderedDirectionsForKua } from "@/lib/directions";
 import { effectiveKuaYear } from "@/lib/cny";
+import { sendChartEmailInternal } from "@/app/actions/email-chart";
 
 // Save a Kua chart for the signed-in user. Recomputes the result on the
 // server so the client cannot persist a chart that doesn't match its
@@ -68,6 +69,32 @@ export async function saveChart(formData: FormData) {
 
   if (error || !data) {
     redirect("/account?error=save-failed");
+  }
+
+  // Auto-send the chart email when the account holder is opted in.
+  // Fires exactly once per chart (one save -> one auto-send attempt).
+  // Failures are logged inside sendChartEmailInternal and do not block
+  // the redirect to the chart view.
+  const sessionEmail = session.user.email;
+  if (sessionEmail) {
+    const { data: profile } = await admin
+      .from("profiles")
+      .select("marketing_opt_in")
+      .eq("id", userId)
+      .single();
+    if (profile?.marketing_opt_in) {
+      await sendChartEmailInternal({
+        userId,
+        toEmail: sessionEmail,
+        chartId: data.id,
+        label,
+        result,
+        birthYear: year,
+        birthMonth: month,
+        birthDay: day,
+        gender,
+      });
+    }
   }
 
   revalidatePath("/account");

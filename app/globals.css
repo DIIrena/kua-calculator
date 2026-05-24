@@ -1780,6 +1780,30 @@ a:hover { color: var(--clay-deep); }
   /* Sits below the action row so accidental deletes are harder. */
 }
 
+.chart-email-form {
+  /* Sits inline with Print / Back in the action row. */
+}
+
+.chart-email-status {
+  margin: 0 0 var(--space-4) 0;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  border: 1px solid var(--hairline);
+}
+
+.chart-email-status-ok {
+  background: var(--green-soft);
+  color: var(--ink);
+  border-color: var(--green);
+}
+
+.chart-email-status-err {
+  background: var(--clay-soft);
+  color: var(--ink);
+  border-color: var(--clay-deep);
+}
+
 /* --- Secondary CTA used by chart actions and saved-chart View links --- */
 .cta-secondary {
   display: inline-flex;

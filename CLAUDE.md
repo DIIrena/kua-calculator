@@ -34,8 +34,13 @@ Next.js (App Router, TypeScript) on Vercel. **Auth.js v5 (NextAuth)** runs on th
 | `components/BaguaDiagram.tsx` | Inline-SVG bagua chart (Stage 2). |
 | `components/DirectionTable.tsx` | Color-coded direction table (Stage 2). |
 | `components/ChartPrintButton.tsx` | Tiny client component triggering window.print() (Stage 2). |
-| `app/actions/save-chart.ts` | Server actions: saveChart, deleteChart (Stage 2). |
-| `app/(site)/account/chart/[id]/page.tsx` | Auth-gated chart view: bagua + table + print + delete (Stage 2). |
+| `app/actions/save-chart.ts` | Server actions: saveChart, deleteChart (Stage 2). Auto-sends chart email on save when opt-in is true. |
+| `app/actions/email-chart.ts` | Server actions: sendChartEmail (button), sendChartEmailInternal (auto-send). (Stage 3). |
+| `app/(site)/account/chart/[id]/page.tsx` | Auth-gated chart view: bagua + cards + Email + Print + Delete. (Stages 2, 3). |
+| `lib/email-chart.ts` | HTML + text email renderer for the chart email (Stage 3). |
+| `lib/rate-limit.ts` | Per-user-per-day chart-email rate limiter (Stage 3). |
+| `lib/resend.ts` | Minimal Resend HTTP helper used by chart email (Stage 3). |
+| `supabase/migrations/0003_email_sends.sql` | Rate-limit counter table for the chart email (Stage 3). |
 | `public/calculator/` | The four calculator JS files (`cny`, `directions`, `kua`, `ui`), reused byte-for-byte. |
 | `public/print.css` | Print-friendly result card. |
 | `supabase/migrations/0001_init.sql` | Original schema (superseded by 0002). |

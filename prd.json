@@ -444,6 +444,53 @@
       "priority": 27,
       "passes": true,
       "notes": "The contrast gotcha was the bagua avoid panels: paper #fbf7ee on --clay #be6b43 measured ~3.85:1 (fails AA Body for the 14-16px labels). Switched to --clay-deep #9c5331 which gives 5.33:1 AA Body. The lighter --clay is still used as the left-border accent on the direction-table avoid rows because borders are not text and have no contrast threshold. The chart-direction-row dashed border on avoid rows is the second greyscale cue, and the 'Avoid' badge text is the third."
+    },
+    {
+      "id": "DASHBOARD-EMBED-001",
+      "title": "Account dashboard: brand mark, embedded calculator, compare two charts",
+      "description": "Phase 3 Stage 2 polish. /account shows the brand mark (logo + script wordmark) under the heading; embeds the full calculator so a signed-in user can run a chart for anyone without leaving the dashboard; and exposes a Compare two charts form (visible only when there are 2+ saved charts) that drops the visitor on a new /account/compare/[a]/[b] page showing the shared-rooms analysis with both bagua diagrams.",
+      "acceptanceCriteria": [
+        "BrandMark renders below the 'Your account' heading.",
+        "CalculatorIsland renders inside an 'Account section' with isSignedIn=true so the Save form is visible.",
+        "Compare form has two selects of saved charts; submitting redirects to /account/compare/[a]/[b].",
+        "/account/compare/[a]/[b] is auth-gated and 404s if either chart belongs to another user.",
+        "Comparison page renders both bagua diagrams plus three sections: favourable for both, avoid for both, mixed."
+      ],
+      "priority": 28,
+      "passes": true,
+      "notes": "Shared-rooms grouping ported from public/calculator/ui.js to lib/shared-rooms.ts so the server view can reuse it. Embed page still passes showSaveCta={false} so the account-free embed contract is unchanged. The Compare form only renders when the user has 2+ saved charts, so a first-time user does not see an empty dropdown."
+    },
+    {
+      "id": "CHART-REDESIGN-001",
+      "title": "Sketch-matched chart layout + softer palette + PDF polish",
+      "description": "Phase 3 Stage 2 polish. The chart view (and the printable PDF) now leads with the brand header, four favourable cards in a row, the bagua diagram, then four avoid cards in a row, then the website URL footer. Bagua panels switched from bold olive/clay-deep to pale sage/peach (still AAA with dark ink text). Centre disc switched to white with a hairline border so it does not waste printer ink. Centre Kua number bumped to 64px / 800 weight. PDF is one A4 page; cards use a 4-across vertical layout in both screen and print; header pinned flush to the top of the page; footer at the bottom; WHY paragraph hidden in print so the page never spills; redundant north arrow removed because the ring labels already include 'North'.",
+      "acceptanceCriteria": [
+        "Chart page on screen and in print follows the sketch order: header -> 4 favourable cards -> bagua -> 4 avoid cards -> footer URL.",
+        "Bagua segment fills use --green-soft and --clay-soft; bagua centre is white.",
+        "Centre Kua number is large and bold.",
+        "PDF prints on exactly one A4 portrait page with the brand mark + script wordmark + 'Kua Calculator' at top and myfengshuihome.com at bottom.",
+        "Chart view (on screen) shows 4 cards per row on wide viewports, dropping to 2 then 1 on narrow.",
+        "No duplicate orientation markers above the bagua."
+      ],
+      "priority": 29,
+      "passes": true,
+      "notes": "Print layout went through several iterations: an explicit flex+height+overflow:hidden approach was unreliable across browsers (the footer kept slipping onto a second page). Natural document flow with the WHY paragraph hidden, a fixed 140mm bagua, and tight margins produced a deterministic one-page result. Screen layout uses .chart-page max-width 1080px so 4 cards fit comfortably in a row. The bagua's dedicated north-arrow group was removed because it was overlapping the ring label 'North'."
+    },
+    {
+      "id": "EMAIL-CHART-001",
+      "title": "Chart email: auto-send on opt-in + on-demand button + per-user-per-day rate limit",
+      "description": "Phase 3 Stage 3. Saving a chart with marketing_opt_in true triggers exactly one branded HTML email to the account holder containing their Kua, group, birth date, and the eight directions with practical bullets, plus a CTA back to the chart view. The chart view page also has an 'Email me this chart' button that sends the same email on demand, rate-limited to 5 emails per user per day. Email goes out from hello@myfengshuihome.com via Resend, reusing the existing Auth.js Resend wiring. A new public.email_sends table (one row per user per day) backs the rate limit.",
+      "acceptanceCriteria": [
+        "Saving a chart when profile.marketing_opt_in is true triggers exactly one email; opt-in false triggers none.",
+        "On the chart view page, 'Email me this chart' sends an email on demand.",
+        "The same email cannot be sent more than 5 times per user per day; the UI shows a clear 'limit reached' message.",
+        "Send failures do not break the chart-save flow; they are logged and surfaced via the ?email=error query param on the next render.",
+        "Email body renders cleanly in Gmail and Apple Mail (inline-styled table layout; SVG intentionally omitted; CTA links to /account/chart/[id]).",
+        "0003_email_sends.sql applies cleanly to the live Supabase project."
+      ],
+      "priority": 30,
+      "passes": false,
+      "notes": "Pending: owner runs 0003_email_sends.sql in the Supabase SQL Editor before the email button works in production. Until then the chart save still succeeds (auto-send is wrapped in try/catch); the manual button surfaces the email=error state. Implementation: lib/email-chart.ts (HTML+text builder, brand palette inline), lib/rate-limit.ts (5/day cap via UPSERT into public.email_sends), lib/resend.ts (minimal HTTP helper), app/actions/email-chart.ts (sendChartEmail server action + sendChartEmailInternal for the auto path). save-chart.ts reads profiles.marketing_opt_in after insert and fires the auto-send. The chart email omits the inline SVG bagua because Outlook does not render it; the CTA links to the web view where the bagua works."
     }
   ]
 }

@@ -8,6 +8,7 @@ import DirectionDetailCards from "@/components/DirectionDetailCards";
 import BrandMark from "@/components/BrandMark";
 import ChartPrintButton from "@/components/ChartPrintButton";
 import { deleteChart } from "@/app/actions/save-chart";
+import { sendChartEmail } from "@/app/actions/email-chart";
 import type { Direction, Compass } from "@/lib/directions";
 
 export const metadata: Metadata = {
@@ -35,9 +36,13 @@ type StoredResult = {
 };
 
 export default async function ChartViewPage(
-  props: { params: Promise<{ id: string }> },
+  props: {
+    params: Promise<{ id: string }>;
+    searchParams: Promise<{ email?: string }>;
+  },
 ) {
   const { id } = await props.params;
+  const { email: emailStatus } = await props.searchParams;
 
   const session = await auth();
   if (!session?.user?.id) redirect("/sign-in");
@@ -132,8 +137,29 @@ export default async function ChartViewPage(
       </section>
 
       <section className="chart-actions-section no-print" aria-label="Chart actions">
+        {emailStatus ? (
+          <p
+            className={`chart-email-status chart-email-status-${
+              emailStatus === "sent" ? "ok" : "err"
+            }`}
+            role={emailStatus === "sent" ? "status" : "alert"}
+          >
+            {emailStatus === "sent"
+              ? `Email sent to ${session.user.email}. Check your inbox in a minute.`
+              : emailStatus === "rate-limit"
+                ? "You have reached today's chart-email limit. Try again tomorrow."
+                : "We could not send your chart email. Please try again in a moment."}
+          </p>
+        ) : null}
+
         <div className="chart-actions-row">
           <ChartPrintButton />
+          <form action={sendChartEmail} className="chart-email-form">
+            <input type="hidden" name="id" value={data.id} />
+            <button type="submit" className="cta-secondary">
+              Email me this chart
+            </button>
+          </form>
           <Link href="/account" className="chart-back-link">
             Back to your account
           </Link>
