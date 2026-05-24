@@ -2223,12 +2223,11 @@ a:hover { color: var(--clay-deep); }
    -> bagua diagram -> 8 detail cards (2x4 grid) -> footer URL.
    ============================================================ */
 @media print {
-  /* Tight top margin pulls the brand mark right up to the page edge;
-     side and bottom margins kept comfortable so cards and the bagua
-     have a breath of white space. */
+  /* Tight margins so the whole page (header through footer URL) fits
+     on a single A4. */
   @page {
     size: A4 portrait;
-    margin: 3mm 8mm 6mm 8mm;
+    margin: 3mm 8mm 4mm 8mm;
   }
 
   .site-header,
@@ -2244,16 +2243,18 @@ a:hover { color: var(--clay-deep); }
     color: #000000 !important;
   }
 
-  /* Flex column so the bagua section can grow to fill remaining
-     space: header / cards pin to top, avoid cards + footer pin
-     to bottom, and the bagua expands in the middle and stays
-     vertically centred at the largest size that fits. */
+  /* Fixed-height flex column so everything (header through footer
+     URL) is forced to fit a single A4 page. min-height was letting
+     the bagua's flex-grow push the footer onto a second page; height
+     plus overflow:hidden caps the page exactly. */
   .chart-page {
     display: flex !important;
     flex-direction: column !important;
-    min-height: calc(297mm - 16mm) !important;
+    height: calc(297mm - 7mm) !important; /* page height - vertical margins */
+    max-height: calc(297mm - 7mm) !important;
     padding: 0 !important;
     max-width: 100% !important;
+    overflow: hidden !important;
   }
 
   /* --- Print-only brand header: flush against the top of the page --- */
@@ -2344,9 +2345,8 @@ a:hover { color: var(--clay-deep); }
     margin-top: 3pt !important;
   }
 
-  /* --- Bagua diagram: fills the whole grown diagram section. The
-         SVG scales by height so it expands until either the available
-         vertical space or the 170mm width cap is reached. --- */
+  /* --- Bagua diagram: fills the whole grown diagram section but
+         capped so it can never push the footer off the page. --- */
   .bagua-figure {
     margin: 0;
     width: 100%;
@@ -2359,7 +2359,7 @@ a:hover { color: var(--clay-deep); }
     height: 100% !important;
     width: auto !important;
     max-width: 100% !important;
-    max-height: 100% !important;
+    max-height: 130mm !important;
     margin: 0;
   }
   /* Pale tints with dark ink text - matches the on-screen softer look,
