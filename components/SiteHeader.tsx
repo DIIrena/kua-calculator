@@ -1,23 +1,17 @@
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
+import { auth } from "@/auth";
+import SignOutButton from "@/components/SignOutButton";
 
 // Server Component. Reflects logged-in state: shows "Sign in" when logged
 // out, "Account" + "Sign out" when logged in. Falls back gracefully to the
-// logged-out view when Supabase env vars are placeholders.
+// logged-out view when the auth layer is not configured.
 export default async function SiteHeader() {
   let signedIn = false;
-
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  if (url && !url.includes("PLACEHOLDER")) {
-    try {
-      const supabase = await createClient();
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      signedIn = Boolean(user);
-    } catch {
-      signedIn = false;
-    }
+  try {
+    const session = await auth();
+    signedIn = Boolean(session?.user);
+  } catch {
+    signedIn = false;
   }
 
   return (
@@ -57,11 +51,7 @@ export default async function SiteHeader() {
         {signedIn ? (
           <>
             <Link href="/account">Account</Link>
-            <form action="/auth/sign-out" method="post">
-              <button type="submit" className="account-link">
-                Sign out
-              </button>
-            </form>
+            <SignOutButton />
           </>
         ) : (
           <Link href="/sign-in">Sign in</Link>

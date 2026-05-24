@@ -2,24 +2,26 @@
 
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-import { createClient, createAdminClient } from "@/lib/supabase/server";
+import { auth, signOut } from "@/auth";
+import { createAdminClient } from "@/lib/supabase/server";
 
-// Save the account holder's birth data and marketing preference to their
-// profiles row. Scoped by RLS to the current user.
+// Save the account holder's birth data and marketing preference. Scoped
+// by the NextAuth session user id. Writes through the service-role
+// Supabase client (RLS is off on these tables; access control lives
+// here in the server action).
 export async function saveDetails(formData: FormData) {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const session = await auth();
+  if (!session?.user?.id) redirect("/sign-in");
 
-  if (!user) redirect("/sign-in");
+  const userId = session.user.id;
 
   const toInt = (v: FormDataEntryValue | null) => {
     const n = parseInt(String(v ?? ""), 10);
     return Number.isFinite(n) ? n : null;
   };
 
-  await supabase
+  const admin = createAdminClient();
+  await admin
     .from("profiles")
     .update({
       birth_year: toInt(formData.get("birth_year")),
@@ -29,25 +31,24 @@ export async function saveDetails(formData: FormData) {
       marketing_opt_in: formData.get("marketing_opt_in") === "on",
       updated_at: new Date().toISOString(),
     })
-    .eq("id", user.id);
+    .eq("id", userId);
 
   revalidatePath("/account");
 }
 
-// Delete the account holder's account. The schema's on delete cascade
-// removes their profiles row and saved_charts rows. Requires the
-// service-role key, which bypasses RLS and is server-only.
+// Delete the account holder's account. Removes the row from
+// next_auth.users; the on-delete-cascade FKs on next_auth.sessions,
+// next_auth.accounts, public.profiles and public.saved_charts clear
+// the rest. Then signs out and returns to the calculator.
 export async function deleteAccount() {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const session = await auth();
+  if (!session?.user?.id) redirect("/sign-in");
 
-  if (!user) redirect("/sign-in");
+  const userId = session.user.id;
 
   const admin = createAdminClient();
-  await admin.auth.admin.deleteUser(user.id);
-  await supabase.auth.signOut();
+  await admin.schema("next_auth").from("users").delete().eq("id", userId);
 
+  await signOut({ redirect: false });
   redirect("/kua-calculator");
 }

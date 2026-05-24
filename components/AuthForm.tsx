@@ -1,84 +1,30 @@
 "use client";
 
-import { useState } from "react";
-import { createClient } from "@/lib/supabase/client";
+import { useActionState, useState } from "react";
+import {
+  emailSignInAction,
+  googleSignInAction,
+  type SignInState,
+} from "@/app/(site)/sign-in/actions";
 
-// Client Component. Magic-link sign-in plus Google OAuth. The marketing
-// opt-in checkbox is unchecked by default; consent is captured into the
-// user metadata and copied to profiles.marketing_opt_in after sign-in.
+// Client Component. Magic-link sign-in plus Google OAuth, both routed
+// through Auth.js v5 server actions defined in app/(site)/sign-in/actions.ts.
+// The marketing-opt-in checkbox is unchecked by default; the choice is
+// stored in a short-lived cookie at submit time and persisted to the
+// profiles row the first time the new account loads /account.
 export default function AuthForm() {
-  const [email, setEmail] = useState("");
   const [optIn, setOptIn] = useState(false);
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle",
+  const [state, formAction, pending] = useActionState<SignInState, FormData>(
+    emailSignInAction,
+    { ok: false, message: "" },
   );
-  const [message, setMessage] = useState("");
 
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    (typeof window !== "undefined" ? window.location.origin : "");
-
-  async function handleMagicLink(e: React.FormEvent) {
-    e.preventDefault();
-    setStatus("sending");
-    setMessage("");
-
-    try {
-      const supabase = createClient();
-      const { error } = await supabase.auth.signInWithOtp({
-        email,
-        options: {
-          emailRedirectTo: `${siteUrl}/auth/callback`,
-          data: { marketing_opt_in: optIn },
-        },
-      });
-
-      if (error) {
-        setStatus("error");
-        setMessage(error.message);
-        return;
-      }
-
-      setStatus("sent");
-      setMessage(
-        "Check your inbox. We sent a sign-in link to " +
-          email +
-          ". The link opens your account.",
-      );
-    } catch {
-      setStatus("error");
-      setMessage(
-        "Sign-in is not available yet. The site owner needs to connect Supabase.",
-      );
-    }
-  }
-
-  async function handleGoogle() {
-    setStatus("sending");
-    setMessage("");
-
-    try {
-      const supabase = createClient();
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: "google",
-        options: { redirectTo: `${siteUrl}/auth/callback` },
-      });
-
-      if (error) {
-        setStatus("error");
-        setMessage(error.message);
-      }
-    } catch {
-      setStatus("error");
-      setMessage(
-        "Google sign-in is not available yet. The site owner needs to connect Supabase and Google OAuth.",
-      );
-    }
-  }
+  const ok = state?.ok === true;
+  const hasMessage = Boolean(state?.message);
 
   return (
     <div>
-      <form onSubmit={handleMagicLink} noValidate>
+      <form action={formAction} noValidate>
         <div className="field">
           <label className="field-label" htmlFor="auth-email">
             Email address
@@ -90,8 +36,6 @@ export default function AuthForm() {
             autoComplete="email"
             required
             placeholder="you@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
@@ -109,43 +53,42 @@ export default function AuthForm() {
           </label>
         </div>
 
-        <button
-          type="submit"
-          className="cta-primary"
-          disabled={status === "sending"}
-        >
-          {status === "sending" ? "Sending..." : "Email me a sign-in link"}
+        <button type="submit" className="cta-primary" disabled={pending}>
+          {pending ? "Sending..." : "Email me a sign-in link"}
         </button>
       </form>
 
       <div className="auth-divider">or</div>
 
-      <button
-        type="button"
-        className="btn-secondary"
-        onClick={handleGoogle}
-        disabled={status === "sending"}
-      >
-        Continue with Google
-      </button>
+      <form action={googleSignInAction}>
+        {/* Carry the opt-in choice into the Google route via a hidden
+            field, kept in sync with the checkbox above. */}
+        <input
+          type="hidden"
+          name="marketing_opt_in"
+          value={optIn ? "on" : ""}
+        />
+        <button type="submit" className="btn-secondary" disabled={pending}>
+          Continue with Google
+        </button>
+      </form>
 
-      {message && (
+      {hasMessage && (
         <p
           className={
-            status === "error"
-              ? "auth-feedback auth-feedback-error"
-              : "auth-feedback auth-feedback-ok"
+            ok
+              ? "auth-feedback auth-feedback-ok"
+              : "auth-feedback auth-feedback-error"
           }
-          role={status === "error" ? "alert" : "status"}
+          role={ok ? "status" : "alert"}
         >
-          {message}
+          {state.message}
         </p>
       )}
 
       <p className="auth-note">
         No password needed. Signing in creates a free account. We store the
-        email you sign in with. See the{" "}
-        <a href="/privacy">privacy page</a>.
+        email you sign in with. See the <a href="/privacy">privacy page</a>.
       </p>
     </div>
   );

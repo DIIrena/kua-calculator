@@ -7,7 +7,7 @@ A free web tool that returns a reader's Kua number, East/West group, and the eig
 
 ## Stack (Phase 3 onward)
 
-Next.js (App Router, TypeScript) on Vercel + Supabase. Flask and Render are retired. The calculation is unchanged vanilla JS reused as a static island. No build step beyond `next build`.
+Next.js (App Router, TypeScript) on Vercel. **Auth.js v5 (NextAuth)** runs on the Next.js server for sign-in (Google OAuth + Resend magic-link email). **Supabase is the database only** (Postgres + the `@auth/supabase-adapter` tables in the `next_auth` schema). Flask and Render are retired. The calculation is unchanged vanilla JS reused as a static island. No build step beyond `next build`.
 
 ## Files in this project
 
@@ -20,17 +20,19 @@ Next.js (App Router, TypeScript) on Vercel + Supabase. Flask and Render are reti
 | `app/layout.tsx` | Root layout: `<html>`, fonts (`next/font`), `globals.css`. |
 | `app/(site)/` | Route group with the SiteHeader / SiteFooter chrome: calculator, methodology, sign-in, account, privacy. |
 | `app/embed/` | Chrome-free iframe-embeddable calculator. |
-| `app/auth/` | `callback` and `sign-out` route handlers. |
+| `app/api/auth/[...nextauth]/route.ts` | Auth.js v5 catch-all GET/POST handler. |
+| `app/actions/sign-out.ts` | Server action that clears the NextAuth session. |
 | `app/globals.css` | Screen styles (migrated from the old `main.css`). |
 | `app/robots.ts` | AI-bot policy. |
-| `components/` | `SiteHeader`, `SiteFooter`, `CalculatorIsland`, `CalculatorScripts`, `AuthForm`. |
-| `lib/supabase/` | `client`, `server`, `middleware` Supabase clients. |
+| `auth.ts` | Auth.js v5 config: Google + Resend providers, Supabase adapter, branded magic-link email. Exports `auth`, `signIn`, `signOut`, `handlers`. |
+| `components/` | `SiteHeader`, `SiteFooter`, `CalculatorIsland`, `CalculatorScripts`, `AuthForm`, `SignOutButton`. |
+| `lib/supabase/server.ts` | Service-role Supabase DB client. No auth wiring. |
 | `lib/markdown.ts` | Build-time markdown rendering (remark + remark-gfm + rehype-slug). |
-| `proxy.ts` | Refreshes the Supabase session each request (Next 16 renamed `middleware` to `proxy`). |
 | `public/calculator/` | The four calculator JS files (`cny`, `directions`, `kua`, `ui`), reused byte-for-byte. |
 | `public/print.css` | Print-friendly result card. |
-| `supabase/migrations/0001_init.sql` | Schema: `profiles`, `saved_charts`, RLS, `handle_new_user` trigger. |
-| `.env.example` | Documents the four environment variables. |
+| `supabase/migrations/0001_init.sql` | Original schema (superseded by 0002). |
+| `supabase/migrations/0002_nextauth.sql` | Current schema: `next_auth` adapter tables, recreated `profiles` + `saved_charts` (FK to `next_auth.users`, RLS off), new-user trigger. |
+| `.env.example` | Documents the seven environment variables. |
 | `README.md` | Run + deploy instructions. |
 
 ## Shared agent context
@@ -40,9 +42,11 @@ Project:        kua-calculator (first product of My Feng Shui Home)
 Client:         Internal
 Brand voice:    Calm, authoritative, clear. Practical not woo. Plain English.
                 Honest framing: Kua is a structured decision tool, not a fortune.
-Tech stack:     Next.js (App Router, TypeScript), Vercel, Supabase (auth +
-                Postgres + RLS). Markdown rendered at build time. The Kua
-                calculation is client-side vanilla JS, reused unchanged.
+Tech stack:     Next.js (App Router, TypeScript), Vercel, Auth.js v5
+                on the Next.js server (Google + Resend magic link),
+                Supabase as the Postgres database. Markdown rendered at
+                build time. The Kua calculation is client-side vanilla
+                JS, reused unchanged.
 Output targets: app/, components/, lib/, public/, supabase/, content/
 Do NOT:         - Use em dashes anywhere (workspace rule).
                 - Promise outcomes. Use "supports the conditions for" language.
@@ -64,12 +68,14 @@ Conventions:    - Accessibility-first: labels for all inputs, aria where needed,
 - The Kua **calculation** runs entirely client-side in vanilla JS. The
   calculator core and the `/embed` widget never send birth data anywhere and
   carry no third-party dependencies.
-- **The account layer (sign-in, account, dashboard) deliberately uses Supabase
-  and stores account-holder data**: the email a user signs up with, and the
-  birth data / charts they choose to save. This is intentional and was
-  approved in Phase 3. It does not apply to anonymous calculator use or to
-  `/embed`, which remain privacy-pure. Privacy copy must keep this distinction
-  clear (see `app/(site)/privacy/page.tsx` and the calculator FAQ).
+- **The account layer (sign-in, account, dashboard) deliberately stores
+  account-holder data**: the email a user signs up with, and the birth
+  data / charts they choose to save. Auth runs on the Next.js server
+  via Auth.js v5 (Google + Resend magic link); Supabase stores the data.
+  This is intentional and was approved in Phase 3. It does not apply to
+  anonymous calculator use or to `/embed`, which remain privacy-pure.
+  Privacy copy must keep this distinction clear (see
+  `app/(site)/privacy/page.tsx` and the calculator FAQ).
 - Inline SVG only, no raster images.
 - Accessibility checks at every UI task: contrast, focus, keyboard, labels.
 
@@ -88,7 +94,11 @@ the Phase 3 staged build.)
 
 ## Env vars
 
-Four, documented in `.env.example`: `NEXT_PUBLIC_SUPABASE_URL`,
-`NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`,
-`NEXT_PUBLIC_SITE_URL`. The public pages build and run with placeholders;
-only live auth needs real keys. Never commit `.env.local`.
+Seven, documented in `.env.example`:
+
+- Auth.js: `AUTH_SECRET`, `AUTH_GOOGLE_ID`, `AUTH_GOOGLE_SECRET`, `AUTH_RESEND_KEY`
+- Supabase (database): `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`
+- Site: `NEXT_PUBLIC_SITE_URL`
+
+The public pages build and run with placeholders; only live auth needs
+real keys. Never commit `.env.local`.
