@@ -2243,18 +2243,15 @@ a:hover { color: var(--clay-deep); }
     color: #000000 !important;
   }
 
-  /* Fixed-height flex column so everything (header through footer
-     URL) is forced to fit a single A4 page. min-height was letting
-     the bagua's flex-grow push the footer onto a second page; height
-     plus overflow:hidden caps the page exactly. */
+  /* Natural document flow. With the WHY paragraph hidden in print
+     and a deterministic bagua width, the total content height stays
+     comfortably under one A4. The flex tricks were causing the
+     footer URL to overflow to a second page. */
+  html, body { margin: 0 !important; padding: 0 !important; }
   .chart-page {
-    display: flex !important;
-    flex-direction: column !important;
-    height: calc(297mm - 7mm) !important; /* page height - vertical margins */
-    max-height: calc(297mm - 7mm) !important;
     padding: 0 !important;
+    margin: 0 !important;
     max-width: 100% !important;
-    overflow: hidden !important;
   }
 
   /* --- Print-only brand header: flush against the top of the page --- */
@@ -2340,9 +2337,8 @@ a:hover { color: var(--clay-deep); }
     margin-top: 3pt !important;
   }
 
-  /* --- Bagua diagram: fixed size, generously proportioned but
-         capped at a size that guarantees room for the avoid cards
-         and the footer URL on the same page. --- */
+  /* --- Bagua diagram: bigger now (140mm) since the WHY paragraph
+         is hidden and the layout has plenty of slack. --- */
   .bagua-figure {
     margin: 0;
     width: 100%;
@@ -2351,8 +2347,8 @@ a:hover { color: var(--clay-deep); }
     justify-content: center;
   }
   .bagua-svg {
-    width: 110mm !important;
-    max-width: 110mm !important;
+    width: 140mm !important;
+    max-width: 140mm !important;
     height: auto !important;
     margin: 0;
   }
@@ -2438,12 +2434,10 @@ a:hover { color: var(--clay-deep); }
     margin: 2pt 0 0 !important;
   }
 
-  /* --- Footer URL: pinned to the very bottom of the page via
-         margin-top: auto. Any leftover vertical space ends up
-         between the avoid cards and the footer. --- */
+  /* --- Footer URL: follows naturally after the avoid cards (a
+         margin-top: auto trick pushed it past the page edge). --- */
   .chart-print-footer {
-    flex-shrink: 0;
-    margin-top: auto !important;
+    margin-top: 6pt;
     padding-top: 3pt;
     border-top: 0.5pt solid #888888;
     font-size: 7.5pt;
