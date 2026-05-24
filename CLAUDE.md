@@ -1,7 +1,7 @@
 # kua-calculator
 
 Workspace brief: see [../../CLAUDE.md](../../CLAUDE.md).
-Architect spec: see [spec/architect-2026-05-22.md](spec/architect-2026-05-22.md) (Phase 3). Earlier: [spec/architect-2026-05-13.md](spec/architect-2026-05-13.md).
+Architect spec: see [spec/architect-2026-05-24.md](spec/architect-2026-05-24.md) (Stages 2-5 plan, DRAFT). Earlier: [spec/architect-2026-05-22.md](spec/architect-2026-05-22.md) (Phase 3 Stage 1), [spec/architect-2026-05-13.md](spec/architect-2026-05-13.md).
 
 A free web tool that returns a reader's Kua number, East/West group, and the eight personal directions (four favourable, four unfavourable) with plain-English meanings. The first product of My Feng Shui Home. Top-of-funnel acquisition channel. As of Phase 3 it also offers an optional free account (email capture) for saving and emailing a chart.
 
