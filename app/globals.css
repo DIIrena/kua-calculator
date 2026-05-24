@@ -2041,9 +2041,11 @@ a:hover { color: var(--clay-deep); }
 
 /* --- Direction detail cards (rich grid below the diagram) --- */
 .direction-cards-grid {
+  /* Wide screens fit 4 vertical cards in a row (matches the print
+     layout); narrower screens drop to 3, 2, then 1 column. */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
 }
 
 .direction-card {
@@ -2199,12 +2201,12 @@ a:hover { color: var(--clay-deep); }
    -> bagua diagram -> 8 detail cards (2x4 grid) -> footer URL.
    ============================================================ */
 @media print {
-  /* Tight top margin so the brand mark and titles sit at the top
-     of the page; comfortable side and bottom margins so the chart
-     and the avoid cards have breathing room. */
+  /* Tight top margin pulls the brand mark right up to the page edge;
+     side and bottom margins kept comfortable so cards and the bagua
+     have a breath of white space. */
   @page {
     size: A4 portrait;
-    margin: 4mm 10mm 8mm 10mm;
+    margin: 3mm 8mm 6mm 8mm;
   }
 
   .site-header,
@@ -2314,12 +2316,12 @@ a:hover { color: var(--clay-deep); }
     margin-top: auto !important;
   }
 
-  /* --- Bagua diagram: as big as the middle section allows, capped
-         so the cards remain comfortably readable. --- */
+  /* --- Bagua diagram: large central feature. Capped at 145mm so
+         the bottom row of cards stays comfortable. --- */
   .bagua-figure { display: block; text-align: center; margin: 0; }
   .bagua-svg {
     width: 100% !important;
-    max-width: 130mm !important;
+    max-width: 145mm !important;
     height: auto;
     margin: 0 auto;
   }
@@ -2341,55 +2343,68 @@ a:hover { color: var(--clay-deep); }
   .bagua-north-arrow,
   .bagua-north-label     { fill: #000000 !important; }
 
-  /* --- Detail cards: 2 columns x 2 rows per section, very compact --- */
+  /* --- Detail cards: 4 vertical (narrow column) cards in a row, one
+         row above the bagua and one below. Header stacks vertically
+         inside each card so the compass arrow + direction name + badge
+         all read down the column. --- */
   .direction-cards-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 3pt !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 2pt !important;
   }
   .direction-card {
     background: #ffffff !important;
     border: 0.4pt solid #888888 !important;
     border-left-width: 2.5pt !important;
     border-radius: 2pt !important;
-    padding: 3pt 5pt !important;
+    padding: 3pt 4pt !important;
     gap: 0 !important;
     page-break-inside: avoid;
   }
   .direction-card[data-favourable="true"]  { border-left-color: #4f5a36 !important; }
   .direction-card[data-favourable="false"] { border-left-color: #9c5331 !important; border-left-style: dashed !important; }
 
+  /* Card header stacks: arrow above name above badge (narrow column). */
   .direction-card-header {
-    align-items: flex-start;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1pt !important;
+  }
+  .direction-card-compass {
+    gap: 3pt !important;
+    align-items: baseline !important;
   }
   .direction-card-arrow {
     font-size: 10pt !important;
-    width: 12pt;
+    width: auto !important;
     line-height: 1 !important;
   }
-  .direction-card-name-full  { font-size: 8pt !important; color: #000000 !important; line-height: 1.1 !important; }
-  .direction-card-name-abbrev{ font-size: 6.5pt !important; line-height: 1.1 !important; margin-top: 0 !important; }
+  .direction-card-name-full  { font-size: 7.5pt !important; color: #000000 !important; line-height: 1.1 !important; }
+  .direction-card-name-abbrev{ display: none !important; }
   .direction-card-badge {
-    font-size: 6.5pt !important;
-    padding: 0.5pt 4pt !important;
+    font-size: 6pt !important;
+    padding: 0.5pt 3pt !important;
     color: #2a271e !important;
     line-height: 1.2 !important;
+    align-self: flex-start;
   }
   .direction-card[data-favourable="true"]  .direction-card-badge { background: #d8debf !important; }
   .direction-card[data-favourable="false"] .direction-card-badge { background: #f0d5c0 !important; }
 
   .direction-card-quality { margin-top: 1pt !important; }
-  .direction-card-quality-pinyin { font-size: 7.5pt !important; line-height: 1.15 !important; color: #000000 !important; margin: 0 !important; }
-  .direction-card-quality-gloss  { font-size: 6.5pt !important; line-height: 1.15 !important; margin: 0 !important; }
+  .direction-card-quality-pinyin { font-size: 7pt !important; line-height: 1.15 !important; color: #000000 !important; margin: 0 !important; }
+  .direction-card-quality-hanzi  { display: none !important; }
+  .direction-card-quality-gloss  { display: none !important; }
   .direction-card-why {
-    font-size: 7pt !important;
+    font-size: 6.5pt !important;
     line-height: 1.2 !important;
     color: #000000 !important;
     margin: 1.5pt 0 0 !important;
   }
+  .direction-card-why-label { display: none !important; }
   .direction-card-bullets {
-    font-size: 7pt !important;
-    line-height: 1.18 !important;
-    padding-left: 9pt !important;
+    font-size: 6.5pt !important;
+    line-height: 1.2 !important;
+    padding-left: 8pt !important;
     gap: 0 !important;
     color: #000000 !important;
     margin: 1.5pt 0 0 !important;
