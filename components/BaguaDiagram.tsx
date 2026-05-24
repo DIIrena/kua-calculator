@@ -168,7 +168,7 @@ export default function BaguaDiagram({ kua, directionsByCompass }: Props) {
         />
         <text
           x={CENTER_X}
-          y={CENTER_Y - 16}
+          y={CENTER_Y - 28}
           className="bagua-centre-eyebrow"
           textAnchor="middle"
         >
@@ -176,7 +176,7 @@ export default function BaguaDiagram({ kua, directionsByCompass }: Props) {
         </text>
         <text
           x={CENTER_X}
-          y={CENTER_Y + 20}
+          y={CENTER_Y + 16}
           className="bagua-centre-kua"
           textAnchor="middle"
           dominantBaseline="central"

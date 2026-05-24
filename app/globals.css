@@ -17,8 +17,8 @@
   --green-deep:  #3c4429;   /* darker olive - links, hover */
   --clay:        #be6b43;   /* warm clay - the kinetic pop */
   --clay-deep:   #9c5331;   /* darker clay */
-  --green-soft:  #c8d0b2;   /* pale sage - chart favourable fill (AAA with ink) */
-  --clay-soft:   #ebcab6;   /* pale peach - chart avoid fill (AAA with ink) */
+  --green-soft:  #d8debf;   /* pale sage - chart favourable fill (AAA with ink) */
+  --clay-soft:   #f0d5c0;   /* pale peach - chart avoid fill (AAA with ink) */
   --ink:         #2a271e;   /* deep near-black - text, the dark counterweight */
   --ink-2:       #5f5848;   /* soft brown-grey - secondary text */
   --hairline:    #cfc4ab;   /* soft borders, rules */
@@ -1870,7 +1870,10 @@ a:hover { color: var(--clay-deep); }
 
 .bagua-centre-kua {
   fill: var(--ink);
-  font: 700 36px var(--font-display);
+  /* Big, prominent. R_INNER is 76; this keeps the digit inside the
+     centre disc comfortably. */
+  font: 800 64px var(--font-display);
+  letter-spacing: -0.02em;
 }
 
 .bagua-ring-label {
@@ -2214,15 +2217,23 @@ a:hover { color: var(--clay-deep); }
     color: #000000 !important;
   }
 
+  /* Flex column so the bagua section can grow to fill remaining
+     space: header / cards pin to top, avoid cards + footer pin
+     to bottom, and the bagua expands in the middle and stays
+     vertically centred at the largest size that fits. */
   .chart-page {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: calc(297mm - 16mm) !important;
     padding: 0 !important;
     max-width: 100% !important;
   }
 
-  /* --- Print-only brand header: tight, single-line look --- */
+  /* --- Print-only brand header: pinned to top, tight --- */
   .chart-print-header {
-    margin: 0 0 4pt;
-    padding-bottom: 3pt;
+    flex-shrink: 0;
+    margin: 0 0 2pt;
+    padding-bottom: 2pt;
     border-bottom: 0.5pt solid #888888;
   }
   .chart-print-header .account-brand {
@@ -2245,20 +2256,24 @@ a:hover { color: var(--clay-deep); }
     color: #4f5a36;
   }
 
-  /* --- Person info / heading: very tight --- */
+  /* --- Person info / heading: very tight, pinned high --- */
+  .eyebrow { display: none !important; }
   .chart-heading {
-    margin: 4pt 0 1pt;
+    flex-shrink: 0;
+    margin: 3pt 0 1pt;
     font-size: 13pt;
     color: #000000 !important;
   }
   .chart-meta,
   .chart-summary {
+    flex-shrink: 0;
     margin: 1pt 0;
     font-size: 8pt;
     line-height: 1.3;
     color: #000000 !important;
   }
   .chart-cny-notice {
+    flex-shrink: 0;
     margin: 2pt 0;
     padding: 2pt 4pt;
     background: #f4ede2 !important;
@@ -2268,32 +2283,41 @@ a:hover { color: var(--clay-deep); }
     color: #000000 !important;
   }
 
-  /* --- Section blocks: tight, no big gaps. The favourable/avoid
-         badges on each card already say which group it is, so the
-         section headings are redundant in print and hidden. --- */
+  /* --- Section blocks. Favourable cards pinned near the top, avoid
+         cards pinned near the bottom, diagram section grows to fill
+         the middle so the bagua is as large as possible. Section
+         headings hidden (the cards' badges convey the group). --- */
   .chart-section {
-    margin: 3pt 0;
+    flex-shrink: 0;
+    margin: 2pt 0;
     page-break-inside: avoid;
   }
   .chart-section-heading {
     display: none !important;
   }
+  .chart-section-diagram {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4pt 0 !important;
+  }
 
-  /* --- Bagua diagram: compact, centered. The on-screen caption is
-         hidden too; in print the cards above/below already explain
-         the colour code. --- */
+  /* --- Bagua diagram: as big as the middle section allows, capped
+         so the cards remain comfortably readable. --- */
   .bagua-figure { display: block; text-align: center; margin: 0; }
   .bagua-svg {
-    width: 60mm !important;
-    max-width: 60mm !important;
+    width: 100% !important;
+    max-width: 130mm !important;
     height: auto;
     margin: 0 auto;
   }
   /* Pale tints with dark ink text - matches the on-screen softer look,
      prints cleanly in colour, and still distinguishes greyscale via the
      star / cross icons and the dashed border on avoid cards. */
-  .bagua-seg-favourable { fill: #c8d0b2 !important; }
-  .bagua-seg-avoid       { fill: #ebcab6 !important; }
+  .bagua-seg-favourable { fill: #d8debf !important; }
+  .bagua-seg-avoid       { fill: #f0d5c0 !important; }
   .bagua-compass-label,
   .bagua-quality-label,
   .bagua-icon            { fill: #2a271e !important; }
@@ -2340,8 +2364,8 @@ a:hover { color: var(--clay-deep); }
     color: #2a271e !important;
     line-height: 1.2 !important;
   }
-  .direction-card[data-favourable="true"]  .direction-card-badge { background: #c8d0b2 !important; }
-  .direction-card[data-favourable="false"] .direction-card-badge { background: #ebcab6 !important; }
+  .direction-card[data-favourable="true"]  .direction-card-badge { background: #d8debf !important; }
+  .direction-card[data-favourable="false"] .direction-card-badge { background: #f0d5c0 !important; }
 
   .direction-card-quality { margin-top: 1pt !important; }
   .direction-card-quality-pinyin { font-size: 7.5pt !important; line-height: 1.15 !important; color: #000000 !important; margin: 0 !important; }
@@ -2361,8 +2385,9 @@ a:hover { color: var(--clay-deep); }
     margin: 1.5pt 0 0 !important;
   }
 
-  /* --- Footer URL --- */
+  /* --- Footer URL: pinned to the bottom of the flex column --- */
   .chart-print-footer {
+    flex-shrink: 0;
     margin-top: 4pt;
     padding-top: 3pt;
     border-top: 0.5pt solid #888888;
