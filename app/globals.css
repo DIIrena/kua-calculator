@@ -1804,6 +1804,20 @@ a:hover { color: var(--clay-deep); }
   border-color: var(--clay-deep);
 }
 
+/* --- Account birth-data form: two action buttons in a row --- */
+.account-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.account-form-note {
+  margin: var(--space-3) 0 0;
+  color: var(--ink-2);
+  font-size: 0.9rem;
+}
+
 /* --- Secondary CTA used by chart actions and saved-chart View links --- */
 .cta-secondary {
   display: inline-flex;

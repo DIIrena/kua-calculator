@@ -3,7 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { createAdminClient } from "@/lib/supabase/server";
-import { saveDetails, deleteAccount } from "./actions";
+import { saveDetails, saveAndEmailMyChart, deleteAccount } from "./actions";
 import { deleteChart } from "@/app/actions/save-chart";
 import { compareCharts } from "@/app/actions/compare-charts";
 import BrandMark from "@/components/BrandMark";
@@ -206,9 +206,23 @@ export default async function AccountPage() {
             </label>
           </div>
 
-          <button type="submit" className="cta-primary">
-            Save my details
-          </button>
+          <div className="account-form-actions">
+            <button type="submit" className="cta-primary">
+              Save my details
+            </button>
+            <button
+              type="submit"
+              formAction={saveAndEmailMyChart}
+              className="cta-secondary"
+            >
+              Send my chart by email
+            </button>
+          </div>
+          <p className="account-form-note">
+            &ldquo;Send my chart by email&rdquo; saves a chart from these
+            details and emails it to your account address. You must have
+            year, month, day, and gender filled in.
+          </p>
         </form>
       </section>
 
