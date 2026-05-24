@@ -2328,38 +2328,32 @@ a:hover { color: var(--clay-deep); }
     margin-top: 2pt !important;
   }
   .chart-section-diagram {
-    /* Flex-grows to absorb all remaining vertical space between the
-       favourable card row and the avoid card row. The bagua centred
-       inside scales by height to fill it. */
-    flex: 1 1 0 !important;
-    min-height: 0 !important;
+    /* No flex-grow: section sized to the bagua's natural size. This
+       makes the layout deterministic (no chance of the diagram
+       eating space the avoid cards or footer need). */
     margin: 3pt 0 !important;
     display: flex !important;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
   }
   .chart-section-avoid {
-    /* No margin-top: auto needed; the diagram's flex-grow already
-       pushes the avoid row down to the bottom. */
     margin-top: 3pt !important;
   }
 
-  /* --- Bagua diagram: fills the whole grown diagram section but
-         capped so it can never push the footer off the page. --- */
+  /* --- Bagua diagram: fixed size, generously proportioned but
+         capped at a size that guarantees room for the avoid cards
+         and the footer URL on the same page. --- */
   .bagua-figure {
     margin: 0;
     width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .bagua-svg {
-    height: 100% !important;
-    width: auto !important;
-    max-width: 100% !important;
-    max-height: 130mm !important;
+    width: 110mm !important;
+    max-width: 110mm !important;
+    height: auto !important;
     margin: 0;
   }
   /* Pale tints with dark ink text - matches the on-screen softer look,
@@ -2431,26 +2425,25 @@ a:hover { color: var(--clay-deep); }
   .direction-card-quality-pinyin { font-size: 7pt !important; line-height: 1.15 !important; color: #000000 !important; margin: 0 !important; }
   .direction-card-quality-hanzi  { display: none !important; }
   .direction-card-quality-gloss  { display: none !important; }
-  .direction-card-why {
-    font-size: 6.5pt !important;
-    line-height: 1.2 !important;
-    color: #000000 !important;
-    margin: 1.5pt 0 0 !important;
-  }
-  .direction-card-why-label { display: none !important; }
+  /* Hide WHY in print; the bullets carry the practical guidance and
+     hiding the prose paragraph is what makes the whole page fit on
+     one A4. The on-screen view still shows it. */
+  .direction-card-why { display: none !important; }
   .direction-card-bullets {
     font-size: 6.5pt !important;
     line-height: 1.2 !important;
     padding-left: 8pt !important;
     gap: 0 !important;
     color: #000000 !important;
-    margin: 1.5pt 0 0 !important;
+    margin: 2pt 0 0 !important;
   }
 
-  /* --- Footer URL: pinned to the bottom of the flex column --- */
+  /* --- Footer URL: pinned to the very bottom of the page via
+         margin-top: auto. Any leftover vertical space ends up
+         between the avoid cards and the footer. --- */
   .chart-print-footer {
     flex-shrink: 0;
-    margin-top: 4pt;
+    margin-top: auto !important;
     padding-top: 3pt;
     border-top: 0.5pt solid #888888;
     font-size: 7.5pt;
