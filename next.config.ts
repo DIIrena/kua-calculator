@@ -4,6 +4,10 @@ import type { NextConfig } from "next";
 // iframed by arbitrary parent sites. The account and auth pages must never
 // be frameable.
 const nextConfig: NextConfig = {
+  // @resvg/resvg-js ships a native binding (.node) that Turbopack cannot
+  // bundle into a serverless function. Marking it as a server external
+  // tells Next to load it from node_modules at runtime instead.
+  serverExternalPackages: ["@resvg/resvg-js"],
   async headers() {
     return [
       {
