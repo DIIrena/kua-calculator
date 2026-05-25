@@ -9,17 +9,13 @@ const nextConfig: NextConfig = {
   // tells Next to load it from node_modules at runtime instead.
   serverExternalPackages: ["@resvg/resvg-js"],
 
-  // The chart-image route reads three woff files at runtime to feed
+  // The chart-image route reads three TTF files at runtime to feed
   // them into Resvg (Vercel's serverless Linux has no system fonts;
-  // without these the PNG would render shapes but no text). Files
-  // accessed via fs.readFile / fs.readFileSync are not auto-included
-  // in the function bundle by Turbopack, so we list them explicitly.
+  // without these the PNG would render shapes but no text). The TTFs
+  // are committed into lib/fonts/ so Next file tracing definitely
+  // bundles them, but the explicit include here is belt-and-braces.
   outputFileTracingIncludes: {
-    "/api/chart-image/[id]": [
-      "./node_modules/@fontsource/hanken-grotesk/files/hanken-grotesk-latin-400-normal.woff",
-      "./node_modules/@fontsource/hanken-grotesk/files/hanken-grotesk-latin-700-normal.woff",
-      "./node_modules/@fontsource/hanken-grotesk/files/hanken-grotesk-latin-800-normal.woff",
-    ],
+    "/api/chart-image/[id]": ["./lib/fonts/*.ttf"],
   },
   async headers() {
     return [

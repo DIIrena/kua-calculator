@@ -21,24 +21,18 @@ export const dynamic = "force-dynamic";
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 // Vercel's serverless Linux has no system fonts; without fonts Resvg
-// renders the shapes but silently skips every <text> element (the
-// bagua segments and centre disc come out, but no compass labels or
-// Kua number). We bundle Hanken Grotesk via @fontsource and tell Resvg
-// to read those woff files from the function's node_modules. The
-// files are force-included in the function bundle via next.config.ts
-// outputFileTracingIncludes.
+// renders the shapes but silently skips every <text> element. We
+// bundle Hanken Grotesk TTFs at lib/fonts/ (committed binary files,
+// no package indirection) and pass the resolved paths to Resvg.
+//
+// Earlier attempts loaded WOFF files from @fontsource - those did
+// not work reliably (likely a resvg-js WOFF support gap), and the
+// PNG came out with shapes but no text. Real TTF files in the
+// project tree are bundled automatically by Next file tracing and
+// just work.
 function fontPath(file: string): string | null {
-  const p = path.join(
-    process.cwd(),
-    "node_modules",
-    "@fontsource",
-    "hanken-grotesk",
-    "files",
-    file,
-  );
+  const p = path.join(process.cwd(), "lib", "fonts", file);
   try {
-    // Validate the file is actually present at request time so a
-    // bundling regression on a future deploy degrades gracefully.
     readFileSync(p);
     return p;
   } catch (err) {
@@ -48,9 +42,9 @@ function fontPath(file: string): string | null {
 }
 
 const FONT_FILES: string[] = [
-  "hanken-grotesk-latin-400-normal.woff",
-  "hanken-grotesk-latin-700-normal.woff",
-  "hanken-grotesk-latin-800-normal.woff",
+  "HankenGrotesk-Regular.ttf",
+  "HankenGrotesk-Bold.ttf",
+  "HankenGrotesk-ExtraBold.ttf",
 ]
   .map(fontPath)
   .filter((p): p is string => p !== null);

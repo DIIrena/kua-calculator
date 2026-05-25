@@ -139,7 +139,7 @@ export function buildChartEmail(input: ChartEmailInput): {
   // change) so Gmail's image proxy serves a fresh PNG instead of a
   // cached broken one from a previous deploy.
   const baseUrl = input.siteUrl.replace(/\/$/, "");
-  const renderVersion = "2";
+  const renderVersion = "3";
   const baguaImgHtml = `<img src="${baseUrl}/api/chart-image/${input.chartId}?v=${renderVersion}" width="320" alt="Bagua chart for Kua ${input.kua}" style="display:block;border:0;outline:none;text-decoration:none;max-width:100%;height:auto;" />`;
 
   const html = `<!doctype html>
