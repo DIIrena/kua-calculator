@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ArticlesIndexPage() {
   return (
-    <div className="page-narrow articles-index">
+    <div className="page-content articles-index">
       <p className="eyebrow">Articles</p>
       <h1 className="articles-index-heading">
         Plain-English feng shui, one topic at a time.

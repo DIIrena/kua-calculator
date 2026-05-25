@@ -19,8 +19,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Structured data: WebSite + FAQPage. Helps Google rich results and AI
-// systems (ChatGPT, Perplexity, Google AI Overviews) cite the page.
 const webSiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -35,7 +33,6 @@ const webSiteJsonLd = {
   },
 };
 
-// FAQ answers kept in the 40-60 word AI-snippet-extraction window.
 const FAQ: Array<{ q: string; a: string }> = [
   {
     q: "Is feng shui real?",
@@ -81,10 +78,6 @@ const faqJsonLd = {
   })),
 };
 
-// Server component. Reads the session so the diagnostic teaser section
-// can show the gated half to signed-out visitors and the link to the
-// full article to signed-in visitors. Also reads ?checklist=sent|invalid|error
-// so the lead-magnet form can render inline confirmation.
 export default async function HomePage(props: {
   searchParams: Promise<{ checklist?: string }>;
 }) {
@@ -94,9 +87,32 @@ export default async function HomePage(props: {
 
   return (
     <>
-      {/* Section 1 - Hero (PAS framework + Question hook) */}
+      {/* Section 1 - Hero */}
       <section className="home-hero" aria-labelledby="home-hero-heading">
         <div className="home-hero-inner">
+          <span className="home-hero-botanical" aria-hidden="true">
+            <svg
+              viewBox="0 0 120 170"
+              xmlns="http://www.w3.org/2000/svg"
+              focusable="false"
+            >
+              <path
+                d="M61 168 C57 132 64 100 60 64 C57 38 63 20 60 6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+              />
+              <g fill="currentColor">
+                <path d="M60 120 C41 119 27 125 15 139 C33 135 49 129 60 120 Z" />
+                <path d="M61 120 C80 117 95 121 108 133 C89 132 73 128 61 120 Z" />
+                <path d="M60 82 C43 81 31 87 21 99 C37 95 51 90 60 82 Z" />
+                <path d="M61 82 C78 79 91 83 102 94 C85 93 71 89 61 82 Z" />
+                <path d="M60 46 C46 45 36 50 28 60 C41 57 53 53 60 46 Z" />
+                <path d="M61 46 C75 43 86 47 95 56 C81 56 69 52 61 46 Z" />
+              </g>
+            </svg>
+          </span>
           <p className="eyebrow">A calm, honest guide to feng shui for real homes.</p>
           <h1 id="home-hero-heading" className="home-hero-heading">
             Your home is already trying to tell you something.
@@ -121,54 +137,48 @@ export default async function HomePage(props: {
         </div>
       </section>
 
-      {/* Section 2 - What feng shui actually is (Pratfall + Specificity) */}
-      <section className="home-section honest-block" id="what-it-is" aria-labelledby="what-it-is-heading">
-        <div className="page-narrow">
+      {/* Section 2 - What feng shui actually is */}
+      <section
+        className="home-section home-section-paper honest-block"
+        id="what-it-is"
+        aria-labelledby="what-it-is-heading"
+      >
+        <div className="page-prose">
           <h2 id="what-it-is-heading">What feng shui actually is. And what it isn&apos;t.</h2>
-
           <p>
             Feng shui is <strong>not</strong> a fortune. It is not a way to make
             money appear. It is not a list of red things to put by your front door.
           </p>
-
           <p>Here is the honest version.</p>
-
           <p>
             Feng shui is a <strong>structured way of looking at a room</strong>.
             It asks where the door is. Where the bed is. Where the stove is.
             Where the light comes in. Where the air moves. Where <em>you</em> sit
             when you work.
           </p>
-
           <p>Then it gives you a small number of changes to try.</p>
-
           <p>
             Some of those changes are <em>testable</em>. Better light helps you
             read. A bed you can see the door from helps you sleep. A clean stove
             makes you cook more.
           </p>
-
           <p>
             Some of them are <em>traditional</em>. The wealth corner. The mirror
             rules. The five-element pairings. We name those honestly, every time,
             and we tell you what the evidence does and does not say.
           </p>
-
           <p>That is the whole deal.</p>
-
           <p>
             If you want the <strong>shortest</strong> way in, start with your
             Kua number. It tells you which four directions in your home are
             working <em>with</em> you and which four are working against you. It
             takes ten seconds.
           </p>
-
           <p className="honest-block-actions">
             <Link href="/kua-calculator" className="cta-primary">
               Find my Kua number
             </Link>
           </p>
-
           <p className="honest-block-lead">
             Prefer to read first? Here is the{" "}
             <strong>14-point room harmony checklist</strong> we use ourselves.
@@ -205,9 +215,12 @@ export default async function HomePage(props: {
         </div>
       </section>
 
-      {/* Section 3 - Free tools (Jobs-to-be-done) */}
-      <section className="home-section free-tools" aria-labelledby="free-tools-heading">
-        <div className="page-narrow">
+      {/* Section 3 - Free tools */}
+      <section
+        className="home-section home-section-cream free-tools"
+        aria-labelledby="free-tools-heading"
+      >
+        <div className="page-content">
           <h2 id="free-tools-heading">Start here. Free, no account.</h2>
           <p className="home-section-lede">
             Two doors into the practice. Either one works. The calculator is
@@ -236,9 +249,12 @@ export default async function HomePage(props: {
         </div>
       </section>
 
-      {/* Section 4 - Diagnostic walkthrough teaser (Specificity + Cliffhanger) */}
-      <section className="home-section diagnostic-teaser" aria-labelledby="diagnostic-teaser-heading">
-        <div className="page-narrow">
+      {/* Section 4 - Diagnostic walkthrough teaser */}
+      <section
+        className="home-section home-section-paper diagnostic-teaser"
+        aria-labelledby="diagnostic-teaser-heading"
+      >
+        <div className="page-content">
           <h2 id="diagnostic-teaser-heading">
             The seven-step walkthrough practitioners use
           </h2>
@@ -289,9 +305,12 @@ export default async function HomePage(props: {
         </div>
       </section>
 
-      {/* Section 5 - Pick a room (Curiosity + Endowment) */}
-      <section className="home-section room-picker-section" aria-labelledby="room-picker-heading">
-        <div className="page-narrow">
+      {/* Section 5 - Pick a room */}
+      <section
+        className="home-section home-section-cream room-picker-section"
+        aria-labelledby="room-picker-heading"
+      >
+        <div className="page-content">
           <h2 id="room-picker-heading">Pick a room you want to fix.</h2>
           <p className="home-section-lede">
             Tap a room. See the one move that matters most. The full nine-room
@@ -301,52 +320,66 @@ export default async function HomePage(props: {
         </div>
       </section>
 
-      {/* Section 6 - The paid offer (FAB + Goal-Gradient) */}
+      {/* Section 6 - The paid offer */}
       <section className="home-section map-offer" aria-labelledby="map-offer-heading">
-        <div className="page-narrow">
-          <p className="eyebrow">Our one paid product</p>
-          <h2 id="map-offer-heading">The Home Harmony Map</h2>
-          <p className="home-section-lede">
-            One personalised PDF. Eighteen pages, keyed to <em>your</em> Kua
-            number. The bagua of your home, a one-page walkthrough for every
-            room, a money corner page, a bedroom page, and a printable
-            diagnostic worksheet.
-          </p>
-          <ul className="map-offer-bullets">
-            <li>
-              A printed bagua map of <em>your</em> home keyed to your Kua number
-              and your front-door facing
-            </li>
-            <li>
-              A nine-sector room walkthrough naming the one change that matters
-              most in each space
-            </li>
-            <li>
-              Your four favourable directions marked for <strong>sleep</strong>,{" "}
-              <strong>work</strong>, <strong>study</strong>, and{" "}
-              <strong>meditation</strong>
-            </li>
-            <li>
-              A money-corner activation page (the wealth corner, the wallet
-              check, the dirty-stove sweep)
-            </li>
-            <li>
-              A bedroom-and-relationships page (bed position, mirror check,
-              headboard rule)
-            </li>
-          </ul>
-          <p className="map-offer-price">
-            <strong>$29</strong> one-time. No subscription. Printable.
-          </p>
-          <Link href="/home-harmony-map" className="cta-primary">
-            Get the Home Harmony Map
-          </Link>
+        <div className="page-content">
+          <div className="map-offer-grid">
+            <div className="map-offer-text">
+              <p className="eyebrow">Our one paid product</p>
+              <h2 id="map-offer-heading">The Home Harmony Map</h2>
+              <p className="home-section-lede">
+                One personalised PDF. Eighteen pages, keyed to <em>your</em>{" "}
+                Kua number. The bagua of your home, a one-page walkthrough for
+                every room, a money corner page, a bedroom page, and a printable
+                diagnostic worksheet.
+              </p>
+              <ul className="map-offer-bullets">
+                <li>
+                  A printed bagua map of <em>your</em> home keyed to your Kua
+                  number and your front-door facing
+                </li>
+                <li>
+                  A nine-sector room walkthrough naming the one change that
+                  matters most in each space
+                </li>
+                <li>
+                  Your four favourable directions marked for{" "}
+                  <strong>sleep</strong>, <strong>work</strong>,{" "}
+                  <strong>study</strong>, and <strong>meditation</strong>
+                </li>
+                <li>
+                  A money-corner activation page (the wealth corner, the wallet
+                  check, the dirty-stove sweep)
+                </li>
+                <li>
+                  A bedroom-and-relationships page (bed position, mirror check,
+                  headboard rule)
+                </li>
+              </ul>
+            </div>
+            <aside className="map-offer-price-card" aria-label="Price">
+              <p className="map-offer-price-eyebrow">The Home Harmony Map</p>
+              <p className="map-offer-price-amount">$29</p>
+              <p className="map-offer-price-suffix">
+                one-time, no subscription
+              </p>
+              <Link href="/home-harmony-map" className="cta-primary">
+                See the full details
+              </Link>
+              <p className="map-offer-price-note">
+                Personalised PDF. Printable. Yours to keep.
+              </p>
+            </aside>
+          </div>
         </div>
       </section>
 
-      {/* Section 7 - FAQ (FAQPage schema) */}
-      <section className="home-section faq-section" aria-labelledby="faq-heading">
-        <div className="page-narrow">
+      {/* Section 7 - FAQ */}
+      <section
+        className="home-section home-section-cream faq-section"
+        aria-labelledby="faq-heading"
+      >
+        <div className="page-prose">
           <h2 id="faq-heading">Common questions</h2>
           <div className="faq-list">
             {FAQ.map((item) => (
@@ -361,9 +394,12 @@ export default async function HomePage(props: {
         </div>
       </section>
 
-      {/* Section 8 - Honest framing footer block (Transparency) */}
-      <section className="home-section honest-footer-block" aria-labelledby="honest-footer-heading">
-        <div className="page-narrow">
+      {/* Section 8 - Honest framing footer block */}
+      <section
+        className="home-section home-section-sand honest-footer-block"
+        aria-labelledby="honest-footer-heading"
+      >
+        <div className="page-prose">
           <h2 id="honest-footer-heading">A short note on honesty.</h2>
           <p>
             We do not promise outcomes. Feng shui is a structured design
@@ -373,13 +409,13 @@ export default async function HomePage(props: {
           </p>
           <p>
             The Kua calculation runs in your browser. Anonymous use stays
-            anonymous. Anything you save to an account is stored on Supabase and
-            is deletable at any time from your account page.
+            anonymous. Anything you save to an account is stored on Supabase
+            and is deletable at any time from your account page.
           </p>
         </div>
       </section>
 
-      {/* Section 9 - Final CTA strip (single-choice close) */}
+      {/* Section 9 - Final CTA strip */}
       <section className="home-final-cta" aria-labelledby="final-cta-heading">
         <div className="home-final-cta-inner">
           <h2 id="final-cta-heading">

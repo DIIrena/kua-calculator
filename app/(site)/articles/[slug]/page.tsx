@@ -53,7 +53,7 @@ export default async function ArticlePage(props: { params: Params }) {
   // instead of the full body. Signed-in visitors see the full article.
   if (article.gated && !isSignedIn) {
     return (
-      <article className="page-narrow article-page">
+      <article className="page-prose article-page">
         <p className="eyebrow">Articles · Free with an account</p>
         <h1 className="article-heading">{article.title}</h1>
         <p className="article-description">{article.description}</p>
@@ -88,7 +88,7 @@ export default async function ArticlePage(props: { params: Params }) {
   const html = await renderArticle(slug);
 
   return (
-    <article className="page-narrow article-page">
+    <article className="page-prose article-page">
       <p className="eyebrow">Articles</p>
       <h1 className="article-heading">{article.title}</h1>
       <p className="article-description">{article.description}</p>

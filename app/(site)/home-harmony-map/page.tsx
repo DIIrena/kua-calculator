@@ -2,11 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { sendChecklist } from "@/app/actions/lead-magnet";
 
-// Stage 4 stub of the paid product. The actual Stripe checkout + the
-// personalised PDF generation are Stage 5 work. This page captures
-// "early list" emails using the same lead-magnet action so we can
-// announce the launch.
-
 export const metadata: Metadata = {
   title: "The Home Harmony Map - personalised feng shui PDF | My Feng Shui Home",
   description:
@@ -34,25 +29,35 @@ const productJsonLd = {
 export default async function HomeHarmonyMapPage(props: {
   searchParams: Promise<{ checklist?: string }>;
 }) {
-  // Reusing the lead-magnet action for the early-list capture. The user
-  // gets the checklist email immediately (real value) and lands here
-  // with ?checklist=sent so we can confirm we have them on the list.
   const { checklist: status } = await props.searchParams;
 
   return (
-    <div className="page-narrow map-page">
-      <p className="eyebrow">A paid product. One product, not a catalogue.</p>
-      <h1 className="map-page-heading">The Home Harmony Map.</h1>
-      <p className="map-page-lede">
-        An <strong>eighteen-page personalised PDF</strong> keyed to your Kua
-        number. The bagua of your home. A one-page walkthrough for every room.
-        A money-corner page. A bedroom page. A printable diagnostic worksheet
-        you can take with you.
-      </p>
-
-      <div className="map-page-price">
-        <span className="map-page-price-number">$29</span>
-        <span className="map-page-price-suffix">one-time, no subscription</span>
+    <div className="map-page page-content">
+      {/* Hero: 2-column on desktop. Description on left, sticky price
+          card on right. Stacks on mobile with price card on top. */}
+      <div className="map-page-hero">
+        <div>
+          <p className="eyebrow">A paid product. One product, not a catalogue.</p>
+          <h1 className="map-page-heading">The Home Harmony Map.</h1>
+          <p className="map-page-lede">
+            An <strong>eighteen-page personalised PDF</strong> keyed to your
+            Kua number. The bagua of your home. A one-page walkthrough for
+            every room. A money-corner page. A bedroom page. A printable
+            diagnostic worksheet you can take with you.
+          </p>
+        </div>
+        <aside className="map-page-price-card" aria-label="Price">
+          <p className="map-page-price-eyebrow">The Home Harmony Map</p>
+          <p className="map-page-price-amount">$29</p>
+          <p className="map-page-price-suffix">one-time, no subscription</p>
+          <a href="#early-list" className="cta-primary">
+            Join the early list
+          </a>
+          <p className="map-page-price-note">
+            Launches soon. Early-list visitors get the launch heads-up
+            and the free checklist now.
+          </p>
+        </aside>
       </div>
 
       <section className="map-page-section" aria-labelledby="what-you-get">
@@ -106,13 +111,17 @@ export default async function HomeHarmonyMapPage(props: {
         </ul>
       </section>
 
-      <section className="map-page-section map-page-early" aria-labelledby="early-list">
-        <h2 id="early-list">It launches soon. Join the early list.</h2>
+      <section
+        className="map-page-section map-page-early"
+        id="early-list"
+        aria-labelledby="early-list-heading"
+      >
+        <h2 id="early-list-heading">It launches soon. Join the early list.</h2>
         <p>
-          The Map is in production. While we finish it, we are sending the
-          <strong> 14-point room harmony checklist</strong> to everyone on
-          the early list. One email, the checklist, then a heads-up when the
-          Map goes live. No marketing list, no upsells.
+          The Map is in production. While we finish it, we are sending the{" "}
+          <strong>14-point room harmony checklist</strong> to everyone on the
+          early list. One email, the checklist, then a heads-up when the Map
+          goes live. No marketing list, no upsells.
         </p>
 
         {status === "sent" ? (

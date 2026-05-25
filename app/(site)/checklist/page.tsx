@@ -83,7 +83,7 @@ const QUESTIONS: ReadonlyArray<{ q: string; meaning: string }> = [
 
 export default function ChecklistPage() {
   return (
-    <div className="checklist-page page-narrow">
+    <div className="checklist-page page-prose">
       <header className="checklist-header no-print">
         <p className="eyebrow">A printable one-pager from My Feng Shui Home.</p>
         <h1>The 14-point room harmony checklist.</h1>
