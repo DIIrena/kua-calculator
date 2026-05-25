@@ -175,10 +175,13 @@ a:hover { color: var(--clay-deep); }
 
 .site-nav {
   display: flex;
-  gap: var(--space-5);
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
 }
 
-.site-nav a {
+.site-nav-link,
+.site-nav > a {
   color: var(--ink);
   text-decoration: none;
   font-family: var(--font-body);
@@ -188,6 +191,8 @@ a:hover { color: var(--clay-deep); }
   transition: border-color 160ms ease, color 160ms ease;
 }
 
+.site-nav-link:hover,
+.site-nav-link:focus-visible,
 .site-nav a:hover,
 .site-nav a:focus-visible {
   border-bottom-color: var(--clay);
@@ -4337,4 +4342,149 @@ a:hover { color: var(--clay-deep); }
 
 .sales-back {
   margin-top: var(--space-5) !important;
+}
+
+/* ============================================================
+   Site header nav dropdowns (category menus)
+   ============================================================ */
+
+.nav-dropdown {
+  position: relative;
+}
+
+/* Strip the default <summary> disclosure triangle in both Webkit and
+   spec'd browsers. We render our own caret. */
+.nav-dropdown-summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: var(--space-2) var(--space-1);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease, color 160ms ease;
+  user-select: none;
+}
+
+.nav-dropdown-summary::-webkit-details-marker { display: none; }
+.nav-dropdown-summary::marker { content: ""; }
+
+.nav-dropdown-summary:hover,
+.nav-dropdown[open] > .nav-dropdown-summary,
+.nav-dropdown-summary:focus-visible {
+  border-bottom-color: var(--clay);
+  color: var(--clay-deep);
+}
+
+.nav-dropdown-caret {
+  display: inline-block;
+  font-size: 0.7em;
+  color: var(--ink-2);
+  transition: transform 180ms ease;
+}
+
+.nav-dropdown[open] > .nav-dropdown-summary .nav-dropdown-caret {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-dropdown-caret { transition: none; }
+}
+
+/* Desktop dropdown panel: absolutely positioned below the summary. */
+.nav-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 320px;
+  max-width: 380px;
+  padding: var(--space-3);
+  background: var(--paper);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lift);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.nav-dropdown-link {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  border-radius: var(--radius-sm);
+  border-bottom: 0 !important; /* override .site-nav a base style */
+  transition: background 160ms ease;
+}
+
+.nav-dropdown-link:hover,
+.nav-dropdown-link:focus-visible {
+  background: var(--cream);
+  color: var(--ink) !important; /* override .site-nav a hover */
+  border-bottom-color: transparent !important;
+  outline: none;
+}
+
+.nav-dropdown-pinned {
+  font-weight: 600;
+  color: var(--green-deep);
+  background: var(--cream);
+}
+
+.nav-dropdown-see-all {
+  margin-top: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--hairline);
+  font-weight: 600;
+  color: var(--green-deep) !important;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: 0;
+}
+
+/* On narrow viewports the absolute positioning makes the panel
+   overflow off-screen and look broken. Switch to an inline accordion
+   below the summary, full-width. Wraps the nav so each item gets its
+   own row. */
+@media (max-width: 880px) {
+  .site-nav {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+  }
+  .site-header {
+    flex-wrap: wrap;
+  }
+  .nav-dropdown {
+    width: 100%;
+  }
+  .nav-dropdown-summary {
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--space-3);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .nav-dropdown-panel {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: var(--cream);
+    border-radius: 0;
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+    margin-top: var(--space-1);
+  }
+  .nav-dropdown-link {
+    padding: var(--space-3) var(--space-4);
+  }
 }

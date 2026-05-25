@@ -24,9 +24,9 @@ A good guide tells you which is which. A bad guide pretends they are the same th
 
 Feng shui is roughly *three thousand years old*. It started as a method for siting tombs and palaces, then moved to siting cities, then to siting homes. The earliest evidence comes from the Yangshao culture in northern China, around the third millennium BCE. By the Tang dynasty (roughly 600 to 900 CE) it was a working profession.
 
-The vocabulary, the cycles, the compass calculations, the eight-direction map: most of what you read about today was crystallised between the Song and Ming dynasties. The text everyone cites, the *Burial Book*, dates from somewhere in that window.
+The vocabulary, the cycles, the compass calculations, the eight-direction map: most of what you read about today was crystallised between the Song and Ming dynasties.
 
-Then the twentieth century happened. The Communist government of mainland China banned feng shui in the 1950s as feudal superstition. It survived in Hong Kong, Taiwan, Malaysia, and the diaspora. In the 1980s, Lin Yun brought a Westernised version (*Black Sect* or **BTB**) to the United States, which is the version that ended up in most decorating magazines.
+Then the twentieth century happened. The Communist government of mainland China banned feng shui in the 1950s as feudal superstition. It survived in Hong Kong, Taiwan, Malaysia, and the diaspora. In the 1980s a Western version called **BTB** (*Black Sect*) reached the United States, which is the version that ended up in most decorating magazines.
 
 So the feng shui that survived to today comes from two streams: the **Classical** schools (compass-based, mathematics-heavy) and **BTB** (door-based, pragmatic, intuition-heavy). They disagree about the details. They agree on more than they disagree about.
 

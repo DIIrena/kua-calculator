@@ -1,10 +1,49 @@
 import Link from "next/link";
 import { auth } from "@/auth";
 import SignOutButton from "@/components/SignOutButton";
+import {
+  articlesInCategory,
+  type ArticleCategory,
+} from "@/lib/articles";
 
 // Server Component. Reflects logged-in state: shows "Sign in" when logged
 // out, "Account" + "Sign out" when logged in. Falls back gracefully to the
 // logged-out view when the auth layer is not configured.
+//
+// The 4 content categories live in the nav as dropdowns (built with
+// native <details>/<summary> for accessibility and no client JS).
+// The methodology dropdown also pins the Compass School deep-dive
+// page at /methodology since it's foundational reading.
+
+type NavCategory = {
+  category: ArticleCategory;
+  label: string;
+  /** Items to show before the article list (e.g. a standalone page). */
+  pinned?: Array<{ label: string; href: string }>;
+};
+
+const NAV_CATEGORIES: ReadonlyArray<NavCategory> = [
+  {
+    category: "foundations",
+    label: "Foundations",
+  },
+  {
+    category: "bagua",
+    label: "The Bagua Map",
+  },
+  {
+    category: "room-by-room",
+    label: "Room by Room",
+  },
+  {
+    category: "methodology",
+    label: "Methodology",
+    pinned: [
+      { label: "The Compass School (deep dive)", href: "/methodology" },
+    ],
+  },
+];
+
 export default async function SiteHeader() {
   let signedIn = false;
   try {
@@ -47,16 +86,66 @@ export default async function SiteHeader() {
         </span>
       </Link>
       <nav className="site-nav" aria-label="Primary">
-        <Link href="/kua-calculator">Calculator</Link>
-        <Link href="/articles">Articles</Link>
-        <Link href="/methodology">Methodology</Link>
+        <Link href="/kua-calculator" className="site-nav-link">
+          Calculator
+        </Link>
+
+        {NAV_CATEGORIES.map((nav) => {
+          const articles = articlesInCategory(nav.category);
+          return (
+            <details key={nav.category} className="nav-dropdown">
+              <summary className="nav-dropdown-summary">
+                {nav.label}
+                <span className="nav-dropdown-caret" aria-hidden="true">
+                  &#9662;
+                </span>
+              </summary>
+              <div className="nav-dropdown-panel" role="menu">
+                {nav.pinned?.map((p) => (
+                  <Link
+                    key={p.href}
+                    href={p.href}
+                    role="menuitem"
+                    className="nav-dropdown-link nav-dropdown-pinned"
+                  >
+                    {p.label}
+                  </Link>
+                ))}
+
+                {articles.map((a) => (
+                  <Link
+                    key={a.slug}
+                    href={`/articles/${a.slug}`}
+                    role="menuitem"
+                    className="nav-dropdown-link"
+                  >
+                    {a.title}
+                  </Link>
+                ))}
+
+                <Link
+                  href={`/articles/category/${nav.category}`}
+                  role="menuitem"
+                  className="nav-dropdown-link nav-dropdown-see-all"
+                >
+                  See all {nav.label.toLowerCase()} articles &rarr;
+                </Link>
+              </div>
+            </details>
+          );
+        })}
+
         {signedIn ? (
           <>
-            <Link href="/account">Account</Link>
+            <Link href="/account" className="site-nav-link">
+              Account
+            </Link>
             <SignOutButton />
           </>
         ) : (
-          <Link href="/sign-in">Sign in</Link>
+          <Link href="/sign-in" className="site-nav-link">
+            Sign in
+          </Link>
         )}
       </nav>
     </header>
