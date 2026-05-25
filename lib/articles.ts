@@ -12,31 +12,85 @@ import remarkRehype from "remark-rehype";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 
+export type ArticleCategory =
+  | "foundations"
+  | "bagua"
+  | "room-by-room"
+  | "methodology";
+
 export type Article = {
   slug: string;
   title: string;
   description: string;
-  /** One-line teaser shown on the index. */
+  /** Short hook for the article-index card. */
   teaser: string;
   /** ISO date string. Shown at the foot of the article ("Last updated"). */
   lastUpdated: string;
   /** Gated articles require a signed-in session to read. */
   gated: boolean;
-  /** Estimated reading time, plain English. */
+  /** Plain-English estimate, e.g. "5 minutes". */
   readingTime: string;
+  /** Cluster the article belongs to. Drives the /articles/category/* pages. */
+  category: ArticleCategory;
+  /** Manually-curated related slugs. Falls back to same-category articles. */
+  relatedSlugs?: string[];
+  /** Optional in-article-CTA override. Default is "run the calculator". */
+  cta?: {
+    label: string;
+    href: string;
+    rationale?: string;
+  };
+};
+
+// Category copy used by /articles/category/[slug] and the homepage cards.
+export const CATEGORIES: Record<
+  ArticleCategory,
+  { title: string; tagline: string; description: string }
+> = {
+  foundations: {
+    title: "Foundations",
+    tagline: "What feng shui actually is.",
+    description:
+      "The basics, written in plain English. What feng shui is, what it isn't, why some of it is testable and some of it is tradition.",
+  },
+  bagua: {
+    title: "The bagua map",
+    tagline: "Where your home's nine life areas sit.",
+    description:
+      "The most useful diagram in feng shui. How to overlay it on your floor plan, what each of the nine sectors traditionally governs, and which one to start with.",
+  },
+  "room-by-room": {
+    title: "Room by room",
+    tagline: "Practical changes you can finish tonight.",
+    description:
+      "The kitchen, the bedroom, the entrance, the workspace. One concrete move per room with the reason behind it. Most cost nothing.",
+  },
+  methodology: {
+    title: "The methodology",
+    tagline: "Honest answers for the curious skeptic.",
+    description:
+      "Twelve myths debunked, the evidence-where-evidence-exists, and the design-psychology bridge for readers who arrived skeptical.",
+  },
 };
 
 export const ARTICLES: ReadonlyArray<Article> = [
+  // ---------- existing seed articles (updated with category) ----------
   {
     slug: "myths",
     title: "Four feng shui myths we don't believe",
     description:
       "Feng shui is full of recycled magazine advice. Four common myths, with the honest reading on each.",
     teaser:
-      "Four common myths, with the honest reading on each. (Free; a longer twelve-myth list is on the way.)",
+      "Four common myths, with the honest reading on each. A longer twelve-myth list is on this site too.",
     lastUpdated: "2026-05-25",
     gated: false,
     readingTime: "4 minutes",
+    category: "methodology",
+    relatedSlugs: [
+      "twelve-feng-shui-myths-holding-you-back",
+      "feng-shui-or-good-design",
+      "whats-the-evidence",
+    ],
   },
   {
     slug: "five-elements",
@@ -44,10 +98,16 @@ export const ARTICLES: ReadonlyArray<Article> = [
     description:
       "Wood, fire, earth, metal, water. What each element means in a room, and how the cycles work, without the mystique.",
     teaser:
-      "The vocabulary of feng shui. Five elements, two cycles, no mystique. (Free.)",
+      "The vocabulary of feng shui. Five elements, two cycles, no mystique.",
     lastUpdated: "2026-05-25",
     gated: false,
     readingTime: "5 minutes",
+    category: "foundations",
+    relatedSlugs: [
+      "what-is-feng-shui-really",
+      "bagua-map-wealth-corner",
+      "twenty-six-changes-this-weekend",
+    ],
   },
   {
     slug: "diagnostic-walkthrough",
@@ -55,15 +115,180 @@ export const ARTICLES: ReadonlyArray<Article> = [
     description:
       "The structured method consultants use to assess a home for the first time. Seven steps. Done in an afternoon.",
     teaser:
-      "The seven-step method consultants use. The full article is free with an account; sign-up takes ten seconds.",
+      "The seven-step method consultants use. Free with an account; sign-up takes ten seconds.",
     lastUpdated: "2026-05-25",
     gated: true,
     readingTime: "7 minutes",
+    category: "methodology",
+    relatedSlugs: [
+      "twenty-six-changes-this-weekend",
+      "kitchen-stove-and-money",
+      "bagua-map-wealth-corner",
+    ],
+  },
+  // ---------- 5 new SEO lead articles ----------
+  {
+    slug: "what-is-feng-shui-really",
+    title: "What is feng shui, really? A skeptic-friendly primer",
+    description:
+      "Feng shui in plain English. Two thousand words on what it actually is, what it isn't, and why some of its advice survives a hard look.",
+    teaser:
+      "The honest, plain-English answer to 'what is feng shui'. Two thousand words, written so a sceptic stays.",
+    lastUpdated: "2026-05-25",
+    gated: false,
+    readingTime: "9 minutes",
+    category: "foundations",
+    relatedSlugs: [
+      "five-elements",
+      "bagua-map-wealth-corner",
+      "twelve-feng-shui-myths-holding-you-back",
+    ],
+  },
+  {
+    slug: "twenty-six-changes-this-weekend",
+    title: "Twenty-six feng shui changes you can make this weekend",
+    description:
+      "Twenty-six universally-safe moves grouped by where you'll do them. Most cost nothing. The whole list is finishable in one afternoon.",
+    teaser:
+      "Universally-safe moves you can finish this weekend. Twenty-six of them, ranked by what changes first.",
+    lastUpdated: "2026-05-25",
+    gated: false,
+    readingTime: "9 minutes",
+    category: "room-by-room",
+    relatedSlugs: [
+      "kitchen-stove-and-money",
+      "bagua-map-wealth-corner",
+      "what-is-feng-shui-really",
+    ],
+  },
+  {
+    slug: "bagua-map-wealth-corner",
+    title: "The bagua map: where is your wealth corner (and why it matters)",
+    description:
+      "The single most useful diagram in feng shui, explained in plain English. How to overlay it on your floor plan and find the wealth corner.",
+    teaser:
+      "The single most useful diagram in feng shui. Find your wealth corner in ten minutes.",
+    lastUpdated: "2026-05-25",
+    gated: false,
+    readingTime: "7 minutes",
+    category: "bagua",
+    relatedSlugs: [
+      "what-is-feng-shui-really",
+      "five-elements",
+      "kitchen-stove-and-money",
+    ],
+  },
+  {
+    slug: "kitchen-stove-and-money",
+    title: "Why your kitchen stove matters for money",
+    description:
+      "The kitchen stove is the wealth gateway in Classical feng shui, and the most overlooked design choice in the modern reading. One move, big effect.",
+    teaser:
+      "The single highest-leverage thing you can do in the kitchen, tonight, for free.",
+    lastUpdated: "2026-05-25",
+    gated: false,
+    readingTime: "7 minutes",
+    category: "room-by-room",
+    relatedSlugs: [
+      "twenty-six-changes-this-weekend",
+      "bagua-map-wealth-corner",
+      "twelve-feng-shui-myths-holding-you-back",
+    ],
+  },
+  {
+    slug: "twelve-feng-shui-myths-holding-you-back",
+    title: "Twelve feng shui myths holding you back (and what's actually true)",
+    description:
+      "Twelve common feng shui myths debunked, each with the honest, evidence-aware reading on what's actually going on.",
+    teaser:
+      "The twelve most stubborn feng shui myths, with the honest reading on each one.",
+    lastUpdated: "2026-05-25",
+    gated: false,
+    readingTime: "9 minutes",
+    category: "methodology",
+    relatedSlugs: [
+      "myths",
+      "feng-shui-or-good-design",
+      "whats-the-evidence",
+    ],
+  },
+  // ---------- 3 skeptic-killer articles ----------
+  {
+    slug: "whats-the-evidence",
+    title: "What's the evidence behind feng shui? An honest look",
+    description:
+      "We separate the parts of feng shui that survive a scientific review from the parts that are pure tradition. Twenty-two hundred words, no defensiveness.",
+    teaser:
+      "Which parts of feng shui survive an evidence review? An honest, non-defensive look.",
+    lastUpdated: "2026-05-25",
+    gated: false,
+    readingTime: "11 minutes",
+    category: "methodology",
+    relatedSlugs: [
+      "feng-shui-or-good-design",
+      "five-tests-you-can-run",
+      "twelve-feng-shui-myths-holding-you-back",
+    ],
+  },
+  {
+    slug: "feng-shui-or-good-design",
+    title: "Feng shui or just good design? Why both can be true",
+    description:
+      "Where feng shui and contemporary environmental design psychology agree, where they disagree, and why the disagreement doesn't matter as much as you think.",
+    teaser:
+      "Where feng shui and modern design psychology agree, and why the overlap is bigger than you think.",
+    lastUpdated: "2026-05-25",
+    gated: false,
+    readingTime: "8 minutes",
+    category: "methodology",
+    relatedSlugs: [
+      "whats-the-evidence",
+      "five-tests-you-can-run",
+      "twenty-six-changes-this-weekend",
+    ],
+  },
+  {
+    slug: "five-tests-you-can-run",
+    title: "If you're skeptical: five tests anyone can run this week",
+    description:
+      "Five small, observable feng shui changes you can run as an experiment on your own home. Each takes one evening. Each has a way to tell if it's working.",
+    teaser:
+      "Five small experiments. Each one evening. Each with a way to check if it actually worked.",
+    lastUpdated: "2026-05-25",
+    gated: false,
+    readingTime: "8 minutes",
+    category: "methodology",
+    relatedSlugs: [
+      "whats-the-evidence",
+      "feng-shui-or-good-design",
+      "twenty-six-changes-this-weekend",
+    ],
   },
 ];
 
 export function findArticle(slug: string): Article | null {
   return ARTICLES.find((a) => a.slug === slug) ?? null;
+}
+
+export function articlesInCategory(cat: ArticleCategory): Article[] {
+  return ARTICLES.filter((a) => a.category === cat);
+}
+
+/**
+ * Returns up to `n` articles related to the given one. Manual list wins;
+ * falls back to other articles in the same category.
+ */
+export function relatedTo(article: Article, n: number = 3): Article[] {
+  const manual = (article.relatedSlugs ?? [])
+    .map((s) => findArticle(s))
+    .filter((a): a is Article => a !== null);
+  if (manual.length >= n) return manual.slice(0, n);
+
+  const fallback = articlesInCategory(article.category)
+    .filter((a) => a.slug !== article.slug)
+    .filter((a) => !manual.find((m) => m.slug === a.slug));
+
+  return [...manual, ...fallback].slice(0, n);
 }
 
 // Renders the markdown body of an article to HTML.

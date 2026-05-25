@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
   // bundles them, but the explicit include here is belt-and-braces.
   outputFileTracingIncludes: {
     "/api/chart-image/[id]": ["./lib/fonts/*.ttf"],
+    "/api/og/[slug]": ["./lib/fonts/*.ttf"],
   },
   async headers() {
     return [

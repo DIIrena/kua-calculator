@@ -3,6 +3,14 @@ import Link from "next/link";
 import { auth } from "@/auth";
 import LeadMagnetForm from "@/components/LeadMagnetForm";
 import HomeRoomPicker from "@/components/HomeRoomPicker";
+import { ARTICLES, CATEGORIES, type ArticleCategory } from "@/lib/articles";
+
+const HOMEPAGE_CATEGORY_ORDER: ReadonlyArray<ArticleCategory> = [
+  "foundations",
+  "bagua",
+  "room-by-room",
+  "methodology",
+];
 
 export const metadata: Metadata = {
   title: "My Feng Shui Home - a calm, honest feng shui guide for real homes",
@@ -249,59 +257,50 @@ export default async function HomePage(props: {
         </div>
       </section>
 
-      {/* Section 4 - Diagnostic walkthrough teaser */}
+      {/* Section 4 - Read more (category cards). Replaces the
+          single-teaser section: with 11 articles live, the homepage
+          should send the reader into the article system. */}
       <section
-        className="home-section home-section-paper diagnostic-teaser"
-        aria-labelledby="diagnostic-teaser-heading"
+        className="home-section home-section-paper categories-section"
+        aria-labelledby="categories-heading"
       >
         <div className="page-content">
-          <h2 id="diagnostic-teaser-heading">
-            The seven-step walkthrough practitioners use
-          </h2>
+          <h2 id="categories-heading">Read more. Learn deeper.</h2>
           <p className="home-section-lede">
-            This is the method consultants use when they walk through a home for
-            the first time. Two of the seven steps are below. The rest is a free
-            article when you sign in.
+            Eleven plain-English articles, grouped into four clusters. Most
+            are free with no account. Pick a door.
           </p>
-
-          <ol className="diagnostic-teaser-list">
-            <li>
-              <h3>Step 1. Stand at the front door, looking in.</h3>
-              <p>
-                The front door is the <strong>mouth of qi</strong>. Note what
-                you see first. A wall? A mirror? A long corridor? The first
-                thing visitors see sets the tone of the whole home.
-              </p>
-            </li>
-            <li>
-              <h3>Step 2. Find the centre of the floor plan.</h3>
-              <p>
-                Mark the geometric centre of your home. This is your{" "}
-                <em>tai chi</em>. Every Eight Mansions sector is measured from
-                here. Keep it open and uncluttered if you can.
-              </p>
-            </li>
-          </ol>
-
-          <div className="diagnostic-teaser-gate">
-            {isSignedIn ? (
-              <Link
-                href="/articles/diagnostic-walkthrough"
-                className="cta-primary"
-              >
-                Read the full seven-step walkthrough
-              </Link>
-            ) : (
-              <>
-                <p className="diagnostic-teaser-gate-note">
-                  Five more steps. Free when you sign in.
-                </p>
-                <Link href="/sign-in" className="cta-primary">
-                  Continue with a free account
+          <div className="home-categories-grid">
+            {HOMEPAGE_CATEGORY_ORDER.map((cat) => {
+              const meta = CATEGORIES[cat];
+              const count = ARTICLES.filter((a) => a.category === cat).length;
+              return (
+                <Link
+                  key={cat}
+                  href={`/articles/category/${cat}`}
+                  className="home-category-card"
+                >
+                  <p className="home-category-card-eyebrow">{meta.title}</p>
+                  <h3 className="home-category-card-tagline">{meta.tagline}</h3>
+                  <p className="home-category-card-desc">
+                    {meta.description}
+                  </p>
+                  <p className="home-category-card-meta">
+                    {count} {count === 1 ? "article" : "articles"} &rarr;
+                  </p>
                 </Link>
-              </>
-            )}
+              );
+            })}
           </div>
+          {isSignedIn ? null : (
+            <p className="categories-section-note">
+              A few of the deeper articles unlock with a free account.{" "}
+              <Link href="/sign-in" className="home-hero-link">
+                Sign in
+              </Link>{" "}
+              to read them. (Ten seconds; no credit card.)
+            </p>
+          )}
         </div>
       </section>
 

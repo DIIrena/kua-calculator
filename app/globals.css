@@ -3796,3 +3796,545 @@ a:hover { color: var(--clay-deep); }
     page-break-before: always;
   }
 }
+
+/* ============================================================
+   Stage 4.5 - Content expansion (categories, related articles,
+   in-article CTAs, article-list category pills)
+   ============================================================ */
+
+/* --- Article list: category line above title --- */
+.article-list-category {
+  margin: 0 0 var(--space-1);
+  font: 600 0.78rem var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--green-deep);
+}
+
+.article-category-link {
+  color: var(--green-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* --- Articles index: category grid + subhead --- */
+.articles-category-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin: var(--space-6) 0 var(--space-8);
+}
+
+@media (min-width: 720px) {
+  .articles-category-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.category-card {
+  display: block;
+  padding: clamp(var(--space-5), 3vw, var(--space-6));
+  background: var(--paper);
+  border: var(--border);
+  border-left: 5px solid var(--green);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.category-card:hover {
+  border-left-color: var(--green-deep);
+  transform: translateY(-2px);
+}
+
+.category-card:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+.category-card-eyebrow {
+  margin: 0 0 var(--space-2);
+  font: 600 0.85rem var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+}
+
+.category-card-tagline {
+  margin: 0 0 var(--space-3);
+  font: 700 1.3rem/1.25 var(--font-display);
+  color: var(--ink);
+}
+
+.category-card-desc {
+  margin: 0 0 var(--space-4);
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+.category-card-meta {
+  margin: 0;
+  font: 600 0.95rem var(--font-display);
+  color: var(--green-deep);
+}
+
+.articles-index-subhead {
+  font: 700 clamp(1.3rem, 2vw, 1.7rem) var(--font-display);
+  color: var(--ink);
+  margin: var(--space-6) 0 var(--space-5);
+}
+
+/* --- Category landing page --- */
+.articles-category {
+  padding: var(--space-7) var(--space-5);
+}
+
+.articles-category-heading {
+  font: 700 clamp(1.8rem, 4vw, 2.6rem)/1.15 var(--font-display);
+  margin: var(--space-2) 0 var(--space-4);
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.articles-category-lede {
+  font-size: clamp(1.05rem, 1.6vw, 1.18rem);
+  line-height: 1.6;
+  color: var(--ink-2);
+  max-width: 680px;
+  margin: 0 0 var(--space-6);
+}
+
+.articles-category-back {
+  margin-top: var(--space-6);
+}
+
+.articles-category-count {
+  margin-top: var(--space-4);
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  text-align: right;
+}
+
+.articles-category-empty {
+  margin-top: var(--space-5);
+  color: var(--ink-2);
+  font-style: italic;
+}
+
+/* --- Homepage category cards --- */
+.home-categories-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+@media (min-width: 720px) {
+  .home-categories-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1080px) {
+  .home-categories-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.home-category-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(var(--space-4), 2.5vw, var(--space-5));
+  background: var(--cream);
+  border: var(--border);
+  border-top: 4px solid var(--green);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-top-color 180ms ease, transform 180ms ease;
+  min-height: 180px;
+}
+
+.home-category-card:hover {
+  border-top-color: var(--green-deep);
+  transform: translateY(-3px);
+}
+
+.home-category-card:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+.home-category-card-eyebrow {
+  margin: 0 0 var(--space-2);
+  font: 600 0.78rem var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+}
+
+.home-category-card-tagline {
+  margin: 0 0 var(--space-2);
+  font: 600 1.1rem/1.25 var(--font-display);
+  color: var(--ink);
+}
+
+.home-category-card-desc {
+  margin: 0 0 var(--space-3);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  flex: 1 1 auto;
+}
+
+.home-category-card-meta {
+  margin: 0;
+  font: 600 0.9rem var(--font-display);
+  color: var(--green-deep);
+}
+
+.categories-section-note {
+  margin: var(--space-6) 0 0;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-category-card,
+  .category-card {
+    transition: none;
+  }
+  .home-category-card:hover,
+  .category-card:hover {
+    transform: none;
+  }
+}
+
+/* --- Related articles widget at the foot of an article --- */
+.related-articles {
+  margin-top: var(--space-7);
+  padding-top: var(--space-6);
+  border-top: var(--border);
+}
+
+.related-heading {
+  margin: 0 0 var(--space-4);
+  font: 600 1.3rem var(--font-display);
+  color: var(--ink);
+}
+
+.related-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.related-link {
+  display: block;
+  padding: var(--space-4) var(--space-5);
+  background: var(--paper);
+  border: var(--border);
+  border-left: 3px solid var(--green);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-left-color 160ms ease;
+}
+
+.related-link:hover { border-left-color: var(--green-deep); }
+.related-link:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+
+.related-category {
+  margin: 0 0 var(--space-1);
+  font: 600 0.75rem var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+}
+
+.related-title {
+  margin: 0 0 var(--space-1);
+  font: 600 1.05rem var(--font-display);
+  color: var(--ink);
+}
+
+.related-teaser {
+  margin: 0 0 var(--space-2);
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.related-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+
+/* --- In-article CTA (soft conversion at the foot of every article) --- */
+.in-article-cta {
+  margin-top: var(--space-6);
+  padding: clamp(var(--space-5), 3vw, var(--space-6));
+  background: var(--cream);
+  border: 1px dashed var(--green);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.in-article-cta-text {
+  margin: 0 0 var(--space-4);
+  color: var(--ink);
+  line-height: 1.55;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.in-article-cta-actions {
+  margin: 0;
+}
+
+/* ============================================================
+   Sales page rebuild - value-first ordering
+   ============================================================ */
+
+.sales-page {
+  padding-bottom: var(--space-9);
+}
+
+.sales-hero {
+  padding: clamp(var(--space-7), 10vw, var(--space-9)) var(--space-5);
+  background:
+    radial-gradient(80% 60% at 50% 0%, rgba(79, 90, 54, 0.10), transparent 70%),
+    radial-gradient(60% 40% at 80% 90%, rgba(190, 107, 67, 0.08), transparent 75%),
+    var(--cream);
+  border-bottom: var(--border);
+  text-align: center;
+}
+
+.sales-hero-heading {
+  margin: var(--space-3) 0 var(--space-4);
+  font: 700 clamp(2rem, 5vw, 3.2rem)/1.15 var(--font-display);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.sales-hero-lede {
+  margin: 0 auto var(--space-4);
+  max-width: 680px;
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.sales-hero-actions {
+  margin-top: var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Trust signals --- */
+.sales-trust-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 720px) {
+  .sales-trust-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.sales-trust-list li {
+  padding: var(--space-4);
+  background: var(--paper);
+  border-left: 3px solid var(--green);
+  border-radius: var(--radius-sm);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+/* --- Benefits list (each with h3 + p) --- */
+.sales-benefits-list {
+  list-style: none;
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 880px) {
+  .sales-benefits-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.sales-benefits-list li {
+  padding: clamp(var(--space-4), 2.5vw, var(--space-5));
+  background: var(--paper);
+  border: var(--border);
+  border-left: 5px solid var(--green);
+  border-radius: var(--radius-md);
+}
+
+.sales-benefits-list h3 {
+  margin: 0 0 var(--space-2);
+  font: 600 1.1rem var(--font-display);
+  color: var(--ink);
+}
+
+.sales-benefits-list p {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 0.98rem;
+}
+
+/* --- How it works (ordered list, 3 steps) --- */
+.sales-how-list {
+  list-style: none;
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+  counter-reset: how-step;
+}
+
+@media (min-width: 880px) {
+  .sales-how-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.sales-how-list li {
+  padding: clamp(var(--space-4), 2.5vw, var(--space-5));
+  background: var(--cream);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  counter-increment: how-step;
+  position: relative;
+}
+
+.sales-how-list li::before {
+  content: counter(how-step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--green);
+  color: var(--cream);
+  border-radius: 50%;
+  font: 700 1rem var(--font-display);
+  margin-bottom: var(--space-3);
+}
+
+.sales-how-list h3 {
+  margin: 0 0 var(--space-2);
+  font: 600 1.05rem var(--font-display);
+  color: var(--ink);
+}
+
+.sales-how-list p {
+  margin: 0;
+  color: var(--ink-2);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+/* --- What it is NOT (bullets) --- */
+.sales-not-list {
+  list-style: none;
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.sales-not-list li {
+  padding: var(--space-4);
+  background: var(--paper);
+  border-left: 3px dashed var(--clay-deep);
+  border-radius: var(--radius-sm);
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* --- Price block --- */
+.sales-price-block {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: clamp(var(--space-6), 4vw, var(--space-7));
+  background: var(--paper);
+  border: 2px solid var(--green);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.sales-price-heading {
+  margin: var(--space-2) 0 var(--space-2);
+  font: 600 1.4rem var(--font-display);
+  color: var(--ink);
+}
+
+.sales-price-amount {
+  margin: var(--space-2) 0;
+  font: 800 clamp(3rem, 6vw, 4rem)/1 var(--font-display);
+  color: var(--green-deep);
+  letter-spacing: -0.03em;
+}
+
+.sales-price-suffix {
+  margin: 0 0 var(--space-5);
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+
+.sales-price-cta {
+  width: 100%;
+  max-width: 320px;
+}
+
+.sales-price-note {
+  margin: var(--space-4) 0 0;
+  color: var(--ink-2);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* --- Risk reversal section --- */
+.sales-reversal p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0 0 var(--space-3);
+}
+
+/* --- Sales early-list section --- */
+.sales-early p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0 0 var(--space-4);
+}
+
+.sales-back {
+  margin-top: var(--space-5) !important;
+}
