@@ -4458,6 +4458,100 @@ a:hover { color: var(--clay-deep); }
   border-radius: 0;
 }
 
+/* Mega-menu variant: the "Everything About Feng Shui" panel that
+   shows all 4 topic categories side-by-side. Wider, multi-column,
+   with each category as a column. */
+.nav-dropdown-mega {
+  position: static;
+}
+
+.nav-mega-panel {
+  /* Full-width centred horizontally on the viewport rather than
+     anchored to the summary. Avoids the "too wide for the summary"
+     positioning bug while keeping the dropdown visually attached
+     to the header. */
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(100% + 6px);
+  min-width: 0;
+  max-width: min(1100px, calc(100vw - var(--space-5)));
+  width: calc(100vw - var(--space-5));
+  padding: var(--space-5);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 720px) {
+  .nav-mega-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1080px) {
+  .nav-mega-panel {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.nav-mega-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.nav-mega-section-title {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  font: 700 0.8rem var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  text-decoration: none;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: var(--space-1);
+  border-radius: 0;
+}
+
+.nav-mega-section-title:hover,
+.nav-mega-section-title:focus-visible {
+  color: var(--ink) !important;
+  background: var(--cream);
+  border-bottom-color: var(--green) !important;
+  outline: none;
+}
+
+.nav-mega-section-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-mega-see-all {
+  grid-column: 1 / -1;
+  display: block;
+  margin-top: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  text-align: center;
+  border-top: 1px solid var(--hairline);
+  font: 600 0.85rem var(--font-display);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.nav-mega-see-all:hover,
+.nav-mega-see-all:focus-visible {
+  background: var(--cream);
+  color: var(--green-deep) !important;
+  outline: none;
+}
+
 /* On narrow viewports the absolute positioning makes the panel
    overflow off-screen and look broken. Switch to an inline accordion
    below the summary, full-width. Wraps the nav so each item gets its
@@ -4491,8 +4585,14 @@ a:hover { color: var(--clay-deep); }
     max-width: none;
     width: 100%;
     margin-top: var(--space-1);
+    transform: none !important;
+    left: auto !important;
+    grid-template-columns: 1fr !important;
   }
   .nav-dropdown-link {
+    padding: var(--space-3) var(--space-4);
+  }
+  .nav-mega-section-title {
     padding: var(--space-3) var(--space-4);
   }
 }

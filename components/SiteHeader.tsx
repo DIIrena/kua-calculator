@@ -7,35 +7,26 @@ import {
 } from "@/lib/articles";
 import { LIFE_AREAS } from "@/lib/life-areas";
 
-// Server Component. Reflects logged-in state: shows "Sign in" when logged
-// out, "Account" + "Sign out" when logged in. Falls back gracefully to the
-// logged-out view when the auth layer is not configured.
+// Server Component. Reflects logged-in state and renders the primary nav.
 //
-// The 4 content categories live in the nav as dropdowns (built with
-// native <details>/<summary> for accessibility and no client JS).
-// The methodology dropdown also pins the Compass School deep-dive
-// page at /methodology since it's foundational reading.
+// Nav order (left to right):
+//   1. By life area (mega dropdown - 9 bagua-area pages, the primary funnel)
+//   2. Everything About Feng Shui (single mega dropdown - every article
+//      grouped by its topic category)
+//   3. Calculator (free tool, direct link)
+//   4. Sign in / Account (auth)
 
 type NavCategory = {
   category: ArticleCategory;
   label: string;
-  /** Items to show before the article list (e.g. a standalone page). */
+  /** Items to show before the category's article list. */
   pinned?: Array<{ label: string; href: string }>;
 };
 
 const NAV_CATEGORIES: ReadonlyArray<NavCategory> = [
-  {
-    category: "foundations",
-    label: "Foundations",
-  },
-  {
-    category: "bagua",
-    label: "The Bagua Map",
-  },
-  {
-    category: "room-by-room",
-    label: "Room by Room",
-  },
+  { category: "foundations", label: "Foundations" },
+  { category: "bagua", label: "The Bagua Map" },
+  { category: "room-by-room", label: "Room by Room" },
   {
     category: "methodology",
     label: "Methodology",
@@ -81,15 +72,12 @@ export default async function SiteHeader() {
           </svg>
         </span>
         <span className="brand-text">
-          {/* Script wordmark is the brand signature; per the brand book
-              Bilbo Swash Caps is only used for "My Feng Shui Home". */}
           <span className="brand-sub">My Feng Shui Home</span>
         </span>
       </Link>
+
       <nav className="site-nav" aria-label="Primary">
-        {/* Life areas - first item from the left. Funnel by life
-            concern (money, love, career, health, etc.) into the
-            articles and the Home Harmony Map sales page. */}
+        {/* 1. By life area - the primary funnel to the paid Map */}
         <details className="nav-dropdown">
           <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
             By life area
@@ -118,55 +106,70 @@ export default async function SiteHeader() {
           </div>
         </details>
 
+        {/* 2. Everything About Feng Shui - one mega menu containing
+            all four topic categories with their articles. */}
+        <details className="nav-dropdown nav-dropdown-mega">
+          <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
+            Everything About Feng Shui
+            <span className="nav-dropdown-caret" aria-hidden="true">
+              &#9662;
+            </span>
+          </summary>
+          <div className="nav-dropdown-panel nav-mega-panel" role="menu">
+            {NAV_CATEGORIES.map((nav) => {
+              const articles = articlesInCategory(nav.category);
+              return (
+                <div key={nav.category} className="nav-mega-section">
+                  <Link
+                    href={`/articles/category/${nav.category}`}
+                    className="nav-mega-section-title"
+                    role="menuitem"
+                  >
+                    {nav.label}
+                  </Link>
+                  <ul className="nav-mega-section-list">
+                    {nav.pinned?.map((p) => (
+                      <li key={p.href}>
+                        <Link
+                          href={p.href}
+                          role="menuitem"
+                          className="nav-dropdown-link nav-dropdown-pinned"
+                        >
+                          {p.label}
+                        </Link>
+                      </li>
+                    ))}
+                    {articles.map((a) => (
+                      <li key={a.slug}>
+                        <Link
+                          href={`/articles/${a.slug}`}
+                          role="menuitem"
+                          className="nav-dropdown-link"
+                        >
+                          {a.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+            <Link
+              href="/articles"
+              role="menuitem"
+              className="nav-mega-see-all"
+            >
+              See the full article index &rarr;
+            </Link>
+          </div>
+        </details>
+
+        {/* 3. Calculator - direct link */}
         <Link href="/kua-calculator" className="site-nav-link">
           Calculator
         </Link>
 
-        {NAV_CATEGORIES.map((nav) => {
-          const articles = articlesInCategory(nav.category);
-          return (
-            <details key={nav.category} className="nav-dropdown">
-              <summary className="nav-dropdown-summary">
-                {nav.label}
-                <span className="nav-dropdown-caret" aria-hidden="true">
-                  &#9662;
-                </span>
-              </summary>
-              <div className="nav-dropdown-panel" role="menu">
-                {nav.pinned?.map((p) => (
-                  <Link
-                    key={p.href}
-                    href={p.href}
-                    role="menuitem"
-                    className="nav-dropdown-link nav-dropdown-pinned"
-                  >
-                    {p.label}
-                  </Link>
-                ))}
-
-                {articles.map((a) => (
-                  <Link
-                    key={a.slug}
-                    href={`/articles/${a.slug}`}
-                    role="menuitem"
-                    className="nav-dropdown-link"
-                  >
-                    {a.title}
-                  </Link>
-                ))}
-
-                <Link
-                  href={`/articles/category/${nav.category}`}
-                  role="menuitem"
-                  className="nav-dropdown-link nav-dropdown-see-all"
-                >
-                  See all {nav.label.toLowerCase()} articles &rarr;
-                </Link>
-              </div>
-            </details>
-          );
-        })}
-
+        {/* 4. Account / Sign in */}
         {signedIn ? (
           <>
             <Link href="/account" className="site-nav-link">
