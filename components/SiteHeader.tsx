@@ -5,6 +5,7 @@ import {
   articlesInCategory,
   type ArticleCategory,
 } from "@/lib/articles";
+import { LIFE_AREAS } from "@/lib/life-areas";
 
 // Server Component. Reflects logged-in state: shows "Sign in" when logged
 // out, "Account" + "Sign out" when logged in. Falls back gracefully to the
@@ -86,6 +87,37 @@ export default async function SiteHeader() {
         </span>
       </Link>
       <nav className="site-nav" aria-label="Primary">
+        {/* Life areas - first item from the left. Funnel by life
+            concern (money, love, career, health, etc.) into the
+            articles and the Home Harmony Map sales page. */}
+        <details className="nav-dropdown">
+          <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
+            By life area
+            <span className="nav-dropdown-caret" aria-hidden="true">
+              &#9662;
+            </span>
+          </summary>
+          <div className="nav-dropdown-panel" role="menu">
+            {LIFE_AREAS.map((a) => (
+              <Link
+                key={a.slug}
+                href={`/life/${a.slug}`}
+                role="menuitem"
+                className="nav-dropdown-link"
+              >
+                {a.label}
+              </Link>
+            ))}
+            <Link
+              href="/life"
+              role="menuitem"
+              className="nav-dropdown-link nav-dropdown-see-all"
+            >
+              All nine life areas &rarr;
+            </Link>
+          </div>
+        </details>
+
         <Link href="/kua-calculator" className="site-nav-link">
           Calculator
         </Link>

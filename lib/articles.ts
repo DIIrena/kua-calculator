@@ -11,6 +11,7 @@ import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
+import type { LifeArea } from "@/lib/life-areas";
 
 export type ArticleCategory =
   | "foundations"
@@ -32,6 +33,9 @@ export type Article = {
   readingTime: string;
   /** Cluster the article belongs to. Drives the /articles/category/* pages. */
   category: ArticleCategory;
+  /** Bagua life areas this article is relevant to. Drives the
+      /life/[area] pages and the related-articles selection there. */
+  lifeAreas?: LifeArea[];
   /** Manually-curated related slugs. Falls back to same-category articles. */
   relatedSlugs?: string[];
   /** Optional in-article-CTA override. Default is "run the calculator". */
@@ -86,6 +90,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     gated: false,
     readingTime: "4 minutes",
     category: "methodology",
+    lifeAreas: ["money", "love"],
     relatedSlugs: [
       "twelve-feng-shui-myths-holding-you-back",
       "feng-shui-or-good-design",
@@ -103,6 +108,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     gated: false,
     readingTime: "5 minutes",
     category: "foundations",
+    lifeAreas: ["money", "love", "health", "career"],
     relatedSlugs: [
       "what-is-feng-shui-really",
       "bagua-map-wealth-corner",
@@ -120,6 +126,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     gated: true,
     readingTime: "7 minutes",
     category: "methodology",
+    lifeAreas: ["money", "love", "health", "career", "centre"],
     relatedSlugs: [
       "twenty-six-changes-this-weekend",
       "kitchen-stove-and-money",
@@ -138,6 +145,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     gated: false,
     readingTime: "9 minutes",
     category: "foundations",
+    lifeAreas: ["money", "love", "health", "career"],
     relatedSlugs: [
       "five-elements",
       "bagua-map-wealth-corner",
@@ -155,6 +163,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     gated: false,
     readingTime: "9 minutes",
     category: "room-by-room",
+    lifeAreas: ["money", "love", "health", "career", "creativity"],
     relatedSlugs: [
       "kitchen-stove-and-money",
       "bagua-map-wealth-corner",
@@ -172,6 +181,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     gated: false,
     readingTime: "7 minutes",
     category: "bagua",
+    lifeAreas: ["money", "centre"],
     relatedSlugs: [
       "what-is-feng-shui-really",
       "five-elements",
@@ -189,6 +199,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     gated: false,
     readingTime: "7 minutes",
     category: "room-by-room",
+    lifeAreas: ["money", "health"],
     relatedSlugs: [
       "twenty-six-changes-this-weekend",
       "bagua-map-wealth-corner",
@@ -206,6 +217,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     gated: false,
     readingTime: "9 minutes",
     category: "methodology",
+    lifeAreas: ["money", "love"],
     relatedSlugs: [
       "myths",
       "feng-shui-or-good-design",
@@ -224,6 +236,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     gated: false,
     readingTime: "11 minutes",
     category: "methodology",
+    lifeAreas: ["health", "money"],
     relatedSlugs: [
       "feng-shui-or-good-design",
       "five-tests-you-can-run",
@@ -241,6 +254,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     gated: false,
     readingTime: "8 minutes",
     category: "methodology",
+    lifeAreas: ["health", "career"],
     relatedSlugs: [
       "whats-the-evidence",
       "five-tests-you-can-run",
@@ -258,6 +272,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     gated: false,
     readingTime: "8 minutes",
     category: "methodology",
+    lifeAreas: ["health", "money"],
     relatedSlugs: [
       "whats-the-evidence",
       "feng-shui-or-good-design",
@@ -272,6 +287,10 @@ export function findArticle(slug: string): Article | null {
 
 export function articlesInCategory(cat: ArticleCategory): Article[] {
   return ARTICLES.filter((a) => a.category === cat);
+}
+
+export function articlesForLifeArea(area: LifeArea): Article[] {
+  return ARTICLES.filter((a) => a.lifeAreas?.includes(area));
 }
 
 /**

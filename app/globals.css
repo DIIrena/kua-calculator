@@ -4369,6 +4369,14 @@ a:hover { color: var(--clay-deep); }
   user-select: none;
 }
 
+/* The "By life area" nav item gets a subtle emphasis - it is the
+   primary funnel into the paid product, so it earns a touch of
+   weight without becoming aggressive. */
+.nav-dropdown-summary-feature {
+  font-weight: 600;
+  color: var(--green-deep);
+}
+
 .nav-dropdown-summary::-webkit-details-marker { display: none; }
 .nav-dropdown-summary::marker { content: ""; }
 
@@ -4487,4 +4495,218 @@ a:hover { color: var(--clay-deep); }
   .nav-dropdown-link {
     padding: var(--space-3) var(--space-4);
   }
+}
+
+/* ============================================================
+   /life index + /life/[area] landing pages
+   ============================================================ */
+
+.life-index {
+  padding: var(--space-7) var(--space-5);
+}
+
+.life-index-heading {
+  font: 700 clamp(1.8rem, 4vw, 2.6rem)/1.15 var(--font-display);
+  margin: var(--space-3) 0 var(--space-4);
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.life-index-lede {
+  max-width: 720px;
+  font-size: clamp(1.05rem, 1.6vw, 1.18rem);
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0 0 var(--space-7);
+}
+
+.life-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 600px) {
+  .life-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 960px) {
+  .life-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.life-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(var(--space-4), 2.5vw, var(--space-5));
+  background: var(--paper);
+  border: var(--border);
+  border-top: 4px solid var(--green);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  min-height: 180px;
+  transition: border-top-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.life-card:hover {
+  border-top-color: var(--green-deep);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
+}
+
+.life-card:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .life-card { transition: none; }
+  .life-card:hover { transform: none; }
+}
+
+.life-card-eyebrow {
+  margin: 0;
+  font: 500 0.75rem var(--font-display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.life-card-title {
+  margin: var(--space-2) 0;
+  font: 700 1.4rem var(--font-display);
+  color: var(--green-deep);
+  letter-spacing: -0.01em;
+}
+
+.life-card-tagline {
+  margin: 0 0 var(--space-3);
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  flex: 1 1 auto;
+}
+
+.life-card-meta {
+  margin: 0;
+  font: 600 0.9rem var(--font-display);
+  color: var(--green-deep);
+}
+
+/* --- /life/[area] page --- */
+.life-area-page { padding-bottom: var(--space-9); }
+
+.life-area-hero {
+  padding: clamp(var(--space-7), 10vw, var(--space-9)) var(--space-5);
+  background:
+    radial-gradient(80% 60% at 50% 0%, rgba(79, 90, 54, 0.10), transparent 70%),
+    radial-gradient(60% 40% at 80% 90%, rgba(190, 107, 67, 0.08), transparent 75%),
+    var(--cream);
+  border-bottom: var(--border);
+  text-align: center;
+}
+
+.life-area-heading {
+  font: 700 clamp(2rem, 5vw, 3rem)/1.15 var(--font-display);
+  margin: var(--space-3) 0 var(--space-4);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.life-area-lede {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* Starter moves */
+.life-area-starter-list {
+  list-style: none;
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  counter-reset: starter;
+}
+
+@media (min-width: 880px) {
+  .life-area-starter-list { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.life-area-starter-list li {
+  padding: clamp(var(--space-5), 3vw, var(--space-6));
+  background: var(--cream);
+  border: var(--border);
+  border-left: 5px solid var(--green);
+  border-radius: var(--radius-md);
+  counter-increment: starter;
+  position: relative;
+}
+
+.life-area-starter-list li::before {
+  content: counter(starter);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--green);
+  color: var(--cream);
+  border-radius: 50%;
+  font: 700 1rem var(--font-display);
+  margin-bottom: var(--space-3);
+}
+
+.life-area-starter-list h3 {
+  margin: 0 0 var(--space-2);
+  font: 600 1.1rem var(--font-display);
+  color: var(--ink);
+}
+
+.life-area-starter-list p {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/* Map CTA at the foot of every life-area page */
+.life-area-map-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+@media (min-width: 880px) {
+  .life-area-map-cta-inner {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: var(--space-7);
+  }
+}
+
+.life-area-map-cta-card {
+  background: var(--paper);
+  border: 2px solid var(--green);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.life-area-map-cta-card .cta-primary {
+  width: 100%;
+  max-width: 240px;
+}
+
+.life-area-back-section p {
+  margin: 0;
+  text-align: center;
 }
