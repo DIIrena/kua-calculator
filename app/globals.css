@@ -1818,6 +1818,37 @@ a:hover { color: var(--clay-deep); }
   font-size: 0.9rem;
 }
 
+/* --- Email sent confirmation page --- */
+.email-sent-page {
+  padding: var(--space-7) var(--space-5);
+  text-align: center;
+}
+
+.email-sent-heading {
+  font: 700 2rem/1.2 var(--font-display);
+  color: var(--green-deep);
+  margin: var(--space-5) 0 var(--space-4);
+}
+
+.email-sent-heading-err {
+  color: var(--clay-deep);
+}
+
+.email-sent-body {
+  max-width: 480px;
+  margin: 0 auto var(--space-6);
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.email-sent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
 /* --- Secondary CTA used by chart actions and saved-chart View links --- */
 .cta-secondary {
   display: inline-flex;

@@ -114,10 +114,10 @@ export async function saveAndEmailMyChart(formData: FormData) {
   }
 
   // Explicit user request, so we always attempt the email here even
-  // when marketing_opt_in is off. Rate limit still applies; failures
-  // are swallowed inside sendChartEmailInternal and surfaced as the
-  // ?email=error pill on the chart page.
-  await sendChartEmailInternal({
+  // when marketing_opt_in is off. Rate limit still applies; the result
+  // status is passed to /account/email-sent so the confirmation page
+  // shows the right success / rate-limit / error wording.
+  const status = await sendChartEmailInternal({
     userId,
     toEmail: sessionEmail,
     chartId: data.id,
@@ -130,7 +130,7 @@ export async function saveAndEmailMyChart(formData: FormData) {
   });
 
   revalidatePath("/account");
-  redirect(`/account/chart/${data.id}?email=sent`);
+  redirect(`/account/email-sent?status=${status}&chart=${data.id}`);
 }
 
 // Delete the account holder's account. Removes the row from

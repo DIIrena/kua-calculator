@@ -83,10 +83,12 @@ export async function sendChartEmail(formData: FormData) {
 }
 
 // Server-internal auto-send used by save-chart.ts when marketing_opt_in
-// is true. Mirrors sendChartEmail but does not redirect (a server-action
-// invoked from inside another server action cannot redirect cleanly).
-// Failures are swallowed and logged so the chart save itself never fails
-// on a downstream email problem.
+// is true AND by saveAndEmailMyChart on the account page. Returns a
+// structured status so callers can redirect to /account/email-sent
+// with the right state. Failures never throw - the chart save flow
+// upstream must complete even when Resend or the rate limit fails.
+export type ChartEmailStatus = "sent" | "rate-limit" | "send-failed" | "threw";
+
 export async function sendChartEmailInternal(args: {
   userId: string;
   toEmail: string;
@@ -97,12 +99,12 @@ export async function sendChartEmailInternal(args: {
   birthMonth: number | null;
   birthDay: number | null;
   gender: string | null;
-}): Promise<void> {
+}): Promise<ChartEmailStatus> {
   try {
     const quota = await consumeChartEmailQuota(args.userId);
     if (!quota.ok) {
-      console.warn("[email-chart] auto-send skipped: rate limit reached");
-      return;
+      console.warn("[email-chart] send skipped: rate limit reached");
+      return "rate-limit";
     }
     const siteUrl =
       process.env.NEXT_PUBLIC_SITE_URL || "https://myfengshuihome.com";
@@ -126,9 +128,12 @@ export async function sendChartEmailInternal(args: {
       text: email.text,
     });
     if (!send.ok) {
-      console.error("[email-chart] auto-send failed:", send.error);
+      console.error("[email-chart] send failed:", send.error);
+      return "send-failed";
     }
+    return "sent";
   } catch (err) {
-    console.error("[email-chart] auto-send threw:", err);
+    console.error("[email-chart] send threw:", err);
+    return "threw";
   }
 }
