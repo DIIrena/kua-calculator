@@ -135,8 +135,12 @@ export function buildChartEmail(input: ChartEmailInput): {
   // <img src> pointing at the public chart-image API route. Gmail strips
   // inline <svg>, but renders external image URLs. The route returns a
   // PNG rasterised from the same bagua geometry the web view uses.
+  // ?v= is bumped when the renderer changes (font fix, geometry
+  // change) so Gmail's image proxy serves a fresh PNG instead of a
+  // cached broken one from a previous deploy.
   const baseUrl = input.siteUrl.replace(/\/$/, "");
-  const baguaImgHtml = `<img src="${baseUrl}/api/chart-image/${input.chartId}" width="320" alt="Bagua chart for Kua ${input.kua}" style="display:block;border:0;outline:none;text-decoration:none;max-width:100%;height:auto;" />`;
+  const renderVersion = "2";
+  const baguaImgHtml = `<img src="${baseUrl}/api/chart-image/${input.chartId}?v=${renderVersion}" width="320" alt="Bagua chart for Kua ${input.kua}" style="display:block;border:0;outline:none;text-decoration:none;max-width:100%;height:auto;" />`;
 
   const html = `<!doctype html>
 <html lang="en">

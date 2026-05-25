@@ -113,9 +113,11 @@ export async function GET(
     headers: {
       "Content-Type": "image/png",
       "Content-Length": String(png.length),
-      // Charts are immutable snapshots (result jsonb is frozen at
-      // save time), so cache aggressively.
-      "Cache-Control": "public, max-age=31536000, immutable",
+      // 1 hour max-age (not immutable). Charts themselves never
+      // change content, but the renderer might (e.g. the font fix
+      // we just shipped); without revalidation, Gmail's image
+      // proxy would serve a stale broken render forever.
+      "Cache-Control": "public, max-age=3600, must-revalidate",
     },
   });
 }
