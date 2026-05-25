@@ -1,7 +1,7 @@
 # kua-calculator
 
 Workspace brief: see [../../CLAUDE.md](../../CLAUDE.md).
-Architect spec: see [spec/architect-2026-05-24.md](spec/architect-2026-05-24.md) (Stages 2-5 plan, DRAFT). Earlier: [spec/architect-2026-05-22.md](spec/architect-2026-05-22.md) (Phase 3 Stage 1), [spec/architect-2026-05-13.md](spec/architect-2026-05-13.md).
+Architect spec: see [spec/architect-2026-05-24.md](spec/architect-2026-05-24.md) (Stages 2-5 plan, APPROVED). Stage 4 mini-pass folded into the plan file `~/.claude/plans/ok-lets-plan-the-starry-grove.md` and shipped 2026-05-25. Earlier: [spec/architect-2026-05-22.md](spec/architect-2026-05-22.md) (Phase 3 Stage 1), [spec/architect-2026-05-13.md](spec/architect-2026-05-13.md).
 
 A free web tool that returns a reader's Kua number, East/West group, and the eight personal directions (four favourable, four unfavourable) with plain-English meanings. The first product of My Feng Shui Home. Top-of-funnel acquisition channel. As of Phase 3 it also offers an optional free account (email capture) for saving and emailing a chart.
 
@@ -36,10 +36,23 @@ Next.js (App Router, TypeScript) on Vercel. **Auth.js v5 (NextAuth)** runs on th
 | `components/ChartPrintButton.tsx` | Tiny client component triggering window.print() (Stage 2). |
 | `app/actions/save-chart.ts` | Server actions: saveChart, deleteChart (Stage 2). Auto-sends chart email on save when opt-in is true. |
 | `app/actions/email-chart.ts` | Server actions: sendChartEmail (button), sendChartEmailInternal (auto-send). (Stage 3). |
+| `app/actions/lead-magnet.ts` | Server action: sendChecklist for the 14-point lead magnet (Stage 4). |
+| `app/(site)/page.tsx` | The My Feng Shui Home homepage at `/` (Stage 4). Hero, honest-framing block, free tools, diagnostic teaser, room picker, paid offer, FAQ, footer, final CTA. |
 | `app/(site)/account/chart/[id]/page.tsx` | Auth-gated chart view: bagua + cards + Email + Print + Delete. (Stages 2, 3). |
+| `app/(site)/articles/page.tsx` | Articles index (Stage 4). |
+| `app/(site)/articles/[slug]/page.tsx` | Dynamic article route with gating + Article JSON-LD (Stage 4). |
+| `app/(site)/home-harmony-map/page.tsx` | $29 sales page for the Home Harmony Map; Stripe deferred to Stage 5 (Stage 4). |
+| `app/(site)/checklist/page.tsx` | Printable 14-point room harmony checklist; lead-magnet destination (Stage 4). |
+| `app/sitemap.ts` | Sitemap; iterates the ARTICLES registry so new articles auto-list (Stage 4). |
+| `lib/articles.ts` | Article metadata registry + renderArticle / findArticle (Stage 4). |
 | `lib/email-chart.ts` | HTML + text email renderer for the chart email (Stage 3). |
 | `lib/rate-limit.ts` | Per-user-per-day chart-email rate limiter (Stage 3). |
 | `lib/resend.ts` | Minimal Resend HTTP helper used by chart email (Stage 3). |
+| `lib/bagua-svg.ts` | Server-side bagua SVG string builder; shared by web + email PNG renderer (Stage 3). |
+| `lib/fonts/HankenGrotesk-*.ttf` | TTF files bundled for Resvg's email-PNG renderer (Stage 3). |
+| `components/LeadMagnetForm.tsx` | Inline email form for the checklist (Stage 4). |
+| `components/HomeRoomPicker.tsx` | Client island, four-room tab teaser on the homepage (Stage 4). |
+| `content/articles/*.md` | Article bodies (Stage 4): myths, five-elements, diagnostic-walkthrough. |
 | `supabase/migrations/0003_email_sends.sql` | Rate-limit counter table for the chart email (Stage 3). |
 | `public/calculator/` | The four calculator JS files (`cny`, `directions`, `kua`, `ui`), reused byte-for-byte. |
 | `public/print.css` | Print-friendly result card. |

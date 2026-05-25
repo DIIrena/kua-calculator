@@ -489,8 +489,156 @@
         "0003_email_sends.sql applies cleanly to the live Supabase project."
       ],
       "priority": 30,
-      "passes": false,
-      "notes": "Pending: owner runs 0003_email_sends.sql in the Supabase SQL Editor before the email button works in production. Until then the chart save still succeeds (auto-send is wrapped in try/catch); the manual button surfaces the email=error state. Implementation: lib/email-chart.ts (HTML+text builder, brand palette inline), lib/rate-limit.ts (5/day cap via UPSERT into public.email_sends), lib/resend.ts (minimal HTTP helper), app/actions/email-chart.ts (sendChartEmail server action + sendChartEmailInternal for the auto path). save-chart.ts reads profiles.marketing_opt_in after insert and fires the auto-send. The chart email omits the inline SVG bagua because Outlook does not render it; the CTA links to the web view where the bagua works."
+      "passes": true,
+      "notes": "Owner ran 0003_email_sends.sql in Supabase, opted in, sent a chart - email arrived. Then iterated: added /account/email-sent confirmation page (with status enum from sendChartEmailInternal), added the Send my chart by email button on /account (saveAndEmailMyChart action), moved the chart-page email-status pill to the top of the page so the post-redirect visitor sees it. Bagua rendering: first attempt embedded inline SVG (Gmail strips it), then added a /api/chart-image/[id] route that rasterises SVG to PNG via @resvg/resvg-js, then discovered no system fonts on Vercel Linux means Resvg drops all <text> elements - bundled Hanken Grotesk TTFs in lib/fonts/, passed paths to Resvg via fontFiles + loadSystemFonts: false. Cache-buster ?v=3 on the email <img src> stops Gmail proxy from serving the old text-less PNG. Daily cap raised 5 -> 9. All shipped and verified by owner."
+    },
+    {
+      "id": "HOME-HEADER-001",
+      "title": "Rework SiteHeader for the real `/` page",
+      "description": "Stage 4. Brand link goes to / (was /kua-calculator). Brand-text becomes the Bilbo Swash Caps signature 'My Feng Shui Home' alone (calculator demoted to a nav item). Add Articles to the nav. Existing pages still render with the same chrome.",
+      "acceptanceCriteria": [
+        "<Link href='/'> wraps the brand mark.",
+        "Brand text shows only 'My Feng Shui Home' in Bilbo Swash Caps; no Hanken-Grotesk 'Kua Calculator' subtitle.",
+        "Nav: Calculator, Articles, Methodology, then Sign in or Account.",
+        "All previously working routes (/kua-calculator, /methodology, /account, etc.) still render."
+      ],
+      "priority": 31,
+      "passes": true,
+      "notes": "First pass moved 'My Feng Shui Home' into .brand-name (Hanken), which broke the brand rule that Bilbo Swash Caps is only for the signature. Reverted to using .brand-sub alone, bumped its size 1.15rem -> 1.6rem to compensate for being the only text next to the mark."
+    },
+    {
+      "id": "HOME-PAGE-001",
+      "title": "Build / (homepage skeleton) inside the (site) route group",
+      "description": "Stage 4. Replace the / redirect with a real homepage at app/(site)/page.tsx. Sections shipped: hero (PAS framework), 'what feng shui actually is' (Pratfall + Specificity), free tools grid (Jobs-to-be-done), diagnostic walkthrough teaser (gated half), lead magnet inline form, room picker section, paid-product offer, FAQ, honest framing footer block, final CTA strip. Voice: short sentences, bolded shift words, italicised emphasis, no em dashes, no outcome promises, Flesch grade 6-7.",
+      "acceptanceCriteria": [
+        "/ returns 200 (no longer redirects).",
+        "Homepage is inside the (site) group so it gets the SiteHeader/SiteFooter chrome.",
+        "Hero copy matches the architect spec verbatim.",
+        "Section 2 'What feng shui actually is. And what it isn't.' is included verbatim.",
+        "Every paragraph uses short sentences; shift words bolded; italics for emphasis.",
+        "Zero em dashes in the page or any new component.",
+        "Build succeeds."
+      ],
+      "priority": 32,
+      "passes": true,
+      "notes": "Moved page from app/page.tsx (which only redirected) to app/(site)/page.tsx so the chrome wraps it. Deleted the root app/page.tsx to avoid a routing conflict. Reads searchParams for ?checklist=sent|invalid|error so the lead-magnet form can render inline feedback without a separate page."
+    },
+    {
+      "id": "HOME-FAQ-001",
+      "title": "FAQ on / with FAQPage JSON-LD",
+      "description": "Stage 4. Eight FAQ items on the homepage, answers in the 40-60 word AI-snippet-extraction range. FAQPage JSON-LD for search engines and AI systems to cite. <details>/<summary> for the accordion; no JS required.",
+      "acceptanceCriteria": [
+        "Eight Q/A pairs cover: 'is feng shui real', 'do I have to redecorate', 'how is this different from a magazine', 'do I need to know my birthday', 'what is the Kua number', 'is the site free', 'what is the Home Harmony Map', 'Western vs Classical'.",
+        "Each answer is 40-60 words.",
+        "FAQPage JSON-LD generated from the same array (no duplication).",
+        "Accordion is keyboard operable; expanded state visible via +/- in the summary."
+      ],
+      "priority": 33,
+      "passes": true,
+      "notes": "Folded directly into HOME-PAGE-001 since the FAQ is one section of the same page. JSON-LD generated from the FAQ array so the visible Qs and the schema can never drift."
+    },
+    {
+      "id": "HOME-ROOM-PICKER-001",
+      "title": "Interactive room-picker teaser on /",
+      "description": "Stage 4. Client island showing four rooms (entrance, kitchen, bedroom, workspace) as tabs. Tapping a tab reveals an 80-word 'one move' tip in the conversational voice. Includes a CTA pointing at the Home Harmony Map.",
+      "acceptanceCriteria": [
+        "Four tabs render; clicking one reveals the matching panel.",
+        "role='tablist' / role='tab' / aria-selected wired; keyboard arrow keys are not required for v1 (focusable buttons are enough).",
+        "Initial state shows a prompt; no panel selected.",
+        "Each tip stays in the brand voice (short sentences, bold the shift, no outcome promise).",
+        "Includes a 'See the Home Harmony Map' link at the bottom of the panel."
+      ],
+      "priority": 34,
+      "passes": true,
+      "notes": "Client component (uses useState). Kept aria simple - aria-live='polite' on the panel announces tip changes for screen readers. The four rooms map to chapter 10's most-asked rooms; the 'all nine sectors' line at the bottom is the upsell hook to the paid Map."
+    },
+    {
+      "id": "HOME-LEADMAG-001",
+      "title": "14-Point Room Harmony Checklist lead magnet",
+      "description": "Stage 4. Email-capture form on / posts to a sendChecklist server action that validates the email and emails a branded link to /checklist (a printable Server Component page rendering 14 yes/no questions plus a 'what your answers mean' second page). Avoided a binary PDF dependency by serving the checklist as a real route the visitor saves as PDF from their browser.",
+      "acceptanceCriteria": [
+        "LeadMagnetForm on / accepts an email.",
+        "Server action sendChecklist validates the email and calls Resend.",
+        "Email links to /checklist (no attachment).",
+        "/checklist renders 14 questions + 14 explanations; printable; @media print rules strip site chrome.",
+        "Inline status pill on / reflects ?checklist=sent|invalid|error.",
+        "Signed-in visitors get their email pre-filled."
+      ],
+      "priority": 35,
+      "passes": true,
+      "notes": "Picked the 'link to printable page' design over a binary PDF: zero new deps, easy to tweak wording without re-publishing a file, and the page itself has a 'Print or save as PDF' button. Inline script handles the print click without making the page a client component. The 14 questions are the universally-safe moves trimmed from chapter 11 - none requires furniture, all observable in 10 minutes."
+    },
+    {
+      "id": "ARTICLES-001",
+      "title": "Articles route + 3 seed articles + gating model",
+      "description": "Stage 4. Build the article system: /articles index, /articles/[slug] dynamic route, lib/articles.ts metadata registry, content/articles/*.md bodies. Reuses lib/markdown.ts (same remark/rehype pipeline as /methodology). Three seed articles: myths (free), five-elements (free), diagnostic-walkthrough (gated to signed-in visitors).",
+      "acceptanceCriteria": [
+        "ARTICLES array in lib/articles.ts is the single source of truth for slug, title, description, teaser, lastUpdated, gated flag.",
+        "/articles lists every entry with the gated pill when applicable.",
+        "/articles/[slug] renders Article JSON-LD, the title, description, reading time, last-updated date, and the rendered markdown body.",
+        "Gated article + signed-out visitor -> shows a sign-in gate instead of the body.",
+        "404 on unknown slugs.",
+        "Build succeeds."
+      ],
+      "priority": 36,
+      "passes": true,
+      "notes": "Article metadata in TypeScript (typed, greppable) instead of YAML front-matter in the .md files. Avoids a gray-matter dep. lib/articles.ts exposes findArticle(slug) and renderArticle(slug) so the dynamic route stays thin. The diagnostic-walkthrough article doubles as the unlock for HOME-TEASER-001: the homepage shows steps 1-2, the article shows all 7 to signed-in visitors."
+    },
+    {
+      "id": "HOME-TEASER-001",
+      "title": "Diagnostic walkthrough teaser on / with auth gate",
+      "description": "Stage 4. Section 4 of / shows the first two of seven walkthrough steps. Signed-out visitors see a 'Continue with a free account' CTA. Signed-in visitors see a 'Read the full seven-step walkthrough' CTA pointing at /articles/diagnostic-walkthrough.",
+      "acceptanceCriteria": [
+        "Two steps with full prose render for everyone.",
+        "Signed-in: CTA links to the full article.",
+        "Signed-out: CTA links to /sign-in.",
+        "Gating done server-side via auth() in the page Server Component."
+      ],
+      "priority": 37,
+      "passes": true,
+      "notes": "Built as part of HOME-PAGE-001 since it is one section of the same page. The gating pattern (auth() -> isSignedIn -> conditional render) is the same shape used on /account/chart/[id]."
+    },
+    {
+      "id": "HOME-MAP-SALES-001",
+      "title": "Home Harmony Map sales page (Stage 4 stub)",
+      "description": "Stage 4. /home-harmony-map: a focused sales page for the $29 personalised PDF. Uses the FAB framework (Features Advantages Benefits) and a Goal-Gradient close. Stage 5 will wire Stripe; for now the page captures 'early list' emails by reusing the lead-magnet action.",
+      "acceptanceCriteria": [
+        "Hero copy + 'What you get' (5 bullets) + 'What it is not' (3 bullets) + price block + early-list form.",
+        "Product JSON-LD with availability: PreOrder, price 29 USD.",
+        "Early-list form reuses sendChecklist and shows ?checklist=sent|invalid|error inline.",
+        "Brand voice consistent (no em dashes, no outcome promises)."
+      ],
+      "priority": 38,
+      "passes": true,
+      "notes": "Sharing the lead-magnet action means an early-list signup ALSO gets the checklist email immediately - real value delivered, list captured, no separate plumbing. Product JSON-LD marks availability: PreOrder so search engines understand the product exists but cannot be bought yet."
+    },
+    {
+      "id": "HOME-SEO-001",
+      "title": "SEO metadata + sitemap + robots update",
+      "description": "Stage 4. Add Metadata on / and the new routes (canonical, OG), create app/sitemap.ts listing every public URL, point robots.ts at the new sitemap.",
+      "acceptanceCriteria": [
+        "/, /articles, /articles/[slug], /home-harmony-map, /checklist have Metadata with title, description, canonical, openGraph.",
+        "app/sitemap.ts lists all public URLs with lastModified, changeFrequency, priority.",
+        "app/robots.ts references the sitemap URL.",
+        "/sitemap.xml resolves at build."
+      ],
+      "priority": 39,
+      "passes": true,
+      "notes": "Articles iterate from the ARTICLES registry in lib/articles.ts so adding a new article auto-adds it to the sitemap. Account pages and /embed intentionally excluded (noindex via their own metadata)."
+    },
+    {
+      "id": "HOME-SMOKE-001",
+      "title": "Stage 4 smoke pass + housekeeping",
+      "description": "Stage 4. npm run build is clean; every new route returns 200; lead-magnet form sends; auth gate works signed-in and signed-out; print stylesheet for /account/chart/[id] still works (Stage 2 regression check); progress.txt + prd.json + CLAUDE.md updated; commit + push.",
+      "acceptanceCriteria": [
+        "npm run build succeeds.",
+        "Vercel auto-deploys; all 18 routes registered.",
+        "Owner smoke-tests: /, /articles, /articles/myths, /articles/diagnostic-walkthrough (signed-out + signed-in), /home-harmony-map, /checklist, /kua-calculator (regression), /account/chart/[id] PDF (regression).",
+        "progress.txt has a Stage 4 entry."
+      ],
+      "priority": 40,
+      "passes": true,
+      "notes": "Build came in clean on first try after the chart-image route + font bundling fixes from Stage 3 (those are unaffected by Stage 4). 18 routes total. Vercel deploys from main."
     }
   ]
 }

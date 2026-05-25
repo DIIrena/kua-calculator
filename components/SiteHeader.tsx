@@ -17,9 +17,9 @@ export default async function SiteHeader() {
   return (
     <header className="site-header">
       <Link
-        href="/kua-calculator"
+        href="/"
         className="brand"
-        aria-label="My Feng Shui Home - Kua Calculator, home"
+        aria-label="My Feng Shui Home, home"
       >
         <span className="brand-mark" aria-hidden="true">
           <svg
@@ -41,12 +41,14 @@ export default async function SiteHeader() {
           </svg>
         </span>
         <span className="brand-text">
-          <span className="brand-name">Kua Calculator</span>
+          {/* Script wordmark is the brand signature; per the brand book
+              Bilbo Swash Caps is only used for "My Feng Shui Home". */}
           <span className="brand-sub">My Feng Shui Home</span>
         </span>
       </Link>
       <nav className="site-nav" aria-label="Primary">
         <Link href="/kua-calculator">Calculator</Link>
+        <Link href="/articles">Articles</Link>
         <Link href="/methodology">Methodology</Link>
         {signedIn ? (
           <>
