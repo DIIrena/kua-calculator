@@ -40,7 +40,7 @@ export default async function EmailSentPage(props: {
   const body = isSuccess
     ? `Your chart was emailed to ${email}. It should arrive within a minute. If you do not see it, check your spam folder, just in case.`
     : isRateLimit
-      ? "You have reached today's chart-email limit of five per day. Your chart was still saved to your account. Please try emailing it again tomorrow."
+      ? "You have reached today's chart-email limit of nine per day. Your chart was still saved to your account. Please try emailing it again tomorrow."
       : "Something went wrong while sending the email. Your chart was still saved to your account. You can try emailing it again from the chart page.";
 
   return (

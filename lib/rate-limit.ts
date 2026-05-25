@@ -3,7 +3,7 @@
 
 import { createAdminClient } from "@/lib/supabase/server";
 
-const DEFAULT_DAILY_CAP = 5;
+const DEFAULT_DAILY_CAP = 9;
 
 function todayKey(): string {
   // ISO yyyy-mm-dd in UTC. Aligning to UTC keeps the limit deterministic
