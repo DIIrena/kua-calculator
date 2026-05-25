@@ -1,5 +1,7 @@
 import { NextRequest } from "next/server";
 import { Resvg } from "@resvg/resvg-js";
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import { createAdminClient } from "@/lib/supabase/server";
 import { buildBaguaSvgString } from "@/lib/bagua-svg";
 import type { Compass, Direction } from "@/lib/directions";
@@ -17,6 +19,41 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+// Vercel's serverless Linux has no system fonts; without fonts Resvg
+// renders the shapes but silently skips every <text> element (the
+// bagua segments and centre disc come out, but no compass labels or
+// Kua number). We bundle Hanken Grotesk via @fontsource and tell Resvg
+// to read those woff files from the function's node_modules. The
+// files are force-included in the function bundle via next.config.ts
+// outputFileTracingIncludes.
+function fontPath(file: string): string | null {
+  const p = path.join(
+    process.cwd(),
+    "node_modules",
+    "@fontsource",
+    "hanken-grotesk",
+    "files",
+    file,
+  );
+  try {
+    // Validate the file is actually present at request time so a
+    // bundling regression on a future deploy degrades gracefully.
+    readFileSync(p);
+    return p;
+  } catch (err) {
+    console.error("[chart-image] font missing", file, err);
+    return null;
+  }
+}
+
+const FONT_FILES: string[] = [
+  "hanken-grotesk-latin-400-normal.woff",
+  "hanken-grotesk-latin-700-normal.woff",
+  "hanken-grotesk-latin-800-normal.woff",
+]
+  .map(fontPath)
+  .filter((p): p is string => p !== null);
 
 type StoredResult = {
   kua: number;
@@ -63,6 +100,11 @@ export async function GET(
   const resvg = new Resvg(svg, {
     fitTo: { mode: "width", value: 640 },
     background: "transparent",
+    font: {
+      loadSystemFonts: false,
+      fontFiles: FONT_FILES,
+      defaultFontFamily: "Hanken Grotesk",
+    },
   });
   const png = resvg.render().asPng();
 

@@ -26,8 +26,12 @@ const COLOR = {
   ink2:     "#5f5848",
 };
 
+// Server-side PNG rasterisation (Resvg) loads Hanken Grotesk from
+// @fontsource and uses "Hanken Grotesk" as the family name. The other
+// names are fallbacks for any client that ever renders the raw SVG
+// directly (e.g. Apple Mail).
 const BODY_FONT =
-  "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif";
+  "'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif";
 
 // Geometry (matches BaguaDiagram.tsx so the email looks identical to
 // the web view, give or take font kerning).

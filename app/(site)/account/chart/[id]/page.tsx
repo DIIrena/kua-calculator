@@ -94,6 +94,25 @@ export default async function ChartViewPage(
         <p className="chart-print-subhead">Kua Calculator</p>
       </div>
 
+      {/* Email status pill rendered at the TOP of the page so the visitor
+          sees it immediately after the redirect (the action buttons that
+          submit the email form sit far down the page; landing back at the
+          top hid the feedback). */}
+      {emailStatus ? (
+        <p
+          className={`chart-email-status no-print chart-email-status-${
+            emailStatus === "sent" ? "ok" : "err"
+          }`}
+          role={emailStatus === "sent" ? "status" : "alert"}
+        >
+          {emailStatus === "sent"
+            ? `Email sent to ${session.user.email}. Check your inbox in a minute.`
+            : emailStatus === "rate-limit"
+              ? "You have reached today's chart-email limit. Try again tomorrow."
+              : "We could not send your chart email. Please try again in a moment."}
+        </p>
+      ) : null}
+
       <p className="eyebrow no-print">My Feng Shui Home</p>
       <h1 className="chart-heading" style={{ marginTop: 0 }}>
         {data.label ? data.label : `Kua ${result.kua} chart`}
@@ -137,21 +156,6 @@ export default async function ChartViewPage(
       </section>
 
       <section className="chart-actions-section no-print" aria-label="Chart actions">
-        {emailStatus ? (
-          <p
-            className={`chart-email-status chart-email-status-${
-              emailStatus === "sent" ? "ok" : "err"
-            }`}
-            role={emailStatus === "sent" ? "status" : "alert"}
-          >
-            {emailStatus === "sent"
-              ? `Email sent to ${session.user.email}. Check your inbox in a minute.`
-              : emailStatus === "rate-limit"
-                ? "You have reached today's chart-email limit. Try again tomorrow."
-                : "We could not send your chart email. Please try again in a moment."}
-          </p>
-        ) : null}
-
         <div className="chart-actions-row">
           <ChartPrintButton />
           <form action={sendChartEmail} className="chart-email-form">
