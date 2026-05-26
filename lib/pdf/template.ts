@@ -1,0 +1,322 @@
+// PDF template assembler. Takes a product, a customer context, and the
+// already-rendered HTML of the product's content blocks, and produces
+// the full HTML document (head, embedded fonts, cover, body) that
+// lib/pdf/render.ts feeds to Chromium.
+//
+// Fonts are base64-inlined as data: URLs so Chromium does not need to
+// fetch them over the network during PDF generation. The TTF files
+// live in lib/fonts/ and are bundled by Next file tracing (declared
+// in next.config.ts outputFileTracingIncludes).
+//
+// Brand palette mirrors app/globals.css so the PDF reads as part of
+// the same product line as the website.
+
+import { readFileSync } from "node:fs";
+import path from "node:path";
+import type { Product } from "@/lib/products";
+import type { BlockContext } from "@/lib/blocks";
+
+// Brand palette - matches the CSS custom properties in globals.css.
+const BRAND = {
+  paper: "#fbf7ee",     // cream paper background
+  cream: "#f1e9d8",     // canvas (slightly darker than paper)
+  ink: "#2a271e",       // deep brown for body text
+  olive: "#4f5a36",     // dark olive for accents
+  clay: "#be6b43",      // warm clay for emphasis
+  sand: "#e0d3b8",      // soft sand for rules / dividers
+};
+
+let fontsCache: { regular: string; bold: string; extraBold: string } | null =
+  null;
+
+function fontBase64(filename: string): string {
+  const filePath = path.join(process.cwd(), "lib", "fonts", filename);
+  return readFileSync(filePath).toString("base64");
+}
+
+function loadFonts() {
+  if (!fontsCache) {
+    fontsCache = {
+      regular: fontBase64("HankenGrotesk-Regular.ttf"),
+      bold: fontBase64("HankenGrotesk-Bold.ttf"),
+      extraBold: fontBase64("HankenGrotesk-ExtraBold.ttf"),
+    };
+  }
+  return fontsCache;
+}
+
+function formatDate(d: Date = new Date()): string {
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+/** HTML-escape a string for safe inclusion inside double-quoted CSS
+ *  content() values (which is where the customer's first name appears
+ *  in the running header). */
+function cssEscape(s: string): string {
+  return s.replace(/["\\]/g, "\\$&");
+}
+
+export function buildHtml(
+  product: Product,
+  context: BlockContext,
+  assembledBlocksHtml: string,
+): string {
+  const fonts = loadFonts();
+  const fullTitle = product.title(context.firstName);
+  const groupLabel = context.kuaGroup === "east" ? "East group" : "West group";
+  const date = formatDate();
+
+  // Running header text in CSS @page margin box. Escaped so a hypothetical
+  // first name with a quote does not break the rule.
+  const headerText = cssEscape(fullTitle);
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>${fullTitle}</title>
+<style>
+  /* ------------------------------------------------------------------
+     Fonts - inlined so Chromium does not need a network fetch.
+     ------------------------------------------------------------------ */
+  @font-face {
+    font-family: "Hanken Grotesk";
+    font-weight: 400;
+    font-style: normal;
+    src: url(data:font/ttf;base64,${fonts.regular}) format("truetype");
+  }
+  @font-face {
+    font-family: "Hanken Grotesk";
+    font-weight: 700;
+    font-style: normal;
+    src: url(data:font/ttf;base64,${fonts.bold}) format("truetype");
+  }
+  @font-face {
+    font-family: "Hanken Grotesk";
+    font-weight: 800;
+    font-style: normal;
+    src: url(data:font/ttf;base64,${fonts.extraBold}) format("truetype");
+  }
+
+  /* ------------------------------------------------------------------
+     Paged-media rules - running header + page number footer.
+     Cover page (first :first) suppresses both.
+     ------------------------------------------------------------------ */
+  @page {
+    size: A4;
+    margin: 22mm 20mm 22mm 20mm;
+    background: ${BRAND.paper};
+
+    @top-center {
+      content: "${headerText}";
+      font-family: "Hanken Grotesk", system-ui, sans-serif;
+      font-size: 8.5pt;
+      color: ${BRAND.olive};
+      padding-top: 6mm;
+      letter-spacing: 0.02em;
+    }
+
+    @bottom-center {
+      content: counter(page);
+      font-family: "Hanken Grotesk", system-ui, sans-serif;
+      font-size: 9pt;
+      color: ${BRAND.ink};
+      padding-bottom: 6mm;
+    }
+  }
+
+  @page :first {
+    @top-center { content: ""; }
+    @bottom-center { content: ""; }
+  }
+
+  /* ------------------------------------------------------------------
+     Base typography.
+     ------------------------------------------------------------------ */
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: ${BRAND.paper};
+    color: ${BRAND.ink};
+    font-family: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+    font-size: 11pt;
+    line-height: 1.65;
+  }
+
+  p {
+    margin: 0 0 3.5mm 0;
+    orphans: 3;
+    widows: 3;
+  }
+
+  strong { font-weight: 700; color: ${BRAND.ink}; }
+  em     { font-style: italic; }
+
+  h1, h2, h3 {
+    color: ${BRAND.ink};
+    page-break-after: avoid;
+  }
+
+  /* ------------------------------------------------------------------
+     Cover.
+     ------------------------------------------------------------------ */
+  .cover {
+    page-break-after: always;
+    height: 253mm; /* A4 297mm minus 22mm margins top+bottom */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cover-top {
+    padding-top: 18mm;
+  }
+
+  .cover-brand {
+    font-size: 9pt;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: ${BRAND.olive};
+  }
+
+  .cover-rule {
+    width: 22mm;
+    height: 1px;
+    background: ${BRAND.sand};
+    margin: 8mm auto 32mm auto;
+  }
+
+  .cover-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cover-title {
+    font-size: 32pt;
+    line-height: 1.12;
+    font-weight: 800;
+    margin: 0;
+    max-width: 140mm;
+    color: ${BRAND.ink};
+  }
+
+  .cover-title em {
+    font-style: italic;
+    color: ${BRAND.clay};
+    font-weight: 800;
+  }
+
+  .cover-bottom {
+    padding-bottom: 12mm;
+  }
+
+  .cover-kua {
+    font-size: 11pt;
+    font-weight: 700;
+    color: ${BRAND.olive};
+    margin: 0 0 3mm 0;
+    letter-spacing: 0.04em;
+  }
+
+  .cover-date {
+    font-size: 10pt;
+    color: ${BRAND.ink};
+    margin: 0;
+  }
+
+  /* ------------------------------------------------------------------
+     Content blocks.
+     Each block starts on a new page.
+     ------------------------------------------------------------------ */
+  .block {
+    page-break-before: always;
+  }
+
+  .block h1 {
+    font-size: 22pt;
+    line-height: 1.18;
+    font-weight: 800;
+    margin: 0 0 9mm 0;
+    letter-spacing: -0.005em;
+  }
+
+  .block h2 {
+    font-size: 13pt;
+    line-height: 1.3;
+    font-weight: 700;
+    margin: 10mm 0 3mm 0;
+    color: ${BRAND.olive};
+  }
+
+  .block h3 {
+    font-size: 11.5pt;
+    font-weight: 700;
+    margin: 6mm 0 2mm 0;
+    color: ${BRAND.ink};
+  }
+
+  .block ul, .block ol {
+    margin: 0 0 3.5mm 0;
+    padding-left: 6mm;
+  }
+
+  .block li {
+    margin: 0 0 2mm 0;
+  }
+
+  .block blockquote {
+    border-left: 2px solid ${BRAND.sand};
+    margin: 0 0 4mm 0;
+    padding: 0 0 0 5mm;
+    color: ${BRAND.olive};
+    font-style: italic;
+  }
+
+  /* Closing block carries the small product-catalogue list; tighten
+     line height there. */
+  .block--closing hr {
+    border: none;
+    border-top: 1px solid ${BRAND.sand};
+    margin: 8mm 0;
+  }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="cover-top">
+    <p class="cover-brand">My Feng Shui Home</p>
+    <div class="cover-rule"></div>
+  </div>
+
+  <div class="cover-center">
+    <h1 class="cover-title">${escapeHtml(context.firstName)}'s Personal Feng Shui <em>Compass</em></h1>
+  </div>
+
+  <div class="cover-bottom">
+    <p class="cover-kua">KUA ${context.kuaNumber} · ${groupLabel.toUpperCase()}</p>
+    <p class="cover-date">${date}</p>
+  </div>
+</section>
+
+${assembledBlocksHtml}
+
+</body>
+</html>`;
+}
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
