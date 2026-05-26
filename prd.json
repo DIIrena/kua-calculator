@@ -639,6 +639,205 @@
       "priority": 40,
       "passes": true,
       "notes": "Build came in clean on first try after the chart-image route + font bundling fixes from Stage 3 (those are unaffected by Stage 4). 18 routes total. Vercel deploys from main."
+    },
+    {
+      "id": "MAP-DB-001",
+      "title": "Supabase migration 0004 (product_orders, product_responses, product_deliveries) + Storage bucket",
+      "description": "Stage 5a. Add the three tables that power the modular product engine. Storage bucket product-pdfs created by the owner in the Supabase dashboard (cannot be created via SQL).",
+      "acceptanceCriteria": [
+        "supabase/migrations/0004_product_orders.sql exists with the three tables.",
+        "Owner runs the SQL in the Supabase SQL editor; all three tables visible in the table editor.",
+        "Owner creates the product-pdfs bucket via Supabase Storage (private, 25MB limit, application/pdf only).",
+        "RLS is OFF on all three tables (service-role writes only)."
+      ],
+      "priority": 41,
+      "passes": false,
+      "notes": "Schema split into orders + responses + deliveries so refunds / re-renders / annual refresh products append rows rather than mutate history."
+    },
+    {
+      "id": "MAP-ENGINE-001",
+      "title": "Content block library + product recipe system",
+      "description": "Stage 5a. The engine that turns a paid order plus a customer's three answers into an assembled PDF. lib/products.ts holds the catalogue (one entry per product slug). lib/blocks.ts loads content blocks from content/blocks/. The recipe maps a product slug to an ordered list of block IDs.",
+      "acceptanceCriteria": [
+        "lib/products.ts exports a Product type and a PRODUCTS registry. The Personal Compass entry exists with slug, title pattern, price (1400 cents), and an ordered list of block IDs.",
+        "lib/blocks.ts exports loadBlock(blockId, context) -> string of HTML, where context = { firstName, kuaNumber, kuaGroup, directions }.",
+        "Direction blocks pull from the customer's Kua to select which good/bad quality maps to which compass direction.",
+        "Unit-test fixture: assembling the Personal Compass for {firstName: 'Marco', kua: 4, group: 'east'} returns blocks in the expected order with the right quality-to-direction substitutions."
+      ],
+      "priority": 42,
+      "passes": false,
+      "notes": "Recipes are pure code, no database table. Adding a new product is one entry in PRODUCTS + however many missing blocks need writing."
+    },
+    {
+      "id": "MAP-CONTENT-001",
+      "title": "Identity block (4-5 pages, owner-review gate)",
+      "description": "Stage 5a. The first content block. Customer reads who they are in feng shui terms: their Kua, their group, their elemental character, the felt difference between East and West group living. Voice combines SKILL_WRITING_VOICE_HP + marketing/copywriting. Paraphrased from feng-shui/content/01-foundations.md and 06-compass-school.md.",
+      "acceptanceCriteria": [
+        "content/blocks/identity.md exists, 4-5 substantive pages of writing, two voice variants (East / West group).",
+        "Zero em dashes. Honest framing every line. No outcome promises.",
+        "First-name token used to personalise the prose (placeholder {{firstName}}).",
+        "Kua number token used to personalise the prose (placeholder {{kuaNumber}}).",
+        "ATTRIBUTION_BLOCKS.md entry added listing which feng-shui/content chapters informed this block.",
+        "Owner reads the block end-to-end and approves voice + content before any other content task starts."
+      ],
+      "priority": 43,
+      "passes": false,
+      "notes": "Gate task. No other content block may be written until this one is owner-approved."
+    },
+    {
+      "id": "MAP-STRIPE-001",
+      "title": "Stripe checkout + webhook for Personal Compass",
+      "description": "Stage 5a. Server-side Stripe integration. /api/checkout creates a Checkout Session for the Personal Compass product. /api/stripe-webhook verifies the signature and inserts a product_orders row on checkout.session.completed.",
+      "acceptanceCriteria": [
+        "STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, STRIPE_PRICE_ID_PERSONAL_COMPASS env vars added to .env.example and Vercel.",
+        "lib/stripe.ts exports a configured Stripe client.",
+        "POST /api/checkout takes product_slug, creates a Checkout Session, returns the redirect URL.",
+        "POST /api/stripe-webhook verifies the Stripe signature, idempotently inserts a product_orders row keyed on stripe_session.",
+        "Smoke test: $14 test purchase with card 4242 4242 4242 4242 produces a row in product_orders within seconds."
+      ],
+      "priority": 44,
+      "passes": false,
+      "notes": "Blocked on owner providing Stripe test keys + creating the product / price in their Stripe dashboard."
+    },
+    {
+      "id": "MAP-CONTENT-002",
+      "title": "Four good-direction blocks (parallel writer subagents)",
+      "description": "Stage 5a. One block per quality: Sheng Chi (wealth), Tien Yi (health), Nien Yen (love and longevity), Fu Wei (personal growth). Each 4-5 pages. Spawned in parallel as Sonnet Content Writer subagents after MAP-CONTENT-001 is owner-approved.",
+      "acceptanceCriteria": [
+        "content/blocks/sheng-chi.md, tien-yi.md, nien-yen.md, fu-wei.md each exist with 4-5 substantive pages.",
+        "Each block opens by naming the customer's compass direction for this quality (placeholder {{direction}}).",
+        "Voice consistent with the approved Identity block.",
+        "Zero em dashes, honest framing, no outcome promises.",
+        "ATTRIBUTION_BLOCKS.md updated with rows for each."
+      ],
+      "priority": 45,
+      "passes": false,
+      "notes": "Gated on MAP-CONTENT-001 approval."
+    },
+    {
+      "id": "MAP-CONTENT-003",
+      "title": "Four bad-direction blocks (parallel writer subagents)",
+      "description": "Stage 5a. One block per quality: Ho Hai (misfortune), Wu Kuei (five ghosts), Lui Sha (six killings), Chueh Ming (total loss). 2-3 pages each (shorter than the good directions but still substantive).",
+      "acceptanceCriteria": [
+        "content/blocks/ho-hai.md, wu-kuei.md, lui-sha.md, chueh-ming.md each exist with 2-3 substantive pages.",
+        "Each block names the customer's compass direction for this quality.",
+        "Each block gives at least one practical softener for when the customer cannot avoid that direction.",
+        "Voice consistent with the approved Identity block.",
+        "Zero em dashes, honest framing.",
+        "ATTRIBUTION_BLOCKS.md updated."
+      ],
+      "priority": 46,
+      "passes": false,
+      "notes": "Gated on MAP-CONTENT-001 approval. Parallelisable with MAP-CONTENT-002."
+    },
+    {
+      "id": "MAP-CONTENT-004",
+      "title": "Closing block + product catalogue",
+      "description": "Stage 5a. A short send-off in voice plus a one-line description of every other product in the eight-product catalogue. Ordered by relevance to this customer (e.g. their lowest Kua direction maps to the most-relevant Single Life Pillar).",
+      "acceptanceCriteria": [
+        "content/blocks/closing.md exists.",
+        "Send-off section: 1 page in voice, no outcome promises.",
+        "Catalogue section: one line per product in the future catalogue, lightly personalised.",
+        "Zero em dashes."
+      ],
+      "priority": 47,
+      "passes": false,
+      "notes": "The catalogue lines are placeholders for now; the linked sales pages do not yet exist (Stages 5b+)."
+    },
+    {
+      "id": "MAP-PDF-001",
+      "title": "HTML-to-PDF render pipeline",
+      "description": "Stage 5a. Puppeteer + @sparticuz/chromium running in a Vercel Node function. lib/pdf/render.ts takes an assembled HTML string and returns a Buffer.",
+      "acceptanceCriteria": [
+        "@sparticuz/chromium and puppeteer-core installed; next.config.ts serverExternalPackages updated.",
+        "lib/pdf/render.ts exports renderToPdf(html: string): Promise<Buffer>.",
+        "Cold start works under Vercel function timeout (default 10s; we target <8s).",
+        "Warm start works under 2s.",
+        "Output A4, 20mm margins, custom fonts loaded via @font-face."
+      ],
+      "priority": 48,
+      "passes": false,
+      "notes": "Fiddliest task in Stage 5a. The chromium binary push the function size near Vercel's limits; outputFileTracingIncludes likely needed."
+    },
+    {
+      "id": "MAP-PDF-002",
+      "title": "PDF template + personalised cover composition",
+      "description": "Stage 5a. lib/pdf/template.ts assembles the full HTML for a product: cover, table of contents, content blocks, page numbers, running header. The cover shows '[Name]'s Personal Feng Shui Compass' in brand display treatment.",
+      "acceptanceCriteria": [
+        "lib/pdf/template.ts exports buildHtml(product, response, blocks): string.",
+        "Cover renders the customer first name in display type, Kua number, date.",
+        "Hanken Grotesk body via @font-face; cream paper background; dark ink.",
+        "Running header on inside pages: 'Marco's Personal Feng Shui Compass'.",
+        "Page numbers in footer.",
+        "Inline SVG bagua appears on the Identity page.",
+        "Sample render of the Personal Compass for {firstName: 'Marco', kua: 4} produces a 18-22 page PDF with no broken layout."
+      ],
+      "priority": 49,
+      "passes": false,
+      "notes": "Visual approval gate: owner sees the rendered Marco-compass and signs off the cover composition before MAP-DELIVERY-001."
+    },
+    {
+      "id": "MAP-FORM-001",
+      "title": "Post-checkout three-field form + assembly server action",
+      "description": "Stage 5a. After Stripe redirects to /compass/checkout/success?session_id=..., we render the form (first name, birth date, gender). On submit, server action computes the Kua, calls the renderer, uploads to Storage, sends email, redirects to the account page.",
+      "acceptanceCriteria": [
+        "app/(site)/compass/checkout/success/page.tsx renders the form scoped to the order_id.",
+        "Form validates: first name non-empty; birth date a valid past date; gender selected.",
+        "app/actions/submit-compass-form.ts: idempotent (no duplicate deliveries); writes product_responses + product_deliveries; uploads PDF to Storage; sends Resend email; returns the new delivery_id.",
+        "User redirected to /account/compass/[id] after success."
+      ],
+      "priority": 50,
+      "passes": false,
+      "notes": "If user is not signed in at this point we send them a magic-link email first; the form remembers the order via the session_id query param so the flow survives the sign-in."
+    },
+    {
+      "id": "MAP-DELIVERY-001",
+      "title": "Email delivery + 'My Compasses' account dashboard",
+      "description": "Stage 5a. Resend email with the PDF attached. /account/compass lists all the customer's past compasses. /account/compass/[id] shows a single delivery with re-download + re-send buttons.",
+      "acceptanceCriteria": [
+        "Resend HTML email modelled on lib/email-chart.ts (Gmail-safe inlined styles).",
+        "PDF attached, filename: '[FirstName]s-Personal-Feng-Shui-Compass.pdf'.",
+        "/account/compass lists deliveries newest-first with title, date, page count.",
+        "/account/compass/[id] shows a single delivery, signed download URL (5-minute TTL), re-send button.",
+        "Re-send is rate-limited per user-per-day to 5 (reuses lib/rate-limit.ts pattern)."
+      ],
+      "priority": 51,
+      "passes": false,
+      "notes": "The PDF stays accessible even after refund (per refund policy decision in the spec)."
+    },
+    {
+      "id": "MAP-SALES-001",
+      "title": "Reframe sales page as /compass and wire the real Stripe button",
+      "description": "Stage 5a. Move the existing /home-harmony-map page to /compass. Reframe copy from 'Home Harmony Map' to 'Personal Feng Shui Compass'. Price $14. Replace the early-list email-capture form with the real Stripe buy button.",
+      "acceptanceCriteria": [
+        "/compass renders the new sales page; /home-harmony-map returns 301 to /compass.",
+        "Copy reframed: hero, value-stack, what-you-get list (cover + 4 good directions + 4 bad directions + identity + closing), price $14.",
+        "Buy button POSTs to /api/checkout and redirects to the Stripe Checkout URL.",
+        "Product JSON-LD updated with the new title and $14 price.",
+        "SiteHeader nav: 'Calculator' link unchanged; add 'My Compasses' under the account dropdown.",
+        "Sitemap entry updated."
+      ],
+      "priority": 52,
+      "passes": false,
+      "notes": "First product sale page. Stage 5b adds /compass/[product-slug] for the smaller products."
+    },
+    {
+      "id": "MAP-SMOKE-001",
+      "title": "Stage 5a end-to-end smoke + progress.txt entry",
+      "description": "Stage 5a. Run the full purchase flow on the live site with the Stripe test card. Verify PDF arrives, account page lists it, re-download works. Update progress.txt with the Stage 5a learning. Mark all 12 tasks passes:true.",
+      "acceptanceCriteria": [
+        "Test purchase $14 with card 4242 4242 4242 4242 completes.",
+        "Email arrives within 60s with PDF attached.",
+        "Account page lists the new compass.",
+        "Re-download via signed URL works.",
+        "PDF opens; cover shows the customer first name; Kua is correct; 18-22 pages; zero em dashes.",
+        "Refund the test charge in Stripe; verify product_orders.status flips to 'refunded' via webhook.",
+        "progress.txt has a Stage 5a paragraph leading with the lesson learned.",
+        "All 12 Stage 5a tasks passes:true in prd.json."
+      ],
+      "priority": 53,
+      "passes": false,
+      "notes": ""
     }
   ]
 }
