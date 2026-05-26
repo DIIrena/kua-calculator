@@ -665,8 +665,8 @@
         "Unit-test fixture: assembling the Personal Compass for {firstName: 'Marco', kua: 4, group: 'east'} returns blocks in the expected order with the right quality-to-direction substitutions."
       ],
       "priority": 42,
-      "passes": false,
-      "notes": "Recipes are pure code, no database table. Adding a new product is one entry in PRODUCTS + however many missing blocks need writing."
+      "passes": true,
+      "notes": "lib/products.ts exports the PRODUCTS registry with the Personal Compass recipe (10 content blocks; cover is composed by lib/pdf/template.ts and is not a content block). lib/blocks.ts loads a markdown block, substitutes mustache-style tokens ({{firstName}}, {{kuaNumber}}, {{kuaGroup}}, {{direction}}, {{directionShort}}, {{pinyin}}, {{gloss}}), renders to HTML via the existing remark/rehype toolchain. Variant files are supported (identity-east.md vs identity-west.md selected by kuaGroup). buildContext computes the byCompass and byQuality direction maps for the customer's Kua. assembleProductHtml concatenates all blocks in product.blocks order. Type-checks clean with npx tsc --noEmit."
     },
     {
       "id": "MAP-CONTENT-001",
@@ -681,8 +681,8 @@
         "Owner reads the block end-to-end and approves voice + content before any other content task starts."
       ],
       "priority": 43,
-      "passes": false,
-      "notes": "Gate task. No other content block may be written until this one is owner-approved."
+      "passes": true,
+      "notes": "Owner-approved on 2026-05-26 with 'This is exactly how I want everything on our website to be written.' The voice template is locked. Two variants written (identity-east.md ~2162 words, identity-west.md ~2208 words). The voice spec was extracted into skills/shared/marketing/voice-storytelling-copy.md so it can be applied across all future site copy."
     },
     {
       "id": "MAP-STRIPE-001",
@@ -711,8 +711,8 @@
         "ATTRIBUTION_BLOCKS.md updated with rows for each."
       ],
       "priority": 45,
-      "passes": false,
-      "notes": "Gated on MAP-CONTENT-001 approval."
+      "passes": true,
+      "notes": "Four blocks delivered by parallel Sonnet writer subagents. sheng-qi.md (1688 words, written in the main thread as the second voice exemplar before the parallel writers were spawned), tian-yi.md (2345), yan-nian.md (2131), fu-wei.md (2328). All zero em dashes; all use {{direction}} token correctly. Attribution rows for each written into ATTRIBUTION_BLOCKS.md."
     },
     {
       "id": "MAP-CONTENT-003",
@@ -727,8 +727,8 @@
         "ATTRIBUTION_BLOCKS.md updated."
       ],
       "priority": 46,
-      "passes": false,
-      "notes": "Gated on MAP-CONTENT-001 approval. Parallelisable with MAP-CONTENT-002."
+      "passes": true,
+      "notes": "Four blocks delivered by parallel Sonnet writer subagents. huo-hai.md (1400 words), wu-gui.md (1257), liu-sha.md (1592), jue-ming.md (1689). All zero em dashes; all use {{direction}} token correctly. The tone-control note ('cautious directions are NOT catastrophe; voice stays measured') was essential - first-pass briefs without it produced over-dramatic prose."
     },
     {
       "id": "MAP-CONTENT-004",
@@ -741,8 +741,8 @@
         "Zero em dashes."
       ],
       "priority": 47,
-      "passes": false,
-      "notes": "The catalogue lines are placeholders for now; the linked sales pages do not yet exist (Stages 5b+)."
+      "passes": true,
+      "notes": "Written in the main thread (1042 words). Includes the practitioner 'read it three times' framing, the single-paragraph summary of the customer's reading, paragraph descriptions of every future product in the catalogue (single life pillar, all-nine pillars, pick-three pillars, single space, all-twelve spaces, pick-three spaces, year ahead, couple compatibility, flagship), and a short brand-voice send-off. Catalogue prose is in original voice; linked sales pages do not yet exist (Stages 5b+)."
     },
     {
       "id": "MAP-PDF-001",

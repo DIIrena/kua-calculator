@@ -6,9 +6,10 @@
 // blocks under content/blocks/. The PDF assembler does not care about
 // the product slug; it just executes the recipe.
 
+// Note: the cover is not a content block. It is composed in
+// lib/pdf/template.ts from product metadata + customer first name.
 export type BlockId =
   // Universal
-  | "cover"
   | "identity"
   | "closing"
   // Direction quality blocks (the order in which they appear in the
@@ -50,7 +51,6 @@ export const PRODUCTS: Record<string, Product> = {
     currency: "usd",
     stripeEnvKey: "STRIPE_PRICE_ID_PERSONAL_COMPASS",
     blocks: [
-      "cover",
       "identity",
       "sheng-qi",
       "tian-yi",
