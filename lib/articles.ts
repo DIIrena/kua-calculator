@@ -12,6 +12,7 @@ import remarkRehype from "remark-rehype";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 import type { LifeArea } from "@/lib/life-areas";
+import type { Space } from "@/lib/spaces";
 
 export type ArticleCategory =
   | "foundations"
@@ -36,6 +37,9 @@ export type Article = {
   /** Bagua life areas this article is relevant to. Drives the
       /life/[area] pages and the related-articles selection there. */
   lifeAreas?: LifeArea[];
+  /** Rooms/spaces this article is relevant to. Drives the
+      /space/[room] pages. */
+  spaces?: Space[];
   /** Manually-curated related slugs. Falls back to same-category articles. */
   relatedSlugs?: string[];
   /** Optional in-article-CTA override. Default is "run the calculator". */
@@ -91,6 +95,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     readingTime: "4 minutes",
     category: "methodology",
     lifeAreas: ["money", "love"],
+    spaces: ["bedroom", "kitchen", "living-room"],
     relatedSlugs: [
       "twelve-feng-shui-myths-holding-you-back",
       "feng-shui-or-good-design",
@@ -109,6 +114,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     readingTime: "5 minutes",
     category: "foundations",
     lifeAreas: ["money", "love", "health", "career"],
+    spaces: ["living-room", "bedroom", "kitchen", "dining-room"],
     relatedSlugs: [
       "what-is-feng-shui-really",
       "bagua-map-wealth-corner",
@@ -127,6 +133,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     readingTime: "7 minutes",
     category: "methodology",
     lifeAreas: ["money", "love", "health", "career", "centre"],
+    spaces: ["living-room", "bedroom", "kitchen", "dining-room", "bathroom", "terrace"],
     relatedSlugs: [
       "twenty-six-changes-this-weekend",
       "kitchen-stove-and-money",
@@ -146,6 +153,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     readingTime: "9 minutes",
     category: "foundations",
     lifeAreas: ["money", "love", "health", "career"],
+    spaces: ["living-room", "bedroom", "kitchen", "dining-room", "bathroom", "terrace"],
     relatedSlugs: [
       "five-elements",
       "bagua-map-wealth-corner",
@@ -164,6 +172,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     readingTime: "9 minutes",
     category: "room-by-room",
     lifeAreas: ["money", "love", "health", "career", "creativity"],
+    spaces: ["living-room", "bedroom", "kitchen", "dining-room", "bathroom", "terrace"],
     relatedSlugs: [
       "kitchen-stove-and-money",
       "bagua-map-wealth-corner",
@@ -182,6 +191,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     readingTime: "7 minutes",
     category: "bagua",
     lifeAreas: ["money", "centre"],
+    spaces: ["living-room", "kitchen", "dining-room"],
     relatedSlugs: [
       "what-is-feng-shui-really",
       "five-elements",
@@ -200,6 +210,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     readingTime: "7 minutes",
     category: "room-by-room",
     lifeAreas: ["money", "health"],
+    spaces: ["kitchen"],
     relatedSlugs: [
       "twenty-six-changes-this-weekend",
       "bagua-map-wealth-corner",
@@ -218,6 +229,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     readingTime: "9 minutes",
     category: "methodology",
     lifeAreas: ["money", "love"],
+    spaces: ["bedroom", "kitchen", "living-room", "bathroom"],
     relatedSlugs: [
       "myths",
       "feng-shui-or-good-design",
@@ -237,6 +249,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     readingTime: "11 minutes",
     category: "methodology",
     lifeAreas: ["health", "money"],
+    spaces: ["bedroom", "living-room", "kitchen"],
     relatedSlugs: [
       "feng-shui-or-good-design",
       "five-tests-you-can-run",
@@ -255,6 +268,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     readingTime: "8 minutes",
     category: "methodology",
     lifeAreas: ["health", "career"],
+    spaces: ["bedroom", "living-room", "kitchen", "dining-room"],
     relatedSlugs: [
       "whats-the-evidence",
       "five-tests-you-can-run",
@@ -273,6 +287,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     readingTime: "8 minutes",
     category: "methodology",
     lifeAreas: ["health", "money"],
+    spaces: ["bedroom", "living-room", "kitchen", "bathroom", "terrace"],
     relatedSlugs: [
       "whats-the-evidence",
       "feng-shui-or-good-design",
@@ -291,6 +306,10 @@ export function articlesInCategory(cat: ArticleCategory): Article[] {
 
 export function articlesForLifeArea(area: LifeArea): Article[] {
   return ARTICLES.filter((a) => a.lifeAreas?.includes(area));
+}
+
+export function articlesForSpace(space: Space): Article[] {
+  return ARTICLES.filter((a) => a.spaces?.includes(space));
 }
 
 /**

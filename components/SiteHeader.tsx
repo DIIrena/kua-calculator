@@ -6,15 +6,17 @@ import {
   type ArticleCategory,
 } from "@/lib/articles";
 import { LIFE_AREAS } from "@/lib/life-areas";
+import { SPACES } from "@/lib/spaces";
 
 // Server Component. Reflects logged-in state and renders the primary nav.
 //
 // Nav order (left to right):
-//   1. By life area (mega dropdown - 9 bagua-area pages, the primary funnel)
-//   2. Everything About Feng Shui (single mega dropdown - every article
+//   1. Life pillars (dropdown - 9 bagua-area pages, the primary funnel)
+//   2. Space (dropdown - 6 rooms of the home)
+//   3. Everything About Feng Shui (single mega dropdown - every article
 //      grouped by its topic category)
-//   3. Calculator (free tool, direct link)
-//   4. Sign in / Account (auth)
+//   4. Calculator (free tool, direct link)
+//   5. Sign in / Account (auth)
 
 type NavCategory = {
   category: ArticleCategory;
@@ -77,10 +79,10 @@ export default async function SiteHeader() {
       </Link>
 
       <nav className="site-nav" aria-label="Primary">
-        {/* 1. By life area - the primary funnel to the paid Map */}
+        {/* 1. Life pillars - the primary funnel to the paid Map */}
         <details className="nav-dropdown">
           <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
-            By life area
+            Life pillars
             <span className="nav-dropdown-caret" aria-hidden="true">
               &#9662;
             </span>
@@ -106,7 +108,36 @@ export default async function SiteHeader() {
           </div>
         </details>
 
-        {/* 2. Everything About Feng Shui - one mega menu containing
+        {/* 2. Space - room-by-room guidance for each of the six rooms */}
+        <details className="nav-dropdown">
+          <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
+            Space
+            <span className="nav-dropdown-caret" aria-hidden="true">
+              &#9662;
+            </span>
+          </summary>
+          <div className="nav-dropdown-panel" role="menu">
+            {SPACES.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/space/${s.slug}`}
+                role="menuitem"
+                className="nav-dropdown-link"
+              >
+                {s.label}
+              </Link>
+            ))}
+            <Link
+              href="/space"
+              role="menuitem"
+              className="nav-dropdown-link nav-dropdown-see-all"
+            >
+              All six rooms &rarr;
+            </Link>
+          </div>
+        </details>
+
+        {/* 3. Everything About Feng Shui - one mega menu containing
             all four topic categories with their articles. */}
         <details className="nav-dropdown nav-dropdown-mega">
           <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
@@ -164,12 +195,12 @@ export default async function SiteHeader() {
           </div>
         </details>
 
-        {/* 3. Calculator - direct link */}
+        {/* 4. Calculator - direct link */}
         <Link href="/kua-calculator" className="site-nav-link">
           Calculator
         </Link>
 
-        {/* 4. Account / Sign in */}
+        {/* 5. Account / Sign in */}
         {signedIn ? (
           <>
             <Link href="/account" className="site-nav-link">

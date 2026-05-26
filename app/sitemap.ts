@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { ARTICLES } from "@/lib/articles";
+import { LIFE_AREAS } from "@/lib/life-areas";
+import { SPACES } from "@/lib/spaces";
 
 // Sitemap generated at build time. Lists every public URL with a
 // lastModified date so search engines (and AI crawlers) know what
@@ -37,6 +39,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${SITE}/life`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE}/space`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${SITE}/home-harmony-map`,
       lastModified: today,
       changeFrequency: "weekly",
@@ -63,5 +77,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...articleEntries];
+  const lifeEntries: MetadataRoute.Sitemap = LIFE_AREAS.map((l) => ({
+    url: `${SITE}/life/${l.slug}`,
+    lastModified: today,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  const spaceEntries: MetadataRoute.Sitemap = SPACES.map((s) => ({
+    url: `${SITE}/space/${s.slug}`,
+    lastModified: today,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [
+    ...staticEntries,
+    ...articleEntries,
+    ...lifeEntries,
+    ...spaceEntries,
+  ];
 }
