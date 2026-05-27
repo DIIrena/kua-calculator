@@ -57,10 +57,4 @@ Move next to the bed, if it is movable. If the headboard is currently against th
 
 Then the morning corner. Pick the spot you stand in for the first cup of the day. Notice which direction your body opens to. If it is not {{direction}} (and it almost never is, the first time someone looks), turn the chair, move the table, swap the corner. Take one week of mornings facing {{direction}} and see if you notice the difference. The tradition says you will. The science of attention says you might. Either way, the test takes seven days.
 
-## What's next
-
-That is the strongest of your four favourable directions, the one to use when the work has to move forward. The next chapter is *Tian Yi*, your healing direction. It is the direction you want for the bed in most ordinary seasons of life, and for the dining seat, and for the chair you read in when you want to recover from a hard day. Read it before you make the headboard decision permanent.
-
-Then Yan Nian, the relationship direction. Then Fu Wei, the anchor. Then the four to be cautious of. Then a short closing.
-
 Your Sheng Qi direction is {{direction}}. Mark it on the floor plan in your head. We can move on.
