@@ -8,11 +8,11 @@ That is what Yan Nian feels like when a room is doing its job.
 
 ## What Yan Nian means
 
-The full name is *Yan Nian*, and the literal translation is **"longevity"** or, more loosely, "lengthening the years." It is the third of your four favourable directions, and in classical practice it is the one specifically assigned to the parts of life that need to *last*.
+The full name is *Yan Nian* (延年), and the literal translation is **"longevity"** or, more loosely, "lengthening the years." It is the third of your four favourable directions, and in classical practice it is the one specifically assigned to the parts of life that need to *last*.
 
 If Sheng Qi is for action and Tian Yi is for recovery, Yan Nian is for *connection*. It is the direction the tradition associates with the relationships you want to be still inside in five years. The marriage. The friendship that survived three moves and one bad year. The sibling you call when nothing in particular has happened. The grown child you have a habit of texting on Sundays. The tradition reads Yan Nian as the felt-quality that makes those bonds keep working, decade after decade, without anyone having to repair them.
 
-The Chinese character for *nian* is the same one used for the New Year and for a person's age. Years that accumulate. Time that adds up rather than runs out. The name does not promise you a long life. It names the *kind* of arrangement that holds across long time.
+The Chinese character for *nian* (年) is the same one used for the New Year and for a person's age. Years that accumulate. Time that adds up rather than runs out. The name does not promise you a long life. It names the *kind* of arrangement that holds across long time.
 
 For you, that direction is **{{direction}}**.
 

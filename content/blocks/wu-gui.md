@@ -6,7 +6,7 @@ That is Wu Gui weather. Not catastrophe. Not doom. Just the small reliable tilt 
 
 ## What Wu Gui means
 
-The full name is *Wu Gui*, which translates literally as "Five Ghosts." It is the second of your four cautious directions, and for you, {{firstName}}, it points {{direction}}.
+The full name is *Wu Gui* (五鬼), which translates literally as "Five Ghosts." It is the second of your four cautious directions, and for you, {{firstName}}, it points {{direction}}.
 
 The name is more theatrical than the phenomenon. Classical practitioners associate Wu Gui with arguments, miscommunication, lost items, and hidden friction; the direction the tradition reads as breeding *confusion and dispute*. The honest framing is gentler than the name suggests. A wall where conversations seem to consistently go sideways may have other reasons (acoustics, the angle of the light, the chair that puts one person's back to the door), but the tradition has been naming this pattern for centuries and it is worth paying attention to.
 

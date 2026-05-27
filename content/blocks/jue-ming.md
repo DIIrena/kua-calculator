@@ -6,7 +6,7 @@ Somewhere in that year was a room. Probably the bedroom. Possibly a desk. The tr
 
 ## What Jue Ming means
 
-The full name is *Jue Ming*, which translates, with no softening available, as **Total Loss**. It is the fourth and final of your four cautious directions, and the one classical practitioners flag first. For you, {{firstName}}, it points {{direction}}.
+The full name is *Jue Ming* (絕命), which translates, with no softening available, as **Total Loss**. It is the fourth and final of your four cautious directions, and the one classical practitioners flag first. For you, {{firstName}}, it points {{direction}}.
 
 The name is the harshest in the system. There is no honest way around that, so we will not try. Of the four cautious directions, Jue Ming is the one the tradition treats with the most care. The classical reading is consistent across schools and across centuries: never sleep with the head pointing Jue Ming; never face Jue Ming at your main work seat. The two canonical placements for a Jue Ming corner are a **bathroom** or a **storage room**. The bathroom literally contains and disposes. The storage room sits passive and quiet. Both of them are uses in which nobody is meant to sit and think, sleep and recover, or face the wall for hours.
 

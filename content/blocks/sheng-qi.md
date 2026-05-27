@@ -4,7 +4,7 @@ Sheng Qi is the *generating* direction, the strongest of your four favourable di
 
 ## What Sheng Qi means
 
-The full name is *Sheng Qi*, which translates to "generating qi" or, more loosely, "the source of energy." It is the senior officer of the four good directions. If Tian Yi (your healing direction) is for recovery, Yan Nian (your relationship direction) is for love, and Fu Wei (your anchor direction) is for steadiness, Sheng Qi is for *action*. It is where you go when you have something to push forward.
+The full name is *Sheng Qi* (生氣), which translates to "generating qi" or, more loosely, "the source of energy." It is the senior officer of the four good directions. If Tian Yi (your healing direction) is for recovery, Yan Nian (your relationship direction) is for love, and Fu Wei (your anchor direction) is for steadiness, Sheng Qi is for *action*. It is where you go when you have something to push forward.
 
 Practitioners have built rules around it for centuries. The first one, the most-cited, is the rule of the headboard: a bed whose headboard points to your Sheng Qi direction is said to wake the sleeper energetic, ambitious, ready. The second rule is the rule of the working seat: a desk where your body faces your Sheng Qi direction supports the kind of work that requires drive. The third is the rule of the front door: a home whose entrance opens to the Sheng Qi direction of the head of household is, by tradition, an auspicious home.
 

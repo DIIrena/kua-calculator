@@ -80,9 +80,22 @@ export function buildHtml(
 <head>
 <meta charset="utf-8">
 <title>${fullTitle}</title>
+
+<!-- Noto Sans TC for the few Traditional Chinese characters that appear
+     parenthetically in the direction chapters. Loaded from Google Fonts
+     because the chars are too few to justify bundling a full CJK file
+     (which would be 5-7MB). renderToPdf() awaits document.fonts.ready
+     so the font is guaranteed to be applied before the PDF is captured. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
   /* ------------------------------------------------------------------
-     Fonts - inlined so Chromium does not need a network fetch.
+     Fonts - Hanken Grotesk inlined so Chromium does not need a fetch
+     for the body face. The CJK fallback (Noto Sans TC) is loaded via
+     the <link> above; only triggers when a CJK glyph is actually
+     encountered by the layout engine.
      ------------------------------------------------------------------ */
   @font-face {
     font-family: "Hanken Grotesk";
@@ -114,7 +127,7 @@ export function buildHtml(
 
     @top-center {
       content: "${headerText}";
-      font-family: "Hanken Grotesk", system-ui, sans-serif;
+      font-family: "Hanken Grotesk", "Noto Sans TC", system-ui, sans-serif;
       font-size: 8.5pt;
       color: ${BRAND.olive};
       padding-top: 6mm;
@@ -123,7 +136,7 @@ export function buildHtml(
 
     @bottom-center {
       content: counter(page);
-      font-family: "Hanken Grotesk", system-ui, sans-serif;
+      font-family: "Hanken Grotesk", "Noto Sans TC", system-ui, sans-serif;
       font-size: 9pt;
       color: ${BRAND.ink};
       padding-bottom: 6mm;
@@ -143,7 +156,7 @@ export function buildHtml(
     padding: 0;
     background: ${BRAND.paper};
     color: ${BRAND.ink};
-    font-family: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+    font-family: "Hanken Grotesk", "Noto Sans TC", system-ui, -apple-system, sans-serif;
     font-size: 11pt;
     line-height: 1.65;
   }

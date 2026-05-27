@@ -6,7 +6,7 @@ That is the temperature of Huo Hai. It is not a crisis. It is the *drawer*.
 
 ## What Huo Hai means
 
-The full name is *Huo Hai*, which translates as **Mishap**. It is the first and mildest of the four directions the tradition reads as cautious for you. For you, {{firstName}}, it points {{direction}}.
+The full name is *Huo Hai* (禍害), which translates as **Mishap**. It is the first and mildest of the four directions the tradition reads as cautious for you. For you, {{firstName}}, it points {{direction}}.
 
 There are four good directions and four to be careful of. Huo Hai is the gentlest of the careful four. The tradition associates it with **low-grade setbacks** and minor friction. Misplaced keys. A draft you cannot trace. The week where everything technically went fine and you cannot say why you ended it tired. None of it is large. None of it is the kind of thing you would call a friend about. It accumulates rather than strikes.
 
