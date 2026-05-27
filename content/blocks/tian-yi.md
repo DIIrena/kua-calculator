@@ -56,7 +56,7 @@ The tradition's claim is that the body knows. It has always known. The Kua syste
 
 The cheaper version of the test runs in the next two weeks. Try a fortnight sleeping with your headboard pointed {{direction}}. Compare it to whatever the previous fortnight was. The difference is not always dramatic. Sometimes it is the absence of a low-grade tiredness you had stopped noticing, like the absence of a hum from a fridge that has finally been replaced. Sometimes it is the morning your skin looks like skin again. Sometimes you wake up and you do not feel forty years old at thirty, for the first time in months, and you cannot decide whether it is the bed or the coffee or the fact that you stopped reading the news.
 
-The test takes fourteen days. It costs nothing except moving a piece of furniture and the social discomfort of explaining to your housemate why the bed has migrated.
+The test takes fourteen days. It costs nothing except moving a piece of furniture.
 
 ## The hard thing
 
