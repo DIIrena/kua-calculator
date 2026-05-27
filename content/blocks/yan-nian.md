@@ -1,10 +1,10 @@
 # Your Yan Nian direction is {{direction}}
 
-It is nearly midnight and the two of you are still at the kitchen island. The dishes are stacked on one side. Two coffee cups sit on the other, one of them long cold, the one you keep forgetting to drink because the conversation keeps catching at something. The overhead light is off. The lamp at the end of the counter is doing the warm thing the overhead never does. Somebody's phone buzzed twenty minutes ago and neither of you got up.
+Yan Nian is your *relationship* direction. It is the third of your four favourable directions, and the one Classical practice assigns to the parts of life that need to **last**. For you, {{firstName}}, it points {{direction}}.
 
-You are not solving anything. You are not even *talking* about anything in particular. You are inside the rhythm of two people who do not need to fill the silence between sentences, and the room is letting you stay there. When one of you finally yawns and says *bed*, you will both be surprised at how long it has been.
+To know what that quality feels like, picture a room that is doing the work well. It is nearly midnight and two people who love each other are still at the kitchen island. The dishes are stacked. Two coffee cups sit between them, one long cold. The overhead light is off; only the warm lamp at the end of the counter is on. Somebody's phone buzzed twenty minutes ago and neither of them got up. They are not solving anything. They are not even talking about anything in particular. They are inside the quiet between two people who do not need to fill the silence with words, and the room is letting them stay there.
 
-That is what Yan Nian feels like when a room is doing its job. The system has a name for the quality you just spent two hours inside, and for you, {{firstName}}, the direction it lives in is **{{direction}}**.
+That is what Yan Nian feels like when a room is doing its job.
 
 ## What Yan Nian means
 
