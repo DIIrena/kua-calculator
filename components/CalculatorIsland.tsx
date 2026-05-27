@@ -327,8 +327,8 @@ export default function CalculatorIsland({
             <article class="result-card">
               <header class="result-header">
                 <div class="result-summary">
-                  <p class="result-eyebrow">Your Kua</p>
-                  <p class="result-kua"><span data-bind="kua"></span></p>
+                  <p class="result-eyebrow" style="color:#ffffff;">Your Kua</p>
+                  <p class="result-kua" style="color:#ffffff;"><span data-bind="kua" style="color:#ffffff;"></span></p>
                   <p class="result-group"><span class="group-badge" data-bind="group-badge"></span></p>
                 </div>
                 <p class="result-line" data-bind="summary"></p>
