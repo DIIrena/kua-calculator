@@ -685,17 +685,26 @@ a:hover { color: var(--clay-deep); }
   color: #ffffff;
 }
 
+/* The big Kua number sits on the olive .result-summary panel. The
+   colour stack uses high-specificity selectors + !important to
+   defeat any cached or third-party rule that has been overriding
+   it. Owner reported the number rendering as gray on olive even
+   after weight + color fixes, so this rule is intentionally loud. */
+.result-summary .result-kua,
+.result-summary .result-kua span {
+  color: #ffffff !important;
+}
+
 .result-kua {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(4rem, 12vw, 5.5rem);
   line-height: 1;
-  color: #ffffff;
   font-variant-numeric: lining-nums;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-.result-kua span { color: inherit; }
 
 .result-group { margin: var(--space-2) 0 0 0; }
 
