@@ -4,7 +4,7 @@ There is a project sitting in your email. You committed to it eight months ago i
 
 ## What Liu Sha means
 
-The full name is *Liu Sha* (六煞), which translates literally as "Six Killings." The name sounds frightening. The phenomenon is not. The tradition reads Liu Sha as the direction associated with **broken plans**, lost opportunities, mishaps that compound, drawn-out misunderstandings, low-grade legal trouble, and the kind of emotional volatility that does not announce itself as a crisis because it has been building for too long.
+The full name is *Liu Sha*, which translates literally as "Six Killings." The name sounds frightening. The phenomenon is not. The tradition reads Liu Sha as the direction associated with **broken plans**, lost opportunities, mishaps that compound, drawn-out misunderstandings, low-grade legal trouble, and the kind of emotional volatility that does not announce itself as a crisis because it has been building for too long.
 
 It is the third of your four cautious directions. Sharper than *Huo Hai* (the mildest, where small things go small ways wrong) and sharper than *Wu Gui* (the arguments and the misplaced keys), but not as severe as *Jue Ming*, which comes next. Liu Sha sits in the middle of that gradient. It is not catastrophe. It is the *steady erosion* that makes a household feel tired without anyone being able to name why.
 

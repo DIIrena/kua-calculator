@@ -10,7 +10,7 @@ Tian Yi is your healing direction. For you, {{firstName}}, it points **{{directi
 
 ## What Tian Yi means
 
-The pinyin is *Tian Yi* (天醫), which translates literally as **Heavenly Doctor**. It is the second of your four favourable directions in the classical ranking, and in everyday Compass School practice it is often the most useful one of the four.
+The pinyin is *Tian Yi*, which translates literally as **Heavenly Doctor**. It is the second of your four favourable directions in the classical ranking, and in everyday Compass School practice it is often the most useful one of the four.
 
 The tradition gives it a specific job. Where Sheng Qi is for generating, and Yan Nian is for loving, and Fu Wei is for steady focused thought, Tian Yi is for *healing*. The word does not only mean medical recovery, though it does mean that. It also means the quieter recovery a body does between Tuesday and Wednesday, the slow steady mending that happens during deep sleep, the way a long bath at the end of a hard day takes a particular kind of tiredness out of your shoulders and a different kind out of your jaw.
 
