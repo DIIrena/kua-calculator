@@ -88,12 +88,4 @@ Then the recovery chair. Pick the place you read in when you are tired, or the c
 
 Then the wellness shelf, if you have one. The bathroom cabinet, the kitchen drawer with the medicines, the corner of the bedside table that holds your vitamins. Move it to the {{direction}} wall of whichever room it lives in. This is the smallest, fussiest move on the list and the one most people skip. Do it anyway. The tradition takes the objects of recovery seriously, and so should you.
 
-## What's next
-
-That is your healing direction. The most-used of your four favourable directions in everyday Classical practice, and the one most working practitioners would point the bed to in a season of life that is not a launch.
-
-The next chapter is *Yan Nian*, your relationship direction. It is the direction the tradition gives to the bed of a couple, to the seat where you talk to the person you are trying to make peace with, to the chair you give a guest who has come to be loved on. If you live with someone, read it next; the Yan Nian decision and the Tian Yi decision sometimes pull in different directions and the chapter explains the compromise.
-
-Then Fu Wei, the anchor. Then the four to be cautious of. Then a short closing.
-
 Your Tian Yi direction is **{{direction}}**. The bed wants to point there. The body already knows.
