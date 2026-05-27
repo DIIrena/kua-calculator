@@ -1,4 +1,4 @@
-# The five elements, in plain English.
+# The five elements, defined.
 
 In Chinese cosmology there are **five elements**: wood, fire, earth, metal, and water.
 

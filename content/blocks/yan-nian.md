@@ -16,7 +16,7 @@ The Chinese character for *nian* (年) is the same one used for the New Year and
 
 For you, that direction is **{{direction}}**.
 
-## What Yan Nian is for, in plain English
+## What Yan Nian is for
 
 Classical practitioners give Yan Nian three traditional uses, and a fourth that is easier to overlook.
 

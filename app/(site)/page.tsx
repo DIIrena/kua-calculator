@@ -128,8 +128,8 @@ export default async function HomePage(props: {
           <p className="home-hero-lede">
             Most feng shui advice is <em>vague</em>, expensive, or borrowed from
             a magazine. We do the opposite. We give you the{" "}
-            <strong>structured</strong> version, in plain English, free where it
-            should be free, and small enough to actually finish tonight.
+            <strong>structured</strong> version, free where it should be free,
+            and small enough to actually finish tonight.
           </p>
           <p className="home-hero-lede">
             Start with your Kua number. It is the door into the rest.

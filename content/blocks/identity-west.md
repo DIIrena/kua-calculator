@@ -20,7 +20,7 @@ Your Kua is a single digit between one and nine, with no five, calculated from t
 
 Think of it this way. There are eight compass directions a person can face. Most of the time you do not notice which one you are facing, because most of the time it does not seem to matter. The chair faces the lamp. The desk faces the wall.
 
-Feng shui's claim, in plain English, is that for any given person, four of those eight directions are doing one kind of work, and four are doing another. The Kua tells you which four are which.
+Feng shui's claim, said simply, is that for any given person, four of those eight directions are doing one kind of work, and four are doing another. The Kua tells you which four are which.
 
 If that sounds like a tarot reading translated into compass language, it is worth knowing that the Eight Mansions has been the standard structured framework in Classical Chinese practice for around four hundred years, and the underlying yin-yang and trigram cosmology it rests on is older than that by another fifteen centuries. The system did not survive by accident. It survived because households that used it found it gave them something useful to *decide* with: where to put a bed, which chair the head of the family should take at dinner, where to put the safe.
 

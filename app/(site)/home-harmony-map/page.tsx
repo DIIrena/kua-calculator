@@ -349,7 +349,7 @@ export default async function HomeHarmonyMapPage(props: {
           ============================================================ */}
       <section className="home-section home-section-paper sales-reversal">
         <div className="page-prose">
-          <h2>The thirty-day guarantee, in plain English.</h2>
+          <h2>The thirty-day guarantee, no fine print.</h2>
           <p>
             If the Map does not earn its keep in your home in the first
             month, email us. We refund the $29, delete the order, and remove

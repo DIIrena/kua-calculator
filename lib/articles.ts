@@ -59,7 +59,7 @@ export const CATEGORIES: Record<
     title: "Foundations",
     tagline: "What feng shui actually is.",
     description:
-      "The basics, written in plain English. What feng shui is, what it isn't, why some of it is testable and some of it is tradition.",
+      "The basics, written without jargon. What feng shui is, what it isn't, why some of it is testable and some of it is tradition.",
   },
   bagua: {
     title: "The bagua map",
@@ -104,7 +104,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
   },
   {
     slug: "five-elements",
-    title: "The five elements, in plain English",
+    title: "The five elements, defined",
     description:
       "Wood, fire, earth, metal, water. What each element means in a room, and how the cycles work, without the mystique.",
     teaser:
@@ -145,7 +145,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     slug: "what-is-feng-shui-really",
     title: "What is feng shui, really? A skeptic-friendly primer",
     description:
-      "Feng shui in plain English. Two thousand words on what it actually is, what it isn't, and why some of its advice survives a hard look.",
+      "Feng shui without the jargon. Two thousand words on what it actually is, what it isn't, and why some of its advice survives a hard look.",
     teaser:
       "The honest, plain-English answer to 'what is feng shui'. Two thousand words, written so a sceptic stays.",
     lastUpdated: "2026-05-25",
@@ -183,7 +183,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     slug: "bagua-map-wealth-corner",
     title: "The bagua map: where is your wealth corner (and why it matters)",
     description:
-      "The single most useful diagram in feng shui, explained in plain English. How to overlay it on your floor plan and find the wealth corner.",
+      "The single most useful diagram in feng shui, explained clearly. How to overlay it on your floor plan and find the wealth corner.",
     teaser:
       "The single most useful diagram in feng shui. Find your wealth corner in ten minutes.",
     lastUpdated: "2026-05-25",

@@ -68,7 +68,7 @@ If you have half an hour this weekend, do this:
 
 That is the practice. Repeat next month.
 
-## The wealth-and-stove connection in plain English.
+## The wealth-and-stove connection, said simply.
 
 A working, clean stove makes you cook.
 

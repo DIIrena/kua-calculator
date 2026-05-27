@@ -32,7 +32,7 @@ The system does not say one is better than the other. It says they are for diffe
 
 For you, the headboard direction the tradition would recommend for most ordinary seasons is **{{direction}}**.
 
-## What Tian Yi is for, in plain English
+## What Tian Yi is for
 
 Use it for:
 

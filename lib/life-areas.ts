@@ -41,7 +41,7 @@ export const LIFE_AREAS: ReadonlyArray<LifeAreaMeta> = [
     shortDescription:
       "Feng shui for money: the wealth corner, the kitchen stove, the wallet check, and three moves you can make tonight.",
     longDescription:
-      "Money is the area of feng shui that gets the most search traffic and the most magazine attention. It is also the one with the most recycled advice. Below is what the practice actually says about money, free, in plain English.",
+      "Money is the area of feng shui that gets the most search traffic and the most magazine attention. It is also the one with the most recycled advice. Below is what the practice actually says about money, free, with no jargon.",
     starters: [
       {
         title: "Clean every burner on the stove. Tonight.",

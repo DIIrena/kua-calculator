@@ -164,9 +164,14 @@ export function personalBaguaSvg(kua: number, group: KuaGroup): string {
 // below the Identity page's favourable-directions bullets.
 // ============================================================
 
+// Icon size (display px). At ~3.78px per mm, 200px ~= 53mm.
+// Three icons in a row at 200px each plus padding fills most of the
+// A4 content column (210mm - 40mm margin = 170mm content width).
+const ICON_SIZE = 200;
+
 function waterIcon(): string {
   // Wave drops
-  return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+  return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="${ICON_SIZE}" height="${ICON_SIZE}">
   <circle cx="40" cy="40" r="36" fill="${C.oliveSoft}"/>
   <path d="M 22 50 Q 30 42 38 50 T 58 50" fill="none" stroke="${C.olive}" stroke-width="3" stroke-linecap="round"/>
   <path d="M 22 38 Q 30 30 38 38 T 58 38" fill="none" stroke="${C.olive}" stroke-width="3" stroke-linecap="round"/>
@@ -176,7 +181,7 @@ function waterIcon(): string {
 
 function fireIcon(): string {
   // Flame
-  return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+  return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="${ICON_SIZE}" height="${ICON_SIZE}">
   <circle cx="40" cy="40" r="36" fill="${C.claySoft}"/>
   <path d="M 40 18 C 50 30 55 40 50 50 C 48 54 44 56 40 56 C 36 56 32 54 30 50 C 25 40 30 30 40 18 Z" fill="${C.clay}"/>
   <path d="M 40 28 C 46 36 48 42 45 48 C 44 50 42 51 40 51 C 38 51 36 50 35 48 C 32 42 34 36 40 28 Z" fill="${C.paper}" opacity="0.5"/>
@@ -185,7 +190,7 @@ function fireIcon(): string {
 
 function woodIcon(): string {
   // Sapling / leaf
-  return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+  return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="${ICON_SIZE}" height="${ICON_SIZE}">
   <circle cx="40" cy="40" r="36" fill="${C.oliveSoft}"/>
   <line x1="40" y1="58" x2="40" y2="32" stroke="${C.olive}" stroke-width="2.5" stroke-linecap="round"/>
   <path d="M 40 38 C 32 36 26 32 26 24 C 34 24 40 28 40 38 Z" fill="${C.olive}"/>
@@ -195,7 +200,7 @@ function woodIcon(): string {
 
 function metalIcon(): string {
   // Crescent moon (harvest)
-  return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+  return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="${ICON_SIZE}" height="${ICON_SIZE}">
   <circle cx="40" cy="40" r="36" fill="${C.sand}"/>
   <path d="M 50 22 A 22 22 0 1 0 50 58 A 16 16 0 1 1 50 22 Z" fill="${C.ink}"/>
 </svg>`;
@@ -203,7 +208,7 @@ function metalIcon(): string {
 
 function earthIcon(): string {
   // Hill / mountain
-  return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+  return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="${ICON_SIZE}" height="${ICON_SIZE}">
   <circle cx="40" cy="40" r="36" fill="${C.sand}"/>
   <path d="M 16 56 L 32 32 L 44 46 L 56 28 L 64 56 Z" fill="${C.clay}"/>
   <line x1="14" y1="56" x2="66" y2="56" stroke="${C.ink}" stroke-width="2" stroke-linecap="round"/>
@@ -211,77 +216,36 @@ function earthIcon(): string {
 }
 
 // ============================================================
-// Element icons inside a heart frame.
+// Element icons.
 //
-// The icons themselves stay in their individual circle backgrounds.
-// One big heart shape wraps around the whole row, signalling "these
-// are the elements close to your nature" without saying it.
-// The heart is drawn in the same SVG as the icons so they scale
-// together and the heart's geometry is precise around the icon row.
+// A row of large round element icons appropriate to the customer's
+// group. East group gets three (water + fire + wood). West group
+// gets two (earth + metal). Each icon is ~53mm wide so a row of
+// three almost fills the A4 content column width (~170mm).
+//
+// No surrounding frame or heart - the icons stand on their own.
 // ============================================================
 
-// SVG path for a clean symmetrical heart centred in a 600x500 viewBox.
-// Two cubic Bezier curves form the top lobes, then the path tapers to
-// the point at the bottom. Drawn in a soft claySoft fill with a thin
-// clay outline so it reads as warm but not loud.
-const HEART_PATH =
-  "M 300 470 " +
-  "C 280 450 50 290 50 175 " +
-  "C 50 95 115 50 175 50 " +
-  "C 230 50 275 80 300 130 " +
-  "C 325 80 370 50 425 50 " +
-  "C 485 50 550 95 550 175 " +
-  "C 550 290 320 450 300 470 Z";
-
-function iconGroup(
-  svg: string,
-  label: string,
-  cx: number,
-  cy: number,
-): string {
-  // Each icon SVG carries its own width/height (56) so position with
-  // a translate that puts the top-left at (cx-28, cy-28).
-  return `<g transform="translate(${cx - 28} ${cy - 28})">
+function iconCell(svg: string, label: string): string {
+  return `<td style="padding:0 4px;text-align:center;vertical-align:top;">
   ${svg}
-  <text x="28" y="80" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}" letter-spacing="1.6">${label}</text>
-</g>`;
+  <div style="font-family:'Hanken Grotesk';font-size:11pt;font-weight:700;color:${C.ink};margin-top:4mm;letter-spacing:2.4px;">${label}</div>
+</td>`;
 }
 
 export function elementIconsSvg(group: KuaGroup): string {
   // For East group: water (N), fire (S), wood (E+SE) - three icons.
   // For West group: earth (SW+NE), metal (W+NW) - two icons.
-  // Icons sit on the horizontal centre line of the heart.
-
-  const iconsForGroup: Array<{ svg: string; label: string }> =
+  const cells: string[] =
     group === "east"
       ? [
-          { svg: waterIcon(), label: "WATER" },
-          { svg: fireIcon(), label: "FIRE" },
-          { svg: woodIcon(), label: "WOOD" },
+          iconCell(waterIcon(), "WATER"),
+          iconCell(fireIcon(), "FIRE"),
+          iconCell(woodIcon(), "WOOD"),
         ]
-      : [
-          { svg: earthIcon(), label: "EARTH" },
-          { svg: metalIcon(), label: "METAL" },
-        ];
+      : [iconCell(earthIcon(), "EARTH"), iconCell(metalIcon(), "METAL")];
 
-  // Icons positioned along the heart's horizontal mid-line (y=230 in
-  // the 600x500 viewBox so the labels below land cleanly above the
-  // taper). For 3 icons, x positions are 200, 300, 400 (100px gaps).
-  // For 2 icons, x positions are 240 and 360.
-  const positions = iconsForGroup.length === 3
-    ? [200, 300, 400]
-    : [240, 360];
-
-  const placed = iconsForGroup.map((it, i) =>
-    iconGroup(it.svg, it.label, positions[i], 230),
-  ).join("\n  ");
-
-  // Render width: 130mm wide (substantial, but fits inside an A4
-  // text column with margins). Tall enough to clear the labels.
-  return `<svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" width="480" height="400" style="display:block;margin:8mm auto 6mm auto;">
-  <!-- Big soft heart wrapping all the favourable-element icons -->
-  <path d="${HEART_PATH}" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.2" opacity="0.9"/>
-  <!-- The element icons, each in its own circle, sitting inside the heart -->
-  ${placed}
-</svg>`;
+  return `<table style="border-collapse:collapse;margin:8mm auto 8mm auto;"><tr>
+${cells.join("\n")}
+</tr></table>`;
 }

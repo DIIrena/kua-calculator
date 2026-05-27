@@ -38,4 +38,4 @@ A lot of "feng shui rules" you'll read about toilet seats, hallway colours, or t
 
 *Want the full twelve-myth list? It's on the way as a paid sidebar to the Home Harmony Map.*
 
-*Free pages worth reading next: [the methodology page](/methodology), [the five elements in plain English](/articles/five-elements).*
+*Free pages worth reading next: [the methodology page](/methodology), [the five elements](/articles/five-elements).*

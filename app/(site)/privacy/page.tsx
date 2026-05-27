@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <p className="eyebrow">My Feng Shui Home</p>
       <h1>Privacy</h1>
       <p>
-        This page explains, in plain English, what we store and when. The short
+        This page explains what we store and when. The short
         version: the calculator is free and runs in your browser, and an
         account is optional.
       </p>
