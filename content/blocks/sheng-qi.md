@@ -1,10 +1,6 @@
 # Your Sheng Qi direction is {{direction}}
 
-Some mornings you wake up and the room is already on your side. You have not opened your eyes yet. You can tell, the way you can tell whether a stranger in a cafe is in a good mood without looking, from the angle of their shoulders. The light against the inside of your eyelids is the right colour. Your body is the right temperature. The pillow is exactly where it ought to be. You sit up, and the day is already three steps ahead of where it would otherwise be.
-
-That is what Sheng Qi feels like when it is working for you. Other mornings you fight your way upright. Same bed. Same alarm. Same coffee, two rooms away. The day takes forty minutes to start. The first hour gets eaten. By eleven you have made nothing.
-
-Sheng Qi is the difference. It is the *generating* direction, the strongest of your four favourable directions, and for you, {{firstName}}, it points {{direction}}.
+Sheng Qi is the *generating* direction, the strongest of your four favourable directions, and for you, {{firstName}}, it points {{direction}}.
 
 ## What Sheng Qi means
 

@@ -97,17 +97,3 @@ Each of your four favourable directions carries a traditional name and a quality
 - **Fu Wei** - your anchor. The mildest of the four. Where you go to *be still and think*.
 
 Your four cautious directions are Huo Hai, Wu Gui, Liu Sha, and Jue Ming. We will spend less time on them but we will not pretend they are not there. A book that ignored a person's harder directions would be a book that lied to its reader. You will read each of them in their own short page.
-
-## What comes next
-
-The next four pages are the long-form reading of your four good directions. Each one opens with the compass direction it points to for you - different for every Kua, yours we already know - and then takes the time to say what that quality actually does in a room and in a day. You will close this book knowing where to put your bed, where to face at your desk, where to take your morning coffee, and which corner of which room is, for you, the steadiest.
-
-The four pages after that are the cautious directions, shorter and more practical. Which corners to leave to storage. Where not to sleep. Where not to take a difficult phone call.
-
-Then a closing.
-
-That is the whole book. It is not long because it does not need to be. The thing that took two thousand years to develop can be applied to your house this week. The work of the next ten pages is to give you the *names* of the four growth qualities of your own life - and the four to handle with care - so you can choose which one you are pulling on at any given moment.
-
-You are {{firstName}}, Kua {{kuaNumber}}, East group.
-
-We can begin.
