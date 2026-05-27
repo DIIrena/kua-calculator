@@ -688,12 +688,14 @@ a:hover { color: var(--clay-deep); }
 .result-kua {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 800;
   font-size: clamp(4rem, 12vw, 5.5rem);
   line-height: 1;
-  color: var(--on-dark);
+  color: #ffffff;
   font-variant-numeric: lining-nums;
 }
+
+.result-kua span { color: inherit; }
 
 .result-group { margin: var(--space-2) 0 0 0; }
 
@@ -1635,6 +1637,20 @@ a:hover { color: var(--clay-deep); }
 }
 
 .btn-danger:hover { background: rgba(156, 83, 49, 0.08); }
+
+/* The single "Signed in as X" line that sits just under the brand
+   mark on the account page. Quiet, no heading, no panel. */
+.account-signed-in-as {
+  text-align: center;
+  margin: var(--space-3) 0 var(--space-6) 0;
+  font-size: 0.95rem;
+  color: var(--ink-2);
+}
+
+.account-signed-in-as strong {
+  color: var(--ink);
+  font-weight: 600;
+}
 
 .account-saved-list {
   list-style: none;

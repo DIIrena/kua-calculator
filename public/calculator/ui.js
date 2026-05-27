@@ -262,11 +262,50 @@
     });
   }
 
+  // Submit handler delegated from document. React mounts a new
+  // <form id="kua-form"> on every client-side navigation to a page
+  // that contains the calculator; the old form-level binding would
+  // not carry over and the default browser submit (a page reload)
+  // would fire instead. Document delegation always catches it.
+  function handleDocumentSubmit(e) {
+    var form = e.target;
+    if (!form || form.id !== "kua-form") { return; }
+    handleSubmit(e);
+  }
+
+  // Same problem for the couples toggle button: a new instance on
+  // each navigation. Delegate the click to document so it always works.
+  function handleCouplesToggleClick(e) {
+    var toggle =
+      e.target && e.target.closest && e.target.closest("#couples-toggle");
+    if (!toggle) { return; }
+    var panel = document.getElementById("occupant-2");
+    if (!panel) { return; }
+    var expanded = toggle.getAttribute("aria-expanded") === "true";
+    var next = !expanded;
+    toggle.setAttribute("aria-expanded", String(next));
+    panel.hidden = !next;
+    var icon = toggle.querySelector(".disclosure-icon");
+    if (icon) { icon.textContent = next ? "−" : "+"; }
+    var label = toggle.querySelector(".disclosure-label");
+    if (label) {
+      label.textContent = next
+        ? "Hide second person"
+        : "Add a second person (for couples and shared rooms)";
+    }
+    if (next) {
+      var firstField = document.getElementById("year-2");
+      if (firstField && firstField.focus) { firstField.focus(); }
+    }
+  }
+
   function init() {
-    var form = $("#kua-form");
-    if (!form) { return; }
-    form.addEventListener("submit", handleSubmit);
-    initCouplesToggle();
+    // Idempotent: if init has already run, do not double-bind.
+    if (document.documentElement.dataset.kuaInit === "1") { return; }
+    document.documentElement.dataset.kuaInit = "1";
+
+    document.addEventListener("submit", handleDocumentSubmit);
+    document.addEventListener("click", handleCouplesToggleClick);
 
     document.addEventListener("input", function (e) {
       if (e.target && e.target.id && /^(year|day)-\d$/.test(e.target.id)) {

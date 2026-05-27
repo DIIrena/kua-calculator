@@ -98,15 +98,10 @@ export default async function AccountPage() {
 
   return (
     <div className="page-content account-page">
-      <p className="eyebrow">My Feng Shui Home</p>
-      <h1 style={{ marginTop: 0 }}>Your account</h1>
-
       <BrandMark />
-
-      <section className="account-section">
-        <h2>Signed in as</h2>
-        <p className="account-email">{profile.email ?? sessionEmail}</p>
-      </section>
+      <p className="account-signed-in-as">
+        Signed in as <strong>{profile.email ?? sessionEmail}</strong>
+      </p>
 
       <section
         className="account-section account-section-calc"
