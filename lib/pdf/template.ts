@@ -288,6 +288,28 @@ export function buildHtml(
     font-style: italic;
   }
 
+  /* Pull-quote / called-out line. Bigger, centred, in soft sand panel.
+     Used to emphasise the single most important sentence in a block. */
+  .block .pull-quote {
+    font-size: 14.5pt;
+    line-height: 1.4;
+    font-weight: 700;
+    color: ${BRAND.ink};
+    background: ${BRAND.cream};
+    border-left: none;
+    border-top: 1px solid ${BRAND.sand};
+    border-bottom: 1px solid ${BRAND.sand};
+    margin: 8mm 0;
+    padding: 5mm 6mm;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  .block .pull-quote strong {
+    color: ${BRAND.olive};
+    font-weight: 800;
+  }
+
   /* Closing block carries the small product-catalogue list; tighten
      line height there. */
   .block--closing hr {

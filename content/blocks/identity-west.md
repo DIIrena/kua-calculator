@@ -45,7 +45,9 @@ The four to be cautious of, by elimination, are north, east, southeast, and sout
 
 Look at the four good ones again. Two of them are earth, two of them are metal. Earth holds. Earth ripens. Earth is the unhurried direction that lets a thing become finished. Metal refines. Metal cuts away the rough. Metal carries water but is itself the harvest after the growing is done. None of your four favourable directions is the direction of new shoots. None of them is the direction of running brooks. You are someone the tradition reads as oriented towards *completion*.
 
-That does not mean every West group person is slow. Plenty of West group people move quickly. What it means is that the qualities that feed you are qualities of *gathering*: collecting what you have already grown, refining what is already there, deepening relationships rather than starting new ones, finishing the work, holding the harvest. You do your best work pointing into one of these four directions.
+That does not mean every West group person is slow. Plenty of West group people move quickly. What it means is that the qualities that feed you are qualities of *gathering*: collecting what you have already grown, refining what is already there, deepening relationships rather than starting new ones, finishing the work, holding the harvest.
+
+<p class="pull-quote">You do your best work pointing into one of these four directions: <strong>Southwest, West, Northwest, Northeast</strong>.</p>
 
 The opposite of gathering is not action. The opposite of gathering is *expansion*, which is what East group thrives on. East group people grow. West group people gather. Both are necessary. Both are right when they are right. The trouble is when a West group person tries to live as an East group person, or the reverse, and ends up exhausted, and cannot name why.
 

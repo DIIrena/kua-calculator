@@ -45,7 +45,9 @@ The four to be cautious of, by elimination, are northeast, southwest, west, and 
 
 Look at the four good ones again. Three of them - water, wood, wood - are the elements the tradition associates with *motion*. Water flows. Wood grows. South is the recognition direction, where you are seen. None of them is a holding direction. None of them is about gathering things and keeping them still.
 
-You are someone the tradition reads as oriented towards reaching. That does not mean every East group person is loud or extroverted. Plenty of East group people are quiet. What it means is that the qualities that feed you are qualities of *expansion*: learning new things, having long conversations, building one project on top of another, recognising and being recognised, generating rather than refining. You do your best work pointing into one of these four directions.
+You are someone the tradition reads as oriented towards reaching. That does not mean every East group person is loud or extroverted. Plenty of East group people are quiet. What it means is that the qualities that feed you are qualities of *expansion*: learning new things, having long conversations, building one project on top of another, recognising and being recognised, generating rather than refining.
+
+<p class="pull-quote">You do your best work pointing into one of these four directions: <strong>North, South, East, Southeast</strong>.</p>
 
 The opposite of expansion is not stillness. The opposite of expansion is *containment*, which is what West group thrives on. West group people gather. East group people grow. Both are necessary. Both are right when they are right. The trouble is when an East group person tries to live as a West group person, or the reverse, and ends up exhausted, and cannot name why.
 
