@@ -26,7 +26,7 @@ The tradition has a name for the corner. The corner is Wu Gui.
 
 ## The hard thing
 
-The way Wu Gui actually causes trouble in a home is specific, and worth saying plainly.
+The way Wu Gui actually causes trouble in a home is specific, and worth naming.
 
 People put their primary couch on this wall. The couch where they talk to their partner about money. The couch where the difficult phone calls happen. The couch where the disagreement that has been brewing for a fortnight finally lands. And then they wonder why, in *that* couch, the same conversation goes sideways every time, when in the kitchen the same conversation goes fine. They think it is the couch. It might be the couch. The tradition would say it is also the wall the couch is on.
 

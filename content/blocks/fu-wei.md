@@ -8,7 +8,7 @@ That kind of stillness has a name in Compass School. It is the fourth and final 
 
 ## What Fu Wei means
 
-The full name is *Fu Wei* (伏位), which translates plainly as "stability" or, more literally, "the crouching position" - the body settled, low to the ground, immovable. It is the mildest of your four favourable directions. It is also, by a wide margin, the most underestimated.
+The full name is *Fu Wei* (伏位), which translates as "stability" or, more literally, "the crouching position" - the body settled, low to the ground, immovable. It is the mildest of your four favourable directions. It is also, by a wide margin, the most underestimated.
 
 The other three favourable directions are doing more obvious work. Sheng Qi pushes you forward. Tian Yi heals you. Yan Nian holds you in relationship with another person. Fu Wei does none of those things. Fu Wei just *holds*. It is the direction the tradition associates with deep focus, long-form study, meditation, the slow steady accumulation of knowledge and skill, and the kind of thinking that does not announce itself until three months later when the answer arrives whole.
 
