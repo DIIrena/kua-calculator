@@ -13,14 +13,18 @@
 
 import type { KuaGroup } from "@/lib/kua";
 
-// Brand palette (kept in sync with lib/pdf/template.ts BRAND object).
+// Brand palette (kept in sync with lib/pdf/template.ts BRAND object
+// and lib/bagua-svg.ts. The "soft" variants are what the existing
+// Kua chart uses on the saved-chart view; we reuse them here so the
+// PDF bagua reads as the same instrument).
 const C = {
   paper: "#fbf7ee",
   ink: "#2a271e",
+  ink2: "#5f5848",
   olive: "#4f5a36",
-  oliveSoft: "#d8debf",
+  oliveSoft: "#d8debf",   // favourable-sector fill (soft sage)
   clay: "#be6b43",
-  claySoft: "#f0d5c0",
+  claySoft: "#f0d5c0",    // cautious-sector fill (soft peach)
   sand: "#e0d3b8",
   hairline: "#cfc4ab",
 };
@@ -93,36 +97,54 @@ export function personalBaguaSvg(kua: number, group: KuaGroup): string {
     group === "east" ? EAST_GROUP_FAVOURABLE : WEST_GROUP_FAVOURABLE,
   );
 
+  // Soft palette matching the existing Kua chart at /api/chart-image:
+  // favourable sectors in soft sage, cautious in soft peach, both with
+  // a paper-coloured hairline separating sectors (not the harder ink
+  // line we had before). The inner well stays white with a hairline.
   const sectors = COMPASS_LIST.map((c) => {
     const isFavourable = favourable.has(c);
-    const fill = isFavourable ? C.olive : C.sand;
-    const stroke = C.paper;
+    const fill = isFavourable ? C.oliveSoft : C.claySoft;
     const path = sectorPath(SECTOR_CENTRE_DEG[c]);
-    return `<path d="${path}" fill="${fill}" stroke="${stroke}" stroke-width="2"/>`;
+    return `<path d="${path}" fill="${fill}" stroke="${C.paper}" stroke-width="2"/>`;
   }).join("\n  ");
 
   const labels = COMPASS_LIST.map((c) => {
     const pos = deg2xy(SECTOR_CENTRE_DEG[c], R_LABEL);
-    const isFavourable = favourable.has(c);
-    const labelColor = isFavourable ? "#ffffff" : C.ink;
-    return `<text x="${pos.x.toFixed(2)}" y="${pos.y.toFixed(2)}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="14" font-weight="700" fill="${labelColor}">${c}</text>`;
+    // With soft fills, dark ink labels are legible on both favourable
+    // and cautious sectors. No more white-on-olive.
+    return `<text x="${pos.x.toFixed(2)}" y="${pos.y.toFixed(2)}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="18" font-weight="700" fill="${C.ink}">${c}</text>`;
   }).join("\n  ");
 
-  const groupLabel = group === "east" ? "EAST" : "WEST";
+  // Tiny quality marker on each sector: star for favourable, X for
+  // cautious. Same convention as the existing Kua chart.
+  const markers = COMPASS_LIST.map((c) => {
+    const pos = deg2xy(SECTOR_CENTRE_DEG[c], (R_OUTER + R_INNER) / 2 + 18);
+    const isFavourable = favourable.has(c);
+    const glyph = isFavourable ? "&#9733;" : "&#10005;";
+    return `<text x="${pos.x.toFixed(2)}" y="${pos.y.toFixed(2)}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="14" font-weight="600" fill="${C.ink2}">${glyph}</text>`;
+  }).join("\n  ");
 
-  return `<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="180" height="180" style="display:block;margin:8mm auto;">
+  const groupLabel = group === "east" ? "EAST GROUP" : "WEST GROUP";
+
+  // Bigger render: 280x280px (~74mm) replaces the previous 180px brand
+  // mark. ViewBox unchanged so SVG geometry is identical.
+  return `<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="280" height="280" style="display:block;margin:10mm auto 12mm auto;">
   <!-- Outer hairline ring -->
-  <circle cx="${CENTER}" cy="${CENTER}" r="${R_OUTER + 2}" fill="none" stroke="${C.hairline}" stroke-width="0.8"/>
+  <circle cx="${CENTER}" cy="${CENTER}" r="${R_OUTER + 4}" fill="none" stroke="${C.hairline}" stroke-width="0.8"/>
   <!-- 8 sectors -->
   ${sectors}
   <!-- Compass labels on each sector -->
   ${labels}
+  <!-- Quality glyphs (star for favourable, X for cautious) -->
+  ${markers}
   <!-- Inner well -->
-  <circle cx="${CENTER}" cy="${CENTER}" r="${R_INNER - 2}" fill="${C.paper}" stroke="${C.hairline}" stroke-width="1"/>
+  <circle cx="${CENTER}" cy="${CENTER}" r="${R_INNER - 2}" fill="#ffffff" stroke="${C.hairline}" stroke-width="1"/>
+  <!-- 'YOUR KUA' microlabel above the number, matching the saved-chart convention -->
+  <text x="${CENTER}" y="${CENTER - 22}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="9" font-weight="500" fill="${C.ink2}" letter-spacing="2.5">YOUR KUA</text>
   <!-- Kua number -->
-  <text x="${CENTER}" y="${CENTER - 8}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="48" font-weight="800" fill="${C.ink}">${kua}</text>
-  <!-- Group label below Kua -->
-  <text x="${CENTER}" y="${CENTER + 26}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.olive}" letter-spacing="2">${groupLabel}</text>
+  <text x="${CENTER}" y="${CENTER + 8}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="56" font-weight="800" fill="${C.ink}">${kua}</text>
+  <!-- Group label below -->
+  <text x="${CENTER}" y="${CENTER + 38}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.olive}" letter-spacing="1.8">${groupLabel}</text>
 </svg>`;
 }
 
@@ -178,29 +200,78 @@ function earthIcon(): string {
 </svg>`;
 }
 
-function iconCell(svg: string, label: string): string {
-  return `<td style="padding:0 6px;text-align:center;vertical-align:top;">
+// ============================================================
+// Element icons inside a heart frame.
+//
+// The icons themselves stay in their individual circle backgrounds.
+// One big heart shape wraps around the whole row, signalling "these
+// are the elements close to your nature" without saying it.
+// The heart is drawn in the same SVG as the icons so they scale
+// together and the heart's geometry is precise around the icon row.
+// ============================================================
+
+// SVG path for a clean symmetrical heart centred in a 600x500 viewBox.
+// Two cubic Bezier curves form the top lobes, then the path tapers to
+// the point at the bottom. Drawn in a soft claySoft fill with a thin
+// clay outline so it reads as warm but not loud.
+const HEART_PATH =
+  "M 300 470 " +
+  "C 280 450 50 290 50 175 " +
+  "C 50 95 115 50 175 50 " +
+  "C 230 50 275 80 300 130 " +
+  "C 325 80 370 50 425 50 " +
+  "C 485 50 550 95 550 175 " +
+  "C 550 290 320 450 300 470 Z";
+
+function iconGroup(
+  svg: string,
+  label: string,
+  cx: number,
+  cy: number,
+): string {
+  // Each icon SVG carries its own width/height (56) so position with
+  // a translate that puts the top-left at (cx-28, cy-28).
+  return `<g transform="translate(${cx - 28} ${cy - 28})">
   ${svg}
-  <div style="font-family:'Hanken Grotesk';font-size:9pt;color:${C.ink};margin-top:3mm;letter-spacing:0.06em;">${label}</div>
-</td>`;
+  <text x="28" y="80" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}" letter-spacing="1.6">${label}</text>
+</g>`;
 }
 
 export function elementIconsSvg(group: KuaGroup): string {
-  // For East group: water (north), fire (south), wood (east+southeast)
-  // For West group: earth (sw+ne), metal (w+nw)
-  // We show one icon per element family, not per direction.
-  const cells: string[] = [];
+  // For East group: water (N), fire (S), wood (E+SE) - three icons.
+  // For West group: earth (SW+NE), metal (W+NW) - two icons.
+  // Icons sit on the horizontal centre line of the heart.
 
-  if (group === "east") {
-    cells.push(iconCell(waterIcon(), "WATER"));
-    cells.push(iconCell(fireIcon(), "FIRE"));
-    cells.push(iconCell(woodIcon(), "WOOD"));
-  } else {
-    cells.push(iconCell(earthIcon(), "EARTH"));
-    cells.push(iconCell(metalIcon(), "METAL"));
-  }
+  const iconsForGroup: Array<{ svg: string; label: string }> =
+    group === "east"
+      ? [
+          { svg: waterIcon(), label: "WATER" },
+          { svg: fireIcon(), label: "FIRE" },
+          { svg: woodIcon(), label: "WOOD" },
+        ]
+      : [
+          { svg: earthIcon(), label: "EARTH" },
+          { svg: metalIcon(), label: "METAL" },
+        ];
 
-  return `<table style="border-collapse:collapse;margin:6mm auto 8mm auto;"><tr>
-${cells.join("\n")}
-</tr></table>`;
+  // Icons positioned along the heart's horizontal mid-line (y=230 in
+  // the 600x500 viewBox so the labels below land cleanly above the
+  // taper). For 3 icons, x positions are 200, 300, 400 (100px gaps).
+  // For 2 icons, x positions are 240 and 360.
+  const positions = iconsForGroup.length === 3
+    ? [200, 300, 400]
+    : [240, 360];
+
+  const placed = iconsForGroup.map((it, i) =>
+    iconGroup(it.svg, it.label, positions[i], 230),
+  ).join("\n  ");
+
+  // Render width: 130mm wide (substantial, but fits inside an A4
+  // text column with margins). Tall enough to clear the labels.
+  return `<svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" width="480" height="400" style="display:block;margin:8mm auto 6mm auto;">
+  <!-- Big soft heart wrapping all the favourable-element icons -->
+  <path d="${HEART_PATH}" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.2" opacity="0.9"/>
+  <!-- The element icons, each in its own circle, sitting inside the heart -->
+  ${placed}
+</svg>`;
 }
