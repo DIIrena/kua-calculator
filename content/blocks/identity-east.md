@@ -85,7 +85,7 @@ The classical practitioner's answer is that you do not optimise the whole home f
 
 In practice this is less of a compromise than it sounds. Most homes have more directions than you have people. Most rooms have more usable corners than you have couches. The work is *naming* what each room is for and then giving each room to one of you. The kitchen can be your partner's room. The reading chair can be yours. The book that takes a side and pretends the other partner does not exist is the book that ruins a marriage; the book that puts a name on every direction is the book that lets two people live together honestly.
 
-The Couple Compatibility Compass, a separate product in this line, takes the analysis further. It reads the two of you together. For now, it is enough to know that the half of the compass that is yours is not the half that is your partner's, and that the home is large enough for both of you.
+*The Couple Compatibility Compass* takes the analysis further. It reads the two of you together. For now, it is enough to know that the half of the compass that is yours is not the half that is your partner's, and that the home is large enough for both of you.
 
 ## The four qualities, named
 
