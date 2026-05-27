@@ -1,14 +1,16 @@
 # Who you are, {{firstName}}
 
-Pick an evening. Any evening. You walk into the room you walk into at the end of the day, and the lamp is doing the warm thing the overhead light cannot do, and the chair holds you, and the cup is heavier than you remember it being this morning, and you sit down without thinking about it, and you notice you feel *right*.
+Pick an evening. Any evening. You walk into the room you walk into at the end of the day, and the warm lamp is doing the thing the overhead light cannot do, and a chair or a corner is doing what chairs and corners do for you, and you settle in without thinking about it, and you notice you feel *right*.
 
-Then pick another evening. Same chair, same lamp, same cup. You sit down and you cannot settle. You shift. The cushion is wrong. The angle is wrong. You stand up after eight minutes and go to bed two rooms away because the chair is not letting you in. You drink the tea anyway. You sleep anyway. The night proceeds.
+Then pick another evening. Same room, same lamp, same intention. You cannot settle. You shift. The cushion is wrong. The angle is wrong. You stand up after eight minutes and move to a different room because the room you were in is not letting you in. The night proceeds anyway.
 
 Feng shui has a name for the gap between those two evenings. Or rather, it has an entire system that tries to explain why one set of conditions lets you settle, and another set of conditions keeps you on your feet, and why the same chair in the same lamp can do both depending on a handful of small things you might never have thought to notice.
 
 The name of the system is **the Eight Mansions**. The single most useful number it gives you is your **Kua**.
 
 Your Kua is {{kuaNumber}}. You are West group.
+
+{{personalBagua}}
 
 We are going to spend the rest of this book unpacking what that means for the way you sleep, the way you work, the way you eat, the way you read, the way you sit at the table when an awkward conversation is happening. But all of that builds on what comes next, so we are going to take our time here.
 
@@ -36,6 +38,8 @@ The four favourable directions for West group are:
 - **West**, the direction of metal and harvest.
 - **Northwest**, the direction of metal and helpful people.
 - **Northeast**, the direction of earth and knowledge.
+
+{{elementIcons}}
 
 The four to be cautious of, by elimination, are north, east, southeast, and south. The system pairs them with specific qualities and we will name each in turn. What matters on this page is that you sit on the *gathering* side of the compass.
 

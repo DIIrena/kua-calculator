@@ -15,6 +15,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import type { Product } from "@/lib/products";
 import type { BlockContext } from "@/lib/blocks";
+import { brandMarkSvg } from "@/lib/pdf/svg-marks";
 
 // Brand palette - matches the CSS custom properties in globals.css.
 const BRAND = {
@@ -173,7 +174,14 @@ export function buildHtml(
   }
 
   .cover-top {
-    padding-top: 18mm;
+    padding-top: 8mm;
+  }
+
+  .cover-logo {
+    display: block;
+    margin: 0 auto 5mm auto;
+    width: 28mm;
+    height: 28mm;
   }
 
   .cover-brand {
@@ -187,15 +195,16 @@ export function buildHtml(
     width: 22mm;
     height: 1px;
     background: ${BRAND.sand};
-    margin: 8mm auto 32mm auto;
+    margin: 6mm auto 16mm auto;
   }
 
   .cover-center {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 10mm;
   }
 
   .cover-title {
@@ -292,6 +301,7 @@ export function buildHtml(
 
 <section class="cover">
   <div class="cover-top">
+    <div class="cover-logo">${brandMarkSvg(106, BRAND.olive)}</div>
     <p class="cover-brand">My Feng Shui Home</p>
     <div class="cover-rule"></div>
   </div>

@@ -26,11 +26,26 @@ import {
   type QualityCode,
 } from "@/lib/directions";
 import type { KuaGroup } from "@/lib/kua";
+import {
+  brandMarkSvg,
+  personalBaguaSvg,
+  elementIconsSvg,
+} from "@/lib/pdf/svg-marks";
+
+/** Age threshold (exclusive) below which we prefer the `-child.md`
+ *  variant of a block if it exists. Below this we swap the adult
+ *  sensory anchors (coffee, work, the difficult meeting) for child-
+ *  appropriate ones (juice, schoolbag, sandwich). */
+export const CHILD_AGE_THRESHOLD = 13;
 
 export type BlockContext = {
   firstName: string;
   kuaNumber: number;
   kuaGroup: KuaGroup;
+  /** The customer's age in years, computed from birth date at form
+   *  submission time. Drives variant selection for child vs adult
+   *  voice. Optional for legacy callers; defaults to adult. */
+  ageYears?: number;
   /** Compass -> Direction (full quality detail). */
   byCompass: Record<Compass, Direction>;
   /** Quality code -> Direction (inverse view of byCompass). Direction
@@ -43,13 +58,14 @@ export function buildContext(
   firstName: string,
   kuaNumber: number,
   kuaGroup: KuaGroup,
+  ageYears?: number,
 ): BlockContext {
   const byCompass = directionsForKua(kuaNumber);
   const byQuality = {} as Record<QualityCode, Direction>;
   (Object.keys(byCompass) as Compass[]).forEach((c) => {
     byQuality[byCompass[c].qualityCode] = byCompass[c];
   });
-  return { firstName, kuaNumber, kuaGroup, byCompass, byQuality };
+  return { firstName, kuaNumber, kuaGroup, ageYears, byCompass, byQuality };
 }
 
 // Direction-quality blocks. Maps the block ID to the QualityCode whose
@@ -73,33 +89,66 @@ function substituteTokens(
   const quality = BLOCK_TO_QUALITY[blockId];
   const direction = quality ? context.byQuality[quality] : null;
 
-  const tokens: Record<string, string> = {
-    firstName: context.firstName,
-    kuaNumber: String(context.kuaNumber),
-    kuaGroup: context.kuaGroup === "east" ? "East" : "West",
-    direction: direction?.compassLabel ?? "",
-    directionShort: direction?.compass ?? "",
-    pinyin: direction?.pinyin ?? "",
-    gloss: direction?.gloss ?? "",
+  // Inline SVG tokens. Generated lazily so blocks that do not use them
+  // do not pay the string-concatenation cost.
+  let cachedBrandMark: string | null = null;
+  let cachedPersonalBagua: string | null = null;
+  let cachedElementIcons: string | null = null;
+
+  const tokens: Record<string, () => string> = {
+    firstName: () => context.firstName,
+    kuaNumber: () => String(context.kuaNumber),
+    kuaGroup: () => (context.kuaGroup === "east" ? "East" : "West"),
+    direction: () => direction?.compassLabel ?? "",
+    directionShort: () => direction?.compass ?? "",
+    pinyin: () => direction?.pinyin ?? "",
+    gloss: () => direction?.gloss ?? "",
+    brandMark: () => (cachedBrandMark ??= brandMarkSvg()),
+    personalBagua: () =>
+      (cachedPersonalBagua ??= personalBaguaSvg(
+        context.kuaNumber,
+        context.kuaGroup,
+      )),
+    elementIcons: () =>
+      (cachedElementIcons ??= elementIconsSvg(context.kuaGroup)),
   };
 
   return template.replace(/\{\{(\w+)\}\}/g, (whole, key) => {
-    return tokens[key] ?? whole;
+    const fn = tokens[key];
+    return fn ? fn() : whole;
   });
 }
 
 async function readBlockFile(
   blockId: BlockId,
   group: KuaGroup,
+  ageYears?: number,
 ): Promise<string> {
   const baseDir = path.join(process.cwd(), "content", "blocks");
-  const variantPath = path.join(baseDir, `${blockId}-${group}.md`);
-  const basePath = path.join(baseDir, `${blockId}.md`);
-  try {
-    return await readFile(variantPath, "utf-8");
-  } catch {
-    return await readFile(basePath, "utf-8");
+  const isChild =
+    typeof ageYears === "number" && ageYears < CHILD_AGE_THRESHOLD;
+
+  // Variant fallback chain, most specific first:
+  //   identity-east-child.md  (group + child)
+  //   identity-child.md       (child only)
+  //   identity-east.md        (group only)
+  //   identity.md             (base)
+  const candidates: string[] = [];
+  if (isChild) {
+    candidates.push(path.join(baseDir, `${blockId}-${group}-child.md`));
+    candidates.push(path.join(baseDir, `${blockId}-child.md`));
   }
+  candidates.push(path.join(baseDir, `${blockId}-${group}.md`));
+  candidates.push(path.join(baseDir, `${blockId}.md`));
+
+  for (const p of candidates) {
+    try {
+      return await readFile(p, "utf-8");
+    } catch {
+      // try the next candidate
+    }
+  }
+  throw new Error(`No content block file found for ${blockId} (group=${group}, child=${isChild})`);
 }
 
 const renderer = unified()
@@ -112,7 +161,11 @@ export async function loadBlock(
   blockId: BlockId,
   context: BlockContext,
 ): Promise<string> {
-  const source = await readBlockFile(blockId, context.kuaGroup);
+  const source = await readBlockFile(
+    blockId,
+    context.kuaGroup,
+    context.ageYears,
+  );
   const substituted = substituteTokens(source, context, blockId);
   const file = await renderer.process(substituted);
   return String(file);

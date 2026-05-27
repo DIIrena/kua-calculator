@@ -1,14 +1,16 @@
 # Who you are, {{firstName}}
 
-Pick a morning. Any morning. You walk into your kitchen and the light is hitting the counter just so, and the kettle is doing the small chuckling noise it makes before it boils, and you stand there for a second without doing anything in particular, and you notice you feel *right*.
+Pick a morning. Any morning. You walk into the room you walk into first, and the light is hitting the surface just so, and something in the room is doing the small ordinary noise it makes (the kettle, the heater, the cat at the door), and you stand there for a second without doing anything in particular, and you notice you feel *right*.
 
-Then pick another morning. Same kitchen, same kettle, same coffee. The light is gone, or the air is heavy, or you are facing the other wall, and you cannot tell why, but the same room is doing something different to you. You drink the coffee anyway. You go to work anyway. The day proceeds.
+Then pick another morning. Same room, same light, same routine. The air is heavier, or you are facing the other wall, or the same chair is at the wrong angle, and you cannot tell why, but the same room is doing something different to you. The day starts anyway. The day proceeds.
 
 Feng shui has a name for the gap between those two mornings. Or rather, it has an entire system that tries to explain why one set of conditions makes you feel met, and a different set of conditions makes you feel *off*, and why the same room can do both depending on a handful of small things you might never have thought to notice.
 
 The name of the system is **the Eight Mansions**. The single most useful number it gives you is your **Kua**.
 
 Your Kua is {{kuaNumber}}. You are East group.
+
+{{personalBagua}}
 
 We are going to spend the rest of this book unpacking what that means for the way you sleep, the way you work, the way you eat, the way you read, the way you sit when an awkward conversation is happening at the table. But all of that builds on what comes next, so we are going to take our time here.
 
@@ -36,6 +38,8 @@ The four favourable directions for East group are:
 - **South**, the direction of fire.
 - **East**, the direction of wood and morning sun.
 - **Southeast**, the direction of wood and abundance, traditionally called the wealth direction.
+
+{{elementIcons}}
 
 The four to be cautious of, by elimination, are northeast, southwest, west, and northwest. The system pairs them with specific qualities and we will name each in turn. What matters on this page is that you sit on the *growth* side of the compass.
 
