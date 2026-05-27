@@ -99,7 +99,7 @@ export default async function CompareChartsPage(
   const groups = buildSharedRooms(dirsA, dirsB);
 
   return (
-    <div className="page-narrow compare-page">
+    <div className="page-content compare-page">
       <p className="eyebrow">My Feng Shui Home</p>
       <h1 className="compare-heading" style={{ marginTop: 0 }}>
         Shared rooms

@@ -50,7 +50,7 @@ export default async function AccountPage() {
   // notice instead of crashing so the page still builds and renders.
   if (!url || url.includes("PLACEHOLDER")) {
     return (
-      <div className="page-narrow">
+      <div className="page-content account-page">
         <div className="account-section">
           <h2>Account not connected yet</h2>
           <p>
@@ -97,7 +97,7 @@ export default async function AccountPage() {
   const charts: SavedChart[] = chartsData ?? [];
 
   return (
-    <div className="page-narrow">
+    <div className="page-content account-page">
       <p className="eyebrow">My Feng Shui Home</p>
       <h1 style={{ marginTop: 0 }}>Your account</h1>
 

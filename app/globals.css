@@ -1367,31 +1367,25 @@ a:hover { color: var(--clay-deep); }
 }
 
 /* Stage 4 container variants. Pick by content type:
-   .page-prose   - reading content, 65 char line length
-   .page-content - cards, grids, interactive
-   .page-wide    - large multi-column layouts on desktop
+   .page-prose   - reading content, 65 char line length (~720px)
+   .page-content - cards, grids, interactive (~1100px)
+   .page-wide    - large multi-column layouts on desktop (~1280px)
    Each uses the same horizontal padding system so the gutters
    stay consistent at every viewport. */
 .page-prose {
-  max-width: 680px;
-  margin: 0 auto;
+  max-width: 720px;
+  margin: var(--space-8) auto;
   padding: 0 clamp(var(--space-4), 5vw, var(--space-6));
 }
 
 .page-content {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: var(--space-8) auto;
   padding: 0 clamp(var(--space-4), 5vw, var(--space-6));
 }
 
 .page-wide {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 clamp(var(--space-4), 5vw, var(--space-6));
-}
-
-.page-prose {
-  max-width: 720px;
   margin: var(--space-8) auto;
   padding: 0 clamp(var(--space-4), 5vw, var(--space-6));
 }
@@ -1648,6 +1642,15 @@ a:hover { color: var(--clay-deep); }
   padding: 0;
   display: grid;
   gap: var(--space-2);
+}
+
+/* Saved-charts list goes 2 columns at tablet width, 3 at desktop.
+   On mobile it stays 1-column to keep tap targets full-width. */
+@media (min-width: 720px) {
+  .account-page .account-saved-list { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .account-page .account-saved-list { grid-template-columns: 1fr 1fr 1fr; }
 }
 
 .account-saved-list li {

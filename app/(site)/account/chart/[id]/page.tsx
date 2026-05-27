@@ -86,7 +86,7 @@ export default async function ChartViewPage(
       : "Your favourable directions are in the West quadrant: northeast, southwest, west, and northwest.";
 
   return (
-    <div className="page-narrow chart-page">
+    <div className="page-content chart-page">
       {/* Print-only header: brand mark + tagline + Kua Calculator subhead.
           Hidden on screen via CSS; visible at the top of the printed page. */}
       <div className="print-only chart-print-header">
