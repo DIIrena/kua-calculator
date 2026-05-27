@@ -126,9 +126,10 @@ export function personalBaguaSvg(kua: number, group: KuaGroup): string {
 
   const groupLabel = group === "east" ? "EAST GROUP" : "WEST GROUP";
 
-  // Bigger render: 280x280px (~74mm) replaces the previous 180px brand
-  // mark. ViewBox unchanged so SVG geometry is identical.
-  return `<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="280" height="280" style="display:block;margin:10mm auto 12mm auto;">
+  // ViewBox extends to 480px tall to leave room for the legend below
+  // the bagua. Render width stays 280px; height scales proportionally
+  // (280 * 480 / 400 = 336).
+  return `<svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" width="280" height="336" style="display:block;margin:10mm auto 12mm auto;">
   <!-- Outer hairline ring -->
   <circle cx="${CENTER}" cy="${CENTER}" r="${R_OUTER + 4}" fill="none" stroke="${C.hairline}" stroke-width="0.8"/>
   <!-- 8 sectors -->
@@ -145,6 +146,15 @@ export function personalBaguaSvg(kua: number, group: KuaGroup): string {
   <text x="${CENTER}" y="${CENTER + 8}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="56" font-weight="800" fill="${C.ink}">${kua}</text>
   <!-- Group label below -->
   <text x="${CENTER}" y="${CENTER + 38}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.olive}" letter-spacing="1.8">${groupLabel}</text>
+  <!-- Legend below the chart: green dot = Beneficial, peach dot = Non-beneficial -->
+  <g transform="translate(0, 425)">
+    <circle cx="135" cy="0" r="10" fill="${C.oliveSoft}" stroke="${C.hairline}" stroke-width="0.8"/>
+    <text x="155" y="0" dominant-baseline="central" font-family="Hanken Grotesk" font-size="14" font-weight="600" fill="${C.ink}">Beneficial</text>
+  </g>
+  <g transform="translate(0, 455)">
+    <circle cx="135" cy="0" r="10" fill="${C.claySoft}" stroke="${C.hairline}" stroke-width="0.8"/>
+    <text x="155" y="0" dominant-baseline="central" font-family="Hanken Grotesk" font-size="14" font-weight="600" fill="${C.ink}">Non-beneficial</text>
+  </g>
 </svg>`;
 }
 
