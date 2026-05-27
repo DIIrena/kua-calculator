@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { createAdminClient } from "@/lib/supabase/server";
 import { saveDetails, saveAndEmailMyChart, deleteAccount } from "./actions";
-import { deleteChart } from "@/app/actions/save-chart";
+import { deleteChart, updateChartLabel } from "@/app/actions/save-chart";
 import { compareCharts } from "@/app/actions/compare-charts";
 import BrandMark from "@/components/BrandMark";
 import CalculatorIsland from "@/components/CalculatorIsland";
@@ -257,6 +257,34 @@ export default async function AccountPage() {
                       Kua {c.kua_number ?? "?"} · {groupLabel} · Saved{" "}
                       {created}
                     </p>
+                    <details className="saved-chart-edit">
+                      <summary className="saved-chart-edit-toggle">
+                        Edit name
+                      </summary>
+                      <form
+                        action={updateChartLabel}
+                        className="saved-chart-edit-form"
+                      >
+                        <input type="hidden" name="id" value={c.id} />
+                        <label
+                          htmlFor={`label-${c.id}`}
+                          className="visually-hidden"
+                        >
+                          Chart name
+                        </label>
+                        <input
+                          id={`label-${c.id}`}
+                          name="label"
+                          type="text"
+                          defaultValue={c.label ?? ""}
+                          placeholder={`Kua ${c.kua_number ?? "?"} chart`}
+                          maxLength={80}
+                        />
+                        <button type="submit" className="cta-secondary">
+                          Save name
+                        </button>
+                      </form>
+                    </details>
                   </div>
                   <div className="saved-chart-actions">
                     <Link

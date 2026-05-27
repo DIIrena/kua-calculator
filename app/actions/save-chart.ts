@@ -101,6 +101,33 @@ export async function saveChart(formData: FormData) {
   redirect(`/account/chart/${data.id}`);
 }
 
+// Rename a saved chart. Empty string clears the label (the dashboard
+// then falls back to "Kua N chart"). Trimmed to 80 chars to keep the
+// dashboard layout sane. Always scoped by user_id so a user cannot
+// rename another user's chart.
+export async function updateChartLabel(formData: FormData) {
+  const session = await auth();
+  if (!session?.user?.id) redirect("/sign-in");
+  const userId = session.user.id;
+
+  const id = String(formData.get("id") ?? "").trim();
+  if (!id) redirect("/account?error=missing-chart");
+
+  const raw = String(formData.get("label") ?? "").trim();
+  const label = raw.length > 0 ? raw.slice(0, 80) : null;
+
+  const admin = createAdminClient();
+  await admin
+    .from("saved_charts")
+    .update({ label })
+    .eq("id", id)
+    .eq("user_id", userId);
+
+  revalidatePath("/account");
+  revalidatePath(`/account/chart/${id}`);
+  redirect("/account");
+}
+
 export async function deleteChart(formData: FormData) {
   const session = await auth();
   if (!session?.user?.id) redirect("/sign-in");

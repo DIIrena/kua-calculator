@@ -1661,6 +1661,74 @@ a:hover { color: var(--clay-deep); }
   font-size: 0.98rem;
 }
 
+/* Inline "Edit name" disclosure on each saved-chart row.
+   Closed: a small text button beneath the chart meta. Open: a row
+   with a text input + Save button. Uses native <details>/<summary>
+   so it works without JavaScript. */
+.saved-chart-edit {
+  margin-top: var(--space-2);
+}
+
+.saved-chart-edit-toggle {
+  display: inline-block;
+  cursor: pointer;
+  padding: 2px 0;
+  color: var(--olive-deep);
+  font-size: 0.85rem;
+  font-weight: 600;
+  list-style: none; /* hide the default disclosure triangle */
+  user-select: none;
+}
+
+.saved-chart-edit-toggle::-webkit-details-marker { display: none; }
+.saved-chart-edit-toggle::marker { content: ""; }
+
+.saved-chart-edit-toggle::before {
+  content: "+ ";
+  font-weight: 700;
+}
+
+.saved-chart-edit[open] .saved-chart-edit-toggle::before {
+  content: "- ";
+}
+
+.saved-chart-edit-toggle:hover,
+.saved-chart-edit-toggle:focus-visible {
+  color: var(--clay-deep);
+  text-decoration: underline;
+}
+
+.saved-chart-edit-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.saved-chart-edit-form input[type="text"] {
+  flex: 1 1 200px;
+  min-height: 40px;
+  padding: 0 var(--space-3);
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.saved-chart-edit-form input[type="text"]:focus-visible {
+  outline: 2px solid var(--olive-deep);
+  outline-offset: 1px;
+}
+
+.saved-chart-edit-form button {
+  min-height: 40px;
+  font-size: 0.9rem;
+  padding: 0 var(--space-4);
+}
+
 /* ============================================================
    Stage 2 - Chart save CTA, bagua diagram, direction table,
    chart view page, saved-chart list. Greyscale-safe; no colour
