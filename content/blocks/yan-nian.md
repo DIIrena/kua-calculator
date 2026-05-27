@@ -42,6 +42,20 @@ It is not luck. The tradition's claim, when stripped of the metaphysical confide
 
 The cheap version of this test is the one most couples accidentally run when they move house. The new dining table is in a different orientation. The new sofa faces a different wall. The conversation at dinner gets slightly shorter for six months and nobody understands why, and one Saturday someone moves the table ninety degrees and the dinners get long again. That is Yan Nian, working or not working, without anybody having to know its name.
 
+## If the chair is still empty
+
+You may be reading this single. The bed has one person in it. The dining table has one place setting that gets used. The chair by the window where someone might one day take their morning coffee is, for now, *yours alone*.
+
+The tradition has something to say about this, and it is gentler than the magazine version.
+
+Classical practice does not claim that pointing your bed to Yan Nian will deliver a partner by spring. It says something smaller and more durable: the room that has been **prepared** for the kind of relationship you want to be inside, before that relationship arrives, is more likely to support it once it does. The headboard pointing to your Yan Nian direction. The second chair already at the small table by the window, not stored against the wall. Two cups on the kitchen counter in the morning, even when only one of them is being used.
+
+The reasoning is small. The body learns what the room is for. A bedroom set up for one person teaches the nervous system that this room is for solitude. A bedroom set up for a couple - bed in the Yan Nian direction, a second chair in the corner, breathing room on both sides of the bed - teaches the nervous system that this room is *waiting*. The tradition reads the difference as the difference between a room that closes the door behind you and a room that holds it open.
+
+What we will not promise: that the person arrives. What the practice gives you, when the metaphysical confidence is stripped away, is a room that is *ready*. The arrival is its own thing.
+
+For you, {{firstName}}, the direction this lives in is **{{direction}}**.
+
 ## The hard thing
 
 Here is the part most books skip.
