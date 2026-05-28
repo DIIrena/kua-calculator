@@ -1,0 +1,25 @@
+# How to use this guide
+
+Three kinds of claim appear in the pages ahead, and it is worth knowing which is which before you start. We keep them separate on purpose.
+
+**Tradition.** Most of what follows is traditional Eight Mansions guidance: which direction the tradition calls supportive for a given quality, and where practitioners have placed beds, desks, and seats for centuries. We mark this with words like "traditionally," "the tradition associates," and "practitioners often." It is a structured, centuries-old way of deciding between otherwise equivalent options. It is not a claim that an outcome is guaranteed.
+
+**Observation.** Some of it is testable in your own home over a week or two: whether a chair feels easier to settle into, whether you wake more rested, whether a room you avoided becomes one you use. We invite you to notice these, not to expect them.
+
+**Evidence.** A small amount overlaps with what environmental psychology already supports - daylight, clutter, a clear view of the door. Where that is the case, we say so. Where a claim is tradition rather than evidence, we say that too. We would rather under-promise.
+
+## How to read a direction
+
+Each chapter names a compass direction for one quality - for example, "Your Sheng Qi direction is east." A direction means different things depending on what the furniture is for, so here is the rule, once, clearly.
+
+- **For sleeping:** it is the direction the **top of your head** points while you lie in bed. In practice this means the headboard sits against that wall, so your head rests toward it. "Your Tian Yi direction is southeast" means the headboard goes on the southeast wall.
+- **For sitting and working:** it is the direction your **body faces** while seated. The chair, not the desk, is what matters. "Face your Sheng Qi direction at your desk" means you turn the chair so you look that way while working.
+- **For a door or a room:** it is the direction the door **faces** as it opens, or the direction a room broadly opens toward.
+
+When a chapter is about the bed, read "direction" as where the head points. When it is about a desk, a dining seat, or a reading chair, read it as where the body faces. Each chapter says which it means, but the rule above is the one to keep in your pocket.
+
+## A week is the unit
+
+Feng shui changes, when they do anything, tend to be gradual and quiet rather than sudden. The honest unit of testing is about a week. Make one change. Leave it in place for seven days. Notice, without forcing the question, whether anything feels different. If it does, keep it. If it does not, you have lost nothing but the few minutes it took to move a chair.
+
+The last chapter gives you one structured seven-day experiment to start with. For now, keep the three-way distinction in mind - tradition, observation, evidence - and the one rule about how to read a direction. The rest of the guide rests on those two things.

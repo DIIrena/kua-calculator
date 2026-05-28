@@ -9,8 +9,11 @@
 // Note: the cover is not a content block. It is composed in
 // lib/pdf/template.ts from product metadata + customer first name.
 export type BlockId =
-  // Universal
+  // Framing blocks
+  | "welcome"
   | "identity"
+  | "how-to-use"
+  | "experiment"
   | "closing"
   // Direction quality blocks (the order in which they appear in the
   // PDF; assembler looks up the customer's Kua to fill in which
@@ -51,7 +54,9 @@ export const PRODUCTS: Record<string, Product> = {
     currency: "usd",
     stripeEnvKey: "STRIPE_PRICE_ID_PERSONAL_COMPASS",
     blocks: [
+      "welcome",
       "identity",
+      "how-to-use",
       "sheng-qi",
       "tian-yi",
       "yan-nian",
@@ -60,9 +65,10 @@ export const PRODUCTS: Record<string, Product> = {
       "wu-gui",
       "liu-sha",
       "jue-ming",
+      "experiment",
       "closing",
     ],
-    targetPages: { min: 18, max: 22 },
+    targetPages: { min: 20, max: 26 },
   },
 };
 
