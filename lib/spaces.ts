@@ -1,8 +1,9 @@
 // The rooms-and-spaces taxonomy. Same shape as life-areas.ts but
 // indexed by physical room of the home (where am I?) rather than by
 // life concern (what do I want to improve?). Each /space/[slug] page
-// surfaces room-specific articles and funnels into the Home Harmony
-// Map (which has a one-page room walkthrough per sector).
+// surfaces room-specific articles and funnels into the Personal Feng
+// Shui Compass (the foundation product, keyed to the reader's Kua and
+// eight directions).
 
 export type Space =
   | "living-room"
@@ -52,7 +53,7 @@ export const SPACES: ReadonlyArray<SpaceMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map's bedroom page covers bed position, mirror check, the headboard rule, and what to do if you share the room with someone whose Kua number is different from yours.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions to face the bed toward in your own bedroom, with the traditional placement to test for a week.",
   },
   {
     slug: "kitchen",
@@ -77,7 +78,7 @@ export const SPACES: ReadonlyArray<SpaceMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map has a dedicated kitchen page: stove position, sink-stove mediation, the wealth-corner placement if your kitchen sits in the south-east of your home, and the one item to remove first.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions sits in the kitchen of your own home, and where the wealth corner falls if the kitchen takes the south-east.",
   },
   {
     slug: "living-room",
@@ -102,7 +103,7 @@ export const SPACES: ReadonlyArray<SpaceMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map's living-room page covers seating arrangement, the relationship between the front door and the main seating, and how to balance the elements when the room functions as both the social hub and the personal retreat.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions sits in the living room of your own home, and which way to face the seat where you settle most.",
   },
   {
     slug: "dining-room",
@@ -127,7 +128,7 @@ export const SPACES: ReadonlyArray<SpaceMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map's dining-room page covers table position, seat selection by Kua number, the lighting question, and the small symbolic cures that make the room feel like the centre of the home rather than a transit point.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions to take as your seat at the dining table in your own home.",
   },
   {
     slug: "bathroom",
@@ -152,7 +153,7 @@ export const SPACES: ReadonlyArray<SpaceMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map's bathroom page covers the bathroom-in-the-wealth-corner question, the containment protocol if your bathroom shares a wall with the kitchen or bedroom, and the materials choices that calm the room without expensive renovation.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your cautious directions the bathroom sits in, where the tradition is happy to let it take a lower-priority corner of your own home.",
   },
   {
     slug: "terrace",
@@ -177,7 +178,7 @@ export const SPACES: ReadonlyArray<SpaceMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map covers the outside reading: what is sitting in front of your front door, what is sitting behind, and which of the four classical animal positions (turtle, dragon, tiger, phoenix) is missing from your immediate surroundings.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions the terrace and the approach to your own home sit in.",
   },
 ];
 

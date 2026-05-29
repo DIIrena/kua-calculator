@@ -36,6 +36,6 @@ A lot of "feng shui rules" you'll read about toilet seats, hallway colours, or t
 
 ---
 
-*Want the full twelve-myth list? It's on the way as a paid sidebar to the Home Harmony Map.*
+*Want the full twelve-myth list? It is on the way as part of the Personal Feng Shui Compass line.*
 
 *Free pages worth reading next: [the methodology page](/methodology), [the five elements](/articles/five-elements).*

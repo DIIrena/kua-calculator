@@ -33,7 +33,7 @@ const webSiteJsonLd = {
   name: "My Feng Shui Home",
   url: "https://myfengshuihome.com/",
   description:
-    "A calm, honest feng shui guide for real homes. Free Kua number calculator, room walkthrough method, and the optional Home Harmony Map.",
+    "A calm, honest feng shui guide for real homes. Free Kua number calculator, room walkthrough method, and the optional Personal Feng Shui Compass.",
   potentialAction: {
     "@type": "SearchAction",
     target: "https://myfengshuihome.com/articles?q={search_term_string}",
@@ -64,11 +64,11 @@ const FAQ: Array<{ q: string; a: string }> = [
   },
   {
     q: "Is the site free?",
-    a: "The calculator, the methodology page, the room harmony checklist, and the teaser articles are all free with no account. Saving charts and reading the gated articles is free with an account. The Home Harmony Map, our personalised guide, is the only paid item.",
+    a: "The calculator, the methodology page, the room harmony checklist, and the teaser articles are all free with no account. Saving charts and reading the gated articles is free with an account. The Personal Feng Shui Compass, our personalised guide, is the only paid item.",
   },
   {
-    q: "What is the Home Harmony Map?",
-    a: "It is a personalised eighteen-page PDF keyed to your Kua number. It contains a bagua of your home, a one-room-per-page walkthrough, a money corner page, a bedroom page, and a printable diagnostic worksheet. Twenty-nine dollars, one-time, no subscription.",
+    q: "What is the Personal Feng Shui Compass?",
+    a: "It is a personalised PDF keyed to your Kua number. It reads your East or West group, your four supportive directions and your four cautious directions, with traditional placements for the bed, the desk, and the dining seat, plus a seven-day experiment. It is personalised to your direction profile, the eight directions that follow from your Kua, not to your floor plan. Fourteen dollars, one-time, no subscription.",
   },
   {
     q: "What about Western feng shui versus Classical feng shui?",
@@ -312,8 +312,9 @@ export default async function HomePage(props: {
         <div className="page-content">
           <h2 id="room-picker-heading">Pick a room you want to fix.</h2>
           <p className="home-section-lede">
-            Tap a room. See the one move that matters most. The full nine-room
-            walkthrough lives inside the Home Harmony Map.
+            Tap a room. See the one move that matters most. The Personal Feng
+            Shui Compass reads your Kua and your eight directions, so you can
+            tell which directions support each room in your own home.
           </p>
           <HomeRoomPicker />
         </div>
@@ -325,40 +326,39 @@ export default async function HomePage(props: {
           <div className="map-offer-grid">
             <div className="map-offer-text">
               <p className="eyebrow">Our one paid product</p>
-              <h2 id="map-offer-heading">The Home Harmony Map</h2>
+              <h2 id="map-offer-heading">The Personal Feng Shui Compass</h2>
               <p className="home-section-lede">
-                One personalised PDF. Eighteen pages, keyed to <em>your</em>{" "}
-                Kua number. The bagua of your home, a one-page walkthrough for
-                every room, a money corner page, a bedroom page, and a printable
-                diagnostic worksheet.
+                One personalised PDF, keyed to <em>your</em> Kua number. It
+                reads your East or West group, your four supportive directions
+                and your four cautious directions, with traditional placements
+                and a seven-day experiment.
               </p>
               <ul className="map-offer-bullets">
                 <li>
-                  A printed bagua map of <em>your</em> home keyed to your Kua
-                  number and your front-door facing
+                  Your Kua profile and a bagua chart of the eight directions,
+                  keyed to <em>your</em> number
                 </li>
                 <li>
-                  A nine-sector room walkthrough naming the one change that
-                  matters most in each space
+                  Your four supportive directions (Sheng Qi, Tian Yi, Yan Nian,
+                  Fu Wei), each read for your Kua
                 </li>
                 <li>
-                  Your four favourable directions marked for{" "}
-                  <strong>sleep</strong>, <strong>work</strong>,{" "}
-                  <strong>study</strong>, and <strong>meditation</strong>
+                  Your four cautious directions framed as lower-priority
+                  placements, not curses
                 </li>
                 <li>
-                  A money-corner activation page (the wealth corner, the wallet
-                  check, the dirty-stove sweep)
+                  Traditional placements for the <strong>bed</strong>, the{" "}
+                  <strong>desk</strong>, and the <strong>dining seat</strong>
                 </li>
                 <li>
-                  A bedroom-and-relationships page (bed position, mirror check,
-                  headboard rule)
+                  A seven-day experiment: one move to try, then leave for a week
+                  and notice
                 </li>
               </ul>
             </div>
             <aside className="map-offer-price-card" aria-label="Price">
-              <p className="map-offer-price-eyebrow">The Home Harmony Map</p>
-              <p className="map-offer-price-amount">$29</p>
+              <p className="map-offer-price-eyebrow">The Personal Feng Shui Compass</p>
+              <p className="map-offer-price-amount">$14</p>
               <p className="map-offer-price-suffix">
                 one-time, no subscription
               </p>

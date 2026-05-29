@@ -1,8 +1,9 @@
 // The nine bagua sectors expressed as "life areas" - the way people
 // actually search ("feng shui for money", "feng shui for love") rather
 // than as compass directions. Each area has its own /life/[slug] landing
-// page that surfaces relevant articles and funnels to the Home Harmony
-// Map (which contains a dedicated page for every sector).
+// page that surfaces relevant articles and funnels to the Personal Feng
+// Shui Compass (the foundation product, keyed to the reader's Kua and
+// eight directions).
 
 export type LifeArea =
   | "career"
@@ -57,7 +58,7 @@ export const LIFE_AREAS: ReadonlyArray<LifeAreaMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map has a full money-corner activation page keyed to your Kua number, plus the kitchen-stove walkthrough and the wallet check. The complete money chain on one printable PDF.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions sits in the money corner of your own home. The foundation reading, on one printable PDF.",
   },
   {
     slug: "love",
@@ -83,7 +84,7 @@ export const LIFE_AREAS: ReadonlyArray<LifeAreaMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map has a dedicated bedroom-and-relationships page: bed position, mirror check, headboard rule, and what to do if you share the room with someone whose Kua is different from yours.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions to face the bed toward in your own home, with the traditional placement for shared furniture.",
   },
   {
     slug: "career",
@@ -109,7 +110,7 @@ export const LIFE_AREAS: ReadonlyArray<LifeAreaMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map marks your four favourable directions for work and study - so you stop guessing which way to face when you are concentrating. Plus the workspace section of the room walkthrough.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions to face the desk toward in your own home when you are concentrating.",
   },
   {
     slug: "health",
@@ -135,7 +136,7 @@ export const LIFE_AREAS: ReadonlyArray<LifeAreaMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map covers sleep design, the family-centre east sector, and the room-by-room health audit. All keyed to your Kua number so the recommendations are personalised.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions sits in the family-centre east sector of your own home. Keyed to your Kua, with the bed placement for restful sleep.",
   },
   {
     slug: "creativity",
@@ -161,7 +162,7 @@ export const LIFE_AREAS: ReadonlyArray<LifeAreaMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map's nine-sector walkthrough covers the creativity corner in detail, with the element analysis and the do-not-do list.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions sits in the west creativity corner of your own home.",
   },
   {
     slug: "fame",
@@ -187,7 +188,7 @@ export const LIFE_AREAS: ReadonlyArray<LifeAreaMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map walks the south sector room by room, naming the one move that matters most for visibility and reputation in each space.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions sits in the south recognition sector of your own home.",
   },
   {
     slug: "knowledge",
@@ -213,7 +214,7 @@ export const LIFE_AREAS: ReadonlyArray<LifeAreaMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map's walkthrough covers the study corner in detail and marks your favourable direction for sustained focus.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions sits in the north-east study corner of your own home, and which one supports sustained focus.",
   },
   {
     slug: "travel",
@@ -239,7 +240,7 @@ export const LIFE_AREAS: ReadonlyArray<LifeAreaMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map covers the travel-and-helpful-people sector and marks the moves with the highest leverage for someone who travels often or works in a relationship-heavy field.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so you can tell which of your supportive directions sits in the north-west travel-and-helpful-people sector of your own home.",
   },
   {
     slug: "centre",
@@ -265,7 +266,7 @@ export const LIFE_AREAS: ReadonlyArray<LifeAreaMeta> = [
       },
     ],
     mapPitch:
-      "The Home Harmony Map maps the tai chi of your home onto your specific floor plan, with the centre-clearing protocol on its own page.",
+      "The Personal Feng Shui Compass reads your Kua and your eight directions, so the still centre of your home becomes the point you measure your supportive directions from.",
   },
 ];
 

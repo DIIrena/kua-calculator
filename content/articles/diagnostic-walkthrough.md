@@ -76,4 +76,4 @@ Some of the things on your list will have resolved themselves through the first 
 
 That is feng shui as a structured design practice. Look. Pick one. Wait. Look again.
 
-The Home Harmony Map is the printable version of this method, keyed to *your* Kua number and *your* floor plan, with a worksheet for every step. [See the Home Harmony Map.](/home-harmony-map)
+The Personal Feng Shui Compass is the personalised version of this method, keyed to *your* Kua number and your eight directions, with the traditional placements read for you. [See the Personal Feng Shui Compass.](/home-harmony-map)

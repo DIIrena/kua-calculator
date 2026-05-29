@@ -115,7 +115,7 @@ export default async function SpaceRoomPage(props: { params: Params }) {
         </div>
       </section>
 
-      {/* Funnel to the paid Home Harmony Map */}
+      {/* Funnel to the paid Personal Feng Shui Compass */}
       <section
         className="home-section home-section-paper life-area-map-cta"
         aria-labelledby="map-cta-heading"
@@ -130,13 +130,13 @@ export default async function SpaceRoomPage(props: { params: Params }) {
               <p className="home-section-lede">{meta.mapPitch}</p>
             </div>
             <div className="life-area-map-cta-card">
-              <p className="map-page-price-eyebrow">The Home Harmony Map</p>
-              <p className="map-page-price-amount">$29</p>
+              <p className="map-page-price-eyebrow">The Personal Feng Shui Compass</p>
+              <p className="map-page-price-amount">$14</p>
               <p className="map-page-price-suffix">
                 one-time, personalised
               </p>
               <Link href="/home-harmony-map" className="cta-primary">
-                See the Map
+                See the Compass
               </Link>
             </div>
           </div>

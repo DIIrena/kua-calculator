@@ -3,23 +3,23 @@ import Link from "next/link";
 import { sendChecklist } from "@/app/actions/lead-magnet";
 
 export const metadata: Metadata = {
-  title: "The Home Harmony Map - personalised feng shui PDF | My Feng Shui Home",
+  title: "The Personal Feng Shui Compass - personalised feng shui PDF | My Feng Shui Home",
   description:
-    "An eighteen-page personalised PDF keyed to your Kua number: bagua of your home, room-by-room walkthrough, money corner page, bedroom page, diagnostic worksheet. One-time $29. Launching soon.",
+    "A personalised PDF keyed to your Kua number: your East or West group, your four supportive directions, your four cautious directions, traditional placements, and a seven-day experiment. One-time $14. Launching soon.",
   alternates: { canonical: "https://myfengshuihome.com/home-harmony-map" },
 };
 
 const productJsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
-  name: "The Home Harmony Map",
+  name: "The Personal Feng Shui Compass",
   description:
-    "A personalised eighteen-page feng shui PDF keyed to your Kua number. Bagua of your home, room-by-room walkthrough, money corner page, bedroom page, diagnostic worksheet.",
+    "A personalised feng shui PDF keyed to your Kua number. Your East or West group, your four supportive directions, your four cautious directions, traditional placements for the bed, desk, and dining seat, and a seven-day experiment.",
   brand: { "@type": "Brand", name: "My Feng Shui Home" },
   category: "Digital Download",
   offers: {
     "@type": "Offer",
-    price: "29",
+    price: "14",
     priceCurrency: "USD",
     availability: "https://schema.org/PreOrder",
     url: "https://myfengshuihome.com/home-harmony-map",
@@ -40,14 +40,15 @@ export default async function HomeHarmonyMapPage(props: {
           ============================================================ */}
       <section className="sales-hero">
         <div className="page-content">
-          <p className="eyebrow">A personalised feng shui guide for your home.</p>
+          <p className="eyebrow">A personalised feng shui guide, keyed to your Kua.</p>
           <h1 className="sales-hero-heading">
-            Walk your home with a structured method, keyed to <em>you</em>.
+            Read your eight directions, keyed to <em>you</em>.
           </h1>
           <p className="sales-hero-lede">
-            A printable, personalised eighteen-page PDF. It tells you which
-            four directions in your home are working <em>with</em> you, which
-            four are working against you, and what to do about each room.
+            A printable, personalised PDF. It reads which four of your eight
+            directions the tradition treats as supportive, which four it asks
+            you to handle with more care, and the traditional placements that
+            follow from your Kua.
           </p>
           <p className="sales-hero-lede">
             Built from the same source material that working practitioners
@@ -103,9 +104,10 @@ export default async function HomeHarmonyMapPage(props: {
           </p>
           <p>
             What you want is the <strong>specific</strong> version. The one
-            that takes your home, your Kua number, and your front-door facing,
-            and tells you the <em>one</em> change that matters most in each
-            room. The Home Harmony Map is that.
+            that takes your Kua number, reads your eight directions, and tells
+            you which ones the tradition treats as supportive and where to put
+            the bed, the desk, and the seat where you eat. The Personal Feng
+            Shui Compass is that.
           </p>
         </div>
       </section>
@@ -121,53 +123,58 @@ export default async function HomeHarmonyMapPage(props: {
         <div className="page-content">
           <h2 id="whats-inside-heading">What you get.</h2>
           <p className="home-section-lede">
-            One PDF. Eighteen pages. Personalised to your Kua number and your
-            front-door facing.
+            One personalised PDF, keyed to your Kua number and your East or West
+            group. It reads your direction profile, not your floor plan, so it
+            travels with you to any home you live in.
           </p>
           <ul className="sales-benefits-list">
             <li>
-              <h3>The bagua of your home, on one printed page.</h3>
+              <h3>Your Kua profile and a bagua chart of your eight directions.</h3>
               <p>
-                The nine sectors mapped onto your floor plan. You put it on
-                the fridge. You stop having to look up which corner is the
-                wealth corner.
+                Your number, your East or West group, and a printed bagua chart
+                of the eight directions, keyed to <em>you</em>. The page you put
+                on the fridge so you stop looking it up.
               </p>
             </li>
             <li>
-              <h3>A one-page walkthrough for every room.</h3>
+              <h3>Your four supportive directions, each read for your Kua.</h3>
               <p>
-                Nine rooms, one page each. The single change that matters most.
-                The two changes that come next. The two things to ignore.
+                Sheng Qi, Tian Yi, Yan Nian, and Fu Wei, named with the compass
+                direction each one points to for your number. The four the
+                tradition reads as working <em>with</em> you.
               </p>
             </li>
             <li>
-              <h3>Your four favourable directions marked for everything.</h3>
+              <h3>Your four cautious directions, framed honestly.</h3>
               <p>
-                Sleep. Work. Study. Meditation. So you stop guessing which
-                way to face the bed.
+                The four the tradition asks you to handle with more care, framed
+                as lower-priority placements, not curses. Each one with a quiet,
+                useful job: storage, the hallway, the bathroom.
               </p>
             </li>
             <li>
-              <h3>A money-corner activation page.</h3>
+              <h3>Traditional placements for the bed, the desk, and the dining seat.</h3>
               <p>
-                The wealth corner, the wallet check, the dirty-stove sweep.
-                The chapter eighteen material, translated into a one-page
-                action list.
+                Where the tradition points each one for your directions. Which
+                way to face the bed, where to sit to do focused work, and the
+                seat that supports a shared meal.
               </p>
             </li>
             <li>
-              <h3>A bedroom-and-relationships page.</h3>
+              <h3>A seven-day experiment.</h3>
               <p>
-                Bed position, mirror check, headboard rule. What to do if you
-                share the room with someone whose Kua is different from
-                yours.
+                One move to try, then leave for a week and notice, without
+                forcing the question, whether anything feels different. If it
+                does, keep it. If it does not, you have lost only the minutes it
+                took to move a chair.
               </p>
             </li>
             <li>
-              <h3>A printable diagnostic worksheet.</h3>
+              <h3>Honest framing on every page.</h3>
               <p>
-                The seven-step practitioner walkthrough as a checklist you
-                can take with you, room by room.
+                Personalised to your direction profile from your Kua, not to
+                your home layout. It hands you the compass; you stay the expert
+                on your own rooms. No outcome promises, ever.
               </p>
             </li>
           </ul>
@@ -185,25 +192,24 @@ export default async function HomeHarmonyMapPage(props: {
           </p>
           <ol className="sales-how-list">
             <li>
-              <h3>You enter your Kua number and front-door facing.</h3>
+              <h3>You enter your birth date and gender.</h3>
               <p>
-                A short form. Birth date and gender (we calculate the Kua),
-                plus which direction your front door faces. About sixty
-                seconds.
+                A short form. We calculate your Kua number and your East or West
+                group from it. About sixty seconds.
               </p>
             </li>
             <li>
               <h3>We generate your personalised PDF.</h3>
               <p>
-                Eighteen pages, keyed to your inputs, delivered to your
+                Keyed to your Kua and your eight directions, delivered to your
                 inbox. Branded, printable, yours to keep.
               </p>
             </li>
             <li>
               <h3>You print it. You walk your home with it.</h3>
               <p>
-                The Map is a working tool, not a coffee-table book. The point
-                is to mark it up and use it.
+                The Compass is a working tool, not a coffee-table book. The
+                point is to mark it up and use it.
               </p>
             </li>
           </ol>
@@ -223,17 +229,18 @@ export default async function HomeHarmonyMapPage(props: {
             </li>
             <li>
               <strong>Not</strong> a fortune. We do not tell you what is going
-              to happen. We tell you which directions traditionally support
-              your kind of activity, and you decide what to do with that.
+              to happen. We tell you which directions the tradition treats as
+              supportive, and you decide what to do with that.
             </li>
             <li>
               <strong>Not</strong> a hundred-page ebook. It is a <em>working
-              map</em>. You print it, mark it up, put it on the fridge.
+              compass</em>. You print it, mark it up, test one move.
             </li>
             <li>
-              <strong>Not</strong> a one-size-fits-all PDF. It is keyed to
-              <em> your</em> Kua number and <em>your</em> front-door facing.
-              Two different people get two different Maps.
+              <strong>Not</strong> keyed to your floor plan. It is personalised
+              to your <em>direction profile</em> from your Kua, so it does not
+              know your layout. You stay the expert on your own rooms. Two
+              different people get two different readings.
             </li>
           </ul>
         </div>
@@ -251,7 +258,7 @@ export default async function HomeHarmonyMapPage(props: {
               <div className="faq-answer">
                 <p>
                   Email us within thirty days and we delete the order, refund
-                  the $29, and remove you from the list. No questions, no
+                  the $14, and remove you from the list. No questions, no
                   forms.
                 </p>
               </div>
@@ -269,9 +276,9 @@ export default async function HomeHarmonyMapPage(props: {
               <summary>Will it work for a rented flat?</summary>
               <div className="faq-answer">
                 <p>
-                  Yes. Most of the moves in the Map are furniture-free: bed
-                  position, stove cleaning, command position at the desk,
-                  wealth-corner attention. Renters get the same value as
+                  Yes. The Compass reads your directions, not your lease. The
+                  placements are furniture-free: which way to face the bed, the
+                  desk, the seat where you eat. Renters get the same reading as
                   owners.
                 </p>
               </div>
@@ -280,9 +287,9 @@ export default async function HomeHarmonyMapPage(props: {
               <summary>Will it work for a small apartment?</summary>
               <div className="faq-answer">
                 <p>
-                  Yes. The Map adapts the nine-sector walkthrough to any size
-                  of home. Small homes often have the strongest bagua signals
-                  because the sectors overlap; we mark that for you.
+                  Yes. Your eight directions are the same in any home you live
+                  in. The Compass reads them from your Kua, so the reading
+                  travels with you whatever the size or shape of the place.
                 </p>
               </div>
             </details>
@@ -298,12 +305,13 @@ export default async function HomeHarmonyMapPage(props: {
               </div>
             </details>
             <details className="faq-item">
-              <summary>How long until I see results?</summary>
+              <summary>How long until I see something?</summary>
               <div className="faq-answer">
                 <p>
-                  Some changes are immediate (sleeping better the week you
-                  move the bed). Some compound over months (wealth-corner
-                  attention). The Map names which is which on every page.
+                  The Compass asks for a seven-day experiment: make one move,
+                  leave it for a week, and notice without forcing the question.
+                  Some changes settle quickly; some are slower. The honest
+                  framing on every page tells you which is which.
                 </p>
               </div>
             </details>
@@ -315,7 +323,7 @@ export default async function HomeHarmonyMapPage(props: {
           Price + final CTA. Price appears HERE - after value, social
           proof, problem recognition, benefits, how it works, what it
           is not, and objection handling. By the time the reader sees
-          $29, they have already mentally owned the value.
+          $14, they have already mentally owned the value.
           ============================================================ */}
       <section
         className="home-section home-section-cream sales-price-section"
@@ -324,11 +332,11 @@ export default async function HomeHarmonyMapPage(props: {
       >
         <div className="page-content">
           <div className="sales-price-block">
-            <p className="eyebrow">The Home Harmony Map</p>
+            <p className="eyebrow">The Personal Feng Shui Compass</p>
             <h2 id="price-heading" className="sales-price-heading">
-              One-time, twenty-nine dollars.
+              One-time, fourteen dollars.
             </h2>
-            <p className="sales-price-amount">$29</p>
+            <p className="sales-price-amount">$14</p>
             <p className="sales-price-suffix">
               No subscription. Yours to keep. Thirty-day refund.
             </p>
@@ -336,7 +344,7 @@ export default async function HomeHarmonyMapPage(props: {
               Join the early list
             </a>
             <p className="sales-price-note">
-              The Map launches soon. Early-list members get the heads-up the
+              The Compass launches soon. Early-list members get the heads-up the
               day it goes live, plus the <strong>14-point room harmony
               checklist</strong> in their inbox tonight.
             </p>
@@ -351,13 +359,13 @@ export default async function HomeHarmonyMapPage(props: {
         <div className="page-prose">
           <h2>The thirty-day guarantee, no fine print.</h2>
           <p>
-            If the Map does not earn its keep in your home in the first
-            month, email us. We refund the $29, delete the order, and remove
+            If the Compass does not earn its keep in your home in the first
+            month, email us. We refund the $14, delete the order, and remove
             you from the list. We do not ask why. We do not send a
             cancellation survey. We do not put you in a marketing funnel.
           </p>
           <p>
-            We can do this because the Map is good. If we ever start getting
+            We can do this because the Compass is good. If we ever start getting
             a lot of refund requests, that is the universe telling us to make
             it better.
           </p>
@@ -380,7 +388,7 @@ export default async function HomeHarmonyMapPage(props: {
           <p>
             Drop your email. We send <strong>one email</strong> with the
             14-point room harmony checklist (PDF link, printable, free) and
-            <strong> one more email</strong> when the Map goes live. That is
+            <strong> one more email</strong> when the Compass goes live. That is
             two emails total. No marketing list. No upsells.
           </p>
 
