@@ -1,62 +1,50 @@
 # Your Huo Hai direction is {{direction}}
 
-There is a drawer in your kitchen. You know the one. It almost closes. It catches a millimetre before flush, every time, and every time you give it the small extra push with your hip, and the push has become so automatic that you no longer notice you are doing it. Add it up over a year and it is a thousand small extra pushes. None of them ruined a day. All of them, together, made the day half a degree more tired than it had to be.
+Huo Hai is the gentlest of the four directions the tradition treats with caution. Its name, *Huo Hai* (禍害), translates as **Mishap**. For you, {{firstName}}, it points {{direction}}.
 
-That is the temperature of Huo Hai. It is not a crisis. It is the *drawer*.
+Of your eight directions, four are read as supportive and four are treated with more care. Huo Hai is the first and mildest of the careful four. The tradition associates it with low-grade friction rather than anything large: a placement it would not give to your most important furniture, but one it treats as a matter of priority, not a matter of worry.
 
-## What Huo Hai means
+## What the tradition reads here
 
-The full name is *Huo Hai* (禍害), which translates as **Mishap**. It is the first and mildest of the four directions the tradition reads as cautious for you. For you, {{firstName}}, it points {{direction}}.
+The tradition associates Huo Hai with small setbacks and minor friction. Misplaced keys. A draught no one can trace. The kind of thing that does not spoil a day and is gone by the next one. It is read as a direction that accumulates rather than strikes, and even the accumulation is mild.
 
-There are four good directions and four to be careful of. Huo Hai is the gentlest of the careful four. The tradition associates it with **low-grade setbacks** and minor friction. Misplaced keys. A draft you cannot trace. The week where everything technically went fine and you cannot say why you ended it tired. None of it is large. None of it is the kind of thing you would call a friend about. It accumulates rather than strikes.
+What this means in practice is simpler than it sounds. Huo Hai is a **low-priority** placement. The tradition would not have you sleep with your head pointed at it or do your serious daily work facing it, because it would rather you give those functions to one of your four supportive directions. But it does not read this corner as a source of harm. It reads it as the corner you can comfortably hand to the things that do not need a good direction at all.
 
-You can think of Huo Hai as the Goldilocks of the bad directions. Bad enough that the tradition would not have you sleep with your head pointed at it, or do your serious work facing it. Mild enough that if a corner of your home has to be a cautious-direction corner (and in most homes, one will), this is the one to absorb. Storage works here. The seasonal box of decorations works here. The hobby supplies you only touch on weekends work here. The body, the system reads, does not have to fight this direction. It just does not flourish in it.
+Most homes have a corner like this already. In many of them, the household has been using it well for years without a name for what they were doing.
 
-## What this feels like, lived
+## What to put here
 
-You probably already know the rooms in which Huo Hai is doing its quiet thing. They are the rooms that are *fine*.
+If your layout allows, keep beds, desks, and the chairs where you rest or concentrate in your supportive directions, and let Huo Hai take the work that asks nothing of a direction. The tradition supports this corner for anything intermittent, ancillary, or storage-shaped.
 
-Not bad. Not the room you flinch from. Just the room that never quite earns its rent. The spare bedroom where guests sleep adequately and never quite well. The home office in the corner that you keep meaning to make nicer and somehow never do. The dining room that gets used for birthdays and not for Tuesdays. The light is okay. The temperature is okay. You set up a desk there once, worked from it for three weeks, and at the end of the three weeks you quietly went back to the kitchen table without admitting to yourself that you had given up on the room.
+- **Storage.** Cupboards and closets. The seasonal coats, the boxes of decorations, the cables you keep meaning to sort. The wall to put them against.
+- **The laundry zone.** Washing machine, drying rack, ironing board. The function happens, the function ends, and no one is meant to dwell there.
+- **The hobby corner.** The sewing machine you reach for one Sunday in three, the bin of yarn, the model paints. Things you love but only periodically need.
+- **The things you keep but rarely touch.** The dishes from a holiday, the teapots that never pour. Objects that earn their place by being kept, not by being used.
 
-That is what Huo Hai feels like when it is doing its mildest work. The friction is so low it does not register as friction. It registers as a low-grade *meh*. A room that costs you nothing and gives you nothing, like a houseplant in the corner that has been alive for two years without ever growing a new leaf.
+The pattern under all four is the same. Huo Hai is the corner you give to storage rather than to your bed.
 
-The tradition says: pay attention to which rooms are which. The drawer that almost closes is also a room that almost works. The pattern is the same; only the scale is different.
+## What to keep elsewhere
+
+By the same reasoning, a few functions are better placed in your supportive directions if your layout allows it.
+
+- **The bed.** The headboard is what sets the direction here: the wall the headboard rests against is the direction your head points while you sleep. You have three other supportive directions for the bed. If one is available, the tradition would use it.
+- **The main desk.** What matters is the way your **body faces** while seated, not where the desk sits. If the only room you can work in opens onto this direction, you do not need to move the room. Turn the chair so your body faces one of your favourable directions instead, even if the desk stays put.
+- **The chair for hard conversations.** The seat where difficult calls happen. The tradition reads Huo Hai as a low-friction-accumulator, so it is a gentle preference to seat those moments elsewhere, not a rule to lose sleep over.
+
+None of this asks you to rebuild a room. It asks you, where you have a free choice between equivalent options, to spend this corner on the low-stakes things.
 
 ## The hard thing
 
-Here is where readers go wrong about the cautious directions, and Huo Hai is the place to say it most clearly.
+Here is where readers tend to go wrong with the cautious directions. The first time someone reads that a quarter of their compass is "to be careful of," they tense up. They start eyeing the spare room. They wonder whether they need to *do something* about the corner where the laundry has sat for years.
 
-The first time someone reads that their home has four "bad" directions, they panic. They mentally redline a quarter of the compass. They start asking whether the spare room is **cursed** (it is not). They start wondering if they need to *do something* about the corner where the laundry has been for fifteen years (they do not). The four cautious directions sound, on first read, like four small disasters waiting in the floor plan.
+They do not. The tradition's claim here is much smaller than the fear it can trigger, and Huo Hai is the clearest example of how small. Of the four careful directions, this is the one whose felt-quality is closest to nothing in particular. The tradition does not read it as a corner to fear. It reads it as a corner of low priority, and low priority is a mild thing.
 
-They are not. The tradition's actual claim is much smaller than that, and Huo Hai is the cleanest example.
-
-Of the four cautious directions, Huo Hai is the one whose felt-quality is closest to **nothing in particular**. The tradition does not read it as a corner of danger. It reads it as a corner of *low priority*. The corner the system would not give your bed to, would not give your main desk to, would not seat the cook at. But it would give it to the dehumidifier and the box of summer hats without a second thought. Most homes have a corner like this already. You have probably been using yours correctly for years without knowing the word for what you were doing.
-
-The honest framing is: if you have to put one important function on a less-than-ideal wall (and in a real home, sometimes you do), Huo Hai is the less-than-ideal wall to pick. Not Wu Gui. Not Liu Sha. Definitely not Jue Ming. **Huo Hai.** It is the one the tradition reads as least costly.
+So the honest framing is this. If your home forces one important function onto a less-than-ideal wall, and in a real home it sometimes will, Huo Hai is the **least costly** of the four to land on. Not Wu Gui, not Liu Sha, and not Jue Ming. This one. It is the cautious direction the tradition reads as gentlest.
 
 ## The fork
 
-So what actually goes in your {{direction}} corner?
+This guide cannot walk through your rooms with you. It can hand you the compass and one quiet instruction.
 
-The general answer is: anything in your home whose use is intermittent, ancillary, low-stakes, or storage-shaped. Specifically, the tradition supports this corner for:
+Look at your {{direction}} corner with this chapter in mind. If something restful or demanding already lives there, see whether your layout offers a swap, and make it only if it is easy. If the corner already holds the laundry, the storage, the things you rarely touch, then leave it. You were doing it right before you had the word for it, and the tradition is only naming what the household already chose.
 
-- **Storage cupboards and closets.** The seasonal coats. The Christmas decorations. The box labelled "miscellaneous cables" that has been a box labelled "miscellaneous cables" for the entire time you have owned a flat. This is the wall to put it against.
-- **The laundry zone.** Washing machine, drying rack, ironing board. The function happens, the function ends, no one is meant to dwell there.
-- **The hobby corner.** The sewing machine you use one Sunday in three. The bin of yarn. The model paints. The half-built guitar pedal kit from 2019. The objects you love but only periodically need.
-- **The novelty mug collection.** Or whatever your version of it is. The dishes from a vacation you took. The teapots you never use but cannot get rid of. The category of object that earns its place by being there, not by being used. The tradition would call this a *containment use*, which is a polite way of saying you have built the corner a small, dignified shelf and asked it to behave.
-
-What does **not** go here, by the same reasoning:
-
-- **The bed.** Especially not with the headboard pointing this way. There are three other directions for the bed that are favourable for you; pick one of those.
-- **The main desk.** Or any chair where you do serious work facing this direction for hours. Move the chair if you can. If you cannot move the chair, you can at least move the *body* by turning your seat ninety degrees, and let the body face one of your four good directions instead.
-- **The chair where you have difficult phone calls.** The tradition reads Huo Hai as a low-friction-accumulator direction. Calls that are already friction-heavy do not need any more help.
-
-If you look at your home with this list in mind, you may notice that you have been doing it right by accident. Most people have. The laundry tends to end up in a corner; the corner tends to be a wall the household decided, without consciously deciding, was not a wall they wanted to sit and read in. The body knows. The system is just naming what the body already chose. That is *most* of what the cautious directions are: a name for something the household has been quietly doing for years.
-
-## What comes next
-
-Huo Hai is the mildest. It is the first of four. The next is *Wu Gui*, which translates as the **Five Ghosts** direction, and which the tradition reads as sharper. Where Huo Hai is the drawer that does not quite close, Wu Gui is the room where arguments start at the dinner table for no reason anyone can pin down, and the keys go missing for an hour, and the conversation about money goes sideways even though everyone meant to be reasonable about it. It is associated with miscommunication and minor conflict. Not catastrophe. But more friction than Huo Hai, and worth handling more carefully.
-
-For now, mark {{direction}} on the floor plan in your head as the corner where the storage lives. Not the bed. Not the desk. The hats, the laundry, the mugs.
-
-The friction is the drawer. We can move on.
+That is most of what this direction asks of you. Mark {{direction}} in your head as the corner for the hats, the boxes, and the machine that hums for an hour and stops. Not the bed. Not the desk. The quiet, useful storage.
