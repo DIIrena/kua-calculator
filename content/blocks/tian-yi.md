@@ -6,7 +6,7 @@ The pinyin is *Tian Yi* (天醫), which translates as **Heavenly Doctor**. It is
 
 ## What the tradition reads into it
 
-Where Sheng Qi is the generating direction and Yan Nian is the relationship one, Tian Yi is the direction the tradition associates with *recovery*. The classical reading is restorative: the direction practitioners have chosen, for centuries, for rest, for convalescence, and for the steady wellbeing of a household. The name carries the same idea. A heavenly doctor is not a cure you swallow. It is the corner of the house the tradition treats as the place a body is allowed to mend.
+Where Sheng Qi is the generating direction and Yan Nian is the relationship one, Tian Yi is the direction the tradition associates with *recovery*. The classical reading is restorative: the direction practitioners have long chosen for rest, for convalescence, and for the steady wellbeing of a household. The name carries the same idea. A heavenly doctor is not a cure you swallow. It is the corner of the house the tradition treats as the place a body is allowed to mend.
 
 This is tradition, and it is worth marking as tradition. The system does not claim that a compass direction heals you, or that pointing a bed one way rather than another fixes your sleep. What it offers is older and quieter than that. It is a structured way to choose where the bed goes when every wall looks equally plausible, drawn from a few centuries of households deciding the same question.
 

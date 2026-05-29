@@ -14,7 +14,7 @@ Two things are true at once here, and the rest of the chapter holds them togethe
 
 ## Why the tradition flags it
 
-The reading is consistent across schools. Where Huo Hai is read as friction, Wu Gui as confusion, and Liu Sha as volatility, Jue Ming is traditionally read as the corner that *drains* over time rather than over a single night. The tradition's word for it, said simply, is exhaustion: slow and hard to source, the kind that takes a while to notice.
+The traditional reading is broadly consistent. Where Huo Hai is read as friction, Wu Gui as confusion, and Liu Sha as volatility, Jue Ming is traditionally associated with slow depletion over long exposure rather than anything sudden. The felt-quality the tradition attaches to it is a quiet, hard-to-place tiredness, the kind that takes a while to notice.
 
 It helps to be precise about what the tradition does and does not say. It does not say Jue Ming causes anything. It says this is the sector practitioners ask you to keep your sleeping head and your main work seat away from, because those are the two places the body holds still longest. A bed is not made harmful by a wall. A desk is not made harder by a direction. The tradition is offering a **priority**, not a diagnosis: of the eight directions, this is the one it would site last.
 

@@ -67,14 +67,14 @@
       hanzi: "六煞",
       gloss: "Six killings",
       favourable: false,
-      meaning: "Avoid anchoring important functions here. Hallways, utility rooms, or rarely-entered spaces are an appropriate use."
+      meaning: "A lower-priority direction. Generally avoid anchoring important functions here when the layout gives you a choice. Hallways, utility rooms, or rarely-entered spaces are an appropriate use."
     },
     JM: {
       pinyin: "Jue Ming",
       hanzi: "絕命",
       gloss: "Total loss",
       favourable: false,
-      meaning: "Traditionally the most inauspicious direction for you. Don't sleep with your head pointing here, and don't face it at your main work seat. A bathroom or storage room is the standard 'containment' use."
+      meaning: "The direction the tradition treats with the most care. Generally avoid pointing your head here in sleep, or facing it at your main work seat, when the layout gives you a choice. A bathroom or storage room is the standard lower-priority use."
     }
   };
 

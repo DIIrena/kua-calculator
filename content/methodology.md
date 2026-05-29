@@ -251,10 +251,10 @@ Once you know your Kua number, you know your personal mapping of the eight direc
 
 ### The four unfavourable directions
 
-- **Jue Ming** (絕命, "total loss"). The most inauspicious direction for your Kua. Traditionally associated with serious setbacks, accidents, and health crises. Avoid sleeping with your head pointing here or facing this direction at your main work seat. Many Eight Mansions practitioners locate a bathroom or storage room here as a "containment" use.
-- **Wu Gui** (五鬼, "five ghosts"). Traditionally associated with arguments, betrayal, and hidden conflict. Avoid for any seating where disputes are likely. Storage and infrequently-used rooms are appropriate here.
-- **Liu Sha** (六煞, "six killings"). Traditionally associated with legal trouble, scandal, and emotional volatility. Treat as a low-priority area of the home; avoid anchoring important functions here.
-- **Huo Hai** (禍害, "mishap"). The mildest of the four unfavourable directions. Traditionally associated with low-level setbacks and minor accidents. The least problematic of the bad directions; use for ancillary functions if necessary.
+- **Jue Ming** (絕命, "total loss"). The direction the tradition treats with the most care for your Kua. Traditionally associated with slow depletion over long exposure rather than sudden events. Generally avoid pointing your head here in sleep, or facing it at your main work seat, when the layout gives you a choice. Many Eight Mansions practitioners give a bathroom or storage room to this direction as a lower-priority use.
+- **Wu Gui** (五鬼, "five ghosts"). Traditionally associated with friction, miscommunication, and misplaced things. The tradition prefers to keep difficult-conversation seats off this direction when the room allows. Storage and infrequently-used rooms are appropriate here.
+- **Liu Sha** (六煞, "six killings"). The name is more dramatic than the reading. Traditionally associated with broken plans and drawn-out misunderstandings. A lower-priority direction; generally avoid anchoring important functions here when the layout gives you a choice.
+- **Huo Hai** (禍害, "mishap"). The gentlest of the four to treat with care. Traditionally associated with low-level friction and minor setbacks. Comfortable for ancillary functions such as storage.
 
 Each Kua number has a specific mapping of these eight qualities to the eight compass directions. The mapping is fully specified by the East-group / West-group system and by the symmetry that Kua 1 and Kua 6 have opposite mappings, Kua 2 and Kua 9 have opposite mappings, and so on. Detailed Kua-direction tables are widely published in cultural-commons feng shui references.
 
@@ -304,7 +304,7 @@ The most common practical applications of Compass School for an amateur reader, 
 
 **Functional zoning of the home.** Place active, energy-generating functions - main bedroom for an ambitious person, home office, exercise area - in your favourable sectors. Place inactive or containment functions (storage, guest bathroom, utility rooms) in your unfavourable sectors. This is harder to apply in a rented space or with a fixed floor plan, but even partial application is actionable.
 
-**Door facing.** Classical Compass School pays close attention to the facing direction of the front door. For Eight Mansions purposes, a front door that opens onto one of the head-of-household's favourable directions is considered auspicious; one that opens onto Jue Ming or Wu Gui is the most commonly-cited inauspicious arrangement. Remedies include using a different door as the main entrance or screening the door so it is not directly aligned with the unfavourable sector.
+**Door facing.** Classical Compass School pays close attention to the facing direction of the front door. For Eight Mansions purposes, a front door that opens onto one of the head-of-household's favourable directions is considered auspicious; one that opens onto Jue Ming or Wu Gui is the arrangement the tradition most commonly flags. Softeners include using a different door as the main entrance or screening the door so it is not directly aligned with the lower-priority sector.
 
 Two practical notes. First, in a shared home you cannot optimise for everyone at once; pick the principal user for each room and orient for that. Second, what the system reads is the direction your body faces, not the orientation of the furniture. A bed whose headboard points to Tian Yi but whose occupant sleeps facing the foot has lost the intended benefit.
 

@@ -125,9 +125,9 @@ export const QUALITY_DETAILS: Record<QualityCode, Omit<Direction, "compass" | "c
     gloss: "Six killings",
     favourable: false,
     meaning:
-      "Avoid anchoring important functions here. Hallways, utility rooms, or rarely-entered spaces are an appropriate use.",
+      "A lower-priority direction. Generally avoid anchoring important functions here when the layout gives you a choice. Hallways, utility rooms, or rarely-entered spaces are an appropriate use.",
     why:
-      "Traditionally associated with mishaps, accidents, and broken plans.",
+      "Traditionally associated with broken plans and crossed wires. A lower-priority direction, not a cause of any of these.",
     bullets: [
       "Hallways, corridors, and pass-through spaces are appropriate uses",
       "Avoid placing the bed or main desk here",
@@ -141,13 +141,13 @@ export const QUALITY_DETAILS: Record<QualityCode, Omit<Direction, "compass" | "c
     gloss: "Total loss",
     favourable: false,
     meaning:
-      "Traditionally the most inauspicious direction for you. Don't sleep with your head pointing here, and don't face it at your main work seat. A bathroom or storage room is the standard 'containment' use.",
+      "The direction the tradition treats with the most care. Generally avoid pointing your head here in sleep, or facing it at your main work seat, when the layout gives you a choice. A bathroom or storage room is the standard lower-priority use.",
     why:
-      "Traditionally the most inauspicious of the four directions to avoid. Said to drain energy and slow plans.",
+      "Traditionally the direction the system flags first of the four to treat with care. A lower-priority direction for beds and desks, not a verdict on your home.",
     bullets: [
-      "Bathrooms and storage rooms are the traditional containment uses",
-      "Never sleep with your head pointing this way",
-      "Don't face this direction from your main work seat",
+      "Bathrooms and storage rooms are the traditional lower-priority uses",
+      "Generally avoid pointing your head here in sleep when you have a choice",
+      "Prefer a supportive direction for your main work seat",
     ],
   },
 };

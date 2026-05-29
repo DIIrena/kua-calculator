@@ -19,7 +19,7 @@ The tradition gives Sheng Qi a specific job. It is the direction of *forward mot
 Use it for:
 
 - **The desk**, when the work is ambitious. Big projects. Books being written. Cases being argued. Deals being closed. Face {{direction}} at the desk and the tradition reads your body as running with the wind on your back rather than against it. The chair faces this direction; the desk itself can face any way. What the system reads is where the *body* looks, so it is the chair you turn.
-- **The bed**, in a season that calls for a push. A launch. A new job. A stretch of months where you want to wake ready to move rather than ready to rest. Putting the headboard on the {{direction}} wall for such a season has been a Classical recommendation for centuries. Outside those seasons, the tradition often sends the bed elsewhere, which is the next thing this chapter covers.
+- **The bed**, in a season that calls for a push. A launch. A new job. A stretch of months where you want to wake ready to move rather than ready to rest. Putting the headboard on the {{direction}} wall for such a season is a long-standing Classical recommendation. Outside those seasons, the tradition often sends the bed elsewhere, which is the next thing this chapter covers.
 - **The negotiating seat.** When you sit across from someone and the stakes are high, take the chair that lets your body face {{direction}}. This is one of the oldest seating choices in Compass School practice, and it costs nothing to try.
 - **The morning corner.** The spot you stand in for the first cup of the day, the window you look out of for the first thirty seconds. Orient that corner so your body opens {{direction}}.
 
