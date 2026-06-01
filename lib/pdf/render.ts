@@ -106,6 +106,10 @@ export async function renderToPdf(
         left: `${margin.left}mm`,
       },
       preferCSSPageSize: false,
+      // Emit a tagged PDF so the text layer carries language hints
+      // (lang="zh-Hant" on CJK spans) and screen readers / copy-paste
+      // resolve the Chinese characters correctly via ToUnicode.
+      tagged: true,
     });
 
     return Buffer.from(pdf);

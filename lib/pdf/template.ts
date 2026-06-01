@@ -167,6 +167,13 @@ export function buildHtml(
     widows: 3;
   }
 
+  /* Traditional Chinese spans: bind the language hint to Noto Sans TC
+     explicitly so Chromium does not have to guess for font selection,
+     and so PDF readers / screen readers see a tagged zh-Hant run. */
+  [lang="zh-Hant"] {
+    font-family: "Noto Sans TC", "Hanken Grotesk", sans-serif;
+  }
+
   strong { font-weight: 700; color: ${BRAND.ink}; }
   em     { font-style: italic; }
 

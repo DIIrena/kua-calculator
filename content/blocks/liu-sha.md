@@ -1,6 +1,6 @@
 # Your Liu Sha direction is {{direction}}
 
-Liu Sha is the third of your four cautious directions. Its name, *Liu Sha* (六煞), translates as "Six Killings." The name is alarming; the thing it describes is not. For you, {{firstName}}, it points **{{direction}}**.
+Liu Sha is the third of your four cautious directions. Its name, *Liu Sha* (<span lang="zh-Hant">六煞</span>), translates as "Six Killings." The name is alarming; the thing it describes is not. For you, {{firstName}}, it points **{{direction}}**.
 
 So before anything else, set the name down. This is not a curse. It does not reach out of a wall and rearrange your life. It is a **lower-priority direction**, one corner of eight, and the whole of its guidance fits in a sentence: do not anchor a primary daily function here when the floor plan gives you a choice.
 

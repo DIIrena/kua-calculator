@@ -2,7 +2,7 @@
 
 Tian Yi is the direction the tradition turns to for rest. Of your four supportive directions, it is the one most practitioners point the bed toward in an ordinary season of life. For you, {{firstName}}, it points **{{direction}}**.
 
-The pinyin is *Tian Yi* (天醫), which translates as **Heavenly Doctor**. It is the second of your four favourable directions in the classical ranking, and in everyday Compass School practice it is often the one a practitioner reaches for first.
+The pinyin is *Tian Yi* (<span lang="zh-Hant">天醫</span>), which translates as **Heavenly Doctor**. It is the second of your four favourable directions in the classical ranking, and in everyday Compass School practice it is often the one a practitioner reaches for first.
 
 ## What the tradition reads into it
 

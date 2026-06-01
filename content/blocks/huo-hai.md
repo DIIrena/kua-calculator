@@ -1,6 +1,6 @@
 # Your Huo Hai direction is {{direction}}
 
-Huo Hai is the gentlest of the four directions the tradition treats with caution. Its name, *Huo Hai* (禍害), translates as **Mishap**. For you, {{firstName}}, it points {{direction}}.
+Huo Hai is the gentlest of the four directions the tradition treats with caution. Its name, *Huo Hai* (<span lang="zh-Hant">禍害</span>), translates as **Mishap**. For you, {{firstName}}, it points {{direction}}.
 
 Of your eight directions, four are read as supportive and four are treated with more care. Huo Hai is the first and mildest of the careful four. The tradition associates it with low-grade friction rather than anything large: a placement it would not give to your most important furniture, but one it treats as a matter of priority, not a matter of worry.
 

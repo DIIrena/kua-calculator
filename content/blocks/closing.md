@@ -12,15 +12,11 @@ A real feng shui book rewards a second reading. The first time, you follow the a
 
 You are {{firstName}}, Kua {{kuaNumber}}, {{kuaGroup}} group. Your generating direction is the one the tradition gives to active, ambitious work, and to the bed in a season that needs a push. Your healing direction is the one it points the bed toward in ordinary seasons. Your relationship direction is for shared furniture and the seats where connection happens. Your anchor direction is for slow, sitting, focused work. Your four cautious directions are the corners the tradition would hand to storage, laundry, hallways, and the bathroom: lower-priority placements, not curses, each with a quiet and useful job. That is the whole reading. Everything else in the book is its elaboration.
 
-## What to explore next, if you want more
+## What may come next
 
-This is the foundation product, the **Personal Feng Shui Compass**. It reads the spine of you: your number, your group, your eight directions. Several other products in the catalogue begin where this one ends. You do not need any of them to use what you already have.
+This is the foundation product, the **Personal Feng Shui Compass**: your Kua, your group, your eight directions. You do not need anything else to begin using it.
 
-- **Single Life Pillar Compass** - one bagua life area (money, love, career, health, family, knowledge, creativity, fame, or travel) read in depth for your Kua. The **All Nine Life Pillars Compass** gathers every area into one book; the **Pick-Three Life Pillars Compass** lets you choose three.
-- **Single Space Compass** - one room (bedroom, kitchen, living room, dining room, bathroom, office, entrance, hallway, children's room, stairs, terrace, or garden) with the placements for that room keyed to your directions. The **All Twelve Spaces Compass** gathers every room; the **Pick-Three Spaces Compass** lets you choose three.
-- **Year Ahead Compass** - the current Chinese astrological year read against your Kua, refreshed each year, with the same honest line between tradition and evidence.
-- **Couple Compatibility Compass** - a deeper version of the East-and-West question from your Kua-profile page, reading two people together: where they align, where they differ, and the practical compromise for the shared bed, the shared meal, and the front door.
-- **The Complete Compass** - the flagship. Everything above, gathered into a single longer book, keyed to your Kua, with your name on the spine. It costs less than the parts bought separately, because it is the bundle.
+A few more focused readings are in the works for this line. The two most likely to arrive first are a *Couple Compatibility* reading, for households whose two people fall into different Kua groups, and a *Year Ahead* reading that reads the current astrological year against your Kua. When either is ready, the email address on the cover is how we will tell you. We will not put you on a list you did not ask for.
 
 ## The thing we will not promise
 

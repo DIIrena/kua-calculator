@@ -8,7 +8,7 @@ For you, {{firstName}}, your Fu Wei direction is **{{direction}}**.
 
 ## What Fu Wei means
 
-The full name is *Fu Wei* (伏位). It is usually glossed as "stability," and more literally as "the crouching position": the body settled, low to the ground, hard to move. Of your four supportive directions it is the gentlest. It is also the one most readers pass over, and that is the mistake this chapter is about.
+The full name is *Fu Wei* (<span lang="zh-Hant">伏位</span>). It is usually glossed as "stability," and more literally as "the crouching position": the body settled, low to the ground, hard to move. Of your four supportive directions it is the gentlest. It is also the one most readers pass over, and that is the mistake this chapter is about.
 
 The other three are easier to notice. The tradition gives Sheng Qi to forward push, Tian Yi to recovery, Yan Nian to relationship. Fu Wei does none of that loud work. The tradition associates it instead with *calm*, with deep focus, and with self-knowledge: the slow, unhurried kind of attention that does not announce itself.
 

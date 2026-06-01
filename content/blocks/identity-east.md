@@ -12,7 +12,7 @@ Your Kua is a single digit between one and nine, with no five, calculated from y
 
 There are eight compass directions a person can face. Most of the time you do not notice which one you are facing, because most of the time it does not seem to matter. The Eight Mansions tradition proposes that, for any given person, four of those eight directions are treated as supportive and four are treated with more caution. Your Kua number is what sorts them.
 
-The system has been the standard structured framework in Classical practice for around four centuries, resting on a yin-yang and trigram cosmology older still. It survived because households found it gave them something concrete to decide with: where to put a bed, which seat the head of the family takes at dinner, which way the cook faces at the stove. That is what it is for. It does not predict your future. It gives you a structured way to choose.
+The system rests on a long-established yin-yang and trigram cosmology and has been used as a structured framework in Classical practice over a long stretch of its history. It survived because households found it gave them something concrete to decide with: where to put a bed, which seat the head of the family takes at dinner, which way the cook faces at the stove. That is what it is for. It does not predict your future. It gives you a structured way to choose.
 
 ## What East group means
 
@@ -51,7 +51,7 @@ The two elements not on your supportive list, earth and metal, sit in your cauti
 
 About half of all couples are mixed: one East, one West. In that case your supportive directions are largely your partner's cautious directions, and the reverse.
 
-The classical answer is not to optimise the whole home for one of you. It is to assign each *function* to the person whose use of it matters most. The shared bed orients to whichever partner's sleep is hardest to protect. The shared desk, if there is one, to whoever does the more demanding work there. The dining table seats each of you in your own supportive direction. Most homes have more rooms and corners than they have people, so this is usually less of a compromise than it sounds. The deeper version of this analysis is its own product, *The Couple Compatibility Compass*. For now, it is enough to know the two halves of the compass are not the same, and the home is large enough for both.
+The classical answer is not to optimise the whole home for one of you. It is to assign each *function* to the person whose use of it matters most. The shared bed orients to whichever partner's sleep is hardest to protect. The shared desk, if there is one, to whoever does the more demanding work there. The dining table seats each of you in your own supportive direction. Most homes have more rooms and corners than they have people, so this is usually less of a compromise than it sounds. A deeper two-person reading is in the works for this line. For now, it is enough to know the two halves of the compass are not the same, and the home is large enough for both.
 
 ## The four qualities, named
 

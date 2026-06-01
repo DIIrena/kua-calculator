@@ -1,6 +1,6 @@
 # Your Yan Nian direction is {{direction}}
 
-Yan Nian is your *relationship* direction. It is the third of your four favourable directions, and the one Classical practice assigns to the parts of life that need to **last**. For you, {{firstName}}, it points {{direction}}.
+Yan Nian is your *relationship* direction. It is the third of your four favourable directions, and the one the tradition assigns to the parts of life that need to **last**. For you, {{firstName}}, it points {{direction}}.
 
 To know what that quality is meant to feel like, picture a room that is doing the work well. It is nearly midnight and two people who love each other are still at the kitchen island. The dishes are stacked. Two coffee cups sit between them, one long cold. The overhead light is off; only the warm lamp at the end of the counter is on. Somebody's phone buzzed twenty minutes ago and neither of them got up. They are not solving anything. They are inside the quiet between two people who do not need to fill the silence with words, and the room is letting them stay there.
 
@@ -8,11 +8,11 @@ That is the felt-quality the tradition attaches to Yan Nian when a room is doing
 
 ## What Yan Nian means
 
-The full name is *Yan Nian* (延年), and the literal translation is **"longevity"** or, more loosely, "lengthening the years." It is the third of your four favourable directions, and in classical practice it is the one specifically assigned to the parts of life that need to *last*.
+The full name is *Yan Nian* (<span lang="zh-Hant">延年</span>), and the literal translation is **"longevity"** or, more loosely, "lengthening the years." It is the third of your four favourable directions, and in classical practice it is the one specifically assigned to the parts of life that need to *last*.
 
 If Sheng Qi is for action and Tian Yi is for recovery, Yan Nian is for *connection*. It is the direction the tradition associates with the relationships you want to be still inside in five years. A marriage. A friendship that survives three moves and one bad year. The sibling called when nothing in particular has happened. The tradition reads Yan Nian as the felt-quality associated with bonds that keep working over long time, rather than ones that need constant repair.
 
-The Chinese character for *nian* (年) is the same one used for the New Year and for a person's age. Years that accumulate. Time that adds up rather than runs out. The name does not promise you a long life or a lasting partnership. It names the *kind* of arrangement the tradition reads as holding across long time.
+The Chinese character for *nian* (<span lang="zh-Hant">年</span>) is the same one used for the New Year and for a person's age. Years that accumulate. Time that adds up rather than runs out. The name does not promise you a long life or a lasting partnership. It names the *kind* of arrangement the tradition reads as holding across long time.
 
 For you, that direction is **{{direction}}**.
 

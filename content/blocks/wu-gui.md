@@ -6,7 +6,7 @@ So let us defuse the name first. There are no ghosts. The five-ghosts label is o
 
 ## What Wu Gui means
 
-The full name is *Wu Gui* (五鬼). It is a **lower-priority** direction, not a curse and not a verdict on your life. The tradition associates this wall with miscommunication and minor dispute, the same way it associates other walls with rest or focus. That is an association the system carries, not a force acting on your home.
+The full name is *Wu Gui* (<span lang="zh-Hant">五鬼</span>). It is a **lower-priority** direction, not a curse and not a verdict on your life. The tradition associates this wall with miscommunication and minor dispute, the same way it associates other walls with rest or focus. That is an association the system carries, not a force acting on your home.
 
 It helps to say what this *is not*. Your Wu Gui wall is not the reason a conversation went badly, or a hire did not work out, or a quiet evening turned tense. Those have their own ordinary causes. Acoustics, tiredness, a hard week, a chair that puts someone's back to the door. The compass does not explain your relationships or your job. It only tells you which wall the tradition would rather you used lightly.
 
