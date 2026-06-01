@@ -29,6 +29,8 @@ The four it treats with more caution are north, east, southeast, and south.
 
 {{elementIcons}}
 
+{{elementSwatches}}
+
 Look at the supportive four. Two are earth, two are metal: elements the tradition associates with *gathering* rather than motion. Earth holds and ripens; metal refines and completes. The tradition reads West group as oriented toward consolidation: deepening what is already there, finishing well, holding the harvest. That does not mean every West group person is slow. Plenty move quickly. It is a description of the qualities the tradition associates with your favourable directions, not a personality test.
 
 <p class="pull-quote">The tradition reads these four as your supportive directions: <strong>Southwest, West, Northwest, Northeast</strong>.</p>

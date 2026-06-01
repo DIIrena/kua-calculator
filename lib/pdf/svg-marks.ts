@@ -92,15 +92,48 @@ function sectorPath(centreDeg: number): string {
   );
 }
 
-export function personalBaguaSvg(kua: number, group: KuaGroup): string {
+// Quality codes used by the byQuality map. Matches lib/directions.ts.
+type QualityCode = "SQ" | "TY" | "YN" | "FW" | "HH" | "WG" | "LS" | "JM";
+
+const QUALITY_NAME: Record<QualityCode, string> = {
+  SQ: "Sheng Qi",
+  TY: "Tian Yi",
+  YN: "Yan Nian",
+  FW: "Fu Wei",
+  HH: "Huo Hai",
+  WG: "Wu Gui",
+  LS: "Liu Sha",
+  JM: "Jue Ming",
+};
+
+// Minimal Direction shape we read off context.byQuality. Avoids a
+// type-import cycle and keeps the SVG layer decoupled from the
+// directions data shape.
+type ByQualityMap = Partial<Record<QualityCode, { compass: Compass }>>;
+
+export function personalBaguaSvg(
+  kua: number,
+  group: KuaGroup,
+  byQuality?: ByQualityMap,
+): string {
   const favourable = new Set<Compass>(
     group === "east" ? EAST_GROUP_FAVOURABLE : WEST_GROUP_FAVOURABLE,
   );
 
+  // Map compass -> quality name (e.g. East -> "Sheng Qi") so each
+  // sector can show the quality name below its compass label.
+  const compassToQuality: Partial<Record<Compass, QualityCode>> = {};
+  if (byQuality) {
+    (Object.keys(byQuality) as QualityCode[]).forEach((q) => {
+      const c = byQuality[q]?.compass;
+      if (c) compassToQuality[c] = q;
+    });
+  }
+
   // Soft palette matching the existing Kua chart at /api/chart-image:
   // favourable sectors in soft sage, cautious in soft peach, both with
-  // a paper-coloured hairline separating sectors (not the harder ink
-  // line we had before). The inner well stays white with a hairline.
+  // a paper-coloured hairline separating sectors. The inner well stays
+  // white with a hairline.
   const sectors = COMPASS_LIST.map((c) => {
     const isFavourable = favourable.has(c);
     const fill = isFavourable ? C.oliveSoft : C.claySoft;
@@ -108,20 +141,31 @@ export function personalBaguaSvg(kua: number, group: KuaGroup): string {
     return `<path d="${path}" fill="${fill}" stroke="${C.paper}" stroke-width="2"/>`;
   }).join("\n  ");
 
+  // Two-line label per sector: compass abbreviation (top) + quality
+  // pinyin name (below). Compass label at R_LABEL_TOP, pinyin name
+  // at R_LABEL_BOTTOM so the two stack cleanly inside each wedge.
+  const R_LABEL_TOP = R_LABEL + 12;
+  const R_LABEL_BOTTOM = R_LABEL - 12;
+
   const labels = COMPASS_LIST.map((c) => {
-    const pos = deg2xy(SECTOR_CENTRE_DEG[c], R_LABEL);
-    // With soft fills, dark ink labels are legible on both favourable
-    // and cautious sectors. No more white-on-olive.
-    return `<text x="${pos.x.toFixed(2)}" y="${pos.y.toFixed(2)}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="18" font-weight="700" fill="${C.ink}">${c}</text>`;
+    const top = deg2xy(SECTOR_CENTRE_DEG[c], R_LABEL_TOP);
+    const bottom = deg2xy(SECTOR_CENTRE_DEG[c], R_LABEL_BOTTOM);
+    const quality = compassToQuality[c];
+    const qualityLabel = quality ? QUALITY_NAME[quality] : "";
+    return (
+      `<text x="${top.x.toFixed(2)}" y="${top.y.toFixed(2)}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="16" font-weight="700" fill="${C.ink}">${c}</text>\n  ` +
+      `<text x="${bottom.x.toFixed(2)}" y="${bottom.y.toFixed(2)}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="9" font-weight="600" fill="${C.ink2}" letter-spacing="0.4">${qualityLabel}</text>`
+    );
   }).join("\n  ");
 
-  // Tiny quality marker on each sector: star for favourable, X for
-  // cautious. Same convention as the existing Kua chart.
+  // Tiny quality marker (star for favourable, X for cautious) sits
+  // closer to the inner well so it does not collide with the new
+  // quality name labels above.
   const markers = COMPASS_LIST.map((c) => {
-    const pos = deg2xy(SECTOR_CENTRE_DEG[c], (R_OUTER + R_INNER) / 2 + 18);
+    const pos = deg2xy(SECTOR_CENTRE_DEG[c], R_INNER + 12);
     const isFavourable = favourable.has(c);
     const glyph = isFavourable ? "&#9733;" : "&#10005;";
-    return `<text x="${pos.x.toFixed(2)}" y="${pos.y.toFixed(2)}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="14" font-weight="600" fill="${C.ink2}">${glyph}</text>`;
+    return `<text x="${pos.x.toFixed(2)}" y="${pos.y.toFixed(2)}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="11" font-weight="600" fill="${C.ink2}">${glyph}</text>`;
   }).join("\n  ");
 
   const groupLabel = group === "east" ? "EAST GROUP" : "WEST GROUP";
@@ -247,5 +291,47 @@ export function elementIconsSvg(group: KuaGroup): string {
 
   return `<table style="border-collapse:collapse;margin:8mm auto 8mm auto;"><tr>
 ${cells.join("\n")}
+</tr></table>`;
+}
+
+// ============================================================
+// Element colour swatches.
+//
+// A compact row of colour chips showing the colour families the
+// tradition associates with the customer's group's supportive
+// elements. East: dark blue (water), green (wood), red (fire).
+// West: terracotta/cream (earth), white/grey/gold (metal).
+//
+// Each chip is a rounded rectangle with the colour family name and
+// element label underneath. Renders below the "What East/West group
+// means" element list on the Identity page.
+// ============================================================
+
+type Swatch = { fill: string; label: string; element: string };
+
+const EAST_SWATCHES: Swatch[] = [
+  { fill: "#1f3a5f", label: "Dark blue", element: "WATER" },
+  { fill: "#5e7a3a", label: "Green", element: "WOOD" },
+  { fill: "#c2453a", label: "Red", element: "FIRE" },
+];
+
+const WEST_SWATCHES: Swatch[] = [
+  { fill: "#b87248", label: "Terracotta", element: "EARTH" },
+  { fill: "#b5b0a3", label: "Silver-grey", element: "METAL" },
+];
+
+function swatchCell(s: Swatch): string {
+  return `<td style="padding:0 6px;text-align:center;vertical-align:top;">
+  <div style="display:inline-block;width:30mm;height:18mm;background:${s.fill};border-radius:2mm;border:1px solid ${C.hairline};"></div>
+  <div style="font-family:'Hanken Grotesk';font-size:9pt;color:${C.ink};margin-top:2mm;">${s.label}</div>
+  <div style="font-family:'Hanken Grotesk';font-size:8pt;font-weight:700;color:${C.ink2};margin-top:1mm;letter-spacing:1.6px;">${s.element}</div>
+</td>`;
+}
+
+export function elementSwatchesSvg(group: KuaGroup): string {
+  const swatches = group === "east" ? EAST_SWATCHES : WEST_SWATCHES;
+  const cells = swatches.map(swatchCell).join("\n");
+  return `<table style="border-collapse:collapse;margin:6mm auto 4mm auto;"><tr>
+${cells}
 </tr></table>`;
 }

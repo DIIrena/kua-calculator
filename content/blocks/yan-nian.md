@@ -32,11 +32,7 @@ The pattern across all four is the same. Where life asks for steadiness with ano
 
 ## What the tradition is pointing at
 
-It helps to hold this loosely. The tradition would recognise rooms like these: a bench in a park, a corner of a cafe, a spot on a riverbank that two people go back to without anyone having to suggest it. The place is not famous. The view is not remarkable. But it has been used enough times that it becomes *load-bearing* for a friendship, the way a hinge is load-bearing for a door, and the cat across the road reads the same patch of pavement as last week.
-
-The tradition's claim, when stripped of the metaphysical confidence, is small and testable. Some configurations of body and direction are *said to* make the kind of conversation that builds connection feel slightly easier than the alternative. You cannot prove a seat lengthened a friendship; you can only notice, over a season, whether a corner became the one a household chose. The tradition names the direction. The noticing is yours to do.
-
-There is a general version of this most people have felt without naming it. A household moves house, the new table sits in a different orientation, and the conversation at dinner runs a little shorter for a while. One Saturday someone moves the table ninety degrees and the dinners get long again. That is the kind of pattern the tradition would point at, working or not.
+The tradition's claim, held loosely, is small and testable. Some configurations of body and direction are *said to* make the kind of conversation that builds connection feel slightly easier than the alternative. You cannot prove a seat lengthened a friendship; you can only notice, over a season, whether a corner became the one a household chose. The tradition names the direction. The noticing is yours to do.
 
 ## If the chair is still empty
 
@@ -56,16 +52,8 @@ It is common for a couple's shared bed to point its headboard at one partner's T
 
 There is a matching habit among solo readers, who sometimes treat Yan Nian as irrelevant because there is no partner in the picture. The tradition reads it as relevant anyway. The relationship direction is the direction the friendships travel through, the children come home through, the long calls with parents land at. It is not read as a special-occasion direction. The tradition reads it as ordinary. The Tuesday-night dinner. The fortnightly phone call. Yan Nian is for *unspectacular* time, repeated.
 
-## A seven-day experiment
+## Moves to try
 
-You can try any of this in an afternoon, then leave it a week and watch.
+The easiest, for partnered and solo readers alike, is the dining seat. Take the chair that puts your *body* facing **{{direction}}** at the table. The second is the chair you sit in for long conversations and slow Sunday afternoons - rotate it so your body faces **{{direction}}** too. Both are minute-long adjustments. For a shared bed, the Yan Nian reading is the headboard on the **{{direction}}** wall; Tian Yi (the healing reading) is the other defensible choice for partners whose sleep is hardest to protect.
 
-The easiest move, for partnered and solo readers alike, is the dining seat. Find the chair at your table that puts your *body* facing **{{direction}}** when you sit down to eat. That is your Yan Nian chair. Take it for a week and **notice**, without forcing the question, what happens to the conversation over seven days. The tradition says the dinners lengthen. The honest reading is that you might also just be paying more attention to your dinners because you read this. Either way, you have spent only the minutes it took to move a chair.
-
-The second move is the reading chair, and it applies to everyone. Find the chair you sit in for the long conversations, the phone calls, the slow Sunday afternoons. Rotate it so your *body* faces **{{direction}}** when you sit. This is the lowest-cost adjustment in the book, and the one most likely to give you something you can notice within a week.
-
-If you share a bed, there is a bed move too, though it is the larger job. The two traditional readings for a shared bed are Yan Nian, with the headboard on the **{{direction}}** wall, and Tian Yi (the healing reading) for whichever partner needs the sleep more. Either is defensible. The one the tradition would caution against is leaving the headboard where it landed by default because the closet happened to be on the other wall. If you sleep alone, the headboard usually belongs at Tian Yi or Sheng Qi instead, since Yan Nian's strongest reading is at the *shared* furniture, so leave the bed and put the week's attention on the dining seat.
-
-This book cannot move your bed. It can hand you the names for the four corners of your life, and tell you which one the tradition reads as the corner the relationships travel through. The next move is yours.
-
-Your Yan Nian direction is **{{direction}}**.
+Test any of these the standard way: the seven-day method in the last chapter is the structured frame. Your Yan Nian direction is **{{direction}}**.

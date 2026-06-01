@@ -310,6 +310,42 @@ export function buildHtml(
     margin: 0 0 2mm 0;
   }
 
+  /* Summary block reference tables. Quiet, book-like styling. */
+  .block table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 5mm 0 7mm 0;
+    font-size: 10pt;
+    page-break-inside: avoid;
+  }
+
+  .block th, .block td {
+    text-align: left;
+    padding: 2.5mm 3mm;
+    vertical-align: top;
+    border-bottom: 0.5pt solid ${BRAND.sand};
+  }
+
+  .block th {
+    font-weight: 700;
+    color: ${BRAND.olive};
+    font-size: 9pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: 1pt solid ${BRAND.sand};
+  }
+
+  .block td:last-child {
+    text-align: right;
+    color: ${BRAND.olive};
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .block tr:last-child td {
+    border-bottom: none;
+  }
+
   .block blockquote {
     border-left: 2px solid ${BRAND.sand};
     margin: 0 0 4mm 0;

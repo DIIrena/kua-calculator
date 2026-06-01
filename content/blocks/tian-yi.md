@@ -32,24 +32,12 @@ The traditional uses cluster around rest and care. If any of these apply to your
 
 The pattern in each use is the same. Where the tradition reads the body's task as rest rather than effort, it points the body toward Tian Yi.
 
-## When the bed cannot move
+## If the bed cannot move
 
-Here is the part the book will not pretend around. Sometimes the bed simply cannot go where the tradition would put it. The wall is the wrong wall, the radiator is in the way, the window sits too low, the door swings across the only spot that would work. The room has one possible orientation and you have been sleeping in it for years.
+Sometimes the room has only one possible bed position. When the bed cannot point to Tian Yi, the tradition's second-best move is the desk: turn the chair so your body faces **{{direction}}** while you work, and you have a Tian Yi orientation for part of the day. A chair turns far more easily than a bed.
 
-The tradition has thought about this, and it has a second-best move it reaches for when the bed is fixed.
+A perfect alignment is rare and not the point. *Better than you had before* is the point.
 
-**The desk becomes the lever.**
+## A move to try
 
-If the bed cannot point to Tian Yi, you can face your chair toward it instead. A desk where the body faces **{{direction}}** while seated gives you a Tian Yi orientation during part of the day. The tradition does not read this as equal to the bed. The bed is the bigger placement. But the desk is not nothing, and a chair turns far more easily than a bed moves.
-
-The honest framing is that a perfect alignment is rare, and you are not failing if you cannot get one. Better than you had before is the point. You are looking for the room to stop working against you, not to do all the work for you.
-
-## A seven-day way to look at it
-
-Feng shui changes, when they do anything, tend to be gradual and quiet. The honest unit of testing is about a week, and the question is one of observation, not expectation.
-
-If your bed can move, try a week with the headboard against the **{{direction}}** wall, so the top of your head points that way. If it cannot, turn the desk chair so your body faces {{direction}} when you sit. Then notice, without forcing the question, whether the arrangement feels any different over the seven days.
-
-Sometimes the difference is nothing you can name, and that is a fair result to record. Sometimes it is small: a chair you settle into more readily, a room you had been avoiding that you start to use. The tradition does not promise you will sleep better or wake restored, and this guide will not promise it for you. What it gives you is one structured way to choose, and a quiet week in which to see whether the choice is worth keeping.
-
-If it feels better, keep it. If it does not, you have lost nothing but the few minutes it took to move a chair. Your Tian Yi direction is **{{direction}}**, and that is where the tradition would have you begin.
+If the bed moves, try a week with the headboard against the **{{direction}}** wall, so the top of your head points that way. If it does not, turn the desk chair so your body faces {{direction}}. The seven-day method in the last chapter is the structured way to test it. Your Tian Yi direction is **{{direction}}**, and that is where the tradition would have you begin.

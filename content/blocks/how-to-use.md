@@ -23,3 +23,9 @@ When a chapter is about the bed, read "direction" as where the head points. When
 Feng shui changes, when they do anything, tend to be gradual and quiet rather than sudden. The honest unit of testing is about a week. Make one change. Leave it in place for seven days. Notice, without forcing the question, whether anything feels different. If it does, keep it. If it does not, you have lost nothing but the few minutes it took to move a chair.
 
 The last chapter gives you one structured seven-day experiment to start with. For now, keep the three-way distinction in mind - tradition, observation, evidence - and the one rule about how to read a direction. The rest of the guide rests on those two things.
+
+## Two small notes before you start
+
+**The Chinese New Year wrinkle.** Your Kua is calculated from your *Chinese solar-calendar* year, which can differ from the Gregorian year if you were born in January or early February. If you were born before Chinese New Year of your birth year, your Kua belongs to the previous year. The calculation in this guide already accounts for that if a full birth date was given.
+
+**The rest of your household.** This guide is read for you. If you live with a partner, a child, a parent, or a housemate, each has their own Kua and their own four-and-four directions. You can compute any of them, free, in ten seconds at *myfengshuihome.com*. The Couple Compatibility reading, when it ships, takes the next step and reads two people together.

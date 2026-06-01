@@ -12,6 +12,7 @@ export type BlockId =
   // Framing blocks
   | "welcome"
   | "identity"
+  | "summary"
   | "how-to-use"
   | "experiment"
   | "closing"
@@ -56,6 +57,7 @@ export const PRODUCTS: Record<string, Product> = {
     blocks: [
       "welcome",
       "identity",
+      "summary",
       "how-to-use",
       "sheng-qi",
       "tian-yi",

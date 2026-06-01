@@ -45,16 +45,8 @@ Second, the bed is not the only lever. If the bed has to stay where it is, *chan
 
 The honest framing is that perfect Sheng Qi alignment is rare and not the point. **Better** than you had before is the point. The system is a decision tool, not a discipline.
 
-## A seven-day experiment
+## A move to try
 
-Treat this as observation, not proof. The unit is a week, the way it is everywhere else in this guide.
-
-Start with the desk, because it moves easily. Find the wall on the {{direction}} side of the room. Turn your chair so your body faces that wall when you sit. If the desk physically blocks you from facing {{direction}}, rotate the desk by ninety degrees, even if it leaves you in a slightly awkward spot relative to the door for now. The body-facing direction is what the system reads, not the desk's footprint.
-
-Move next to the bed, if it is movable. If the headboard is already on the {{direction}} wall, the bed is in Sheng Qi position; leave it. If the headboard is on any of your other three favourable walls, leave it there too. Only if it is on one of your four cautious walls is it worth moving, and then to the closest favourable wall, even if that wall is not Sheng Qi.
-
-Then the morning corner. Pick the spot you stand in for the first cup of the day and notice which way your body opens. If it is not {{direction}}, and the first time someone looks it rarely is, turn the chair, move the table, swap the corner.
-
-Now leave it for seven days. Do not force the question. At the end of the week, notice whether the room reads any differently: whether the desk is easier to settle into, whether the mornings start with a little less friction. Your own week is the only way to see whether the tradition's claim holds for you. If it does, keep the setup. If it does not, you have spent the few minutes it took to move a chair, and nothing else.
+The easy first move for Sheng Qi is the desk, because it turns. Find the {{direction}} side of the room and turn your chair so your body faces that wall while you work. The morning corner is the second move - the spot where you stand for the first cup of the day. Orient that corner toward {{direction}} too. The full seven-day method for testing changes like these lives in the last chapter; the principle is the same here.
 
 Your Sheng Qi direction is {{direction}}. Mark it on the floor plan in your head.

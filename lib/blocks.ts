@@ -30,6 +30,7 @@ import {
   brandMarkSvg,
   personalBaguaSvg,
   elementIconsSvg,
+  elementSwatchesSvg,
 } from "@/lib/pdf/svg-marks";
 
 /** Age threshold (exclusive) below which we prefer the `-child.md`
@@ -94,6 +95,12 @@ function substituteTokens(
   let cachedBrandMark: string | null = null;
   let cachedPersonalBagua: string | null = null;
   let cachedElementIcons: string | null = null;
+  let cachedElementSwatches: string | null = null;
+
+  // Per-quality direction tokens. The summary block uses all eight to
+  // build the at-a-glance table; other blocks may use them too.
+  const dirLabel = (q: QualityCode): string =>
+    context.byQuality[q]?.compassLabel ?? "";
 
   const tokens: Record<string, () => string> = {
     firstName: () => context.firstName,
@@ -103,14 +110,27 @@ function substituteTokens(
     directionShort: () => direction?.compass ?? "",
     pinyin: () => direction?.pinyin ?? "",
     gloss: () => direction?.gloss ?? "",
+    // Per-quality direction tokens (the customer's compass direction
+    // for each named quality).
+    shengQiDir: () => dirLabel("SQ"),
+    tianYiDir: () => dirLabel("TY"),
+    yanNianDir: () => dirLabel("YN"),
+    fuWeiDir: () => dirLabel("FW"),
+    huoHaiDir: () => dirLabel("HH"),
+    wuGuiDir: () => dirLabel("WG"),
+    liuShaDir: () => dirLabel("LS"),
+    jueMingDir: () => dirLabel("JM"),
     brandMark: () => (cachedBrandMark ??= brandMarkSvg()),
     personalBagua: () =>
       (cachedPersonalBagua ??= personalBaguaSvg(
         context.kuaNumber,
         context.kuaGroup,
+        context.byQuality,
       )),
     elementIcons: () =>
       (cachedElementIcons ??= elementIconsSvg(context.kuaGroup)),
+    elementSwatches: () =>
+      (cachedElementSwatches ??= elementSwatchesSvg(context.kuaGroup)),
   };
 
   return template.replace(/\{\{(\w+)\}\}/g, (whole, key) => {

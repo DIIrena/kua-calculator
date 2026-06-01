@@ -38,12 +38,8 @@ A note on the bed, because the rule is different. The bed is read by where the h
 
 If you keep an altar, a journal, or any contemplative practice that needs no second person, the {{direction}} corner of a quiet room is its traditional home. A small bowl of clean water, a candle, one object that matters and nothing else. The tradition would call this honouring the direction. A modern reader can call it a steady reminder that the slow part of life has a place to live.
 
-## A seven-day experiment
+## A move to try
 
-This is the gentlest of your directions, so test it gently. Pick one seat where you do slow, sitting work: the desk, the reading chair, or the cushion. Turn it so your body faces **{{direction}}**. Leave it that way for seven days.
-
-Then notice, without forcing the question. Over the week, does that chair feel a little easier to settle into? Do you get up less often? Does an hour at it pass without the usual restlessness? You are watching for something small and quiet, not a transformation. The tradition associates this direction with settling, and settling is not dramatic.
-
-If you notice nothing after a week, you have lost only the minute it took to turn a chair. If you notice something, keep it, and the next slow seat you set up, you already know which way to point it. Either way you have traded a belief for an observation, which is the honest way to use this book.
+Pick one seat where you do slow, sitting work - the desk, the reading chair, or the cushion - and turn it so your body faces **{{direction}}**. Test it the standard way: the seven-day method in the last chapter applies. The tradition associates this direction with settling, which is not dramatic. Watch for something small and quiet, not a transformation.
 
 The slow part of your life has a direction. For you, {{firstName}}, it is **{{direction}}**.
