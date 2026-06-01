@@ -167,6 +167,16 @@ export function buildHtml(
     widows: 3;
   }
 
+  /* Body paragraphs inside chapter blocks are justified, with auto
+     hyphenation to keep word-spacing even. Cover, headings, pull-
+     quotes, lists, and bullets are NOT justified - the more specific
+     rules below override this where needed. */
+  .block p {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
   /* Traditional Chinese spans: bind the language hint to Noto Sans TC
      explicitly so Chromium does not have to guess for font selection,
      and so PDF readers / screen readers see a tagged zh-Hant run. */
