@@ -18,9 +18,9 @@ This is the foundation product, the **Personal Feng Shui Compass**: your Kua, yo
 
 A few more focused readings are in the works for this line. The two most likely to arrive first are a *Couple Compatibility* reading, for households whose two people fall into different Kua groups, and a *Year Ahead* reading that reads the current astrological year against your Kua. When either is ready, the email address on the cover is how we will tell you. We will not put you on a list you did not ask for.
 
-## The thing we will not promise
+## The honest promise
 
-We will not promise this book changes your life. The tradition does not, and neither will we. The honest claim is smaller and more durable: a structured way to read your Kua and your eight directions, so that when two arrangements look equally good you have a non-arbitrary way to choose, drawn from a tradition that has been making that choice for centuries. That is what a decision tool is. It is not a fortune.
+We will not promise this book changes your life. The tradition does not, and neither will we. What it offers is smaller and more durable: a structured way to read your Kua and your eight directions, so that when two arrangements look equally good you have a non-arbitrary way to choose, drawn from a long tradition of making that choice. That is what a decision tool is. It is not a fortune.
 
 ## A last line
 
@@ -30,4 +30,4 @@ Thank you for reading, {{firstName}}. The compass is yours.
 
 ---
 
-*A note from My Feng Shui Home.* Every product in our catalogue is built on the same engine and the same honest framing. None of them promise outcomes; all of them give you a structured way to decide. If you would like a hand choosing which to read next, the team is reachable at the address on the cover.
+*A note from My Feng Shui Home.* Every product we build follows the same honest framing. None of them promise outcomes; all of them give you a structured way to decide. If you would like a hand choosing which to read next, the team is reachable at the address on the cover.

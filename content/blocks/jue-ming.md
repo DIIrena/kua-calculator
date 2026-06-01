@@ -1,6 +1,6 @@
 # Your Jue Ming direction is {{direction}}
 
-Jue Ming is the fourth of your four cautious directions, and the one the tradition treats with the most care. Its name translates as **Total Loss**, a strong-sounding label inherited from the older texts. It is not a verdict on your life or on your home. For you, {{firstName}}, it points {{direction}}.
+Jue Ming is the fourth of your four cautious directions and the one the tradition treats with the most care. It is a lower-priority direction - the one the system would site last when the layout gives a choice. The name translates as "Total Loss", strong language inherited from the older texts. It is a traditional caution, not a verdict on your life or on your home. For you, {{firstName}}, it points {{direction}}.
 
 A bedroom whose only workable layout points the bed at Jue Ming is *common*, and it is fine. Homes are built around plumbing and windows and front doors, not around your Kua number, so a forced Jue Ming placement happens all the time. This chapter treats the direction with respect and then hands it back to you as a small, manageable thing.
 
@@ -14,7 +14,7 @@ Two things are true at once here. Of all the directions in your chart, Jue Ming 
 
 ## Why the tradition flags it
 
-The traditional reading is broadly consistent. Where Huo Hai is read as friction, Wu Gui as confusion, and Liu Sha as volatility, Jue Ming is traditionally associated with slow depletion over long exposure rather than anything sudden. The felt-quality the tradition attaches to it is a quiet, hard-to-place tiredness, the kind that takes a while to notice.
+In traditional practice, Jue Ming is treated as the direction the body benefits least from settling in - over long hours, not over short ones. Where Huo Hai is read as friction, Wu Gui as confusion, and Liu Sha as volatility, Jue Ming is associated with a slower, quieter caution that builds over long exposure rather than something sudden. This is why the tradition attaches the caution to the bed and the main work seat, where the body holds still longest, and not to short visits to the corner.
 
 It helps to be precise about what the tradition does and does not say. It does not say Jue Ming causes anything. It says this is the sector the tradition prefers you keep your sleeping head and your main work seat away from, because those are the two places the body holds still longest. A bed is not made harmful by a wall. A desk is not made harder by a direction. The tradition is offering a **priority**, not a diagnosis: of the eight directions, this is the one it would site last.
 

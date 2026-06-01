@@ -10,7 +10,7 @@ The full name is *Wu Gui* (<span lang="zh-Hant">五鬼</span>). It is a **lower-
 
 It helps to say what this *is not*. Your Wu Gui wall is not the reason a conversation went badly, or a hire did not work out, or a quiet evening turned tense. Those have their own ordinary causes. Acoustics, tiredness, a hard week, a chair that puts someone's back to the door. The compass does not explain your relationships or your job. It only tells you which wall the tradition would rather you used lightly.
 
-So the practical reading is calm. Wu Gui is the direction practitioners traditionally kept **low-stakes** things on, and kept important seats off. Nothing more loaded than that.
+So the practical reading is calm. Wu Gui is the direction traditionally kept for **low-stakes** things, with important seats kept off it. Nothing more loaded than that.
 
 ## How the tradition reads it
 

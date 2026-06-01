@@ -6,7 +6,7 @@ Sheng Qi is the *generating* direction, the strongest of your four favourable di
 
 The full name is *Sheng Qi* (<span lang="zh-Hant">生氣</span>), which translates to "generating qi" or, more loosely, "the source of energy." It is the senior officer of the four good directions. If Tian Yi is the direction the tradition gives to recovery, Yan Nian the one it gives to connection, and Fu Wei the one it gives to steadiness, Sheng Qi is the one it gives to *action*. It is the direction associated with ambitious, forward-pushing work.
 
-Practitioners have built rules around it for centuries. The first, the most-cited, is the rule of the headboard: a bed whose headboard sits on your Sheng Qi wall, so your head points that way, is traditionally read as the energising bed position. The second is the rule of the working seat: a desk where your body faces your Sheng Qi direction is the seat the tradition associates with drive. The third is the rule of the front door: a home whose entrance opens to the Sheng Qi direction of the head of household is, by tradition, an auspicious home.
+The tradition has built three small rules around it. The first, the most-cited, is the rule of the headboard: a bed whose headboard sits on your Sheng Qi wall, so your head points that way, is traditionally read as the energising bed position. The second is the rule of the working seat: a desk where your body faces your Sheng Qi direction is the seat the tradition associates with drive. The third is the rule of the front door: a home whose entrance opens to the Sheng Qi direction of the head of household is, by tradition, an auspicious home.
 
 For you, the direction this lives in is **{{direction}}**.
 

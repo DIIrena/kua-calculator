@@ -12,7 +12,7 @@ Your Kua is a single digit between one and nine, with no five, calculated from y
 
 There are eight compass directions a person can face. Most of the time you do not notice which one you are facing, because most of the time it does not seem to matter. The Eight Mansions tradition proposes that, for any given person, four of those eight directions are treated as supportive and four are treated with more caution. Your Kua number is what sorts them.
 
-The system rests on a long-established yin-yang and trigram cosmology and has been used as a structured framework in Classical practice over a long stretch of its history. It survived because households found it gave them something concrete to decide with: where to put a bed, which seat the head of the family takes at dinner, where to put the safe. That is what it is for. It does not predict your future. It gives you a structured way to choose.
+The system rests on a long-established yin-yang and trigram cosmology and has been used as a structured framework in traditional practice for a long stretch of its history. It survived because households found it gave them something concrete to decide with: where to put a bed, which seat the head of the family takes at dinner, where to put the safe. That is what it is for. It does not predict your future. It gives you a structured way to choose.
 
 ## What West group means
 

@@ -18,11 +18,11 @@ For you, that direction is **{{direction}}**.
 
 ## What Yan Nian is for
 
-Classical practitioners give Yan Nian three traditional uses, and a fourth that is easier to overlook.
+In traditional practice, Yan Nian has three common uses, and a fourth that is easier to overlook.
 
 **The first is the bed in a couple's bedroom.** Where Sheng Qi is the energising headboard and Tian Yi is the healing headboard, Yan Nian is the *relationship* headboard. To orient a bed this way, the shared headboard sits against the **{{direction}}** wall, so both heads point that way. The tradition reads that configuration as supporting the conditions for a partnership that ages well together. It is not the orientation chosen for waking up sharp; it is the one traditionally associated with steadiness between two people over time.
 
-**The second is the seat at the dining table where shared decisions get made.** Most households have one. The chair the bills get opened at. The chair the difficult conversation about Christmas plans happens at. To sit in your Yan Nian direction at the table, your *body* faces **{{direction}}** when you sit down. Classical practice has assigned that seat to the relationship direction for centuries, on the reasoning that a body oriented this way is *said to* support the kind of conversation that ends in a decision both people can live with.
+**The second is the seat at the dining table where shared decisions get made.** Most households have one. The chair the bills get opened at. The chair the difficult conversation about Christmas plans happens at. To sit in your Yan Nian direction at the table, your *body* faces **{{direction}}** when you sit down. The tradition has long assigned that seat to the relationship direction, on the reasoning that a body oriented this way is *said to* support the kind of conversation that ends in a decision both people can live with.
 
 **The third is the corner where two people choose to spend their unstructured time together.** The reading chair, if the other person ends up beside it half the evenings of the week. The sofa, if the sofa is where you both land after dinner. The kitchen island, if that is where the long conversations happen. Orient the seating so that *both* bodies face the Yan Nian direction, even loosely, and the tradition reads the corner as the one a household keeps returning to.
 
@@ -44,7 +44,7 @@ You may be reading this single. The bed has one person in it. The dining table h
 
 The tradition has something to say about this, and it is gentler than the magazine version.
 
-Classical practice does not claim that pointing your bed to Yan Nian will deliver a partner by spring. It says something smaller: the room *prepared* for the kind of relationship you want to be inside, before that relationship arrives, is the room the tradition reads as more ready to support it once it does. The headboard pointing to your Yan Nian direction. The second chair already at the small table by the window, not stored against the wall.
+The tradition does not claim that pointing your bed to Yan Nian will deliver a partner by spring. It says something smaller: the room *prepared* for the kind of relationship you want to be inside, before that relationship arrives, is the room the tradition reads as more ready to support it once it does. The headboard pointing to your Yan Nian direction. The second chair already at the small table by the window, not stored against the wall.
 
 The reasoning leans on a small idea: the body learns what a room is for. A bedroom set up for one person reads as a room for solitude. A bedroom set up for a couple, with the bed in the Yan Nian direction, a second chair in the corner, and breathing room on both sides, reads as a room that is *waiting*. The tradition treats that as the difference between a room that closes the door behind you and a room that holds it open.
 
