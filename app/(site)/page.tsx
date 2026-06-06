@@ -64,7 +64,7 @@ const FAQ: Array<{ q: string; a: string }> = [
   },
   {
     q: "Is the site free?",
-    a: "The calculator, the methodology page, the room harmony checklist, and the teaser articles are all free with no account. Saving charts and reading the gated articles is free with an account. The Personal Feng Shui Compass, our personalised guide, is the only paid item.",
+    a: "The calculator, the methodology page, the room harmony checklist, and the teaser articles are all free with no account. Saving charts and reading the gated articles is free with an account. The paid guides and tools live on the products page. The free side of the site is the same site forever - paid content is opt-in.",
   },
   {
     q: "What is the Personal Feng Shui Compass?",
@@ -320,14 +320,23 @@ export default async function HomePage(props: {
         </div>
       </section>
 
-      {/* Section 6 - The paid offer */}
+      {/* Section 6 - The paid offer (spotlight + shelf teaser) */}
       <section className="home-section map-offer" aria-labelledby="map-offer-heading">
         <div className="page-content">
+          <p className="eyebrow">Paid guides and tools</p>
+          <h2 id="map-offer-heading" className="home-section-heading">
+            Our paid products are personalised PDFs and focused tools.
+          </h2>
+          <p className="home-section-lede">
+            None promise outcomes. All give you a structured way to
+            decide what to do in the room you are standing in. The
+            spotlight one is below; the rest of the shelf is one click
+            away.
+          </p>
           <div className="map-offer-grid">
             <div className="map-offer-text">
-              <p className="eyebrow">Our one paid product</p>
-              <h2 id="map-offer-heading">The Personal Feng Shui Compass</h2>
-              <p className="home-section-lede">
+              <h3>The Personal Feng Shui Compass</h3>
+              <p>
                 One personalised PDF, keyed to <em>your</em> Kua number. It
                 reads your East or West group, your four supportive directions
                 and your four cautious directions, with traditional placements
@@ -362,13 +371,32 @@ export default async function HomePage(props: {
               <p className="map-offer-price-suffix">
                 one-time, no subscription
               </p>
-              <Link href="/home-harmony-map" className="cta-primary">
+              <Link
+                href="/products/personal-feng-shui-compass"
+                className="cta-primary"
+              >
                 See the full details
               </Link>
               <p className="map-offer-price-note">
                 Personalised PDF. Printable. Yours to keep.
               </p>
             </aside>
+          </div>
+
+          <div className="map-offer-shelf-teaser">
+            <p>
+              Also on the shelf: the{" "}
+              <strong>2026 Annual Feng Shui Planner</strong>, the{" "}
+              <strong>Move-In Kit</strong>, the{" "}
+              <strong>Bedroom and Relationship Reset</strong>, and the{" "}
+              <strong>Business and Money Kit</strong>. Each is its own
+              focused book.
+            </p>
+            <p>
+              <Link href="/products" className="article-back-link">
+                See all paid guides and tools →
+              </Link>
+            </p>
           </div>
         </div>
       </section>

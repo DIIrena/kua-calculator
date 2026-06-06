@@ -13,10 +13,11 @@ import { SPACES } from "@/lib/spaces";
 // Nav order (left to right):
 //   1. Life pillars (dropdown - 9 bagua-area pages, the primary funnel)
 //   2. Space (dropdown - 6 rooms of the home)
-//   3. Everything About Feng Shui (single mega dropdown - every article
+//   3. Products (direct link to /products shelf - the paid shop)
+//   4. Everything About Feng Shui (single mega dropdown - every article
 //      grouped by its topic category)
-//   4. Calculator (free tool, direct link)
-//   5. Sign in / Account (auth)
+//   5. Calculator (free tool, direct link)
+//   6. Sign in / Account (auth)
 
 type NavCategory = {
   category: ArticleCategory;
@@ -137,7 +138,12 @@ export default async function SiteHeader() {
           </div>
         </details>
 
-        {/* 3. Everything About Feng Shui - one mega menu containing
+        {/* 3. Products - the paid shop, direct link */}
+        <Link href="/products" className="site-nav-link site-nav-link-feature">
+          Products
+        </Link>
+
+        {/* 4. Everything About Feng Shui - one mega menu containing
             all four topic categories with their articles. */}
         <details className="nav-dropdown nav-dropdown-mega">
           <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
@@ -195,12 +201,12 @@ export default async function SiteHeader() {
           </div>
         </details>
 
-        {/* 4. Calculator - direct link */}
+        {/* 5. Calculator - direct link */}
         <Link href="/kua-calculator" className="site-nav-link">
           Calculator
         </Link>
 
-        {/* 5. Account / Sign in */}
+        {/* 6. Account / Sign in */}
         {signedIn ? (
           <>
             <Link href="/account" className="site-nav-link">

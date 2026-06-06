@@ -4906,3 +4906,355 @@ a:hover { color: var(--clay-deep); }
   margin: 0;
   text-align: center;
 }
+
+/* ============================================================
+   Stage 5 - Products shelf, product landing pages, BuyButton.
+   ============================================================ */
+
+/* --- /products shelf --- */
+.products-page { padding-top: var(--space-6); }
+
+.products-hero {
+  text-align: center;
+  margin: 0 auto var(--space-8) auto;
+  max-width: 720px;
+}
+
+.products-hero .products-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  margin: var(--space-2) 0 var(--space-3) 0;
+}
+
+.products-hero .products-lede {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.products-shelf { padding-bottom: var(--space-8); }
+
+.products-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .products-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 980px) {
+  .products-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.product-shelf-card {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  transition: border-color 150ms ease, transform 150ms ease;
+}
+
+.product-shelf-card:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+
+.product-shelf-link {
+  display: block;
+  padding: var(--space-5);
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.product-shelf-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 var(--space-3) 0;
+  gap: var(--space-3);
+}
+
+.product-shelf-status {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.product-shelf-status-free {
+  background: var(--green-soft, #d8debf);
+  color: var(--green-deep);
+}
+
+.product-shelf-status-live {
+  background: var(--green);
+  color: #ffffff;
+}
+
+.product-shelf-status-waitlist {
+  background: var(--cream);
+  color: var(--ink-2);
+  border: 1px solid var(--hairline);
+}
+
+.product-shelf-status-coming {
+  background: var(--cream);
+  color: var(--ink-2);
+}
+
+.product-shelf-price {
+  font-weight: 700;
+  color: var(--green-deep);
+  font-size: 1rem;
+}
+
+.product-shelf-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin: 0 0 var(--space-2) 0;
+  color: var(--ink);
+}
+
+.product-shelf-oneliner {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.product-shelf-cta {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--green-deep);
+}
+
+.product-shelf-link:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.products-honest-footer {
+  margin-top: var(--space-8);
+  padding: var(--space-5);
+  background: var(--cream);
+  border-radius: var(--radius-md);
+}
+
+.products-honest-footer h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 0 0 var(--space-3) 0;
+}
+
+.products-honest-footer p {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+/* --- Product landing page (/products/[slug]) --- */
+.product-page { padding-top: var(--space-6); }
+
+.product-hero {
+  margin: 0 auto var(--space-6) auto;
+  max-width: 760px;
+  text-align: left;
+}
+
+.product-hero .product-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  margin: var(--space-2) 0 var(--space-4) 0;
+}
+
+.product-hero .product-heading em {
+  font-style: italic;
+  color: var(--green-deep);
+}
+
+.product-hero .product-lede {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.product-section {
+  max-width: 760px;
+  margin: 0 auto var(--space-6) auto;
+}
+
+.product-section h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 var(--space-3) 0;
+  color: var(--ink);
+}
+
+.product-section p,
+.product-section li {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.product-section ul, .product-section ol {
+  padding-left: var(--space-5);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.product-section li { margin-bottom: var(--space-2); }
+
+.product-buy-section {
+  max-width: 760px;
+  margin: var(--space-8) auto var(--space-6) auto;
+  padding: var(--space-6);
+  background: var(--cream);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+}
+
+.product-buy-section h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin: 0 0 var(--space-3) 0;
+}
+
+.product-buy-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-bottom: var(--space-4);
+}
+
+.product-back-section {
+  max-width: 760px;
+  margin: var(--space-6) auto;
+  text-align: center;
+}
+
+/* --- BuyButton component --- */
+.buy-button {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.buy-button-price {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.buy-button-price-amount {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--green-deep);
+}
+
+.buy-button-price-suffix {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+.buy-button-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: stretch;
+}
+
+.buy-button-form input[type="email"] {
+  flex: 1 1 220px;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.buy-button-form input[type="email"]:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
+}
+
+.buy-button-form .cta-primary {
+  min-height: 44px;
+}
+
+.buy-button-note {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.buy-button-status {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.buy-button-status-ok {
+  background: var(--green-soft, #d8debf);
+  color: var(--green-deep);
+}
+
+.buy-button-status-err {
+  background: var(--clay-soft, #f0d5c0);
+  color: var(--clay-deep, #8e4b2a);
+}
+
+/* --- Homepage shelf teaser inside the offer section --- */
+.map-offer-shelf-teaser {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--hairline);
+  text-align: center;
+}
+
+.map-offer-shelf-teaser p {
+  margin: 0 0 var(--space-2) 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.map-offer-shelf-teaser p:last-child {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+/* --- Nav link feature variant for the Products button --- */
+.site-nav-link-feature {
+  color: var(--green-deep);
+  font-weight: 700;
+}
+
+.site-nav-link-feature:hover { color: var(--clay-deep); }

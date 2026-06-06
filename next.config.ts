@@ -29,6 +29,18 @@ const nextConfig: NextConfig = {
     "/api/compass/[id]/render": ["./lib/fonts/*.ttf", "./content/blocks/*.md"],
     "/api/dev/sample-compass": ["./lib/fonts/*.ttf", "./content/blocks/*.md"],
   },
+  async redirects() {
+    return [
+      // Legacy sales page route. The product is now the Personal
+      // Feng Shui Compass at /products/personal-feng-shui-compass.
+      // 301 so search engines transfer link equity.
+      {
+        source: "/home-harmony-map",
+        destination: "/products/personal-feng-shui-compass",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
