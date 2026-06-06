@@ -35,8 +35,33 @@ export default async function PlannerPage(props: {
       ? (waitlist as "sent" | "invalid" | "error")
       : null;
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "2026 Annual Feng Shui Planner",
+    description:
+      "A 98-page printable planner for the 2026 Chinese solar year: the annual chart explained, nine sector treatments, monthly notes, a 245-day calendar, and a ten-step diagnostic walkthrough.",
+    image: [
+      "https://myfengshuihome.com/products/annual-feng-shui-planner-2026/cover-portrait.png",
+    ],
+    brand: { "@type": "Brand", name: "My Feng Shui Home" },
+    offers: {
+      "@type": "Offer",
+      url: "https://myfengshuihome.com/products/annual-feng-shui-planner-2026",
+      priceCurrency: "USD",
+      price: "29",
+      availability: "https://schema.org/PreOrder",
+      priceValidUntil: "2027-01-31",
+      seller: { "@type": "Organization", name: "My Feng Shui Home" },
+    },
+  };
+
   return (
     <div className="page-content product-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <section className="product-hero">
         <p className="eyebrow">My Feng Shui Home</p>
         <h1 className="product-heading">
@@ -86,15 +111,111 @@ export default async function PlannerPage(props: {
         </div>
       </section>
 
+      <section className="product-section" aria-label="Look inside the book">
+        <h2>Look inside.</h2>
+        <p>
+          Three pages from the working draft, to show you the voice and
+          the shape of the book before you decide.
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: "1.25rem",
+            marginTop: "1.25rem",
+          }}
+        >
+          <figure style={{ margin: 0 }}>
+            <Image
+              src="/products/annual-feng-shui-planner-2026/sample-page-cover.png"
+              alt="The Planner cover page."
+              width={935}
+              height={1320}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "4px",
+                border: "1px solid #cfc4ab",
+                display: "block",
+              }}
+            />
+            <figcaption
+              style={{
+                fontSize: "0.85rem",
+                color: "#5f5848",
+                marginTop: "0.5rem",
+                textAlign: "center",
+                lineHeight: 1.4,
+              }}
+            >
+              <strong>The cover.</strong> The frame the year sits in.
+            </figcaption>
+          </figure>
+          <figure style={{ margin: 0 }}>
+            <Image
+              src="/products/annual-feng-shui-planner-2026/sample-page-treatment.png"
+              alt="A sector treatment page showing the six-box structure: what this means, do this, avoid this, practitioner tip, real home example, if you only do one thing."
+              width={935}
+              height={1320}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "4px",
+                border: "1px solid #cfc4ab",
+                display: "block",
+              }}
+            />
+            <figcaption
+              style={{
+                fontSize: "0.85rem",
+                color: "#5f5848",
+                marginTop: "0.5rem",
+                textAlign: "center",
+                lineHeight: 1.4,
+              }}
+            >
+              <strong>A sector treatment.</strong> The six-box layout
+              every practical page uses.
+            </figcaption>
+          </figure>
+          <figure style={{ margin: 0 }}>
+            <Image
+              src="/products/annual-feng-shui-planner-2026/sample-page-calendar.png"
+              alt="A day from the 245-day calendar with its symbol and one-line reason."
+              width={935}
+              height={1320}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "4px",
+                border: "1px solid #cfc4ab",
+                display: "block",
+              }}
+            />
+            <figcaption
+              style={{
+                fontSize: "0.85rem",
+                color: "#5f5848",
+                marginTop: "0.5rem",
+                textAlign: "center",
+                lineHeight: 1.4,
+              }}
+            >
+              <strong>A day in the calendar.</strong> One symbol, one
+              short reason.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section className="product-section">
         <h2>What you get</h2>
         <p>
-          A 98-page printable book in PDF and EPUB, plus an ICS
-          calendar file you can drop into your phone. Sixteen sections
-          read in roughly the order a practitioner walks a home: the
-          shape of the year, the cautious corners, the bright ones,
-          months, days, your actual rooms, then the cures and the
-          reference layer at the back.
+          A 98-page printable book. Sixteen sections read in roughly
+          the order a practitioner walks a home: the shape of the
+          year, the cautious corners, the bright ones, months, days,
+          your actual rooms, then the cures and the reference layer at
+          the back.
         </p>
         <ul>
           <li>
@@ -188,91 +309,6 @@ export default async function PlannerPage(props: {
           the morning of a signing, a launch, a move-in, or a meeting
           that matters. The calendar is a filter, not an oracle.
         </p>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-            gap: "1rem",
-            marginTop: "1.25rem",
-          }}
-          aria-label="Sample pages from the planner"
-        >
-          <figure style={{ margin: 0 }}>
-            <Image
-              src="/products/annual-feng-shui-planner-2026/sample-page-cover.png"
-              alt="Sample page: the cover of the 2026 Annual Feng Shui Planner."
-              width={935}
-              height={1320}
-              style={{
-                width: "100%",
-                height: "auto",
-                borderRadius: "4px",
-                border: "1px solid #cfc4ab",
-                display: "block",
-              }}
-            />
-            <figcaption
-              style={{
-                fontSize: "0.82rem",
-                color: "#5f5848",
-                marginTop: "0.4rem",
-                textAlign: "center",
-              }}
-            >
-              Cover page
-            </figcaption>
-          </figure>
-          <figure style={{ margin: 0 }}>
-            <Image
-              src="/products/annual-feng-shui-planner-2026/sample-page-treatment.png"
-              alt="Sample page: a sector treatment in the practitioner voice, showing the six-box structure."
-              width={935}
-              height={1320}
-              style={{
-                width: "100%",
-                height: "auto",
-                borderRadius: "4px",
-                border: "1px solid #cfc4ab",
-                display: "block",
-              }}
-            />
-            <figcaption
-              style={{
-                fontSize: "0.82rem",
-                color: "#5f5848",
-                marginTop: "0.4rem",
-                textAlign: "center",
-              }}
-            >
-              Sector treatment
-            </figcaption>
-          </figure>
-          <figure style={{ margin: 0 }}>
-            <Image
-              src="/products/annual-feng-shui-planner-2026/sample-page-calendar.png"
-              alt="Sample page: a day from the 245-day calendar."
-              width={935}
-              height={1320}
-              style={{
-                width: "100%",
-                height: "auto",
-                borderRadius: "4px",
-                border: "1px solid #cfc4ab",
-                display: "block",
-              }}
-            />
-            <figcaption
-              style={{
-                fontSize: "0.82rem",
-                color: "#5f5848",
-                marginTop: "0.4rem",
-                textAlign: "center",
-              }}
-            >
-              Day calendar
-            </figcaption>
-          </figure>
-        </div>
       </section>
 
       <section className="product-section">
@@ -280,28 +316,24 @@ export default async function PlannerPage(props: {
         <p>
           The Planner is on a waitlist while we finish the checkout
           system. We are waiting on the business bank account to clear
-          so live payments can be wired up. When checkout goes live,
-          we email you the launch page and the early price. You
-          receive a confirmation now, one sample-page note about a
-          week later, and a launch email when checkout opens. You can
-          unsubscribe any time, and we will not share your address.
+          so live payments can be wired up. You can unsubscribe at any
+          point, and we will not share your address.
         </p>
         <ol>
           <li>
-            <strong>Join the waitlist.</strong> One email. We send you a
-            warm confirmation with what to expect.
+            <strong>Join the waitlist.</strong> A warm confirmation
+            lands in your inbox with what to expect from here.
           </li>
           <li>
-            <strong>Roughly a week later</strong> you receive one
-            follow-up note with a sample page so you can see the voice
-            and the structure for yourself.
+            <strong>Roughly a week later,</strong> a short follow-up
+            note with one sample page so you can see the voice and the
+            structure for yourself.
           </li>
           <li>
-            <strong>When checkout goes live</strong> we email you the
+            <strong>When checkout goes live,</strong> we email you the
             launch page and the early price. The Planner is the same
             for every buyer (the 2026 chart is the same chart), so
-            there is no birth-data form for this one. After purchase
-            you receive the PDF, the EPUB, and the ICS calendar file.
+            there is no birth-data form for this one.
           </li>
           <li>
             <strong>The 2027 edition</strong> ships in January 2027 as

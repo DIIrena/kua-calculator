@@ -93,8 +93,9 @@ My Feng Shui Home - myfengshuihome.com`;
 }
 
 // Planner-specific HTML. Richer than the generic version: inline cover
-// image, the three deliverable formats named (PDF + EPUB + ICS), one
-// sensory practitioner paragraph, and the 2027 renewal note.
+// image, one sensory practitioner paragraph, and the 2027 renewal
+// note. File formats are deliberately not named here; they are kept
+// private until purchase.
 function buildHtmlPlanner(siteUrl: string): string {
   const root = siteUrl.replace(/\/$/, "");
   const coverUrl = `${root}/products/annual-feng-shui-planner-2026/cover-portrait.png`;
@@ -115,7 +116,6 @@ function buildHtmlPlanner(siteUrl: string): string {
           <tr><td>
             <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#2a271e;">You are on the list.</h1>
             <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#2a271e;">Thank you for joining the waitlist for the <strong>2026 Annual Feng Shui Planner</strong>. When checkout goes live (we are waiting on the bank account to clear so live payments can be wired up), we email you the launch page and the early price at this address.</p>
-            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#2a271e;">After you purchase on launch day, you receive a bundle of three files: the <strong>PDF</strong> for printing, the <strong>EPUB</strong> for reading on a phone or e-reader, and an <strong>ICS calendar file</strong> you can drop into your phone so the year&#39;s day classifications surface as all-day events.</p>
             <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#2a271e;font-style:italic;color:#4f5a36;">Picture the kettle doing its quiet steaming. You sit with the planner on the table, find your front door on the chart, find the south corner, find the one room the year asks you to leave a little alone, and you know where to start. The planner does that work for the whole solar year, room by room and month by month.</p>
             <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#2a271e;">The 2027 edition follows in January 2027 as a full twelve-month book. As a 2026 buyer you receive a <strong>30 percent renewal offer</strong> when it ships.</p>
             <p style="margin:24px 0 0;text-align:center;">
@@ -142,11 +142,6 @@ Thank you for joining the waitlist for the 2026 Annual Feng Shui
 Planner. When checkout goes live (we are waiting on the bank
 account to clear so live payments can be wired up), we email
 you the launch page and the early price at this address.
-
-After you purchase on launch day, you receive a bundle of three
-files: the PDF for printing, the EPUB for reading on a phone or
-e-reader, and an ICS calendar file you can drop into your phone
-so the year's day classifications surface as all-day events.
 
 Picture the kettle doing its quiet steaming. You sit with the
 planner on the table, find your front door on the chart, find the

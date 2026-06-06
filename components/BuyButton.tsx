@@ -113,8 +113,7 @@ export default function BuyButton({
           </button>
         </form>
         <p className="buy-button-note">
-          One email when this product ships. You can unsubscribe any
-          time. We will not share your address.
+          You can unsubscribe any time. We will not share your address.
         </p>
         {statusPill(waitlistStatus)}
       </div>
