@@ -170,9 +170,9 @@ export default function ProductsPage() {
         </p>
         <p>
           Most of the catalogue is on a waitlist while we finish the
-          checkout system. When a product ships, you get one email
-          with the launch price and the download link. That is the
-          whole promise. We will not put you on a marketing funnel.
+          checkout system. One email when the product ships, with the
+          launch price and the download link. You can unsubscribe any
+          time.
         </p>
       </section>
     </div>

@@ -62,7 +62,7 @@ function buildHtml(siteUrl: string, productTitle: string): string {
           <tr><td>
             <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#2a271e;">You are on the list.</h1>
             <p style="margin:0 0 12px;font:16px/1.55 sans-serif;color:#2a271e;">Thank you for telling us you are interested in the <strong>${productTitle}</strong>. When it is ready, we will email you at this address with the launch price and the download link.</p>
-            <p style="margin:0 0 12px;font:16px/1.55 sans-serif;color:#2a271e;">We will not put you on a marketing funnel. One email when the product ships. That is the whole promise.</p>
+            <p style="margin:0 0 12px;font:16px/1.55 sans-serif;color:#2a271e;">One email when this product ships. You can unsubscribe any time.</p>
             <p style="margin:24px 0 0;text-align:center;">
               <a href="${root}/products" style="display:inline-block;background:#4f5a36;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">See the rest of our products</a>
             </p>
@@ -87,8 +87,7 @@ Thank you for telling us you are interested in the ${productTitle}.
 When it is ready, we will email you at this address with the launch
 price and the download link.
 
-We will not put you on a marketing funnel. One email when the
-product ships. That is the whole promise.
+One email when this product ships. You can unsubscribe any time.
 
 My Feng Shui Home - myfengshuihome.com`;
 }
