@@ -61,7 +61,7 @@ function buildHtml(siteUrl: string, productTitle: string): string {
           </td></tr>
           <tr><td>
             <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#2a271e;">You are on the list.</h1>
-            <p style="margin:0 0 12px;font:16px/1.55 sans-serif;color:#2a271e;">Thank you for telling us you are interested in the <strong>${productTitle}</strong>. When it is ready, we will email you at this address with the launch price and the download link.</p>
+            <p style="margin:0 0 12px;font:16px/1.55 sans-serif;color:#2a271e;">Thank you for telling us you are interested in the <strong>${productTitle}</strong>. When it is ready, we will email you at this address with the launch page and the early price.</p>
             <p style="margin:0 0 12px;font:16px/1.55 sans-serif;color:#2a271e;">One email when this product ships. You can unsubscribe any time.</p>
             <p style="margin:24px 0 0;text-align:center;">
               <a href="${root}/products" style="display:inline-block;background:#4f5a36;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">See the rest of our products</a>
@@ -85,9 +85,82 @@ function buildText(productTitle: string): string {
 
 Thank you for telling us you are interested in the ${productTitle}.
 When it is ready, we will email you at this address with the launch
-price and the download link.
+page and the early price.
 
 One email when this product ships. You can unsubscribe any time.
+
+My Feng Shui Home - myfengshuihome.com`;
+}
+
+// Planner-specific HTML. Richer than the generic version: inline cover
+// image, the three deliverable formats named (PDF + EPUB + ICS), one
+// sensory practitioner paragraph, and the 2027 renewal note.
+function buildHtmlPlanner(siteUrl: string): string {
+  const root = siteUrl.replace(/\/$/, "");
+  const coverUrl = `${root}/products/annual-feng-shui-planner-2026/cover-portrait.png`;
+  const productUrl = `${root}/products/annual-feng-shui-planner-2026`;
+  return `<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" /><title>You are on the list - 2026 Annual Feng Shui Planner</title></head>
+  <body style="margin:0;padding:32px 16px;background:#f1e9d8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#2a271e;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr><td align="center">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:580px;background:#fbf7ee;border:1px solid #cfc4ab;border-radius:14px;padding:32px;">
+          <tr><td align="center" style="padding-bottom:16px;">
+            <div style="font-family:'Brush Script MT',cursive;font-size:30px;color:#4f5a36;line-height:1;">My Feng Shui Home</div>
+          </td></tr>
+          <tr><td align="center" style="padding-bottom:18px;">
+            <img src="${coverUrl}" alt="The 2026 Annual Feng Shui Planner cover" width="190" height="285" style="display:block;width:190px;height:auto;border:1px solid #cfc4ab;border-radius:6px;" />
+          </td></tr>
+          <tr><td>
+            <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#2a271e;">You are on the list.</h1>
+            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#2a271e;">Thank you for joining the waitlist for the <strong>2026 Annual Feng Shui Planner</strong>. When checkout goes live (we are waiting on the bank account to clear so live payments can be wired up), we email you the launch page and the early price at this address.</p>
+            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#2a271e;">After you purchase on launch day, you receive a bundle of three files: the <strong>PDF</strong> for printing, the <strong>EPUB</strong> for reading on a phone or e-reader, and an <strong>ICS calendar file</strong> you can drop into your phone so the year&#39;s day classifications surface as all-day events.</p>
+            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#2a271e;font-style:italic;color:#4f5a36;">Picture the kettle doing its quiet steaming. You sit with the planner on the table, find your front door on the chart, find the south corner, find the one room the year asks you to leave a little alone, and you know where to start. The planner does that work for the whole solar year, room by room and month by month.</p>
+            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#2a271e;">The 2027 edition follows in January 2027 as a full twelve-month book. As a 2026 buyer you receive a <strong>30 percent renewal offer</strong> when it ships.</p>
+            <p style="margin:24px 0 0;text-align:center;">
+              <a href="${productUrl}" style="display:inline-block;background:#4f5a36;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">Open the planner page</a>
+            </p>
+          </td></tr>
+          <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#5f5848;border-top:1px solid #cfc4ab;">
+            You receive this confirmation now, one sample-page note about a week later, and a launch email when checkout opens. You can unsubscribe any time. If you signed up by mistake, ignore this email and we will not contact you again.
+          </td></tr>
+        </table>
+        <div style="font-size:12px;color:#5f5848;padding-top:14px;">
+          <a href="${root}" style="color:#4f5a36;text-decoration:none;">myfengshuihome.com</a>
+        </div>
+      </td></tr>
+    </table>
+  </body>
+</html>`;
+}
+
+function buildTextPlanner(): string {
+  return `You are on the list.
+
+Thank you for joining the waitlist for the 2026 Annual Feng Shui
+Planner. When checkout goes live (we are waiting on the bank
+account to clear so live payments can be wired up), we email
+you the launch page and the early price at this address.
+
+After you purchase on launch day, you receive a bundle of three
+files: the PDF for printing, the EPUB for reading on a phone or
+e-reader, and an ICS calendar file you can drop into your phone
+so the year's day classifications surface as all-day events.
+
+Picture the kettle doing its quiet steaming. You sit with the
+planner on the table, find your front door on the chart, find the
+south corner, find the one room the year asks you to leave a little
+alone, and you know where to start. The planner does that work for
+the whole solar year, room by room and month by month.
+
+The 2027 edition follows in January 2027 as a full twelve-month
+book. As a 2026 buyer you receive a 30 percent renewal offer when
+it ships.
+
+You receive this confirmation now, one sample-page note about a
+week later, and a launch email when checkout opens. You can
+unsubscribe any time.
 
 My Feng Shui Home - myfengshuihome.com`;
 }
@@ -138,6 +211,18 @@ export async function joinProductWaitlist(formData: FormData) {
     redirect(`${redirectBase}?waitlist=error`);
   }
 
+  // Branch per product. The planner gets the richer template with
+  // the inline cover, the file-bundle naming, and the 30% renewal
+  // note. Everything else uses the generic confirmation.
+  const isPlanner = product.slug === "annual-feng-shui-planner-2026";
+  const subject = isPlanner
+    ? "You are on the list - 2026 Annual Feng Shui Planner"
+    : `You are on the list - ${product.title}`;
+  const html = isPlanner
+    ? buildHtmlPlanner(siteUrl)
+    : buildHtml(siteUrl, product.title);
+  const text = isPlanner ? buildTextPlanner() : buildText(product.title);
+
   try {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -148,9 +233,9 @@ export async function joinProductWaitlist(formData: FormData) {
       body: JSON.stringify({
         from: "My Feng Shui Home <hello@myfengshuihome.com>",
         to: email,
-        subject: `You are on the list - ${product.title}`,
-        html: buildHtml(siteUrl, product.title),
-        text: buildText(product.title),
+        subject,
+        html,
+        text,
       }),
     });
     if (!res.ok) {

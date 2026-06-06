@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "2026 Annual Feng Shui Planner | The year in one printable book",
   description:
-    "The 2026 annual chart, the 5 Yellow and 2 Black, Tai Sui, the Three Killings, sector-by-sector treatments, monthly stars, and a daily calendar. One printable book for the year.",
+    "98 pages, 16 sections, a 245-day calendar, sector-by-sector treatments, and the 2026 annual chart explained. One printable book for the Chinese solar year.",
   alternates: {
     canonical:
       "https://myfengshuihome.com/products/annual-feng-shui-planner-2026",
@@ -15,8 +16,11 @@ export const metadata: Metadata = {
     type: "website",
     title: "2026 Annual Feng Shui Planner",
     description:
-      "The 2026 annual chart, sector treatments, monthly stars, and a daily calendar. One printable book for the year.",
+      "98 pages, 16 sections, a 245-day calendar, sector-by-sector treatments, and the 2026 annual chart explained.",
     url: "https://myfengshuihome.com/products/annual-feng-shui-planner-2026",
+    images: [
+      "https://myfengshuihome.com/products/annual-feng-shui-planner-2026/cover-thumb.png",
+    ],
   },
 };
 
@@ -38,110 +42,306 @@ export default async function PlannerPage(props: {
         <h1 className="product-heading">
           The <em>2026 Annual Feng Shui Planner</em>.
         </h1>
-        <p className="product-lede">
-          Every year, the stars move. The home you woke up in on the
-          first of January is not, in feng shui terms, the same home
-          you will wake up in on the first of March. The 2026
-          Annual Feng Shui Planner is a printable book that reads the
-          year ahead for your home: the annual chart, the two stars
-          worth knowing, the directions to leave undisturbed, and what
-          to do in each sector month by month.
-        </p>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "1.75rem",
+            alignItems: "flex-start",
+          }}
+        >
+          <Image
+            src="/products/annual-feng-shui-planner-2026/cover-portrait.png"
+            alt="The 2026 Annual Feng Shui Planner, front cover."
+            width={1024}
+            height={1536}
+            priority
+            style={{
+              width: "260px",
+              maxWidth: "100%",
+              height: "auto",
+              borderRadius: "6px",
+              border: "1px solid #cfc4ab",
+              boxShadow: "0 6px 24px rgba(42, 39, 30, 0.12)",
+              flex: "0 0 auto",
+            }}
+          />
+          <div style={{ flex: "1 1 320px" }}>
+            <p className="product-lede">
+              Pick a quiet morning in early February. The kettle is doing
+              the small steaming thing it does. You sit at the kitchen
+              table with a cup in your hands and you realise the year
+              has begun and you do not quite know where in the house to
+              start. Which corner asks for a gentle hand. Which corner
+              is ready to do real work. Which weekends are the wrong
+              ones for a renovation. Which day is the right one to sign
+              something that matters.
+            </p>
+            <p className="product-lede" style={{ marginTop: "0.9rem" }}>
+              The Planner answers those four questions for the whole of
+              the 2026 Chinese solar year, in a calm voice, in 98
+              printable pages. One book. One year. One shelf.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className="product-section">
-        <h2>Who it is for</h2>
+        <h2>What you get</h2>
         <p>
-          You are someone who likes to plan a year on paper. You want
-          to know which sector of your home the 2026 stars treat
-          gently, which they ask you to be careful with, and where to
-          place the small annual cures. You want it in a book you can
-          print, mark up, and keep on a shelf.
+          A 98-page printable book in PDF and EPUB, plus an ICS
+          calendar file you can drop into your phone. Sixteen sections
+          read in roughly the order a practitioner walks a home: the
+          shape of the year, the cautious corners, the bright ones,
+          months, days, your actual rooms, then the cures and the
+          reference layer at the back.
         </p>
-      </section>
-
-      <section className="product-section">
-        <h2>What it helps with</h2>
         <ul>
           <li>
-            Reading the 2026 annual chart for your own home, without
-            having to learn the Flying Stars system first.
+            <strong>The 2026 annual chart, plotted and explained.</strong>{" "}
+            Where every star sits this year and what that means for the
+            nine sectors of your home.
           </li>
           <li>
-            Knowing which two stars to pay attention to (the 5 Yellow
-            and the 2 Black) and where they sit in 2026.
+            <strong>The 5 Yellow and the 2 Black.</strong> The year&apos;s
+            two cautious stars, where they land in 2026 (south and
+            northwest), and the single metal cure each one asks for.
           </li>
           <li>
-            Finding Tai Sui and the Three Killings - the directions to
-            leave undisturbed for the year.
+            <strong>Three Killings, Tai Sui, and Sui Po for 2026.</strong>{" "}
+            The three directions to leave undisturbed, named and mapped,
+            with the practical &quot;what to leave alone&quot; guidance.
           </li>
           <li>
-            A sector-by-sector treatment for the year, plus monthly
-            star changes and a daily calendar.
+            <strong>A Period 9 refresher.</strong> A short chapter on
+            the wider weather pattern (2024 to 2043) so the 2026 chart
+            sits inside the bigger picture.
+          </li>
+          <li>
+            <strong>Nine sector treatments.</strong> One for each
+            compass corner of your home, all using the same six-box
+            structure: what this means, do this, avoid this, a
+            practitioner tip, a real home example, and if you only do
+            one thing.
+          </li>
+          <li>
+            <strong>Monthly star notes.</strong> Twelve short chapters
+            covering which sectors tip into a heavier mood each month.
+          </li>
+          <li>
+            <strong>A 245-day calendar.</strong> Every day from 1 June
+            2026 through 31 January 2027, classified into one of four
+            categories: good for action, good for rest and planning,
+            neutral, or caution.
+          </li>
+          <li>
+            <strong>A ten-step annual diagnostic walkthrough.</strong>{" "}
+            The practitioner method for bringing the year&apos;s chart
+            into your actual rooms, with a compass and a floor plan.
+          </li>
+          <li>
+            <strong>A worked example.</strong> A fictional reader called
+            Pavel and his flat, so you see the walkthrough done before
+            you do your own.
+          </li>
+          <li>
+            <strong>A cures quick-reference, a glossary, and a
+            preparation note.</strong> The reference layer at the back
+            of the book.
+          </li>
+          <li>
+            <strong>The 2026 Home Action Summary.</strong> A closing
+            single-page resume of the year&apos;s eight most important
+            moves, designed to live on a kitchen counter.
           </li>
         </ul>
       </section>
 
       <section className="product-section">
-        <h2>What is inside</h2>
-        <ul>
-          <li>The 2026 annual chart, plotted and explained.</li>
-          <li>
-            The two stars worth knowing this year, where they sit, and
-            what to do about them.
-          </li>
-          <li>
-            Tai Sui and the Three Killings for 2026, with the practical
-            "what to leave alone" guidance.
-          </li>
-          <li>
-            A walkthrough of all nine sectors of your home, in order,
-            for the year ahead.
-          </li>
-          <li>Monthly star notes for each of the twelve months.</li>
-          <li>
-            A printable daily calendar marking the auspicious and
-            inauspicious days for moves, signings, and starting
-            something new.
-          </li>
-          <li>A short glossary and a cures quick-reference.</li>
-        </ul>
+        <h2>What is inside, in more detail</h2>
+        <p>
+          Every practical chapter uses the same six-box structure so
+          you always know where the action item lives. <em>What this
+          means</em> sets the small frame. <em>Do this</em> and{" "}
+          <em>Avoid this</em> are bulleted moves in the imperative.{" "}
+          <em>Practitioner tip</em> is the thing experience teaches.{" "}
+          <em>Real home example</em> is a specific reader and a
+          specific flat. <em>If you only do one thing</em> is one
+          sentence at the end of every section. You can stop reading at
+          that line and still have value.
+        </p>
+        <p>
+          Two findings from the 2026 chart are worth flagging up
+          front. The south carries a double affliction this year: the 5
+          Yellow visits the wider south, and Tai Sui (the year&apos;s
+          guardian) sits in the middle slice. The Planner treats the
+          south as the strict no-renovation corner for the whole solar
+          year and walks you through the small cure that covers both.
+          The September month (M8 Rooster, 7 September to 7 October)
+          carries the heaviest editorial weight; the Planner splits the
+          month into two halves and tells you how to read the seam.
+        </p>
+        <p>
+          The 245-day calendar is the part you will use most. Each day
+          carries one of four symbols (a green tick, a circle, a dot,
+          or a cross) and a one-line reason. Glance at the symbol on
+          the morning of a signing, a launch, a move-in, or a meeting
+          that matters. The calendar is a filter, not an oracle.
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: "1rem",
+            marginTop: "1.25rem",
+          }}
+          aria-label="Sample pages from the planner"
+        >
+          <figure style={{ margin: 0 }}>
+            <Image
+              src="/products/annual-feng-shui-planner-2026/sample-page-cover.png"
+              alt="Sample page: the cover of the 2026 Annual Feng Shui Planner."
+              width={935}
+              height={1320}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "4px",
+                border: "1px solid #cfc4ab",
+                display: "block",
+              }}
+            />
+            <figcaption
+              style={{
+                fontSize: "0.82rem",
+                color: "#5f5848",
+                marginTop: "0.4rem",
+                textAlign: "center",
+              }}
+            >
+              Cover page
+            </figcaption>
+          </figure>
+          <figure style={{ margin: 0 }}>
+            <Image
+              src="/products/annual-feng-shui-planner-2026/sample-page-treatment.png"
+              alt="Sample page: a sector treatment in the practitioner voice, showing the six-box structure."
+              width={935}
+              height={1320}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "4px",
+                border: "1px solid #cfc4ab",
+                display: "block",
+              }}
+            />
+            <figcaption
+              style={{
+                fontSize: "0.82rem",
+                color: "#5f5848",
+                marginTop: "0.4rem",
+                textAlign: "center",
+              }}
+            >
+              Sector treatment
+            </figcaption>
+          </figure>
+          <figure style={{ margin: 0 }}>
+            <Image
+              src="/products/annual-feng-shui-planner-2026/sample-page-calendar.png"
+              alt="Sample page: a day from the 245-day calendar."
+              width={935}
+              height={1320}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "4px",
+                border: "1px solid #cfc4ab",
+                display: "block",
+              }}
+            />
+            <figcaption
+              style={{
+                fontSize: "0.82rem",
+                color: "#5f5848",
+                marginTop: "0.4rem",
+                textAlign: "center",
+              }}
+            >
+              Day calendar
+            </figcaption>
+          </figure>
+        </div>
       </section>
 
       <section className="product-section">
         <h2>How it works</h2>
+        <p>
+          The Planner is on a waitlist while we finish the checkout
+          system. We are waiting on the business bank account to clear
+          so live payments can be wired up. When checkout goes live,
+          we email you the launch page and the early price. You
+          receive a confirmation now, one sample-page note about a
+          week later, and a launch email when checkout opens. You can
+          unsubscribe any time, and we will not share your address.
+        </p>
         <ol>
-          <li>You pay once. No subscription.</li>
           <li>
-            The PDF is emailed to you and stored on your account
-            dashboard. The Planner is the same for every customer (the
-            2026 chart is the same chart), so there is no birth-data
-            form for this one.
+            <strong>Join the waitlist.</strong> One email. We send you a
+            warm confirmation with what to expect.
           </li>
           <li>
-            Print it, read it, mark it up. Use it for the whole year.
-            When 2027 ships, we will email you about the renewal.
+            <strong>Roughly a week later</strong> you receive one
+            follow-up note with a sample page so you can see the voice
+            and the structure for yourself.
+          </li>
+          <li>
+            <strong>When checkout goes live</strong> we email you the
+            launch page and the early price. The Planner is the same
+            for every buyer (the 2026 chart is the same chart), so
+            there is no birth-data form for this one. After purchase
+            you receive the PDF, the EPUB, and the ICS calendar file.
+          </li>
+          <li>
+            <strong>The 2027 edition</strong> ships in January 2027 as
+            a full twelve-month book. As a 2026 buyer you receive a 30
+            percent renewal offer.
           </li>
         </ol>
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Who it is for</h2>
         <p>
-          It is not a horoscope. It does not predict your year. It
-          does not tell you what will happen. What it gives you is the
-          traditional reading of where the 2026 stars sit in any home,
-          and the small annual moves the tradition has long associated
-          with that placement.
+          You like to plan a year on paper. You want to know which
+          sector of your home the 2026 stars treat gently and which
+          they ask you to be careful with. You want a calm reference
+          you can keep on a desk and open when a question comes up.
+          You do not need to know any feng shui to use the book; the
+          Planner explains what it needs as it goes.
         </p>
+        <h2 style={{ marginTop: "1.5rem" }}>Who it is not for</h2>
         <p>
-          It is also not a Kua reading. If you want your personal
-          directions, that is what the{" "}
-          <Link href="/products/personal-feng-shui-compass">
-            Personal Feng Shui Compass
-          </Link>{" "}
-          covers. The Planner reads the year. The Compass reads you.
-          They are different jobs.
+          You want a horoscope or a prediction of how your year will
+          go. You want hourly date selection or a personal natal-chart
+          reading. You want a quick mystical product without method or
+          attribution. None of those are what this Planner is. It is
+          a structured way to decide what to do in the rooms you are
+          standing in, sector by sector, month by month, day by day.
+        </p>
+      </section>
+
+      <section className="product-section">
+        <h2>Honest framing</h2>
+        <p>
+          Feng shui does not promise outcomes. The Planner does not
+          predict your year and it will not tell you what will happen.
+          What it does is shape conditions: the small moves the
+          tradition has long associated with each sector for this
+          particular chart, written so you can act on them without
+          having to learn the system first. The year is not the book.
+          The year is what you do with it.
         </p>
       </section>
 
@@ -149,15 +349,30 @@ export default async function PlannerPage(props: {
         <h2>Join the waitlist.</h2>
         <p>
           The Planner is in the final stages of being put together.
-          When it is ready, we will email you with the launch price
-          and the download link. You can unsubscribe any time.
+          When checkout goes live, we email you the launch page and
+          the early price. You can unsubscribe any time.
         </p>
         <BuyButton
           productSlug="annual-feng-shui-planner-2026"
-          priceLabel="$29 to $39"
+          priceLabel="$29"
           state="waitlist"
           waitlistStatus={status}
         />
+      </section>
+
+      <section className="product-section">
+        <h2>A different job from the Compass</h2>
+        <p>
+          The Planner reads the year for any home. If you also want
+          your personal directions, the eight compass bearings the
+          tradition associates with you specifically, that is what the{" "}
+          <Link href="/products/personal-feng-shui-compass">
+            Personal Feng Shui Compass
+          </Link>{" "}
+          covers. The Planner reads the year. The Compass reads you.
+          They are different jobs and they sit together neatly on a
+          shelf.
+        </p>
       </section>
 
       <section className="product-back-section">

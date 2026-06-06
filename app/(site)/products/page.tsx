@@ -48,9 +48,9 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     href: "/products/annual-feng-shui-planner-2026",
     title: "2026 Annual Feng Shui Planner",
     oneLiner:
-      "The 2026 annual chart, monthly stars, daily calendar, and sector treatments. The whole year in one printable book.",
+      "98 pages, the 2026 chart, sector treatments, and a 245-day calendar. The whole year in one printable book.",
     status: "waitlist",
-    priceLabel: "$29 to $39",
+    priceLabel: "$29",
   },
   {
     slug: "move-in-kit",
@@ -170,8 +170,8 @@ export default function ProductsPage() {
         </p>
         <p>
           Most of the catalogue is on a waitlist while we finish the
-          checkout system. One email when the product ships, with the
-          launch price and the download link. You can unsubscribe any
+          checkout system. When checkout goes live, we email you the
+          launch page and the early price. You can unsubscribe any
           time.
         </p>
       </section>
