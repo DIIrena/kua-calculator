@@ -2,8 +2,7 @@ import type { MetadataRoute } from "next";
 
 // Replaces the Flask /robots.txt route. AI crawlers are explicitly allowed,
 // matching the original policy. /embed is noindex via its own metadata.
-// Stage 4 adds an explicit sitemap reference so search engines pick up
-// the new /articles and /home-harmony-map pages quickly.
+// The sitemap reference points crawlers at /articles and /products quickly.
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [

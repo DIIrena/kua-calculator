@@ -4,9 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 // Four rooms from the feng-shui project chapter 10. Each "tip" is one
-// short, concrete, do-it-tonight move - the kind of guidance the Home
-// Harmony Map expands into a full page per room. The picker is a soft
-// product demo: feel the voice, then choose to go further.
+// short, concrete, do-it-tonight move - the kind of guidance the
+// Personal Feng Shui Compass expands into a full page per room. The
+// picker is a soft product demo: feel the voice, then choose to go
+// further.
 
 type Room = {
   id: string;
@@ -83,10 +84,14 @@ export default function HomeRoomPicker() {
             <h3 className="room-picker-room">{selected.label}</h3>
             <p className="room-picker-tip">{selected.tip}</p>
             <p className="room-picker-cta">
-              The Home Harmony Map covers <strong>all nine sectors</strong>{" "}
-              this way, one page per room.{" "}
-              <Link href="/home-harmony-map" className="room-picker-link">
-                See the Home Harmony Map &rarr;
+              The Personal Feng Shui Compass covers{" "}
+              <strong>all nine sectors</strong> this way, one page per
+              room.{" "}
+              <Link
+                href="/products/personal-feng-shui-compass"
+                className="room-picker-link"
+              >
+                See the Personal Feng Shui Compass &rarr;
               </Link>
             </p>
           </>

@@ -137,7 +137,10 @@ export default async function LifeAreaPage(props: { params: Params }) {
               <p className="map-page-price-suffix">
                 one-time, personalised
               </p>
-              <Link href="/home-harmony-map" className="cta-primary">
+              <Link
+                href="/products/personal-feng-shui-compass"
+                className="cta-primary"
+              >
                 See the Compass
               </Link>
             </div>

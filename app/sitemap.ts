@@ -51,10 +51,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${SITE}/home-harmony-map`,
+      url: `${SITE}/products`,
+      lastModified: today,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE}/products/personal-feng-shui-compass`,
       lastModified: today,
       changeFrequency: "weekly",
       priority: 0.7,
+    },
+    {
+      url: `${SITE}/products/annual-feng-shui-planner-2026`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${SITE}/products/move-in-kit`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${SITE}/products/bedroom-reset`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${SITE}/products/business-money-feng-shui`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.6,
     },
     {
       url: `${SITE}/checklist`,

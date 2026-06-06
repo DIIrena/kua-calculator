@@ -150,7 +150,7 @@ export default async function PlannerPage(props: {
         <p>
           The Planner is in the final stages of being put together.
           When it is ready, we will email you with the launch price
-          and the download link. One email. No marketing funnel.
+          and the download link. You can unsubscribe any time.
         </p>
         <BuyButton
           productSlug="annual-feng-shui-planner-2026"

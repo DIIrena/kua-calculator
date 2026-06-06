@@ -36,7 +36,7 @@ Work down a simple order. **First, prefer any other wall.** If the headboard can
 
 **The desk is almost always easier to move than the bed.** Give the chair one of your four favourable directions to face, even when the bed cannot move. The sleeping seat and the working seat are different seats, and for a working adult the working direction is the one the body spends its alert hours in. If the bed is stuck, win the desk.
 
-And if you are still uneasy, a consultation can help. A calm reading will tell you the same thing this page does, standing in your room: it is a direction, you have done the sensible thing, and you can get on with your life.
+And if you are still uneasy, a qualified local practitioner can help. A calm reading will tell you the same thing this page does, standing in your room: it is a direction, you have done the sensible thing, and you can get on with your life.
 
 ## The corner, not a verdict
 
