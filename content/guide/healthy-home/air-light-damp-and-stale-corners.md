@@ -2,7 +2,7 @@ Of everything a room offers the body, air comes first and light a close second. 
 
 ## Air
 
-Stale, recirculated, or chemically loaded air sits in the room all day. You stop noticing it. The body keeps breathing it anyway. The fix is *movement*, not fragrance. Open windows once in the morning and once in the evening. Use opposite sides of the home if you can, so the air actually crosses. Run the cooker hood whenever the stove is on, even for a brief sauté. Skip aerosols and plug-in fresheners. *If a room smells stale, the answer is to move the air through it, not to mask the smell with scent.*
+Stale, recirculated, or chemically loaded air sits in the room all day. You stop noticing it. The body keeps breathing it anyway. The fix is *movement*, not fragrance. Open windows once in the morning and once in the evening. Use opposite sides of the home if you can, so the air actually crosses. Run the cooker hood whenever the stove is on, even for a brief saute. Skip aerosols and plug-in fresheners. *If a room smells stale, the answer is to move the air through it, not to mask the smell with scent.*
 
 If pollen or street pollution is heavy in your area, a HEPA filter in the bedroom or the main living space earns its keep.
 

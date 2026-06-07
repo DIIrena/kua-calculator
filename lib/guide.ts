@@ -136,6 +136,15 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     order: 9,
     sourceChapters: ["20"],
   },
+  {
+    slug: "sister-disciplines",
+    label: "Sister Disciplines",
+    tagline: "What sits beside feng shui, and what does not.",
+    description:
+      "Four pages on the traditions that travel beside feng shui. Feng shui reads the home. BaZi reads the person. Qi Men Dun Jia reads timing. Crystals are optional cultural objects. Four different questions, four different tools.",
+    order: 10,
+    sourceChapters: ["13", "14", "15", "16"],
+  },
 ];
 
 export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
@@ -498,6 +507,54 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "6 minutes",
+  },
+  {
+    cluster: "sister-disciplines",
+    slug: "what-belongs-to-feng-shui-and-what-sits-beside-it",
+    title: "What belongs to feng shui and what sits beside it.",
+    description:
+      "Feng shui reads the home. BaZi reads the person. Qi Men Dun Jia reads the moment. Crystals are optional cultural objects. The outer boundary, named in plain language, so the reader stops mixing systems blindly.",
+    teaser:
+      "Place, person, moment, object. Four different questions, four different tools. Name which question you're asking before opening any of them.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
+  },
+  {
+    cluster: "sister-disciplines",
+    slug: "bazi-birth-data-and-personal-timing",
+    title: "BaZi: birth data and personal timing.",
+    description:
+      "The four pillars (Year, Month, Day, Hour), the day master as the chart's protagonist, the Ten Gods at overview altitude, and what BaZi can and cannot do. A sister discipline to feng shui, not a branch of it.",
+    teaser:
+      "BaZi reads the materials a person arrived with at birth. Four pillars, eight characters, one day master. A working hypothesis, never a verdict.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "sister-disciplines",
+    slug: "qi-men-dun-jia-date-selection-and-strategy",
+    title: "Qi Men Dun Jia: date selection and strategic movement.",
+    description:
+      "QMDJ reads the present moment of action. Nine palaces, four information layers per palace, two-hour windows. Distinct from Flying Stars (which reads a building over years). Practical entry points: date selection and short-term facing.",
+    teaser:
+      "QMDJ reads the moment, not the building. Same nine-palace grid as Flying Stars, different question. A window for one discrete action, then the window closes.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "sister-disciplines",
+    slug: "crystals-symbols-and-optional-tools",
+    title: "Crystals, symbols, and optional tools.",
+    description:
+      "Crystals as cultural objects, not engines. The two-reading frame (aesthetic and attentional plus the attributed folk vocabulary). Named stones, mineralogical honesty, and the gift-shop claims this site does not assert.",
+    teaser:
+      "A crystal is a coloured weighty object with a folk vocabulary attached. The aesthetic reading is yours; the energetic reading is the tradition's, attributed.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "7 minutes",
   },
 ];
 
