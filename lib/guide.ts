@@ -82,6 +82,15 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     order: 3,
     sourceChapters: ["02"],
   },
+  {
+    slug: "bagua",
+    label: "The Bagua",
+    tagline: "The map layer you put over a real floor plan.",
+    description:
+      "Four pages on the Bagua: what the map layer actually is, the nine sectors named one by one, how to orient it (compass or front-door), and what to do when the floor plan is not a clean rectangle.",
+    order: 4,
+    sourceChapters: ["03"],
+  },
 ];
 
 export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
@@ -165,6 +174,54 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
       "The two cycles that do almost all the practical work. Use the productive cycle first; reach for the controlling cycle when a room has too much of something and adding more would only feed the problem.",
     teaser:
       "Productive first, controlling in reserve. One rule that turns the cycles into a fix kit instead of a list to memorise.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
+  },
+  {
+    cluster: "bagua",
+    slug: "what-the-bagua-is",
+    title: "What the Bagua is.",
+    description:
+      "The Bagua is a structured way of looking at a floor plan, not a manifestation board. Eight sectors plus a centre, each carrying a direction, an element, and a life area. Early Heaven and Later Heaven explained.",
+    teaser:
+      "Not a magic overlay. A structured noticing device. Eight sectors plus a centre, each tied to a direction, an element, and a life area.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
+  },
+  {
+    cluster: "bagua",
+    slug: "the-nine-life-areas",
+    title: "The nine life areas.",
+    description:
+      "The nine sectors named one by one. South to fame, south-west to love, west to creativity, north-west to travel, north to career, north-east to knowledge, east to health, south-east to money, centre to wellbeing. Each links to its life-area deep dive.",
+    teaser:
+      "South to fame, north to career, south-east to money, centre to wellbeing. The nine sectors as the hub between the cluster and the per-area deep dives.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
+  },
+  {
+    cluster: "bagua",
+    slug: "compass-vs-front-door-methods",
+    title: "Compass method or front-door method.",
+    description:
+      "The two ways to orient the Bagua over a home. The Classical compass method ties the map to magnetic north; the BTB front-door method anchors it to the entry. How to pick one, why switching mid-walk is the most common beginner mistake.",
+    teaser:
+      "Compass or door. Pick one before anything else lines up. The Classical method and the BTB method explained without making you feel lost.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
+  },
+  {
+    cluster: "bagua",
+    slug: "missing-corners-and-irregular-homes",
+    title: "Missing corners and irregular homes.",
+    description:
+      "The Bagua was drawn for a square; real homes are L-shaped, multi-storey, or one studio. How to read missing corners, sectors that span two rooms, multi-storey plans, single-room Bagua, and what the centre is asking for.",
+    teaser:
+      "L-shapes, multi-storey homes, sectors that span two rooms, single-room Bagua, and the centre. The Bagua applied to the house you actually live in.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "5 minutes",
