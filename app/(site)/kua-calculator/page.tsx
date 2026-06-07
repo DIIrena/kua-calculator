@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { auth } from "@/auth";
 import CalculatorIsland from "@/components/CalculatorIsland";
 import CalculatorScripts from "@/components/CalculatorScripts";
@@ -354,6 +355,28 @@ export default async function KuaCalculatorPage() {
               </p>
             </div>
           </details>
+        </div>
+      </section>
+
+      <section className="explainer" aria-labelledby="planner-next-heading">
+        <div className="explainer-inner">
+          <h2 id="planner-next-heading">After your Kua: the 2026 Planner</h2>
+          <p>
+            Your Kua number tells you about you: the directions that tend
+            to support you and the ones to handle with care. The 2026
+            Annual Feng Shui Planner reads the other layer, the year. It
+            walks through which corners of any home to treat gently in
+            2026 and which days suit which kind of decision. The two sit
+            together: your directions, and the year laid over them.
+          </p>
+          <p>
+            <Link
+              href="/products/annual-feng-shui-planner-2026?from=kua-calculator"
+              className="cta-primary"
+            >
+              See the 2026 Annual Planner →
+            </Link>
+          </p>
         </div>
       </section>
 

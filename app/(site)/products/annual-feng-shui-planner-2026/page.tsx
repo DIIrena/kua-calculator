@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
+import PlannerSourceTracker from "@/components/PlannerSourceTracker";
 
 export const metadata: Metadata = {
   title:
@@ -25,7 +26,12 @@ export const metadata: Metadata = {
   },
 };
 
-type SearchParams = Promise<{ waitlist?: string }>;
+type SearchParams = Promise<{ waitlist?: string; from?: string }>;
+
+// Referrers we want to measure on the planner page. A visitor arriving
+// with one of these in ?from records a planner_source_visit event. The
+// allowlist keeps arbitrary query values out of the analytics stream.
+const KNOWN_SOURCES = ["kua-calculator"];
 
 const PLANNER_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   {
@@ -73,11 +79,12 @@ const PLANNER_FAQ: ReadonlyArray<{ q: string; a: string }> = [
 export default async function PlannerPage(props: {
   searchParams: SearchParams;
 }) {
-  const { waitlist } = await props.searchParams;
+  const { waitlist, from } = await props.searchParams;
   const status =
     waitlist === "sent" || waitlist === "invalid" || waitlist === "error"
       ? (waitlist as "sent" | "invalid" | "error")
       : null;
+  const plannerSource = from && KNOWN_SOURCES.includes(from) ? from : null;
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -120,6 +127,7 @@ export default async function PlannerPage(props: {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+      {plannerSource ? <PlannerSourceTracker source={plannerSource} /> : null}
       <section className="product-hero">
         <p className="eyebrow">My Feng Shui Home</p>
         <h1 className="product-heading">
