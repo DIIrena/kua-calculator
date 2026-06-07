@@ -73,6 +73,15 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     order: 2,
     sourceChapters: ["06"],
   },
+  {
+    slug: "five-elements",
+    label: "The five elements",
+    tagline: "The vocabulary beneath every feng shui move.",
+    description:
+      "Wu Xing as a design language in three pages: the materials vocabulary, four questions for reading a real room, and the two cycles made usable as a fix kit.",
+    order: 3,
+    sourceChapters: ["02"],
+  },
 ];
 
 export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
@@ -123,6 +132,42 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "4 minutes",
+  },
+  {
+    cluster: "five-elements",
+    slug: "five-elements-as-a-design-language",
+    title: "The five elements as a design language.",
+    description:
+      "Wu Xing is a vocabulary, not a horoscope. The materials, finishes, and shapes that map to Wood, Fire, Earth, Metal, and Water, with a quick way to read a piece of furniture as more than one element at once.",
+    teaser:
+      "The vocabulary layer. Materials, finishes, and shapes mapped to Wood, Fire, Earth, Metal, and Water. Read a room the way a tailor reads a fabric.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
+  },
+  {
+    cluster: "five-elements",
+    slug: "reading-a-room-in-element-terms",
+    title: "How to read a room in element terms.",
+    description:
+      "Four questions you can ask in any room: materials, shapes, feel, and use. A two-minute diagnostic that turns the five-element vocabulary into a working read of a real space.",
+    teaser:
+      "Four questions, two minutes per room. The diagnostic that turns the vocabulary into a working read.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
+  },
+  {
+    cluster: "five-elements",
+    slug: "the-productive-and-controlling-cycles",
+    title: "The cycles, made usable.",
+    description:
+      "The two cycles that do almost all the practical work. Use the productive cycle first; reach for the controlling cycle when a room has too much of something and adding more would only feed the problem.",
+    teaser:
+      "Productive first, controlling in reserve. One rule that turns the cycles into a fix kit instead of a list to memorise.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
   },
 ];
 
