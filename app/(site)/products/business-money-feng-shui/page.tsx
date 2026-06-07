@@ -135,8 +135,8 @@ export default async function MoneyKitPage(props: {
       <section className="product-buy-section">
         <h2>Join the waitlist.</h2>
         <p>
-          The Money Kit is in development. When it ships, we will
-          email you with the launch price and the download link.
+          The Money Kit is in development. When checkout goes live,
+          we email you the launch page and the early price.
         </p>
         <BuyButton
           productSlug="business-money-feng-shui"

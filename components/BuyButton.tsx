@@ -39,10 +39,18 @@ type Props = {
   /** Optional success / error param from the URL; used to render the
    *  status pill (sent / invalid / error) under the form. */
   waitlistStatus?: "sent" | "invalid" | "error" | null;
+  /** Optional override for the small note rendered under the waitlist
+   *  form. Defaults to a generic single-launch-email promise. Pass a
+   *  custom string for products that send a richer email sequence
+   *  (the Annual Planner sends confirmation + sample + launch). */
+  waitlistNote?: string;
   /** Optional Lemon Squeezy checkout URL; required if state is
    *  "lemon-squeezy". */
   lemonSqueezyUrl?: string;
 };
+
+const DEFAULT_WAITLIST_NOTE =
+  "When this product ships, we email you the launch page and the early price. You can unsubscribe any time.";
 
 function statusPill(status: Props["waitlistStatus"]): React.ReactNode {
   if (!status) return null;
@@ -83,6 +91,7 @@ export default function BuyButton({
   priceLabel,
   state,
   waitlistStatus = null,
+  waitlistNote,
   lemonSqueezyUrl,
 }: Props) {
   if (state === "waitlist") {
@@ -113,7 +122,7 @@ export default function BuyButton({
           </button>
         </form>
         <p className="buy-button-note">
-          You can unsubscribe any time. We will not share your address.
+          {waitlistNote ?? DEFAULT_WAITLIST_NOTE}
         </p>
         {statusPill(waitlistStatus)}
       </div>

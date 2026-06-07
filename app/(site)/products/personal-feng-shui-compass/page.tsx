@@ -164,10 +164,9 @@ export default async function PersonalFengShuiCompassPage(props: {
       <section className="product-buy-section">
         <h2>Join the waitlist.</h2>
         <p>
-          The Compass is finished. The checkout is not. As soon as
-          checkout is live we will email you with the launch price and
-          the download link. We will not put you on a marketing
-          funnel. One email when it ships. That is the whole promise.
+          The Compass is finished. The checkout is not. When checkout
+          goes live, we email you the launch page and the early price.
+          You can unsubscribe any time.
         </p>
         <BuyButton
           productSlug="personal-feng-shui-compass"
