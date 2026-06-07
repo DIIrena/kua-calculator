@@ -127,6 +127,15 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     order: 8,
     sourceChapters: ["18"],
   },
+  {
+    slug: "healthy-home",
+    label: "Healthy Home",
+    tagline: "The conditions a home can support: rest, air, light, and a daily rhythm of care.",
+    description:
+      "Four pages on health as conditions the home supports. The honest frame (no medical claims), the four environmental conditions (air, light, damp, stale corners), the room-by-room health read, and plants, materials, cleanliness, and the daily rhythm.",
+    order: 9,
+    sourceChapters: ["20"],
+  },
 ];
 
 export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
@@ -438,6 +447,54 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
       "The door is the entry. The desk is the residence. The four questions for the entry (flow, care, visibility, preparation) and the six levers applied to the desk you actually work at. Plus the studio or treatment room for anyone earning from home.",
     teaser:
       "Door as the entry. Desk as the residence. The working zones where money paper arrives, lives, and gets handled.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "healthy-home",
+    slug: "healthy-home-feng-shui-without-health-promises",
+    title: "Healthy-home feng shui without health promises.",
+    description:
+      "A home does not treat or cure. It shapes the conditions a body lives inside: rest, air, light, moisture, food preparation, and wet-room containment. The six levers applied where tradition and contemporary environmental design agree.",
+    teaser:
+      "Health is not a thing a room delivers. It is a set of conditions the home can support. Six conditions, six levers, two practices underneath: declutter and repair.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
+  },
+  {
+    cluster: "healthy-home",
+    slug: "air-light-damp-and-stale-corners",
+    title: "Air, light, damp, and stale corners.",
+    description:
+      "The four environmental conditions that decide how a home feels to live inside: ventilation, daylight, humidity (roughly 30 to 50 percent), and the corners every home tends to forget. A small daily practice that holds them.",
+    teaser:
+      "Ventilation, daylight, humidity, and the corners every home forgets. Open one window today; get daylight on the face in the first hour you are awake.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "healthy-home",
+    slug: "bedroom-kitchen-and-bathroom-health-check",
+    title: "Bedroom, kitchen, and bathroom health check.",
+    description:
+      "The room-by-room health read. Bedroom for rest conditions (temperature, dark, fresh air, clean bedding). Kitchen for food safety (visible food, clean surfaces, working fridge, extraction). Bathroom for hygiene containment.",
+    teaser:
+      "Three rooms carry most of the home's health work. Rest conditions, food safety, hygiene containment. Not layout - the room-layout pages own that.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "healthy-home",
+    slug: "plants-materials-cleanliness-and-daily-rhythm",
+    title: "Plants, materials, cleanliness, and daily rhythm.",
+    description:
+      "Plants as part of the room (not air purifiers). Natural materials and low-fume choices. Cleanliness as a daily rhythm, not a heroic blitz. Repair as part of the rhythm: walk the home, list the broken things, fix one this week.",
+    teaser:
+      "Plants for visible life, not filtration. Materials that age well. Cleanliness as rhythm, not blitz. One broken thing fixed each week.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "6 minutes",
