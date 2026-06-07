@@ -26,15 +26,15 @@ The same logic applies to the classic stove-and-sink clash a [kitchen](/space/ki
 
 Every fix has two routes. The productive route is gentler. The controlling route is firmer. The tradition's working rule: try the productive route first.
 
-## One room, both routes.
+## When the controlling route is the right call.
 
 A bedroom that feels sharp and cold is usually heavy on Metal. The diagnostic page would have flagged it: a lot of white, chrome legs on the bed frame, a marble-topped side table, grey linen.
 
-The productive route is to add Earth. Earth produces Metal and softens it from below. A terracotta lamp base. A ceramic vessel on the dresser. An ochre throw folded at the foot of the bed.
+This is a case where the productive cycle does not help. Adding Earth, the element that produces Metal, would only feed the Metal layer further. The move is the controlling cycle. Fire controls Metal.
 
-The controlling route is to add Fire. Fire controls Metal. A warm-bulb bedside lamp. A deep red cushion. A small leather-bound book left out on the table.
+The honest version of Fire in a bedroom is the quiet version. A warm-bulb bedside lamp instead of a cool-white overhead. A deep red or burnt-orange cushion. A small leather-bound book left out on the bedside table. A wool throw in a hot tone folded at the foot of the bed. None of these are bright or active; the bedroom is still meant for rest. They add the *quality* of Fire (warmth, weight, blush) without the stimulation.
 
-Either route is honest practice. In a sleeping room, the productive route is usually the better starting point. The tradition supports the conditions for *rest* over stimulation. See [/space/bedroom](/space/bedroom) and the [health](/life/health) area for the logic behind that lean.
+For the wider logic on what the tradition supports in a sleeping room, see [/space/bedroom](/space/bedroom) and the [health](/life/health) area.
 
 ## Two things, if nothing else.
 
