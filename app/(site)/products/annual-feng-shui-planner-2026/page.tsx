@@ -66,7 +66,7 @@ const PLANNER_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Can I buy the book without a US address?",
-    a: "Yes. The Planner is a digital purchase. Once live payments are wired, anyone with a card that works on Stripe can buy from anywhere. The book itself is the same file for every reader.",
+    a: "The Planner is a digital purchase, sold from anywhere to anywhere. Once live checkout is wired, most readers with an international payment card should be able to buy. We will confirm the checkout details at launch.",
   },
 ];
 

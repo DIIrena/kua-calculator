@@ -119,10 +119,10 @@ export default function BuyButton({
       // localStorage may be disabled / private mode. Ignore.
     }
     if (waitlistStatus === "sent") {
-      trackEvent("waitlist_signup_success", { product: productSlug });
+      trackEvent("waitlist_signup_success", { productSlug });
     } else if (waitlistStatus === "invalid" || waitlistStatus === "error") {
       trackEvent("waitlist_signup_error", {
-        product: productSlug,
+        productSlug,
         reason: waitlistStatus,
       });
     }
@@ -139,7 +139,7 @@ export default function BuyButton({
         // Ignore.
       }
     }
-    trackEvent("waitlist_signup_attempt", { product: productSlug });
+    trackEvent("waitlist_signup_attempt", { productSlug });
   }
 
   if (state === "waitlist") {

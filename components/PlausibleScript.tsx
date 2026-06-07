@@ -8,13 +8,21 @@ import { usePathname } from "next/navigation";
 //
 //   1. No-op when NEXT_PUBLIC_PLAUSIBLE_DOMAIN is not set. Local dev and
 //      previews stay tracker-free unless explicitly opted in.
-//   2. The script never loads on /kua-calculator or /embed. Those
-//      surfaces must stay free of any third-party JS so the calculator
-//      can be embedded by other sites and so the calculator core has
-//      no privacy surface.
+//   2. The script only loads on marketing surfaces. It is excluded from
+//      the calculator core, the embed widget, and every account /
+//      auth / privacy route. The calculator can be embedded by other
+//      sites and must stay free of third-party JS; the account, sign-in,
+//      and privacy routes are private surfaces and should not surface
+//      visitor behaviour to Plausible either.
 //   3. Cookie-free script. No consent banner needed.
 
-const EXCLUDED_PREFIXES = ["/kua-calculator", "/embed"];
+const EXCLUDED_PREFIXES = [
+  "/kua-calculator",
+  "/embed",
+  "/account",
+  "/sign-in",
+  "/privacy",
+];
 
 export default function PlausibleScript() {
   const pathname = usePathname() ?? "/";
