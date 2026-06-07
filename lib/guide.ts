@@ -100,6 +100,15 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     order: 5,
     sourceChapters: ["10"],
   },
+  {
+    slug: "schools",
+    label: "Schools of feng shui",
+    tagline: "A practitioner's map of Form, Compass, Flying Stars, and BTB.",
+    description:
+      "Three pages on how the major schools fit together: the four feng shui schools in one map, the Form vs Compass divide that runs through Classical practice, and where Flying Stars and BTB sit alongside the core.",
+    order: 6,
+    sourceChapters: ["04", "05", "07", "08"],
+  },
 ];
 
 export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
@@ -279,6 +288,42 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
       "The rooms people apologise for. Containment as the bathroom's organising idea, storage rooms as deliberate rooms not overflow, and four short cases for problem rooms: slanted ceilings, beams, dead-ends, and mixed-use.",
     teaser:
       "The rooms most people apologise for are the rooms most worth reading carefully. Containment, deliberate storage, and four short cases for the awkward ones.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "schools",
+    slug: "four-feng-shui-schools-in-one-map",
+    title: "The four feng shui schools, in one map.",
+    description:
+      "Form School reads the place. Compass School reads the directional fit. Flying Stars adds time. BTB anchors the Bagua to the front door. Four schools, four questions, one each. A map for the rest of the guide.",
+    teaser:
+      "Four schools, four questions, one each. The map that makes the rest of the guide stop sounding like a single muddled tradition.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
+  },
+  {
+    cluster: "schools",
+    slug: "form-school-vs-compass-school",
+    title: "Form School vs Compass School.",
+    description:
+      "The two halves of Classical practice. What Form School reads, what Compass School reads, why Form comes first, and when each leads. The four Celestial Animals, sha qi, the luopan, and Eight Mansions, at a map altitude.",
+    teaser:
+      "The two halves of Classical practice. Form reads the place; Compass reads the fit. Why Form comes first, and when each leads.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "schools",
+    slug: "flying-stars-btb-and-timing",
+    title: "Flying Stars, BTB, and when timing enters the picture.",
+    description:
+      "Flying Stars adds a moving calendar to Compass School. BTB is a separate 20th-century lineage anchored to the front door. The two layers that sit outside the Form-and-Compass core, what each one is for, and how not to mix them.",
+    teaser:
+      "When timing enters the picture. The annual layer of Flying Stars and the alternate lineage of BTB, kept separate and held lightly.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "6 minutes",
