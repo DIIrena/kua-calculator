@@ -1,5 +1,6 @@
 // Registry for /guide, the ultimate-feng-shui-guide tree planned in
-// myfengshuihome-platform-strategy.md (§4 sitemap, §5 article plan).
+// myfengshuihome-platform-strategy.md (section 4 sitemap, section 5
+// article plan).
 //
 // The guide is the web-voiced expression of the 22-chapter source
 // library at projects/feng-shui/content/. Each guide page is a
@@ -63,6 +64,15 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     order: 1,
     sourceChapters: ["01"],
   },
+  {
+    slug: "compass-school",
+    label: "Compass School",
+    tagline: "The calculative half of Classical feng shui, made scannable.",
+    description:
+      "The calculative half of Classical feng shui in three pages: what it is, your Kua number and your four directions, and where to put the bed, the chair, and the door.",
+    order: 2,
+    sourceChapters: ["06"],
+  },
 ];
 
 export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
@@ -77,6 +87,42 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "3 minutes",
+  },
+  {
+    cluster: "compass-school",
+    slug: "what-is-compass-school",
+    title: "What Compass School is, and why it sits next to Form School.",
+    description:
+      "A short read on Compass School (Li Qi Pai), how it differs from Form School, the four sub-schools, and why Ba Zhai (Eight Mansions) is the practical place to start.",
+    teaser:
+      "Compass School in four minutes. What it does, why it sits next to Form School, and what to read next.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "4 minutes",
+  },
+  {
+    cluster: "compass-school",
+    slug: "find-your-kua-number",
+    title: "Find your Kua number and your four directions.",
+    description:
+      "Your Kua number, the East/West group split, the four favourable directions (Sheng Qi, Tian Yi, Yan Nian, Fu Wei), and how to handle a mixed-group household.",
+    teaser:
+      "Your Kua number sorts you into East or West group and assigns four supportive directions. Here is what each one is for.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "4 minutes",
+  },
+  {
+    cluster: "compass-school",
+    slug: "three-orientations",
+    title: "Three orientations the tradition weights most.",
+    description:
+      "The three placements Eight Mansions weights most: where the head of the bed points, where your chair faces, and where the front door opens. One move to try this week.",
+    teaser:
+      "Bed, chair, door, in that order of leverage. What the tradition reads in each, and one move to try this week.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "4 minutes",
   },
 ];
 

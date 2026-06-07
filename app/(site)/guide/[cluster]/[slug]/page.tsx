@@ -60,7 +60,7 @@ export default async function GuidePage(props: { params: Params }) {
     <div className="page-content guide-page">
       <p className="eyebrow">
         <Link href={`/guide/${cluster}`} className="article-back-link">
-          ← {clusterMeta.label}
+          &larr; Back to {clusterMeta.label}
         </Link>
       </p>
       <h1 className="guide-page-heading">{page.title}</h1>

@@ -39,7 +39,7 @@ export default async function GuideClusterPage(props: { params: Params }) {
     <div className="page-content guide-cluster">
       <p className="eyebrow">
         <Link href="/guide" className="article-back-link">
-          ← The guide
+          &larr; Back to the guide
         </Link>
       </p>
       <h1 className="guide-cluster-heading">{meta.label}.</h1>
