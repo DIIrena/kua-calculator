@@ -109,6 +109,15 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     order: 6,
     sourceChapters: ["04", "05", "07", "08"],
   },
+  {
+    slug: "cures",
+    label: "Cures",
+    tagline: "Cures as practical adjustments, read through six levers.",
+    description:
+      "Four pages on cures as practical adjustments, not magic objects. What a cure actually is, the five-element cure per room, the five cure families, and the rule that decides what rotates each year vs what stays put.",
+    order: 7,
+    sourceChapters: ["09"],
+  },
 ];
 
 export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
@@ -327,6 +336,54 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "6 minutes",
+  },
+  {
+    cluster: "cures",
+    slug: "what-feng-shui-cures-actually-are",
+    title: "What feng shui cures actually are.",
+    description:
+      "A cure is a small, deliberate change to a room. It has a purpose you can name and a contraindication you can name. Six levers (element, placement, visibility, proportion, timing, room use) and the six families of cure objects.",
+    teaser:
+      "Cures are changes, not objects. Six levers decide whether any cure works, and the catalogue falls into six families.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
+  },
+  {
+    cluster: "cures",
+    slug: "five-element-cures-room-by-room",
+    title: "Five-element cures, room by room.",
+    description:
+      "Which element cure belongs in which room. Bedroom Earth for rest. A Wood bridge between stove and sink. Living Wood with warm layered light in the living room. Metal and Wood as supporting cures in the home office.",
+    teaser:
+      "Which element cure belongs in which room. The productive route first, the six levers applied room by room.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "cures",
+    slug: "mirrors-plants-light-sound-and-symbols",
+    title: "Mirrors, plants, light, sound, and symbols.",
+    description:
+      "The five cure families that do the most work in a real room. Mirrors that redirect, plants that refresh, light that brightens, sound that softens a moving-air corner, and symbols that carry the occupant's meaning.",
+    teaser:
+      "Five families, five short reads. Mirrors redirect. Plants refresh. Light brightens. Sound softens. Symbols carry meaning. Most of the work is subtraction.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "cures",
+    slug: "annual-cures-vs-permanent-fixes",
+    title: "Annual cures vs permanent fixes.",
+    description:
+      "Most cures are decided once and left alone. A small number swap each Li Chun. Three questions decide which is which: is it structural, is it an element imbalance, or is it an annual visiting-star position?",
+    teaser:
+      "Most cures stay. Two corners swap each year. Three questions decide which is which.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
   },
 ];
 
