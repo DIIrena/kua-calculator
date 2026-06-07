@@ -14,7 +14,7 @@ East group's supportive directions are the ones the tradition associates with mo
 
 ## What your four directions are for.
 
-The four favourable directions each carry a job. *Sheng Qi* "generating qi" is the active push direction, the one the tradition points toward for launch seasons and important work. *Tian Yi* "Heavenly Doctor" is the recovery direction, the default headboard for ordinary seasons. *Yan Nian* "long years" is the relationship direction, the one couples are typically pointed toward. *Fu Wei* "overall harmony," the anchor direction, is the solitary-work direction, for slow and deep tasks.
+The four favourable directions each carry a job. *Sheng Qi* "generating qi" is the active push direction, the one the tradition points toward for launch seasons and important work. *Tian Yi* "Heavenly Doctor" is the recovery direction, the default headboard for ordinary seasons. *Yan Nian* "long years" is the relationship direction, the one couples are typically pointed toward. *Fu Wei* "sitting in stability," the anchor direction, is the solitary-work direction, for slow and deep tasks.
 
 The other four have names too: Huo Hai, Wu Gui, Liu Sha, Jue Ming. The tradition treats them as lower-priority placements rather than anything to fear. They are simply the spots you assign last, after the supportive four have homes.
 

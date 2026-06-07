@@ -8,13 +8,13 @@ In order of leverage: bed, chair, door.
 
 ## The head of the bed.
 
-**The bed** is the highest-leverage placement because the body spends the most still hours there. Eight quiet hours, repeated. The tradition's default for ordinary seasons is *Tian Yi* 天醫, "heavenly doctor." When the body's task is *rest* rather than effort, the tradition points it that way. For a launch season, a new job, a push that needs *momentum*, the tradition points the headboard toward *Sheng Qi* 生氣, "generating qi." For couples, the tradition points the shared headboard toward *Yan Nian* 延年 "long years", the direction it associates with bonds meant to last.
+**The bed** is the highest-leverage placement because the body spends the most still hours there. Eight quiet hours, repeated. The tradition's default for ordinary seasons is *Tian Yi*, "Heavenly Doctor." When the body's task is *rest* rather than effort, the tradition points it that way. For a launch season, a new job, a push that needs *momentum*, the tradition points the headboard toward *Sheng Qi*, "generating qi." For couples, the tradition points the shared headboard toward *Yan Nian*, "long years", the direction it associates with bonds meant to last.
 
 Honest aside. The bed rarely turns. Wardrobes, windows, plug sockets, the wall the room asks for. If the only available wall is one of your cautious four, the rough adjustment is the one the tradition weights most: any of your four supportive directions is better than any of the four cautious ones. Better than you had before is the point.
 
 ## Where your chair faces.
 
-**The chair** is the second orientation, because work is the longest active task most people do at home. *Sheng Qi* for the working chair when you want momentum, the laptop chair, the call chair, the seat where you push something forward. *Fu Wei* 伏位, "sitting in stability", for deep, slow, solitary work, the study desk, the reading chair, the morning corner with the first cup. The doing seat and the thinking seat, different jobs, both worth *doing*.
+**The chair** is the second orientation, because work is the longest active task most people do at home. *Sheng Qi* for the working chair when you want momentum, the laptop chair, the call chair, the seat where you push something forward. *Fu Wei*, "sitting in stability", for deep, slow, solitary work, the study desk, the reading chair, the morning corner with the first cup. The doing seat and the thinking seat, different jobs, both worth *doing*.
 
 A softer-priority case sits at the dinner table. *Tian Yi* for the head of the household's dining seat, the one that anchors the meal.
 
