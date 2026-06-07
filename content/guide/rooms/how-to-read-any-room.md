@@ -52,7 +52,7 @@ This page is the orchestration layer. You walk once and apply whichever lens fit
 
 Open the door of a small flat. The entry is a narrow strip with shoes piled to one side and a coat hook overloaded behind the door. Morning light arrives through the door itself; midday light never reaches in. What the door sees on opening is a long sight line straight to a back window. One sentence: entry has nowhere to settle, sight line runs straight through.
 
-Walk to the bedroom. Light enters from one window over the bed. The bed is pushed into a corner, headboard against a half-wall, one nightstand only. From the pillow, the door is behind your head and to the left, out of view. One sentence: bed is not in command, and it sits where the window is, not where the wall is. (For the starter moves on this room, see [/space/bedroom](/space/bedroom).)
+Walk to the bedroom. Light enters from one window over the bed. The bed is pushed into a corner, headboard against a half-wall, one nightstand only. From the pillow, the door is behind your head and to the left, out of view. One sentence: bed is not in command, and it sits where the window is, not where the wall is. (For the starter moves on this room, see [the bedroom page](/space/bedroom).)
 
 Two rooms. Two sentences. The ranked list almost writes itself. Shift the bed first because it compounds nightly. Then place a console or rug to give the entry somewhere to land. You did not solve either room while standing in it. You walked, you noted, you ranked.
 
