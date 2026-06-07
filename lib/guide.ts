@@ -118,6 +118,15 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     order: 7,
     sourceChapters: ["09"],
   },
+  {
+    slug: "money",
+    label: "Money",
+    tagline: "Money as flow, care, visibility, and preparation.",
+    description:
+      "Four pages on the places in the home where money is handled: the southeast sector, the kitchen, the desk, and the door. No promises, no activation, no magic. The six levers applied to flow, care, visibility, and preparation.",
+    order: 8,
+    sourceChapters: ["18"],
+  },
 ];
 
 export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
@@ -378,12 +387,60 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
     slug: "annual-cures-vs-permanent-fixes",
     title: "Annual cures vs permanent fixes.",
     description:
-      "Most cures are decided once and left alone. A small number swap each Li Chun. Three questions decide which is which: is it structural, is it an element imbalance, or is it an annual visiting-star position?",
+      "Most cures are decided once and left alone. A small number are checked each Li Chun. Three questions decide which is which: is it structural, is it an element imbalance, or is it an annual visiting-star position?",
     teaser:
-      "Most cures stay. Two corners swap each year. Three questions decide which is which.",
+      "Most cures stay. Two corners are checked each year. Three questions decide which is which.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "5 minutes",
+  },
+  {
+    cluster: "money",
+    slug: "feng-shui-money-without-wishful-thinking",
+    title: "Feng shui and money without wishful thinking.",
+    description:
+      "Money is handled, not summoned. The four observable things that the home's money places respond to (flow, care, visibility, preparation) and the six levers from the cures cluster applied to the southeast, the kitchen, the door, the desk, and storage.",
+    teaser:
+      "Money is handled, not summoned. Four observable things, six levers, five places in the home where money is handled.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
+  },
+  {
+    cluster: "money",
+    slug: "the-southeast-wealth-area-and-how-to-read-it",
+    title: "The southeast wealth area and how to read it.",
+    description:
+      "The corner is a surface, not a shrine. Six short reads on the southeast: element, placement, visibility, proportion, timing, and room use. Walk to it, see what is actually there, pick one act of care for the week.",
+    teaser:
+      "A surface, not a shrine. Six short reads on the southeast: element, placement, visibility, proportion, timing, room use.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "money",
+    slug: "kitchen-stove-and-money-flow",
+    title: "Kitchen, stove, and money flow.",
+    description:
+      "The kitchen as a flow system. Fire (stove) and Water (sink) with Wood as the bridge. The six levers applied to the kitchen, and the four kinds of small unfixed thing that quietly drain attention before they drain money.",
+    teaser:
+      "Money walks in as groceries and walks out as cooked meals. The kitchen as a flow system, read through six levers.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "money",
+    slug: "desk-door-and-business-money",
+    title: "Desk, door, and business money.",
+    description:
+      "The door is the entry. The desk is the residence. The four questions for the entry (flow, care, visibility, preparation) and the six levers applied to the desk you actually work at. Plus the studio or treatment room for anyone earning from home.",
+    teaser:
+      "Door as the entry. Desk as the residence. The working zones where money paper arrives, lives, and gets handled.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
   },
 ];
 
