@@ -91,6 +91,15 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     order: 4,
     sourceChapters: ["03"],
   },
+  {
+    slug: "rooms",
+    label: "Rooms",
+    tagline: "Walk your home room by room, and rank what to fix first.",
+    description:
+      "Four pages on the room-by-room layer: how to read any room as a walk-not-verdict, the three highest-stakes rooms (bedroom, kitchen, front door), the active-use rooms (living, dining, home office), and the leakage and awkward cases.",
+    order: 5,
+    sourceChapters: ["10"],
+  },
 ];
 
 export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
@@ -225,6 +234,54 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "5 minutes",
+  },
+  {
+    cluster: "rooms",
+    slug: "how-to-read-any-room",
+    title: "How to read any room.",
+    description:
+      "The walkthrough method: walk in the order qi walks (door, kitchen, bedroom, then the rest), read four things in each room, take notes, rank findings after the walk, and pick the lens (sector, direction, or elements) that fits.",
+    teaser:
+      "A reading is a walk, not a verdict. Four things to read in each room, in order, plus the three lenses that sharpen the same walk.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "rooms",
+    slug: "bedroom-kitchen-front-door",
+    title: "Bedroom, kitchen, and front door.",
+    description:
+      "The three highest-stakes rooms, read for room layout rather than facing direction. The wall the bed sits against, where the stove sits in the room, what the front door opens onto. Form School's room-layout angle.",
+    teaser:
+      "The three rooms that compound hardest. Where the bed sits, where the stove sits, what the door opens onto. Layout, not facing.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "rooms",
+    slug: "living-dining-home-office",
+    title: "Living room, dining room, and home office.",
+    description:
+      "The active-use rooms, read through zones, main seat per zone, and layered lighting. Why subtraction beats addition in the living room, why round and oval tables hold the meal, and why the home office desk needs solid backing.",
+    teaser:
+      "The active-use rooms reward zoning and restraint. Name the zones, set the main seat, layer the lights. Decoration finishes the room; design sets it up.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "rooms",
+    slug: "bathrooms-storage-problem-rooms",
+    title: "Bathrooms, storage, and problem rooms.",
+    description:
+      "The rooms people apologise for. Containment as the bathroom's organising idea, storage rooms as deliberate rooms not overflow, and four short cases for problem rooms: slanted ceilings, beams, dead-ends, and mixed-use.",
+    teaser:
+      "The rooms most people apologise for are the rooms most worth reading carefully. Containment, deliberate storage, and four short cases for the awkward ones.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
   },
 ];
 
