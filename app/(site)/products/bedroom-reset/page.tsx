@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
   title:
@@ -44,6 +45,9 @@ export default async function BedroomResetPage(props: {
           you through the bedroom from the door inward, against your
           Kua, with the small moves the tradition has long associated
           with rest and steady connection.
+        </p>
+        <p className="product-hero-anchor">
+          <a href="#waitlist">Skip to the waitlist →</a>
         </p>
       </section>
 
@@ -152,6 +156,8 @@ export default async function BedroomResetPage(props: {
           </Link>
         </p>
       </section>
+
+      <FloatingWaitlistCTA />
     </div>
   );
 }

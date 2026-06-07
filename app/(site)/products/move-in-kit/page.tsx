@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
   title:
@@ -44,6 +45,9 @@ export default async function MoveInKitPage(props: {
           the first week in the new place that settle the energy
           before the laundry pile does. The Move-In Kit gathers both
           of those into one printable book.
+        </p>
+        <p className="product-hero-anchor">
+          <a href="#waitlist">Skip to the waitlist →</a>
         </p>
       </section>
 
@@ -146,6 +150,8 @@ export default async function MoveInKitPage(props: {
           </Link>
         </p>
       </section>
+
+      <FloatingWaitlistCTA />
     </div>
   );
 }

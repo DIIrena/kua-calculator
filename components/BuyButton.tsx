@@ -1,4 +1,8 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { joinProductWaitlist } from "@/app/actions/product-waitlist";
+import { trackEvent } from "@/lib/analytics";
 
 // Provider-agnostic Buy Button. The same component renders four
 // different states. Each product in the catalogue carries a
@@ -22,9 +26,11 @@ import { joinProductWaitlist } from "@/app/actions/product-waitlist";
 //   - lemon-squeezy: renders an external link to a Lemon Squeezy
 //                    hosted checkout URL (kept as a backup path)
 //
-// Only `waitlist` is implemented today. The other branches throw
-// not-implemented so the call site is unambiguous, and we ship the
-// switch later.
+// Only `waitlist` is implemented today. The waitlist branch carries
+// the Phase 5A conversion polish: the anchor id `waitlist`, the trust
+// microstrip, localStorage email pre-fill across product pages, and
+// the three Plausible funnel events (signup_attempt / signup_success /
+// signup_error).
 
 export type BuyButtonState =
   | "waitlist"
@@ -51,6 +57,8 @@ type Props = {
 
 const DEFAULT_WAITLIST_NOTE =
   "When this product ships, we email you the launch page and the early price. You can unsubscribe any time.";
+
+const LOCALSTORAGE_EMAIL_KEY = "mfsh_waitlist_email";
 
 function statusPill(status: Props["waitlistStatus"]): React.ReactNode {
   if (!status) return null;
@@ -94,14 +102,61 @@ export default function BuyButton({
   waitlistNote,
   lemonSqueezyUrl,
 }: Props) {
+  const emailInputRef = useRef<HTMLInputElement | null>(null);
+
+  // Pre-fill the email from localStorage, so a visitor who joined one
+  // waitlist sees their address already there on the next product page.
+  // Also fire the success / error event when we land back with a status
+  // param. Both happen client-side only.
+  useEffect(() => {
+    if (state !== "waitlist") return;
+    try {
+      const remembered = window.localStorage.getItem(LOCALSTORAGE_EMAIL_KEY);
+      if (remembered && emailInputRef.current && !emailInputRef.current.value) {
+        emailInputRef.current.value = remembered;
+      }
+    } catch {
+      // localStorage may be disabled / private mode. Ignore.
+    }
+    if (waitlistStatus === "sent") {
+      trackEvent("waitlist_signup_success", { product: productSlug });
+    } else if (waitlistStatus === "invalid" || waitlistStatus === "error") {
+      trackEvent("waitlist_signup_error", {
+        product: productSlug,
+        reason: waitlistStatus,
+      });
+    }
+  }, [state, waitlistStatus, productSlug]);
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    const form = e.currentTarget;
+    const emailEl = form.elements.namedItem("email") as HTMLInputElement | null;
+    const email = emailEl?.value.trim().toLowerCase() ?? "";
+    if (email) {
+      try {
+        window.localStorage.setItem(LOCALSTORAGE_EMAIL_KEY, email);
+      } catch {
+        // Ignore.
+      }
+    }
+    trackEvent("waitlist_signup_attempt", { product: productSlug });
+  }
+
   if (state === "waitlist") {
     return (
-      <div className="buy-button buy-button-waitlist">
+      <div id="waitlist" className="buy-button buy-button-waitlist">
         <p className="buy-button-price">
           <span className="buy-button-price-amount">{priceLabel}</span>
           <span className="buy-button-price-suffix">when it ships</span>
         </p>
-        <form action={joinProductWaitlist} className="buy-button-form">
+        <p className="buy-button-trust">
+          No subscription. No recurring fee. Buy once, keep the files.
+        </p>
+        <form
+          action={joinProductWaitlist}
+          onSubmit={handleSubmit}
+          className="buy-button-form"
+        >
           <input type="hidden" name="productSlug" value={productSlug} />
           <label
             htmlFor={`waitlist-email-${productSlug}`}
@@ -110,6 +165,7 @@ export default function BuyButton({
             Email address
           </label>
           <input
+            ref={emailInputRef}
             id={`waitlist-email-${productSlug}`}
             name="email"
             type="email"
@@ -131,10 +187,13 @@ export default function BuyButton({
 
   if (state === "stripe-test" || state === "stripe-live") {
     return (
-      <div className="buy-button buy-button-stripe">
+      <div id="waitlist" className="buy-button buy-button-stripe">
         <p className="buy-button-price">
           <span className="buy-button-price-amount">{priceLabel}</span>
           <span className="buy-button-price-suffix">one-time</span>
+        </p>
+        <p className="buy-button-trust">
+          No subscription. No recurring fee. Buy once, keep the files.
         </p>
         <form action="/api/checkout" method="post" className="buy-button-form">
           <input type="hidden" name="productSlug" value={productSlug} />
@@ -158,10 +217,13 @@ export default function BuyButton({
       );
     }
     return (
-      <div className="buy-button buy-button-lemon">
+      <div id="waitlist" className="buy-button buy-button-lemon">
         <p className="buy-button-price">
           <span className="buy-button-price-amount">{priceLabel}</span>
           <span className="buy-button-price-suffix">one-time</span>
+        </p>
+        <p className="buy-button-trust">
+          No subscription. No recurring fee. Buy once, keep the files.
         </p>
         <a
           href={lemonSqueezyUrl}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
   title:
@@ -50,6 +51,9 @@ export default async function PersonalFengShuiCompassPage(props: {
           traditionally support you, and which the tradition asks you
           to handle with care. It is the foundation product we built
           first because it is the one you will use longest.
+        </p>
+        <p className="product-hero-anchor">
+          <a href="#waitlist">Skip to the waitlist →</a>
         </p>
       </section>
 
@@ -183,6 +187,8 @@ export default async function PersonalFengShuiCompassPage(props: {
           </Link>
         </p>
       </section>
+
+      <FloatingWaitlistCTA />
     </div>
   );
 }

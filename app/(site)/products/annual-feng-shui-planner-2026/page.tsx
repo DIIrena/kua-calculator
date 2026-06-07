@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
   title:
@@ -26,6 +27,49 @@ export const metadata: Metadata = {
 
 type SearchParams = Promise<{ waitlist?: string }>;
 
+const PLANNER_FAQ: ReadonlyArray<{ q: string; a: string }> = [
+  {
+    q: "Do I need to know feng shui to use the Planner?",
+    a: "No. The book explains what it needs as it goes. Every sector treatment carries a one-line definition before it asks you to do anything, and the back of the book has a glossary for the five or six terms that come up most.",
+  },
+  {
+    q: "How is this different from the Personal Feng Shui Compass?",
+    a: "The Planner reads the year for any home. The Compass reads you specifically, with your Kua number and your eight personal directions. Different jobs. They sit together on a shelf and answer different questions.",
+  },
+  {
+    q: "Why does the calendar start on 1 June 2026, not 1 January?",
+    a: "Because the 2026 Chinese solar year is what the Planner reads, and that year is already underway. The 245-day calendar covers the rest of it, from 1 June 2026 through 31 January 2027. The 2027 edition picks up from there.",
+  },
+  {
+    q: "Will the same Planner work for everyone in my household?",
+    a: "Yes. The 2026 annual chart is the same chart for every home in the same hemisphere. Personal directions are the layer that varies by person, and those live in the Personal Feng Shui Compass, which is a separate product.",
+  },
+  {
+    q: "What happens after I join the waitlist?",
+    a: "A warm confirmation lands in your inbox now. About a week later, a short note with one sample page so you can see the voice for yourself. When checkout opens we email you the launch page and the early price. You can unsubscribe at any point.",
+  },
+  {
+    q: "When will the Planner actually ship?",
+    a: "We are waiting on the business bank account to clear so live payments can be wired up. As soon as that lands and the file pass is finished, we ship. We will not promise a date we are not sure of.",
+  },
+  {
+    q: "Is the Planner refundable?",
+    a: "Yes. When checkout opens, every purchase carries a 30-day refund, no questions asked. That includes the Planner.",
+  },
+  {
+    q: "Will there be a 2027 edition?",
+    a: "Yes. The 2027 edition ships in January 2027 as a full twelve-month book. As a 2026 buyer you receive a 30 percent renewal offer when it goes live.",
+  },
+  {
+    q: "Why do the 5 Yellow and the 2 Black stars get so much attention?",
+    a: "Because in 2026 the 5 Yellow visits the south and the 2 Black sits in the northwest, and both are the cautious stars the tradition pays most attention to. The Planner names where they land, the single metal cure each one asks for, and the rooms that are most affected.",
+  },
+  {
+    q: "Can I buy the book without a US address?",
+    a: "Yes. The Planner is a digital purchase. Once live payments are wired, anyone with a card that works on Stripe can buy from anywhere. The book itself is the same file for every reader.",
+  },
+];
+
 export default async function PlannerPage(props: {
   searchParams: SearchParams;
 }) {
@@ -34,6 +78,16 @@ export default async function PlannerPage(props: {
     waitlist === "sent" || waitlist === "invalid" || waitlist === "error"
       ? (waitlist as "sent" | "invalid" | "error")
       : null;
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: PLANNER_FAQ.map((qa) => ({
+      "@type": "Question",
+      name: qa.q,
+      acceptedAnswer: { "@type": "Answer", text: qa.a },
+    })),
+  };
 
   const productJsonLd = {
     "@context": "https://schema.org",
@@ -61,6 +115,10 @@ export default async function PlannerPage(props: {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <section className="product-hero">
         <p className="eyebrow">My Feng Shui Home</p>
@@ -106,6 +164,9 @@ export default async function PlannerPage(props: {
               The Planner answers those four questions for the whole of
               the 2026 Chinese solar year, in a calm voice, in 98
               printable pages. One book. One year. One shelf.
+            </p>
+            <p className="product-hero-anchor" style={{ marginTop: "1.1rem" }}>
+              <a href="#waitlist">Skip to the waitlist →</a>
             </p>
           </div>
         </div>
@@ -377,6 +438,16 @@ export default async function PlannerPage(props: {
         </p>
       </section>
 
+      <section className="product-section product-faq" aria-label="Frequently asked questions">
+        <h2>Common questions</h2>
+        {PLANNER_FAQ.map((qa) => (
+          <details key={qa.q} className="product-faq-item">
+            <summary>{qa.q}</summary>
+            <div className="product-faq-answer">{qa.a}</div>
+          </details>
+        ))}
+      </section>
+
       <section className="product-buy-section">
         <h2>Join the waitlist.</h2>
         <p>
@@ -415,6 +486,8 @@ export default async function PlannerPage(props: {
           </Link>
         </p>
       </section>
+
+      <FloatingWaitlistCTA />
     </div>
   );
 }
