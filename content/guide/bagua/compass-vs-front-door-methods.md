@@ -10,7 +10,7 @@ The procedure is short. **Stand** in the centre of the home. Face the front door
 
 The reading is the load-bearing step. Without a compass reading, nothing else lines up. The bearing is what ties the rest of the tradition to your specific home. The elements, the trigrams, the [kua number](/kua-calculator), the *Later Heaven sequence* (the directional ordering of the eight trigrams). All of it keys off the reading.
 
-A phone compass will get you started. A proper handheld compass is steadier and reads further from metal. If you want a proper one, there is a waitlist for our [personal feng shui compass](/products/personal-feng-shui-compass). The [methodology page](/methodology) has the full Later Heaven table and the bearing math.
+A phone compass will get you started. A simple handheld compass is enough for the bearing. If you want one place to keep your Kua number, personal directions, and floor-plan notes together, the [Personal Feng Shui Compass](/products/personal-feng-shui-compass) is the digital reference for that. The [methodology page](/methodology) has the full Later Heaven table and the bearing math.
 
 ## Method B. The front-door method.
 
