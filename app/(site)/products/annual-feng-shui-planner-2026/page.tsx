@@ -389,6 +389,7 @@ export default async function PlannerPage(props: {
           priceLabel="$29"
           state="waitlist"
           waitlistStatus={status}
+          waitlistNote="You receive a confirmation now, one sample-page note about a week later, and a launch email when checkout opens. You can unsubscribe any time."
         />
       </section>
 
