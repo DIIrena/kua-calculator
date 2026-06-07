@@ -4,6 +4,43 @@ A payment-neutral master plan for the next stage of myfengshuihome.com. The webs
 
 ---
 
+## Platform relationship (consolidation, 2026-06-07)
+
+My Feng Shui Home is one brand running across three sibling projects in this workspace, each with a non-overlapping role. The chapter library is the source. The deployed site is the truth.
+
+| Project | Role |
+|---|---|
+| `projects/kua-calculator/` | **Canonical public site.** Everything visitors see at myfengshuihome.com ships from here: routes, products, blocks, analytics, account, and (next) the new `/guide` tree. |
+| `projects/feng-shui/` | **Content source library.** The 22 audited paraphrased chapters, ATTRIBUTION, source-map, and research resources. Has a Flask "dashboard" but that is an internal browsing tool only; it never deploys. |
+| `projects/annual-feng-shui-planner/` | **Per-edition build project.** Produces the 2026 Planner PDF/EPUB/ICS. Future paid printables follow the same shape: one build folder per product per edition. |
+
+Two pipelines move content from source to truth.
+
+**Content pipeline (web pages):**
+
+```
+feng-shui/content/NN-*.md          (source, paraphrased, AUDIT-001 passed)
+        │ adapt to web voice, scope to one cluster page
+        ▼
+kua-calculator/content/guide/<cluster>/<slug>.md
+        │
+        ▼
+served at /guide/<cluster>/<slug>
+```
+
+**Build-artifact pipeline (paid printables):**
+
+```
+annual-feng-shui-planner/build/2026/planner.pdf
+        │ manual sync at launch
+        ▼
+kua-calculator/public/downloads/...   (gated download)
+```
+
+This addendum supersedes nothing in the rest of the doc. Section 4 (sitemap) and Section 5 (ultimate-guide article plan) describe the `/guide` tree this pipeline feeds.
+
+---
+
 ## 0. One-page summary
 
 | Question | Answer |

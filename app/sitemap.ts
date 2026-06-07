@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { ARTICLES } from "@/lib/articles";
+import { GUIDE_CLUSTERS, GUIDE_PAGES } from "@/lib/guide";
 import { LIFE_AREAS } from "@/lib/life-areas";
 import { SPACES } from "@/lib/spaces";
 
@@ -34,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE}/articles`,
+      lastModified: today,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE}/guide`,
       lastModified: today,
       changeFrequency: "weekly",
       priority: 0.8,
@@ -107,6 +114,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const guideClusterEntries: MetadataRoute.Sitemap = GUIDE_CLUSTERS.map((c) => ({
+    url: `${SITE}/guide/${c.slug}`,
+    lastModified: today,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  const guidePageEntries: MetadataRoute.Sitemap = GUIDE_PAGES.map((p) => ({
+    url: `${SITE}/guide/${p.cluster}/${p.slug}`,
+    lastModified: new Date(p.lastUpdated),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   const lifeEntries: MetadataRoute.Sitemap = LIFE_AREAS.map((l) => ({
     url: `${SITE}/life/${l.slug}`,
     lastModified: today,
@@ -124,6 +145,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticEntries,
     ...articleEntries,
+    ...guideClusterEntries,
+    ...guidePageEntries,
     ...lifeEntries,
     ...spaceEntries,
   ];
