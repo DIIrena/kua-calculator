@@ -19,11 +19,16 @@ export async function generateMetadata(props: {
   const { cluster } = await props.params;
   const meta = findCluster(cluster);
   if (!meta) return { title: "Not found" };
+  const url = `https://myfengshuihome.com/guide/${cluster}`;
   return {
     title: `${meta.label} | The feng shui guide | My Feng Shui Home`,
     description: meta.description,
-    alternates: {
-      canonical: `https://myfengshuihome.com/guide/${cluster}`,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "website",
+      title: `${meta.label} | The feng shui guide`,
+      description: meta.description,
+      url,
     },
   };
 }
@@ -34,6 +39,45 @@ export default async function GuideClusterPage(props: { params: Params }) {
   if (!meta) notFound();
 
   const pages = pagesInCluster(cluster);
+  const clusterUrl = `https://myfengshuihome.com/guide/${cluster}`;
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "The Ultimate Feng Shui Guide",
+        item: "https://myfengshuihome.com/guide",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: meta.label,
+        item: clusterUrl,
+      },
+    ],
+  };
+
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: meta.label,
+    description: meta.description,
+    url: clusterUrl,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
+      numberOfItems: pages.length,
+      itemListElement: pages.map((p, idx) => ({
+        "@type": "ListItem",
+        position: idx + 1,
+        name: p.title,
+        url: `${clusterUrl}/${p.slug}`,
+      })),
+    },
+  };
 
   return (
     <div className="page-content guide-cluster">
@@ -68,6 +112,15 @@ export default async function GuideClusterPage(props: { params: Params }) {
           ))}
         </ul>
       )}
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+      />
     </div>
   );
 }

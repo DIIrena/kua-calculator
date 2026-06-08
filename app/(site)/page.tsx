@@ -138,6 +138,9 @@ export default async function HomePage(props: {
             <Link href="/kua-calculator" className="cta-primary">
               Find my Kua number
             </Link>
+            <Link href="/guide" className="home-hero-link">
+              Open the Ultimate Feng Shui Guide
+            </Link>
             <a href="#what-it-is" className="home-hero-link">
               What is feng shui, really?
             </a>
@@ -231,8 +234,8 @@ export default async function HomePage(props: {
         <div className="page-content">
           <h2 id="free-tools-heading">Start here. Free, no account.</h2>
           <p className="home-section-lede">
-            Two doors into the practice. Either one works. The calculator is
-            faster; the methodology page is deeper.
+            Three doors into the practice. The calculator is fastest; the
+            guide is deepest; the methodology page sits between them.
           </p>
           <div className="free-tools-grid">
             <Link href="/kua-calculator" className="tool-card">
@@ -243,6 +246,15 @@ export default async function HomePage(props: {
                 unfavourable directions, each with a plain-English meaning.
               </p>
               <span className="tool-card-cta">Calculate my Kua &rarr;</span>
+            </Link>
+            <Link href="/guide" className="tool-card">
+              <h3>The Ultimate Feng Shui Guide</h3>
+              <p>
+                Eleven clusters, thirty-eight pages. Browse by life area, by
+                room, by system, or by the problem you came here to fix. The
+                full library, no purchase, no account.
+              </p>
+              <span className="tool-card-cta">Open the guide &rarr;</span>
             </Link>
             <Link href="/methodology" className="tool-card">
               <h3>The methodology</h3>

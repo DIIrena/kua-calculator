@@ -56,6 +56,61 @@ export default async function GuidePage(props: { params: Params }) {
     html = await renderGuidePage(cluster, slug);
   }
 
+  const pageUrl = `https://myfengshuihome.com/guide/${cluster}/${slug}`;
+  const clusterUrl = `https://myfengshuihome.com/guide/${cluster}`;
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "The Ultimate Feng Shui Guide",
+        item: "https://myfengshuihome.com/guide",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: clusterMeta.label,
+        item: clusterUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: page.title,
+        item: pageUrl,
+      },
+    ],
+  };
+
+  // Article JSON-LD only on rendered (non-gated, or gated-and-signed-in)
+  // body. Gated previews must not advertise content the crawler cannot see.
+  const articleJsonLd = html
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: page.title,
+        description: page.description,
+        datePublished: page.lastUpdated,
+        dateModified: page.lastUpdated,
+        author: {
+          "@type": "Organization",
+          name: "My Feng Shui Home",
+          url: "https://myfengshuihome.com",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "My Feng Shui Home",
+          url: "https://myfengshuihome.com",
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": pageUrl,
+        },
+      }
+    : null;
+
   return (
     <div className="page-content guide-page">
       <p className="eyebrow">
@@ -87,6 +142,17 @@ export default async function GuidePage(props: { params: Params }) {
           dangerouslySetInnerHTML={{ __html: html ?? "" }}
         />
       )}
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      {articleJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
+      ) : null}
     </div>
   );
 }

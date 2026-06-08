@@ -5,7 +5,7 @@ import { GUIDE_CLUSTERS, pagesInCluster } from "@/lib/guide";
 export const metadata: Metadata = {
   title: "The Ultimate Feng Shui Guide | My Feng Shui Home",
   description:
-    "Eleven clusters, thirty-eight pages of calm, jargon-free feng shui. Pick a reading path by intent: start here, read by room, read by life area, learn the systems, fix a problem, or use the glossary.",
+    "Eleven clusters, thirty-eight pages of calm, jargon-free feng shui. Pick a reading path: start here, by room, by life area, by system, or fix a problem.",
   alternates: { canonical: "https://myfengshuihome.com/guide" },
 };
 

@@ -5776,3 +5776,22 @@ a:hover { color: var(--clay-deep); }
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* --- Small-phone tightening (iPhone SE class, <=480px) --- */
+@media (max-width: 480px) {
+  .guide-intent-path-card,
+  .guide-cluster-card,
+  .guide-tools-aside {
+    padding: var(--space-4);
+  }
+
+  .guide-intent-link-label,
+  .guide-intent-link-note {
+    overflow-wrap: anywhere;
+  }
+
+  .guide-page-heading {
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+}
