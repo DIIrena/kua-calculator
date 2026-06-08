@@ -26,7 +26,7 @@ One feature non-practitioners can grasp directly is the seasonal flip. Charts ca
 
 Both systems use a nine-palace grid. Both are time-aware. The differences are load-bearing.
 
-Flying Stars reads a **building** over a calendar of Periods, years, and months, tracking number-based stars across that building's natal chart. QMDJ reads a **moment** down to a two-hour block. Flying Stars uses Doors, Stars, Stems, and Deities are not part of its vocabulary; QMDJ uses those four layers per palace. Flying Stars is the time-aware sub-school of Compass School. QMDJ is its own discipline with its own lineage.
+Flying Stars reads a **building** over a calendar of Periods, years, and months, tracking number-based stars across that building's natal chart. QMDJ reads a **moment** down to a two-hour block. Doors, Stars, Stems, and Deities are not part of Flying Stars vocabulary; QMDJ uses those four layers per palace. Flying Stars is the time-aware sub-school of Compass School. QMDJ is its own discipline with its own lineage.
 
 The simplest version: same grid, different question. [The Flying Stars and BTB page covers the building-side timing layer](/guide/schools/flying-stars-btb-and-timing). This page covers the moment layer.
 

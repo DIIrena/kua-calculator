@@ -19,7 +19,7 @@ The cleanest way to keep these tools from blurring into one another is to name t
 
 Inside the four feng shui schools, the biggest beginner error is mixing the BTB door-Bagua with classical Kua arrangement. That error lives on the schools page. **Outside** feng shui, the bigger and more common error is mismatch at the outer boundary: asking a BaZi chart to redesign a living room, asking a feng shui compass to predict a wedding date, asking a stone on a shelf to do the work of any of the above.
 
-Your future is not a thing a feng shui consultation delivers. The *conditions* a home sits inside are. Mirror that: your future is not a thing a BaZi reading delivers either - a working hypothesis about temperament and seasons of attention is. And QMDJ does not deliver the wish; the tradition reads it as a window for one discrete action, and the window closes.
+Your future is not a thing a feng shui reading delivers. The *conditions* a home sits inside are. Mirror that: your future is not a thing a BaZi reading delivers either - a working hypothesis about temperament and seasons of attention is. And QMDJ does not deliver the wish; the tradition reads it as a window for one discrete action, and the window closes.
 
 ## A quick orientation, in prose
 

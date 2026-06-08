@@ -24,7 +24,7 @@ That is as far as the description goes. This page names stones and describes the
 
 ## The six brand levers applied to stones
 
-The same six levers you would apply to any cure apply here. **Element**, mostly Earth. **Placement**, which sector or room. **Visibility**, one you can actually see, not buried at the back of a shelf. **Proportion**, one well-chosen piece beats twelve crowded ones. **Timing**, seasonal or permanent. **Room use**, does the room support quiet attention or activation. Read the cluster as one practice and stones slot in cleanly.
+The same six levers you would apply to any cure apply here. **Element**, mostly Earth. **Placement**, which sector or room. **Visibility**, one you can actually see, not buried at the back of a shelf. **Proportion**, one well-chosen piece beats twelve crowded ones. **Timing**, seasonal or permanent. **Room use**, does the room support quiet attention or active company. Read the cluster as one practice and stones slot in cleanly.
 
 ## Mineralogical honesty
 

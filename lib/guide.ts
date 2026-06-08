@@ -145,6 +145,15 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     order: 10,
     sourceChapters: ["13", "14", "15", "16"],
   },
+  {
+    slug: "glossary",
+    label: "Glossary",
+    tagline: "A scannable A to Z for terms that come up across the guide.",
+    description:
+      "Four scannable glossary pages that rescue a reader who got lost on a term and hand them back to the canonical page where the topic is properly explained. Core terms, schools and Bagua vocabulary, cures and elements, timing and sister disciplines.",
+    order: 11,
+    sourceChapters: ["12"],
+  },
 ];
 
 export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
@@ -552,6 +561,54 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
       "Crystals as cultural objects, not engines. The two-reading frame (aesthetic and attentional plus the attributed folk vocabulary). Named stones, mineralogical honesty, and the gift-shop claims this site does not assert.",
     teaser:
       "A crystal is a coloured weighty object with a folk vocabulary attached. The aesthetic reading is yours; the energetic reading is the tradition's, attributed.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "7 minutes",
+  },
+  {
+    cluster: "glossary",
+    slug: "glossary-core-feng-shui-terms",
+    title: "Glossary: core feng shui terms.",
+    description:
+      "The 21 foundational terms that recur everywhere else in the guide. Qi, sha qi, sheng qi, si qi, yin, yang, tai chi, Yi Jing, Zang Shu, the older Wade-Giles spellings, and the practice itself. One link per entry to the canonical page.",
+    teaser:
+      "Foundation A to Z. Qi, yin and yang, sha qi, the Yi Jing, the practice itself. Twenty-one entries, each one click from its canonical home.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "5 minutes",
+  },
+  {
+    cluster: "glossary",
+    slug: "glossary-schools-directions-and-bagua",
+    title: "Glossary: schools, directions, and the Bagua.",
+    description:
+      "Twenty-five terms covering school lineages (Form, Compass, BTB), the eight trigrams (Qian, Kun, Kan, Li, Zhen, Xun, Gen, Dui), Bagua arrangements, the luopan, the 24 Mountains, the Kua number, the four celestial animals, and the East and West groups.",
+    teaser:
+      "School lineages, eight trigrams, Bagua arrangements, the luopan, the 24 Mountains, the celestial animals. Twenty-five entries linked to canonical homes.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "7 minutes",
+  },
+  {
+    cluster: "glossary",
+    slug: "glossary-cures-rooms-and-elements",
+    title: "Glossary: cures, rooms, and the five elements.",
+    description:
+      "Twenty-two terms covering the Five Elements (Wood, Fire, Earth, Metal, Water), productive and controlling cycles, command position, the Eight Mansions directions other than Sheng Qi, and the folk-traditional objects (Bagua mirror, Chan Chu, fu dogs, lucky bamboo, mandarin ducks, Three Secrets Reinforcement).",
+    teaser:
+      "Five Elements, the productive and controlling cycles, command position, Eight Mansions directions, and the folk-traditional cure objects. Twenty-two entries, each linked.",
+    lastUpdated: "2026-06-07",
+    gated: false,
+    readingTime: "6 minutes",
+  },
+  {
+    cluster: "glossary",
+    slug: "glossary-timing-and-sister-disciplines",
+    title: "Glossary: timing and sister disciplines.",
+    description:
+      "Twenty-three terms covering the Xuan Kong family (Fei Xing, Periods, Yuan, San Yuan, San He, Da Gua), the solar calendar (Li Chun), the cautious annual stars (Five Yellow, Two Black), the calendrical scaffolding (Heavenly Stems, Earthly Branches, Four Pillars), Form School distance terms, BaZi, and Qi Men Dun Jia.",
+    teaser:
+      "Xuan Kong, Flying Stars, Periods, Li Chun, the cautious annual stars, the calendrical scaffolding, BaZi, and Qi Men Dun Jia. Twenty-three entries to close the guide.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "7 minutes",
