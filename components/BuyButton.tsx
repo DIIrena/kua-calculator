@@ -29,8 +29,10 @@ import { trackEvent } from "@/lib/analytics";
 // Only `waitlist` is implemented today. The waitlist branch carries
 // the Phase 5A conversion polish: the anchor id `waitlist`, the trust
 // microstrip, localStorage email pre-fill across product pages, and
-// the three Plausible funnel events (signup_attempt / signup_success /
-// signup_error).
+// the three funnel events (signup_attempt / signup_success /
+// signup_error). The funnel events are wired through trackEvent in
+// lib/analytics.ts, which currently no-ops; they start firing when
+// a paid analytics tier is turned on.
 
 export type BuyButtonState =
   | "waitlist"

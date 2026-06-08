@@ -8,7 +8,9 @@ import { trackEvent } from "@/lib/analytics";
 // how we measure the free Kua calculator -> planner flow WITHOUT loading
 // any analytics on the calculator page itself, which stays tracker-free.
 // The calculator page only carries a plain link with the ?from param;
-// the event is recorded here, on the planner page, where Plausible runs.
+// the event is recorded here, on the planner page, which sits inside the
+// (site) layout where Vercel Web Analytics is mounted. trackEvent itself
+// currently no-ops; it starts firing when a paid analytics tier is on.
 export default function PlannerSourceTracker({ source }: { source: string }) {
   useEffect(() => {
     trackEvent("planner_source_visit", { source });
