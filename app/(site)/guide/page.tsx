@@ -298,7 +298,7 @@ export default function GuideIndexPage() {
       <aside className="guide-tools-aside" aria-label="Free tools and waitlists">
         <h2 className="guide-tools-heading">Tools next to the guide</h2>
         <p>
-          Two free things sit next to the guide. The{" "}
+          A few practical tools sit next to the guide. The{" "}
           <Link href="/kua-calculator">Kua calculator</Link> gives you
           your four supportive directions in under a minute. The{" "}
           <Link href="/products/personal-feng-shui-compass">
