@@ -45,6 +45,7 @@ This addendum supersedes nothing in the rest of the doc. Section 4 (sitemap) and
 
 - Anchor-page promotion list lives at `spec/anchor-pages-2026-06-08.md`. The 5 anchors (4 Kua calculator + 1 Planner waitlist) selected from the 38 published guide pages, with per-page CTAs and content angles. Use as the ground truth for the channels and content-calendar phases that follow.
 - Channel selection for the 5 anchors lives at `spec/channels-2026-06-08.md`. Pinterest-first launch on find-your-kua-number, with a 30-day mix of Pinterest 45 / SEO 30 / asset production 15 / Reddit 10 / email 0. Owner-realistic week 1 of 6 to 8 hours. Use as the ground truth for the content-calendar phase that follows.
+- 30-day promotion calendar for the 5 anchors lives at `spec/promotion-calendar-2026-06-08.md`. Week-by-week sessions with estimated minutes, deliverables, and success checks. Caps a part-time month at 24.5 to 33 hours, 4 to 5 pins, 5 SEO sessions, 24+ Reddit comments. Anchor 4 promotion explicitly deferred to the Li Chun 2027 window. Use as the execution guide.
 
 ---
 
