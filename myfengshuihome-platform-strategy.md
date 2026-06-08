@@ -41,6 +41,12 @@ This addendum supersedes nothing in the rest of the doc. Section 4 (sitemap) and
 
 ---
 
+## Latest pointers
+
+- Anchor-page promotion list lives at `spec/anchor-pages-2026-06-08.md`. The 5 anchors (4 Kua calculator + 1 Planner waitlist) selected from the 38 published guide pages, with per-page CTAs and content angles. Use as the ground truth for the channels and content-calendar phases that follow.
+
+---
+
 ## 0. One-page summary
 
 | Question | Answer |
