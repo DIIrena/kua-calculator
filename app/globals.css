@@ -5626,3 +5626,153 @@ a:hover { color: var(--clay-deep); }
 
 .guide-page-gate p { margin: 0 0 var(--space-3) 0; }
 .guide-page-gate p:last-child { margin-bottom: 0; }
+
+/* ============================================================
+   /guide hub - intent paths, full library section, tools aside.
+   ============================================================ */
+
+.guide-intent-paths {
+  list-style: none;
+  margin: 0 0 var(--space-8) 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 720px) {
+  .guide-intent-paths { grid-template-columns: 1fr 1fr; }
+}
+
+.guide-intent-path-card {
+  padding: var(--space-5);
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.guide-intent-path-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--ink);
+}
+
+.guide-intent-path-tagline {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  line-height: 1.45;
+}
+
+.guide-intent-path-description {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.guide-intent-path-links {
+  list-style: none;
+  margin: var(--space-2) 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.guide-intent-path-link-item {
+  margin: 0;
+}
+
+.guide-intent-path-link {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  background: var(--cream);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 150ms ease, transform 150ms ease;
+}
+
+.guide-intent-path-link:hover {
+  border-color: var(--green);
+  transform: translateY(-1px);
+}
+
+.guide-intent-path-link:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+.guide-intent-link-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--green-deep);
+  margin-bottom: 2px;
+}
+
+.guide-intent-link-note {
+  display: block;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+/* --- Full library section --- */
+.guide-full-library {
+  margin-top: var(--space-8);
+}
+
+.guide-library-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  margin: 0 0 var(--space-2) 0;
+  color: var(--ink);
+}
+
+.guide-library-orientation {
+  margin: 0 0 var(--space-5) 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 640px;
+}
+
+/* --- Tools aside --- */
+.guide-tools-aside {
+  margin-top: var(--space-8);
+  padding: var(--space-5);
+  background: var(--cream);
+  border-radius: var(--radius-md);
+}
+
+.guide-tools-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 0 0 var(--space-3) 0;
+  color: var(--ink);
+}
+
+.guide-tools-aside p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.guide-tools-aside a {
+  color: var(--green-deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

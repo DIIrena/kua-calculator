@@ -10,7 +10,7 @@ Now the walk, starting in the south and turning clockwise through the corners.
 
 ## South-west
 
-**Love** sits in the south-west. The trigram is *Kun*, "earth". The element is **Earth**. The tradition associates this sector with partnership, openness, and the conditions that hold a relationship steady. Many readers find this is the corner that holds the bedroom, or the one they wish did. The [Love sector deep dive](/life/love) takes the walk room by room.
+**Love** sits in the southwest. The trigram is *Kun*, "earth". The element is **Earth**. The tradition associates this sector with partnership, openness, and the conditions that hold a relationship steady. Many readers find this is the corner that holds the bedroom, or the one they wish did. The [Love sector deep dive](/life/love) takes the walk room by room.
 
 ## West
 
@@ -18,7 +18,7 @@ Now the walk, starting in the south and turning clockwise through the corners.
 
 ## North-west
 
-**Travel and helpful people** sits in the north-west. The trigram is *Qian*, "heaven". The element is **Metal**. The tradition associates this sector with mentors, allies, journeys, and the network around the home. The [Travel sector deep dive](/life/travel) walks the corner with the question of who arrives to help.
+**Travel and helpful people** sits in the northwest. The trigram is *Qian*, "heaven". The element is **Metal**. The tradition associates this sector with mentors, allies, journeys, and the network around the home. The [Travel sector deep dive](/life/travel) walks the corner with the question of who arrives to help.
 
 ## North
 
@@ -26,7 +26,7 @@ Now the walk, starting in the south and turning clockwise through the corners.
 
 ## North-east
 
-**Knowledge and study** sits in the north-east. The trigram is *Gen*, "mountain". The element is **Earth**. The tradition associates this sector with study, learning, and quiet ground. The [Knowledge sector deep dive](/life/knowledge) takes the walk for readers, students, and anyone whose work is mostly thinking.
+**Knowledge and study** sits in the northeast. The trigram is *Gen*, "mountain". The element is **Earth**. The tradition associates this sector with study, learning, and quiet ground. The [Knowledge sector deep dive](/life/knowledge) takes the walk for readers, students, and anyone whose work is mostly thinking.
 
 ## East
 
@@ -34,7 +34,7 @@ Now the walk, starting in the south and turning clockwise through the corners.
 
 ## South-east
 
-**Money** sits in the south-east. The trigram is *Xun*, "wind". The element is **Wood**. The tradition associates this sector with the wallet, the stove, and the things that feed the household. The [Money sector deep dive](/life/money) walks the corner room by room, and [the main wealth-corner article](/articles/bagua-map-wealth-corner) is the longer read.
+**Money** sits in the southeast. The trigram is *Xun*, "wind". The element is **Wood**. The tradition associates this sector with the wallet, the stove, and the things that feed the household. The [Money sector deep dive](/life/money) walks the corner room by room, and [the main wealth-corner article](/articles/bagua-map-wealth-corner) is the longer read.
 
 ## Centre
 

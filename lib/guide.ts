@@ -15,6 +15,10 @@
 //   /guide/[cluster]/[slug]         - one guide page
 //
 // Markdown body lives at content/guide/<cluster>/<slug>.md.
+//
+// Convention: page titles do NOT carry trailing periods. They render
+// as H1s and as link text across the hub and cluster indexes, where a
+// period would read as repetitive noise.
 
 import { readFile } from "node:fs/promises";
 import path from "node:path";
@@ -51,16 +55,13 @@ export type GuidePage = {
   readingTime: string;
 };
 
-// Clusters seeded at scaffold time. Foundations is the only cluster
-// with a live page in this scaffold pass; the rest are intentionally
-// empty here and get filled as we adapt each one deliberately.
 export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
   {
     slug: "foundations",
     label: "Foundations",
-    tagline: "What feng shui actually is, plainly.",
+    tagline: "The honest baseline the rest of the guide stands on.",
     description:
-      "The basics, without the jargon. What feng shui is, what it isn't, and the small set of ideas the rest of the guide stands on.",
+      "One page on the foundations: what feng shui is, what it is not, and the small set of ideas the rest of the guide stands on.",
     order: 1,
     sourceChapters: ["01"],
   },
@@ -69,13 +70,13 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     label: "Compass School",
     tagline: "The calculative half of Classical feng shui, made scannable.",
     description:
-      "The calculative half of Classical feng shui in three pages: what it is, your Kua number and your four directions, and where to put the bed, the chair, and the door.",
+      "Three pages on the calculative half of Classical practice: what Compass School is, your Kua number and four directions, and where to put the bed, the chair, and the door.",
     order: 2,
     sourceChapters: ["06"],
   },
   {
     slug: "five-elements",
-    label: "The five elements",
+    label: "The Five Elements",
     tagline: "The vocabulary beneath every feng shui move.",
     description:
       "Wu Xing as a design language in three pages: the materials vocabulary, four questions for reading a real room, and the two cycles made usable as a fix kit.",
@@ -85,7 +86,7 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
   {
     slug: "bagua",
     label: "The Bagua",
-    tagline: "The map layer you put over a real floor plan.",
+    tagline: "The Bagua as a map layer laid over a real floor plan.",
     description:
       "Four pages on the Bagua: what the map layer actually is, the nine sectors named one by one, how to orient it (compass or front-door), and what to do when the floor plan is not a clean rectangle.",
     order: 4,
@@ -94,7 +95,7 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
   {
     slug: "rooms",
     label: "Rooms",
-    tagline: "Walk your home room by room, and rank what to fix first.",
+    tagline: "The room-by-room layer, read as a walk and not a verdict.",
     description:
       "Four pages on the room-by-room layer: how to read any room as a walk-not-verdict, the three highest-stakes rooms (bedroom, kitchen, front door), the active-use rooms (living, dining, home office), and the leakage and awkward cases.",
     order: 5,
@@ -102,7 +103,7 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
   },
   {
     slug: "schools",
-    label: "Schools of feng shui",
+    label: "Schools of Feng Shui",
     tagline: "A practitioner's map of Form, Compass, Flying Stars, and BTB.",
     description:
       "Three pages on how the major schools fit together: the four feng shui schools in one map, the Form vs Compass divide that runs through Classical practice, and where Flying Stars and BTB sit alongside the core.",
@@ -130,7 +131,7 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
   {
     slug: "healthy-home",
     label: "Healthy Home",
-    tagline: "The conditions a home can support: rest, air, light, and a daily rhythm of care.",
+    tagline: "Health as conditions a home can support, not promises a room can make.",
     description:
       "Four pages on health as conditions the home supports. The honest frame (no medical claims), the four environmental conditions (air, light, damp, stale corners), the room-by-room health read, and plants, materials, cleanliness, and the daily rhythm.",
     order: 9,
@@ -160,7 +161,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "foundations",
     slug: "what-feng-shui-is-plainly",
-    title: "What feng shui is, plainly.",
+    title: "What feng shui is, plainly",
     description:
       "A two-minute, jargon-free read on what feng shui is, what it isn't, and the small idea the rest of the guide depends on.",
     teaser:
@@ -172,7 +173,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "compass-school",
     slug: "what-is-compass-school",
-    title: "What Compass School is, and why it sits next to Form School.",
+    title: "What Compass School is, and why it sits next to Form School",
     description:
       "A short read on Compass School (Li Qi Pai), how it differs from Form School, the four sub-schools, and why Ba Zhai (Eight Mansions) is the practical place to start.",
     teaser:
@@ -184,7 +185,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "compass-school",
     slug: "find-your-kua-number",
-    title: "Find your Kua number and your four directions.",
+    title: "Find your Kua number and your four directions",
     description:
       "Your Kua number, the East/West group split, the four favourable directions (Sheng Qi, Tian Yi, Yan Nian, Fu Wei), and how to handle a mixed-group household.",
     teaser:
@@ -196,7 +197,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "compass-school",
     slug: "three-orientations",
-    title: "Three orientations the tradition weights most.",
+    title: "Three orientations the tradition weights most",
     description:
       "The three placements Eight Mansions weights most: where the head of the bed points, where your chair faces, and where the front door opens. One move to try this week.",
     teaser:
@@ -208,11 +209,11 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "five-elements",
     slug: "five-elements-as-a-design-language",
-    title: "The five elements as a design language.",
+    title: "The five elements as a design language",
     description:
       "Wu Xing is a vocabulary, not a horoscope. The materials, finishes, and shapes that map to Wood, Fire, Earth, Metal, and Water, with a quick way to read a piece of furniture as more than one element at once.",
     teaser:
-      "The vocabulary layer. Materials, finishes, and shapes mapped to Wood, Fire, Earth, Metal, and Water. Read a room the way a tailor reads a fabric.",
+      "The vocabulary layer. Materials, finishes, and shapes mapped to Wood, Fire, Earth, Metal, and Water.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "5 minutes",
@@ -220,7 +221,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "five-elements",
     slug: "reading-a-room-in-element-terms",
-    title: "How to read a room in element terms.",
+    title: "How to read a room in element terms",
     description:
       "Four questions you can ask in any room: materials, shapes, feel, and use. A two-minute diagnostic that turns the five-element vocabulary into a working read of a real space.",
     teaser:
@@ -232,7 +233,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "five-elements",
     slug: "the-productive-and-controlling-cycles",
-    title: "The cycles, made usable.",
+    title: "The cycles, made usable",
     description:
       "The two cycles that do almost all the practical work. Use the productive cycle first; reach for the controlling cycle when a room has too much of something and adding more would only feed the problem.",
     teaser:
@@ -244,7 +245,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "bagua",
     slug: "what-the-bagua-is",
-    title: "What the Bagua is.",
+    title: "What the Bagua is",
     description:
       "The Bagua is a structured way of looking at a floor plan, not a manifestation board. Eight sectors plus a centre, each carrying a direction, an element, and a life area. Early Heaven and Later Heaven explained.",
     teaser:
@@ -256,11 +257,11 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "bagua",
     slug: "the-nine-life-areas",
-    title: "The nine life areas.",
+    title: "The nine life areas",
     description:
-      "The nine sectors named one by one. South to fame, south-west to love, west to creativity, north-west to travel, north to career, north-east to knowledge, east to health, south-east to money, centre to wellbeing. Each links to its life-area deep dive.",
+      "The nine sectors named one by one. South to fame, southwest to love, west to creativity, northwest to travel, north to career, northeast to knowledge, east to health, southeast to money, centre to wellbeing. Each links to its life-area deep dive.",
     teaser:
-      "South to fame, north to career, south-east to money, centre to wellbeing. The nine sectors as the hub between the cluster and the per-area deep dives.",
+      "South to fame, north to career, southeast to money, centre to wellbeing. The nine sectors as the hub between the cluster and the per-area deep dives.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "5 minutes",
@@ -268,7 +269,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "bagua",
     slug: "compass-vs-front-door-methods",
-    title: "Compass method or front-door method.",
+    title: "Compass method or front-door method",
     description:
       "The two ways to orient the Bagua over a home. The Classical compass method ties the map to magnetic north; the BTB front-door method anchors it to the entry. How to pick one, why switching mid-walk is the most common beginner mistake.",
     teaser:
@@ -280,11 +281,11 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "bagua",
     slug: "missing-corners-and-irregular-homes",
-    title: "Missing corners and irregular homes.",
+    title: "Missing corners and irregular homes",
     description:
       "The Bagua was drawn for a square; real homes are L-shaped, multi-storey, or one studio. How to read missing corners, sectors that span two rooms, multi-storey plans, single-room Bagua, and what the centre is asking for.",
     teaser:
-      "L-shapes, multi-storey homes, sectors that span two rooms, single-room Bagua, and the centre. The Bagua applied to the house you actually live in.",
+      "L-shapes, multi-storey homes, sectors that span two rooms, and the centre. The Bagua applied to the house you actually live in.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "5 minutes",
@@ -292,7 +293,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "rooms",
     slug: "how-to-read-any-room",
-    title: "How to read any room.",
+    title: "How to read any room",
     description:
       "The walkthrough method: walk in the order qi walks (door, kitchen, bedroom, then the rest), read four things in each room, take notes, rank findings after the walk, and pick the lens (sector, direction, or elements) that fits.",
     teaser:
@@ -304,7 +305,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "rooms",
     slug: "bedroom-kitchen-front-door",
-    title: "Bedroom, kitchen, and front door.",
+    title: "Bedroom, kitchen, and front door",
     description:
       "The three highest-stakes rooms, read for room layout rather than facing direction. The wall the bed sits against, where the stove sits in the room, what the front door opens onto. Form School's room-layout angle.",
     teaser:
@@ -316,7 +317,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "rooms",
     slug: "living-dining-home-office",
-    title: "Living room, dining room, and home office.",
+    title: "Living room, dining room, and home office",
     description:
       "The active-use rooms, read through zones, main seat per zone, and layered lighting. Why subtraction beats addition in the living room, why round and oval tables hold the meal, and why the home office desk needs solid backing.",
     teaser:
@@ -328,7 +329,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "rooms",
     slug: "bathrooms-storage-problem-rooms",
-    title: "Bathrooms, storage, and problem rooms.",
+    title: "Bathrooms, storage, and problem rooms",
     description:
       "The rooms people apologise for. Containment as the bathroom's organising idea, storage rooms as deliberate rooms not overflow, and four short cases for problem rooms: slanted ceilings, beams, dead-ends, and mixed-use.",
     teaser:
@@ -340,7 +341,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "schools",
     slug: "four-feng-shui-schools-in-one-map",
-    title: "The four feng shui schools, in one map.",
+    title: "The four feng shui schools, in one map",
     description:
       "Form School reads the place. Compass School reads the directional fit. Flying Stars adds time. BTB anchors the Bagua to the front door. Four schools, four questions, one each. A map for the rest of the guide.",
     teaser:
@@ -352,7 +353,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "schools",
     slug: "form-school-vs-compass-school",
-    title: "Form School vs Compass School.",
+    title: "Form School vs Compass School",
     description:
       "The two halves of Classical practice. What Form School reads, what Compass School reads, why Form comes first, and when each leads. The four Celestial Animals, sha qi, the luopan, and Eight Mansions, at a map altitude.",
     teaser:
@@ -364,7 +365,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "schools",
     slug: "flying-stars-btb-and-timing",
-    title: "Flying Stars, BTB, and when timing enters the picture.",
+    title: "Flying Stars, BTB, and when timing enters the picture",
     description:
       "Flying Stars adds a moving calendar to Compass School. BTB is a separate 20th-century lineage anchored to the front door. The two layers that sit outside the Form-and-Compass core, what each one is for, and how not to mix them.",
     teaser:
@@ -376,7 +377,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "cures",
     slug: "what-feng-shui-cures-actually-are",
-    title: "What feng shui cures actually are.",
+    title: "What feng shui cures actually are",
     description:
       "A cure is a small, deliberate change to a room. It has a purpose you can name and a contraindication you can name. Six levers (element, placement, visibility, proportion, timing, room use) and the six families of cure objects.",
     teaser:
@@ -388,7 +389,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "cures",
     slug: "five-element-cures-room-by-room",
-    title: "Five-element cures, room by room.",
+    title: "Five-element cures, room by room",
     description:
       "Which element cure belongs in which room. Bedroom Earth for rest. A Wood bridge between stove and sink. Living Wood with warm layered light in the living room. Metal and Wood as supporting cures in the home office.",
     teaser:
@@ -400,7 +401,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "cures",
     slug: "mirrors-plants-light-sound-and-symbols",
-    title: "Mirrors, plants, light, sound, and symbols.",
+    title: "Mirrors, plants, light, sound, and symbols",
     description:
       "The five cure families that do the most work in a real room. Mirrors that redirect, plants that refresh, light that brightens, sound that softens a moving-air corner, and symbols that carry the occupant's meaning.",
     teaser:
@@ -412,7 +413,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "cures",
     slug: "annual-cures-vs-permanent-fixes",
-    title: "Annual cures vs permanent fixes.",
+    title: "Annual cures vs permanent fixes",
     description:
       "Most cures are decided once and left alone. A small number are checked each Li Chun. Three questions decide which is which: is it structural, is it an element imbalance, or is it an annual visiting-star position?",
     teaser:
@@ -424,7 +425,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "money",
     slug: "feng-shui-money-without-wishful-thinking",
-    title: "Feng shui and money without wishful thinking.",
+    title: "Feng shui and money without wishful thinking",
     description:
       "Money is handled, not summoned. The four observable things that the home's money places respond to (flow, care, visibility, preparation) and the six levers from the cures cluster applied to the southeast, the kitchen, the door, the desk, and storage.",
     teaser:
@@ -436,7 +437,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "money",
     slug: "the-southeast-wealth-area-and-how-to-read-it",
-    title: "The southeast wealth area and how to read it.",
+    title: "The southeast wealth area and how to read it",
     description:
       "The corner is a surface, not a shrine. Six short reads on the southeast: element, placement, visibility, proportion, timing, and room use. Walk to it, see what is actually there, pick one act of care for the week.",
     teaser:
@@ -448,7 +449,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "money",
     slug: "kitchen-stove-and-money-flow",
-    title: "Kitchen, stove, and money flow.",
+    title: "Kitchen, stove, and money flow",
     description:
       "The kitchen as a flow system. Fire (stove) and Water (sink) with Wood as the bridge. The six levers applied to the kitchen, and the four kinds of small unfixed thing that quietly drain attention before they drain money.",
     teaser:
@@ -460,7 +461,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "money",
     slug: "desk-door-and-business-money",
-    title: "Desk, door, and business money.",
+    title: "Desk, door, and business money",
     description:
       "The door is the entry. The desk is the residence. The four questions for the entry (flow, care, visibility, preparation) and the six levers applied to the desk you actually work at. Plus the studio or treatment room for anyone earning from home.",
     teaser:
@@ -472,7 +473,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "healthy-home",
     slug: "healthy-home-feng-shui-without-health-promises",
-    title: "Healthy-home feng shui without health promises.",
+    title: "Healthy-home feng shui without health promises",
     description:
       "A home does not treat or cure. It shapes the conditions a body lives inside: rest, air, light, moisture, food preparation, and wet-room containment. The six levers applied where tradition and contemporary environmental design agree.",
     teaser:
@@ -484,7 +485,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "healthy-home",
     slug: "air-light-damp-and-stale-corners",
-    title: "Air, light, damp, and stale corners.",
+    title: "Air, light, damp, and stale corners",
     description:
       "The four environmental conditions that decide how a home feels to live inside: ventilation, daylight, humidity (roughly 30 to 50 percent), and the corners every home tends to forget. A small daily practice that holds them.",
     teaser:
@@ -496,11 +497,11 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "healthy-home",
     slug: "bedroom-kitchen-and-bathroom-health-check",
-    title: "Bedroom, kitchen, and bathroom health check.",
+    title: "Bedroom, kitchen, and bathroom health check",
     description:
       "The room-by-room health read. Bedroom for rest conditions (temperature, dark, fresh air, clean bedding). Kitchen for food safety (visible food, clean surfaces, working fridge, extraction). Bathroom for hygiene containment.",
     teaser:
-      "Three rooms carry most of the home's health work. Rest conditions, food safety, hygiene containment. Not layout - the room-layout pages own that.",
+      "Three rooms carry most of the home's health work: rest conditions, food safety, hygiene containment. Layout sits in the room cluster; this page is the health read.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "6 minutes",
@@ -508,7 +509,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "healthy-home",
     slug: "plants-materials-cleanliness-and-daily-rhythm",
-    title: "Plants, materials, cleanliness, and daily rhythm.",
+    title: "Plants, materials, cleanliness, and daily rhythm",
     description:
       "Plants as part of the room (not air purifiers). Natural materials and low-fume choices. Cleanliness as a daily rhythm, not a heroic blitz. Repair as part of the rhythm: walk the home, list the broken things, fix one this week.",
     teaser:
@@ -520,7 +521,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "sister-disciplines",
     slug: "what-belongs-to-feng-shui-and-what-sits-beside-it",
-    title: "What belongs to feng shui and what sits beside it.",
+    title: "What belongs to feng shui and what sits beside it",
     description:
       "Feng shui reads the home. BaZi reads the person. Qi Men Dun Jia reads the moment. Crystals are optional cultural objects. The outer boundary, named in plain language, so the reader stops mixing systems blindly.",
     teaser:
@@ -532,7 +533,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "sister-disciplines",
     slug: "bazi-birth-data-and-personal-timing",
-    title: "BaZi: birth data and personal timing.",
+    title: "BaZi: birth data and personal timing",
     description:
       "The four pillars (Year, Month, Day, Hour), the day master as the chart's protagonist, the Ten Gods at overview altitude, and what BaZi can and cannot do. A sister discipline to feng shui, not a branch of it.",
     teaser:
@@ -544,7 +545,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "sister-disciplines",
     slug: "qi-men-dun-jia-date-selection-and-strategy",
-    title: "Qi Men Dun Jia: date selection and strategic movement.",
+    title: "Qi Men Dun Jia: date selection and strategic movement",
     description:
       "QMDJ reads the present moment of action. Nine palaces, four information layers per palace, two-hour windows. Distinct from Flying Stars (which reads a building over years). Practical entry points: date selection and short-term facing.",
     teaser:
@@ -556,7 +557,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "sister-disciplines",
     slug: "crystals-symbols-and-optional-tools",
-    title: "Crystals, symbols, and optional tools.",
+    title: "Crystals, symbols, and optional tools",
     description:
       "Crystals as cultural objects, not engines. The two-reading frame (aesthetic and attentional plus the attributed folk vocabulary). Named stones, mineralogical honesty, and the gift-shop claims this site does not assert.",
     teaser:
@@ -568,7 +569,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "glossary",
     slug: "glossary-core-feng-shui-terms",
-    title: "Glossary: core feng shui terms.",
+    title: "Core feng shui terms",
     description:
       "The 21 foundational terms that recur everywhere else in the guide. Qi, sha qi, sheng qi, si qi, yin, yang, tai chi, Yi Jing, Zang Shu, the older Wade-Giles spellings, and the practice itself. One link per entry to the canonical page.",
     teaser:
@@ -580,7 +581,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "glossary",
     slug: "glossary-schools-directions-and-bagua",
-    title: "Glossary: schools, directions, and the Bagua.",
+    title: "Schools, directions, and the Bagua",
     description:
       "Twenty-five terms covering school lineages (Form, Compass, BTB), the eight trigrams (Qian, Kun, Kan, Li, Zhen, Xun, Gen, Dui), Bagua arrangements, the luopan, the 24 Mountains, the Kua number, the four celestial animals, and the East and West groups.",
     teaser:
@@ -592,7 +593,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "glossary",
     slug: "glossary-cures-rooms-and-elements",
-    title: "Glossary: cures, rooms, and the five elements.",
+    title: "Cures, rooms, and the five elements",
     description:
       "Twenty-two terms covering the Five Elements (Wood, Fire, Earth, Metal, Water), productive and controlling cycles, command position, the Eight Mansions directions other than Sheng Qi, and the folk-traditional objects (Bagua mirror, Chan Chu, fu dogs, lucky bamboo, mandarin ducks, Three Secrets Reinforcement).",
     teaser:
@@ -604,7 +605,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "glossary",
     slug: "glossary-timing-and-sister-disciplines",
-    title: "Glossary: timing and sister disciplines.",
+    title: "Timing and sister disciplines",
     description:
       "Twenty-three terms covering the Xuan Kong family (Fei Xing, Periods, Yuan, San Yuan, San He, Da Gua), the solar calendar (Li Chun), the cautious annual stars (Five Yellow, Two Black), the calendrical scaffolding (Heavenly Stems, Earthly Branches, Four Pillars), Form School distance terms, BaZi, and Qi Men Dun Jia.",
     teaser:
