@@ -142,15 +142,16 @@ The aesthetic target is closer to a Pattern Palace editorial diagram than a typi
 
 ## Working files
 
-Pin master files live on the owner's local disk, NOT in the git repo (Adobe `.ai` files are too large and not useful in git):
+Pin master files live on the owner's local disk, NOT in the git repo (source design files are not useful in git):
 
-- Master: `Desktop/MFSH Pins/00 Masters/MFSH-master-pin.ai`
-- Variant: `Desktop/MFSH Pins/01 Compass Chart/compass-chart.ai` (Session 3)
-- Swatch library: `Desktop/MFSH Pins/MFSH-Brand.ase`
+- Master: `Desktop/MFSH Pins/00 Masters/MFSH-master-pin.svg`
+- Variant: `Desktop/MFSH Pins/01 Compass Chart/compass-chart.svg` (Session 3 fills in the middle artwork)
 - Palette reference text: `Desktop/MFSH Pins/MFSH-palette.txt`
-- Reference SVG (live-text rebuild template): `Desktop/MFSH Pins/00 Masters/master-template-reference.svg`
+- Folder readme: `Desktop/MFSH Pins/README.txt`
 
-Final exports go to `Desktop/MFSH Pins/<folder>/exports/<slug>-YYYY-MM-DD.png` and from there to Pinterest. Source `.ai` files stay on the owner's machine.
+Working format is **SVG**. Illustrator opens SVG natively (`File > Open`) and the file stays editable with live text. No `.ai` save needed. No `.ase` swatch library needed; the three brand hex codes live in `MFSH-palette.txt` and can be pasted into Illustrator's color picker any time.
+
+Final exports go to `Desktop/MFSH Pins/<folder>/exports/<slug>-YYYY-MM-DD.png` and from there to Pinterest. Source SVG files stay on the owner's machine.
 
 ---
 
