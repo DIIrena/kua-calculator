@@ -21,8 +21,11 @@ export async function generateMetadata(props: {
   const { cluster, slug } = await props.params;
   const page = findGuidePage(cluster, slug);
   if (!page) return { title: "Not found" };
+  // SEO title: use seoTitle if the page sets it (high-intent search
+  // phrasing), otherwise fall back to the in-page title.
+  const seoTitle = page.seoTitle ?? page.title;
   return {
-    title: `${page.title} | My Feng Shui Home`,
+    title: `${seoTitle} | My Feng Shui Home`,
     description: page.description,
     alternates: {
       canonical: `https://myfengshuihome.com/guide/${cluster}/${slug}`,

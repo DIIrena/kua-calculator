@@ -45,6 +45,10 @@ export type GuidePage = {
   slug: string;
   title: string;
   description: string;
+  /** Optional SEO-specific title used for the SERP and browser tab.
+   *  Falls back to `title` if not set. Use this when the high-intent
+   *  search query phrasing differs from the in-page H1 phrasing. */
+  seoTitle?: string;
   /** Short hook for the cluster-page list. */
   teaser: string;
   /** ISO date string. Shown at the foot of the page. */
@@ -186,11 +190,12 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
     cluster: "compass-school",
     slug: "find-your-kua-number",
     title: "Find your Kua number and your four directions",
+    seoTitle: "Kua Number Calculator and Your Four Directions",
     description:
-      "Your Kua number, the East/West group split, the four favourable directions (Sheng Qi, Tian Yi, Yan Nian, Fu Wei), and how to handle a mixed-group household.",
+      "Find your Kua number with the free calculator. East or West group, your four favourable directions (Sheng Qi, Tian Yi, Yan Nian, Fu Wei), and how to handle a mixed-group household.",
     teaser:
       "Your Kua number sorts you into East or West group and assigns four supportive directions. Here is what each one is for.",
-    lastUpdated: "2026-06-07",
+    lastUpdated: "2026-06-10",
     gated: false,
     readingTime: "4 minutes",
   },

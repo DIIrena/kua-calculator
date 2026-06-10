@@ -24,6 +24,16 @@ You do not need to memorise any of this to start. The calculator returns your fo
 
 About half of all couples are mixed, and the tradition does not ask you to optimise the whole home for one person. The move is to assign functions instead. The shared bedroom can favour one partner's relationship direction, and the tradition points couples toward *Yan Nian*. The home office favours the person who actually uses it. The head-of-household dining seat favours whoever sits there most. *In a shared home you cannot optimise for everyone at once. Pick the main user of each room.*
 
+## Frequently asked questions.
+
+### What is a Kua number?
+
+Your Kua number is a single digit between 1 and 9 (the tradition skips 5) calculated from your birth year and your gender at birth. It sorts you into the East group (1, 3, 4, 9) or the West group (2, 6, 7, 8) and returns four directions the tradition reads as supportive for you, and four it asks you to handle with care. The free calculator does the maths in ten seconds, including the Li Chun adjustment for January and early February births.
+
+### East group or West group, which am I?
+
+Your group follows directly from your Kua number. East group is 1, 3, 4, 9. West group is 2, 6, 7, 8. The supportive directions for one group are the cautious ones for the other, which is why the tradition leads with this split. If you do not know your Kua number yet, the free calculator returns your number and your group together. There is no need to memorise the formula.
+
 ## Where to go next.
 
 If you have ten seconds and have not yet, [find your Kua number](/kua-calculator).
