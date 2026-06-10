@@ -23,33 +23,33 @@ export function buildPlannerFollowupHtml(
   return `<!doctype html>
 <html lang="en">
   <head><meta charset="utf-8" /><title>A page from the 2026 Planner</title></head>
-  <body style="margin:0;padding:32px 16px;background:#f1e9d8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#2a271e;">
+  <body style="margin:0;padding:32px 16px;background:#fcfcf8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#0e3b2c;">
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
       <tr><td align="center">
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:580px;background:#fbf7ee;border:1px solid #cfc4ab;border-radius:14px;padding:32px;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:580px;background:#ffffff;border:1px solid #e2dac5;border-radius:14px;padding:32px;">
           <tr><td align="center" style="padding-bottom:16px;">
-            <div style="font-family:'Brush Script MT',cursive;font-size:30px;color:#4f5a36;line-height:1;">My Feng Shui Home</div>
+            <div style="font-family:'Brush Script MT',cursive;font-size:30px;color:#0e3b2c;line-height:1;">My Feng Shui Home</div>
           </td></tr>
           <tr><td>
-            <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#2a271e;">A page from the planner.</h1>
-            <p style="margin:0 0 14px;font:16px/1.65 sans-serif;color:#2a271e;">A week ago you joined the waitlist for the 2026 Annual Feng Shui Planner. I wanted to show you the kind of page you will be reading when it lands. Below is one section from the middle of the book, the way it will look when you open the PDF on your kitchen counter.</p>
+            <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#0e3b2c;">A page from the planner.</h1>
+            <p style="margin:0 0 14px;font:16px/1.65 sans-serif;color:#0e3b2c;">A week ago you joined the waitlist for the 2026 Annual Feng Shui Planner. I wanted to show you the kind of page you will be reading when it lands. Below is one section from the middle of the book, the way it will look when you open the PDF on your kitchen counter.</p>
           </td></tr>
           <tr><td align="center" style="padding:8px 0 18px;">
-            <img src="${image}" alt="A sample page from the 2026 Annual Feng Shui Planner" width="440" style="display:block;width:100%;max-width:440px;height:auto;border:1px solid #cfc4ab;border-radius:6px;" />
+            <img src="${image}" alt="A sample page from the 2026 Annual Feng Shui Planner" width="440" style="display:block;width:100%;max-width:440px;height:auto;border:1px solid #e2dac5;border-radius:6px;" />
           </td></tr>
           <tr><td>
-            <p style="margin:0 0 14px;font:16px/1.65 sans-serif;color:#2a271e;">Every practical chapter sits inside the same six-box structure. <em>What this means</em>, <em>do this</em>, <em>avoid this</em>, a <em>practitioner tip</em>, a <em>real home example</em>, and one closing line called <em>if you only do one thing</em>. You can read the whole section, or you can stop at the last line and still have everything you need.</p>
-            <p style="margin:0 0 14px;font:16px/1.65 sans-serif;color:#2a271e;">The launch is still upcoming. We are waiting on the business bank account to clear so we can wire up live payments. There is no pressure from this side. When the date is firm we email you the launch page and the early price, and not a moment before.</p>
+            <p style="margin:0 0 14px;font:16px/1.65 sans-serif;color:#0e3b2c;">Every practical chapter sits inside the same six-box structure. <em>What this means</em>, <em>do this</em>, <em>avoid this</em>, a <em>practitioner tip</em>, a <em>real home example</em>, and one closing line called <em>if you only do one thing</em>. You can read the whole section, or you can stop at the last line and still have everything you need.</p>
+            <p style="margin:0 0 14px;font:16px/1.65 sans-serif;color:#0e3b2c;">The launch is still upcoming. We are waiting on the business bank account to clear so we can wire up live payments. There is no pressure from this side. When the date is firm we email you the launch page and the early price, and not a moment before.</p>
             <p style="margin:24px 0 0;text-align:center;">
-              <a href="${productUrl}" style="display:inline-block;background:#4f5a36;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">Re-read the planner page</a>
+              <a href="${productUrl}" style="display:inline-block;background:#0e3b2c;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">Re-read the planner page</a>
             </p>
           </td></tr>
-          <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#5f5848;border-top:1px solid #cfc4ab;">
+          <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#4f5b53;border-top:1px solid #e2dac5;">
             You joined this list at myfengshuihome.com. You can unsubscribe at any time. We will not share your address.
           </td></tr>
         </table>
-        <div style="font-size:12px;color:#5f5848;padding-top:14px;">
-          <a href="${root}" style="color:#4f5a36;text-decoration:none;">myfengshuihome.com</a>
+        <div style="font-size:12px;color:#4f5b53;padding-top:14px;">
+          <a href="${root}" style="color:#0e3b2c;text-decoration:none;">myfengshuihome.com</a>
         </div>
       </td></tr>
     </table>

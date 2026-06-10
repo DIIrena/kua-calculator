@@ -20,16 +20,16 @@ const MONTHS = [
 // Brand tokens (kept literal here so the email is portable; mirrors
 // brand/BRAND_BOOK.md and the site's :root variables).
 const COLOR = {
-  cream:    "#f1e9d8",
-  paper:    "#fbf7ee",
-  sand:     "#e0d3b8",
-  hairline: "#cfc4ab",
-  green:    "#4f5a36",
-  greenSoft:"#d8debf",
-  claySoft: "#f0d5c0",
-  clayDeep: "#9c5331",
-  ink:      "#2a271e",
-  ink2:     "#5f5848",
+  cream:    "#fcfcf8",
+  paper:    "#ffffff",
+  sand:     "#f2f2ee",
+  hairline: "#e2dac5",
+  green:    "#0e3b2c",
+  greenSoft:"#dde6e0",
+  claySoft: "#f8d8c5",
+  clayDeep: "#b8430e",
+  ink:      "#0e3b2c",
+  ink2:     "#4f5b53",
 };
 
 const SCRIPT_FONT = "Brush Script MT, Lucida Handwriting, cursive";

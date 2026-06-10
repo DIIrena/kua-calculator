@@ -28,12 +28,12 @@ const BRAND_SUBJECT = "Sign in to My Feng Shui Home";
 // Inline-styled magic-link email. Uses the brand palette directly so it
 // renders correctly across email clients with no external CSS.
 function buildEmailHtml(url: string): string {
-  const cream = "#f1e9d8";
-  const paper = "#fbf7ee";
-  const sage = "#4f5a36";
-  const ink = "#2a271e";
-  const ink2 = "#5f5848";
-  const hairline = "#cfc4ab";
+  const cream = "#fcfcf8";
+  const paper = "#ffffff";
+  const sage = "#0e3b2c";
+  const ink = "#0e3b2c";
+  const ink2 = "#4f5b53";
+  const hairline = "#e2dac5";
   const script = "Brush Script MT, Lucida Handwriting, cursive";
 
   return `<!doctype html>

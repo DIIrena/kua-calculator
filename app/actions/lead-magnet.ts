@@ -16,27 +16,27 @@ function buildHtml(siteUrl: string): string {
   return `<!doctype html>
 <html lang="en">
   <head><meta charset="utf-8" /><title>Your 14-point room harmony checklist</title></head>
-  <body style="margin:0;padding:32px 16px;background:#f1e9d8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#2a271e;">
+  <body style="margin:0;padding:32px 16px;background:#fcfcf8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#0e3b2c;">
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
       <tr><td align="center">
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:560px;background:#fbf7ee;border:1px solid #cfc4ab;border-radius:14px;padding:32px;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:560px;background:#ffffff;border:1px solid #e2dac5;border-radius:14px;padding:32px;">
           <tr><td align="center" style="padding-bottom:16px;">
-            <div style="font-family:'Brush Script MT',cursive;font-size:30px;color:#4f5a36;line-height:1;">My Feng Shui Home</div>
+            <div style="font-family:'Brush Script MT',cursive;font-size:30px;color:#0e3b2c;line-height:1;">My Feng Shui Home</div>
           </td></tr>
           <tr><td>
-            <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#2a271e;">Your 14-point room harmony checklist.</h1>
-            <p style="margin:0 0 12px;font:16px/1.55 sans-serif;color:#2a271e;">It is a one-page list of yes / no questions plus a second page telling you what your answers mean. Print it. Walk your home with it in your hand. Ten minutes.</p>
+            <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#0e3b2c;">Your 14-point room harmony checklist.</h1>
+            <p style="margin:0 0 12px;font:16px/1.55 sans-serif;color:#0e3b2c;">It is a one-page list of yes / no questions plus a second page telling you what your answers mean. Print it. Walk your home with it in your hand. Ten minutes.</p>
             <p style="margin:24px 0 0;text-align:center;">
-              <a href="${root}/checklist" style="display:inline-block;background:#4f5a36;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">Open the checklist</a>
+              <a href="${root}/checklist" style="display:inline-block;background:#0e3b2c;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">Open the checklist</a>
             </p>
-            <p style="margin:16px 0 0;text-align:center;font:13px sans-serif;color:#5f5848;">Or save it to your home screen and come back when you have ten minutes.</p>
+            <p style="margin:16px 0 0;text-align:center;font:13px sans-serif;color:#4f5b53;">Or save it to your home screen and come back when you have ten minutes.</p>
           </td></tr>
-          <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#5f5848;border-top:1px solid #cfc4ab;">
+          <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#4f5b53;border-top:1px solid #e2dac5;">
             One email. The link. We do not add you to any list. You can sign up for a free account later if you want more.
           </td></tr>
         </table>
-        <div style="font-size:12px;color:#5f5848;padding-top:14px;">
-          <a href="${root}" style="color:#4f5a36;text-decoration:none;">myfengshuihome.com</a>
+        <div style="font-size:12px;color:#4f5b53;padding-top:14px;">
+          <a href="${root}" style="color:#0e3b2c;text-decoration:none;">myfengshuihome.com</a>
         </div>
       </td></tr>
     </table>

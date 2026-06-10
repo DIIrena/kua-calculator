@@ -82,9 +82,13 @@ Conventions:    - Accessibility-first: labels for all inputs, aria where needed,
                   visible focus rings, semantic landmarks, 4.5:1 min contrast.
                 - Typography: Hanken Grotesk (interface) + Bilbo Swash Caps
                   (signature only). Loaded via next/font/google.
-                - Palette: warm naturals. Cream #f1e9d8 canvas, sand #e0d3b8,
-                  paper #fbf7ee cards, olive green #4f5a36, clay #be6b43,
-                  deep ink #2a271e. Full system in brand/BRAND_BOOK.md.
+                - Palette (matched to Pattern Palace 2026-06-09): ivory white
+                  canvas #fcfcf8, ivory-alt panels #f2f2ee, crisp white cards
+                  #ffffff, pool-table dark green #0e3b2c (brand + text), true
+                  orange #d9531a (accents, links, the kinetic pop). Full system
+                  in brand/BRAND_BOOK.md. Token names (--cream, --clay, etc.)
+                  unchanged; hex values updated. Earlier warm-natural palette
+                  retired.
 ```
 
 ## Hard rules

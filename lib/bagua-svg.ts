@@ -18,12 +18,12 @@ const CARDINAL = new Set<Compass>(["N", "E", "S", "W"]);
 
 // Brand palette (mirrors brand/BRAND_BOOK.md and the site's :root).
 const COLOR = {
-  paper:    "#fbf7ee",
-  hairline: "#cfc4ab",
-  greenSoft:"#d8debf",
-  claySoft: "#f0d5c0",
-  ink:      "#2a271e",
-  ink2:     "#5f5848",
+  paper:    "#ffffff",
+  hairline: "#e2dac5",
+  greenSoft:"#dde6e0",
+  claySoft: "#f8d8c5",
+  ink:      "#0e3b2c",
+  ink2:     "#4f5b53",
 };
 
 // Server-side PNG rasterisation (Resvg) loads Hanken Grotesk from

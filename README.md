@@ -96,7 +96,7 @@ sends `frame-ancestors 'self'` so the account pages cannot be framed.
 
 ## Design
 
-- Palette: warm naturals - cream `#f1e9d8`, sand `#e0d3b8`, deep olive green `#4f5a36`, clay `#be6b43`, deep ink `#2a271e`. Full system in `brand/BRAND_BOOK.md`.
+- Palette: ivory + pool-table green + true orange (matched to Pattern Palace 2026-06-09) - ivory canvas `#fcfcf8`, ivory-alt panels `#f2f2ee`, crisp white cards `#ffffff`, pool-table dark green `#0e3b2c` (brand + text), true orange `#d9531a` (accents). Token names (`--cream`, `--clay`, etc.) kept; hex values swapped. Full system in `brand/BRAND_BOOK.md`.
 - Typeface: Hanken Grotesk throughout, with Bilbo Swash Caps for the "My Feng Shui Home" signature. Loaded via `next/font/google`.
 - No tracking, no analytics on the calculator core. The account layer uses Auth.js + Supabase by design.
 

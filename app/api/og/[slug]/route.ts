@@ -34,13 +34,13 @@ const FONT_FILES: string[] = [
 // Brand tokens repeated inline because the SVG is rendered through
 // Resvg, not the browser - it cannot reach app/globals.css.
 const COLOR = {
-  cream: "#f1e9d8",
-  paper: "#fbf7ee",
-  hairline: "#cfc4ab",
-  green: "#4f5a36",
-  greenDeep: "#3c4429",
-  ink: "#2a271e",
-  ink2: "#5f5848",
+  cream: "#fcfcf8",
+  paper: "#ffffff",
+  hairline: "#e2dac5",
+  green: "#0e3b2c",
+  greenDeep: "#0a2a20",
+  ink: "#0e3b2c",
+  ink2: "#4f5b53",
 };
 
 function escapeXml(s: string): string {
@@ -100,8 +100,8 @@ function buildSvg(args: { title: string; category: string }): string {
       <stop offset="70%" stop-color="${COLOR.green}" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="wash2" cx="100%" cy="100%" r="70%">
-      <stop offset="0%" stop-color="#be6b43" stop-opacity="0.10" />
-      <stop offset="70%" stop-color="#be6b43" stop-opacity="0" />
+      <stop offset="0%" stop-color="#d9531a" stop-opacity="0.10" />
+      <stop offset="70%" stop-color="#d9531a" stop-opacity="0" />
     </radialGradient>
   </defs>
   <rect x="0" y="0" width="${W}" height="${H}" fill="${COLOR.cream}" />

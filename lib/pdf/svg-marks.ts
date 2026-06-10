@@ -18,15 +18,15 @@ import type { KuaGroup } from "@/lib/kua";
 // Kua chart uses on the saved-chart view; we reuse them here so the
 // PDF bagua reads as the same instrument).
 const C = {
-  paper: "#fbf7ee",
-  ink: "#2a271e",
-  ink2: "#5f5848",
-  olive: "#4f5a36",
-  oliveSoft: "#d8debf",   // favourable-sector fill (soft sage)
-  clay: "#be6b43",
-  claySoft: "#f0d5c0",    // cautious-sector fill (soft peach)
-  sand: "#e0d3b8",
-  hairline: "#cfc4ab",
+  paper: "#ffffff",
+  ink: "#0e3b2c",
+  ink2: "#4f5b53",
+  olive: "#0e3b2c",
+  oliveSoft: "#dde6e0",   // favourable-sector fill (soft sage)
+  clay: "#d9531a",
+  claySoft: "#f8d8c5",    // cautious-sector fill (soft peach)
+  sand: "#f2f2ee",
+  hairline: "#e2dac5",
 };
 
 // ============================================================

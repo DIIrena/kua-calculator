@@ -21,9 +21,9 @@ Out of scope today (do not start these):
 
 Brand palette (locked, used every step):
 
-- Paper background: `#fbf7ee`
-- Deep ink (lines and text): `#2a271e`
-- Accent clay (sparingly, never as a full background): `#be6b43`
+- Paper background: `#fcfcf8`
+- Deep ink (lines and text): `#0e3b2c`
+- Accent clay (sparingly, never as a full background): `#d9531a`
 
 ---
 
@@ -142,19 +142,19 @@ D5. In the floating toolbar, click the coloured tile (this is the fill colour co
 
 D6. In the colour panel, click the row labelled `+ Add a new color` (sometimes shown as a plain `+` tile). A hex input field appears.
 
-D7. Clear the field and type `fbf7ee`, then press `Enter`. The square turns paper colour.
+D7. Clear the field and type `fcfcf8`, then press `Enter`. The square turns ivory.
 
 D8. With the square still selected, copy it: press `Ctrl + D` (Windows) or `Cmd + D` (Mac). A duplicate square appears next to it.
 
-D9. Click the duplicate to select it. Click the fill tile, click `+ Add a new color`, type `2a271e`, then press `Enter`. The second square turns deep ink.
+D9. Click the duplicate to select it. Click the fill tile, click `+ Add a new color`, type `0e3b2c`, then press `Enter`. The second square turns pool-table green (deep ink).
 
-D10. Press `Ctrl + D` (or `Cmd + D`) again. Click the new duplicate. Click the fill tile, click `+ Add a new color`, type `be6b43`, then press `Enter`. The third square turns clay.
+D10. Press `Ctrl + D` (or `Cmd + D`) again. Click the new duplicate. Click the fill tile, click `+ Add a new color`, type `d9531a`, then press `Enter`. The third square turns true orange (clay).
 
 D11. Move all three swatch squares off the canvas, into the grey area to the right. They remain part of the file but will not appear in any export.
 
 D12. Click any blank part of the canvas to deselect.
 
-D13. Click the canvas background once. In the top toolbar, click the colour tile labelled `Background color`. The colour panel opens. Under the `Document colors` row, click the paper swatch (`fbf7ee`). The whole canvas turns paper.
+D13. Click the canvas background once. In the top toolbar, click the colour tile labelled `Background color`. The colour panel opens. Under the `Document colors` row, click the paper swatch (`fcfcf8`). The whole canvas turns paper.
 
 How to know it worked:
 
@@ -164,10 +164,10 @@ How to know it worked:
 
 Gotchas:
 
-- Hex codes do not need the `#` symbol in Canva. Type `fbf7ee`, not `#fbf7ee`.
+- Hex codes do not need the `#` symbol in Canva. Type `fcfcf8`, not `#fcfcf8`.
 - Do not delete the three off-canvas swatches at the end of the session. They are what keeps `Document colors` populated.
 - Free Canva accounts do not have a global Brand Kit colour palette. `Document colors` only lives inside this one file, which is why the master file is the source for every future pin.
-- Clay (`be6b43`) is the accent. It must never be the canvas background. Reserve it for one thin line or one small artwork detail per pin.
+- Clay (`d9531a`) is the accent. It must never be the canvas background. Reserve it for one thin line or one small artwork detail per pin.
 
 ---
 
@@ -177,7 +177,7 @@ The layout reserves the top third of the canvas for the title, the middle two th
 
 E1. In the left sidebar, click `Elements`. In the search bar, type `line` and press `Enter`. Under the `Lines` row, click a plain straight line. A line appears on the canvas.
 
-E2. Click the line to select it. In the floating toolbar, click the colour tile, then under `Document colors` click the clay swatch (`be6b43`).
+E2. Click the line to select it. In the floating toolbar, click the colour tile, then under `Document colors` click the clay swatch (`d9531a`).
 
 E3. With the line still selected, drag the right end handle (the small dot at the right tip) inwards until the line is about 300 px wide. As the drag happens, a size readout near the line shows a width number; release when it reads about 300. If a numeric `W` (width) field is visible in the top toolbar, typing `300` into that field works too.
 
@@ -191,7 +191,7 @@ E7. With the text box selected, open the font dropdown in the top toolbar. Type 
 
 E8. Set the font size to about `72` in the size box of the top toolbar. Adjust later if the title text feels too tight or too loose.
 
-E9. Click the colour tile in the top toolbar, then under `Document colors` click the deep ink swatch (`2a271e`).
+E9. Click the colour tile in the top toolbar, then under `Document colors` click the deep ink swatch (`0e3b2c`).
 
 E10. Click the alignment button in the top toolbar until the text is set to centre aligned.
 
@@ -209,7 +209,7 @@ E16. Set the font size to about `28`.
 
 E17. For widely spaced small caps: look in the text toolbar for an icon labelled `Spacing` (often two horizontal arrows pointing apart). Click it. A panel appears. Drag the `Letter spacing` slider until the value reads about `200`. If `Spacing` is not visible in the main text toolbar, open the three-dot `More` menu in the text toolbar and look for `Spacing` there. For uppercase: either retype the text directly as `MYFENGSHUIHOME.COM`, or look for a `Letter case` or `Aa` toggle in the text toolbar (or under `More`) and switch it to uppercase.
 
-E18. Click the text colour tile, then under `Document colors` click the deep ink swatch (`2a271e`).
+E18. Click the text colour tile, then under `Document colors` click the deep ink swatch (`0e3b2c`).
 
 E19. Drag the URL text to the bottom of the canvas. It should sit centred horizontally and about 50 px above the bottom edge of the canvas. Canva pink alignment guides confirm centred placement and the bottom margin.
 
@@ -225,7 +225,7 @@ How to know it worked:
 Gotchas:
 
 - Do not fill the middle area with anything. That space is reserved for the chart artwork in Session 3.
-- Clay (`be6b43`) appears once, as the small line under the title. Do not paint backgrounds, headings, or the URL strip in clay.
+- Clay (`d9531a`) appears once, as the small line under the title. Do not paint backgrounds, headings, or the URL strip in clay.
 - If the title font does not show as Cormorant Garamond after selecting it, check the font search spelling. The free tier has six Cormorant variants. Pick `Cormorant Garamond` specifically (not `Cormorant SC`).
 - Pixel positions above are guides, not exact. Use the alignment lines Canva shows while dragging. Centred and balanced matters more than exact px coordinates.
 - Part E is the time sink in this session (often 30 to 45 min). Plan for it.
@@ -306,10 +306,10 @@ Gotchas:
 
 - Master file path: `Projects > MFSH Pins > 00 Masters > MFSH Master Pin 1000x1500`
 - Variant file path: `Projects > MFSH Pins > 01 Compass Chart > MFSH Variant Compass Chart 1000x1500`
-- Title font: Cormorant Garamond, deep ink (`#2a271e`)
+- Title font: Cormorant Garamond, deep ink (`#0e3b2c`)
 - URL font: Cormorant Garamond, uppercase, wide letter spacing (~200), deep ink
-- Background: paper (`#fbf7ee`)
-- Accent: clay (`#be6b43`), used as a single short horizontal line under the title only
+- Background: paper (`#fcfcf8`)
+- Accent: clay (`#d9531a`), used as a single short horizontal line under the title only
 
 Recommended serif font: Cormorant Garamond. Its refined low-contrast strokes read as calm and literary at large pin sizes while staying legible on small Pinterest thumbnails, which fits the calm-practitioner voice better than the slightly more decorative DM Serif Display.
 

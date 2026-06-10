@@ -57,7 +57,7 @@ Depends on: none.
 
 **Session 2: Master pin template (90 to 130 min, channel: asset_production)**
 
-Build the reusable 1000x1500 master pin template in Canva (faster than Figma at this stage). Paper `#fbf7ee` background, deep ink `#2a271e` lines, single accent clay `#be6b43`, serif title block, small URL strip at bottom. Export the blank master plus one variant frame for chart-shaped pins.
+Build the reusable 1000x1500 master pin template in Canva (faster than Figma at this stage). Paper `#fcfcf8` background, deep ink `#0e3b2c` lines, single accent clay `#d9531a`, serif title block, small URL strip at bottom. Export the blank master plus one variant frame for chart-shaped pins.
 
 Deliverable: master pin template file in Canva, ready for variants.
 
@@ -384,7 +384,7 @@ These are stub files the calendar references. They are markdown specs, NOT built
 
 | File | Location | Status to aim for |
 |---|---|---|
-| `brand-pin-palette.md` | `projects/kua-calculator/spec/brand-pin-palette.md` | Stub created in week 1 with the locked hex tokens (`#fbf7ee` paper, `#2a271e` ink, `#be6b43` clay), the single-accent rule, and the banned-imagery list |
+| `brand-pin-palette.md` | `projects/kua-calculator/spec/brand-pin-palette.md` | Stub created in week 1 with the locked hex tokens (`#fcfcf8` paper, `#0e3b2c` ink, `#d9531a` clay), the single-accent rule, and the banned-imagery list |
 | `pin-description-template.md` | `projects/kua-calculator/spec/pin-description-template.md` | Spec written in week 2 with per-anchor description blocks for anchors 1, 2, 3, and 5. Anchor 4 block marked deferred to month 2. Banned terms listed at top. |
 | `reddit-cadence-tracker.md` | `projects/kua-calculator/spec/reddit-cadence-tracker.md` | Stub created week 1 with a markdown table: date, subreddit, thread URL, OP question shape, comment URL, did OP invite a deeper read, did this comment include a link, running ratio. Filled across all 4 weeks. |
 | `pinterest-analytics-baseline.md` | `projects/kua-calculator/spec/pinterest-analytics-baseline.md` | Stub created week 1 with day-0 zeros, weekly tracking columns for impressions, saves, outbound clicks per pin. Updated twice weekly. |

@@ -152,7 +152,7 @@ export default async function PlannerPage(props: {
               maxWidth: "100%",
               height: "auto",
               borderRadius: "6px",
-              border: "1px solid #cfc4ab",
+              border: "1px solid #e2dac5",
               boxShadow: "0 6px 24px rgba(42, 39, 30, 0.12)",
               flex: "0 0 auto",
             }}
@@ -204,14 +204,14 @@ export default async function PlannerPage(props: {
                 width: "100%",
                 height: "auto",
                 borderRadius: "4px",
-                border: "1px solid #cfc4ab",
+                border: "1px solid #e2dac5",
                 display: "block",
               }}
             />
             <figcaption
               style={{
                 fontSize: "0.85rem",
-                color: "#5f5848",
+                color: "#4f5b53",
                 marginTop: "0.5rem",
                 textAlign: "center",
                 lineHeight: 1.4,
@@ -230,14 +230,14 @@ export default async function PlannerPage(props: {
                 width: "100%",
                 height: "auto",
                 borderRadius: "4px",
-                border: "1px solid #cfc4ab",
+                border: "1px solid #e2dac5",
                 display: "block",
               }}
             />
             <figcaption
               style={{
                 fontSize: "0.85rem",
-                color: "#5f5848",
+                color: "#4f5b53",
                 marginTop: "0.5rem",
                 textAlign: "center",
                 lineHeight: 1.4,
@@ -257,14 +257,14 @@ export default async function PlannerPage(props: {
                 width: "100%",
                 height: "auto",
                 borderRadius: "4px",
-                border: "1px solid #cfc4ab",
+                border: "1px solid #e2dac5",
                 display: "block",
               }}
             />
             <figcaption
               style={{
                 fontSize: "0.85rem",
-                color: "#5f5848",
+                color: "#4f5b53",
                 marginTop: "0.5rem",
                 textAlign: "center",
                 lineHeight: 1.4,

@@ -8,20 +8,20 @@
    ============================================================ */
 
 :root {
-  /* color - warm naturals */
-  --cream:       #f1e9d8;   /* canvas / body background */
-  --sand:        #e0d3b8;   /* textured panels, the hero */
-  --sand-deep:   #d2c3a1;   /* deeper sand, texture shadow, hover */
-  --paper:       #fbf7ee;   /* cards */
-  --green:       #4f5a36;   /* deep olive - the brand green */
-  --green-deep:  #3c4429;   /* darker olive - links, hover */
-  --clay:        #be6b43;   /* warm clay - the kinetic pop */
-  --clay-deep:   #9c5331;   /* darker clay */
-  --green-soft:  #d8debf;   /* pale sage - chart favourable fill (AAA with ink) */
-  --clay-soft:   #f0d5c0;   /* pale peach - chart avoid fill (AAA with ink) */
-  --ink:         #2a271e;   /* deep near-black - text, the dark counterweight */
-  --ink-2:       #5f5848;   /* soft brown-grey - secondary text */
-  --hairline:    #cfc4ab;   /* soft borders, rules */
+  /* color - ivory + pool-table green + true orange (matched to Pattern Palace 2026-06-09) */
+  --cream:       #fcfcf8;   /* canvas / body background (ivory white) */
+  --sand:        #f2f2ee;   /* textured panels, the hero (ivory-alt) */
+  --sand-deep:   #d0c4a8;   /* texture shadow, hover (line-strong) */
+  --paper:       #ffffff;   /* cards (crisp white lift) */
+  --green:       #0e3b2c;   /* pool-table dark green - the brand green */
+  --green-deep:  #0a2a20;   /* darker green - links, hover */
+  --clay:        #d9531a;   /* true orange - the kinetic pop */
+  --clay-deep:   #b8430e;   /* darker orange - hover */
+  --green-soft:  #dde6e0;   /* pale sage - chart favourable fill (AAA with ink) */
+  --clay-soft:   #f8d8c5;   /* pale peach - chart avoid fill (AAA with ink) */
+  --ink:         #0e3b2c;   /* pool-table green - text, the dark counterweight */
+  --ink-2:       #4f5b53;   /* muted green-gray - secondary text */
+  --hairline:    #e2dac5;   /* soft borders (line) */
   --on-dark:     #ffffff;   /* white text on ink / green surfaces (AA-safe) */
 
   /* type - fonts loaded via next/font/google; --font-hanken and
@@ -2456,16 +2456,16 @@ a:hover { color: var(--clay-deep); }
   .chart-print-header .account-brand-mark {
     width: 26pt;
     height: 26pt;
-    color: #4f5a36;
+    color: #0e3b2c;
   }
   .chart-print-header .account-brand-script {
     font-size: 14pt;
-    color: #4f5a36;
+    color: #0e3b2c;
   }
   .chart-print-subhead {
     margin-top: 1pt;
     font-size: 8.5pt;
-    color: #4f5a36;
+    color: #0e3b2c;
   }
 
   /* --- Person info / heading: very tight, pinned high --- */
@@ -2489,7 +2489,7 @@ a:hover { color: var(--clay-deep); }
     margin: 2pt 0;
     padding: 2pt 4pt;
     background: #f4ede2 !important;
-    border-left: 2pt solid #4f5a36 !important;
+    border-left: 2pt solid #0e3b2c !important;
     font-size: 7pt;
     line-height: 1.25;
     color: #000000 !important;
@@ -2542,15 +2542,15 @@ a:hover { color: var(--clay-deep); }
   /* Pale tints with dark ink text - matches the on-screen softer look,
      prints cleanly in colour, and still distinguishes greyscale via the
      star / cross icons and the dashed border on avoid cards. */
-  .bagua-seg-favourable { fill: #d8debf !important; }
-  .bagua-seg-avoid       { fill: #f0d5c0 !important; }
+  .bagua-seg-favourable { fill: #dde6e0 !important; }
+  .bagua-seg-avoid       { fill: #f8d8c5 !important; }
   .bagua-compass-label,
   .bagua-quality-label,
-  .bagua-icon            { fill: #2a271e !important; }
+  .bagua-icon            { fill: #0e3b2c !important; }
   /* White centre saves printer ink. */
-  .bagua-centre          { fill: #ffffff !important; stroke: #cfc4ab !important; stroke-width: 1 !important; }
-  .bagua-centre-eyebrow  { fill: #5f5848 !important; }
-  .bagua-centre-kua      { fill: #2a271e !important; }
+  .bagua-centre          { fill: #ffffff !important; stroke: #e2dac5 !important; stroke-width: 1 !important; }
+  .bagua-centre-eyebrow  { fill: #4f5b53 !important; }
+  .bagua-centre-kua      { fill: #0e3b2c !important; }
   .bagua-bg              { fill: #ffffff !important; }
   .bagua-ring-label,
   .bagua-ring-label-cardinal { fill: #000000 !important; }
@@ -2572,8 +2572,8 @@ a:hover { color: var(--clay-deep); }
     gap: 0 !important;
     page-break-inside: avoid;
   }
-  .direction-card[data-favourable="true"]  { border-left-color: #4f5a36 !important; }
-  .direction-card[data-favourable="false"] { border-left-color: #9c5331 !important; border-left-style: dashed !important; }
+  .direction-card[data-favourable="true"]  { border-left-color: #0e3b2c !important; }
+  .direction-card[data-favourable="false"] { border-left-color: #b8430e !important; border-left-style: dashed !important; }
 
   /* Card header stacks: arrow above name above badge (narrow column). */
   .direction-card-header {
@@ -2595,12 +2595,12 @@ a:hover { color: var(--clay-deep); }
   .direction-card-badge {
     font-size: 6pt !important;
     padding: 0.5pt 3pt !important;
-    color: #2a271e !important;
+    color: #0e3b2c !important;
     line-height: 1.2 !important;
     align-self: flex-start;
   }
-  .direction-card[data-favourable="true"]  .direction-card-badge { background: #d8debf !important; }
-  .direction-card[data-favourable="false"] .direction-card-badge { background: #f0d5c0 !important; }
+  .direction-card[data-favourable="true"]  .direction-card-badge { background: #dde6e0 !important; }
+  .direction-card[data-favourable="false"] .direction-card-badge { background: #f8d8c5 !important; }
 
   .direction-card-quality { margin-top: 1pt !important; }
   .direction-card-quality-pinyin { font-size: 7pt !important; line-height: 1.15 !important; color: #000000 !important; margin: 0 !important; }
@@ -2626,7 +2626,7 @@ a:hover { color: var(--clay-deep); }
     padding-top: 3pt;
     border-top: 0.5pt solid #888888;
     font-size: 7.5pt;
-    color: #4f5a36 !important;
+    color: #0e3b2c !important;
   }
 }
 
@@ -4991,7 +4991,7 @@ a:hover { color: var(--clay-deep); }
 }
 
 .product-shelf-status-free {
-  background: var(--green-soft, #d8debf);
+  background: var(--green-soft, #dde6e0);
   color: var(--green-deep);
 }
 
@@ -5222,12 +5222,12 @@ a:hover { color: var(--clay-deep); }
 }
 
 .buy-button-status-ok {
-  background: var(--green-soft, #d8debf);
+  background: var(--green-soft, #dde6e0);
   color: var(--green-deep);
 }
 
 .buy-button-status-err {
-  background: var(--clay-soft, #f0d5c0);
+  background: var(--clay-soft, #f8d8c5);
   color: var(--clay-deep, #8e4b2a);
 }
 

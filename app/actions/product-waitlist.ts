@@ -52,27 +52,27 @@ function buildHtml(siteUrl: string, productTitle: string): string {
   return `<!doctype html>
 <html lang="en">
   <head><meta charset="utf-8" /><title>You are on the list - ${productTitle}</title></head>
-  <body style="margin:0;padding:32px 16px;background:#f1e9d8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#2a271e;">
+  <body style="margin:0;padding:32px 16px;background:#fcfcf8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#0e3b2c;">
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
       <tr><td align="center">
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:560px;background:#fbf7ee;border:1px solid #cfc4ab;border-radius:14px;padding:32px;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:560px;background:#ffffff;border:1px solid #e2dac5;border-radius:14px;padding:32px;">
           <tr><td align="center" style="padding-bottom:16px;">
-            <div style="font-family:'Brush Script MT',cursive;font-size:30px;color:#4f5a36;line-height:1;">My Feng Shui Home</div>
+            <div style="font-family:'Brush Script MT',cursive;font-size:30px;color:#0e3b2c;line-height:1;">My Feng Shui Home</div>
           </td></tr>
           <tr><td>
-            <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#2a271e;">You are on the list.</h1>
-            <p style="margin:0 0 12px;font:16px/1.55 sans-serif;color:#2a271e;">Thank you for telling us you are interested in the <strong>${productTitle}</strong>.</p>
-            <p style="margin:0 0 12px;font:16px/1.55 sans-serif;color:#2a271e;">When this product ships, we email you the launch page and the early price. You can unsubscribe any time.</p>
+            <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#0e3b2c;">You are on the list.</h1>
+            <p style="margin:0 0 12px;font:16px/1.55 sans-serif;color:#0e3b2c;">Thank you for telling us you are interested in the <strong>${productTitle}</strong>.</p>
+            <p style="margin:0 0 12px;font:16px/1.55 sans-serif;color:#0e3b2c;">When this product ships, we email you the launch page and the early price. You can unsubscribe any time.</p>
             <p style="margin:24px 0 0;text-align:center;">
-              <a href="${root}/products" style="display:inline-block;background:#4f5a36;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">See the rest of our products</a>
+              <a href="${root}/products" style="display:inline-block;background:#0e3b2c;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">See the rest of our products</a>
             </p>
           </td></tr>
-          <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#5f5848;border-top:1px solid #cfc4ab;">
+          <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#4f5b53;border-top:1px solid #e2dac5;">
             If you signed up by mistake, ignore this email and we will not contact you again.
           </td></tr>
         </table>
-        <div style="font-size:12px;color:#5f5848;padding-top:14px;">
-          <a href="${root}" style="color:#4f5a36;text-decoration:none;">myfengshuihome.com</a>
+        <div style="font-size:12px;color:#4f5b53;padding-top:14px;">
+          <a href="${root}" style="color:#0e3b2c;text-decoration:none;">myfengshuihome.com</a>
         </div>
       </td></tr>
     </table>
@@ -102,31 +102,31 @@ function buildHtmlPlanner(siteUrl: string): string {
   return `<!doctype html>
 <html lang="en">
   <head><meta charset="utf-8" /><title>You are on the list - 2026 Annual Feng Shui Planner</title></head>
-  <body style="margin:0;padding:32px 16px;background:#f1e9d8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#2a271e;">
+  <body style="margin:0;padding:32px 16px;background:#fcfcf8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#0e3b2c;">
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
       <tr><td align="center">
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:580px;background:#fbf7ee;border:1px solid #cfc4ab;border-radius:14px;padding:32px;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:580px;background:#ffffff;border:1px solid #e2dac5;border-radius:14px;padding:32px;">
           <tr><td align="center" style="padding-bottom:16px;">
-            <div style="font-family:'Brush Script MT',cursive;font-size:30px;color:#4f5a36;line-height:1;">My Feng Shui Home</div>
+            <div style="font-family:'Brush Script MT',cursive;font-size:30px;color:#0e3b2c;line-height:1;">My Feng Shui Home</div>
           </td></tr>
           <tr><td align="center" style="padding-bottom:18px;">
-            <img src="${coverUrl}" alt="The 2026 Annual Feng Shui Planner cover" width="190" height="285" style="display:block;width:190px;height:auto;border:1px solid #cfc4ab;border-radius:6px;" />
+            <img src="${coverUrl}" alt="The 2026 Annual Feng Shui Planner cover" width="190" height="285" style="display:block;width:190px;height:auto;border:1px solid #e2dac5;border-radius:6px;" />
           </td></tr>
           <tr><td>
-            <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#2a271e;">You are on the list.</h1>
-            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#2a271e;">Thank you for joining the waitlist for the <strong>2026 Annual Feng Shui Planner</strong>. When checkout goes live (we are waiting on the bank account to clear so live payments can be wired up), we email you the launch page and the early price at this address.</p>
-            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#2a271e;font-style:italic;color:#4f5a36;">Picture the kettle doing its quiet steaming. You sit with the planner on the table, find your front door on the chart, find the south corner, find the one room the year asks you to leave a little alone, and you know where to start. The planner does that work for the whole solar year, room by room and month by month.</p>
-            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#2a271e;">The 2027 edition follows in January 2027 as a full twelve-month book. As a 2026 buyer you receive a <strong>30 percent renewal offer</strong> when it ships.</p>
+            <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#0e3b2c;">You are on the list.</h1>
+            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">Thank you for joining the waitlist for the <strong>2026 Annual Feng Shui Planner</strong>. When checkout goes live (we are waiting on the bank account to clear so live payments can be wired up), we email you the launch page and the early price at this address.</p>
+            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;font-style:italic;color:#0e3b2c;">Picture the kettle doing its quiet steaming. You sit with the planner on the table, find your front door on the chart, find the south corner, find the one room the year asks you to leave a little alone, and you know where to start. The planner does that work for the whole solar year, room by room and month by month.</p>
+            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">The 2027 edition follows in January 2027 as a full twelve-month book. As a 2026 buyer you receive a <strong>30 percent renewal offer</strong> when it ships.</p>
             <p style="margin:24px 0 0;text-align:center;">
-              <a href="${productUrl}" style="display:inline-block;background:#4f5a36;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">Open the planner page</a>
+              <a href="${productUrl}" style="display:inline-block;background:#0e3b2c;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">Open the planner page</a>
             </p>
           </td></tr>
-          <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#5f5848;border-top:1px solid #cfc4ab;">
+          <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#4f5b53;border-top:1px solid #e2dac5;">
             You receive this confirmation now, one sample-page note about a week later, and a launch email when checkout opens. You can unsubscribe any time. If you signed up by mistake, ignore this email and we will not contact you again.
           </td></tr>
         </table>
-        <div style="font-size:12px;color:#5f5848;padding-top:14px;">
-          <a href="${root}" style="color:#4f5a36;text-decoration:none;">myfengshuihome.com</a>
+        <div style="font-size:12px;color:#4f5b53;padding-top:14px;">
+          <a href="${root}" style="color:#0e3b2c;text-decoration:none;">myfengshuihome.com</a>
         </div>
       </td></tr>
     </table>

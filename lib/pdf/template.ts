@@ -19,12 +19,12 @@ import { brandMarkSvg } from "@/lib/pdf/svg-marks";
 
 // Brand palette - matches the CSS custom properties in globals.css.
 const BRAND = {
-  paper: "#fbf7ee",     // cream paper background
-  cream: "#f1e9d8",     // canvas (slightly darker than paper)
-  ink: "#2a271e",       // deep brown for body text
-  olive: "#4f5a36",     // dark olive for accents
-  clay: "#be6b43",      // warm clay for emphasis
-  sand: "#e0d3b8",      // soft sand for rules / dividers
+  paper: "#ffffff",     // cream paper background
+  cream: "#fcfcf8",     // canvas (slightly darker than paper)
+  ink: "#0e3b2c",       // deep brown for body text
+  olive: "#0e3b2c",     // dark olive for accents
+  clay: "#d9531a",      // warm clay for emphasis
+  sand: "#f2f2ee",      // soft sand for rules / dividers
 };
 
 let fontsCache: { regular: string; bold: string; extraBold: string } | null =

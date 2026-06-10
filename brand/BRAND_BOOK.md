@@ -54,11 +54,11 @@ source file is `assets/logo.svg`.
 
 ### Colour
 The logo mark, the wordmark, and the signature are all reproduced in the brand
-green `#4f5a36` - the header lockup is a single colour. Two other treatments
+green `#0e3b2c` - the header lockup is a single colour. Two other treatments
 of the mark are allowed and nothing else:
-- Deep olive green `#4f5a36` on light surfaces (cream, sand, paper).
-- Cream `#f1e9d8` or white on the deep ink surface.
-- Deep ink `#2a271e` where a single-colour dark mark is needed.
+- Pool-table dark green `#0e3b2c` on light surfaces (ivory, ivory-alt, paper).
+- Ivory `#fcfcf8` or white on the deep ink surface.
+- Deep ink `#0e3b2c` where a single-colour dark mark is needed.
 
 ### Clear space and size
 Keep clear space around the mark equal to the height of its chimney. Minimum
@@ -78,24 +78,27 @@ name leads; the brand signs underneath it.
 
 ## 3. Colour palette
 
-Warm naturals. A light canvas, a deep counterweight, and two accents - one
-cool, one warm - that are opposites of each other.
+Ivory + pool-table dark green + one true orange. A light cool canvas, a deep
+green counterweight that doubles as the text colour, and a single warm orange
+accent used sparingly for the kinetic pop. Matched to Pattern Palace 2026-06-09.
+Token names kept from the earlier warm-naturals palette so component CSS does
+not need to be refactored; only hex values changed.
 
 ### Tokens
 
 | Token | Hex | Role |
 |---|---|---|
-| `--cream` | `#f1e9d8` | Canvas. The body background. |
-| `--sand` | `#e0d3b8` | Textured panels - the hero, quiet strips. |
-| `--sand-deep` | `#d2c3a1` | Deeper sand for texture shadow and hover. |
-| `--paper` | `#fbf7ee` | Cards - the form, the result card. |
-| `--green` | `#4f5a36` | Deep olive. The brand green - logo, wordmark, signature, CTA, favourable state. |
-| `--green-deep` | `#3c4429` | Darker olive. Links, hover. |
-| `--clay` | `#be6b43` | Warm clay. The kinetic pop - rules, the botanical, small accents. |
-| `--clay-deep` | `#9c5331` | Darker clay. Clay text and links on light surfaces. |
-| `--ink` | `#2a271e` | Deep near-black. Primary text, and the dark counterweight (CTA, footer). |
-| `--ink-2` | `#5f5848` | Soft brown-grey. Secondary text. |
-| `--hairline` | `#cfc4ab` | Soft borders and rules. |
+| `--cream` | `#fcfcf8` | Canvas. Ivory white body background. |
+| `--sand` | `#f2f2ee` | Ivory-alt panels - the hero, quiet strips. |
+| `--sand-deep` | `#d0c4a8` | Stronger border / cutting line. |
+| `--paper` | `#ffffff` | Cards - crisp white lift over the ivory canvas. |
+| `--green` | `#0e3b2c` | Pool-table dark green. The brand colour - logo, wordmark, signature, text, CTA. |
+| `--green-deep` | `#0a2a20` | Darker green. Links, hover. |
+| `--clay` | `#d9531a` | True orange. The kinetic pop - rules, accents, buttons, the botanical, small details. |
+| `--clay-deep` | `#b8430e` | Darker orange. Orange hover. |
+| `--ink` | `#0e3b2c` | Pool-table green. Aliased to brand green; PP convention is ink == green. |
+| `--ink-2` | `#4f5b53` | Muted green-gray. Secondary text. |
+| `--hairline` | `#e2dac5` | Soft borders and rules. |
 | `--on-dark` | `#ffffff` | Text on ink and green surfaces. |
 
 ### Usage
@@ -306,17 +309,17 @@ REBRAND work can lift this directly into `:root` in `main.css`.
 
 ```css
 :root {
-  --cream:       #f1e9d8;
-  --sand:        #e0d3b8;
-  --sand-deep:   #d2c3a1;
-  --paper:       #fbf7ee;
-  --green:       #4f5a36;
-  --green-deep:  #3c4429;
-  --clay:        #be6b43;
-  --clay-deep:   #9c5331;
-  --ink:         #2a271e;
-  --ink-2:       #5f5848;
-  --hairline:    #cfc4ab;
+  --cream:       #fcfcf8;
+  --sand:        #f2f2ee;
+  --sand-deep:   #d0c4a8;
+  --paper:       #ffffff;
+  --green:       #0e3b2c;
+  --green-deep:  #0a2a20;
+  --clay:        #d9531a;
+  --clay-deep:   #b8430e;
+  --ink:         #0e3b2c;
+  --ink-2:       #4f5b53;
+  --hairline:    #e2dac5;
   --on-dark:     #ffffff;
 
   --font-display: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
