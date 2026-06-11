@@ -4773,19 +4773,19 @@ a:hover { color: var(--clay-deep); }
    overflow off-screen and look broken. Switch to an inline accordion
    below the summary, full-width. Wraps the nav so each item gets its
    own row. */
-/* --- Mobile nav <details> hamburger ---
-   On desktop the wrapping <details className="mobile-nav-toggle"> is
-   transparent to layout via `display: contents` so the inner <nav>
-   renders as before. The summary is hidden on desktop.
-   On mobile (<=880px) the wrapper becomes block-level, the summary
-   becomes a visible hamburger row, and the inner nav only renders when
-   the <details> is open. Native <details> keeps the toggle JS-free
-   and preserves keyboard / screen-reader behaviour. */
-.mobile-nav-toggle {
-  display: contents;
-}
+/* --- Desktop vs mobile nav surfaces ---
+   SiteHeader renders TWO separate primary-nav surfaces:
+     - <nav className="site-nav site-nav-desktop"> outside any <details>
+     - <details className="mobile-nav-toggle"> wrapping a second
+       <nav className="site-nav site-nav-mobile">
+   This keeps the desktop nav out of any <details> element (so the
+   closed state can never hide it) while the mobile hamburger stays
+   JS-free via native <details>. Both surfaces render the same
+   <NavItems> component so the link list can never drift.
+   Desktop default: desktop nav visible, mobile toggle hidden.
+   Mobile (<=880px): desktop nav hidden, hamburger toggle visible. */
 
-.mobile-nav-summary {
+.mobile-nav-toggle {
   display: none;
 }
 
@@ -4798,6 +4798,9 @@ a:hover { color: var(--clay-deep); }
 }
 
 @media (max-width: 880px) {
+  .site-nav-desktop {
+    display: none;
+  }
   .mobile-nav-toggle {
     display: block;
     width: 100%;
@@ -4822,6 +4825,16 @@ a:hover { color: var(--clay-deep); }
     font-size: 1.4rem;
     line-height: 1;
     color: var(--green-deep);
+  }
+}
+
+/* Desktop default (above 880px): the desktop <nav> is the only one
+   visible. The .mobile-nav-summary is hidden because its parent
+   .mobile-nav-toggle is display:none, but be explicit so screen
+   readers see it as a non-interactive element on desktop. */
+@media (min-width: 881px) {
+  .mobile-nav-summary {
+    display: none;
   }
 }
 

@@ -1,45 +1,21 @@
 import Link from "next/link";
 import { auth } from "@/auth";
-import SignOutButton from "@/components/SignOutButton";
-import {
-  articlesInCategory,
-  type ArticleCategory,
-} from "@/lib/articles";
-import { LIFE_AREAS } from "@/lib/life-areas";
-import { SPACES } from "@/lib/spaces";
+import NavItems from "@/components/NavItems";
 
-// Server Component. Reflects logged-in state and renders the primary nav.
+// Server Component. Reflects logged-in state.
 //
-// Nav order (left to right):
-//   1. Life pillars (dropdown - 9 bagua-area pages, the primary funnel)
-//   2. Space (dropdown - 6 rooms of the home)
-//   3. Products (direct link to /products shelf - the paid shop)
-//   4. Guide (direct link to /guide - the ultimate-guide cluster tree,
-//      adapted from the 22-chapter source library at projects/feng-shui/)
-//   5. Everything About Feng Shui (single mega dropdown - every article
-//      grouped by its topic category)
-//   6. Calculator (free tool, direct link)
-//   7. Sign in / Account (auth)
-
-type NavCategory = {
-  category: ArticleCategory;
-  label: string;
-  /** Items to show before the category's article list. */
-  pinned?: Array<{ label: string; href: string }>;
-};
-
-const NAV_CATEGORIES: ReadonlyArray<NavCategory> = [
-  { category: "foundations", label: "Foundations" },
-  { category: "bagua", label: "The Bagua Map" },
-  { category: "room-by-room", label: "Room by Room" },
-  {
-    category: "methodology",
-    label: "Methodology",
-    pinned: [
-      { label: "The Compass School (deep dive)", href: "/methodology" },
-    ],
-  },
-];
+// The header renders TWO separate primary-nav surfaces so the desktop
+// nav is never wrapped in a closed <details> element:
+//
+//   - Desktop: <nav className="site-nav site-nav-desktop"> outside any
+//     <details>. Always visible at >880px, hidden at <=880px.
+//   - Mobile: <details className="mobile-nav-toggle"> wrapping
+//     <nav className="site-nav site-nav-mobile">. Always visible at
+//     <=880px, hidden at >880px. Native <details> keeps the toggle
+//     JS-free (Server Component) and preserves keyboard + screen
+//     reader behaviour via the WAI-ARIA disclosure pattern.
+//
+// Both surfaces render <NavItems> so the link list cannot drift.
 
 export default async function SiteHeader() {
   let signedIn = false;
@@ -81,12 +57,14 @@ export default async function SiteHeader() {
         </span>
       </Link>
 
-      {/* Mobile-only disclosure wrapper. At desktop widths the wrapping
-          <details> behaves as `display: contents` so the existing nav
-          renders unchanged. At <=880px the summary becomes a visible
-          hamburger that toggles the rest of the nav. Native <details>
-          keeps it JS-free (Server Component) and preserves keyboard +
-          screen reader behaviour via the WAI-ARIA disclosure pattern. */}
+      {/* Desktop nav: always rendered, always visible at >880px. CSS
+          hides it at <=880px and reveals the mobile hamburger instead. */}
+      <nav className="site-nav site-nav-desktop" aria-label="Primary">
+        <NavItems signedIn={signedIn} />
+      </nav>
+
+      {/* Mobile nav: hidden by default; revealed at <=880px. Native
+          <details> hamburger, JS-free, WAI-ARIA disclosure pattern. */}
       <details className="mobile-nav-toggle">
         <summary
           className="mobile-nav-summary"
@@ -97,151 +75,8 @@ export default async function SiteHeader() {
             &#9776;
           </span>
         </summary>
-        <nav className="site-nav" aria-label="Primary">
-          {/* 1. Life pillars - the primary funnel to the paid Map */}
-        <details className="nav-dropdown">
-          <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
-            Life pillars
-            <span className="nav-dropdown-caret" aria-hidden="true">
-              &#9662;
-            </span>
-          </summary>
-          <div className="nav-dropdown-panel" role="menu">
-            {LIFE_AREAS.map((a) => (
-              <Link
-                key={a.slug}
-                href={`/life/${a.slug}`}
-                role="menuitem"
-                className="nav-dropdown-link"
-              >
-                {a.label}
-              </Link>
-            ))}
-            <Link
-              href="/life"
-              role="menuitem"
-              className="nav-dropdown-link nav-dropdown-see-all"
-            >
-              All nine life areas &rarr;
-            </Link>
-          </div>
-        </details>
-
-        {/* 2. Space - room-by-room guidance for each of the six rooms */}
-        <details className="nav-dropdown">
-          <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
-            Space
-            <span className="nav-dropdown-caret" aria-hidden="true">
-              &#9662;
-            </span>
-          </summary>
-          <div className="nav-dropdown-panel" role="menu">
-            {SPACES.map((s) => (
-              <Link
-                key={s.slug}
-                href={`/space/${s.slug}`}
-                role="menuitem"
-                className="nav-dropdown-link"
-              >
-                {s.label}
-              </Link>
-            ))}
-            <Link
-              href="/space"
-              role="menuitem"
-              className="nav-dropdown-link nav-dropdown-see-all"
-            >
-              All six rooms &rarr;
-            </Link>
-          </div>
-        </details>
-
-        {/* 3. Products - the paid shop, direct link */}
-        <Link href="/products" className="site-nav-link site-nav-link-feature">
-          Products
-        </Link>
-
-        {/* 4. Guide - the ultimate-guide cluster tree, direct link */}
-        <Link href="/guide" className="site-nav-link site-nav-link-feature">
-          Guide
-        </Link>
-
-        {/* 5. Everything About Feng Shui - one mega menu containing
-            all four topic categories with their articles. */}
-        <details className="nav-dropdown nav-dropdown-mega">
-          <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
-            Everything About Feng Shui
-            <span className="nav-dropdown-caret" aria-hidden="true">
-              &#9662;
-            </span>
-          </summary>
-          <div className="nav-dropdown-panel nav-mega-panel" role="menu">
-            {NAV_CATEGORIES.map((nav) => {
-              const articles = articlesInCategory(nav.category);
-              return (
-                <div key={nav.category} className="nav-mega-section">
-                  <Link
-                    href={`/articles/category/${nav.category}`}
-                    className="nav-mega-section-title"
-                    role="menuitem"
-                  >
-                    {nav.label}
-                  </Link>
-                  <ul className="nav-mega-section-list">
-                    {nav.pinned?.map((p) => (
-                      <li key={p.href}>
-                        <Link
-                          href={p.href}
-                          role="menuitem"
-                          className="nav-dropdown-link nav-dropdown-pinned"
-                        >
-                          {p.label}
-                        </Link>
-                      </li>
-                    ))}
-                    {articles.map((a) => (
-                      <li key={a.slug}>
-                        <Link
-                          href={`/articles/${a.slug}`}
-                          role="menuitem"
-                          className="nav-dropdown-link"
-                        >
-                          {a.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-            <Link
-              href="/articles"
-              role="menuitem"
-              className="nav-mega-see-all"
-            >
-              See the full article index &rarr;
-            </Link>
-          </div>
-        </details>
-
-        {/* 6. Calculator - direct link */}
-        <Link href="/kua-calculator" className="site-nav-link">
-          Calculator
-        </Link>
-
-        {/* 7. Account / Sign in */}
-        {signedIn ? (
-          <>
-            <Link href="/account" className="site-nav-link">
-              Account
-            </Link>
-            <SignOutButton />
-          </>
-        ) : (
-          <Link href="/sign-in" className="site-nav-link">
-            Sign in
-          </Link>
-        )}
+        <nav className="site-nav site-nav-mobile" aria-label="Primary (mobile)">
+          <NavItems signedIn={signedIn} />
         </nav>
       </details>
     </header>
