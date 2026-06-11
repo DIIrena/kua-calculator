@@ -28,6 +28,10 @@ export default function SiteFooter() {
         </svg>
       </div>
       <p className="footer-tag">
+        Architecture-led feng shui for real homes.{" "}
+        <Link href="/about">Read who runs the site</Link>.
+      </p>
+      <p className="footer-tag">
         The Kua Calculator is a free tool from My Feng Shui Home.{" "}
         <Link href="/privacy">Privacy</Link>
       </p>

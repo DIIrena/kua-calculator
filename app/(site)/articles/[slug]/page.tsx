@@ -11,6 +11,7 @@ import {
 } from "@/lib/articles";
 import RelatedArticles from "@/components/RelatedArticles";
 import InArticleCta from "@/components/InArticleCta";
+import AuthorByline from "@/components/AuthorByline";
 
 type Params = Promise<{ slug: string }>;
 
@@ -136,6 +137,8 @@ export default async function ArticlePage(props: { params: Params }) {
       <InArticleCta article={article} />
 
       <RelatedArticles articles={related} />
+
+      <AuthorByline />
 
       <footer className="article-footer">
         <Link href="/articles" className="article-back-link">

@@ -6019,3 +6019,215 @@ a:hover { color: var(--clay-deep); }
     hyphens: auto;
   }
 }
+
+/* ============================================================
+   /about page + AuthorByline + homepage credibility paragraph
+   Calm reading column on the ivory canvas. No hero image, no
+   decorative band. The pull-quote is the quiet centre of the
+   page. The author-byline sits at the foot of every article
+   and every guide page; brand-as-author, no personal name.
+   ============================================================ */
+
+.about-page {
+  max-width: 720px;
+  margin: var(--space-8) auto;
+  padding: 0 clamp(var(--space-4), 5vw, var(--space-6));
+  color: var(--ink);
+}
+
+.about-hero {
+  padding: var(--space-6) 0 var(--space-7) 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.about-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clay-deep);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.about-h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.about-subhead {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0 0 var(--space-5) 0;
+  max-width: 62ch;
+}
+
+.about-byline {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  color: var(--ink);
+  margin: 0;
+}
+
+.about-section {
+  padding: var(--space-7) 0 var(--space-3) 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.about-section:first-of-type {
+  border-top: 0;
+}
+
+.about-section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.about-section-body p {
+  margin: 0 0 var(--space-4) 0;
+  max-width: 62ch;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+
+.about-section-body a {
+  color: var(--green-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.about-section-body a:hover,
+.about-section-body a:focus-visible {
+  color: var(--clay-deep);
+}
+
+.about-pullquote {
+  margin: var(--space-8) 0;
+  padding: var(--space-6) var(--space-5);
+  border-left: 2px solid var(--clay);
+  background: transparent;
+}
+
+.about-pullquote-text {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  line-height: 1.3;
+  color: var(--ink);
+  margin: 0 0 var(--space-4) 0;
+  max-width: 56ch;
+}
+
+.about-pullquote-attribution {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+.about-positioning-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-5) 0;
+}
+
+.about-positioning-list li {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--ink);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.about-positioning-list li:last-child {
+  border-bottom: 0;
+}
+
+.about-closing {
+  padding: var(--space-7) 0 var(--space-5) 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.about-closing-secondary {
+  color: var(--ink-2);
+  font-size: 0.98rem;
+}
+
+/* --- AuthorByline (foot of articles and guide pages) --- */
+
+.author-byline {
+  margin: var(--space-7) 0 0 0;
+  padding: var(--space-5) 0 0 0;
+  border-top: 1px solid var(--hairline);
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+
+.author-byline-name {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.author-byline-sep {
+  display: inline-block;
+  margin: 0 var(--space-2);
+  color: var(--ink-2);
+}
+
+.author-byline-role {
+  color: var(--ink-2);
+}
+
+.author-byline-link {
+  color: var(--green-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-left: var(--space-3);
+}
+
+.author-byline-link:hover,
+.author-byline-link:focus-visible {
+  color: var(--clay-deep);
+}
+
+/* --- Homepage credibility paragraph (Option B inline trust block) --- */
+
+.home-credibility {
+  margin: var(--space-5) 0;
+  padding: var(--space-4) var(--space-5);
+  background: var(--sand);
+  border-left: 2px solid var(--green);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 62ch;
+}
+
+.home-credibility a {
+  color: var(--clay-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.home-credibility a:hover,
+.home-credibility a:focus-visible {
+  color: var(--green-deep);
+}

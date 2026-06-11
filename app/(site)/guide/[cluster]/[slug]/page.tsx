@@ -8,6 +8,7 @@ import {
   findGuidePage,
   renderGuidePage,
 } from "@/lib/guide";
+import AuthorByline from "@/components/AuthorByline";
 
 type Params = Promise<{ cluster: string; slug: string }>;
 
@@ -157,6 +158,7 @@ export default async function GuidePage(props: { params: Params }) {
               </p>
             </aside>
           ) : null}
+          <AuthorByline />
         </>
       )}
 

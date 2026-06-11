@@ -149,11 +149,18 @@ export default async function HomePage(props: {
             and we tell you what the evidence does and does not say.
           </p>
           <p>That is the whole deal.</p>
+          <p className="home-credibility">
+            Underneath the schools and the cures, feng shui is a way of
+            reading space: orientation, movement, light, proportion,
+            entrance, rest. My Feng Shui Home reads it that way because
+            the site is written by a licensed M.Sc.Arch. architect.{" "}
+            <Link href="/about">More about who runs the site &rarr;</Link>
+          </p>
           <p>
             If you want the <strong>shortest</strong> way in, start with your
-            Kua number. It tells you which four directions in your home are
-            working <em>with</em> you and which four are working against you. It
-            takes ten seconds.
+            Kua number. It tells you which four directions in your home
+            traditionally <em>support</em> you and which four are
+            traditionally handled with more care. It takes ten seconds.
           </p>
           <p className="honest-block-actions">
             <Link href="/kua-calculator" className="cta-primary">
