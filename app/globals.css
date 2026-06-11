@@ -246,6 +246,28 @@ a:hover { color: var(--clay-deep); }
 
 .footer-tag a:hover { color: var(--on-dark); }
 
+/* Secondary footer nav: Life areas / Articles / Methodology / Privacy.
+   Inline row, wraps on narrow viewports. Subdued sand-tinted links so
+   the trust line above stays the visual lead. */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+  margin: var(--space-3) 0 var(--space-4) 0;
+  font-size: 0.92rem;
+}
+
+.footer-links a {
+  color: #d8cba6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--on-dark);
+}
+
 .footer-honest {
   margin: 0;
   font-family: var(--font-display);
@@ -4810,19 +4832,23 @@ a:hover { color: var(--clay-deep); }
     align-items: center;
     justify-content: space-between;
     min-height: 44px;
-    padding: var(--space-3);
+    padding: var(--space-2) var(--space-3);
     cursor: pointer;
     list-style: none;
     border-bottom: 1px solid var(--hairline);
     font-weight: 600;
+    font-size: 0.95rem;
     color: var(--ink);
   }
   .mobile-nav-summary:focus-visible {
     outline: 2px solid var(--green);
     outline-offset: -2px;
   }
+  .mobile-nav-summary-label {
+    font-size: 0.95rem;
+  }
   .mobile-nav-summary-icon {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     line-height: 1;
     color: var(--green-deep);
   }
@@ -4843,10 +4869,20 @@ a:hover { color: var(--clay-deep); }
     width: 100%;
     flex-direction: column;
     align-items: stretch;
-    gap: var(--space-2);
+    gap: 0;
   }
   .site-header {
     flex-wrap: wrap;
+  }
+  /* Compact mobile item sizing: smaller font, tighter padding,
+     44px min tap target preserved by the min-height rule. */
+  .site-nav-mobile .site-nav-link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--hairline);
   }
   .nav-dropdown {
     width: 100%;
@@ -4854,7 +4890,9 @@ a:hover { color: var(--clay-deep); }
   .nav-dropdown-summary {
     justify-content: space-between;
     width: 100%;
-    padding: var(--space-3);
+    min-height: 44px;
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.95rem;
     border-bottom: 1px solid var(--hairline);
   }
   .nav-dropdown-panel {
@@ -5437,13 +5475,28 @@ a:hover { color: var(--clay-deep); }
   font-weight: 600;
 }
 
-/* --- Nav link feature variant for the Products button --- */
+/* --- Nav link feature variant for the public primary actions
+       (Calculator, Guide, Rooms, Products) --- */
 .site-nav-link-feature {
   color: var(--green-deep);
   font-weight: 700;
 }
 
 .site-nav-link-feature:hover { color: var(--clay-deep); }
+
+/* --- Nav link quiet variant for About + Account / Sign in.
+       Visually subordinate to the primary public actions above so a
+       first-time visitor's eye lands on the public content, not on
+       the account chrome. --- */
+.site-nav-link-quiet {
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+.site-nav-link-quiet:hover,
+.site-nav-link-quiet:focus-visible {
+  color: var(--green-deep);
+}
 
 /* ============================================================
    Phase 5A - conversion polish + FAQ accordion.

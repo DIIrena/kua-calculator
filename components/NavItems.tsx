@@ -1,82 +1,68 @@
 import Link from "next/link";
 import SignOutButton from "@/components/SignOutButton";
-import {
-  articlesInCategory,
-  type ArticleCategory,
-} from "@/lib/articles";
-import { LIFE_AREAS } from "@/lib/life-areas";
 import { SPACES } from "@/lib/spaces";
 
-// Shared primary-nav item list. Used by both the desktop nav surface and
-// the mobile <details> hamburger surface in SiteHeader so the two
+// Shared primary-nav item list. Used by both the desktop nav surface
+// and the mobile <details> hamburger surface in SiteHeader so the two
 // surfaces never drift out of sync.
 //
 // Server Component only. No client JS, no analytics import.
 //
-// Nav order (left to right on desktop, top to bottom on mobile):
-//   1. Life pillars (dropdown)
-//   2. Space (dropdown)
-//   3. Products
-//   4. Guide
-//   5. Everything About Feng Shui (mega dropdown)
-//   6. Calculator
-//   7. Account / Sign in
+// Surface prop:
+//   "desktop": 6 items (Calculator / Guide / Rooms / Products / About /
+//              Account or Sign in). No "Start here" because the brand
+//              mark on the left already links home.
+//   "mobile":  7 items (Start here / Find my Kua number / Ultimate
+//              Guide / Rooms / Products / About / Account or Sign in
+//              + Sign out). Friendlier labels for the same destinations.
+//
+// Items NOT in the primary nav (intentionally moved to the footer or
+// kept reachable via the Guide and internal links):
+//   - Life areas (/life)        -> footer
+//   - Articles index (/articles)-> footer + linked from /guide internals
+//   - "Everything About Feng Shui" mega menu was removed; it duplicated
+//     /guide and was the biggest cause of the crowded primary nav.
 
-type NavCategory = {
-  category: ArticleCategory;
-  label: string;
-  pinned?: Array<{ label: string; href: string }>;
-};
+export type NavSurface = "desktop" | "mobile";
 
-const NAV_CATEGORIES: ReadonlyArray<NavCategory> = [
-  { category: "foundations", label: "Foundations" },
-  { category: "bagua", label: "The Bagua Map" },
-  { category: "room-by-room", label: "Room by Room" },
-  {
-    category: "methodology",
-    label: "Methodology",
-    pinned: [
-      { label: "The Compass School (deep dive)", href: "/methodology" },
-    ],
-  },
-];
+export default function NavItems({
+  signedIn,
+  surface,
+}: {
+  signedIn: boolean;
+  surface: NavSurface;
+}) {
+  const calculatorLabel =
+    surface === "mobile" ? "Find my Kua number" : "Calculator";
+  const guideLabel = surface === "mobile" ? "Ultimate Guide" : "Guide";
 
-export default function NavItems({ signedIn }: { signedIn: boolean }) {
   return (
     <>
-      {/* 1. Life pillars */}
-      <details className="nav-dropdown">
-        <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
-          Life pillars
-          <span className="nav-dropdown-caret" aria-hidden="true">
-            &#9662;
-          </span>
-        </summary>
-        <div className="nav-dropdown-panel" role="menu">
-          {LIFE_AREAS.map((a) => (
-            <Link
-              key={a.slug}
-              href={`/life/${a.slug}`}
-              role="menuitem"
-              className="nav-dropdown-link"
-            >
-              {a.label}
-            </Link>
-          ))}
-          <Link
-            href="/life"
-            role="menuitem"
-            className="nav-dropdown-link nav-dropdown-see-all"
-          >
-            All nine life areas &rarr;
-          </Link>
-        </div>
-      </details>
+      {/* Mobile-only: Start here links back to the homepage. The
+          brand mark in SiteHeader already does this on desktop. */}
+      {surface === "mobile" ? (
+        <Link href="/" className="site-nav-link">
+          Start here
+        </Link>
+      ) : null}
 
-      {/* 2. Space */}
+      {/* 1. Calculator (free tool) - primary feature */}
+      <Link
+        href="/kua-calculator"
+        className="site-nav-link site-nav-link-feature"
+      >
+        {calculatorLabel}
+      </Link>
+
+      {/* 2. Guide (Ultimate Feng Shui Guide hub) - primary feature */}
+      <Link href="/guide" className="site-nav-link site-nav-link-feature">
+        {guideLabel}
+      </Link>
+
+      {/* 3. Rooms dropdown - the 6 rooms + a See all rooms link */}
       <details className="nav-dropdown">
         <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
-          Space
+          Rooms
           <span className="nav-dropdown-caret" aria-hidden="true">
             &#9662;
           </span>
@@ -102,88 +88,33 @@ export default function NavItems({ signedIn }: { signedIn: boolean }) {
         </div>
       </details>
 
-      {/* 3. Products */}
+      {/* 4. Products - the paid shop */}
       <Link href="/products" className="site-nav-link site-nav-link-feature">
         Products
       </Link>
 
-      {/* 4. Guide */}
-      <Link href="/guide" className="site-nav-link site-nav-link-feature">
-        Guide
+      {/* 5. About - the architect-as-author trust page */}
+      <Link href="/about" className="site-nav-link site-nav-link-quiet">
+        About
       </Link>
 
-      {/* 5. Everything About Feng Shui */}
-      <details className="nav-dropdown nav-dropdown-mega">
-        <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
-          Everything About Feng Shui
-          <span className="nav-dropdown-caret" aria-hidden="true">
-            &#9662;
-          </span>
-        </summary>
-        <div className="nav-dropdown-panel nav-mega-panel" role="menu">
-          {NAV_CATEGORIES.map((nav) => {
-            const articles = articlesInCategory(nav.category);
-            return (
-              <div key={nav.category} className="nav-mega-section">
-                <Link
-                  href={`/articles/category/${nav.category}`}
-                  className="nav-mega-section-title"
-                  role="menuitem"
-                >
-                  {nav.label}
-                </Link>
-                <ul className="nav-mega-section-list">
-                  {nav.pinned?.map((p) => (
-                    <li key={p.href}>
-                      <Link
-                        href={p.href}
-                        role="menuitem"
-                        className="nav-dropdown-link nav-dropdown-pinned"
-                      >
-                        {p.label}
-                      </Link>
-                    </li>
-                  ))}
-                  {articles.map((a) => (
-                    <li key={a.slug}>
-                      <Link
-                        href={`/articles/${a.slug}`}
-                        role="menuitem"
-                        className="nav-dropdown-link"
-                      >
-                        {a.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-          <Link
-            href="/articles"
-            role="menuitem"
-            className="nav-mega-see-all"
-          >
-            See the full article index &rarr;
-          </Link>
-        </div>
-      </details>
-
-      {/* 6. Calculator */}
-      <Link href="/kua-calculator" className="site-nav-link">
-        Calculator
-      </Link>
-
-      {/* 7. Account / Sign in */}
+      {/* 6. Account or Sign in - visually quieter than the public actions
+            above. SignOutButton renders next to Account when signed-in. */}
       {signedIn ? (
         <>
-          <Link href="/account" className="site-nav-link">
+          <Link
+            href="/account"
+            className="site-nav-link site-nav-link-quiet"
+          >
             Account
           </Link>
           <SignOutButton />
         </>
       ) : (
-        <Link href="/sign-in" className="site-nav-link">
+        <Link
+          href="/sign-in"
+          className="site-nav-link site-nav-link-quiet"
+        >
           Sign in
         </Link>
       )}

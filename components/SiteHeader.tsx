@@ -60,11 +60,12 @@ export default async function SiteHeader() {
       {/* Desktop nav: always rendered, always visible at >880px. CSS
           hides it at <=880px and reveals the mobile hamburger instead. */}
       <nav className="site-nav site-nav-desktop" aria-label="Primary">
-        <NavItems signedIn={signedIn} />
+        <NavItems signedIn={signedIn} surface="desktop" />
       </nav>
 
       {/* Mobile nav: hidden by default; revealed at <=880px. Native
-          <details> hamburger, JS-free, WAI-ARIA disclosure pattern. */}
+          <details> hamburger, JS-free, WAI-ARIA disclosure pattern.
+          Compact summary row to avoid eating the first viewport. */}
       <details className="mobile-nav-toggle">
         <summary
           className="mobile-nav-summary"
@@ -76,7 +77,7 @@ export default async function SiteHeader() {
           </span>
         </summary>
         <nav className="site-nav site-nav-mobile" aria-label="Primary (mobile)">
-          <NavItems signedIn={signedIn} />
+          <NavItems signedIn={signedIn} surface="mobile" />
         </nav>
       </details>
     </header>

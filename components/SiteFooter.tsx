@@ -1,6 +1,11 @@
 import Link from "next/link";
 
 // Site footer: the deep-ink counterweight, with the bamboo ornament.
+// Hosts the calm trust line that links to /about, the secondary public
+// navigation (Life areas, Articles, Methodology, Privacy), the free-
+// tool one-liner, and the honest-framing reminder.
+//
+// Server Component. No client JS, no analytics import.
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
@@ -31,9 +36,14 @@ export default function SiteFooter() {
         Architecture-led feng shui for real homes.{" "}
         <Link href="/about">Read who runs the site</Link>.
       </p>
-      <p className="footer-tag">
-        The Kua Calculator is a free tool from My Feng Shui Home.{" "}
+      <nav className="footer-links" aria-label="Site sections">
+        <Link href="/life">Life areas</Link>
+        <Link href="/articles">Articles</Link>
+        <Link href="/methodology">Methodology</Link>
         <Link href="/privacy">Privacy</Link>
+      </nav>
+      <p className="footer-tag">
+        The Kua Calculator is a free tool from My Feng Shui Home.
       </p>
       <p className="footer-honest">
         The Kua system is a structured tool for design decisions. It is not a
