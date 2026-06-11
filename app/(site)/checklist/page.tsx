@@ -27,7 +27,7 @@ const QUESTIONS: ReadonlyArray<{ q: string; meaning: string }> = [
   {
     q: "From your bed, can you see the bedroom door without turning your head?",
     meaning:
-      "This is the command position. It lowers nervous-system load at night because you do not have to keep checking behind you. People sleep better within a week of rotating the bed.",
+      "This is the command position. It lowers nervous-system load at night because you do not have to keep checking behind you. Many readers use a week as a test window after rotating the bed and notice the room feels calmer to fall asleep in.",
   },
   {
     q: "Is your bed positioned so that no large mirror reflects you while you sleep?",

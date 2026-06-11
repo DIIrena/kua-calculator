@@ -47,6 +47,11 @@ export default async function MoneyKitPage(props: {
           Kit is the focused printable book that reads that channel
           for your home and your work, keyed to your Kua.
         </p>
+        <p className="product-hero-launch-state">
+          The Business and Money Kit is still in development and
+          checkout is not live yet. Join the waitlist and we email you
+          the moment it opens.
+        </p>
         <p className="product-hero-anchor">
           <a href="#waitlist">Skip to the waitlist →</a>
         </p>

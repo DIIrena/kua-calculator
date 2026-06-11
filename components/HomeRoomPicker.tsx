@@ -36,7 +36,7 @@ const ROOMS: Room[] = [
     label: "Bedroom",
     emoji: "?",
     tip:
-      "The one move: from your bed, can you see the door without turning your head? If not, rotate the bed ninety degrees. The command position lowers nervous-system load at night. You will sleep within a week of moving it.",
+      "The one move: from your bed, can you see the door without turning your head? If not, rotate the bed ninety degrees. The command position is the tradition's way of lowering nervous-system load at night. Leave it for a week and notice whether the room feels easier to settle into.",
   },
   {
     id: "workspace",

@@ -170,7 +170,7 @@ export const LIFE_AREAS: ReadonlyArray<LifeAreaMeta> = [
     tagline: "The recognition corner.",
     bagua: "South",
     shortDescription:
-      "Feng shui for reputation, visibility, and recognition: the south sector, the fire element, and how to activate it.",
+      "Feng shui for reputation, visibility, and recognition: the south sector, the fire element, and how the tradition reads it.",
     longDescription:
       "Fame in the traditional sense means recognition - how the world sees you. It applies to business owners, public-facing professionals, and anyone whose work depends on being known. The sector is south, the element is fire.",
     starters: [

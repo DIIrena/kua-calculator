@@ -76,7 +76,7 @@ Cooking saves money. (Restaurants and takeout cost three to five times what cook
 
 Cooking improves what you eat. (Home-cooked food is consistently lower in sodium, sugar, and processed seed oils than takeout.)
 
-Eating better improves your energy, your sleep, and your willingness to make other small good decisions throughout the day.
+Eating better is widely associated with steadier energy, easier sleep, and more willingness to make other small good decisions across the day.
 
 A small good decision compounding twice a day is the entire mechanism behind the **wealth corner** in the bagua. The tradition wrapped it in vocabulary about *qi*, *fire*, and the five elements. The vocabulary is poetic. The mechanism is the same one a behavioural economist would describe.
 

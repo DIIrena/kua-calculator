@@ -57,6 +57,17 @@ export type GuidePage = {
   gated: boolean;
   /** Plain-English estimate, e.g. "5 minutes". */
   readingTime: string;
+  /** Optional in-guide CTA shown as a calm aside near the bottom of
+   *  the page (before the FAQ / Where to go next sections). Used only
+   *  on the highest-priority pages: the Kua anchor, the planner
+   *  anchor (annual-cures-vs-permanent-fixes), and the planner-fit
+   *  hub (flying-stars-btb-and-timing). Calm voice; no outcome
+   *  promises. Voice rule mirrors components/InArticleCta.tsx. */
+  cta?: {
+    label: string;
+    href: string;
+    rationale?: string;
+  };
 };
 
 export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
@@ -195,9 +206,15 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
       "Find your Kua number with the free calculator. East or West group, your four favourable directions (Sheng Qi, Tian Yi, Yan Nian, Fu Wei), and how to handle a mixed-group household.",
     teaser:
       "Your Kua number sorts you into East or West group and assigns four supportive directions. Here is what each one is for.",
-    lastUpdated: "2026-06-10",
+    lastUpdated: "2026-06-11",
     gated: false,
     readingTime: "4 minutes",
+    cta: {
+      label: "Find my Kua number in ten seconds",
+      href: "/kua-calculator",
+      rationale:
+        "The calculator runs in your browser, takes a birthday, and returns your number, your East or West group, and your eight personal directions.",
+    },
   },
   {
     cluster: "compass-school",
@@ -375,9 +392,15 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
       "Flying Stars adds a moving calendar to Compass School. BTB is a separate 20th-century lineage anchored to the front door. The two layers that sit outside the Form-and-Compass core, what each one is for, and how not to mix them.",
     teaser:
       "When timing enters the picture. The annual layer of Flying Stars and the alternate lineage of BTB, kept separate and held lightly.",
-    lastUpdated: "2026-06-07",
+    lastUpdated: "2026-06-11",
     gated: false,
     readingTime: "6 minutes",
+    cta: {
+      label: "Track this year's visiting stars with the 2026 Annual Planner",
+      href: "/products/annual-feng-shui-planner-2026",
+      rationale:
+        "The Planner reads the 2026 annual chart and names where each visiting star lands, so the timing layer above is grounded in a real plan.",
+    },
   },
   {
     cluster: "cures",
@@ -423,9 +446,15 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
       "Most cures are decided once and left alone. A small number are checked each Li Chun. Three questions decide which is which: is it structural, is it an element imbalance, or is it an annual visiting-star position?",
     teaser:
       "Most cures stay. Two corners are checked each year. Three questions decide which is which.",
-    lastUpdated: "2026-06-07",
+    lastUpdated: "2026-06-11",
     gated: false,
     readingTime: "5 minutes",
+    cta: {
+      label: "Join the 2026 Annual Feng Shui Planner waitlist",
+      href: "/products/annual-feng-shui-planner-2026",
+      rationale:
+        "The Planner names where the year's cures actually live, sector by sector, so the temporary work is easy to undo when 2027 rolls in.",
+    },
   },
   {
     cluster: "money",

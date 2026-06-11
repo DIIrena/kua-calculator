@@ -46,6 +46,10 @@ export default async function BedroomResetPage(props: {
           Kua, with the small moves the tradition has long associated
           with rest and steady connection.
         </p>
+        <p className="product-hero-launch-state">
+          The Bedroom Reset is still in development and checkout is not
+          live yet. The waitlist is the way in until it opens.
+        </p>
         <p className="product-hero-anchor">
           <a href="#waitlist">Skip to the waitlist →</a>
         </p>

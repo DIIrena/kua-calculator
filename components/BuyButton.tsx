@@ -52,6 +52,11 @@ type Props = {
    *  custom string for products that send a richer email sequence
    *  (the Annual Planner sends confirmation + sample + launch). */
   waitlistNote?: string;
+  /** Optional id for the wrapping <div>. Defaults to "waitlist" so the
+   *  "Skip to the waitlist" anchor works. Override when a page renders
+   *  more than one BuyButton (e.g. a top + bottom waitlist card on the
+   *  Planner page) so the page does not produce duplicate ids. */
+  anchorId?: string;
   /** Optional Lemon Squeezy checkout URL; required if state is
    *  "lemon-squeezy". */
   lemonSqueezyUrl?: string;
@@ -102,6 +107,7 @@ export default function BuyButton({
   state,
   waitlistStatus = null,
   waitlistNote,
+  anchorId = "waitlist",
   lemonSqueezyUrl,
 }: Props) {
   const emailInputRef = useRef<HTMLInputElement | null>(null);
@@ -146,7 +152,7 @@ export default function BuyButton({
 
   if (state === "waitlist") {
     return (
-      <div id="waitlist" className="buy-button buy-button-waitlist">
+      <div id={anchorId} className="buy-button buy-button-waitlist">
         <p className="buy-button-price">
           <span className="buy-button-price-amount">{priceLabel}</span>
           <span className="buy-button-price-suffix">when it ships</span>
@@ -189,7 +195,7 @@ export default function BuyButton({
 
   if (state === "stripe-test" || state === "stripe-live") {
     return (
-      <div id="waitlist" className="buy-button buy-button-stripe">
+      <div id={anchorId} className="buy-button buy-button-stripe">
         <p className="buy-button-price">
           <span className="buy-button-price-amount">{priceLabel}</span>
           <span className="buy-button-price-suffix">one-time</span>
@@ -219,7 +225,7 @@ export default function BuyButton({
       );
     }
     return (
-      <div id="waitlist" className="buy-button buy-button-lemon">
+      <div id={anchorId} className="buy-button buy-button-lemon">
         <p className="buy-button-price">
           <span className="buy-button-price-amount">{priceLabel}</span>
           <span className="buy-button-price-suffix">one-time</span>

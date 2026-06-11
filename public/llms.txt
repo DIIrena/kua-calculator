@@ -1,0 +1,51 @@
+# My Feng Shui Home
+
+> A calm, honest feng shui guide for real homes. Free Kua number calculator, room walkthrough method, a 14-point room harmony checklist, and a small library of paid printable guides. Educational. Not a consultation. Not a fortune. No outcome promises.
+
+The site is built around three free pillars and a small set of paid printables. The free pillars are the Kua number calculator at /kua-calculator, the Ultimate Feng Shui Guide at /guide, and the methodology deep dive at /methodology. The paid printables ship from /products and are sold as one-time PDFs once checkout is live.
+
+Voice rules used across every page: calm, plain English, second-person, present-tense. No outcome promises. No consultation language. No em dashes. The site separates testable design choices from traditional symbolism and names which is which on every page.
+
+The Kua calculator runs entirely in the visitor's browser and never sends birth data anywhere. The iframe-embeddable widget at /embed is a chrome-free build of the same calculator and carries no third-party JavaScript.
+
+## Core free tools
+
+- [Kua number calculator](https://myfengshuihome.com/kua-calculator): ten-second calculator that returns a visitor's Kua number, East or West group, and eight personal directions. Runs in the browser; no birth data leaves the page.
+- [Ultimate Feng Shui Guide](https://myfengshuihome.com/guide): eleven clusters of structured pages covering the bagua, the schools, the cures, and the room-by-room walkthrough.
+- [Methodology](https://myfengshuihome.com/methodology): the Compass School and Eight Mansions system explained in nine sections.
+- [14-point room harmony checklist](https://myfengshuihome.com/checklist): a one-page printable used as the lead magnet.
+- [Iframe-embeddable calculator](https://myfengshuihome.com/embed): chrome-free, tracker-free build of the calculator for external sites.
+
+## Guide highlights
+
+- [Find your Kua number and your four directions](https://myfengshuihome.com/guide/compass-school/find-your-kua-number): East/West group split, the four favourable directions, and how to handle a mixed-group household.
+- [How to read any room](https://myfengshuihome.com/guide/rooms/how-to-read-any-room): the four-thing walkthrough the rest of the room work runs on.
+- [Bedroom, kitchen, and front door](https://myfengshuihome.com/guide/rooms/bedroom-kitchen-front-door): the three rooms that compound hardest, read room by room.
+- [The southeast wealth area and how to read it](https://myfengshuihome.com/guide/money/the-southeast-wealth-area-and-how-to-read-it): the wealth corner read in six levers, no manifestation language.
+- [Annual cures vs permanent fixes](https://myfengshuihome.com/guide/cures/annual-cures-vs-permanent-fixes): which cures reset at Li Chun and which stay put for years.
+- [Flying Stars, BTB, and when timing enters the picture](https://myfengshuihome.com/guide/schools/flying-stars-btb-and-timing): the annual layer of Flying Stars and the alternate lineage of BTB, kept separate.
+- [What the Bagua is](https://myfengshuihome.com/guide/bagua/what-the-bagua-is): the map layer laid over a real floor plan.
+- [The nine life areas](https://myfengshuihome.com/guide/bagua/the-nine-life-areas): nine sectors named one by one with the supportive direction for each.
+- [The five elements as a design language](https://myfengshuihome.com/guide/five-elements/five-elements-as-a-design-language): Wu Xing as a vocabulary, not a mystical code.
+- [Five-element cures, room by room](https://myfengshuihome.com/guide/cures/five-element-cures-room-by-room): which element cure belongs in which room.
+
+## Products (printable, one-time)
+
+- [2026 Annual Feng Shui Planner](https://myfengshuihome.com/products/annual-feng-shui-planner-2026): 98-page printable book for the 2026 Chinese solar year. Waitlist open; checkout opens once the business bank account clears.
+- [Personal Feng Shui Compass](https://myfengshuihome.com/products/personal-feng-shui-compass): printable book keyed to the reader's Kua and eight personal directions. File finished; checkout not live yet.
+- [Move-In Kit](https://myfengshuihome.com/products/move-in-kit): traditional date selection plus a first-week activation checklist. In development.
+- [Bedroom Reset](https://myfengshuihome.com/products/bedroom-reset): focused printable walking the bedroom from the door inward against the reader's Kua. In development.
+- [Business and Money Kit](https://myfengshuihome.com/products/business-money-feng-shui): focused printable reading the money channel for home and work. In development.
+- [Products shelf](https://myfengshuihome.com/products): the full shop, with launch-state notes on every product.
+
+## Policies
+
+- [Privacy](https://myfengshuihome.com/privacy): the calculator core and the /embed widget never send birth data anywhere. The account layer at /account stores only data the user chooses to save.
+- Honest framing rule: outcome promises are not used anywhere on the site. The tradition is named honestly and the evidence is named honestly.
+- No em dashes anywhere on the site.
+
+## Optional
+
+- [Articles](https://myfengshuihome.com/articles): teaser-length essays on common feng shui questions. Free with no account.
+- [Sign in](https://myfengshuihome.com/sign-in): optional free account to save and email a chart.
+- Contact: hello@myfengshuihome.com.

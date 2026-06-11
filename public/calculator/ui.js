@@ -215,6 +215,7 @@
       var occ2 = (o2.data && o2.hasInput && o2.data.yearRaw && o2.data.gender) ? buildOccupant(o2.data) : null;
       renderResult(occ1, occ2);
       revealSaveChartCta(occ1);
+      revealPostResultCta();
     } catch (err) {
       showError("date-1", err.message || "Sorry, something went wrong. Check your inputs and try again.");
     }
@@ -236,6 +237,23 @@
     if (monthInput) monthInput.value = String(occ1.month);
     if (dayInput) dayInput.value = String(occ1.day);
     if (genderInput) genderInput.value = occ1.gender;
+  }
+
+  // Reveal the post-result CTA stack (methodology + Compass waitlist +
+  // planner footer link). On the /embed surface, hide the Compass
+  // waitlist card and the planner footer link so the embed stays
+  // minimal and tracker-free. Detection looks for data-embed="true" on
+  // main#main (set by app/embed/layout.tsx). No fetch / XHR / beacon
+  // is introduced here; the file stays vanilla and tracker-free.
+  function revealPostResultCta() {
+    var stack = document.getElementById("post-result-cta");
+    if (!stack) return;
+    stack.hidden = false;
+    var mainEl = document.querySelector("main#main");
+    var isEmbed = mainEl && mainEl.dataset && mainEl.dataset.embed === "true";
+    if (isEmbed) {
+      stack.classList.add("post-result-stack--embed");
+    }
   }
 
   function initCouplesToggle() {

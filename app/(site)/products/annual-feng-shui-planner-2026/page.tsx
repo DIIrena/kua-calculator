@@ -173,11 +173,35 @@ export default async function PlannerPage(props: {
               the 2026 Chinese solar year, in a calm voice, in 98
               printable pages. One book. One year. One shelf.
             </p>
+            <p className="product-hero-launch-state" style={{ marginTop: "0.9rem" }}>
+              Checkout is not live yet. Join the waitlist and we email
+              you the moment it opens.
+            </p>
             <p className="product-hero-anchor" style={{ marginTop: "1.1rem" }}>
-              <a href="#waitlist">Skip to the waitlist →</a>
+              <a href="#waitlist-top">Skip to the waitlist →</a>
             </p>
           </div>
         </div>
+      </section>
+
+      <section
+        className="product-top-waitlist"
+        aria-label="Join the 2026 Planner waitlist"
+      >
+        <h2 className="product-top-waitlist-heading">
+          Join the 2026 Annual Feng Shui Planner waitlist.
+        </h2>
+        <p className="product-top-waitlist-state">
+          $29, one-time. Waitlist is open; checkout is not live yet.
+        </p>
+        <BuyButton
+          productSlug="annual-feng-shui-planner-2026"
+          priceLabel="$29"
+          state="waitlist"
+          waitlistStatus={status}
+          anchorId="waitlist-top"
+          waitlistNote="You receive a confirmation now, one sample-page note about a week later, and a launch email when checkout opens. You can unsubscribe any time."
+        />
       </section>
 
       <section className="product-section" aria-label="Look inside the book">

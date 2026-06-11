@@ -52,6 +52,10 @@ export default async function PersonalFengShuiCompassPage(props: {
           to handle with care. It is the foundation product we built
           first because it is the one you will use longest.
         </p>
+        <p className="product-hero-launch-state">
+          The Compass file is finished. Checkout is not live yet; join
+          the waitlist and we email you the moment it opens.
+        </p>
         <p className="product-hero-anchor">
           <a href="#waitlist">Skip to the waitlist →</a>
         </p>

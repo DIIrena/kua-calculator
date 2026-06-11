@@ -13,5 +13,13 @@ export default function EmbedLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <main id="main">{children}</main>;
+  // data-embed="true" is read by public/calculator/ui.js so the
+  // post-result CTA stack hides its Compass waitlist card and the
+  // planner footer link on the embed surface (keeps the iframe
+  // minimal and tracker-free).
+  return (
+    <main id="main" data-embed="true">
+      {children}
+    </main>
+  );
 }

@@ -15,7 +15,7 @@ The cleanest way to hold these four is to attach each one to the question it act
 - *What is around this place, and is it liveable?* Form School. The shape of the land, the embrace of the surrounding buildings, the line a road takes toward your door.
 - *How is this place oriented, and how does that fit this specific household?* Compass School. It works direction by direction. The personal layer (the Kua number and the Eight Mansions or *Ba Zhai* sub-school) attaches to each member of the household.
 - *How does this place change with the calendar?* Flying Stars. Which corner of the home is the calm one this year, which is the cautious one, and when that shifts.
-- *How does the floor plan relate to the entry experience, with intention layered on?* BTB. The Bagua's nine life areas anchored to the front door, activated by the Three Secrets ritual.
+- *How does the floor plan relate to the entry experience, with intention layered on?* BTB. The Bagua's nine life areas anchored to the front door, with the Three Secrets ritual layered on top as the intention step.
 
 That is the map. Four questions, four schools, one each.
 

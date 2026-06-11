@@ -46,6 +46,11 @@ export default async function MoveInKitPage(props: {
           before the laundry pile does. The Move-In Kit gathers both
           of those into one printable book.
         </p>
+        <p className="product-hero-launch-state">
+          The Move-In Kit is still in development and checkout is not
+          live yet. Join the waitlist and you are the first to hear when
+          it ships.
+        </p>
         <p className="product-hero-anchor">
           <a href="#waitlist">Skip to the waitlist →</a>
         </p>

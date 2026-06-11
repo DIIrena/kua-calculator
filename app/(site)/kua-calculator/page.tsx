@@ -137,9 +137,16 @@ const faqJsonLd = {
   ],
 };
 
-export default async function KuaCalculatorPage() {
+export default async function KuaCalculatorPage(props: {
+  searchParams: Promise<{ compass?: string }>;
+}) {
+  const { compass } = await props.searchParams;
   const session = await auth();
   const isSignedIn = Boolean(session?.user?.id);
+  const compassStatus =
+    compass === "sent" || compass === "invalid" || compass === "error"
+      ? (compass as "sent" | "invalid" | "error")
+      : null;
   return (
     <>
       <section className="hero" aria-labelledby="hero-heading">
@@ -183,7 +190,10 @@ export default async function KuaCalculatorPage() {
         aria-label="Kua number calculator"
       >
         <div className="calculator-inner">
-          <CalculatorIsland isSignedIn={isSignedIn} />
+          <CalculatorIsland
+            isSignedIn={isSignedIn}
+            compassStatus={compassStatus}
+          />
         </div>
       </section>
 

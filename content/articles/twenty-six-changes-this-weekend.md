@@ -82,15 +82,15 @@ These are the universally-safe moves the practice has converged on across school
 
 **26. Sit in the centre of every room for one minute, with your eyes closed.** Notice what the room sounds like, smells like, feels like. This is the diagnostic step. You will know something is wrong in three of the rooms. Those three are next weekend's project.
 
-## What to expect.
+## What to notice.
 
-You will sleep better in the bedroom you moved the bed in.
+Leave the bedroom for a week and see whether falling asleep feels easier with the bed in the new spot.
 
-You will cook more in the kitchen you cleaned the stove in.
+Many readers find they reach for the stove more often once it is clean and clear; the kitchen becomes the room you actually use.
 
-You will read more in the living room you added a warm lamp to.
+A warm lamp may make the living room feel easier to settle into in the evening; watch whether you actually sit and read there once the light is right.
 
-You will think more clearly at the desk you turned to face the door.
+Use the new desk position as a test for a week and notice whether the workday feels less interrupted with the door in view.
 
 None of these are mystical. All of them are the parts of feng shui that survived the migration into modern environmental design. The mystical layer comes later.
 

@@ -98,41 +98,14 @@ export default async function HomePage(props: {
       {/* Section 1 - Hero */}
       <section className="home-hero" aria-labelledby="home-hero-heading">
         <div className="home-hero-inner">
-          <span className="home-hero-botanical" aria-hidden="true">
-            <svg
-              viewBox="0 0 120 170"
-              xmlns="http://www.w3.org/2000/svg"
-              focusable="false"
-            >
-              <path
-                d="M61 168 C57 132 64 100 60 64 C57 38 63 20 60 6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-              />
-              <g fill="currentColor">
-                <path d="M60 120 C41 119 27 125 15 139 C33 135 49 129 60 120 Z" />
-                <path d="M61 120 C80 117 95 121 108 133 C89 132 73 128 61 120 Z" />
-                <path d="M60 82 C43 81 31 87 21 99 C37 95 51 90 60 82 Z" />
-                <path d="M61 82 C78 79 91 83 102 94 C85 93 71 89 61 82 Z" />
-                <path d="M60 46 C46 45 36 50 28 60 C41 57 53 53 60 46 Z" />
-                <path d="M61 46 C75 43 86 47 95 56 C81 56 69 52 61 46 Z" />
-              </g>
-            </svg>
-          </span>
-          <p className="eyebrow">A calm, honest guide to feng shui for real homes.</p>
+          <p className="eyebrow">Free Kua calculator + 14-point checklist</p>
           <h1 id="home-hero-heading" className="home-hero-heading">
-            Your home is already trying to tell you something.
+            A calm, honest feng shui guide for real homes.
           </h1>
           <p className="home-hero-lede">
-            Most feng shui advice is <em>vague</em>, expensive, or borrowed from
-            a magazine. We do the opposite. We give you the{" "}
-            <strong>structured</strong> version, free where it should be free,
-            and small enough to actually finish tonight.
-          </p>
-          <p className="home-hero-lede">
-            Start with your Kua number. It is the door into the rest.
+            Start with your free Kua number. Then walk your home with
+            the structured guide. No fortunes, no upsells in the free
+            tier.
           </p>
           <div className="home-hero-actions">
             <Link href="/kua-calculator" className="cta-primary">
@@ -141,9 +114,6 @@ export default async function HomePage(props: {
             <Link href="/guide" className="home-hero-link">
               Open the Ultimate Feng Shui Guide
             </Link>
-            <a href="#what-it-is" className="home-hero-link">
-              What is feng shui, really?
-            </a>
           </div>
         </div>
       </section>

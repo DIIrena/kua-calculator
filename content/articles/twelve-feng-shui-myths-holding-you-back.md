@@ -94,7 +94,7 @@ A consultation has a place. It is not the entry point.
 
 ## Myth 12. If it doesn't work in a month, it doesn't work.
 
-Some feng shui interventions are immediate (you sleep better the night you move the bed). Some take longer (the wealth-corner work compounds over months).
+Some feng shui interventions read as immediate (the tradition reads the command-position bed as something you feel the first night). Some take longer (the wealth-corner work is meant to compound over months).
 
 The tradition's expectation is *months*, not weeks. The modern reading agrees: behavioural changes from environmental design need time to settle into routines.
 

@@ -1760,6 +1760,127 @@ a:hover { color: var(--clay-deep); }
    is ever the only cue (icons + label text reinforce status).
    ============================================================ */
 
+/* --- Post-result CTA stack below the calculator result. Revealed by
+       ui.js after a successful calculation. Three children: the primary
+       methodology card, the secondary Compass waitlist card, and a
+       muted footer text link to the Annual Planner. On the /embed
+       surface the secondary card and the footer are hidden via the
+       .post-result-stack--embed class (set by ui.js when main#main
+       carries data-embed="true"). --- */
+.post-result-stack {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 720px;
+}
+
+.post-result-card {
+  padding: var(--space-5) var(--space-5);
+  background: var(--paper);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.post-result-card.primary {
+  border-color: var(--green);
+}
+
+.post-result-card-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0 0 var(--space-2) 0;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.post-result-card-body {
+  margin: 0 0 var(--space-4) 0;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.post-result-card-actions {
+  margin: 0;
+}
+
+.compass-waitlist-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: stretch;
+}
+
+.compass-waitlist-form input[type="email"] {
+  flex: 1 1 220px;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--cream);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+}
+
+.compass-waitlist-form input[type="email"]:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+.compass-waitlist-form button {
+  min-height: 44px;
+}
+
+.compass-waitlist-status {
+  margin: var(--space-3) 0 0 0;
+  font-size: 0.95rem;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+}
+
+.compass-waitlist-status-ok {
+  background: var(--green-soft);
+  color: var(--ink);
+}
+
+.compass-waitlist-status-err {
+  background: var(--clay-soft);
+  color: var(--ink);
+}
+
+.post-result-footer {
+  margin: 0;
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+.post-result-footer a {
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.post-result-footer a:hover,
+.post-result-footer a:focus-visible {
+  color: var(--green-deep);
+}
+
+/* Embed surface: hide the Compass waitlist card and the planner
+   footer link so the iframe stays minimal and tracker-free. */
+.post-result-stack--embed .post-result-card-compass,
+.post-result-stack--embed .post-result-footer {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .compass-waitlist-form {
+    flex-direction: column;
+  }
+}
+
 /* --- Save-chart CTA below the calculator result --- */
 .save-chart-cta {
   margin-top: var(--space-6);
@@ -4652,6 +4773,58 @@ a:hover { color: var(--clay-deep); }
    overflow off-screen and look broken. Switch to an inline accordion
    below the summary, full-width. Wraps the nav so each item gets its
    own row. */
+/* --- Mobile nav <details> hamburger ---
+   On desktop the wrapping <details className="mobile-nav-toggle"> is
+   transparent to layout via `display: contents` so the inner <nav>
+   renders as before. The summary is hidden on desktop.
+   On mobile (<=880px) the wrapper becomes block-level, the summary
+   becomes a visible hamburger row, and the inner nav only renders when
+   the <details> is open. Native <details> keeps the toggle JS-free
+   and preserves keyboard / screen-reader behaviour. */
+.mobile-nav-toggle {
+  display: contents;
+}
+
+.mobile-nav-summary {
+  display: none;
+}
+
+.mobile-nav-summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-nav-summary::marker {
+  content: "";
+}
+
+@media (max-width: 880px) {
+  .mobile-nav-toggle {
+    display: block;
+    width: 100%;
+  }
+  .mobile-nav-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    padding: var(--space-3);
+    cursor: pointer;
+    list-style: none;
+    border-bottom: 1px solid var(--hairline);
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .mobile-nav-summary:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: -2px;
+  }
+  .mobile-nav-summary-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--green-deep);
+  }
+}
+
 @media (max-width: 880px) {
   .site-nav {
     width: 100%;
@@ -5281,6 +5454,44 @@ a:hover { color: var(--clay-deep); }
 .product-hero-anchor a:hover,
 .product-hero-anchor a:focus-visible {
   border-bottom-color: var(--green-deep);
+}
+
+/* --- Product hero launch-state line (one calm sentence under the
+       lede explaining the current shipping state of a waitlist product) --- */
+.product-hero-launch-state {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+  font-style: italic;
+}
+
+/* --- Top waitlist card on the Planner page (sits between the hero
+       and the "Look inside" section so the email field is one tap
+       from the fold) --- */
+.product-top-waitlist {
+  margin: var(--space-6) auto;
+  max-width: 640px;
+  padding: var(--space-5) var(--space-5);
+  background: var(--sand);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  scroll-margin-top: var(--space-6);
+}
+
+.product-top-waitlist-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+  margin: 0 0 var(--space-2) 0;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.product-top-waitlist-state {
+  margin: 0 0 var(--space-4) 0;
+  font-size: 0.95rem;
+  color: var(--ink-2);
 }
 
 /* --- Trust microstrip above the BuyButton --- */

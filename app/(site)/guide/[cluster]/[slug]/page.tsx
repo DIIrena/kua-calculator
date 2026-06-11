@@ -140,10 +140,24 @@ export default async function GuidePage(props: { params: Params }) {
           </p>
         </section>
       ) : (
-        <article
-          className="guide-page-body markdown-content"
-          dangerouslySetInnerHTML={{ __html: html ?? "" }}
-        />
+        <>
+          <article
+            className="guide-page-body markdown-content"
+            dangerouslySetInnerHTML={{ __html: html ?? "" }}
+          />
+          {page.cta ? (
+            <aside className="in-article-cta" aria-label="What to do next">
+              {page.cta.rationale ? (
+                <p className="in-article-cta-text">{page.cta.rationale}</p>
+              ) : null}
+              <p className="in-article-cta-actions">
+                <Link href={page.cta.href} className="cta-primary">
+                  {page.cta.label}
+                </Link>
+              </p>
+            </aside>
+          ) : null}
+        </>
       )}
 
       <script

@@ -81,8 +81,24 @@ export default async function SiteHeader() {
         </span>
       </Link>
 
-      <nav className="site-nav" aria-label="Primary">
-        {/* 1. Life pillars - the primary funnel to the paid Map */}
+      {/* Mobile-only disclosure wrapper. At desktop widths the wrapping
+          <details> behaves as `display: contents` so the existing nav
+          renders unchanged. At <=880px the summary becomes a visible
+          hamburger that toggles the rest of the nav. Native <details>
+          keeps it JS-free (Server Component) and preserves keyboard +
+          screen reader behaviour via the WAI-ARIA disclosure pattern. */}
+      <details className="mobile-nav-toggle">
+        <summary
+          className="mobile-nav-summary"
+          aria-label="Open menu"
+        >
+          <span className="mobile-nav-summary-label">Menu</span>
+          <span className="mobile-nav-summary-icon" aria-hidden="true">
+            &#9776;
+          </span>
+        </summary>
+        <nav className="site-nav" aria-label="Primary">
+          {/* 1. Life pillars - the primary funnel to the paid Map */}
         <details className="nav-dropdown">
           <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
             Life pillars
@@ -226,7 +242,8 @@ export default async function SiteHeader() {
             Sign in
           </Link>
         )}
-      </nav>
+        </nav>
+      </details>
     </header>
   );
 }
