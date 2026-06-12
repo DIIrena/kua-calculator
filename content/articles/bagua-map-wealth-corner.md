@@ -4,7 +4,7 @@ The **bagua** is the single most useful diagram in feng shui.
 
 It is also one of the most-searched questions about the practice. "Where is my wealth corner?" gets typed into search engines several hundred thousand times a year, and the top results are mostly *wrong*. They oversimplify. They mix up the two main methods. They tell you to put a fish tank somewhere without explaining why.
 
-Here is the honest version.
+Here is what is actually going on.
 
 ## What the bagua actually is.
 

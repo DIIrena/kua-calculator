@@ -20,7 +20,7 @@ Contraindication: an unlit candle is decoration, not a cure.
 
 ## Sound
 
-Sound cures are wind chimes, bells, and singing bowls. **Placement** is a corner where air actually moves: near a window that opens, near a door that swings, on a covered balcony. **Proportion** is one chime, not three. A single small chime in a moving-air corner softens a corridor. Three chimes in the same corner become noise the household tunes out. The 5, 6, and 8 rod conventions are a tradition note from the source material, not numerology to chase.
+Sound cures are wind chimes, bells, and singing bowls. **Placement** is a corner where air actually moves: near a window that opens, near a door that swings, on a covered balcony. **Proportion** is one chime, not three. A single small chime in a moving-air corner softens a corridor. Three chimes in the same corner become noise the household tunes out. The 5, 6, and 8 rod conventions are a tradition note, not numerology to chase.
 
 Contraindication: a chime in a dead-still corner makes no sound and does no work.
 
@@ -32,7 +32,7 @@ Contraindication: eight figurines in one corner is clutter, not a cure.
 
 ## Most of the work is subtraction
 
-The five families are tools with jobs. Mirrors redirect. Plants refresh. Light brightens, with crystals that scatter and candles that warm. Sound softens a moving-air corner. Symbols carry meaning for the occupant. The six levers decide whether any of them work in a specific room: element, placement, visibility, proportion, timing, and room use. The honest finish: most readers improve a home faster by removing dead plants, broken mirrors, and dusty figurines than by adding anything new. The diagnostic move is on [the page on how to read any room](/guide/rooms/how-to-read-any-room) and the longer worked example sits in [the diagnostic walkthrough](/articles/diagnostic-walkthrough).
+The five families are tools with jobs. Mirrors redirect. Plants refresh. Light brightens, with crystals that scatter and candles that warm. Sound softens a moving-air corner. Symbols carry meaning for the occupant. The six levers decide whether any of them work in a specific room: element, placement, visibility, proportion, timing, and room use. Most readers improve a home faster by removing dead plants, broken mirrors, and dusty figurines than by adding anything new. The diagnostic move is on [the page on how to read any room](/guide/rooms/how-to-read-any-room) and the longer worked example sits in [the diagnostic walkthrough](/articles/diagnostic-walkthrough).
 
 ## Where to go next
 

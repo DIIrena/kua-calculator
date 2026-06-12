@@ -4,13 +4,13 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Paid guides and tools | My Feng Shui Home",
   description:
-    "Personalised feng shui PDFs and tools, honestly framed. The Personal Feng Shui Compass, the Annual Planner, and focused readings for the bedroom, the kitchen, and your move-in date.",
+    "Personalised feng shui PDFs and tools. The Personal Feng Shui Compass, the Annual Planner, and focused readings for the bedroom, the kitchen, and your move-in date. One-time prices, 7-day refunds.",
   alternates: { canonical: "https://myfengshuihome.com/products" },
   openGraph: {
     type: "website",
     title: "Paid guides and tools - My Feng Shui Home",
     description:
-      "Personalised feng shui PDFs and tools, honestly framed.",
+      "Personalised feng shui PDFs and tools. One-time prices, 7-day refunds, no outcome promises.",
     url: "https://myfengshuihome.com/products",
   },
 };
@@ -48,7 +48,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     href: "/products/annual-feng-shui-planner-2026",
     title: "2026 Annual Feng Shui Planner",
     oneLiner:
-      "98 pages, the 2026 chart, sector treatments, and a 245-day calendar. The whole year in one printable book.",
+      "98 pages, the 2026 chart, sector treatments, and a 243-day calendar. The whole year in one printable book.",
     status: "waitlist",
     priceLabel: "$29",
   },
@@ -117,10 +117,14 @@ export default function ProductsPage() {
         <p className="eyebrow">My Feng Shui Home</p>
         <h1 className="products-heading">Paid guides and tools.</h1>
         <p className="products-lede">
-          Personalised PDFs and focused tools, written in the same calm
-          voice as the free guide. None promise outcomes. All give you
-          a structured way to decide what to do in the room you are
-          standing in.
+          Personalised PDFs and focused tools: a planner that reads
+          the year, a compass that reads you, and focused readings for
+          the bedroom, the move, and the money channel. Each one gives
+          you a structured way to decide what to do in the room you
+          are standing in.
+        </p>
+        <p className="products-lede">
+          One-time prices. 7-day refunds. No outcome promises.
         </p>
       </section>
 
@@ -169,10 +173,9 @@ export default function ProductsPage() {
           others.
         </p>
         <p>
-          Most of the catalogue is on a waitlist while we finish the
-          checkout system. When checkout goes live, we email you the
-          launch page and the early price. You can unsubscribe any
-          time.
+          Launching 2026 - waitlist members get the early price. Join
+          the list for any product and we email you the launch page
+          the day checkout opens. You can unsubscribe any time.
         </p>
       </section>
     </div>

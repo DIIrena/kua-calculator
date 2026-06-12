@@ -135,9 +135,9 @@ export default async function MoneyKitPage(props: {
         <p>
           It is not a wealth-attraction product. The tradition shapes
           the conditions a home offers; it does not promise money
-          arrives. The honest framing here is the same as everywhere
-          else on the site: a structured way to choose, not a fortune
-          to expect.
+          arrives. The framing here is the same as everywhere else on
+          the site: a structured way to choose, not a fortune to
+          expect.
         </p>
       </section>
 

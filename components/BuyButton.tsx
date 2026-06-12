@@ -154,7 +154,7 @@ export default function BuyButton({
     return (
       <div id={anchorId} className="buy-button buy-button-waitlist">
         <p className="buy-button-price">
-          <span className="buy-button-price-amount">{priceLabel}</span>
+          <span className="buy-button-price-amount">{priceLabel}</span>{" "}
           <span className="buy-button-price-suffix">when it ships</span>
         </p>
         <p className="buy-button-trust">
@@ -197,7 +197,7 @@ export default function BuyButton({
     return (
       <div id={anchorId} className="buy-button buy-button-stripe">
         <p className="buy-button-price">
-          <span className="buy-button-price-amount">{priceLabel}</span>
+          <span className="buy-button-price-amount">{priceLabel}</span>{" "}
           <span className="buy-button-price-suffix">one-time</span>
         </p>
         <p className="buy-button-trust">
@@ -210,7 +210,7 @@ export default function BuyButton({
           </button>
         </form>
         <p className="buy-button-note">
-          Secure checkout. Thirty-day refund, no questions asked.
+          Secure checkout. 7-day refund, no questions asked.
         </p>
       </div>
     );
@@ -227,7 +227,7 @@ export default function BuyButton({
     return (
       <div id={anchorId} className="buy-button buy-button-lemon">
         <p className="buy-button-price">
-          <span className="buy-button-price-amount">{priceLabel}</span>
+          <span className="buy-button-price-amount">{priceLabel}</span>{" "}
           <span className="buy-button-price-suffix">one-time</span>
         </p>
         <p className="buy-button-trust">
@@ -241,7 +241,7 @@ export default function BuyButton({
           Buy now
         </a>
         <p className="buy-button-note">
-          Secure checkout. Thirty-day refund, no questions asked.
+          Secure checkout. 7-day refund, no questions asked.
         </p>
       </div>
     );

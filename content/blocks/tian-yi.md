@@ -20,7 +20,7 @@ This is the part that surprises people the first time they meet it. Sheng Qi is 
 
 The reasoning is plain. Most life is not a launch. Most months are not a startup. Most weeks are the slow accumulation of a body that does laundry, goes to work, has feelings about its parents, catches a cold in October. The tradition reads the Sheng Qi bed as suited to a stretch of active pushing, and the Tian Yi bed as suited to the long ordinary stretches that make up most of a life. The system does not rank one above the other. It assigns them to different **seasons**.
 
-So the honest framing is this. The tradition treats Tian Yi as the default for the bed, and Sheng Qi as the substitution you make for a known reason during a known stretch of time. For you, the headboard direction the tradition would point to in an ordinary season is **{{direction}}**.
+So the rule of thumb is this. The tradition treats Tian Yi as the default for the bed, and Sheng Qi as the substitution you make for a known reason during a known stretch of time. For you, the headboard direction the tradition would point to in an ordinary season is **{{direction}}**.
 
 ## What Tian Yi is for
 

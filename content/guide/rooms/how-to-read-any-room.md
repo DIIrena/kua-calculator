@@ -1,4 +1,4 @@
-Most people think feng shui means standing in one room and giving it a label. It does not. A reading is a walk, not a verdict. Here is the honest version. On a walkthrough you are reading four things, in this order. How the light moves. What the main seat or bed sees. Whether the main object sits in command position. What the room is being asked to do versus what it is set up for. Everything else is a footnote. If the framing still feels loose, the anchor sits at [what feng shui actually is](/guide/foundations/what-feng-shui-is-plainly).
+Most people think feng shui means standing in one room and giving it a label. It does not. A reading is a walk, not a verdict. On a walkthrough you are reading four things, in this order. How the light moves. What the main seat or bed sees. Whether the main object sits in command position. What the room is being asked to do versus what it is set up for. Everything else is a footnote. If the framing still feels loose, the anchor sits at [what feng shui actually is](/guide/foundations/what-feng-shui-is-plainly).
 
 ## Start at the front door, walk in the order qi walks
 

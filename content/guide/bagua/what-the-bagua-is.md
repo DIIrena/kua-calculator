@@ -1,4 +1,4 @@
-It is not a manifestation board. It is not a wish-list. It is not a magic overlay. Here is the honest version. The Bagua is a structured way of looking at a floor plan. It divides any bounded space into eight sectors plus a centre. Each sector carries a direction, an element, and a life area. That is the whole tool.
+It is not a manifestation board. It is not a wish-list. It is not a magic overlay. The Bagua is a structured way of looking at a floor plan. It divides any bounded space into eight sectors plus a centre. Each sector carries a direction, an element, and a life area. That is the whole tool.
 
 If feng shui itself is still new to you, the short framing on [what feng shui is, without the mystique](/guide/foundations/what-feng-shui-is-plainly) sets the wider context. This page stays on the map layer.
 

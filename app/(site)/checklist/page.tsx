@@ -144,8 +144,8 @@ export default function ChecklistPage() {
         </ol>
 
         <p className="checklist-paper-footer">
-          From <strong>myfengshuihome.com</strong>. A calm, honest feng shui
-          guide. Free.
+          From <strong>myfengshuihome.com</strong>. Feng shui for real
+          homes. Free.
         </p>
       </article>
 

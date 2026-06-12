@@ -24,7 +24,7 @@ For most readers, the annual layer is the useful one. Which corner of the home t
 
 BTB (Black Sect Tantric Buddhism) is a 20th-century school shaped by Grandmaster Lin Yun (1932 to 2010). He brought it to the United States in the 1980s. It is anchored at the Yun Lin Temple in Berkeley. It draws on Tibetan Tantric Buddhism, Taoist thought, and Chinese folk practice. It is **not** Classical in modern dress, and it is not less real for being recent.
 
-What makes BTB its own school is not just the door-anchored Bagua. It is the Three Secrets Reinforcement. The practitioner performs it at the moment a cure object is placed. Body is a hand gesture. Speech is a chant or personal affirmation. Mind is a picture of the outcome held as already done. Intention is BTB's stated active ingredient. No Classical school uses it. The honest framing: the evidence base for the intention claim is the weakest in feng shui. *Hold it lightly rather than tightly.*
+What makes BTB its own school is not just the door-anchored Bagua. It is the Three Secrets Reinforcement. The practitioner performs it at the moment a cure object is placed. Body is a hand gesture. Speech is a chant or personal affirmation. Mind is a picture of the outcome held as already done. Intention is BTB's stated active ingredient. No Classical school uses it. The evidence base for the intention claim is the weakest in feng shui. *Hold it lightly rather than tightly.*
 
 ## How BTB fits alongside Classical
 

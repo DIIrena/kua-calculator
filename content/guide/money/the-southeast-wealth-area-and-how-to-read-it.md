@@ -1,6 +1,6 @@
 You have found it. Now how do you read it?
 
-The southeast corner is not a shrine. It is a **surface**. A small patch of your home that, if you watch it honestly, tells you how the rest of the house is doing. The find-it walkthrough lives in [the longer read on the wealth corner](/articles/bagua-map-wealth-corner). This page assumes the corner is already mapped and asks the next question. What is it actually doing?
+The southeast corner is not a shrine. It is a **surface**. A small patch of your home that, if you watch it closely, tells you how the rest of the house is doing. The find-it walkthrough lives in [the longer read on the wealth corner](/articles/bagua-map-wealth-corner). This page assumes the corner is already mapped and asks the next question. What is it actually doing?
 
 The framing for the cluster sits in [feng shui and money without wishful thinking](/guide/money/feng-shui-money-without-wishful-thinking). The six levers used below come from [what feng shui cures actually are](/guide/cures/what-feng-shui-cures-actually-are).
 

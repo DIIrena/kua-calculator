@@ -5,7 +5,7 @@ import { ARTICLES, CATEGORIES, type ArticleCategory } from "@/lib/articles";
 export const metadata: Metadata = {
   title: "Articles | My Feng Shui Home",
   description:
-    "Plain-English feng shui articles. Free reading, no account required for most. Browse by category or start with the most-read article.",
+    "Short feng shui articles. Free reading, no account required for most. Browse by category or start with the most-read article.",
   alternates: { canonical: "https://myfengshuihome.com/articles" },
 };
 
@@ -21,7 +21,7 @@ export default function ArticlesIndexPage() {
     <div className="page-content articles-index">
       <p className="eyebrow">Articles</p>
       <h1 className="articles-index-heading">
-        Plain-English feng shui, one topic at a time.
+        Feng shui, one topic at a time.
       </h1>
       <p className="articles-index-lede">
         Short reads, written to be read aloud. No mysticism without a footnote.

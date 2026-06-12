@@ -1,6 +1,6 @@
 # Four feng shui myths we don't believe.
 
-Feng shui has been around for centuries. Most of what's printed about it in magazines was written by someone who skim-read one book in 1998. Here are four common myths, with the honest reading on each.
+Feng shui has been around for centuries. Most of what's printed about it in magazines was written by someone who skim-read one book in 1998. Here are four common myths, with a straight reading on each.
 
 ## Myth 1. A red front door brings wealth.
 
@@ -16,7 +16,7 @@ A fish tank is a *traditional* wealth cure. Whether it works in your home depend
 
 Most people place one badly, neglect it, and end up with a dirty tank that drains every other quality of the room. The traditional cure becomes the new problem.
 
-The honest version: a fish tank is high-maintenance. If you do not love fishkeeping, skip it. A small healthy plant in the same spot does most of the job.
+The reality: a fish tank is high-maintenance. If you do not love fishkeeping, skip it. A small healthy plant in the same spot does most of the job.
 
 ## Myth 3. Mirrors double the energy in a room.
 

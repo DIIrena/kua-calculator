@@ -13,16 +13,16 @@ const HOMEPAGE_CATEGORY_ORDER: ReadonlyArray<ArticleCategory> = [
 ];
 
 export const metadata: Metadata = {
-  title: "My Feng Shui Home - a calm, honest feng shui guide for real homes",
+  title: "My Feng Shui Home - feng shui for real homes",
   description:
-    "A calm, honest feng shui guide for real homes. Start with your free Kua number, get the 14-point room harmony checklist, then walk your home with a structured method.",
+    "Feng shui for real homes. Every move labelled: tested, traditional, or preference. Free Kua calculator, a 14-point checklist, and a structured guide.",
   alternates: { canonical: "https://myfengshuihome.com/" },
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "My Feng Shui Home - a calm, honest feng shui guide",
+    title: "My Feng Shui Home - feng shui for real homes",
     description:
-      "Start with your free Kua number, get the 14-point room harmony checklist, then walk your home with a structured method.",
+      "Feng shui for real homes. Every move labelled: tested, traditional, or preference. Free Kua calculator, a 14-point checklist, and a structured guide.",
     url: "https://myfengshuihome.com/",
   },
 };
@@ -33,7 +33,7 @@ const webSiteJsonLd = {
   name: "My Feng Shui Home",
   url: "https://myfengshuihome.com/",
   description:
-    "A calm, honest feng shui guide for real homes. Free Kua number calculator, room walkthrough method, and the optional Personal Feng Shui Compass.",
+    "Feng shui for real homes. Free Kua number calculator, room walkthrough method, and focused personalised guides.",
   potentialAction: {
     "@type": "SearchAction",
     target: "https://myfengshuihome.com/articles?q={search_term_string}",
@@ -52,7 +52,7 @@ const FAQ: Array<{ q: string; a: string }> = [
   },
   {
     q: "How is this different from a magazine article on feng shui?",
-    a: "Magazines mix the practical bits with the mystical bits and label nothing. We separate them. You get the structured design version first, the traditional symbolism named honestly second, and a clear note on what the evidence supports.",
+    a: "Magazines mix the practical bits with the mystical bits and label nothing. We separate them. You get the structured design version first, the traditional symbolism clearly labelled second, and a clear note on what the evidence supports.",
   },
   {
     q: "Do I need to know my birthday for this?",
@@ -100,7 +100,8 @@ export default async function HomePage(props: {
         <div className="home-hero-inner">
           <p className="eyebrow">Free Kua calculator + 14-point checklist</p>
           <h1 id="home-hero-heading" className="home-hero-heading">
-            A calm, honest feng shui guide for real homes.
+            Feng shui for real homes. Every move labelled: tested,
+            traditional, or preference.
           </h1>
           <p className="home-hero-lede">
             Start with your free Kua number. Then walk your home with
@@ -130,7 +131,6 @@ export default async function HomePage(props: {
             Feng shui is <strong>not</strong> a fortune. It is not a way to make
             money appear. It is not a list of red things to put by your front door.
           </p>
-          <p>Here is the honest version.</p>
           <p>
             Feng shui is a <strong>structured way of looking at a room</strong>.
             It asks where the door is. Where the bed is. Where the stove is.
@@ -145,15 +145,15 @@ export default async function HomePage(props: {
           </p>
           <p>
             Some of them are <em>traditional</em>. The wealth corner. The mirror
-            rules. The five-element pairings. We name those honestly, every time,
-            and we tell you what the evidence does and does not say.
+            rules. The five-element pairings. We label those traditional, every
+            time, and we tell you what the evidence does and does not say.
           </p>
           <p>That is the whole deal.</p>
           <p className="home-credibility">
             Underneath the schools and the cures, feng shui is a way of
             reading space: orientation, movement, light, proportion,
             entrance, rest. My Feng Shui Home reads it that way because
-            the site is written by a licensed M.Sc.Arch. architect.{" "}
+            the site is written by an architect.{" "}
             <Link href="/about">More about who runs the site &rarr;</Link>
           </p>
           <p>
@@ -167,39 +167,6 @@ export default async function HomePage(props: {
               Find my Kua number
             </Link>
           </p>
-          <p className="honest-block-lead">
-            Prefer to read first? Here is the{" "}
-            <strong>14-point room harmony checklist</strong> we use ourselves.
-            One page. No email needed for the questions; we will send the{" "}
-            <em>what-your-answers-mean</em> page if you want it.
-          </p>
-
-          {checklistStatus === "sent" ? (
-            <p
-              className="lead-magnet-status lead-magnet-status-ok"
-              role="status"
-            >
-              Sent. Check your inbox in a minute. Open the email, click the
-              link to the checklist, print it, walk your home.
-            </p>
-          ) : checklistStatus === "invalid" ? (
-            <p
-              className="lead-magnet-status lead-magnet-status-err"
-              role="alert"
-            >
-              That does not look like a valid email. Try again?
-            </p>
-          ) : checklistStatus === "error" ? (
-            <p
-              className="lead-magnet-status lead-magnet-status-err"
-              role="alert"
-            >
-              We could not send the email right now. Please try again in a
-              minute.
-            </p>
-          ) : null}
-
-          <LeadMagnetForm preFilledEmail={session?.user?.email ?? null} />
         </div>
       </section>
 
@@ -220,14 +187,14 @@ export default async function HomePage(props: {
               <p>
                 Enter your birth date and gender. Ten seconds. Get your number,
                 your East or West group, and your four favourable and four
-                unfavourable directions, each with a plain-English meaning.
+                unfavourable directions, each with a one-line meaning.
               </p>
               <span className="tool-card-cta">Calculate my Kua &rarr;</span>
             </Link>
             <Link href="/guide" className="tool-card">
               <h3>The Ultimate Feng Shui Guide</h3>
               <p>
-                Eleven clusters, thirty-eight pages. Browse by life area, by
+                Thirty-eight short pages. Browse by life area, by
                 room, by system, or by the problem you came here to fix. The
                 full library, no purchase, no account.
               </p>
@@ -237,7 +204,7 @@ export default async function HomePage(props: {
               <h3>The methodology</h3>
               <p>
                 The Compass School in nine sections. How the Kua number is
-                derived, how the Eight Mansions work, and the honest limits of
+                derived, how the Eight Mansions work, and the limits of
                 what feng shui can claim. Read in fifteen minutes.
               </p>
               <span className="tool-card-cta">Read the methodology &rarr;</span>
@@ -256,7 +223,7 @@ export default async function HomePage(props: {
         <div className="page-content">
           <h2 id="categories-heading">Read more. Learn deeper.</h2>
           <p className="home-section-lede">
-            Eleven plain-English articles, grouped into four clusters. Most
+            Eleven short articles in four groups. Most
             are free with no account. Pick a door.
           </p>
           <div className="home-categories-grid">
@@ -309,6 +276,48 @@ export default async function HomePage(props: {
         </div>
       </section>
 
+      {/* Section 5b - The 14-point checklist (lead magnet). Sits after
+          the free value, before the paid offer. */}
+      <section
+        className="home-section home-section-paper checklist-section"
+        aria-labelledby="checklist-heading"
+      >
+        <div className="page-prose">
+          <h2 id="checklist-heading">The 14-point room harmony checklist.</h2>
+          <p>
+            One page, free. Print it, walk your home, and see what is
+            already working.
+          </p>
+
+          {checklistStatus === "sent" ? (
+            <p
+              className="lead-magnet-status lead-magnet-status-ok"
+              role="status"
+            >
+              Sent. Check your inbox in a minute. Open the email, click the
+              link to the checklist, print it, walk your home.
+            </p>
+          ) : checklistStatus === "invalid" ? (
+            <p
+              className="lead-magnet-status lead-magnet-status-err"
+              role="alert"
+            >
+              That does not look like a valid email. Try again?
+            </p>
+          ) : checklistStatus === "error" ? (
+            <p
+              className="lead-magnet-status lead-magnet-status-err"
+              role="alert"
+            >
+              We could not send the email right now. Please try again in a
+              minute.
+            </p>
+          ) : null}
+
+          <LeadMagnetForm preFilledEmail={session?.user?.email ?? null} />
+        </div>
+      </section>
+
       {/* Section 6 - The paid offer (spotlight + shelf teaser) */}
       <section className="home-section map-offer" aria-labelledby="map-offer-heading">
         <div className="page-content">
@@ -317,10 +326,10 @@ export default async function HomePage(props: {
             Our paid products are personalised PDFs and focused tools.
           </h2>
           <p className="home-section-lede">
-            None promise outcomes. All give you a structured way to
-            decide what to do in the room you are standing in. The
-            spotlight one is below; the rest of the shelf is one click
-            away.
+            Each gives you a structured way to decide what to do in the
+            room you are standing in. One-time prices, 7-day refunds, no
+            outcome promises. The spotlight one is below; the rest of the
+            shelf is one click away.
           </p>
           <div className="map-offer-grid">
             <div className="map-offer-text">
@@ -383,7 +392,7 @@ export default async function HomePage(props: {
             </p>
             <p>
               <Link href="/products" className="article-back-link">
-                See all paid guides and tools →
+                See all paid guides and tools &rarr;
               </Link>
             </p>
           </div>
@@ -410,13 +419,13 @@ export default async function HomePage(props: {
         </div>
       </section>
 
-      {/* Section 8 - Honest framing footer block */}
+      {/* Section 8 - What we promise / what we don't */}
       <section
         className="home-section home-section-sand honest-footer-block"
         aria-labelledby="honest-footer-heading"
       >
         <div className="page-prose">
-          <h2 id="honest-footer-heading">A short note on honesty.</h2>
+          <h2 id="honest-footer-heading">What we promise. And what we don&apos;t.</h2>
           <p>
             We do not promise outcomes. Feng shui is a structured design
             tradition, not a prediction. We tell you which moves the evidence

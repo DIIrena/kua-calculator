@@ -68,11 +68,11 @@ export const LIFE_AREAS: ReadonlyArray<LifeAreaMeta> = [
     shortDescription:
       "Feng shui for love and relationships: the relationship corner, the bedroom layout, and three moves you can try this weekend.",
     longDescription:
-      "Bedroom feng shui is the area that overlaps most cleanly with modern sleep science. Some of the rules (the command position, the mirror rule) have direct evidence behind them. Some are traditional. We separate them honestly.",
+      "Bedroom feng shui is the area that overlaps most cleanly with modern sleep science. Some of the rules (the command position, the mirror rule) have direct evidence behind them. Some are traditional. Each move below says which is which.",
     starters: [
       {
         title: "Rotate the bed so you can see the door from where you sleep.",
-        body: "The command position. The traditional reason is energetic; the modern reason is autonomic. Either way, most people sleep noticeably better within a week of moving the bed.",
+        body: "The command position. The traditional reason is energetic; the modern reason is autonomic. Either way, it is the single most consistently recommended bedroom move in both vocabularies.",
       },
       {
         title: "Cover any mirror that reflects you while you sleep.",

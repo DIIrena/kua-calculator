@@ -38,7 +38,7 @@ The desk is where money paper resides. Treat it as such. The [levers that apply 
 
 **Timing.** A weekly clear-down. A monthly file. The cadence is the cure. A desk attended to on Sundays behaves differently from a desk attended to once a quarter.
 
-**Room use.** The desk is for the work. Not the dumping ground for keys, snacks, laundry waiting to be folded, and the parcel you have not opened. Keep its function honest.
+**Room use.** The desk is for the work. Not the dumping ground for keys, snacks, laundry waiting to be folded, and the parcel you have not opened. Keep it to its one job.
 
 ## The room where you meet clients
 
@@ -54,7 +54,7 @@ Two. Give the desk you actually work at one weekly reset so the surface stays vi
 
 ## Where to go next
 
-For the cluster opener, read [the honest framing for money and feng shui](/guide/money/feng-shui-money-without-wishful-thinking).
+For the cluster opener, read [money and feng shui without wishful thinking](/guide/money/feng-shui-money-without-wishful-thinking).
 
 For the diagnostic corner, read [how to read the southeast as a living surface](/guide/money/the-southeast-wealth-area-and-how-to-read-it).
 

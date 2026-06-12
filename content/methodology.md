@@ -2,20 +2,20 @@
 
 Compass School (Li Qi Pai) is the calculative half of Classical feng shui. Where Form School reads the shape of the land and structures surrounding a building, Compass School reads the numbers underneath it: the bearings of its walls, the dates that anchor it in time, and the birth data of the people who live in it. The two schools are not rivals. They are complementary lenses on the same site, and a serious Classical practitioner uses both.
 
-This chapter covers what Compass School is and where it came from, the luopan compass at a high level, the 24 Mountains subdivision of the eight directions, the Kua number calculation with two worked examples, the Eight Mansions (Ba Zhai) personal-direction system, and how to apply all of this in daily life. It closes with a candid section on what the precision of Compass School does and does not buy you.
+This page covers what Compass School is and where it came from, the luopan compass at a high level, the 24 Mountains subdivision of the eight directions, the Kua number calculation with two worked examples, the Eight Mansions (Ba Zhai) personal-direction system, and how to apply all of this in daily life. It closes with a section on what the precision of Compass School does and does not buy you.
 
 ## 1. What Compass School is
 
 The classical name is Li Qi Pai, often translated as "the school of patterns and qi" or "the school of principle and qi." Li (理) refers to underlying pattern, structure, or principle. Qi (气) is the energy quality the pattern describes. Compass School proposes that the directional structure of a site interacts predictably with the qi it carries, and that this interaction can be calculated.
 
-The school as a coherent system consolidated during the Song (960-1279) and Ming (1368-1644) dynasties. It drew on older directional traditions, the *Yi Jing*, the Luo Shu numerology covered in chapter 3, and the long history of the Chinese magnetic compass. Multiple sub-schools converged into what is now grouped under Li Qi Pai. The four most-cited today are:
+The school as a coherent system consolidated during the Song (960-1279) and Ming (1368-1644) dynasties. It drew on older directional traditions, the *Yi Jing*, Luo Shu numerology, and the long history of the Chinese magnetic compass. Multiple sub-schools converged into what is now grouped under Li Qi Pai. The four most-cited today are:
 
 - **San He** (Three Harmonies). Emphasises the relationship between mountain, water, and direction. Uses 24-mountain compass divisions heavily.
 - **San Yuan** (Three Cycles). Time-aware. Treats feng shui as cyclical and includes period considerations.
-- **Xuan Kong** (Mysterious Subtlety). The Flying Stars system covered in chapter 7. Combines San Yuan time with compass space to produce a unique chart for every home.
-- **Eight Mansions** (Ba Zhai). The personal-direction system covered later in this chapter. Uses the inhabitant's birth year to identify four favourable and four unfavourable directions.
+- **Xuan Kong** (Mysterious Subtlety). The Flying Stars system. Combines San Yuan time with compass space to produce a unique chart for every home.
+- **Eight Mansions** (Ba Zhai). The personal-direction system covered later on this page. Uses the inhabitant's birth year to identify four favourable and four unfavourable directions.
 
-Compass School diverges from Form School in one important way: it cannot be done by walking around. It requires measurement. Without a compass reading, no Compass School technique applies. The Drinčić Institute's diagnostic manual states this in a single line: *bez kompasa nista* (without a compass, nothing). It is the cleanest summary of the difference between the schools.
+Compass School diverges from Form School in one important way: it cannot be done by walking around. It requires measurement. Without a compass reading, no Compass School technique applies. Practitioners compress this into a single line: without a compass, nothing. It is the cleanest summary of the difference between the schools.
 
 That does not mean Compass School is opposed to Form School. The Classical tradition treats Form first, then Compass. A site that fails Form - no support behind, sha qi at the front door, exposed on all sides - cannot be saved by clever compass work. Form School answers "is this place liveable in the first place?" Compass School answers "now that we know it is, how do we tune it for this specific household in this specific period?"
 
@@ -30,9 +30,9 @@ A few things to know without going into the rings in detail:
 - **It is read by alignment.** The practitioner places the luopan flat, turns the rotating face until magnetic north on the needle aligns with the printed compass-north line, and reads outward through the rings at the bearing of interest.
 - **It is more reference than measuring device.** The luopan does not give any directional information a regular compass cannot. What it adds is a printed lookup table of everything Compass School needs to know about each bearing.
 
-This guide does not reproduce the specific ring-by-ring breakdown of any one practitioner's luopan. The detailed ring structure varies by lineage and by the practitioner who designed the instrument, and the most-published modern luopans (Joey Yap's in particular) are explicitly copyright-protected works. What you need to know as a reader is what the luopan is *for*, not how to read every ring on a specific master's product.
+This page does not reproduce the specific ring-by-ring breakdown of any one practitioner's luopan. The detailed ring structure varies by lineage and by the practitioner who designed the instrument, and many modern luopan designs are proprietary works. What you need to know as a reader is what the luopan is *for*, not how to read every ring on a specific instrument.
 
-For amateur work, a luopan is not required. A regular hiking compass or even a smartphone compass app is sufficient for the techniques in this guide. The luopan becomes useful when you need to look up which 24-Mountain sub-sector your bearing falls into without consulting a separate table, or when you are working in a sub-school whose rings are not standard. For learning purposes, a paper Bagua chart plus a basic compass replicates everything an amateur needs.
+For amateur work, a luopan is not required. A regular hiking compass or even a smartphone compass app is sufficient for the techniques on this page. The luopan becomes useful when you need to look up which 24-Mountain sub-sector your bearing falls into without consulting a separate table, or when you are working in a sub-school whose rings are not standard. For learning purposes, a paper Bagua chart plus a basic compass replicates everything an amateur needs.
 
 Below is a simplified three-ring representation of the most basic Compass School information. A real luopan can have more than thirty rings; we show three, corresponding to the three information layers a beginner needs.
 
@@ -106,7 +106,7 @@ You do not need to memorise the 24 Mountains. The point to understand is that co
 
 ## 4. The direction-element-trigram mapping (recap)
 
-Compass School builds every later calculation on the Later Heaven Bagua mapping of directions to trigrams and elements. Chapter 3 covers this in full. The short version is repeated here for convenience:
+Compass School builds every later calculation on the Later Heaven Bagua mapping of directions to trigrams and elements. The short version, for convenience:
 
 | Direction | Trigram | Element | Life area |
 |---|---|---|---|
@@ -226,7 +226,7 @@ She is in the East group. Her best direction is south.
 
 ### Born in or after 2000
 
-The formulas shift slightly for births in or after 2000. For males, subtract the reduced digit from 9 instead of 10. For females, add 6 instead of 5. The simpler approach for most readers is to use an online Kua calculator or a printed table; the technical details are not the point of this chapter, only the resulting number is.
+The formulas shift slightly for births in or after 2000. For males, subtract the reduced digit from 9 instead of 10. For females, add 6 instead of 5. The simpler approach for most readers is to use an online Kua calculator or a printed table; the technical details are not the point of this page, only the resulting number is.
 
 ### East group and West group
 
@@ -308,15 +308,15 @@ The most common practical applications of Compass School for an amateur reader, 
 
 Two practical notes. First, in a shared home you cannot optimise for everyone at once; pick the principal user for each room and orient for that. Second, what the system reads is the direction your body faces, not the orientation of the furniture. A bed whose headboard points to Tian Yi but whose occupant sleeps facing the foot has lost the intended benefit.
 
-## 8. Limitations and honesty
+## 8. Limitations
 
 Compass School is the most technically rigorous part of feng shui. Two practitioners working from the same compass reading and the same birth date will produce nearly identical Kua numbers and very similar Eight Mansions recommendations. That internal consistency is real and worth respecting.
 
-It also invites a kind of false confidence. The phrase "Kua 4 east-group" sounds like a measurable fact about a person. It is not. It is a culturally-developed classification scheme whose internal logic is well-documented, but whose predictive validity - does sleeping with your head pointing Sheng Qi actually correlate with better outcomes than sleeping with your head pointing Jue Ming? - has not been established by external evidence. The same caution applies to Flying Stars in chapter 7.
+It also invites a kind of false confidence. The phrase "Kua 4 east-group" sounds like a measurable fact about a person. It is not. It is a culturally-developed classification scheme whose internal logic is well-documented, but whose predictive validity - does sleeping with your head pointing Sheng Qi actually correlate with better outcomes than sleeping with your head pointing Jue Ming? - has not been established by external evidence. The same caution applies to Flying Stars.
 
-The honest framing is this: Eight Mansions and the broader Compass School are useful as **structured decision tools** for arranging space. They give you a non-arbitrary way to choose between four equivalent-seeming bed orientations. They make tradeoffs explicit in a household where two people want different things. They link your space to a larger symbolic system that has organised Chinese architecture for centuries. None of that requires belief in the system's deterministic claims to be useful. A reader who treats the Kua number as a coordinator for design decisions - rather than as a fortune-teller's reading - gets the most out of the school without overcommitting to claims it cannot back up.
+The useful framing is this: Eight Mansions and the broader Compass School are useful as **structured decision tools** for arranging space. They give you a non-arbitrary way to choose between four equivalent-seeming bed orientations. They make tradeoffs explicit in a household where two people want different things. They link your space to a larger symbolic system that has organised Chinese architecture for centuries. None of that requires belief in the system's deterministic claims to be useful. A reader who treats the Kua number as a coordinator for design decisions - rather than as a fortune-teller's reading - gets the most out of the school without overcommitting to claims it cannot back up.
 
-The Drinčić Institute material is candid about this in its diagnostic methodology: a compass reading is a starting point, not a verdict. Sandra Drinčić's curriculum sequences Form first, Compass second, and overlays both with a practitioner's interview about how the inhabitants actually live in the space. That sequencing is wise. A Compass reading that conflicts with how a household functions in practice should usually defer to the household.
+Classical practice treats a compass reading as a starting point, not a verdict. The traditional sequence runs Form first, then Compass, and overlays both with a careful look at how the inhabitants actually live in the space. That sequencing is wise. A Compass reading that conflicts with how a household functions in practice should usually defer to the household.
 
 ## 9. What to take away
 
@@ -329,4 +329,4 @@ Compass School addresses the question "how does this specific direction interact
 
 For most readers, the immediate practical takeaways are three orientations: where the head of the bed points, where the chair at your main work desk faces, and where the front door opens. Adjust those three to your favourable Kua directions and you have applied Eight Mansions in a way that needs no special equipment and produces visible decisions you can either keep or revert.
 
-The next chapter covers Flying Stars, the time-aware Compass sub-school that adds the period of construction and the current period of the world to the compass-and-Kua machinery. Flying Stars is the most technically advanced school in Classical feng shui and is treated as a beginner orientation in this guide; we name what it is, why Period 9 matters from 2024 to 2043, and how a natal chart is read at a high level.
+Beyond Eight Mansions sits Flying Stars, the time-aware Compass sub-school that adds the period of construction and the current period of the world to the compass-and-Kua machinery. It is the most technically advanced school in Classical feng shui and beyond the scope of this page. The short orientation: the world entered Period 9 in 2024, the period runs to 2043, and a Flying Stars natal chart combines a home's facing direction with its construction period to produce a unique reading for that building.

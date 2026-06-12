@@ -31,7 +31,7 @@ const webAppJsonLd = {
   "@type": "WebApplication",
   name: "Kua Number Calculator",
   description:
-    "Free Kua number calculator. Enter birth year and gender to receive your East or West group and your eight personal directions with plain-English meanings.",
+    "Free Kua number calculator. Enter birth year and gender to receive your East or West group and your eight personal directions with a short meaning for each.",
   applicationCategory: "UtilitiesApplication",
   operatingSystem: "Any (web browser)",
   isAccessibleForFree: true,
@@ -61,7 +61,7 @@ const howToJsonLd = {
       "@type": "HowToStep",
       position: 3,
       name: "Read your result",
-      text: "Your Kua number, group, four favourable directions, and four to avoid will appear with a one-line plain-English meaning for each.",
+      text: "Your Kua number, group, four favourable directions, and four to avoid will appear with a one-line meaning for each.",
     },
   ],
 };
@@ -179,7 +179,7 @@ export default async function KuaCalculatorPage(props: {
           <p className="lede">
             Enter your birth date and gender. You&apos;ll get your East or West
             group, your four favourable directions, and four to avoid - with
-            one plain-English line on how to use each. Chinese New Year boundary
+            one short line on how to use each. Chinese New Year boundary
             handled automatically.
           </p>
         </div>
@@ -343,8 +343,8 @@ export default async function KuaCalculatorPage(props: {
                 organising space; its predictive validity is not established by
                 external evidence. Treat the result as a non-arbitrary way to
                 choose between four equivalent-seeming bed or desk orientations,
-                not as a forecast. The methodology page expands on the honest
-                framing in section eight.
+                not as a forecast. The methodology page explains how the
+                formula works, and what the evidence does and does not say.
               </p>
             </div>
           </details>

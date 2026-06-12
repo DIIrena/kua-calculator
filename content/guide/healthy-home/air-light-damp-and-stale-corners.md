@@ -42,7 +42,7 @@ Cross-ventilate the home for ten minutes today. Get daylight on the face inside 
 
 - For the room-by-room read on bedroom, kitchen, and bathroom, see [the bedroom, kitchen, and bathroom health check](/guide/healthy-home/bedroom-kitchen-and-bathroom-health-check).
 - For plants in the room and the daily rhythm of cleanliness, see [plants, materials, cleanliness, and daily rhythm](/guide/healthy-home/plants-materials-cleanliness-and-daily-rhythm).
-- For the honest frame the cluster opens with, see [healthy home feng shui without health promises](/guide/healthy-home/healthy-home-feng-shui-without-health-promises).
+- For the no-promises frame the cluster opens with, see [healthy home feng shui without health promises](/guide/healthy-home/healthy-home-feng-shui-without-health-promises).
 - For the canonical per-room starters, see [the Health life-area page](/life/health), [the space bedroom page](/space/bedroom), and [the space kitchen page](/space/kitchen).
 - For the walk-the-home practice, see [the diagnostic walkthrough article](/articles/diagnostic-walkthrough).
 - Ten seconds: find your number on [the Kua calculator](/kua-calculator).

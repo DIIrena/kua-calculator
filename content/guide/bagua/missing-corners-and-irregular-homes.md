@@ -1,4 +1,4 @@
-Real homes are rarely clean rectangles. The Bagua still works. Here is the honest version.
+Real homes are rarely clean rectangles. The Bagua still works. Here is how to read the awkward cases.
 
 The eight-sector map was drawn for a square. The floor plan you actually live in is messier. It has bay windows, recessed corners, a kitchen extension, a stair landing in the wrong place. None of that breaks the tool. It just asks you to read the home as it is, not as the diagram pretends it is.
 
@@ -10,7 +10,7 @@ The rule of thumb is straightforward. If the step-in is deeper than roughly *a t
 
 What this means in practice has nothing to do with drama. The life area for that direction is under-represented in the home's footprint. The tradition supports paying that sector closer attention. Use the rooms that border it. Use outdoor elements too, such as a plant, a light, or a sculpture that the inhabitants treat as part of the home. If the missing corner sits behind the [kitchen](/space/kitchen) or against the [living room](/space/living-room), those rooms carry more of the work.
 
-Do not expect a mirror or a crystal to *restore* the corner. The honest framing is noticing what is structurally absent, then deciding what to do with that information.
+Do not expect a mirror or a crystal to *restore* the corner. The work is noticing what is structurally absent, then deciding what to do with that information.
 
 ## When a sector falls across two rooms
 

@@ -1,4 +1,4 @@
-# What's the evidence behind feng shui? An honest look.
+# What's the evidence behind feng shui? A careful look.
 
 If you arrived at this article skeptical, **stay**. This article is for you.
 

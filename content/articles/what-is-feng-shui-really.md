@@ -6,7 +6,7 @@ Most of what you read about it is either *mystical and unprovable*, or **vague a
 
 Different answers.
 
-This article is the honest one.
+This article takes the two questions one at a time.
 
 ## The short version.
 

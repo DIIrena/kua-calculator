@@ -1,4 +1,4 @@
-A bathroom in the wealth corner is not a crisis. A storage room is not an embarrassment. A beam over the bed is not a sentence. Here is the honest version. The rooms most people apologise for are the rooms most worth reading carefully. The work in this cluster is **containment**, honesty about what the room is, and a few small structural adjustments that change how the space reads.
+A bathroom in the wealth corner is not a crisis. A storage room is not an embarrassment. A beam over the bed is not a sentence. The rooms most people apologise for are the rooms most worth reading carefully. The work in this cluster is **containment**, naming what the room actually is, and a few small structural adjustments that change how the space reads.
 
 ## Bathroom
 
@@ -36,7 +36,7 @@ Dead-end rooms (the room at the end of a long corridor that nobody uses) collect
 
 Mixed-use rooms (the bedroom that is also an office, the dining room that is also a study) are a category we cover at [living, dining, and home office](/guide/rooms/living-dining-home-office). The principle here: one job **dominates** per session. The room can serve two functions across the week; it cannot serve two functions in the same hour. Close the laptop before bed. Clear the dining table before dinner. *One job per session*, even when the room does two.
 
-These rooms are not failures. The home is what it is. The work is reading it honestly. The room you most avoid is usually the one worth opening first.
+These rooms are not failures. The home is what it is. The work is reading it without flinching. The room you most avoid is usually the one worth opening first.
 
 ## Where to go next
 

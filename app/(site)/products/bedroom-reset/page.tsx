@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Bedroom and Relationship Reset | My Feng Shui Home",
   description:
-    "A focused PDF reading the bedroom for your Kua, with the full headboard, mirror, and shared-furniture checklist. Calm, practical, honestly framed.",
+    "A focused PDF reading the bedroom for your Kua, with the full headboard, mirror, and shared-furniture checklist. Practical and printable.",
   alternates: {
     canonical: "https://myfengshuihome.com/products/bedroom-reset",
   },
@@ -60,9 +60,9 @@ export default async function BedroomResetPage(props: {
         <p>
           You want the bedroom done right. You may share it with a
           partner, or you may sleep alone. Either way, you want a
-          calm, structured walkthrough that takes an afternoon and
-          leaves you with a room you have actually decided on rather
-          than inherited.
+          structured walkthrough that takes an afternoon and leaves
+          you with a room you have actually decided on rather than
+          inherited.
         </p>
       </section>
 
@@ -135,7 +135,7 @@ export default async function BedroomResetPage(props: {
           It is not a guarantee about sleep or relationships. The
           tradition does not promise those, and neither will we. It
           is a structured way to choose how the bedroom is set up,
-          using a calm method that has been refined for a long time.
+          using a method the tradition has refined over a long time.
         </p>
       </section>
 

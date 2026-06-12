@@ -30,7 +30,7 @@ const INTENT_PATHS: ReadonlyArray<IntentPath> = [
     heading: "Start here",
     tagline: "If you have never read a feng shui page before, read these in order.",
     description:
-      "A first-time reader needs three things: an honest baseline of what feng shui is and is not, one personal number that the rest of the guide refers back to, and a short note on how this site approaches the tradition. About thirty minutes of reading, no jargon, no purchase.",
+      "A first-time reader needs three things: a baseline of what feng shui is and is not, one personal number that the rest of the guide refers back to, and a short note on how this site approaches the tradition. About thirty minutes of reading, no jargon, no purchase.",
     entryLinks: [
       {
         href: "/guide/foundations/what-feng-shui-is-plainly",
@@ -224,10 +224,9 @@ export default function GuideIndexPage() {
       <p className="eyebrow">The guide</p>
       <h1 className="guide-index-heading">The Ultimate Feng Shui Guide</h1>
       <p className="guide-index-lede">
-        Eleven clusters, thirty-eight pages, written in calm everyday
-        language by practitioners who refuse to sell you a fortune.
-        Pick the path that matches what you came here for, or browse
-        the whole library further down.
+        Thirty-eight short pages. No fortunes for sale. Pick the path
+        that matches what you came here for, or browse the whole
+        library further down.
       </p>
 
       <section

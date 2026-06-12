@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-// /about page. Brand-as-author voice: the public author is "My Feng
-// Shui Home" and the byline reads "Written by the architect behind My
-// Feng Shui Home". No personal name, no photo, no location, no public
-// email are claimed on this surface.
+// /about page. The public author is "Irena", first name only: the
+// byline reads "Written by Irena, the architect behind My Feng Shui
+// Home". No last name, no photo, no location, no public email are
+// claimed on this surface.
 //
-// If the owner later chooses to publish a real name, every visible
-// brand-author reference here AND the AuthorByline rendered text AND
-// the Organization JSON-LD founder field must be replaced together.
+// This page is the ONE place on the site where the credential
+// (licensed M.Sc.Arch.) appears. Everywhere else the author is "an
+// architect" or "the architect behind My Feng Shui Home". If the
+// public author name ever changes, every visible reference here AND
+// the AuthorByline rendered text AND the Person and Organization
+// JSON-LD below must be replaced together.
 
 export const metadata: Metadata = {
   title: "About My Feng Shui Home",
   description:
-    "This site is run by a licensed M.Sc.Arch. architect who reads feng shui as spatial guidance, not fortune-telling.",
+    "This site is run by an architect who reads feng shui as spatial guidance, not fortune-telling.",
   alternates: { canonical: "https://myfengshuihome.com/about" },
   robots: { index: true, follow: true },
   openGraph: {
@@ -26,17 +29,20 @@ export const metadata: Metadata = {
   },
 };
 
-// Organization JSON-LD. The site uses brand-as-author, so no Person
-// JSON-LD is emitted yet (no name to attach). knowsAbout lists the
-// topics the site teaches; none of them claim a formal certification.
+// Organization JSON-LD. knowsAbout lists the topics the site teaches;
+// none of them claim a formal certification.
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "My Feng Shui Home",
   url: "https://myfengshuihome.com",
   logo: "https://myfengshuihome.com/icon.svg",
-  description:
-    "Calm, structured feng shui guidance for real homes, written by a licensed M.Sc.Arch. architect.",
+  description: "Feng shui guidance for real homes, written by an architect.",
+  founder: {
+    "@type": "Person",
+    name: "Irena",
+    url: "https://myfengshuihome.com/about",
+  },
   knowsAbout: [
     "Feng shui",
     "Residential architecture",
@@ -45,6 +51,24 @@ const organizationJsonLd = {
     "Five elements",
   ],
   sameAs: [],
+};
+
+// Person JSON-LD for the author. First name only, no location, no
+// credential string (the credential lives in the visible byline above,
+// not in structured data).
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Irena",
+  url: "https://myfengshuihome.com/about",
+  jobTitle: "Architect",
+  description:
+    "Architect and lifelong feng shui reader. Writes My Feng Shui Home.",
+  worksFor: {
+    "@type": "Organization",
+    name: "My Feng Shui Home",
+    url: "https://myfengshuihome.com",
+  },
 };
 
 export default function AboutPage() {
@@ -57,67 +81,14 @@ export default function AboutPage() {
             About the architect behind My Feng Shui Home.
           </h1>
           <p className="about-subhead">
-            A calm, structured place to read feng shui for real homes.
-            Built from more than thirty books, compared, sorted, and
-            translated into language you can act on without fear.
+            Feng shui, read through an architect&apos;s eyes: structure
+            first, energy with it, nothing you need to be afraid of.
           </p>
           <p className="about-byline">
-            Written by the architect behind My Feng Shui Home, a licensed
-            M.Sc.Arch. architect and lifelong feng shui reader.
+            Written by Irena, the architect behind My Feng Shui Home.
+            Licensed M.Sc.Arch. architect and lifelong feng shui reader.
           </p>
         </header>
-
-        <section className="about-section" aria-labelledby="why-this-site">
-          <h2 id="why-this-site" className="about-section-title">
-            Why this site exists
-          </h2>
-          <div className="about-section-body">
-            <p>
-              I have read feng shui books since I was a child. At first,
-              I read them with curiosity. Later, as I studied
-              architecture, I started reading them differently. Underneath
-              the symbols and colours, I noticed orientation, movement,
-              light, proportion, entrance, rest, work, and the quiet way a
-              space shapes the person living inside it.
-            </p>
-            <p>
-              Something always frustrated me. Every book gave advice. Some
-              were beautiful. Some were practical. Some were deeply
-              traditional. But I could not find one clear, structured
-              place where feng shui was explained like a real system. Much
-              of it lived in shades of grey: part wisdom, part tradition,
-              part mysticism, part personal interpretation.
-            </p>
-            <p>
-              As an architect, I wanted structure. I wanted to know what
-              belongs where. What is classical. What is modern. What is
-              practical. What is symbolic. What a person can actually do
-              in a real home, without fear, superstition, or confusion.
-            </p>
-          </div>
-        </section>
-
-        <section className="about-section" aria-labelledby="what-i-did">
-          <h2 id="what-i-did" className="about-section-title">
-            What I did about it
-          </h2>
-          <div className="about-section-body">
-            <p>
-              I started building the guide I wanted to read. I gathered
-              more than thirty feng shui books as a core source library,
-              and I continue to add to it. I compared ideas, repeated
-              rules, contradictions, schools, cures, directions, rooms,
-              elements, and timing systems.
-            </p>
-            <p>
-              Slowly, the material began to take shape. Not as a list of
-              random tips, but as a map. My Feng Shui Home was created
-              from that map. The{" "}
-              <Link href="/methodology">methodology page</Link> explains
-              how the site approaches the tradition.
-            </p>
-          </div>
-        </section>
 
         <section className="about-section" aria-labelledby="moment">
           <h2 id="moment" className="about-section-title">
@@ -194,6 +165,55 @@ export default function AboutPage() {
             <li>Energy without superstition.</li>
             <li>Practical changes, never dangerous changes.</li>
           </ul>
+        </section>
+
+        <section className="about-section" aria-labelledby="why-this-site">
+          <h2 id="why-this-site" className="about-section-title">
+            Why this site exists
+          </h2>
+          <div className="about-section-body">
+            <p>
+              I have read feng shui books since I was a child. At first,
+              I read them with curiosity. Later, as I studied
+              architecture, I started reading them differently. Underneath
+              the symbols and colours, I noticed orientation, movement,
+              light, proportion, entrance, rest, work, and the quiet way a
+              space shapes the person living inside it.
+            </p>
+            <p>
+              Something always frustrated me. Every book gave advice. Some
+              were beautiful. Some were practical. Some were deeply
+              traditional. But I could not find one clear, structured
+              place where feng shui was explained like a real system. Much
+              of it lived in shades of grey: part wisdom, part tradition,
+              part mysticism, part personal interpretation.
+            </p>
+            <p>
+              As an architect, I wanted structure. I wanted to know what
+              belongs where. What is classical. What is modern. What is
+              practical. What is symbolic. What a person can actually do
+              in a real home, without fear, superstition, or confusion.
+            </p>
+          </div>
+        </section>
+
+        <section className="about-section" aria-labelledby="what-i-did">
+          <h2 id="what-i-did" className="about-section-title">
+            What I did about it
+          </h2>
+          <div className="about-section-body">
+            <p>
+              I started building the guide I wanted to read. I compared
+              schools, repeated rules, contradictions, cures, directions,
+              rooms, elements, and timing systems, until the material
+              stopped being a pile of advice and started being a map.
+            </p>
+            <p>
+              My Feng Shui Home was created from that map. The{" "}
+              <Link href="/methodology">methodology page</Link> explains
+              how the site approaches the tradition.
+            </p>
+          </div>
         </section>
 
         <section className="about-section" aria-labelledby="voice">
@@ -292,6 +312,12 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(organizationJsonLd),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personJsonLd),
         }}
       />
     </>

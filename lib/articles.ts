@@ -30,7 +30,7 @@ export type Article = {
   lastUpdated: string;
   /** Gated articles require a signed-in session to read. */
   gated: boolean;
-  /** Plain-English estimate, e.g. "5 minutes". */
+  /** Reading-time estimate, e.g. "5 minutes". */
   readingTime: string;
   /** Cluster the article belongs to. Drives the /articles/category/* pages. */
   category: ArticleCategory;
@@ -75,7 +75,7 @@ export const CATEGORIES: Record<
   },
   methodology: {
     title: "The methodology",
-    tagline: "Honest answers for the curious skeptic.",
+    tagline: "What holds up and what does not, for the curious skeptic.",
     description:
       "Twelve myths debunked, the evidence-where-evidence-exists, and the design-psychology bridge for readers who arrived skeptical.",
   },
@@ -87,9 +87,9 @@ export const ARTICLES: ReadonlyArray<Article> = [
     slug: "myths",
     title: "Four feng shui myths we don't believe",
     description:
-      "Feng shui is full of recycled magazine advice. Four common myths, with the honest reading on each.",
+      "Feng shui is full of recycled magazine advice. Four common myths, with what is actually going on behind each.",
     teaser:
-      "Four common myths, with the honest reading on each. A longer twelve-myth list is on this site too.",
+      "Four common myths, traced back to what is actually going on. A longer twelve-myth list is on this site too.",
     lastUpdated: "2026-05-25",
     gated: false,
     readingTime: "4 minutes",
@@ -147,7 +147,7 @@ export const ARTICLES: ReadonlyArray<Article> = [
     description:
       "Feng shui without the jargon. Two thousand words on what it actually is, what it isn't, and why some of its advice survives a hard look.",
     teaser:
-      "The honest, plain-English answer to 'what is feng shui'. Two thousand words, written so a sceptic stays.",
+      "What feng shui is, what it is not, and which parts survive a hard look. Two thousand words, written so a sceptic stays.",
     lastUpdated: "2026-05-25",
     gated: false,
     readingTime: "9 minutes",
@@ -221,9 +221,9 @@ export const ARTICLES: ReadonlyArray<Article> = [
     slug: "twelve-feng-shui-myths-holding-you-back",
     title: "Twelve feng shui myths holding you back (and what's actually true)",
     description:
-      "Twelve common feng shui myths debunked, each with the honest, evidence-aware reading on what's actually going on.",
+      "Twelve common feng shui myths debunked, each with an evidence-aware reading of what's actually going on.",
     teaser:
-      "The twelve most stubborn feng shui myths, with the honest reading on each one.",
+      "The twelve most stubborn feng shui myths, taken apart one at a time.",
     lastUpdated: "2026-05-25",
     gated: false,
     readingTime: "9 minutes",
@@ -239,11 +239,11 @@ export const ARTICLES: ReadonlyArray<Article> = [
   // ---------- 3 skeptic-killer articles ----------
   {
     slug: "whats-the-evidence",
-    title: "What's the evidence behind feng shui? An honest look",
+    title: "What's the evidence behind feng shui? A hard look",
     description:
       "We separate the parts of feng shui that survive a scientific review from the parts that are pure tradition. Twenty-two hundred words, no defensiveness.",
     teaser:
-      "Which parts of feng shui survive an evidence review? An honest, non-defensive look.",
+      "Which parts of feng shui survive an evidence review? A non-defensive look.",
     lastUpdated: "2026-05-25",
     gated: false,
     readingTime: "11 minutes",

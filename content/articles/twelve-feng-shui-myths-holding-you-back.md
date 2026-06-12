@@ -4,7 +4,7 @@ Most of what is written about feng shui is **wrong**.
 
 Not slightly wrong. *Confidently and specifically wrong*, in ways that came from one author copying another author copying a magazine in 1998. The mistakes have hardened into "rules" that working practitioners do not follow and that the source texts never said.
 
-This article corrects twelve of them. Each one with the honest, evidence-aware reading of what is actually going on.
+This article corrects twelve of them. Each one with an evidence-aware reading of what is actually going on.
 
 ## Myth 1. A red front door brings wealth.
 
@@ -20,7 +20,7 @@ A fish tank is one of the traditional wealth cures. Whether it works in your hom
 
 Most people place one badly, neglect it, and end up with a dirty tank that drains every other quality of the room. The traditional cure becomes the new problem.
 
-The honest version: a fish tank is *high-maintenance*. If you do not love fishkeeping, skip it. A small healthy plant in the same spot does most of the job for none of the labour.
+The reality: a fish tank is *high-maintenance*. If you do not love fishkeeping, skip it. A small healthy plant in the same spot does most of the job for none of the labour.
 
 ## Myth 3. Mirrors double the energy in a room.
 

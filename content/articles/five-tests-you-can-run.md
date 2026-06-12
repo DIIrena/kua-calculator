@@ -8,7 +8,7 @@ Below are **five small, testable feng shui interventions** you can run on your o
 
 These are not double-blind trials. They are *single-person experiments* on your own home, the way someone running a small dietary change on themselves would. They are how you find out which parts of the practice work for *you* without taking anyone else's word for it.
 
-Bring a notebook. The point is to **write down what you predict and what actually happens**. Skeptics who do this with seriousness almost always change their minds about at least one or two of the changes. The honest skeptic also changes their mind about one or two of the others (the ones that did *not* work). Both are fine.
+Bring a notebook. The point is to **write down what you predict and what actually happens**. Skeptics who do this with seriousness almost always change their minds about at least one or two of the changes. A fair skeptic also changes their mind about one or two of the others (the ones that did *not* work). Both are fine.
 
 ## Test 1. Move the bed into command position.
 
@@ -22,7 +22,7 @@ The traditional rule: from where you sleep, you should be able to see the bedroo
 
 **Why this should work, if it does:** A nervous system that cannot monitor the door of a room you are sleeping in stays in low-grade alertness. Moving the bed removes that load. Most people sleep noticeably better within a week.
 
-**Honest disclaimer:** If you sleep well already, you may notice nothing. The effect is most dramatic for poor sleepers. (Worth running anyway; the data is what matters.)
+**Fair warning:** If you sleep well already, you may notice nothing. The effect is most dramatic for poor sleepers. (Worth running anyway; the data is what matters.)
 
 ## Test 2. Clean every burner on the stove. Cook three meals from scratch.
 
@@ -38,7 +38,7 @@ Over the next seven days, cook **three meals from scratch** using all four burne
 
 **Why this should work, if it does:** A clean working stove lowers the friction for cooking. People who cook more eat better. The traditional vocabulary calls this *the wealth chain*. The modern vocabulary calls it *behavioural design*. The mechanism is the same.
 
-**Honest disclaimer:** If you already cook every meal at home, you will mostly notice the kitchen feels nicer to work in. (Which is the actual point.)
+**Fair warning:** If you already cook every meal at home, you will mostly notice the kitchen feels nicer to work in. (Which is the actual point.)
 
 ## Test 3. Add one warm light source below eye height in the living room.
 
@@ -52,7 +52,7 @@ The traditional rule: the *yin* (soft) and *yang* (active) qualities of a room a
 
 **Why this should work, if it does:** The chronobiology literature is fairly clear: bright cool overhead light in the evening suppresses melatonin and pushes back sleep onset. Warm light below eye height does the opposite.
 
-**Honest disclaimer:** If you already light your evenings warmly, you may notice nothing. If you currently run a fluorescent ceiling fixture into the late evening, the effect will be noticeable within three days.
+**Fair warning:** If you already light your evenings warmly, you may notice nothing. If you currently run a fluorescent ceiling fixture into the late evening, the effect will be noticeable within three days.
 
 ## Test 4. Pull the heaviest piece of furniture six inches away from the wall.
 
@@ -66,7 +66,7 @@ The traditional rule: qi should flow *around* objects, not be blocked behind the
 
 **Why this should work, if it does:** Some of the effect is genuine airflow (the gap behind the furniture lets the room ventilate more evenly). Some is visual (the room *reads* as more spacious). Both effects are well-documented in interior design research.
 
-**Honest disclaimer:** This is the experiment most likely to *not* register a noticeable effect. Run it anyway. Sometimes the experiment that does not work is the most useful one.
+**Fair warning:** This is the experiment most likely to *not* register a noticeable effect. Run it anyway. Sometimes the experiment that does not work is the most useful one.
 
 ## Test 5. Spend one minute in the centre of every room, eyes closed.
 
@@ -82,7 +82,7 @@ Notice what the room sounds like. Smells like. Feels like. The air movement. The
 
 **Why this should work, if it does:** This is not a feng shui test of feng shui. It is a *diagnostic* test of *you*. You will notice things you have stopped noticing. Three of your rooms will tell you something you did not know they were telling you. Those three are this month's project.
 
-**Honest disclaimer:** If you cannot sit still for one minute with your eyes closed, that is also useful information. It is telling you something about the home (or about you) that you can act on.
+**Fair warning:** If you cannot sit still for one minute with your eyes closed, that is also useful information. It is telling you something about the home (or about you) that you can act on.
 
 ## What to do with the results.
 

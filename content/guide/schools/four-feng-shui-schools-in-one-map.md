@@ -21,7 +21,7 @@ That is the map. Four questions, four schools, one each.
 
 ## How they fit together
 
-They share vocabulary. Qi, yin and yang, the five elements, the Bagua. They differ in what they measure. Form measures shape. Compass measures bearing. Flying Stars measures time on top of bearing. BTB reads the floor plan relative to the door, with intention as the active ingredient. They are not contradictory. The honest rule is one method per question, stay consistent within it. The common beginner error is mixing a BTB door-aligned Bagua with Classical Kua directions in the same reading. Pick a method, then stay inside it.
+They share vocabulary. Qi, yin and yang, the five elements, the Bagua. They differ in what they measure. Form measures shape. Compass measures bearing. Flying Stars measures time on top of bearing. BTB reads the floor plan relative to the door, with intention as the active ingredient. They are not contradictory. The working rule is one method per question, stay consistent within it. The common beginner error is mixing a BTB door-aligned Bagua with Classical Kua directions in the same reading. Pick a method, then stay inside it.
 
 ## Where this guide goes next
 

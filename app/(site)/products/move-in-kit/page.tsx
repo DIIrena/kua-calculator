@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Move-In Date Selection + Activation Kit | My Feng Shui Home",
   description:
-    "The traditional way to choose a move-in date, plus a home-blessing checklist for the first week. Honest, practical, printable.",
+    "The traditional way to choose a move-in date, plus a home-blessing checklist for the first week. Practical and printable.",
   alternates: {
     canonical: "https://myfengshuihome.com/products/move-in-kit",
   },
@@ -61,8 +61,8 @@ export default async function MoveInKitPage(props: {
         <p>
           You are about to move house. Or you are renovating, finishing
           a build, or moving offices. You want to use the traditional
-          calendar to pick the day, and you want a short, calm
-          checklist to follow once you are inside.
+          calendar to pick the day, and you want a short checklist
+          to follow once you are inside.
         </p>
       </section>
 
@@ -84,8 +84,7 @@ export default async function MoveInKitPage(props: {
           </li>
           <li>
             A small home-blessing sequence drawn from the tradition,
-            written in plain language with no rituals you do not
-            understand.
+            with no rituals you do not understand.
           </li>
         </ul>
       </section>

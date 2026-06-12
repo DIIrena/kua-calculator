@@ -1,4 +1,4 @@
-A home that is cared for daily reads as cared for daily. The body that lives there notices. This page closes the cluster on three topics and a rhythm: **plants**, **materials**, **cleanliness**, and the small attentions that keep them honest.
+A home that is cared for daily reads as cared for daily. The body that lives there notices. This page closes the cluster on three topics and a rhythm: **plants**, **materials**, **cleanliness**, and the small attentions that keep them working.
 
 ## Plants as part of the room
 
@@ -40,6 +40,6 @@ Pick one plant and water it on a schedule you can keep. Set up a one-bag-a-week 
 
 - For the four environmental conditions, see [air, light, damp, and stale corners](/guide/healthy-home/air-light-damp-and-stale-corners).
 - For the room-by-room health read, see [the bedroom, kitchen, and bathroom health check](/guide/healthy-home/bedroom-kitchen-and-bathroom-health-check).
-- For the honest frame the cluster opens with, see [healthy home feng shui without health promises](/guide/healthy-home/healthy-home-feng-shui-without-health-promises).
+- For the no-promises frame the cluster opens with, see [healthy home feng shui without health promises](/guide/healthy-home/healthy-home-feng-shui-without-health-promises).
 - For the synthesis behind the whole site, see [the methodology page](/methodology).
 - Ten seconds: get your number from [the Kua calculator](/kua-calculator).

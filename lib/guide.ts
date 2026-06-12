@@ -55,7 +55,7 @@ export type GuidePage = {
   lastUpdated: string;
   /** Gated pages require a signed-in session to read. */
   gated: boolean;
-  /** Plain-English estimate, e.g. "5 minutes". */
+  /** Reading-time estimate, e.g. "5 minutes". */
   readingTime: string;
   /** Optional in-guide CTA shown as a calm aside near the bottom of
    *  the page (before the FAQ / Where to go next sections). Used only
@@ -74,7 +74,7 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
   {
     slug: "foundations",
     label: "Foundations",
-    tagline: "The honest baseline the rest of the guide stands on.",
+    tagline: "What feng shui is, what it is not, and the few ideas everything else uses.",
     description:
       "One page on the foundations: what feng shui is, what it is not, and the small set of ideas the rest of the guide stands on.",
     order: 1,
@@ -148,7 +148,7 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     label: "Healthy Home",
     tagline: "Health as conditions a home can support, not promises a room can make.",
     description:
-      "Four pages on health as conditions the home supports. The honest frame (no medical claims), the four environmental conditions (air, light, damp, stale corners), the room-by-room health read, and plants, materials, cleanliness, and the daily rhythm.",
+      "Four pages on health as conditions the home supports, with no medical claims: the four environmental conditions (air, light, damp, stale corners), the room-by-room health read, and plants, materials, cleanliness, and the daily rhythm.",
     order: 9,
     sourceChapters: ["20"],
   },
@@ -176,7 +176,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "foundations",
     slug: "what-feng-shui-is-plainly",
-    title: "What feng shui is, plainly",
+    title: "What feng shui is - and what it is not",
     description:
       "A two-minute, jargon-free read on what feng shui is, what it isn't, and the small idea the rest of the guide depends on.",
     teaser:
@@ -200,10 +200,10 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "compass-school",
     slug: "find-your-kua-number",
-    title: "Find your Kua number and your four directions",
-    seoTitle: "Kua Number Calculator and Your Four Directions",
+    title: "What your Kua number means",
+    seoTitle: "What Your Kua Number Means - East/West Group and Four Directions",
     description:
-      "Find your Kua number with the free calculator. East or West group, your four favourable directions (Sheng Qi, Tian Yi, Yan Nian, Fu Wei), and how to handle a mixed-group household.",
+      "Your Kua number places you in the East or West group and assigns four favourable directions (Sheng Qi, Tian Yi, Yan Nian, Fu Wei). What each one is for, how mixed-group households handle it, and the free calculator that does the maths.",
     teaser:
       "Your Kua number sorts you into East or West group and assigns four supportive directions. Here is what each one is for.",
     lastUpdated: "2026-06-11",
@@ -557,7 +557,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
     slug: "what-belongs-to-feng-shui-and-what-sits-beside-it",
     title: "What belongs to feng shui and what sits beside it",
     description:
-      "Feng shui reads the home. BaZi reads the person. Qi Men Dun Jia reads the moment. Crystals are optional cultural objects. The outer boundary, named in plain language, so the reader stops mixing systems blindly.",
+      "Feng shui reads the home. BaZi reads the person. Qi Men Dun Jia reads the moment. Crystals are optional cultural objects. The outer boundary, drawn so the reader stops mixing systems blindly.",
     teaser:
       "Place, person, moment, object. Four different questions, four different tools. Name which question you're asking before opening any of them.",
     lastUpdated: "2026-06-07",
@@ -593,7 +593,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
     slug: "crystals-symbols-and-optional-tools",
     title: "Crystals, symbols, and optional tools",
     description:
-      "Crystals as cultural objects, not engines. The two-reading frame (aesthetic and attentional plus the attributed folk vocabulary). Named stones, mineralogical honesty, and the gift-shop claims this site does not assert.",
+      "Crystals as cultural objects, not engines. The two-reading frame (aesthetic and attentional plus the attributed folk vocabulary). Named stones, mineralogy-first safety notes, and the gift-shop claims this site does not assert.",
     teaser:
       "A crystal is a coloured weighty object with a folk vocabulary attached. The aesthetic reading is yours; the energetic reading is the tradition's, attributed.",
     lastUpdated: "2026-06-07",

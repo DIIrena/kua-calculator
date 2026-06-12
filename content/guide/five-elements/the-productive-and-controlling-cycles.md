@@ -32,7 +32,7 @@ A bedroom that feels sharp and cold is usually heavy on Metal. The diagnostic pa
 
 This is a case where the productive cycle does not help. Adding Earth, the element that produces Metal, would only feed the Metal layer further. The move is the controlling cycle. Fire controls Metal.
 
-The honest version of Fire in a bedroom is the quiet version. A warm-bulb bedside lamp instead of a cool-white overhead. A deep red or burnt-orange cushion. A small leather-bound book left out on the bedside table. A wool throw in a hot tone folded at the foot of the bed. None of these are bright or active; the bedroom is still meant for rest. They add the *quality* of Fire (warmth, weight, blush) without the stimulation.
+The right version of Fire in a bedroom is the quiet version. A warm-bulb bedside lamp instead of a cool-white overhead. A deep red or burnt-orange cushion. A small leather-bound book left out on the bedside table. A wool throw in a hot tone folded at the foot of the bed. None of these are bright or active; the bedroom is still meant for rest. They add the *quality* of Fire (warmth, weight, blush) without the stimulation.
 
 For the wider logic on what the tradition supports in a sleeping room, see [the bedroom page](/space/bedroom) and the [Health life area](/life/health).
 

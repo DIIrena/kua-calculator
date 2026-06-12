@@ -37,13 +37,13 @@ When the bed instead points at one of the four cautious directions, the traditio
 
 Most people cannot put the headboard on their Sheng Qi wall without moving furniture they have lived with for years. The closet is on the wrong wall. The window is on the wrong wall. The radiator is on the wrong wall. The bedroom is small and there is only one way the bed fits.
 
-Two honest things about this.
+Two things worth knowing about this.
 
 First, partial credit is real. If you cannot put the headboard on the {{direction}} wall, put it on any of your other three favourable walls before you settle for a cautious one. Tian Yi, Yan Nian, and Fu Wei are all reasonable bed positions; the four to avoid are covered later in this book. The bed on *any* good wall beats the bed on a bad one. The difference between Sheng Qi and Tian Yi for the headboard is a fine adjustment. The difference between any good direction and any cautious one is the rough adjustment, and the rough adjustment is the one the tradition weights most.
 
 Second, the bed is not the only lever. If the bed has to stay where it is, *change the desk*. The desk is almost always rearrangeable. Turn your chair so your body faces {{direction}} while you work, and you have applied Sheng Qi to the part of the day the tradition ties most closely to generating. For someone whose work is the main thing they push forward, the working-direction move is often the one that matters most. The sleeping move is about waking; the working move is about *doing*. Different jobs, both worth doing, both read from the same Sheng Qi mapping.
 
-The honest framing is that perfect Sheng Qi alignment is rare and not the point. **Better** than you had before is the point. The system is a decision tool, not a discipline.
+Perfect Sheng Qi alignment is rare and not the point. **Better** than you had before is the point. The system is a decision tool, not a discipline.
 
 ## A move to try
 

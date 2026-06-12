@@ -106,6 +106,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${SITE}/refunds`,
+      lastModified: today,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
       url: `${SITE}/privacy`,
       lastModified: today,
       changeFrequency: "yearly",

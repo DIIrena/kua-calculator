@@ -1,6 +1,6 @@
 Feng shui is **not** a fortune. It is not a way to make money appear, and it is not a list of red things to put by your front door. Most of what reaches the open web is borrowed from a magazine, and most of the magazine version is wrong about what the tradition actually does.
 
-Here is the honest version.
+Here is the version without the magazine gloss.
 
 ## What feng shui actually is
 
@@ -10,7 +10,7 @@ Then it gives you a small number of changes to try.
 
 Some of those changes are *testable*. Better light helps you read. A bed you can see the door from helps you sleep. A clean stove makes you cook more. A chair facing the room lowers the low-grade alertness that drains a workday. These are the parts that meet you halfway with the design literature.
 
-Some of those changes are *traditional*. The wealth corner. The mirror rules. The five-element pairings. The eight personal directions a person carries through their life. The tradition has done these for a long time and the rules are specific. We name them honestly, and we tell you what the evidence does and does not say.
+Some of those changes are *traditional*. The wealth corner. The mirror rules. The five-element pairings. The eight personal directions a person carries through their life. The tradition has done these for a long time and the rules are specific. We label them as tradition, and we tell you what the evidence does and does not say.
 
 That is the whole deal.
 

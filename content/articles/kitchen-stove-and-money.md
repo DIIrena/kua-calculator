@@ -22,7 +22,7 @@ When was the last time you cleaned the back burners?
 
 Can you reach all four hobs without moving anything?
 
-These three questions are the **stove diagnostic**. They are not in any feng shui book in this exact form, but they are what every honest practitioner asks first when they walk into a kitchen.
+These three questions are the **stove diagnostic**. They are not in any feng shui book in this exact form, but they are what every careful practitioner asks first when they walk into a kitchen.
 
 ## Why this matters in the tradition.
 
@@ -58,13 +58,13 @@ You will recognise this once you start noticing it: most "calm" kitchens have a 
 
 If you have half an hour this weekend, do this:
 
-**Minute 1–5.** Pull the stove out from the wall slightly (or as far as the gas line allows). Wipe down the back of the stove and the wall behind it. The space behind the stove is one of the most-neglected zones in any home; cleaning it is one of those small interventions that the tradition rates very highly.
+**Minute 1 to 5.** Pull the stove out from the wall slightly (or as far as the gas line allows). Wipe down the back of the stove and the wall behind it. The space behind the stove is one of the most-neglected zones in any home; cleaning it is one of those small interventions that the tradition rates very highly.
 
-**Minute 5–15.** Clean every burner. Every drip pan. Every knob. Every grate.
+**Minute 5 to 15.** Clean every burner. Every drip pan. Every knob. Every grate.
 
-**Minute 15–25.** Stand at the cook's position. Can you see the kitchen door? If not, decide what to do about it (move a piece of furniture, hang a mirror, rotate a wall shelf so the door is in your peripheral view).
+**Minute 15 to 25.** Stand at the cook's position. Can you see the kitchen door? If not, decide what to do about it (move a piece of furniture, hang a mirror, rotate a wall shelf so the door is in your peripheral view).
 
-**Minute 25–30.** Make a list of what is broken in the kitchen and fix one item this week. The dead bulb in the rangehood. The wobbly drawer pull. The cracked tile behind the kettle.
+**Minute 25 to 30.** Make a list of what is broken in the kitchen and fix one item this week. The dead bulb in the rangehood. The wobbly drawer pull. The cracked tile behind the kettle.
 
 That is the practice. Repeat next month.
 

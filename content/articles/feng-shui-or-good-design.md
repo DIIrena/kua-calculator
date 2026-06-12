@@ -8,7 +8,7 @@ This is not the gotcha they think it is.
 
 The interesting question is not *"is feng shui really just design?"* It is *"why did a three-thousand-year-old practice arrive at the same conclusions as twentieth-century environmental design science?"*
 
-There are two honest answers to that question, and both of them point at the same recommendation: do the work either way, because it works either way.
+There are two defensible answers to that question, and both of them point at the same recommendation: do the work either way, because it works either way.
 
 ## What the two practices share.
 
@@ -36,7 +36,7 @@ This is not a coincidence. It is the same recommendation arrived at by two diffe
 
 ## Why the two methods converged.
 
-There are two honest ways to explain the convergence.
+There are two ways to explain the convergence, and both hold up.
 
 ### The first explanation: humans are predictable.
 
@@ -54,11 +54,11 @@ Three thousand years of feng shui *includes* a lot of advice that did not surviv
 
 What you are reading today is the *survivorship-bias filter* of three thousand years of trial and error.
 
-The honest version of this is: most of the parts that survived are the parts that **also satisfy a non-mystical mechanism**. The ones that survived for purely mystical reasons (the bagua mirror, the flying-star annuals) are also still there. But the *core* of the practice (clutter, light, the three key points, the bed and stove and door) survived because *the underlying mechanism is real*.
+The fuller picture is this: most of the parts that survived are the parts that **also satisfy a non-mystical mechanism**. The ones that survived for purely mystical reasons (the bagua mirror, the flying-star annuals) are also still there. But the *core* of the practice (clutter, light, the three key points, the bed and stove and door) survived because *the underlying mechanism is real*.
 
 ## Where the two practices disagree.
 
-Honest disclosure: they do not agree on everything.
+Full disclosure: they do not agree on everything.
 
 **Feng shui says** specific compass directions have specific personal qualities for specific people. (Your Kua number tells you your four favourable directions.) Environmental psychology has nothing to say about this.
 
@@ -84,7 +84,7 @@ Both are valid. Both produce homes that work better than homes nobody thinks abo
 
 The most common skeptical objection is: *"If it's just good design, why call it feng shui? Why all the mystical talk?"*
 
-The honest answer: the vocabulary is not *strictly necessary*, but it does two useful things.
+The short answer: the vocabulary is not *strictly necessary*, but it does two useful things.
 
 **One: it gives the practice a shape**. "Clean your home, position the bed well, use plants, get more light" is a list of unrelated tips. "Clear the qi, position the bed in command, balance the five elements" is a *system*. People follow systems more reliably than they follow tip lists.
 

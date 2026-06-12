@@ -40,6 +40,7 @@ export default function SiteFooter() {
         <Link href="/life">Life areas</Link>
         <Link href="/articles">Articles</Link>
         <Link href="/methodology">Methodology</Link>
+        <Link href="/refunds">Refunds</Link>
         <Link href="/privacy">Privacy</Link>
       </nav>
       <p className="footer-tag">

@@ -1,6 +1,6 @@
 A crystal does not heal anyone. It is a coloured, weighty object placed in a room with a folk vocabulary attached. Crystals are an **adjacent** practice, not core feng shui. This page treats them the way the rest of the cluster treats [BaZi as the natal-time reading of the person](/guide/sister-disciplines/bazi-birth-data-and-personal-timing) and [Qi Men Dun Jia as the moment-and-direction reading](/guide/sister-disciplines/qi-men-dun-jia-date-selection-and-strategy). A sister body of knowledge that travels beside feng shui without being it.
 
-This page does not redo the cures catalogue. The canonical home for the symbolic-objects family on this site is [the cures page on mirrors, plants, light, sound, and symbols](/guide/cures/mirrors-plants-light-sound-and-symbols). That page covers mirrors, plants, light, sound, and symbols as a cure family inside feng shui itself. What you are reading now extends that family outward to cover crystals and other optional objects that sit *beside* the cures catalogue. If you find these meaningful, here is the honest framing.
+This page does not redo the cures catalogue. The canonical home for the symbolic-objects family on this site is [the cures page on mirrors, plants, light, sound, and symbols](/guide/cures/mirrors-plants-light-sound-and-symbols). That page covers mirrors, plants, light, sound, and symbols as a cure family inside feng shui itself. What you are reading now extends that family outward to cover crystals and other optional objects that sit *beside* the cures catalogue. If you find these meaningful, here is how this page holds them.
 
 ## What this page is not
 
@@ -26,7 +26,7 @@ That is as far as the description goes. This page names stones and describes the
 
 The same six levers you would apply to any cure apply here. **Element**, mostly Earth. **Placement**, which sector or room. **Visibility**, one you can actually see, not buried at the back of a shelf. **Proportion**, one well-chosen piece beats twelve crowded ones. **Timing**, seasonal or permanent. **Room use**, does the room support quiet attention or active company. Read the cluster as one practice and stones slot in cleanly.
 
-## Mineralogical honesty
+## Mineralogy first
 
 The safest register on this topic is gemmological. Contraindications are physical first. Rose quartz, amethyst, and citrine fade in sustained sunlight. Hematite rusts when left wet. Turquoise is porous and stains. Fluorite is soft and chips. Salt damages porous stones. Lead the safety language with mineralogy, not metaphysics.
 

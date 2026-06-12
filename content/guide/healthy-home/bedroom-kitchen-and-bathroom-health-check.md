@@ -43,5 +43,5 @@ Air the bedroom for ten minutes before sleep. Run the cooker hood whenever the s
 - Ten seconds: find your direction with [the Kua calculator](/kua-calculator).
 - One room at a time: read [the space bedroom page](/space/bedroom), [the space kitchen page](/space/kitchen), or [the space bathroom page](/space/bathroom).
 - Sister reads in this cluster: [air, light, damp, and stale corners](/guide/healthy-home/air-light-damp-and-stale-corners) and [plants, materials, cleanliness, and daily rhythm](/guide/healthy-home/plants-materials-cleanliness-and-daily-rhythm).
-- The honest frame for the whole cluster: [healthy home feng shui without health promises](/guide/healthy-home/healthy-home-feng-shui-without-health-promises).
+- The no-promises frame for the whole cluster: [healthy home feng shui without health promises](/guide/healthy-home/healthy-home-feng-shui-without-health-promises).
 - Canonical starter moves per life area: [the Health life-area page](/life/health).

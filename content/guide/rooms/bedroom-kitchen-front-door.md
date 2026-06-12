@@ -1,4 +1,4 @@
-Most readers think the three keys are about which direction the bed, the stove, and the front door face. Here is the honest version. Direction is a real lens, and it lives one page over at [three orientations the tradition weights most](/guide/compass-school/three-orientations). This page owns the other axis: the wall the bed sits against, where the stove sits in the room, and what the front door opens onto. Form School, room-layout angle. Same three rooms, different question.
+Most readers think the three keys are about which direction the bed, the stove, and the front door face. That is only half the picture. Direction is a real lens, and it lives one page over at [three orientations the tradition weights most](/guide/compass-school/three-orientations). This page owns the other axis: the wall the bed sits against, where the stove sits in the room, and what the front door opens onto. Form School, room-layout angle. Same three rooms, different question.
 
 ## Bedroom
 
@@ -34,7 +34,7 @@ The mouth of the home. There is no dedicated space page for the front door, so w
 
 Stand inside, just past the threshold, and look at what the door faces when it opens. A blank wall a few steps in is fine, even useful: the *qi* ("energy or breath") slows and settles. A window directly opposite the door sends it straight back out. A staircase climbing right at the door pulls arrival straight up the stairs and leaves the entry level unread. Another door directly behind it, especially the back door, creates a **through-gate**: arrival passes straight through and never lands. Soft visual breaks are the answer: a console table, a rug, a small plant, a screen, a hung piece of art at eye height. Something that says, here is the room.
 
-The settling zone is the metre or two just inside. Keep it clear and lit. Shoes contained, coats hung, post sorted. Clutter at the entry is the first impression the house makes on itself every time you walk in. Sweep the path outside, replace the bulb, oil the hinge. A diagnostic walk that starts at the door is the most honest pass you can do: [the seven-step home walkthrough](/articles/diagnostic-walkthrough).
+The settling zone is the metre or two just inside. Keep it clear and lit. Shoes contained, coats hung, post sorted. Clutter at the entry is the first impression the house makes on itself every time you walk in. Sweep the path outside, replace the bulb, oil the hinge. A diagnostic walk that starts at the door is the most revealing pass you can do: [the seven-step home walkthrough](/articles/diagnostic-walkthrough).
 
 ## Why these three
 

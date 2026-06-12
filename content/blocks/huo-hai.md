@@ -39,7 +39,7 @@ Here is where readers tend to go wrong with the cautious directions. The first t
 
 They do not. The tradition's claim here is much smaller than the fear it can trigger, and Huo Hai is the clearest example of how small. Of the four careful directions, this is the one whose felt-quality is closest to nothing in particular. The tradition does not read it as a corner to fear. It reads it as a corner of low priority, and low priority is a mild thing.
 
-So the honest framing is this. If your home forces one important function onto a less-than-ideal wall, and in a real home it sometimes will, Huo Hai is the **least costly** of the four to land on. Not Wu Gui, not Liu Sha, and not Jue Ming. This one. It is the cautious direction the tradition reads as gentlest.
+So the practical framing is this. If your home forces one important function onto a less-than-ideal wall, and in a real home it sometimes will, Huo Hai is the **least costly** of the four to land on. Not Wu Gui, not Liu Sha, and not Jue Ming. This one. It is the cautious direction the tradition reads as gentlest.
 
 ## The fork
 

@@ -20,7 +20,7 @@ When a chapter is about the bed, read "direction" as where the head points. When
 
 ## A week is the unit
 
-Feng shui changes, when they do anything, tend to be gradual and quiet rather than sudden. The honest unit of testing is about a week. Make one change. Leave it in place for seven days. Notice, without forcing the question, whether anything feels different. If it does, keep it. If it does not, you have lost nothing but the few minutes it took to move a chair.
+Feng shui changes, when they do anything, tend to be gradual and quiet rather than sudden. The realistic unit of testing is about a week. Make one change. Leave it in place for seven days. Notice, without forcing the question, whether anything feels different. If it does, keep it. If it does not, you have lost nothing but the few minutes it took to move a chair.
 
 The last chapter gives you one structured seven-day experiment to start with. For now, keep the three-way distinction in mind - tradition, observation, evidence - and the one rule about how to read a direction. The rest of the guide rests on those two things.
 

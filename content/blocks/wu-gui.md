@@ -43,4 +43,4 @@ When you cannot move the function, the tradition's standard moves are mild and w
 
 None of this is a fix, and none of it needs to be. It is a *softening*. If you would rather, the cleaner option is simply to give the important function a kinder wall and let Wu Gui keep the laundry. Either choice is a reasonable one.
 
-The honest summary is short. Wu Gui is the wall the tradition would point at and say *keep this one light*. Hand it the cleaning cupboard and let it do its quiet work.
+The summary is short. Wu Gui is the wall the tradition would point at and say *keep this one light*. Hand it the cleaning cupboard and let it do its quiet work.

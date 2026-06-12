@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "2026 Annual Feng Shui Planner | The year in one printable book",
   description:
-    "98 pages, 16 sections, a 245-day calendar, sector-by-sector treatments, and the 2026 annual chart explained. One printable book for the Chinese solar year.",
+    "98 pages, 16 sections, a 243-day calendar, sector-by-sector treatments, and the 2026 annual chart explained. One printable book for the Chinese solar year.",
   alternates: {
     canonical:
       "https://myfengshuihome.com/products/annual-feng-shui-planner-2026",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "2026 Annual Feng Shui Planner",
     description:
-      "98 pages, 16 sections, a 245-day calendar, sector-by-sector treatments, and the 2026 annual chart explained.",
+      "98 pages, 16 sections, a 243-day calendar, sector-by-sector treatments, and the 2026 annual chart explained.",
     url: "https://myfengshuihome.com/products/annual-feng-shui-planner-2026",
     images: [
       "https://myfengshuihome.com/products/annual-feng-shui-planner-2026/cover-thumb.png",
@@ -43,8 +43,8 @@ const PLANNER_FAQ: ReadonlyArray<{ q: string; a: string }> = [
     a: "The Planner reads the year for any home. The Compass reads you specifically, with your Kua number and your eight personal directions. Different jobs. They sit together on a shelf and answer different questions.",
   },
   {
-    q: "Why does the calendar start on 1 June 2026, not 1 January?",
-    a: "Because the 2026 Chinese solar year is what the Planner reads, and that year is already underway. The 245-day calendar covers the rest of it, from 1 June 2026 through 31 January 2027. The 2027 edition picks up from there.",
+    q: "Why does the calendar start in July 2026, not on 1 January?",
+    a: "Because the 2026 Chinese solar year is what the Planner reads, and that year is already underway. The 243-day calendar covers July 2026 through February 2027, the remaining months of the 2026 solar year, ending past Li Chun (4 February 2027), where the 2027 edition picks up.",
   },
   {
     q: "Will the same Planner work for everyone in my household?",
@@ -60,7 +60,7 @@ const PLANNER_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Is the Planner refundable?",
-    a: "Yes. When checkout opens, every purchase carries a 30-day refund, no questions asked. That includes the Planner.",
+    a: "Yes. When checkout opens, every purchase carries a 7-day refund, no questions asked. That includes the Planner.",
   },
   {
     q: "Will there be a 2027 edition?",
@@ -101,7 +101,7 @@ export default async function PlannerPage(props: {
     "@type": "Product",
     name: "2026 Annual Feng Shui Planner",
     description:
-      "A 98-page printable planner for the 2026 Chinese solar year: the annual chart explained, nine sector treatments, monthly notes, a 245-day calendar, and a ten-step diagnostic walkthrough.",
+      "A 98-page printable planner for the 2026 Chinese solar year: the annual chart explained, nine sector treatments, monthly notes, a 243-day calendar, and a ten-step diagnostic walkthrough.",
     image: [
       "https://myfengshuihome.com/products/annual-feng-shui-planner-2026/cover-portrait.png",
     ],
@@ -112,7 +112,7 @@ export default async function PlannerPage(props: {
       priceCurrency: "USD",
       price: "29",
       availability: "https://schema.org/PreOrder",
-      priceValidUntil: "2027-01-31",
+      priceValidUntil: "2027-02-28",
       seller: { "@type": "Organization", name: "My Feng Shui Home" },
     },
   };
@@ -159,19 +159,16 @@ export default async function PlannerPage(props: {
           />
           <div style={{ flex: "1 1 320px" }}>
             <p className="product-lede">
-              Pick a quiet morning in early February. The kettle is doing
-              the small steaming thing it does. You sit at the kitchen
-              table with a cup in your hands and you realise the year
-              has begun and you do not quite know where in the house to
-              start. Which corner asks for a gentle hand. Which corner
-              is ready to do real work. Which weekends are the wrong
-              ones for a renovation. Which day is the right one to sign
-              something that matters.
+              The 2026 Annual Feng Shui Planner is a 98-page printable
+              book for the 2026 solar year. $29, one-time. It answers
+              four questions for every month left in the year: which
+              corner of the home asks for a gentle hand, which corner
+              is ready for real work, which weekends are wrong for a
+              renovation, and which day is right to sign something
+              that matters.
             </p>
             <p className="product-lede" style={{ marginTop: "0.9rem" }}>
-              The Planner answers those four questions for the whole of
-              the 2026 Chinese solar year, in a calm voice, in 98
-              printable pages. One book. One year. One shelf.
+              One book. One year. One shelf.
             </p>
             <p className="product-hero-launch-state" style={{ marginTop: "0.9rem" }}>
               Checkout is not live yet. Join the waitlist and we email
@@ -274,7 +271,7 @@ export default async function PlannerPage(props: {
           <figure style={{ margin: 0 }}>
             <Image
               src="/products/annual-feng-shui-planner-2026/sample-page-calendar.png"
-              alt="A day from the 245-day calendar with its symbol and one-line reason."
+              alt="A day from the 243-day calendar with its symbol and one-line reason."
               width={935}
               height={1320}
               style={{
@@ -343,8 +340,8 @@ export default async function PlannerPage(props: {
             covering which sectors tip into a heavier mood each month.
           </li>
           <li>
-            <strong>A 245-day calendar.</strong> Every day from 1 June
-            2026 through 31 January 2027, classified into one of four
+            <strong>A 243-day calendar.</strong> Every day from 1 July
+            2026 through 28 February 2027, classified into one of four
             categories: good for action, good for rest and planning,
             neutral, or caution.
           </li>
@@ -396,7 +393,7 @@ export default async function PlannerPage(props: {
           month into two halves and tells you how to read the seam.
         </p>
         <p>
-          The 245-day calendar is the part you will use most. Each day
+          The 243-day calendar is the part you will use most. Each day
           carries one of four symbols (a green tick, a circle, a dot,
           or a cross) and a one-line reason. Glance at the symbol on
           the morning of a signing, a launch, a move-in, or a meeting
@@ -441,8 +438,8 @@ export default async function PlannerPage(props: {
         <p>
           You like to plan a year on paper. You want to know which
           sector of your home the 2026 stars treat gently and which
-          they ask you to be careful with. You want a calm reference
-          you can keep on a desk and open when a question comes up.
+          they ask you to be careful with. You want a reference you
+          can keep on a desk and open when a question comes up.
           You do not need to know any feng shui to use the book; the
           Planner explains what it needs as it goes.
         </p>
@@ -458,7 +455,7 @@ export default async function PlannerPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>Honest framing</h2>
+        <h2>What the Planner does not do</h2>
         <p>
           Feng shui does not promise outcomes. The Planner does not
           predict your year and it will not tell you what will happen.

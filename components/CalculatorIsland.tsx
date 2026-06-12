@@ -272,10 +272,10 @@ export default function CalculatorIsland({
 
       {/* Post-result CTA stack. Revealed by ui.js after a successful
           calculation, alongside the save-chart card (when shown). The
-          embed surface gets only the primary card; the Compass waitlist
-          and the planner footer link are stripped via the
-          .post-result-stack--embed class that ui.js sets when the
-          calculator runs inside /embed (main#main carries data-embed).
+          embed surface gets only the primary card; the planner and
+          Compass cards are stripped via the .post-result-stack--embed
+          class that ui.js sets when the calculator runs inside /embed
+          (main#main carries data-embed).
           When the visitor just submitted the Compass waitlist form, the
           server action redirects back with ?compass=sent and we render
           the section visible from the start so the confirmation is
@@ -296,19 +296,41 @@ export default function CalculatorIsland({
           }
         >
           <h3 className="post-result-card-heading">
-            Read the full Kua deep-dive.
+            What your Kua number means.
           </h3>
           <p className="post-result-card-body">
-            The methodology page walks the Compass School and the Eight
-            Mansions system in nine sections, including how the four
-            favourable and four cautious directions are derived.
+            Your number sorts you into the East or West group and gives
+            you four supportive directions. The guide page walks what
+            each one is for.
           </p>
           <p className="post-result-card-actions">
             <a
-              href="/methodology#5-the-kua-number"
+              href="/guide/compass-school/find-your-kua-number"
               className={isSignedIn ? "cta-secondary" : "cta-primary"}
             >
-              Read the methodology
+              Read what your number means
+            </a>
+          </p>
+        </article>
+
+        {/* The planner card reuses .post-result-card-compass so the existing
+            embed CSS (.post-result-stack--embed .post-result-card-compass)
+            hides it on /embed without a stylesheet change. */}
+        <article className="post-result-card secondary post-result-card-compass post-result-card-planner">
+          <h3 className="post-result-card-heading">
+            The 2026 Annual Feng Shui Planner.
+          </h3>
+          <p className="post-result-card-body">
+            Your directions are the personal layer. The Planner reads the
+            year on top of them, sector by sector, July 2026 through
+            February 2027.
+          </p>
+          <p className="post-result-card-actions">
+            <a
+              href="/products/annual-feng-shui-planner-2026?from=kua-calculator"
+              className="cta-secondary"
+            >
+              See the Planner
             </a>
           </p>
         </article>
@@ -370,12 +392,6 @@ export default function CalculatorIsland({
             </p>
           ) : null}
         </article>
-
-        <p className="post-result-footer">
-          <a href="/products/annual-feng-shui-planner-2026">
-            Looking for the 2026 Annual Planner? See the planner.
-          </a>
-        </p>
       </section>
 
       {showSaveCta ? (

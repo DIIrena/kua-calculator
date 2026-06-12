@@ -36,7 +36,7 @@ The simplest version: same grid, different question. [The Flying Stars and BTB p
 
 **Strategic direction.** QMDJ also speaks to short-term facing for a specific action. Which direction to face during an interview. Which direction to travel for a negotiation. Which way to orient seating for a difficult conversation. This is distinct from feng shui's long-term sitting and facing directions for a home or office, which do not change weekly.
 
-## Honest limits
+## The limits
 
 QMDJ supplies a structured pause and a frame for a decision. **It does not supply the decision.** The wrong action in the right window is still the wrong action. Practical reading takes years rather than months to learn properly, with a competent teacher. Treat any chart, including one from software, as material for thought.
 

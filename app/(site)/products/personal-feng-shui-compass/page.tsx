@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Personal Feng Shui Compass | A personalised PDF reading your Kua",
   description:
-    "A personalised, 25-30 page PDF reading your Kua number, your East or West group, your four supportive directions, and your four to handle with care. Honest framing, no outcome promises.",
+    "A personalised, 25-30 page PDF reading your Kua number, your East or West group, your four supportive directions, and your four to handle with care. No outcome promises.",
   alternates: {
     canonical:
       "https://myfengshuihome.com/products/personal-feng-shui-compass",
@@ -69,8 +69,8 @@ export default async function PersonalFengShuiCompassPage(props: {
           result interesting, and would like the deeper reading. You
           want to know what each of your eight personal directions
           actually means for the bed, the desk, the dining seat, the
-          chair you read in. You want it honest, written in plain
-          ordinary English, and finished in one weekend.
+          chair you read in. You want something you can read, test,
+          and finish in one weekend.
         </p>
       </section>
 
@@ -118,7 +118,7 @@ export default async function PersonalFengShuiCompassPage(props: {
           </li>
           <li>
             Four shorter chapters for your four cautious directions,
-            framed honestly as lower-priority placements, not curses.
+            framed as lower-priority placements, not curses.
           </li>
           <li>
             A seven-day experiment to test a single change in your
