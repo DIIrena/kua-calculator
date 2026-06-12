@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
-import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
+
 import PlannerSourceTracker from "@/components/PlannerSourceTracker";
 
 export const metadata: Metadata = {
@@ -51,16 +51,16 @@ const PLANNER_FAQ: ReadonlyArray<{ q: string; a: string }> = [
     a: "Yes. The 2026 annual chart is the same chart for every home in the same hemisphere. Personal directions are the layer that varies by person, and those live in the Personal Feng Shui Compass, which is a separate product.",
   },
   {
-    q: "What happens after I join the waitlist?",
-    a: "A warm confirmation lands in your inbox now. About a week later, a short note with one sample page so you can see the voice for yourself. When checkout opens we email you the launch page and the early price. You can unsubscribe at any point.",
+    q: "What happens after I buy?",
+    a: "The files arrive by email within a minute: the PDF, the EPUB, and the phone calendar file. The download page shows the same links right after payment. The links stay valid for 7 days, and you can reply to the delivery email any time for a fresh one.",
   },
   {
-    q: "When will the Planner actually ship?",
-    a: "We are waiting on the business bank account to clear so live payments can be wired up. As soon as that lands and the file pass is finished, we ship. We will not promise a date we are not sure of.",
+    q: "What formats does the Planner come in?",
+    a: "Three files: a print-ready PDF, an EPUB for e-readers, and an ICS calendar file that adds the 243 day readings to Apple Calendar or Google Calendar.",
   },
   {
     q: "Is the Planner refundable?",
-    a: "Yes. When checkout opens, every purchase carries a 7-day refund, no questions asked. That includes the Planner.",
+    a: "Yes. Every purchase carries a 7-day refund, no questions asked. Email hello@myfengshuihome.com and the money goes back.",
   },
   {
     q: "Will there be a 2027 edition?",
@@ -72,7 +72,7 @@ const PLANNER_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Can I buy the book without a US address?",
-    a: "The Planner is a digital purchase, sold from anywhere to anywhere. Once live checkout is wired, most readers with an international payment card should be able to buy. We will confirm the checkout details at launch.",
+    a: "Yes. The Planner is a digital purchase, sold from anywhere to anywhere. Checkout takes most international cards, Apple Pay, and Google Pay.",
   },
 ];
 
@@ -111,7 +111,7 @@ export default async function PlannerPage(props: {
       url: "https://myfengshuihome.com/products/annual-feng-shui-planner-2026",
       priceCurrency: "USD",
       price: "29",
-      availability: "https://schema.org/PreOrder",
+      availability: "https://schema.org/InStock",
       priceValidUntil: "2027-02-28",
       seller: { "@type": "Organization", name: "My Feng Shui Home" },
     },
@@ -171,11 +171,12 @@ export default async function PlannerPage(props: {
               One book. One year. One shelf.
             </p>
             <p className="product-hero-launch-state" style={{ marginTop: "0.9rem" }}>
-              Checkout is not live yet. Join the waitlist and we email
-              you the moment it opens.
+              Checkout is open. The files arrive by email within a
+              minute of purchase: PDF, EPUB, and the phone calendar
+              file.
             </p>
             <p className="product-hero-anchor" style={{ marginTop: "1.1rem" }}>
-              <a href="#waitlist-top">Skip to the waitlist →</a>
+              <a href="#waitlist-top">Skip to checkout →</a>
             </p>
           </div>
         </div>
@@ -183,21 +184,21 @@ export default async function PlannerPage(props: {
 
       <section
         className="product-top-waitlist"
-        aria-label="Join the 2026 Planner waitlist"
+        aria-label="Buy the 2026 Planner"
       >
         <h2 className="product-top-waitlist-heading">
-          Join the 2026 Annual Feng Shui Planner waitlist.
+          Buy the 2026 Annual Feng Shui Planner.
         </h2>
         <p className="product-top-waitlist-state">
-          $29, one-time. Waitlist is open; checkout is not live yet.
+          $29, one-time. Instant delivery: PDF, EPUB, and the phone
+          calendar file.
         </p>
         <BuyButton
           productSlug="annual-feng-shui-planner-2026"
           priceLabel="$29"
-          state="waitlist"
+          state="stripe-live"
           waitlistStatus={status}
           anchorId="waitlist-top"
-          waitlistNote="You receive a confirmation now, one sample-page note about a week later, and a launch email when checkout opens. You can unsubscribe any time."
         />
       </section>
 
@@ -403,27 +404,22 @@ export default async function PlannerPage(props: {
 
       <section className="product-section">
         <h2>How it works</h2>
-        <p>
-          The Planner is on a waitlist while we finish the checkout
-          system. We are waiting on the business bank account to clear
-          so live payments can be wired up. You can unsubscribe at any
-          point, and we will not share your address.
-        </p>
         <ol>
           <li>
-            <strong>Join the waitlist.</strong> A warm confirmation
-            lands in your inbox with what to expect from here.
+            <strong>You pay once.</strong> $29, no subscription. Card
+            checkout, handled by Stripe.
           </li>
           <li>
-            <strong>Roughly a week later,</strong> a short follow-up
-            note with one sample page so you can see the voice and the
-            structure for yourself.
+            <strong>The files arrive by email within a minute:</strong>{" "}
+            the PDF, the EPUB, and the phone calendar file. The
+            download page shows the same links right after payment.
+            The Planner is the same for every buyer (the 2026 chart is
+            the same chart), so there is no birth-data form for this
+            one.
           </li>
           <li>
-            <strong>When checkout goes live,</strong> we email you the
-            launch page and the early price. The Planner is the same
-            for every buyer (the 2026 chart is the same chart), so
-            there is no birth-data form for this one.
+            <strong>7-day refund, no questions asked.</strong> Email
+            us and the money goes back.
           </li>
           <li>
             <strong>The 2027 edition</strong> ships in January 2027 as
@@ -478,18 +474,17 @@ export default async function PlannerPage(props: {
       </section>
 
       <section className="product-buy-section">
-        <h2>Join the waitlist.</h2>
+        <h2>Buy the Planner.</h2>
         <p>
-          The Planner is in the final stages of being put together.
-          When checkout goes live, we email you the launch page and
-          the early price. You can unsubscribe any time.
+          $29, one-time. The files arrive by email within a minute of
+          purchase, and the download page shows them immediately.
+          7-day refund, no questions asked.
         </p>
         <BuyButton
           productSlug="annual-feng-shui-planner-2026"
           priceLabel="$29"
-          state="waitlist"
+          state="stripe-live"
           waitlistStatus={status}
-          waitlistNote="You receive a confirmation now, one sample-page note about a week later, and a launch email when checkout opens. You can unsubscribe any time."
         />
       </section>
 
@@ -516,7 +511,7 @@ export default async function PlannerPage(props: {
         </p>
       </section>
 
-      <FloatingWaitlistCTA />
+
     </div>
   );
 }

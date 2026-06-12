@@ -31,7 +31,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "2026 Annual Feng Shui Planner",
     oneLiner:
       "98 pages, the 2026 chart, sector treatments, and a 243-day calendar. The whole year in one printable book.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$29",
   },
   {
