@@ -6416,3 +6416,44 @@ a:hover { color: var(--clay-deep); }
   font-size: 0.92rem;
   color: var(--ink-2);
 }
+
+/* ============================================================
+   Guide badges: Tested / Traditional / Preference.
+   Inline pills used inside guide content and in the hub
+   legend. Delivery of the homepage promise that every move
+   is labelled tested, traditional, or preference.
+   ============================================================ */
+
+.guide-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border-radius: 999px;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.guide-badge-tested {
+  background: #dde6e0;
+  color: #0a2a20;
+}
+
+.guide-badge-traditional {
+  background: #f8d8c5;
+  color: #7a3208; /* 6.8:1 on #f8d8c5, passes 4.5:1 */
+}
+
+.guide-badge-preference {
+  background: #f2f2ee;
+  color: #4f5b53;
+  border: 1px solid #e2dac5;
+}
+
+.guide-badge-legend {
+  margin-top: var(--space-3);
+  font-size: 0.92rem;
+  color: var(--ink-2);
+}

@@ -4,6 +4,49 @@ Before the walk, a quick orientation. The elements named here (Wood, Fire, Earth
 
 Now the walk, starting in the south and turning clockwise through the corners.
 
+<figure>
+<svg viewBox="0 0 480 480" width="100%" role="img" aria-labelledby="life-areas-grid-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="life-areas-grid-title">A three-by-three Bagua grid of the nine life areas, drawn with south at the top. Top row: Wealth in the south-east, Fame in the south, Partnerships in the south-west. Middle row: Family in the east, Health in the centre, Children in the west. Bottom row: Knowledge in the north-east, Career in the north, Helpful People in the north-west. The centre cell is outlined in orange.</title>
+  <rect x="0" y="0" width="480" height="480" fill="#fcfcf8"/>
+  <g fill="#f2f2ee" stroke="#0e3b2c" stroke-width="2">
+    <rect x="24" y="24" width="144" height="144"/>
+    <rect x="168" y="24" width="144" height="144"/>
+    <rect x="312" y="24" width="144" height="144"/>
+    <rect x="24" y="168" width="144" height="144"/>
+    <rect x="312" y="168" width="144" height="144"/>
+    <rect x="24" y="312" width="144" height="144"/>
+    <rect x="168" y="312" width="144" height="144"/>
+    <rect x="312" y="312" width="144" height="144"/>
+  </g>
+  <rect x="168" y="168" width="144" height="144" fill="#ffffff" stroke="#d9531a" stroke-width="3"/>
+  <g font-family="inherit" text-anchor="middle">
+    <g fill="#0a2a20" font-size="17" font-weight="600">
+      <text x="96" y="92">Wealth</text>
+      <text x="240" y="92">Fame</text>
+      <text x="384" y="92">Partnerships</text>
+      <text x="96" y="236">Family</text>
+      <text x="384" y="236">Children</text>
+      <text x="96" y="380">Knowledge</text>
+      <text x="240" y="380">Career</text>
+      <text x="384" y="380" font-size="15">Helpful People</text>
+    </g>
+    <g fill="#4f5b53" font-size="13">
+      <text x="96" y="114">SE</text>
+      <text x="240" y="114">S</text>
+      <text x="384" y="114">SW</text>
+      <text x="96" y="258">E</text>
+      <text x="384" y="258">W</text>
+      <text x="96" y="402">NE</text>
+      <text x="240" y="402">N</text>
+      <text x="384" y="402">NW</text>
+    </g>
+    <text x="240" y="232" fill="#d9531a" font-size="17" font-weight="600">Health</text>
+    <text x="240" y="256" fill="#4f5b53" font-size="13">Centre</text>
+  </g>
+</svg>
+<figcaption>The nine life areas in place, south at the top. Keep this grid in view as the walk below moves clockwise through the corners.</figcaption>
+</figure>
+
 ## South
 
 **Fame and reputation** sits in the south. The trigram is *Li*, "fire". The element is **Fire**. The tradition associates this sector with visibility, recognition, and the way the household is seen from the outside. The [Fame sector deep dive](/life/fame) walks the corner with the question of what the home is publicly known for.

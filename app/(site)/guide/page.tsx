@@ -230,6 +230,19 @@ export default function GuideIndexPage() {
         library further down.
       </p>
       <GuideReadState mode="summary" total={38} />
+      <p className="guide-badge-legend">
+        Three labels appear across the guide:{" "}
+        <span className="guide-badge guide-badge-tested">Tested</span>{" "}
+        has evidence behind it,{" "}
+        <span className="guide-badge guide-badge-traditional">
+          Traditional
+        </span>{" "}
+        comes from the tradition,{" "}
+        <span className="guide-badge guide-badge-preference">
+          Preference
+        </span>{" "}
+        is yours to decide.
+      </p>
 
       <section
         className="guide-intent-paths"

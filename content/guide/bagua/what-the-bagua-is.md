@@ -2,6 +2,48 @@ It is not a manifestation board. It is not a wish-list. It is not a magic overla
 
 If feng shui itself is still new to you, the short framing on [what feng shui is, without the mystique](/guide/foundations/what-feng-shui-is-plainly) sets the wider context. This page stays on the map layer.
 
+<figure>
+<svg viewBox="0 0 480 480" width="100%" role="img" aria-labelledby="bagua-grid-title" xmlns="http://www.w3.org/2000/svg">
+  <title id="bagua-grid-title">A three-by-three Bagua grid drawn with south at the top. The eight outer cells carry the compass directions: south-east, south, and south-west across the top row, east and west on the middle row, north-east, north, and north-west across the bottom row. The centre cell is marked Centre and outlined in orange.</title>
+  <rect x="0" y="0" width="480" height="480" fill="#fcfcf8"/>
+  <g fill="#f2f2ee" stroke="#0e3b2c" stroke-width="2">
+    <rect x="24" y="24" width="144" height="144"/>
+    <rect x="168" y="24" width="144" height="144"/>
+    <rect x="312" y="24" width="144" height="144"/>
+    <rect x="24" y="168" width="144" height="144"/>
+    <rect x="312" y="168" width="144" height="144"/>
+    <rect x="24" y="312" width="144" height="144"/>
+    <rect x="168" y="312" width="144" height="144"/>
+    <rect x="312" y="312" width="144" height="144"/>
+  </g>
+  <rect x="168" y="168" width="144" height="144" fill="#ffffff" stroke="#d9531a" stroke-width="3"/>
+  <g font-family="inherit" text-anchor="middle">
+    <g fill="#0a2a20" font-size="17" font-weight="600">
+      <text x="96" y="92">South-east</text>
+      <text x="240" y="92">South</text>
+      <text x="384" y="92">South-west</text>
+      <text x="96" y="236">East</text>
+      <text x="384" y="236">West</text>
+      <text x="96" y="380">North-east</text>
+      <text x="240" y="380">North</text>
+      <text x="384" y="380">North-west</text>
+    </g>
+    <g fill="#4f5b53" font-size="13">
+      <text x="96" y="114">SE</text>
+      <text x="240" y="114">S</text>
+      <text x="384" y="114">SW</text>
+      <text x="96" y="258">E</text>
+      <text x="384" y="258">W</text>
+      <text x="96" y="402">NE</text>
+      <text x="240" y="402">N</text>
+      <text x="384" y="402">NW</text>
+    </g>
+    <text x="240" y="247" fill="#d9531a" font-size="18" font-weight="600">Centre</text>
+  </g>
+</svg>
+<figcaption>The whole tool at a glance: eight directional sectors around a centre, drawn with south at the top in the traditional way.</figcaption>
+</figure>
+
 ## What *ba* and *gua* mean.
 
 The word breaks into two pieces. *Ba*, "eight", is the count. *Gua*, "trigram", is the unit being counted. A trigram is a stack of three lines. Each line is either solid or broken. Together they picture one quality of motion in the world. Eight trigrams give you eight stable combinations of those lines, and therefore eight directions of attention you can pay to a space. The names of the individual trigrams belong to the sector-by-sector walk on [the nine sectors named one by one](/guide/bagua/the-nine-life-areas). Here we are only naming the shape of the system.

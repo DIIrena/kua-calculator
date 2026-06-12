@@ -2,7 +2,7 @@ Most people think feng shui means standing in one room and giving it a label. It
 
 ## Start at the front door, walk in the order qi walks
 
-*Qi* ("energy or breath") enters where you enter. So you start where it starts. Open the front door. Stand on the threshold for a beat. Then walk in.
+<span class="guide-badge guide-badge-traditional">Traditional</span> *Qi* ("energy or breath") enters where you enter. So you start where it starts. Open the front door. Stand on the threshold for a beat. Then walk in.
 
 The **route** is not arbitrary. Door first. Then the room that greets the door, whatever it is. Then the kitchen. Then the bedroom. Then everything else in whatever order the floor plan suggests.
 
@@ -12,17 +12,17 @@ Three rooms carry most of the weight: the entry, the kitchen, and the bedroom. T
 
 A walkthrough is a *route, not a checklist*. You are reading four things in each room.
 
-One. How the light moves through the day. Morning light, midday light, evening light. Where it lands. Where it never reaches.
+One. <span class="guide-badge guide-badge-tested">Tested</span> How the light moves through the day. Morning light, midday light, evening light. Where it lands. Where it never reaches.
 
 Two. What the main seat or bed sees. Sit in it. Look out. Name what is in front of you, behind you, and at the edges.
 
-Three. Whether the main object sits in **command position**. The bed, the sofa, the stove, the desk chair. Can the person using it see the door without turning their head, while not sitting directly in line with it.
+Three. <span class="guide-badge guide-badge-tested">Tested</span> Whether the main object sits in **command position**. The bed, the sofa, the stove, the desk chair. Can the person using it see the door without turning their head, while not sitting directly in line with it.
 
 Four. What the room is being asked to do versus what it is set up for. A bedroom that is also a home office. A dining table that has become a mail sorter. The mismatch is the diagnosis.
 
 ## Take notes as you walk
 
-Take one sentence per room. Photograph the doorway view of each room before you step in.
+<span class="guide-badge guide-badge-preference">Preference</span> Take one sentence per room. Photograph the doorway view of each room before you step in.
 
 Note what surprised you. The thing you stopped noticing years ago is exactly the thing a fresh eye catches.
 
@@ -34,7 +34,7 @@ A walkthrough produces a list. Rank it once the walk is over, not while you are 
 
 The fix that earns **priority** is the one that **compounds**. The entry compounds at every arrival. The kitchen compounds at every meal. The bedroom compounds every night.
 
-One cure placed where it matters does more than five cures stacked in the same corner. Cure anchoring beats cure stacking. Pick the room where one move changes the most, and start there.
+One cure placed where it matters does more than five cures stacked in the same corner. Cure anchoring beats cure stacking. <span class="guide-badge guide-badge-preference">Preference</span> Pick the room where one move changes the most, and start there.
 
 ## Three lenses for the same walk
 

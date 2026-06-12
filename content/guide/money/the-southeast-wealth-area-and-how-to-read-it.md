@@ -6,19 +6,19 @@ The framing for the cluster sits in [feng shui and money without wishful thinkin
 
 ## 1. Element: is anything alive in here
 
-The southeast is **Wood**. Wood is the element of observable growth. The question is not whether you own a plant. The question is whether the plant in this corner is *thriving* or just sitting there. A tired ficus, a leggy pothos, a dusty succulent reads the same as no plant at all. The element language is in [the five elements as a design language](/guide/five-elements/five-elements-as-a-design-language). Wood asks for green that is actually green this week.
+<span class="guide-badge guide-badge-traditional">Traditional</span> The southeast is **Wood**. Wood is the element of observable growth. The question is not whether you own a plant. The question is whether the plant in this corner is *thriving* or just sitting there. A tired ficus, a leggy pothos, a dusty succulent reads the same as no plant at all. The element language is in [the five elements as a design language](/guide/five-elements/five-elements-as-a-design-language). Wood asks for green that is actually green this week.
 
 ## 2. Placement: is the corner reachable
 
-Stand in the room. Walk to the corner. **Can you?** Or is it behind a half-open door, jammed behind a chest of drawers, blocked by a laundry basket, on the path to nowhere? A corner you cannot reach is a corner you cannot tend. A corner you cannot tend stops being a corner and starts being storage.
+<span class="guide-badge guide-badge-tested">Tested</span> Stand in the room. Walk to the corner. **Can you?** Or is it behind a half-open door, jammed behind a chest of drawers, blocked by a laundry basket, on the path to nowhere? A corner you cannot reach is a corner you cannot tend. A corner you cannot tend stops being a corner and starts being storage.
 
 ## 3. Visibility: can you see it on a normal day
 
-Sit where you usually sit. Stand where you usually stand. Does the southeast fall inside your line of sight, or is it in shadow, behind a pile, under a coat thrown over a chair? A corner in shadow is a corner you stop tending. **Visibility** is not decoration; it is the difference between something you notice and something you forget. A corner you cannot see on a normal Tuesday is a corner you will not refresh on a normal Tuesday either.
+<span class="guide-badge guide-badge-tested">Tested</span> Sit where you usually sit. Stand where you usually stand. Does the southeast fall inside your line of sight, or is it in shadow, behind a pile, under a coat thrown over a chair? A corner in shadow is a corner you stop tending. **Visibility** is not decoration; it is the difference between something you notice and something you forget. A corner you cannot see on a normal Tuesday is a corner you will not refresh on a normal Tuesday either.
 
 ## 4. Proportion: one clear thing, not five
 
-Walk back over. Count what is there. A shelf of charms, three plants, a small fountain, a bowl of coins, a citrine cluster, a framed affirmation. That is not care. That is *anxiety wearing the costume of care*. **Proportion** matters. One healthy plant. One clean surface. A lamp that works. The corner is allowed to do one job well. Overload reads as worry.
+Walk back over. Count what is there. A shelf of charms, three plants, a small fountain, a bowl of coins, a citrine cluster, a framed affirmation. That is not care. That is *anxiety wearing the costume of care*. <span class="guide-badge guide-badge-tested">Tested</span> **Proportion** matters. One healthy plant. One clean surface. A lamp that works. The corner is allowed to do one job well. Overload reads as worry.
 
 ## 5. Timing: when did it last get attention
 
@@ -36,7 +36,7 @@ The corner is a signal. The plant is the gauge. If the plant looks tired, the co
 
 One. **Walk to the corner today.** Not to fix it. To see it. Notice what is actually there and what condition it is in.
 
-Two. **Pick the one thing in the corner that needs attention this week.** A dusted shelf. A watered plant. A swapped bulb. One small act of care, repeated weekly, is the whole practice.
+Two. <span class="guide-badge guide-badge-preference">Preference</span> **Pick the one thing in the corner that needs attention this week.** A dusted shelf. A watered plant. A swapped bulb. One small act of care, repeated weekly, is the whole practice.
 
 ## Where to go next
 

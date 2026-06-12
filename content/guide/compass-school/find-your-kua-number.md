@@ -14,15 +14,15 @@ East group's supportive directions are the ones the tradition associates with mo
 
 ## What your four directions are for.
 
-The four favourable directions each carry a job. *Sheng Qi* "generating qi" is the active push direction, the one the tradition points toward for launch seasons and important work. *Tian Yi* "Heavenly Doctor" is the recovery direction, the default headboard for ordinary seasons. *Yan Nian* "long years" is the relationship direction, the one couples are typically pointed toward. *Fu Wei* "sitting in stability," the anchor direction, is the solitary-work direction, for slow and deep tasks.
+<span class="guide-badge guide-badge-traditional">Traditional</span> The four favourable directions each carry a job. *Sheng Qi* "generating qi" is the active push direction, the one the tradition points toward for launch seasons and important work. *Tian Yi* "Heavenly Doctor" is the recovery direction, the default headboard for ordinary seasons. *Yan Nian* "long years" is the relationship direction, the one couples are typically pointed toward. *Fu Wei* "sitting in stability," the anchor direction, is the solitary-work direction, for slow and deep tasks.
 
-The other four have names too: Huo Hai, Wu Gui, Liu Sha, Jue Ming. The tradition treats them as lower-priority placements rather than anything to fear. They are simply the spots you assign last, after the supportive four have homes.
+The other four have names too: Huo Hai, Wu Gui, Liu Sha, Jue Ming. The tradition treats them as lower-priority placements rather than anything to fear. <span class="guide-badge guide-badge-traditional">Traditional</span> They are simply the spots you assign last, after the supportive four have homes.
 
 You do not need to memorise any of this to start. The calculator returns your four supportive directions in everyday words. The names are useful later, when you want to choose between two rooms that otherwise look equivalent.
 
 ## What about a mixed-group household.
 
-About half of all couples are mixed, and the tradition does not ask you to optimise the whole home for one person. The move is to assign functions instead. The shared bedroom can favour one partner's relationship direction, and the tradition points couples toward *Yan Nian*. The home office favours the person who actually uses it. The head-of-household dining seat favours whoever sits there most. *In a shared home you cannot optimise for everyone at once. Pick the main user of each room.*
+About half of all couples are mixed, and the tradition does not ask you to optimise the whole home for one person. <span class="guide-badge guide-badge-traditional">Traditional</span> The move is to assign functions instead. The shared bedroom can favour one partner's relationship direction, and the tradition points couples toward *Yan Nian*. The home office favours the person who actually uses it. The head-of-household dining seat favours whoever sits there most. <span class="guide-badge guide-badge-preference">Preference</span> *In a shared home you cannot optimise for everyone at once. Pick the main user of each room.*
 
 ## Frequently asked questions.
 
