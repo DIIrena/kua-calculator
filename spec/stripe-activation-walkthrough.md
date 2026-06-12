@@ -99,6 +99,24 @@ Switch OFF Test mode (toggle top right) so you are in **Live mode**, then:
      as a printable PDF and a phone calendar file.`
    - Price: `9.00 USD`, `One-time`. Copy the **Price ID**.
 
+## Part F2 - The waitlist early-price code (5 min)
+
+The launch email gives waitlist members a code worth $5 off for 14
+days. Stripe makes this honest automatically: when the coupon
+expires, the code stops working. No fake countdown anywhere.
+
+1. `Product catalog` -> `Coupons` -> `Create coupon`:
+   - Name: `Waitlist launch`
+   - Type: `Fixed amount discount`, `5.00 USD`
+   - Duration: `Once`
+   - `Redemption limits`: check `Add an expiration date` and set it
+     to 14 days after the launch email goes out.
+2. After saving, on the coupon page click `Add promotion code`:
+   - Code: `EARLYLIST`
+3. Done. The checkout page already shows an "Add promotion code"
+   field (wired in the code), so waitlist members type `EARLYLIST`
+   there and see the price drop before paying.
+
 ## Part G - API keys + webhook secret (10 min, hand to Claude)
 
 1. `Developers` -> `API keys` (in Live mode):

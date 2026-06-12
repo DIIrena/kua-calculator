@@ -45,6 +45,11 @@ const PRODUCTS: Record<string, ProductMeta> = {
     title: "Business and Money Feng Shui Kit",
     redirectPath: "/products/business-money-feng-shui",
   },
+  "good-days-calendar-2026": {
+    slug: "good-days-calendar-2026",
+    title: "2026 Good-Days Calendar",
+    redirectPath: "/products/good-days-calendar-2026",
+  },
 };
 
 function buildHtml(siteUrl: string, productTitle: string): string {

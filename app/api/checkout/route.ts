@@ -48,6 +48,11 @@ export async function POST(req: NextRequest) {
       // Stripe Tax: computes and collects where registered. Safe to
       // leave on even before any registration exists.
       automatic_tax: { enabled: true },
+      // Lets waitlist members enter their launch code (e.g. EARLYLIST)
+      // on the payment page. The coupon itself is created in the
+      // Stripe dashboard with a real expiry: a true deadline, not
+      // theater. No code, no discount; the field is unobtrusive.
+      allow_promotion_codes: true,
       success_url: `${SITE}/products/${product.slug}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${SITE}${product.productPath}`,
       metadata: { productSlug: product.slug },

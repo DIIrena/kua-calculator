@@ -26,13 +26,13 @@ type ShelfItem = {
 
 const SHELF: ReadonlyArray<ShelfItem> = [
   {
-    slug: "kua-calculator",
-    href: "/kua-calculator",
-    title: "Kua Number Calculator",
+    slug: "annual-feng-shui-planner-2026",
+    href: "/products/annual-feng-shui-planner-2026",
+    title: "2026 Annual Feng Shui Planner",
     oneLiner:
-      "Your Kua number and your eight personal directions, in ten seconds. Always free.",
-    status: "free",
-    priceLabel: "Free",
+      "98 pages, the 2026 chart, sector treatments, and a 243-day calendar. The whole year in one printable book.",
+    status: "waitlist",
+    priceLabel: "$29",
   },
   {
     slug: "personal-feng-shui-compass",
@@ -44,13 +44,13 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     priceLabel: "$14",
   },
   {
-    slug: "annual-feng-shui-planner-2026",
-    href: "/products/annual-feng-shui-planner-2026",
-    title: "2026 Annual Feng Shui Planner",
+    slug: "good-days-calendar-2026",
+    href: "/products/good-days-calendar-2026",
+    title: "2026 Good-Days Calendar",
     oneLiner:
-      "98 pages, the 2026 chart, sector treatments, and a 243-day calendar. The whole year in one printable book.",
+      "243 days marked Action, Rest, Neutral, or Caution, as a printable PDF and a phone calendar file.",
     status: "waitlist",
-    priceLabel: "$29",
+    priceLabel: "$9",
   },
   {
     slug: "move-in-kit",
@@ -78,6 +78,15 @@ const SHELF: ReadonlyArray<ShelfItem> = [
       "The office, the desk, the wealth corner, the kitchen stove. The practical money-channel reading for your home and business.",
     status: "waitlist",
     priceLabel: "$19 to $29",
+  },
+  {
+    slug: "kua-calculator",
+    href: "/kua-calculator",
+    title: "Kua Number Calculator",
+    oneLiner:
+      "Your Kua number and your eight personal directions, in ten seconds. Always free.",
+    status: "free",
+    priceLabel: "Free",
   },
 ];
 

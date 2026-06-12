@@ -58,7 +58,7 @@ export async function sendChecklist(formData: FormData) {
   const email = String(formData.get("email") ?? "").trim().toLowerCase();
 
   if (!EMAIL_RE.test(email)) {
-    redirect("/?checklist=invalid#what-it-is");
+    redirect("/?checklist=invalid#checklist-heading");
   }
 
   const siteUrl =
@@ -67,7 +67,7 @@ export async function sendChecklist(formData: FormData) {
   const apiKey = process.env.AUTH_RESEND_KEY;
   if (!apiKey) {
     console.error("[lead-magnet] AUTH_RESEND_KEY is not set");
-    redirect("/?checklist=error#what-it-is");
+    redirect("/?checklist=error#checklist-heading");
   }
 
   try {
@@ -88,7 +88,7 @@ export async function sendChecklist(formData: FormData) {
     if (!res.ok) {
       const body = await res.text();
       console.error("[lead-magnet] Resend error:", res.status, body.slice(0, 200));
-      redirect("/?checklist=error#what-it-is");
+      redirect("/?checklist=error#checklist-heading");
     }
   } catch (err) {
     // Next.js redirect() throws a special error; rethrow it so the
@@ -97,8 +97,8 @@ export async function sendChecklist(formData: FormData) {
       throw err;
     }
     console.error("[lead-magnet] send threw:", err);
-    redirect("/?checklist=error#what-it-is");
+    redirect("/?checklist=error#checklist-heading");
   }
 
-  redirect("/?checklist=sent#what-it-is");
+  redirect("/?checklist=sent#checklist-heading");
 }
