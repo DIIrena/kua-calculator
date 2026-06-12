@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GUIDE_CLUSTERS, pagesInCluster } from "@/lib/guide";
+import GuideReadState from "@/components/GuideReadState";
 
 export const metadata: Metadata = {
   title: "The Ultimate Feng Shui Guide | My Feng Shui Home",
@@ -228,6 +229,7 @@ export default function GuideIndexPage() {
         that matches what you came here for, or browse the whole
         library further down.
       </p>
+      <GuideReadState mode="summary" total={38} />
 
       <section
         className="guide-intent-paths"

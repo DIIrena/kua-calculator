@@ -9,6 +9,7 @@ import {
   renderGuidePage,
 } from "@/lib/guide";
 import AuthorByline from "@/components/AuthorByline";
+import GuideReadState from "@/components/GuideReadState";
 
 type Params = Promise<{ cluster: string; slug: string }>;
 
@@ -158,7 +159,57 @@ export default async function GuidePage(props: { params: Params }) {
               </p>
             </aside>
           ) : null}
+          {(() => {
+            // Prev/next within the cluster, in registry order, so the
+            // 38 pages read like a course rather than a pile.
+            const siblings = GUIDE_PAGES.filter(
+              (p) => p.cluster === cluster,
+            );
+            const i = siblings.findIndex((p) => p.slug === page.slug);
+            const prev = i > 0 ? siblings[i - 1] : null;
+            const next =
+              i >= 0 && i < siblings.length - 1 ? siblings[i + 1] : null;
+            if (!prev && !next) return null;
+            return (
+              <nav
+                className="guide-prev-next"
+                aria-label="Previous and next page in this section"
+              >
+                {prev ? (
+                  <Link
+                    href={`/guide/${cluster}/${prev.slug}`}
+                    className="guide-prev-next-link guide-prev-link"
+                  >
+                    <span className="guide-prev-next-label">
+                      &larr; Previous
+                    </span>
+                    <span className="guide-prev-next-title">
+                      {prev.title}
+                    </span>
+                  </Link>
+                ) : (
+                  <span aria-hidden="true" />
+                )}
+                {next ? (
+                  <Link
+                    href={`/guide/${cluster}/${next.slug}`}
+                    className="guide-prev-next-link guide-next-link"
+                  >
+                    <span className="guide-prev-next-label">
+                      Next &rarr;
+                    </span>
+                    <span className="guide-prev-next-title">
+                      {next.title}
+                    </span>
+                  </Link>
+                ) : (
+                  <span aria-hidden="true" />
+                )}
+              </nav>
+            );
+          })()}
           <AuthorByline />
+          <GuideReadState mode="track" slug={`${cluster}/${page.slug}`} />
         </>
       )}
 
