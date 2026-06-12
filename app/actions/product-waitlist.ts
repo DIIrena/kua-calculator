@@ -32,7 +32,7 @@ const PRODUCTS: Record<string, ProductMeta> = {
   },
   "move-in-kit": {
     slug: "move-in-kit",
-    title: "Move-In Date Selection and Home Activation Kit",
+    title: "Move-In Date Selection + Activation Kit",
     redirectPath: "/products/move-in-kit",
   },
   "bedroom-reset": {
@@ -119,7 +119,7 @@ function buildHtmlPlanner(siteUrl: string): string {
           </td></tr>
           <tr><td>
             <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#0e3b2c;">You are on the list.</h1>
-            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">Thank you for joining the waitlist for the <strong>2026 Annual Feng Shui Planner</strong>. When checkout goes live (we are waiting on the bank account to clear so live payments can be wired up), we email you the launch page and the early price at this address.</p>
+            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">Thank you for your interest in the <strong>2026 Annual Feng Shui Planner</strong>. Good news: checkout is open and the Planner is available now. The button below takes you straight to the product page.</p>
             <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;font-style:italic;color:#0e3b2c;">Picture the kettle doing its quiet steaming. You sit with the planner on the table, find your front door on the chart, find the south corner, find the one room the year asks you to leave a little alone, and you know where to start. The planner does that work for the whole solar year, room by room and month by month.</p>
             <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">The 2027 edition follows in January 2027 as a full twelve-month book. As a 2026 buyer you receive a <strong>30 percent renewal offer</strong> when it ships.</p>
             <p style="margin:24px 0 0;text-align:center;">
@@ -127,7 +127,7 @@ function buildHtmlPlanner(siteUrl: string): string {
             </p>
           </td></tr>
           <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#4f5b53;border-top:1px solid #e2dac5;">
-            You receive this confirmation now, one sample-page note about a week later, and a launch email when checkout opens. You can unsubscribe any time. If you signed up by mistake, ignore this email and we will not contact you again.
+            You can unsubscribe any time. If you signed up by mistake, ignore this email and we will not contact you again.
           </td></tr>
         </table>
         <div style="font-size:12px;color:#4f5b53;padding-top:14px;">
@@ -139,13 +139,14 @@ function buildHtmlPlanner(siteUrl: string): string {
 </html>`;
 }
 
-function buildTextPlanner(): string {
+function buildTextPlanner(siteUrl: string): string {
+  const root = siteUrl.replace(/\/$/, "");
   return `You are on the list.
 
-Thank you for joining the waitlist for the 2026 Annual Feng Shui
-Planner. When checkout goes live (we are waiting on the bank
-account to clear so live payments can be wired up), we email
-you the launch page and the early price at this address.
+Thank you for your interest in the 2026 Annual Feng Shui Planner.
+Good news: checkout is open and the Planner is available now.
+Open the product page here:
+${root}/products/annual-feng-shui-planner-2026
 
 Picture the kettle doing its quiet steaming. You sit with the
 planner on the table, find your front door on the chart, find the
@@ -157,9 +158,7 @@ The 2027 edition follows in January 2027 as a full twelve-month
 book. As a 2026 buyer you receive a 30 percent renewal offer when
 it ships.
 
-You receive this confirmation now, one sample-page note about a
-week later, and a launch email when checkout opens. You can
-unsubscribe any time.
+You can unsubscribe any time.
 
 My Feng Shui Home - myfengshuihome.com`;
 }
@@ -220,7 +219,9 @@ export async function joinProductWaitlist(formData: FormData) {
   const html = isPlanner
     ? buildHtmlPlanner(siteUrl)
     : buildHtml(siteUrl, product.title);
-  const text = isPlanner ? buildTextPlanner() : buildText(product.title);
+  const text = isPlanner
+    ? buildTextPlanner(siteUrl)
+    : buildText(product.title);
 
   try {
     const res = await fetch("https://api.resend.com/emails", {

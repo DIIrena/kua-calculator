@@ -117,8 +117,9 @@ export default async function MoveInKitPage(props: {
             your Kua details. We compute the day-by-day reading.
           </li>
           <li>
-            The PDF is emailed to you and stored on your account
-            dashboard. Print it, mark it up, use it.
+            The PDF is emailed to you with a download link; reply to
+            the delivery email any time for a fresh one. Print it,
+            mark it up, use it.
           </li>
         </ol>
       </section>

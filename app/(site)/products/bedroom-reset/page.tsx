@@ -123,8 +123,8 @@ export default async function BedroomResetPage(props: {
             form asks for the second Kua too.
           </li>
           <li>
-            The PDF is emailed to you and stored on your account
-            dashboard.
+            The PDF is emailed to you with a download link; reply to
+            the delivery email any time for a fresh one.
           </li>
         </ol>
       </section>

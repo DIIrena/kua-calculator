@@ -68,7 +68,7 @@ const FAQ: Array<{ q: string; a: string }> = [
   },
   {
     q: "What is the Personal Feng Shui Compass?",
-    a: "It is a personalised PDF keyed to your Kua number. It reads your East or West group, your four supportive directions and your four cautious directions, with traditional placements for the bed, the desk, and the dining seat, plus a seven-day experiment. It is personalised to your direction profile, the eight directions that follow from your Kua, not to your floor plan. Fourteen dollars, one-time, no subscription.",
+    a: "It is a personalised PDF keyed to your Kua number. It reads your East or West group, your four supportive directions and your four cautious directions, with traditional placements for the bed, the desk, and the dining seat, plus a seven-day experiment. It is personalised to your direction profile, the eight directions that follow from your Kua, not to your floor plan. $14 at launch, one-time, no subscription. The Compass is currently on its waitlist; checkout opens shortly.",
   },
   {
     q: "What about Western feng shui versus Classical feng shui?",
@@ -333,50 +333,41 @@ export default async function HomePage(props: {
           </p>
           <div className="map-offer-grid">
             <div className="map-offer-text">
-              <h3>The Personal Feng Shui Compass</h3>
+              <h3>The 2026 Annual Feng Shui Planner</h3>
               <p>
-                One personalised PDF, keyed to <em>your</em> Kua number. It
-                reads your East or West group, your four supportive directions
-                and your four cautious directions, with traditional placements
-                and a seven-day experiment.
+                Ninety-eight pages reading the feng shui year for your home.
+                The 2026 annual chart explained, a treatment for each of the
+                nine sectors, and a day-by-day calendar covering 243 days from
+                July 2026 to February 2027. Delivered by email within minutes
+                as a PDF, an EPUB, and a phone calendar file.
               </p>
               <ul className="map-offer-bullets">
+                <li>The 2026 annual chart, explained sector by sector</li>
                 <li>
-                  Your Kua profile and a bagua chart of the eight directions,
-                  keyed to <em>your</em> number
+                  Nine sector treatments: what to do, what to skip, and what is
+                  traditional in each
                 </li>
                 <li>
-                  Your four supportive directions (Sheng Qi, Tian Yi, Yan Nian,
-                  Fu Wei), each read for your Kua
+                  The 243-day day-by-day calendar, July 2026 to February 2027
                 </li>
-                <li>
-                  Your four cautious directions framed as lower-priority
-                  placements, not curses
-                </li>
-                <li>
-                  Traditional placements for the <strong>bed</strong>, the{" "}
-                  <strong>desk</strong>, and the <strong>dining seat</strong>
-                </li>
-                <li>
-                  A seven-day experiment: one move to try, then leave for a week
-                  and notice
-                </li>
+                <li>The ten-step home walkthrough for the year ahead</li>
+                <li>Instant delivery, 7-day refund</li>
               </ul>
             </div>
             <aside className="map-offer-price-card" aria-label="Price">
-              <p className="map-offer-price-eyebrow">The Personal Feng Shui Compass</p>
-              <p className="map-offer-price-amount">$14</p>
+              <p className="map-offer-price-eyebrow">The 2026 Annual Feng Shui Planner</p>
+              <p className="map-offer-price-amount">$29</p>
               <p className="map-offer-price-suffix">
-                one-time, no subscription
+                Available now. One-time, no subscription.
               </p>
               <Link
-                href="/products/personal-feng-shui-compass"
+                href="/products/annual-feng-shui-planner-2026"
                 className="cta-primary"
               >
-                See the full details
+                Get the Planner
               </Link>
               <p className="map-offer-price-note">
-                Personalised PDF. Printable. Yours to keep.
+                PDF + EPUB + phone calendar file. Yours to keep.
               </p>
             </aside>
           </div>
@@ -384,7 +375,7 @@ export default async function HomePage(props: {
           <div className="map-offer-shelf-teaser">
             <p>
               Also on the shelf: the{" "}
-              <strong>2026 Annual Feng Shui Planner</strong>, the{" "}
+              <strong>Personal Feng Shui Compass</strong> (waitlist), the{" "}
               <strong>Move-In Kit</strong>, the{" "}
               <strong>Bedroom and Relationship Reset</strong>, and the{" "}
               <strong>Business and Money Kit</strong>. Each is its own

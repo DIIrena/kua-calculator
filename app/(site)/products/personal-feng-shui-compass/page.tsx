@@ -144,8 +144,8 @@ export default async function PersonalFengShuiCompassPage(props: {
           </li>
           <li>
             Within about a minute, the PDF is generated and emailed to
-            you. A copy stays on your account dashboard so you can
-            re-download it any time.
+            you with a download link. Reply to the delivery email any
+            time for a fresh one.
           </li>
         </ol>
       </section>

@@ -30,7 +30,7 @@ If you are renting, travelling, or want a simpler first pass, the **front-door**
 
 Pick one. Stick with it. Switching methods mid-walk is the most common beginner mistake, and the fastest way to end up with a map that contradicts itself. If you start with the front-door method and later want the compass method, run the whole reading again from scratch.
 
-Compass-method readers usually want their personal directions next. That is [find your kua number](/guide/compass-school/find-your-kua-number).
+Compass-method readers usually want their personal directions next. That is covered in [What your Kua number means](/guide/compass-school/find-your-kua-number).
 
 ## What both methods agree on.
 

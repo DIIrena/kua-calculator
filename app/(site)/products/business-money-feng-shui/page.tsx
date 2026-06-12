@@ -124,8 +124,8 @@ export default async function MoneyKitPage(props: {
             personal directions.
           </li>
           <li>
-            The Kit is emailed to you and stored on your account
-            dashboard.
+            The Kit is emailed to you with a download link; reply to
+            the delivery email any time for a fresh one.
           </li>
         </ol>
       </section>

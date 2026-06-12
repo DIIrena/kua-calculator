@@ -36,6 +36,11 @@ export type CommerceProduct = {
   recipeSlug?: string;
   /** The product landing page, used for checkout cancel_url. */
   productPath: string;
+  /** Whether checkout is open for this product. /api/checkout refuses
+   *  to create a session for unlaunched products. Flipping a product
+   *  live = set launched true AND set its page BuyButton to
+   *  stripe-live. */
+  launched: boolean;
 };
 
 export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
@@ -61,6 +66,7 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
       },
     ],
     productPath: "/products/annual-feng-shui-planner-2026",
+    launched: true,
   },
   "personal-feng-shui-compass": {
     slug: "personal-feng-shui-compass",
@@ -71,6 +77,7 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
     fulfillment: "personalized",
     recipeSlug: "personal-compass",
     productPath: "/products/personal-feng-shui-compass",
+    launched: false,
   },
   "good-days-calendar-2026": {
     slug: "good-days-calendar-2026",
@@ -90,6 +97,7 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
       },
     ],
     productPath: "/products/good-days-calendar-2026",
+    launched: false,
   },
 };
 

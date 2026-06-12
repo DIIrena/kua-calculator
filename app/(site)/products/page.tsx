@@ -119,7 +119,14 @@ function statusBadge(item: ShelfItem): React.ReactNode {
   );
 }
 
-export default function ProductsPage() {
+export default async function ProductsPage(props: {
+  searchParams: Promise<{ checkout?: string }>;
+}) {
+  const { checkout } = await props.searchParams;
+  const checkoutStatus =
+    checkout === "error" || checkout === "cancelled"
+      ? (checkout as "error" | "cancelled")
+      : null;
   return (
     <div className="page-content products-page">
       <section className="products-hero">
@@ -138,6 +145,19 @@ export default function ProductsPage() {
       </section>
 
       <section className="products-shelf" aria-label="Product list">
+        {checkoutStatus === "error" ? (
+          <p
+            className="buy-button-status buy-button-status-err"
+            role="alert"
+          >
+            Something went wrong on our end. You were not charged. Try
+            again in a minute, or email hello@myfengshuihome.com.
+          </p>
+        ) : checkoutStatus === "cancelled" ? (
+          <p className="lead-magnet-status" role="status">
+            Checkout cancelled. Nothing was charged.
+          </p>
+        ) : null}
         <ul className="products-grid">
           {SHELF.map((item) => (
             <li key={item.slug} className="product-shelf-card">
@@ -182,9 +202,10 @@ export default function ProductsPage() {
           others.
         </p>
         <p>
-          Launching 2026 - waitlist members get the early price. Join
-          the list for any product and we email you the launch page
-          the day checkout opens. You can unsubscribe any time.
+          The 2026 Planner is available now. The rest of the shelf
+          launches through 2026 - waitlist members get the early price
+          and an email the day each checkout opens. You can
+          unsubscribe any time.
         </p>
       </section>
     </div>

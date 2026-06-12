@@ -22,4 +22,4 @@ It is not a horoscope. It will not predict your year. It will not tell you what 
 
 If you want the shortest practical entry point, [find your Kua number](/kua-calculator) - it takes ten seconds and tells you which four directions in your home traditionally support you and which the tradition asks you to handle with care.
 
-If you would rather read a little more first, the rest of this Foundations cluster is being written. Check back as we land each page.
+If you would rather read a little more first, [What your Kua number means](/guide/compass-school/find-your-kua-number) explains what the calculator returns: your East or West group and the four directions, each with a job you can name.

@@ -51,7 +51,7 @@ In order of leverage: bed, chair, door.
   <line x1="282" y1="212" x2="330" y2="164" stroke="#4f5b53" stroke-width="3" marker-end="url(#ori-arrow-ink)"/>
   <g font-family="inherit" font-size="14" font-weight="600" text-anchor="start">
     <text x="254" y="336" fill="#0e3b2c">Facing</text>
-    <text x="254" y="158" fill="#d9531a">Sitting</text>
+    <text x="254" y="158" fill="#7a3208">Sitting</text>
     <text x="320" y="206" fill="#4f5b53">Personal</text>
   </g>
 </svg>

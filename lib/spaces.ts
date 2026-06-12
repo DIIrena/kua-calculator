@@ -174,7 +174,7 @@ export const SPACES: ReadonlyArray<SpaceMeta> = [
       },
       {
         title: "Add one piece of running water if you have outdoor space.",
-        body: "A small fountain, a bird-bath that drips, a wind-spinner that catches the breeze. Gentle motion at the boundary is one of the most consistent traditional cures, and the design literature agrees that water sounds reduce indoor stress.",
+        body: "A small fountain, a bird-bath that drips, a wind-spinner that catches the breeze. Gentle motion at the boundary is one of the most consistent traditional cures, and many people find water sounds calming.",
       },
     ],
     mapPitch:

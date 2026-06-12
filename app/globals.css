@@ -252,6 +252,7 @@ a:hover { color: var(--clay-deep); }
 .footer-links {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-3) var(--space-5);
   margin: var(--space-3) 0 var(--space-4) 0;
   font-size: 0.92rem;
@@ -764,6 +765,8 @@ a:hover { color: var(--clay-deep); }
 }
 
 .cny-notice[hidden] { display: none; }
+
+.post-result-stack[hidden] { display: none; }
 
 .result-subhead {
   margin: var(--space-6) 0 var(--space-4) 0;
@@ -5452,7 +5455,7 @@ a:hover { color: var(--clay-deep); }
 
 .buy-button-status-err {
   background: var(--clay-soft, #f8d8c5);
-  color: var(--clay-deep, #8e4b2a);
+  color: #7a3208;
 }
 
 /* --- Homepage shelf teaser inside the offer section --- */
@@ -6277,7 +6280,6 @@ a:hover { color: var(--clay-deep); }
   text-decoration: underline;
   text-underline-offset: 3px;
   font-weight: 600;
-  white-space: nowrap;
 }
 
 .home-credibility a:hover,

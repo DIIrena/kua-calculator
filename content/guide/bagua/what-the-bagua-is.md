@@ -38,7 +38,7 @@ If feng shui itself is still new to you, the short framing on [what feng shui is
       <text x="240" y="402">N</text>
       <text x="384" y="402">NW</text>
     </g>
-    <text x="240" y="247" fill="#d9531a" font-size="18" font-weight="600">Centre</text>
+    <text x="240" y="247" fill="#7a3208" font-size="18" font-weight="600">Centre</text>
   </g>
 </svg>
 <figcaption>The whole tool at a glance: eight directional sectors around a centre, drawn with south at the top in the traditional way.</figcaption>

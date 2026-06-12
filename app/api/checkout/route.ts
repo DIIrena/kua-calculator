@@ -29,6 +29,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.redirect(`${SITE}/products?checkout=error`, 303);
   }
 
+  // A registry entry can exist before its checkout opens (waitlist
+  // pages, replayed form posts). Never create a session for an
+  // unlaunched product; send the visitor to its product page.
+  if (!product.launched) {
+    return NextResponse.redirect(`${SITE}${product.productPath}`, 303);
+  }
+
   const stripe = getStripe();
   const priceId = stripePriceId(product);
   if (!stripe || !priceId) {
@@ -54,7 +61,7 @@ export async function POST(req: NextRequest) {
     // theater. No code, no discount; the field is unobtrusive.
     allow_promotion_codes: true,
     success_url: `${SITE}/products/${product.slug}/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${SITE}${product.productPath}`,
+    cancel_url: `${SITE}${product.productPath}?checkout=cancelled`,
     metadata: { productSlug: product.slug },
     // EU digital-content withdrawal waiver: consent to immediate
     // delivery shown on the payment page itself.

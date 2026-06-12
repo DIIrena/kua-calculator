@@ -36,7 +36,7 @@ const INTENT_PATHS: ReadonlyArray<IntentPath> = [
       {
         href: "/guide/foundations/what-feng-shui-is-plainly",
         label: "What feng shui actually is",
-        note: "The two-minute baseline. What the practice does, what it refuses to do.",
+        note: "The three-minute baseline. What the practice does, what it refuses to do.",
       },
       {
         href: "/kua-calculator",
@@ -50,8 +50,8 @@ const INTENT_PATHS: ReadonlyArray<IntentPath> = [
       },
       {
         href: "/methodology",
-        label: "How this guide is written",
-        note: "The editorial stance: practitioner voice, no outcome promises, sources named.",
+        label: "The Compass School methodology",
+        note: "The deep dive behind the Kua system: how the calculation works and what the tradition claims.",
       },
     ],
   },
@@ -83,7 +83,7 @@ const INTENT_PATHS: ReadonlyArray<IntentPath> = [
       },
       {
         href: "/guide/rooms/bathrooms-storage-problem-rooms",
-        label: "Bathrooms, storage, and the awkward rooms",
+        label: "Bathrooms, storage, and problem rooms",
         note: "The rooms most people apologise for, read carefully.",
       },
     ],
@@ -177,7 +177,7 @@ const INTENT_PATHS: ReadonlyArray<IntentPath> = [
       },
       {
         href: "/guide/rooms/bathrooms-storage-problem-rooms",
-        label: "Bathrooms, storage, and the awkward rooms",
+        label: "Bathrooms, storage, and problem rooms",
         note: "The rooms most worth reading carefully.",
       },
       {

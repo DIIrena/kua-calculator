@@ -130,7 +130,7 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     label: "Cures",
     tagline: "Cures as practical adjustments, read through six levers.",
     description:
-      "Four pages on cures as practical adjustments, not magic objects. What a cure actually is, the five-element cure per room, the five cure families, and the rule that decides what rotates each year vs what stays put.",
+      "Four pages on cures as practical adjustments, not magic objects. What a cure actually is, the five-element cure per room, the six cure families, and the rule that decides what rotates each year vs what stays put.",
     order: 7,
     sourceChapters: ["09"],
   },
@@ -178,9 +178,9 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
     slug: "what-feng-shui-is-plainly",
     title: "What feng shui is - and what it is not",
     description:
-      "A two-minute, jargon-free read on what feng shui is, what it isn't, and the small idea the rest of the guide depends on.",
+      "A three-minute read on what feng shui is, what it isn't, and the small idea the rest of the guide depends on.",
     teaser:
-      "The two-minute version, before the rest of the guide. No jargon. No outcome promises.",
+      "The three-minute version, before the rest of the guide. No jargon. No outcome promises.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "3 minutes",
@@ -683,9 +683,9 @@ export async function renderGuidePage(
   const file = await unified()
     .use(remarkParse)
     .use(remarkGfm)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeSlug)
-    .use(rehypeStringify)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(source);
 
   return String(file);

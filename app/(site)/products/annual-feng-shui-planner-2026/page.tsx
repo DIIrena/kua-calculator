@@ -26,7 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-type SearchParams = Promise<{ waitlist?: string; from?: string }>;
+type SearchParams = Promise<{
+  waitlist?: string;
+  from?: string;
+  checkout?: string;
+}>;
 
 // Referrers we want to measure on the planner page. A visitor arriving
 // with one of these in ?from records a planner_source_visit event. The
@@ -79,10 +83,14 @@ const PLANNER_FAQ: ReadonlyArray<{ q: string; a: string }> = [
 export default async function PlannerPage(props: {
   searchParams: SearchParams;
 }) {
-  const { waitlist, from } = await props.searchParams;
+  const { waitlist, from, checkout } = await props.searchParams;
   const status =
     waitlist === "sent" || waitlist === "invalid" || waitlist === "error"
       ? (waitlist as "sent" | "invalid" | "error")
+      : null;
+  const checkoutStatus =
+    checkout === "error" || checkout === "cancelled"
+      ? (checkout as "error" | "cancelled")
       : null;
   const plannerSource = from && KNOWN_SOURCES.includes(from) ? from : null;
 
@@ -193,6 +201,19 @@ export default async function PlannerPage(props: {
           $29, one-time. Instant delivery: PDF, EPUB, and the phone
           calendar file.
         </p>
+        {checkoutStatus === "error" ? (
+          <p
+            className="buy-button-status buy-button-status-err"
+            role="alert"
+          >
+            Something went wrong on our end. You were not charged. Try
+            again in a minute, or email hello@myfengshuihome.com.
+          </p>
+        ) : checkoutStatus === "cancelled" ? (
+          <p className="lead-magnet-status" role="status">
+            Checkout cancelled. Nothing was charged.
+          </p>
+        ) : null}
         <BuyButton
           productSlug="annual-feng-shui-planner-2026"
           priceLabel="$29"

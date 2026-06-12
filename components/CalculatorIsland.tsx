@@ -300,8 +300,8 @@ export default function CalculatorIsland({
           </h3>
           <p className="post-result-card-body">
             Your number sorts you into the East or West group and gives
-            you four supportive directions. The guide page walks what
-            each one is for.
+            you four supportive directions. The guide page walks through
+            what each one is for.
           </p>
           <p className="post-result-card-actions">
             <a

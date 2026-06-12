@@ -1,10 +1,8 @@
-Your Kua number is a single digit between 1 and 9, skipping 5. It comes from your birth year and your gender at birth. The calculator handles 5 separately, so you do not have to think about it.
+Your Kua number is a single digit between 1 and 9, skipping 5. It comes from your birth year and your gender at birth. That is the whole input. The calculator handles 5 separately, so you do not have to think about it.
 
 What the number does is small and useful. It sorts you into one of two groups, and each group has four directions the tradition reads as supportive and four it asks you to handle with care.
 
 If you have ten seconds, [find your Kua number](/kua-calculator). It returns the four directions the tradition reads as supportive for you, and the four it asks you to handle with care.
-
-That is the whole input.
 
 ## East group and West group.
 
@@ -14,7 +12,7 @@ East group's supportive directions are the ones the tradition associates with mo
 
 ## What your four directions are for.
 
-<span class="guide-badge guide-badge-traditional">Traditional</span> The four favourable directions each carry a job. *Sheng Qi* "generating qi" is the active push direction, the one the tradition points toward for launch seasons and important work. *Tian Yi* "Heavenly Doctor" is the recovery direction, the default headboard for ordinary seasons. *Yan Nian* "long years" is the relationship direction, the one couples are typically pointed toward. *Fu Wei* "sitting in stability," the anchor direction, is the solitary-work direction, for slow and deep tasks.
+<span class="guide-badge guide-badge-traditional">Traditional</span> The four favourable directions each carry a job. *Sheng Qi* "generating qi" is the active push direction, the one the tradition points toward for launch seasons and important work. *Tian Yi* "Heavenly Doctor" is the recovery direction, the default headboard for ordinary seasons. *Yan Nian* "long years" is the relationship direction, the one couples are typically pointed toward. *Fu Wei* "sitting in stability" is the solitary-work direction, for slow and deep tasks.
 
 The other four have names too: Huo Hai, Wu Gui, Liu Sha, Jue Ming. The tradition treats them as lower-priority placements rather than anything to fear. <span class="guide-badge guide-badge-traditional">Traditional</span> They are simply the spots you assign last, after the supportive four have homes.
 

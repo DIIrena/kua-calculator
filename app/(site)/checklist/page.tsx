@@ -72,7 +72,7 @@ const QUESTIONS: ReadonlyArray<{ q: string; meaning: string }> = [
   {
     q: "Is your wallet tidy, with no expired cards or crumpled receipts?",
     meaning:
-      "Chapter 18 of the source material puts the wallet in the wealth chain. Modern reading: wallet hygiene is one of the smallest measurable changes that shifts how you think about money.",
+      "The tradition reads the wallet as the personal wealth corner: a cared-for wallet is the same signal as a cared-for southeast corner. Modern reading: wallet hygiene is one of the smallest measurable changes that shifts how you think about money.",
   },
   {
     q: "Does the centre of your home have something heavy, dirty, or chaotic in it?",

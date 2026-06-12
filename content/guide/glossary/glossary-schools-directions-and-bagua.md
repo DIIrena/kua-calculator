@@ -30,7 +30,7 @@ This page is the rescue map for school lineages, directional terminology, and th
 
 **Kan.** *Kan, the water trigram.* Middle solid, top and bottom broken. Mapped to north, Water, middle son, and the life area of career and life path. See [the trigrams and life areas](/guide/bagua/the-nine-life-areas).
 
-**Kua Number.** *Gua shu, "trigram number".* A single-digit personal number from 1 to 9, excluding 5, calculated from birth year and sex. It sorts a person into the East or West group and names four favourable personal directions for sleeping, sitting, and facing. See [find your Kua number](/guide/compass-school/find-your-kua-number).
+**Kua Number.** *Gua shu, "trigram number".* A single-digit personal number from 1 to 9, excluding 5, calculated from birth year and sex. It sorts a person into the East or West group and names four favourable personal directions for sleeping, sitting, and facing. See [What your Kua number means](/guide/compass-school/find-your-kua-number).
 
 **Kun.** *Kun, the earth trigram.* Three broken lines. Mapped to southwest, Earth, mother, and the life area of relationships. The most yin trigram. See [the trigrams and life areas](/guide/bagua/the-nine-life-areas).
 

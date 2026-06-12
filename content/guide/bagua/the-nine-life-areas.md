@@ -40,7 +40,7 @@ Now the walk, starting in the south and turning clockwise through the corners.
       <text x="240" y="402">N</text>
       <text x="384" y="402">NW</text>
     </g>
-    <text x="240" y="232" fill="#d9531a" font-size="17" font-weight="600">Health</text>
+    <text x="240" y="232" fill="#7a3208" font-size="17" font-weight="600">Health</text>
     <text x="240" y="256" fill="#4f5b53" font-size="13">Centre</text>
   </g>
 </svg>
