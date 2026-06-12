@@ -41,30 +41,53 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  try {
-    const session = await stripe.checkout.sessions.create({
-      mode: "payment",
-      line_items: [{ price: priceId, quantity: 1 }],
-      // Stripe Tax: computes and collects where registered. Safe to
-      // leave on even before any registration exists.
-      automatic_tax: { enabled: true },
-      // Lets waitlist members enter their launch code (e.g. EARLYLIST)
-      // on the payment page. The coupon itself is created in the
-      // Stripe dashboard with a real expiry: a true deadline, not
-      // theater. No code, no discount; the field is unobtrusive.
-      allow_promotion_codes: true,
-      success_url: `${SITE}/products/${product.slug}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${SITE}${product.productPath}`,
-      metadata: { productSlug: product.slug },
-      // EU digital-content withdrawal waiver: consent to immediate
-      // delivery shown on the payment page itself.
-      custom_text: {
-        submit: {
-          message:
-            "Digital download, delivered immediately by email. By purchasing you agree to immediate delivery and waive the EU 14-day withdrawal right. 7-day refund policy applies either way.",
-        },
+  const sessionParams = (withTax: boolean) => ({
+    mode: "payment" as const,
+    line_items: [{ price: priceId, quantity: 1 }],
+    // Stripe Tax: computes and collects where registered. Requires a
+    // head-office address in the dashboard tax settings; see the
+    // fallback below for when that is not configured yet.
+    automatic_tax: { enabled: withTax },
+    // Lets waitlist members enter their launch code (e.g. EARLYLIST)
+    // on the payment page. The coupon itself is created in the
+    // Stripe dashboard with a real expiry: a true deadline, not
+    // theater. No code, no discount; the field is unobtrusive.
+    allow_promotion_codes: true,
+    success_url: `${SITE}/products/${product.slug}/success?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${SITE}${product.productPath}`,
+    metadata: { productSlug: product.slug },
+    // EU digital-content withdrawal waiver: consent to immediate
+    // delivery shown on the payment page itself.
+    custom_text: {
+      submit: {
+        message:
+          "Digital download, delivered immediately by email. By purchasing you agree to immediate delivery and waive the EU 14-day withdrawal right. 7-day refund policy applies either way.",
       },
-    });
+    },
+  });
+
+  try {
+    let session;
+    try {
+      session = await stripe.checkout.sessions.create(sessionParams(true));
+    } catch (err) {
+      // Stripe rejects sessions with automatic tax until a head-office
+      // address is set in the dashboard tax settings. A tax-settings
+      // gap must never block a sale: retry once without automatic tax
+      // and log loudly so the configuration gets fixed.
+      const msg = err instanceof Error ? err.message : String(err);
+      if (/automatic tax|head office|origin address/i.test(msg)) {
+        console.error(
+          "[checkout] automatic tax not configured; retrying without it:",
+          msg,
+        );
+        session = await stripe.checkout.sessions.create(
+          sessionParams(false),
+        );
+      } else {
+        throw err;
+      }
+    }
 
     if (!session.url) {
       throw new Error("Checkout session has no URL");
