@@ -6290,6 +6290,17 @@ a:hover { color: var(--clay-deep); }
    personalisation form) and the refunds page.
    ============================================================ */
 
+/* The big thank-you on the post-purchase page. Roughly 3x the old
+   eyebrow size, display weight, brand green. */
+.success-thankyou {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 2.8rem);
+  line-height: 1.1;
+  color: var(--green);
+  margin: 0 0 var(--space-3) 0;
+}
+
 .success-download-list {
   list-style: none;
   padding: 0;

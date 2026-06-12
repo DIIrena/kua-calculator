@@ -106,7 +106,7 @@ export default async function SuccessPage(props: {
     return (
       <div className="page-content product-page">
         <section className="product-hero">
-          <p className="eyebrow">Thank you</p>
+          <p className="success-thankyou">Thank you.</p>
           <h1 className="product-heading">
             Your {product.shortTitle} is ready.
           </h1>
@@ -147,7 +147,7 @@ export default async function SuccessPage(props: {
   return (
     <div className="page-content product-page">
       <section className="product-hero">
-        <p className="eyebrow">Thank you</p>
+        <p className="success-thankyou">Thank you.</p>
         <h1 className="product-heading">
           One step left: personalise your {product.shortTitle}.
         </h1>
