@@ -838,6 +838,59 @@
       "priority": 53,
       "passes": false,
       "notes": ""
+    },
+    {
+      "id": "PROD-004",
+      "title": "Bedroom and Relationship Reset (build + page)",
+      "description": "Wave 2. Static PDF (25-35pp, all-9-Kua bed-direction lookup) drafted from the internal library, built on the planner Pandoc pipeline. Update the existing bedroom-reset page to match the real artifact, add commerce entry (launched:false), sample images.",
+      "acceptanceCriteria": [
+        "PDF builds clean, ASCII-enforced, page count in band",
+        "Voice sweeps pass (no outcome promises, no source mentions, no em dashes)",
+        "Kua direction tables verified against Eight Mansions standards",
+        "commerce.ts entry + page updated + npm run build clean"
+      ],
+      "passes": true
+    },
+    {
+      "id": "PROD-005",
+      "title": "Business and Money Feng Shui Kit (build + page)",
+      "description": "Wave 2. Static PDF (30-40pp, all-9-Kua desk-facing table, six-lever wealth corner walkthrough). Update existing business-money-feng-shui page, commerce entry.",
+      "acceptanceCriteria": [
+        "Same bar as PROD-004",
+        "No income/financial-outcome language; not-financial-advice line present"
+      ],
+      "passes": true
+    },
+    {
+      "id": "PROD-006",
+      "title": "10-Step Home Diagnostic Workbook (build + new page)",
+      "description": "Wave 2. Fill-in workbook (25-30pp, worksheet spreads, 90-day re-evaluation). NEW product page + waitlist slug + shelf + sitemap.",
+      "acceptanceCriteria": [
+        "Worksheets render usable in print rasters",
+        "New page live with waitlist BuyButton; slug registered",
+        "Same voice bar"
+      ],
+      "passes": true
+    },
+    {
+      "id": "PROD-007",
+      "title": "Daily Ritual + Twenty Laws Pack (build + new page)",
+      "description": "Wave 2. Printable pack (12-18pp, law cards 4/page, morning/evening checklists). NEW product page + registrations.",
+      "acceptanceCriteria": [
+        "Card frames render cleanly in rasters",
+        "Same voice bar; laws framed traditional, never guaranteed"
+      ],
+      "passes": true
+    },
+    {
+      "id": "PROD-008",
+      "title": "Cures and Crystals Catalog (build + new page)",
+      "description": "Wave 2. Card-deck PDF (20-28pp, ~25 cure cards + ~15 crystal cards, placement quick-table). NEW product page + registrations.",
+      "acceptanceCriteria": [
+        "Crystals labelled Traditional/Preference only, never Tested",
+        "Same voice bar; card anatomy consistent across all cards"
+      ],
+      "passes": true
     }
   ]
 }

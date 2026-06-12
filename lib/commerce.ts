@@ -101,6 +101,94 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
   },
 };
 
+// Wave 2 products. All static all-9-Kua PDFs; launched flips true
+// once the owner creates the Stripe Price + uploads the file.
+const WAVE2: CommerceProduct[] = [
+  {
+    slug: "bedroom-reset",
+    shortTitle: "Bedroom and Relationship Reset",
+    priceCents: 1400,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_BEDROOM",
+    fulfillment: "static",
+    files: [
+      {
+        path: "bedroom-reset/bedroom-reset.pdf",
+        label: "The Bedroom and Relationship Reset (PDF)",
+      },
+    ],
+    productPath: "/products/bedroom-reset",
+    launched: false,
+  },
+  {
+    slug: "business-money-feng-shui",
+    shortTitle: "Business and Money Feng Shui Kit",
+    priceCents: 1900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_MONEY_KIT",
+    fulfillment: "static",
+    files: [
+      {
+        path: "business-money-feng-shui/business-money-feng-shui.pdf",
+        label: "The Business and Money Feng Shui Kit (PDF)",
+      },
+    ],
+    productPath: "/products/business-money-feng-shui",
+    launched: false,
+  },
+  {
+    slug: "home-diagnostic-workbook",
+    shortTitle: "10-Step Home Diagnostic Workbook",
+    priceCents: 1400,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_WORKBOOK",
+    fulfillment: "static",
+    files: [
+      {
+        path: "home-diagnostic-workbook/home-diagnostic-workbook.pdf",
+        label: "The 10-Step Home Diagnostic Workbook (PDF)",
+      },
+    ],
+    productPath: "/products/home-diagnostic-workbook",
+    launched: false,
+  },
+  {
+    slug: "daily-ritual-pack",
+    shortTitle: "Daily Ritual and Twenty Laws Pack",
+    priceCents: 900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_RITUAL",
+    fulfillment: "static",
+    files: [
+      {
+        path: "daily-ritual-pack/daily-ritual-pack.pdf",
+        label: "The Daily Ritual and Twenty Laws Pack (PDF)",
+      },
+    ],
+    productPath: "/products/daily-ritual-pack",
+    launched: false,
+  },
+  {
+    slug: "cures-catalog",
+    shortTitle: "Cures and Crystals Catalogue",
+    priceCents: 900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_CURES",
+    fulfillment: "static",
+    files: [
+      {
+        path: "cures-catalog/cures-catalog.pdf",
+        label: "The Cures and Crystals Catalogue (PDF)",
+      },
+    ],
+    productPath: "/products/cures-catalog",
+    launched: false,
+  },
+];
+for (const p of WAVE2) {
+  COMMERCE_PRODUCTS[p.slug] = p;
+}
+
 export function findCommerceProduct(slug: string): CommerceProduct | null {
   return COMMERCE_PRODUCTS[slug] ?? null;
 }

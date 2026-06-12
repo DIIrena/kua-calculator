@@ -66,9 +66,9 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     href: "/products/bedroom-reset",
     title: "Bedroom and Relationship Reset",
     oneLiner:
-      "A focused PDF reading the bedroom for your Kua, with the full headboard, mirror, and shared-furniture checklist.",
+      "The bedroom walked from the door inward, with bed-direction readings for all nine Kua numbers and a couples section.",
     status: "waitlist",
-    priceLabel: "$14 to $19",
+    priceLabel: "$14",
   },
   {
     slug: "business-money-feng-shui",
@@ -77,7 +77,34 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     oneLiner:
       "The office, the desk, the wealth corner, the kitchen stove. The practical money-channel reading for your home and business.",
     status: "waitlist",
-    priceLabel: "$19 to $29",
+    priceLabel: "$19",
+  },
+  {
+    slug: "home-diagnostic-workbook",
+    href: "/products/home-diagnostic-workbook",
+    title: "10-Step Home Diagnostic Workbook",
+    oneLiner:
+      "Audit your own home the way a practitioner would: ten steps, fill-in worksheets, and a 90-day re-evaluation.",
+    status: "waitlist",
+    priceLabel: "$14",
+  },
+  {
+    slug: "daily-ritual-pack",
+    href: "/products/daily-ritual-pack",
+    title: "Daily Ritual and Twenty Laws Pack",
+    oneLiner:
+      "The twenty traditional laws as printable cards, plus morning and evening checklists for a calm daily rhythm.",
+    status: "waitlist",
+    priceLabel: "$9",
+  },
+  {
+    slug: "cures-catalog",
+    href: "/products/cures-catalog",
+    title: "Cures and Crystals Catalogue",
+    oneLiner:
+      "Every cure and crystal as a compact reference card: what it is, where it goes, and what the tradition says.",
+    status: "waitlist",
+    priceLabel: "$9",
   },
   {
     slug: "kua-calculator",

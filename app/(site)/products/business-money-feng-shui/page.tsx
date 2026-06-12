@@ -48,9 +48,8 @@ export default async function MoneyKitPage(props: {
           for your home and your work, keyed to your Kua.
         </p>
         <p className="product-hero-launch-state">
-          The Business and Money Kit is still in development and
-          checkout is not live yet. Join the waitlist and we email you
-          the moment it opens.
+          The Kit is finished and checkout opens shortly. Join the
+          waitlist and you get the launch price the day it does.
         </p>
         <p className="product-hero-anchor">
           <a href="#waitlist">Skip to the waitlist →</a>
@@ -118,14 +117,15 @@ export default async function MoneyKitPage(props: {
       <section className="product-section">
         <h2>How it works</h2>
         <ol>
-          <li>You pay once.</li>
+          <li>You pay once. $19, no subscription.</li>
           <li>
-            You give us your Kua details. The PDF is keyed to your
-            personal directions.
+            The PDF arrives by email within a minute. The desk-facing
+            table inside covers all nine Kua numbers, so you look up
+            yours in the book. No forms to fill.
           </li>
           <li>
-            The Kit is emailed to you with a download link; reply to
-            the delivery email any time for a fresh one.
+            7-day refund, no questions asked. Reply to the delivery
+            email any time for a fresh download link.
           </li>
         </ol>
       </section>
@@ -149,7 +149,7 @@ export default async function MoneyKitPage(props: {
         </p>
         <BuyButton
           productSlug="business-money-feng-shui"
-          priceLabel="$19 to $29"
+          priceLabel="$19"
           state="waitlist"
           waitlistStatus={status}
         />

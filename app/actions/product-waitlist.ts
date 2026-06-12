@@ -45,6 +45,21 @@ const PRODUCTS: Record<string, ProductMeta> = {
     title: "Business and Money Feng Shui Kit",
     redirectPath: "/products/business-money-feng-shui",
   },
+  "home-diagnostic-workbook": {
+    slug: "home-diagnostic-workbook",
+    title: "10-Step Home Diagnostic Workbook",
+    redirectPath: "/products/home-diagnostic-workbook",
+  },
+  "daily-ritual-pack": {
+    slug: "daily-ritual-pack",
+    title: "Daily Ritual and Twenty Laws Pack",
+    redirectPath: "/products/daily-ritual-pack",
+  },
+  "cures-catalog": {
+    slug: "cures-catalog",
+    title: "Cures and Crystals Catalogue",
+    redirectPath: "/products/cures-catalog",
+  },
   "good-days-calendar-2026": {
     slug: "good-days-calendar-2026",
     title: "2026 Good-Days Calendar",
