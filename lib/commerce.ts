@@ -81,7 +81,7 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
     fulfillment: "static",
     files: [
       {
-        path: "good-days-calendar-2026/calendar.pdf",
+        path: "good-days-calendar-2026/good-days-calendar.pdf",
         label: "The Good-Days Calendar (printable PDF)",
       },
       {
