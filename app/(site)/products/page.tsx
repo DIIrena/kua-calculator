@@ -107,6 +107,15 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     priceLabel: "$9",
   },
   {
+    slug: "whole-home-starter-bundle",
+    href: "/products/whole-home-starter-bundle",
+    title: "Whole-Home Starter Bundle",
+    oneLiner:
+      "The Diagnostic Workbook, the Ritual Pack, and the Cures Catalogue together: audit, rhythm, cures. Three PDFs, one price.",
+    status: "waitlist",
+    priceLabel: "$29",
+  },
+  {
     slug: "kua-calculator",
     href: "/kua-calculator",
     title: "Kua Number Calculator",

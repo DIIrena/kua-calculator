@@ -184,6 +184,31 @@ const WAVE2: CommerceProduct[] = [
     productPath: "/products/cures-catalog",
     launched: false,
   },
+  {
+    // The bundle delivers the three component PDFs; no separate file.
+    slug: "whole-home-starter-bundle",
+    shortTitle: "Whole-Home Starter Bundle",
+    priceCents: 2900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_BUNDLE",
+    fulfillment: "static",
+    files: [
+      {
+        path: "home-diagnostic-workbook/home-diagnostic-workbook.pdf",
+        label: "The 10-Step Home Diagnostic Workbook (PDF)",
+      },
+      {
+        path: "daily-ritual-pack/daily-ritual-pack.pdf",
+        label: "The Daily Ritual and Twenty Laws Pack (PDF)",
+      },
+      {
+        path: "cures-catalog/cures-catalog.pdf",
+        label: "The Cures and Crystals Catalogue (PDF)",
+      },
+    ],
+    productPath: "/products/whole-home-starter-bundle",
+    launched: false,
+  },
 ];
 for (const p of WAVE2) {
   COMMERCE_PRODUCTS[p.slug] = p;

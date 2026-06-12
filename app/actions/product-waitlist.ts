@@ -60,6 +60,11 @@ const PRODUCTS: Record<string, ProductMeta> = {
     title: "Cures and Crystals Catalogue",
     redirectPath: "/products/cures-catalog",
   },
+  "whole-home-starter-bundle": {
+    slug: "whole-home-starter-bundle",
+    title: "Whole-Home Starter Bundle",
+    redirectPath: "/products/whole-home-starter-bundle",
+  },
   "good-days-calendar-2026": {
     slug: "good-days-calendar-2026",
     title: "2026 Good-Days Calendar",
