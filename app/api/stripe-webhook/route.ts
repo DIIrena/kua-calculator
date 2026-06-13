@@ -11,6 +11,9 @@ import {
   buildStaticDeliveryEmail,
   buildPersonalizationInviteEmail,
 } from "@/lib/email-delivery";
+import { findCourse, courseEmailForDay } from "@/lib/courses/seven-day-reset";
+import { buildCourseEmail } from "@/lib/email-course";
+import { unsubscribeUrl } from "@/lib/unsubscribe-token";
 
 // POST /api/stripe-webhook
 //
@@ -168,6 +171,51 @@ export async function POST(req: NextRequest) {
         console.error(
           `[stripe-webhook] invite email failed for order ${orderId}: ${sent.error}`,
         );
+      }
+    } else if (product.fulfillment === "course" && product.courseSlug) {
+      const course = findCourse(product.courseSlug);
+      if (course) {
+        const emailLower = email.toLowerCase();
+        // Enrol (idempotent on email + course). day_sent 0 and
+        // last_sent_at now, because we send the welcome immediately and
+        // want the first daily email to wait a day.
+        const { error: enrolErr } = await admin
+          .from("course_enrollments")
+          .upsert(
+            {
+              email: emailLower,
+              course_slug: course.slug,
+              order_id: orderId,
+              day_sent: 0,
+              last_sent_at: new Date().toISOString(),
+            },
+            { onConflict: "email,course_slug", ignoreDuplicates: true },
+          );
+        if (enrolErr) {
+          console.error(
+            `[stripe-webhook] enrol failed for order ${orderId}: ${enrolErr.message}`,
+          );
+        }
+        const welcome = courseEmailForDay(course, 0);
+        if (welcome) {
+          const mail = buildCourseEmail({
+            subject: welcome.subject,
+            preheader: welcome.preheader,
+            body: welcome.body,
+            unsubscribeUrl: unsubscribeUrl(SITE, emailLower, course.slug),
+          });
+          const sent = await sendEmail({
+            to: email,
+            subject: mail.subject,
+            html: mail.html,
+            text: mail.text,
+          });
+          if (!sent.ok) {
+            console.error(
+              `[stripe-webhook] welcome email failed for order ${orderId}: ${sent.error}`,
+            );
+          }
+        }
       }
     }
   } catch (err) {

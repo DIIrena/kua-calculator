@@ -95,6 +95,11 @@ const PRODUCTS: Record<string, ProductMeta> = {
     title: "2026 Good-Days Calendar",
     redirectPath: "/products/good-days-calendar-2026",
   },
+  "seven-day-home-reset": {
+    slug: "seven-day-home-reset",
+    title: "7-Day Home Reset",
+    redirectPath: "/products/seven-day-home-reset",
+  },
 };
 
 function buildHtml(siteUrl: string, productTitle: string): string {

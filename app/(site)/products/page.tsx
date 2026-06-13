@@ -107,6 +107,15 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     priceLabel: "$9",
   },
   {
+    slug: "seven-day-home-reset",
+    href: "/products/seven-day-home-reset",
+    title: "7-Day Home Reset",
+    oneLiner:
+      "A seven-day email course: one short email a day, one small task each, room by room. Nothing to buy, nothing to redecorate.",
+    status: "waitlist",
+    priceLabel: "$19",
+  },
+  {
     slug: "cures-catalog",
     href: "/products/cures-catalog",
     title: "Cures and Crystals Catalogue",

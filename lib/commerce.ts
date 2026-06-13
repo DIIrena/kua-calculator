@@ -17,8 +17,11 @@
 //   - "personalized": the buyer fills the post-checkout form; a
 //                     server action renders the PDF via the recipe
 //                     in lib/products.ts and emails it.
+//   - "course":       the buyer is enrolled in an email course; the
+//                     webhook sends the welcome email and a daily cron
+//                     (app/api/cron/drip) sends the rest.
 
-export type Fulfillment = "static" | "personalized";
+export type Fulfillment = "static" | "personalized" | "course";
 
 export type CommerceProduct = {
   /** Public page slug; BuyButton submits this as productSlug. */
@@ -41,6 +44,9 @@ export type CommerceProduct = {
    *  block recipe (Compass, Extended Kua Report). "movein" adds a
    *  move-in window and renders the day-calendar report. */
   personalizedForm?: "kua" | "movein";
+  /** course only: the course slug in lib/courses. The webhook enrols
+   *  the buyer and sends the welcome email; the drip cron sends the rest. */
+  courseSlug?: string;
   /** The product landing page, used for checkout cancel_url. */
   productPath: string;
   /** Whether checkout is open for this product. /api/checkout refuses
@@ -110,6 +116,19 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
     fulfillment: "personalized",
     personalizedForm: "movein",
     productPath: "/products/move-in-kit",
+    launched: false,
+  },
+  // The 7-Day Home Reset. An email course: enrol on purchase, one email
+  // a day for seven days via the drip cron.
+  "seven-day-home-reset": {
+    slug: "seven-day-home-reset",
+    shortTitle: "7-Day Home Reset",
+    priceCents: 1900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_RESET",
+    fulfillment: "course",
+    courseSlug: "seven-day-home-reset",
+    productPath: "/products/seven-day-home-reset",
     launched: false,
   },
   "good-days-calendar-2026": {
