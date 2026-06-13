@@ -12,7 +12,7 @@ analytics, so "did it work" is read from three free sources:
 - Products on the shelf: 14 (1 live: the 2026 Planner; 13 waitlist)
 - Total sales to date: 0 (one $2 owner test, refunded)
 - Waitlist signups: 1 (the owner)
-- Published pins: 1 (this one)
+- Published pins: 2 (compass + planner)
 - The shop is proven end to end; the only missing input is visitors.
 
 ## Pins log
@@ -20,6 +20,7 @@ analytics, so "did it work" is read from three free sources:
 | # | Date | Pin | Board | Destination | Notes |
 |---|------|-----|-------|-------------|-------|
 | 1 | 2026-06-13 | https://www.pinterest.com/pin/389772542773782442/ | Compass School Basics | /kua-calculator | "What Is Your Kua Number?" - the first seed |
+| 2 | 2026-06-13 | https://www.pinterest.com/pin/389772542773782993/ | Feng Shui 2026 | /products/annual-feng-shui-planner-2026 | Planner pin - first pin pointing at the one live product ($19) |
 
 ## What to watch, and when
 
@@ -49,4 +50,6 @@ Owner capacity ~6-8.5 hrs/week. Per week:
 - Light SEO finishing on one money-adjacent page.
 - Reddit: lurk r/fengshui a few days, no links, build account age.
 
-Next pin to design: the 2026 Annual Planner (the one live product).
+Planner pin shipped (pin #2). Next pin to design: a guide/anchor page
+(e.g. the Ultimate Guide or a room page) to widen the top of funnel,
+keeping the 2:1 product-to-calculator ratio.
