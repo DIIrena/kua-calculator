@@ -52,7 +52,6 @@ function page({ slug, label, priceCents, oneLiner }) {
   return `import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
-import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
   title: "${title} | My Feng Shui Home",
@@ -89,11 +88,12 @@ export default async function ${comp}(props: {
         </h1>
         <p className="product-lede">${oneLiner}</p>
         <p className="product-hero-launch-state">
-          A short, focused reading. Checkout is not live yet; join the
-          waitlist and we email you the moment it opens.
+          Available now. After you pay, you fill in a short form and the
+          personalised PDF is generated and emailed to you within about a
+          minute.
         </p>
         <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to the waitlist →</a>
+          <a href="#waitlist">Skip to checkout →</a>
         </p>
       </section>
 
@@ -143,15 +143,15 @@ export default async function ${comp}(props: {
       </section>
 
       <section className="product-buy-section">
-        <h2>Join the waitlist.</h2>
+        <h2>Buy now.</h2>
         <p>
-          When checkout goes live, we email you the launch page and the
-          early price. You can unsubscribe any time.
+          Secure checkout. 7-day refund, no questions asked. You fill in a
+          short form after paying and the PDF is emailed to you.
         </p>
         <BuyButton
           productSlug="${slug}"
           priceLabel="${priceLabel}"
-          state="waitlist"
+          state="stripe-live"
           waitlistStatus={status}
         />
       </section>
@@ -163,8 +163,6 @@ export default async function ${comp}(props: {
           </Link>
         </p>
       </section>
-
-      <FloatingWaitlistCTA />
     </div>
   );
 }
