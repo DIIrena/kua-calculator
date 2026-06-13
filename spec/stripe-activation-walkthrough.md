@@ -83,8 +83,8 @@ Switch OFF Test mode (toggle top right) so you are in **Live mode**, then:
 
 1. `Product catalog` -> `Add product`:
    - Name: `2026 Annual Feng Shui Planner`
-   - Description: `98-page printable feng shui planner for the 2026 solar
-     year, July 2026 - February 2027 edition. PDF + EPUB + calendar file.`
+   - Description: `Printable feng shui planner of more than 80 pages for the
+     2026 solar year, July 2026 - February 2027 edition. PDF + EPUB + calendar file.`
    - Price: `29.00 USD`, `One-time`.
    - Click `Add product`. Open it and copy the **Price ID** (starts with
      `price_`). Paste it into the shared notes for Claude.

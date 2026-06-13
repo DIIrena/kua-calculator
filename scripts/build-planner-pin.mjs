@@ -53,7 +53,7 @@ const svg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
   <text x="500" y="1158" font-family="${FONT}" font-size="33" font-weight="600" fill="#0e3b2c" text-anchor="middle">The 2026 Feng Shui Planner</text>
 
   <!-- Facts -->
-  <text x="500" y="1205" font-family="${FONT}" font-size="23" font-weight="500" fill="#4f5b53" text-anchor="middle">98 printable pages  -  243-day calendar</text>
+  <text x="500" y="1205" font-family="${FONT}" font-size="23" font-weight="500" fill="#4f5b53" text-anchor="middle">More than 80 pages  -  243-day calendar</text>
   <text x="500" y="1242" font-family="${FONT}" font-size="23" font-weight="500" fill="#4f5b53" text-anchor="middle">July 2026 to February 2027</text>
   <text x="500" y="1279" font-family="${FONT}" font-size="21" font-weight="500" fill="#4f5b53" text-anchor="middle">PDF, EPUB, and a phone calendar file</text>
 

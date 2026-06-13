@@ -52,7 +52,7 @@ const TEMPLATES = {
     heading: "It is ready.",
     paragraphs: [
       "You joined the waitlist for the 2026 Annual Feng Shui Planner. Checkout is now open.",
-      "The Planner is a 98-page printable book for the 2026 solar year, July 2026 through February 2027: the annual chart explained, nine sector treatments, a 243-day day-by-day calendar (with a phone calendar file included), and a ten-step walkthrough for your own home.",
+      "The Planner is a printable book of more than 80 pages for the 2026 solar year, July 2026 through February 2027: the annual chart explained, nine sector treatments, a 243-day day-by-day calendar (with a phone calendar file included), and a ten-step walkthrough for your own home.",
       "Your waitlist price: use the code EARLYLIST at checkout for 5 dollars off. The code works for 14 days, then it expires for good.",
       "7-day refund, no questions asked, code or no code.",
     ],

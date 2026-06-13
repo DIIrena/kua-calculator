@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "The 2026 Feng Shui Planner: Mid-Year Edition | July 2026 to February 2027",
   description:
-    "98 pages, 16 sections, a 243-day calendar, sector-by-sector treatments, and the 2026 annual chart explained. The mid-year edition, July 2026 to February 2027. $19.",
+    "More than 80 pages, 16 sections, a 243-day calendar, sector-by-sector treatments, and the 2026 annual chart explained. The mid-year edition, July 2026 to February 2027. $19.",
   alternates: {
     canonical:
       "https://myfengshuihome.com/products/annual-feng-shui-planner-2026",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "The 2026 Feng Shui Planner: Mid-Year Edition",
     description:
-      "98 pages, a 243-day calendar, and sector-by-sector treatments for the rest of the 2026 solar year. $19.",
+      "More than 80 pages, a 243-day calendar, and sector-by-sector treatments for the rest of the 2026 solar year. $19.",
     url: "https://myfengshuihome.com/products/annual-feng-shui-planner-2026",
     images: [
       "https://myfengshuihome.com/products/annual-feng-shui-planner-2026/cover-thumb.png",
@@ -109,7 +109,7 @@ export default async function PlannerPage(props: {
     "@type": "Product",
     name: "The 2026 Feng Shui Planner: Mid-Year Edition",
     description:
-      "A 98-page printable planner for the rest of the 2026 Chinese solar year, July 2026 to February 2027: the annual chart explained, nine sector treatments, monthly notes, a 243-day calendar, and a ten-step diagnostic walkthrough.",
+      "A printable planner of more than 80 pages for the rest of the 2026 Chinese solar year, July 2026 to February 2027: the annual chart explained, nine sector treatments, monthly notes, a 243-day calendar, and a ten-step diagnostic walkthrough.",
     image: [
       "https://myfengshuihome.com/products/annual-feng-shui-planner-2026/cover-portrait.png",
     ],
@@ -168,8 +168,8 @@ export default async function PlannerPage(props: {
           <div style={{ flex: "1 1 320px" }}>
             <p className="product-lede">
               The 2026 Feng Shui Planner, mid-year edition, is a
-              98-page printable book for the rest of the 2026 solar
-              year. $19, one-time. It answers
+              printable book of more than 80 pages for the rest of the
+              2026 solar year. $19, one-time. It answers
               four questions for every month left in the year: which
               corner of the home asks for a gentle hand, which corner
               is ready for real work, which weekends are wrong for a
@@ -324,7 +324,7 @@ export default async function PlannerPage(props: {
       <section className="product-section">
         <h2>What you get</h2>
         <p>
-          A 98-page printable book. Sixteen sections read in roughly
+          A printable book of more than 80 pages. Sixteen sections read in roughly
           the order a practitioner walks a home: the shape of the
           year, the cautious corners, the bright ones, months, days,
           your actual rooms, then the cures and the reference layer at

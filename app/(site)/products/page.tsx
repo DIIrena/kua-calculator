@@ -30,7 +30,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     href: "/products/annual-feng-shui-planner-2026",
     title: "2026 Feng Shui Planner: Mid-Year Edition",
     oneLiner:
-      "98 pages, the 2026 chart, sector treatments, and a 243-day calendar. The rest of the year in one printable book.",
+      "More than 80 pages, the 2026 chart, sector treatments, and a 243-day calendar. The rest of the year in one printable book.",
     status: "live",
     priceLabel: "$19",
   },
