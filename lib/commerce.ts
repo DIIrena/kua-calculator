@@ -43,9 +43,10 @@ export type CommerceProduct = {
   recipeSlug?: string;
   /** personalized only: which post-checkout form + fulfilment action to
    *  use. "kua" (default) collects name/DOB/gender and renders via the
-   *  block recipe (Compass, Extended Kua Report). "movein" adds a
-   *  move-in window and renders the day-calendar report. */
-  personalizedForm?: "kua" | "movein";
+   *  block recipe (Compass, Extended Kua Report, the catalogue). "movein"
+   *  adds a move-in window and renders the day-calendar report. "couple"
+   *  collects two people and renders the compatibility report. */
+  personalizedForm?: "kua" | "movein" | "couple";
   /** course only: the course slug in lib/courses. The webhook enrols
    *  the buyer and sends the welcome email; the drip cron sends the rest. */
   courseSlug?: string;
@@ -382,6 +383,17 @@ const COMPASS_BUNDLES: CommerceProduct[] = [
     fulfillment: "personalized",
     recipeSlug: "complete-home-compass",
     productPath: "/products/complete-home-compass",
+    launched: false,
+  },
+  {
+    slug: "couple-compatibility-compass",
+    shortTitle: "Couple Compatibility Compass",
+    priceCents: 1900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_COUPLE",
+    fulfillment: "personalized",
+    personalizedForm: "couple",
+    productPath: "/products/couple-compatibility-compass",
     launched: false,
   },
 ];

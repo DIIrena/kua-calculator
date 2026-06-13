@@ -9,6 +9,7 @@ import {
 import { createAdminClient } from "@/lib/supabase/server";
 import { fulfillCompass } from "@/app/actions/fulfill-compass";
 import { fulfillMoveIn } from "@/app/actions/fulfill-movein";
+import { fulfillCouple } from "@/app/actions/fulfill-couple";
 import { DAY_CALENDAR_RANGE } from "@/lib/day-calendar";
 
 // Post-checkout success page for every buyable product.
@@ -148,6 +149,7 @@ export default async function SuccessPage(props: {
   const invalid = formStatus === "invalid";
   const errored = formStatus === "error";
   const isMoveIn = product.personalizedForm === "movein";
+  const isCouple = product.personalizedForm === "couple";
 
   return (
     <div className="page-content product-page">
@@ -173,16 +175,20 @@ export default async function SuccessPage(props: {
         ) : (
           <>
             <p className="product-lede">
-              {isMoveIn
-                ? "We compute your Kua server-side, read your move-in window against the verified 2026 day calendar, render your PDF, and email it to "
-                : "Three fields. We compute your Kua server-side (the Chinese New Year boundary is handled automatically), render your PDF, and email it to "}
+              {isCouple
+                ? "Two short profiles. We compute both Kua numbers server-side, read your maps against each other, render your PDF, and email it to "
+                : isMoveIn
+                  ? "We compute your Kua server-side, read your move-in window against the verified 2026 day calendar, render your PDF, and email it to "
+                  : "Three fields. We compute your Kua server-side (the Chinese New Year boundary is handled automatically), render your PDF, and email it to "}
               {email || "you"} within about a minute.
             </p>
             {invalid ? (
               <p className="lead-magnet-status lead-magnet-status-err" role="alert">
-                {isMoveIn
-                  ? `Please check the fields: a first name, a full birth date, the formula variant, and a move-in window inside ${DAY_CALENDAR_RANGE.start} to ${DAY_CALENDAR_RANGE.end}.`
-                  : "Please check the fields: a first name, a full birth date, and a selection for the formula variant."}
+                {isCouple
+                  ? "Please check both people: a first name, a full birth date, and a formula variant for each."
+                  : isMoveIn
+                    ? `Please check the fields: a first name, a full birth date, the formula variant, and a move-in window inside ${DAY_CALENDAR_RANGE.start} to ${DAY_CALENDAR_RANGE.end}.`
+                    : "Please check the fields: a first name, a full birth date, and a selection for the formula variant."}
               </p>
             ) : null}
             {errored ? (
@@ -192,6 +198,66 @@ export default async function SuccessPage(props: {
                 it by hand.
               </p>
             ) : null}
+            {isCouple ? (
+              <form
+                action={fulfillCouple}
+                className="success-personalize-form"
+              >
+                <input type="hidden" name="sessionId" value={sessionId} />
+                <input type="hidden" name="productSlug" value={product.slug} />
+                <p className="field-label" style={{ fontWeight: 700, marginTop: "0.5rem" }}>
+                  Person 1
+                </p>
+                <div className="field">
+                  <label className="field-label" htmlFor="couple-a-name">
+                    First name (appears on the cover)
+                  </label>
+                  <input id="couple-a-name" name="firstName" type="text" required maxLength={60} autoComplete="given-name" />
+                </div>
+                <div className="field field-date">
+                  <span className="field-label" id="couple-a-dob">Birth date</span>
+                  <div className="date-row" role="group" aria-labelledby="couple-a-dob">
+                    <label className="date-sub"><span className="date-sub-label">Year</span><input name="year" type="number" inputMode="numeric" min="1900" max="2050" step="1" required /></label>
+                    <label className="date-sub"><span className="date-sub-label">Month</span><input name="month" type="number" inputMode="numeric" min="1" max="12" step="1" required /></label>
+                    <label className="date-sub"><span className="date-sub-label">Day</span><input name="day" type="number" inputMode="numeric" min="1" max="31" step="1" required /></label>
+                  </div>
+                </div>
+                <div className="field field-gender">
+                  <span className="field-label" id="couple-a-gender">Formula variant</span>
+                  <div className="radio-row" role="radiogroup" aria-labelledby="couple-a-gender">
+                    <label className="radio"><input type="radio" name="gender" value="male" required /><span>Male</span></label>
+                    <label className="radio"><input type="radio" name="gender" value="female" /><span>Female</span></label>
+                  </div>
+                </div>
+                <p className="field-label" style={{ fontWeight: 700, marginTop: "1.25rem" }}>
+                  Person 2
+                </p>
+                <div className="field">
+                  <label className="field-label" htmlFor="couple-b-name">
+                    First name (appears on the cover)
+                  </label>
+                  <input id="couple-b-name" name="firstNameB" type="text" required maxLength={60} autoComplete="off" />
+                </div>
+                <div className="field field-date">
+                  <span className="field-label" id="couple-b-dob">Birth date</span>
+                  <div className="date-row" role="group" aria-labelledby="couple-b-dob">
+                    <label className="date-sub"><span className="date-sub-label">Year</span><input name="yearB" type="number" inputMode="numeric" min="1900" max="2050" step="1" required /></label>
+                    <label className="date-sub"><span className="date-sub-label">Month</span><input name="monthB" type="number" inputMode="numeric" min="1" max="12" step="1" required /></label>
+                    <label className="date-sub"><span className="date-sub-label">Day</span><input name="dayB" type="number" inputMode="numeric" min="1" max="31" step="1" required /></label>
+                  </div>
+                </div>
+                <div className="field field-gender">
+                  <span className="field-label" id="couple-b-gender">Formula variant</span>
+                  <div className="radio-row" role="radiogroup" aria-labelledby="couple-b-gender">
+                    <label className="radio"><input type="radio" name="genderB" value="male" required /><span>Male</span></label>
+                    <label className="radio"><input type="radio" name="genderB" value="female" /><span>Female</span></label>
+                  </div>
+                </div>
+                <button type="submit" className="cta-primary">
+                  Render our compass
+                </button>
+              </form>
+            ) : (
             <form
               action={isMoveIn ? fulfillMoveIn : fulfillCompass}
               className="success-personalize-form"
@@ -324,6 +390,7 @@ export default async function SuccessPage(props: {
                 {isMoveIn ? "Render my report" : "Render my reading"}
               </button>
             </form>
+            )}
           </>
         )}
       </section>

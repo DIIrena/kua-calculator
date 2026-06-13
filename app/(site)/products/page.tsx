@@ -81,6 +81,15 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     priceLabel: "$29",
   },
   {
+    slug: "couple-compatibility-compass",
+    href: "/products/couple-compatibility-compass",
+    title: "Couple Compatibility Compass",
+    oneLiner:
+      "Two people, one home: both Kua maps read together. Where you agree, where to take turns, and how to settle the shared bed and table.",
+    status: "waitlist",
+    priceLabel: "$19",
+  },
+  {
     slug: "good-days-calendar-2026",
     href: "/products/good-days-calendar-2026",
     title: "2026 Good-Days Calendar",

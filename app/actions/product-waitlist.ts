@@ -116,6 +116,11 @@ const PRODUCTS: Record<string, ProductMeta> = {
     title: "Complete Home Compass",
     redirectPath: "/products/complete-home-compass",
   },
+  "couple-compatibility-compass": {
+    slug: "couple-compatibility-compass",
+    title: "Couple Compatibility Compass",
+    redirectPath: "/products/couple-compatibility-compass",
+  },
 };
 
 // Downstream Compass catalogue: register each slug so its waitlist form works.
