@@ -41,7 +41,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Personal Feng Shui Compass",
     oneLiner:
       "Your Kua read in depth: four supportive directions, four to handle with care, and a seven-day experiment to test it.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$14",
   },
   {
@@ -113,7 +113,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "2026 Good-Days Calendar",
     oneLiner:
       "243 days marked Action, Rest, Neutral, or Caution, as a printable PDF and a phone calendar file.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$9",
   },
   {

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import ProductCoverPreview from "@/components/ProductCoverPreview";
-import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
   title:
@@ -54,11 +53,12 @@ export default async function PersonalFengShuiCompassPage(props: {
           first because it is the one you will use longest.
         </p>
         <p className="product-hero-launch-state">
-          The Compass file is finished. Checkout is not live yet; join
-          the waitlist and we email you the moment it opens.
+          Checkout is open. You pay once, fill in three fields, and the
+          personalised PDF is generated and emailed to you within about a
+          minute.
         </p>
         <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to the waitlist →</a>
+          <a href="#waitlist">Skip to checkout →</a>
         </p>
       </section>
 
@@ -171,18 +171,18 @@ export default async function PersonalFengShuiCompassPage(props: {
         </p>
       </section>
 
-      {/* Closing - storytelling + waitlist CTA */}
+      {/* Closing - buy */}
       <section className="product-buy-section">
-        <h2>Join the waitlist.</h2>
+        <h2>Buy the Compass.</h2>
         <p>
-          The Compass is finished. The checkout is not. When checkout
-          goes live, we email you the launch page and the early price.
-          You can unsubscribe any time.
+          $14, one-time. After paying you fill in three fields and the
+          PDF is generated and emailed to you within about a minute.
+          7-day refund, no questions asked.
         </p>
         <BuyButton
           productSlug="personal-feng-shui-compass"
           priceLabel="$14"
-          state="waitlist"
+          state="stripe-live"
           waitlistStatus={status}
         />
       </section>
@@ -194,8 +194,6 @@ export default async function PersonalFengShuiCompassPage(props: {
           </Link>
         </p>
       </section>
-
-      <FloatingWaitlistCTA />
     </div>
   );
 }

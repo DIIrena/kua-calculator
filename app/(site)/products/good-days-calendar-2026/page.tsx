@@ -51,12 +51,11 @@ export default async function GoodDaysCalendarPage(props: {
           quietly in the calendar you already use.
         </p>
         <p className="product-hero-launch-state">
-          The Planner is out now. The standalone Calendar opens for
-          checkout shortly - join the list and you get the early price
-          the day it does.
+          Checkout is open. The files arrive by email the moment you buy:
+          a printable PDF and the phone calendar file.
         </p>
         <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to the waitlist →</a>
+          <a href="#waitlist">Skip to checkout →</a>
         </p>
       </section>
 
@@ -113,15 +112,16 @@ export default async function GoodDaysCalendarPage(props: {
       </section>
 
       <section className="product-buy-section">
-        <h2>Join the waitlist.</h2>
+        <h2>Buy the Calendar.</h2>
         <p>
-          The Calendar opens for checkout shortly. Join the list and
-          we email you the launch price.
+          $9, one-time. The printable PDF and the phone calendar file
+          arrive by email the moment you buy. 7-day refund, no questions
+          asked.
         </p>
         <BuyButton
           productSlug="good-days-calendar-2026"
           priceLabel="$9"
-          state="waitlist"
+          state="stripe-live"
           waitlistStatus={status}
         />
       </section>

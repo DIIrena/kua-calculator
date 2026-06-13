@@ -94,7 +94,7 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
     fulfillment: "personalized",
     recipeSlug: "personal-compass",
     productPath: "/products/personal-feng-shui-compass",
-    launched: false,
+    launched: true,
   },
   "extended-personal-kua-report": {
     slug: "extended-personal-kua-report",
@@ -153,7 +153,7 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
       },
     ],
     productPath: "/products/good-days-calendar-2026",
-    launched: false,
+    launched: true,
   },
 };
 
