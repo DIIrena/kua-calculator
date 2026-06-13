@@ -54,6 +54,33 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     priceLabel: "$39",
   },
   {
+    slug: "complete-home-compass",
+    href: "/products/complete-home-compass",
+    title: "Complete Home Compass",
+    oneLiner:
+      "The flagship: your eight directions, compatibility, all twelve rooms, all nine life areas, and the 2026 overlay, read for your Kua in one volume.",
+    status: "waitlist",
+    priceLabel: "$49",
+  },
+  {
+    slug: "all-twelve-spaces-compass",
+    href: "/products/all-twelve-spaces-compass",
+    title: "Twelve Spaces Compass",
+    oneLiner:
+      "Every room read for your Kua in one PDF: bedroom, office, dining, kitchen, living room, bathroom, entrance, hallway, storage, laundry, balcony, garage.",
+    status: "waitlist",
+    priceLabel: "$29",
+  },
+  {
+    slug: "all-nine-pillars-compass",
+    href: "/products/all-nine-pillars-compass",
+    title: "Nine Life Areas Compass",
+    oneLiner:
+      "All nine bagua life-area corners read for your Kua: wealth, recognition, relationships, creativity, helpful people, career, knowledge, family, health.",
+    status: "waitlist",
+    priceLabel: "$29",
+  },
+  {
     slug: "good-days-calendar-2026",
     href: "/products/good-days-calendar-2026",
     title: "2026 Good-Days Calendar",

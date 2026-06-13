@@ -349,6 +349,46 @@ for (const e of COMPASS_CATALOGUE) {
   };
 }
 
+// The Compass bundle tier (personalized, kua form, launched false).
+const COMPASS_BUNDLES: CommerceProduct[] = [
+  {
+    slug: "all-nine-pillars-compass",
+    shortTitle: "Nine Life Areas Compass",
+    priceCents: 2900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_ALL_PILLARS",
+    fulfillment: "personalized",
+    recipeSlug: "all-nine-pillars-compass",
+    productPath: "/products/all-nine-pillars-compass",
+    launched: false,
+  },
+  {
+    slug: "all-twelve-spaces-compass",
+    shortTitle: "Twelve Spaces Compass",
+    priceCents: 2900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_ALL_SPACES",
+    fulfillment: "personalized",
+    recipeSlug: "all-twelve-spaces-compass",
+    productPath: "/products/all-twelve-spaces-compass",
+    launched: false,
+  },
+  {
+    slug: "complete-home-compass",
+    shortTitle: "Complete Home Compass",
+    priceCents: 4900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_FLAGSHIP",
+    fulfillment: "personalized",
+    recipeSlug: "complete-home-compass",
+    productPath: "/products/complete-home-compass",
+    launched: false,
+  },
+];
+for (const p of COMPASS_BUNDLES) {
+  COMMERCE_PRODUCTS[p.slug] = p;
+}
+
 export function findCommerceProduct(slug: string): CommerceProduct | null {
   return COMMERCE_PRODUCTS[slug] ?? null;
 }

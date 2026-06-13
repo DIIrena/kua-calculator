@@ -173,6 +173,62 @@ for (const e of COMPASS_CATALOGUE) {
   };
 }
 
+// The bundle tier: pure assemblies of existing blocks, no new content.
+const ALL_PILLAR_BLOCKS: BlockId[] = [
+  "pillar-wealth", "pillar-fame", "pillar-relationships", "pillar-creativity",
+  "pillar-helpful-people", "pillar-career", "pillar-knowledge", "pillar-family",
+  "pillar-health",
+];
+const ALL_SPACE_BLOCKS: BlockId[] = [
+  "room-bedroom", "room-desk", "room-dining", "space-kitchen",
+  "space-living-room", "space-bathroom", "space-entrance", "space-hallway",
+  "space-storage", "space-laundry", "space-balcony", "space-garage",
+];
+
+PRODUCTS["all-nine-pillars-compass"] = {
+  slug: "all-nine-pillars-compass",
+  title: (fn) => `${fn}'s Nine Life Areas Compass`,
+  coverTitleHtml: (fn) => `${fn}'s Nine Life Areas <em>Compass</em>`,
+  shortTitle: "Nine Life Areas Compass",
+  priceCents: 2900,
+  currency: "usd",
+  stripeEnvKey: "STRIPE_PRICE_ALL_PILLARS",
+  blocks: ["welcome-mini", ...ALL_PILLAR_BLOCKS, "closing-mini"],
+  targetPages: { min: 40, max: 66 },
+};
+
+PRODUCTS["all-twelve-spaces-compass"] = {
+  slug: "all-twelve-spaces-compass",
+  title: (fn) => `${fn}'s Twelve Spaces Compass`,
+  coverTitleHtml: (fn) => `${fn}'s Twelve Spaces <em>Compass</em>`,
+  shortTitle: "Twelve Spaces Compass",
+  priceCents: 2900,
+  currency: "usd",
+  stripeEnvKey: "STRIPE_PRICE_ALL_SPACES",
+  blocks: ["welcome-mini", ...ALL_SPACE_BLOCKS, "closing-mini"],
+  targetPages: { min: 50, max: 78 },
+};
+
+PRODUCTS["complete-home-compass"] = {
+  slug: "complete-home-compass",
+  title: (fn) => `${fn}'s Complete Home Compass`,
+  coverTitleHtml: (fn) => `${fn}'s Complete Home <em>Compass</em>`,
+  shortTitle: "Complete Home Compass",
+  priceCents: 4900,
+  currency: "usd",
+  stripeEnvKey: "STRIPE_PRICE_FLAGSHIP",
+  blocks: [
+    "welcome-extended", "identity", "summary", "how-to-use",
+    "sheng-qi", "tian-yi", "yan-nian", "fu-wei",
+    "huo-hai", "wu-gui", "liu-sha", "jue-ming",
+    "compatibility",
+    ...ALL_SPACE_BLOCKS,
+    ...ALL_PILLAR_BLOCKS,
+    "year-overlay", "experiment", "closing-extended",
+  ],
+  targetPages: { min: 95, max: 145 },
+};
+
 export function findProduct(slug: string): Product | null {
   return PRODUCTS[slug] ?? null;
 }

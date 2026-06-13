@@ -167,6 +167,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${SITE}/products/complete-home-compass`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${SITE}/products/all-twelve-spaces-compass`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${SITE}/products/all-nine-pillars-compass`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${SITE}/checklist`,
       lastModified: today,
       changeFrequency: "monthly",

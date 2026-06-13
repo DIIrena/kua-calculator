@@ -101,6 +101,21 @@ const PRODUCTS: Record<string, ProductMeta> = {
     title: "7-Day Home Reset",
     redirectPath: "/products/seven-day-home-reset",
   },
+  "all-nine-pillars-compass": {
+    slug: "all-nine-pillars-compass",
+    title: "Nine Life Areas Compass",
+    redirectPath: "/products/all-nine-pillars-compass",
+  },
+  "all-twelve-spaces-compass": {
+    slug: "all-twelve-spaces-compass",
+    title: "Twelve Spaces Compass",
+    redirectPath: "/products/all-twelve-spaces-compass",
+  },
+  "complete-home-compass": {
+    slug: "complete-home-compass",
+    title: "Complete Home Compass",
+    redirectPath: "/products/complete-home-compass",
+  },
 };
 
 // Downstream Compass catalogue: register each slug so its waitlist form works.
