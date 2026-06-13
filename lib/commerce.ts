@@ -45,8 +45,9 @@ export type CommerceProduct = {
    *  use. "kua" (default) collects name/DOB/gender and renders via the
    *  block recipe (Compass, Extended Kua Report, the catalogue). "movein"
    *  adds a move-in window and renders the day-calendar report. "couple"
-   *  collects two people and renders the compatibility report. */
-  personalizedForm?: "kua" | "movein" | "couple";
+   *  collects two people and renders the compatibility report. "pick3"
+   *  lets the buyer choose three life areas or rooms to assemble. */
+  personalizedForm?: "kua" | "movein" | "couple" | "pick3";
   /** course only: the course slug in lib/courses. The webhook enrols
    *  the buyer and sends the welcome email; the drip cron sends the rest. */
   courseSlug?: string;
@@ -394,6 +395,28 @@ const COMPASS_BUNDLES: CommerceProduct[] = [
     fulfillment: "personalized",
     personalizedForm: "couple",
     productPath: "/products/couple-compatibility-compass",
+    launched: false,
+  },
+  {
+    slug: "pick-three-pillars",
+    shortTitle: "Three Life Areas Compass",
+    priceCents: 1700,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_PICK3_PILLARS",
+    fulfillment: "personalized",
+    personalizedForm: "pick3",
+    productPath: "/products/pick-three-pillars",
+    launched: false,
+  },
+  {
+    slug: "pick-three-spaces",
+    shortTitle: "Three Spaces Compass",
+    priceCents: 1700,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_PICK3_SPACES",
+    fulfillment: "personalized",
+    personalizedForm: "pick3",
+    productPath: "/products/pick-three-spaces",
     launched: false,
   },
 ];

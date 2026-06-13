@@ -90,6 +90,24 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     priceLabel: "$19",
   },
   {
+    slug: "pick-three-pillars",
+    href: "/products/pick-three-pillars",
+    title: "Three Life Areas Compass",
+    oneLiner:
+      "Build your own bundle: choose any three of the nine life areas and get each read for your Kua, in one PDF.",
+    status: "waitlist",
+    priceLabel: "$17",
+  },
+  {
+    slug: "pick-three-spaces",
+    href: "/products/pick-three-spaces",
+    title: "Three Spaces Compass",
+    oneLiner:
+      "Build your own bundle: choose any three rooms and get each read for your Kua, in one PDF.",
+    status: "waitlist",
+    priceLabel: "$17",
+  },
+  {
     slug: "good-days-calendar-2026",
     href: "/products/good-days-calendar-2026",
     title: "2026 Good-Days Calendar",

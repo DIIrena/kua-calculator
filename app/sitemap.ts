@@ -191,6 +191,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${SITE}/products/pick-three-pillars`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${SITE}/products/pick-three-spaces`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
       url: `${SITE}/checklist`,
       lastModified: today,
       changeFrequency: "monthly",

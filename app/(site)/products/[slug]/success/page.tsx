@@ -10,6 +10,8 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { fulfillCompass } from "@/app/actions/fulfill-compass";
 import { fulfillMoveIn } from "@/app/actions/fulfill-movein";
 import { fulfillCouple } from "@/app/actions/fulfill-couple";
+import { fulfillPick3 } from "@/app/actions/fulfill-pick3";
+import { findPick3 } from "@/lib/pick-three";
 import { DAY_CALENDAR_RANGE } from "@/lib/day-calendar";
 
 // Post-checkout success page for every buyable product.
@@ -150,6 +152,8 @@ export default async function SuccessPage(props: {
   const errored = formStatus === "error";
   const isMoveIn = product.personalizedForm === "movein";
   const isCouple = product.personalizedForm === "couple";
+  const isPick3 = product.personalizedForm === "pick3";
+  const pick3 = isPick3 ? findPick3(product.slug) : null;
 
   return (
     <div className="page-content product-page">
@@ -175,20 +179,24 @@ export default async function SuccessPage(props: {
         ) : (
           <>
             <p className="product-lede">
-              {isCouple
-                ? "Two short profiles. We compute both Kua numbers server-side, read your maps against each other, render your PDF, and email it to "
-                : isMoveIn
-                  ? "We compute your Kua server-side, read your move-in window against the verified 2026 day calendar, render your PDF, and email it to "
-                  : "Three fields. We compute your Kua server-side (the Chinese New Year boundary is handled automatically), render your PDF, and email it to "}
+              {isPick3
+                ? `Choose your three ${pick3?.nounPlural ?? "topics"}, fill in three fields, and we compute your Kua, render your PDF, and email it to `
+                : isCouple
+                  ? "Two short profiles. We compute both Kua numbers server-side, read your maps against each other, render your PDF, and email it to "
+                  : isMoveIn
+                    ? "We compute your Kua server-side, read your move-in window against the verified 2026 day calendar, render your PDF, and email it to "
+                    : "Three fields. We compute your Kua server-side (the Chinese New Year boundary is handled automatically), render your PDF, and email it to "}
               {email || "you"} within about a minute.
             </p>
             {invalid ? (
               <p className="lead-magnet-status lead-magnet-status-err" role="alert">
-                {isCouple
-                  ? "Please check both people: a first name, a full birth date, and a formula variant for each."
-                  : isMoveIn
-                    ? `Please check the fields: a first name, a full birth date, the formula variant, and a move-in window inside ${DAY_CALENDAR_RANGE.start} to ${DAY_CALENDAR_RANGE.end}.`
-                    : "Please check the fields: a first name, a full birth date, and a selection for the formula variant."}
+                {isPick3
+                  ? "Please check the fields: a first name, a full birth date, a formula variant, and exactly three choices."
+                  : isCouple
+                    ? "Please check both people: a first name, a full birth date, and a formula variant for each."
+                    : isMoveIn
+                      ? `Please check the fields: a first name, a full birth date, the formula variant, and a move-in window inside ${DAY_CALENDAR_RANGE.start} to ${DAY_CALENDAR_RANGE.end}.`
+                      : "Please check the fields: a first name, a full birth date, and a selection for the formula variant."}
               </p>
             ) : null}
             {errored ? (
@@ -255,6 +263,56 @@ export default async function SuccessPage(props: {
                 </div>
                 <button type="submit" className="cta-primary">
                   Render our compass
+                </button>
+              </form>
+            ) : isPick3 ? (
+              <form action={fulfillPick3} className="success-personalize-form">
+                <input type="hidden" name="sessionId" value={sessionId} />
+                <input type="hidden" name="productSlug" value={product.slug} />
+                <div className="field">
+                  <label className="field-label" htmlFor="pick3-name">
+                    First name (appears on the cover)
+                  </label>
+                  <input id="pick3-name" name="firstName" type="text" required maxLength={60} autoComplete="given-name" />
+                </div>
+                <div className="field field-date">
+                  <span className="field-label" id="pick3-dob">Birth date</span>
+                  <div className="date-row" role="group" aria-labelledby="pick3-dob">
+                    <label className="date-sub"><span className="date-sub-label">Year</span><input name="year" type="number" inputMode="numeric" min="1900" max="2050" step="1" required /></label>
+                    <label className="date-sub"><span className="date-sub-label">Month</span><input name="month" type="number" inputMode="numeric" min="1" max="12" step="1" required /></label>
+                    <label className="date-sub"><span className="date-sub-label">Day</span><input name="day" type="number" inputMode="numeric" min="1" max="31" step="1" required /></label>
+                  </div>
+                </div>
+                <div className="field field-gender">
+                  <span className="field-label" id="pick3-gender">Formula variant</span>
+                  <div className="radio-row" role="radiogroup" aria-labelledby="pick3-gender">
+                    <label className="radio"><input type="radio" name="gender" value="male" required /><span>Male</span></label>
+                    <label className="radio"><input type="radio" name="gender" value="female" /><span>Female</span></label>
+                  </div>
+                </div>
+                <div className="field">
+                  <span className="field-label" id="pick3-picks">
+                    Choose exactly three {pick3?.nounPlural}
+                  </span>
+                  <div
+                    role="group"
+                    aria-labelledby="pick3-picks"
+                    style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "0.5rem", marginTop: "0.5rem" }}
+                  >
+                    {(pick3?.options ?? []).map((o) => (
+                      <label key={o.block} className="radio">
+                        <input type="checkbox" name="picks" value={o.block} />
+                        <span>{o.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                  <p className="field-help">
+                    Pick three. If you choose more or fewer, we will ask you
+                    to adjust.
+                  </p>
+                </div>
+                <button type="submit" className="cta-primary">
+                  Render my compass
                 </button>
               </form>
             ) : (
