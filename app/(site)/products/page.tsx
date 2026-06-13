@@ -107,6 +107,42 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     priceLabel: "$9",
   },
   {
+    slug: "healthy-home-audit",
+    href: "/products/healthy-home-audit",
+    title: "Healthy Home Audit",
+    oneLiner:
+      "Nine conditions a home can support - air, light, damp, sound, more - audited with worksheets. No medical claims.",
+    status: "waitlist",
+    priceLabel: "$19",
+  },
+  {
+    slug: "five-elements-workbook",
+    href: "/products/five-elements-workbook",
+    title: "Five Elements Home Styling Workbook",
+    oneLiner:
+      "Read any room in five words - Wood, Fire, Earth, Metal, Water - and learn the two rules of what belongs next to what.",
+    status: "waitlist",
+    priceLabel: "$12",
+  },
+  {
+    slug: "starter-deck",
+    href: "/products/starter-deck",
+    title: "Learn Feng Shui Starter Deck",
+    oneLiner:
+      "Twenty-four printable flashcards of the working vocabulary, a bagua grid, and the first five moves a beginner makes.",
+    status: "waitlist",
+    priceLabel: "$9",
+  },
+  {
+    slug: "bazi-basics",
+    href: "/products/bazi-basics",
+    title: "BaZi Basics: Read Your Own Chart",
+    oneLiner:
+      "An educational primer on the four pillars and the Ten Gods: read your own birth chart, and know where the reading stops.",
+    status: "waitlist",
+    priceLabel: "$14",
+  },
+  {
     slug: "whole-home-starter-bundle",
     href: "/products/whole-home-starter-bundle",
     title: "Whole-Home Starter Bundle",

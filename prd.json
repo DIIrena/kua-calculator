@@ -891,6 +891,54 @@
         "Same voice bar; card anatomy consistent across all cards"
       ],
       "passes": true
+    },
+    {
+      "id": "PROD-011",
+      "title": "Healthy Home Audit built + wired",
+      "description": "Wave 3A. 34pp static PDF, no medical claims. $19.",
+      "acceptanceCriteria": [
+        "PDF built + raster-verified in band",
+        "voice/Kua/cycle sweeps pass",
+        "page+commerce+shelf+sitemap+slug wired",
+        "npm build clean"
+      ],
+      "passes": true
+    },
+    {
+      "id": "PROD-012",
+      "title": "Five Elements Workbook built + wired",
+      "description": "Wave 3A. 26pp static PDF, cycles verified. $12.",
+      "acceptanceCriteria": [
+        "PDF built + raster-verified in band",
+        "voice/Kua/cycle sweeps pass",
+        "page+commerce+shelf+sitemap+slug wired",
+        "npm build clean"
+      ],
+      "passes": true
+    },
+    {
+      "id": "PROD-013",
+      "title": "Learn Feng Shui Starter Deck built + wired",
+      "description": "Wave 3A. 15pp flashcard PDF. $9.",
+      "acceptanceCriteria": [
+        "PDF built + raster-verified in band",
+        "voice/Kua/cycle sweeps pass",
+        "page+commerce+shelf+sitemap+slug wired",
+        "npm build clean"
+      ],
+      "passes": true
+    },
+    {
+      "id": "PROD-014",
+      "title": "BaZi Basics built + wired",
+      "description": "Wave 3A. 24pp educational primer, no fortune-telling. $14.",
+      "acceptanceCriteria": [
+        "PDF built + raster-verified in band",
+        "voice/Kua/cycle sweeps pass",
+        "page+commerce+shelf+sitemap+slug wired",
+        "npm build clean"
+      ],
+      "passes": true
     }
   ]
 }

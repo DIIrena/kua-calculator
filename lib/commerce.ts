@@ -185,6 +185,70 @@ const WAVE2: CommerceProduct[] = [
     launched: false,
   },
   {
+    slug: "healthy-home-audit",
+    shortTitle: "Healthy Home Audit",
+    priceCents: 1900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_HEALTHY",
+    fulfillment: "static",
+    files: [
+      {
+        path: "healthy-home-audit/healthy-home-audit.pdf",
+        label: "The Healthy Home Audit (PDF)",
+      },
+    ],
+    productPath: "/products/healthy-home-audit",
+    launched: false,
+  },
+  {
+    slug: "five-elements-workbook",
+    shortTitle: "Five Elements Home Styling Workbook",
+    priceCents: 1200,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_ELEMENTS",
+    fulfillment: "static",
+    files: [
+      {
+        path: "five-elements-workbook/five-elements-workbook.pdf",
+        label: "The Five Elements Home Styling Workbook (PDF)",
+      },
+    ],
+    productPath: "/products/five-elements-workbook",
+    launched: false,
+  },
+  {
+    slug: "starter-deck",
+    shortTitle: "Learn Feng Shui Starter Deck",
+    priceCents: 900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_DECK",
+    fulfillment: "static",
+    files: [
+      {
+        path: "starter-deck/starter-deck.pdf",
+        label: "The Learn Feng Shui Starter Deck (PDF)",
+      },
+    ],
+    productPath: "/products/starter-deck",
+    launched: false,
+  },
+  {
+    slug: "bazi-basics",
+    shortTitle: "BaZi Basics: Read Your Own Chart",
+    priceCents: 1400,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_BAZI",
+    fulfillment: "static",
+    files: [
+      {
+        path: "bazi-basics/bazi-basics.pdf",
+        label: "BaZi Basics: Read Your Own Chart (PDF)",
+      },
+    ],
+    productPath: "/products/bazi-basics",
+    launched: false,
+  },
+  {
     // The bundle delivers the three component PDFs; no separate file.
     slug: "whole-home-starter-bundle",
     shortTitle: "Whole-Home Starter Bundle",

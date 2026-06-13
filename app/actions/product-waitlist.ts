@@ -55,6 +55,26 @@ const PRODUCTS: Record<string, ProductMeta> = {
     title: "Daily Ritual and Twenty Laws Pack",
     redirectPath: "/products/daily-ritual-pack",
   },
+  "healthy-home-audit": {
+    slug: "healthy-home-audit",
+    title: "Healthy Home Audit",
+    redirectPath: "/products/healthy-home-audit",
+  },
+  "five-elements-workbook": {
+    slug: "five-elements-workbook",
+    title: "Five Elements Home Styling Workbook",
+    redirectPath: "/products/five-elements-workbook",
+  },
+  "starter-deck": {
+    slug: "starter-deck",
+    title: "Learn Feng Shui Starter Deck",
+    redirectPath: "/products/starter-deck",
+  },
+  "bazi-basics": {
+    slug: "bazi-basics",
+    title: "BaZi Basics: Read Your Own Chart",
+    redirectPath: "/products/bazi-basics",
+  },
   "cures-catalog": {
     slug: "cures-catalog",
     title: "Cures and Crystals Catalogue",

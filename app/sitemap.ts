@@ -124,6 +124,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${SITE}/products/healthy-home-audit`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${SITE}/products/five-elements-workbook`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${SITE}/products/starter-deck`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${SITE}/products/bazi-basics`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${SITE}/products/whole-home-starter-bundle`,
       lastModified: today,
       changeFrequency: "monthly",
