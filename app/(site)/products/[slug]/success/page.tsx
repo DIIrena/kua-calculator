@@ -31,6 +31,12 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+// The personalised fulfilment server actions (fulfillCompass /
+// fulfillMoveIn / fulfillCouple / fulfillPick3) render a PDF via headless
+// Chromium on this route. Give the cold-start render room so it does not
+// hit the default function timeout.
+export const maxDuration = 60;
+
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ session_id?: string; form?: string }>;
 
