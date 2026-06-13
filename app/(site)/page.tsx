@@ -323,7 +323,7 @@ export default async function HomePage(props: {
         <div className="page-content">
           <p className="eyebrow">Paid guides and tools</p>
           <h2 id="map-offer-heading" className="home-section-heading">
-            Our paid products are personalised PDFs and focused tools.
+            Our paid products are printable guides and focused tools.
           </h2>
           <p className="home-section-lede">
             Each gives you a structured way to decide what to do in the
@@ -333,7 +333,7 @@ export default async function HomePage(props: {
           </p>
           <div className="map-offer-grid">
             <div className="map-offer-text">
-              <h3>The 2026 Annual Feng Shui Planner</h3>
+              <h3>The 2026 Feng Shui Planner: Mid-Year Edition</h3>
               <p>
                 Ninety-eight pages reading the feng shui year for your home.
                 The 2026 annual chart explained, a treatment for each of the
@@ -355,8 +355,8 @@ export default async function HomePage(props: {
               </ul>
             </div>
             <aside className="map-offer-price-card" aria-label="Price">
-              <p className="map-offer-price-eyebrow">The 2026 Annual Feng Shui Planner</p>
-              <p className="map-offer-price-amount">$29</p>
+              <p className="map-offer-price-eyebrow">The 2026 Feng Shui Planner</p>
+              <p className="map-offer-price-amount">$19</p>
               <p className="map-offer-price-suffix">
                 Available now. One-time, no subscription.
               </p>

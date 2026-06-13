@@ -396,7 +396,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
     gated: false,
     readingTime: "6 minutes",
     cta: {
-      label: "Track this year's visiting stars with the 2026 Annual Planner",
+      label: "Track this year's visiting stars with the 2026 Feng Shui Planner",
       href: "/products/annual-feng-shui-planner-2026",
       rationale:
         "The Planner reads the 2026 annual chart and names where each visiting star lands, so the timing layer above is grounded in a real plan.",
@@ -450,7 +450,7 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
     gated: false,
     readingTime: "5 minutes",
     cta: {
-      label: "Join the 2026 Annual Feng Shui Planner waitlist",
+      label: "See the 2026 Feng Shui Planner",
       href: "/products/annual-feng-shui-planner-2026",
       rationale:
         "The Planner names where the year's cures actually live, sector by sector, so the temporary work is easy to undo when 2027 rolls in.",

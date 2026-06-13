@@ -102,7 +102,7 @@ export default async function GoodDaysCalendarPage(props: {
         <p>
           The full sector-by-sector reading of the year lives in the{" "}
           <Link href="/products/annual-feng-shui-planner-2026">
-            2026 Annual Feng Shui Planner
+            2026 Feng Shui Planner
           </Link>
           , which includes this calendar. Buy the Planner and you do
           not need this product separately.

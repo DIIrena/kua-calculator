@@ -46,8 +46,8 @@ export type CommerceProduct = {
 export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
   "annual-feng-shui-planner-2026": {
     slug: "annual-feng-shui-planner-2026",
-    shortTitle: "2026 Annual Feng Shui Planner",
-    priceCents: 2900,
+    shortTitle: "2026 Feng Shui Planner: Mid-Year Edition",
+    priceCents: 1900,
     currency: "usd",
     stripeEnvKey: "STRIPE_PRICE_PLANNER",
     fulfillment: "static",

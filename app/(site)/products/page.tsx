@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Paid guides and tools | My Feng Shui Home",
   description:
-    "Personalised feng shui PDFs and tools. The Personal Feng Shui Compass, the Annual Planner, and focused readings for the bedroom, the kitchen, and your move-in date. One-time prices, 7-day refunds.",
+    "Personalised feng shui PDFs and tools. The Personal Feng Shui Compass, the 2026 Feng Shui Planner, and focused readings for the bedroom, the kitchen, and your move-in date. One-time prices, 7-day refunds.",
   alternates: { canonical: "https://myfengshuihome.com/products" },
   openGraph: {
     type: "website",
@@ -28,11 +28,11 @@ const SHELF: ReadonlyArray<ShelfItem> = [
   {
     slug: "annual-feng-shui-planner-2026",
     href: "/products/annual-feng-shui-planner-2026",
-    title: "2026 Annual Feng Shui Planner",
+    title: "2026 Feng Shui Planner: Mid-Year Edition",
     oneLiner:
-      "98 pages, the 2026 chart, sector treatments, and a 243-day calendar. The whole year in one printable book.",
+      "98 pages, the 2026 chart, sector treatments, and a 243-day calendar. The rest of the year in one printable book.",
     status: "live",
-    priceLabel: "$29",
+    priceLabel: "$19",
   },
   {
     slug: "personal-feng-shui-compass",

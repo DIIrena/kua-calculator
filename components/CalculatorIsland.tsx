@@ -318,7 +318,7 @@ export default function CalculatorIsland({
             hides it on /embed without a stylesheet change. */}
         <article className="post-result-card secondary post-result-card-compass post-result-card-planner">
           <h3 className="post-result-card-heading">
-            The 2026 Annual Feng Shui Planner.
+            The 2026 Feng Shui Planner.
           </h3>
           <p className="post-result-card-body">
             Your directions are the personal layer. The Planner reads the

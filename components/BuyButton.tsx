@@ -50,7 +50,7 @@ type Props = {
   /** Optional override for the small note rendered under the waitlist
    *  form. Defaults to a generic single-launch-email promise. Pass a
    *  custom string for products that send a richer email sequence
-   *  (the Annual Planner sends confirmation + sample + launch). */
+   *  (the 2026 Feng Shui Planner sends confirmation + sample + launch). */
   waitlistNote?: string;
   /** Optional id for the wrapping <div>. Defaults to "waitlist" so the
    *  "Skip to the waitlist" anchor works. Override when a page renders

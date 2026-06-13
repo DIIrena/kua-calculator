@@ -320,7 +320,7 @@ export default function GuideIndexPage() {
           </Link>{" "}
           and the{" "}
           <Link href="/products/annual-feng-shui-planner-2026">
-            2026 Annual Feng Shui Planner
+            2026 Feng Shui Planner
           </Link>{" "}
           are on the way; the waitlist is open if you want a quiet
           note when they land.

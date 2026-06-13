@@ -1788,7 +1788,7 @@ a:hover { color: var(--clay-deep); }
 /* --- Post-result CTA stack below the calculator result. Revealed by
        ui.js after a successful calculation. Three children: the primary
        methodology card, the secondary Compass waitlist card, and a
-       muted footer text link to the Annual Planner. On the /embed
+       muted footer text link to the 2026 Feng Shui Planner. On the /embed
        surface the secondary card and the footer are hidden via the
        .post-result-stack--embed class (set by ui.js when main#main
        carries data-embed="true"). --- */

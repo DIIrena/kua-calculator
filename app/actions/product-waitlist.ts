@@ -27,7 +27,7 @@ const PRODUCTS: Record<string, ProductMeta> = {
   },
   "annual-feng-shui-planner-2026": {
     slug: "annual-feng-shui-planner-2026",
-    title: "2026 Annual Feng Shui Planner",
+    title: "2026 Feng Shui Planner: Mid-Year Edition",
     redirectPath: "/products/annual-feng-shui-planner-2026",
   },
   "move-in-kit": {
@@ -146,7 +146,7 @@ function buildHtmlPlanner(siteUrl: string): string {
   const productUrl = `${root}/products/annual-feng-shui-planner-2026`;
   return `<!doctype html>
 <html lang="en">
-  <head><meta charset="utf-8" /><title>You are on the list - 2026 Annual Feng Shui Planner</title></head>
+  <head><meta charset="utf-8" /><title>You are on the list - 2026 Feng Shui Planner</title></head>
   <body style="margin:0;padding:32px 16px;background:#fcfcf8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#0e3b2c;">
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
       <tr><td align="center">
@@ -155,11 +155,11 @@ function buildHtmlPlanner(siteUrl: string): string {
             <div style="font-family:'Brush Script MT',cursive;font-size:30px;color:#0e3b2c;line-height:1;">My Feng Shui Home</div>
           </td></tr>
           <tr><td align="center" style="padding-bottom:18px;">
-            <img src="${coverUrl}" alt="The 2026 Annual Feng Shui Planner cover" width="190" height="285" style="display:block;width:190px;height:auto;border:1px solid #e2dac5;border-radius:6px;" />
+            <img src="${coverUrl}" alt="The 2026 Feng Shui Planner cover" width="190" height="285" style="display:block;width:190px;height:auto;border:1px solid #e2dac5;border-radius:6px;" />
           </td></tr>
           <tr><td>
             <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#0e3b2c;">You are on the list.</h1>
-            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">Thank you for your interest in the <strong>2026 Annual Feng Shui Planner</strong>. Good news: checkout is open and the Planner is available now. The button below takes you straight to the product page.</p>
+            <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">Thank you for your interest in the <strong>2026 Feng Shui Planner</strong>. Good news: checkout is open and the Planner is available now. The button below takes you straight to the product page.</p>
             <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;font-style:italic;color:#0e3b2c;">Picture the kettle doing its quiet steaming. You sit with the planner on the table, find your front door on the chart, find the south corner, find the one room the year asks you to leave a little alone, and you know where to start. The planner does that work for the whole solar year, room by room and month by month.</p>
             <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">The 2027 edition follows in January 2027 as a full twelve-month book. As a 2026 buyer you receive a <strong>30 percent renewal offer</strong> when it ships.</p>
             <p style="margin:24px 0 0;text-align:center;">
@@ -183,7 +183,7 @@ function buildTextPlanner(siteUrl: string): string {
   const root = siteUrl.replace(/\/$/, "");
   return `You are on the list.
 
-Thank you for your interest in the 2026 Annual Feng Shui Planner.
+Thank you for your interest in the 2026 Feng Shui Planner.
 Good news: checkout is open and the Planner is available now.
 Open the product page here:
 ${root}/products/annual-feng-shui-planner-2026
@@ -254,7 +254,7 @@ export async function joinProductWaitlist(formData: FormData) {
   // note. Everything else uses the generic confirmation.
   const isPlanner = product.slug === "annual-feng-shui-planner-2026";
   const subject = isPlanner
-    ? "You are on the list - 2026 Annual Feng Shui Planner"
+    ? "You are on the list - 2026 Feng Shui Planner"
     : `You are on the list - ${product.title}`;
   const html = isPlanner
     ? buildHtmlPlanner(siteUrl)

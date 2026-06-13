@@ -60,7 +60,7 @@ export async function sendPlannerFollowup(
 
   const result = await sendEmail({
     to: email,
-    subject: "A page from the 2026 Annual Feng Shui Planner",
+    subject: "A page from the 2026 Feng Shui Planner",
     html,
     text,
   });

@@ -7,18 +7,18 @@ import PlannerSourceTracker from "@/components/PlannerSourceTracker";
 
 export const metadata: Metadata = {
   title:
-    "2026 Annual Feng Shui Planner | The year in one printable book",
+    "The 2026 Feng Shui Planner: Mid-Year Edition | July 2026 to February 2027",
   description:
-    "98 pages, 16 sections, a 243-day calendar, sector-by-sector treatments, and the 2026 annual chart explained. One printable book for the Chinese solar year.",
+    "98 pages, 16 sections, a 243-day calendar, sector-by-sector treatments, and the 2026 annual chart explained. The mid-year edition, July 2026 to February 2027. $19.",
   alternates: {
     canonical:
       "https://myfengshuihome.com/products/annual-feng-shui-planner-2026",
   },
   openGraph: {
     type: "website",
-    title: "2026 Annual Feng Shui Planner",
+    title: "The 2026 Feng Shui Planner: Mid-Year Edition",
     description:
-      "98 pages, 16 sections, a 243-day calendar, sector-by-sector treatments, and the 2026 annual chart explained.",
+      "98 pages, a 243-day calendar, and sector-by-sector treatments for the rest of the 2026 solar year. $19.",
     url: "https://myfengshuihome.com/products/annual-feng-shui-planner-2026",
     images: [
       "https://myfengshuihome.com/products/annual-feng-shui-planner-2026/cover-thumb.png",
@@ -107,9 +107,9 @@ export default async function PlannerPage(props: {
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "2026 Annual Feng Shui Planner",
+    name: "The 2026 Feng Shui Planner: Mid-Year Edition",
     description:
-      "A 98-page printable planner for the 2026 Chinese solar year: the annual chart explained, nine sector treatments, monthly notes, a 243-day calendar, and a ten-step diagnostic walkthrough.",
+      "A 98-page printable planner for the rest of the 2026 Chinese solar year, July 2026 to February 2027: the annual chart explained, nine sector treatments, monthly notes, a 243-day calendar, and a ten-step diagnostic walkthrough.",
     image: [
       "https://myfengshuihome.com/products/annual-feng-shui-planner-2026/cover-portrait.png",
     ],
@@ -118,7 +118,7 @@ export default async function PlannerPage(props: {
       "@type": "Offer",
       url: "https://myfengshuihome.com/products/annual-feng-shui-planner-2026",
       priceCurrency: "USD",
-      price: "29",
+      price: "19",
       availability: "https://schema.org/InStock",
       priceValidUntil: "2027-02-28",
       seller: { "@type": "Organization", name: "My Feng Shui Home" },
@@ -139,7 +139,7 @@ export default async function PlannerPage(props: {
       <section className="product-hero">
         <p className="eyebrow">My Feng Shui Home</p>
         <h1 className="product-heading">
-          The <em>2026 Annual Feng Shui Planner</em>.
+          The <em>2026 Feng Shui Planner</em>: Mid-Year Edition.
         </h1>
         <div
           style={{
@@ -151,7 +151,7 @@ export default async function PlannerPage(props: {
         >
           <Image
             src="/products/annual-feng-shui-planner-2026/cover-portrait.png"
-            alt="The 2026 Annual Feng Shui Planner, front cover."
+            alt="The 2026 Feng Shui Planner, mid-year edition, front cover."
             width={1024}
             height={1536}
             priority
@@ -167,8 +167,9 @@ export default async function PlannerPage(props: {
           />
           <div style={{ flex: "1 1 320px" }}>
             <p className="product-lede">
-              The 2026 Annual Feng Shui Planner is a 98-page printable
-              book for the 2026 solar year. $29, one-time. It answers
+              The 2026 Feng Shui Planner, mid-year edition, is a
+              98-page printable book for the rest of the 2026 solar
+              year. $19, one-time. It answers
               four questions for every month left in the year: which
               corner of the home asks for a gentle hand, which corner
               is ready for real work, which weekends are wrong for a
@@ -176,7 +177,7 @@ export default async function PlannerPage(props: {
               that matters.
             </p>
             <p className="product-lede" style={{ marginTop: "0.9rem" }}>
-              One book. One year. One shelf.
+              One book. The rest of the year. One shelf.
             </p>
             <p className="product-hero-launch-state" style={{ marginTop: "0.9rem" }}>
               Checkout is open. The files arrive by email within a
@@ -195,10 +196,10 @@ export default async function PlannerPage(props: {
         aria-label="Buy the 2026 Planner"
       >
         <h2 className="product-top-waitlist-heading">
-          Buy the 2026 Annual Feng Shui Planner.
+          Buy the 2026 Feng Shui Planner.
         </h2>
         <p className="product-top-waitlist-state">
-          $29, one-time. Instant delivery: PDF, EPUB, and the phone
+          $19, one-time. Instant delivery: PDF, EPUB, and the phone
           calendar file.
         </p>
         {checkoutStatus === "error" ? (
@@ -216,7 +217,7 @@ export default async function PlannerPage(props: {
         ) : null}
         <BuyButton
           productSlug="annual-feng-shui-planner-2026"
-          priceLabel="$29"
+          priceLabel="$19"
           state="stripe-live"
           waitlistStatus={status}
           anchorId="waitlist-top"
@@ -427,7 +428,7 @@ export default async function PlannerPage(props: {
         <h2>How it works</h2>
         <ol>
           <li>
-            <strong>You pay once.</strong> $29, no subscription. Card
+            <strong>You pay once.</strong> $19, no subscription. Card
             checkout, handled by Stripe.
           </li>
           <li>
@@ -497,13 +498,13 @@ export default async function PlannerPage(props: {
       <section className="product-buy-section">
         <h2>Buy the Planner.</h2>
         <p>
-          $29, one-time. The files arrive by email within a minute of
+          $19, one-time. The files arrive by email within a minute of
           purchase, and the download page shows them immediately.
           7-day refund, no questions asked.
         </p>
         <BuyButton
           productSlug="annual-feng-shui-planner-2026"
-          priceLabel="$29"
+          priceLabel="$19"
           state="stripe-live"
           waitlistStatus={status}
         />

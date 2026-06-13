@@ -1,4 +1,4 @@
-// Week-later follow-up email for the 2026 Annual Feng Shui Planner
+// Week-later follow-up email for the 2026 Feng Shui Planner
 // waitlist. Sent roughly 7 days after the confirmation email.
 //
 // The voice here is storytelling-copy, not practitioner: the goal is
@@ -32,10 +32,10 @@ export function buildPlannerFollowupHtml(
           </td></tr>
           <tr><td>
             <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#0e3b2c;">A page from the planner.</h1>
-            <p style="margin:0 0 14px;font:16px/1.65 sans-serif;color:#0e3b2c;">A week ago you joined the waitlist for the 2026 Annual Feng Shui Planner. I wanted to show you the kind of page you will be reading when it lands. Below is one section from the middle of the book, the way it will look when you open the PDF on your kitchen counter.</p>
+            <p style="margin:0 0 14px;font:16px/1.65 sans-serif;color:#0e3b2c;">A week ago you joined the waitlist for the 2026 Feng Shui Planner. I wanted to show you the kind of page you will be reading when it lands. Below is one section from the middle of the book, the way it will look when you open the PDF on your kitchen counter.</p>
           </td></tr>
           <tr><td align="center" style="padding:8px 0 18px;">
-            <img src="${image}" alt="A sample page from the 2026 Annual Feng Shui Planner" width="440" style="display:block;width:100%;max-width:440px;height:auto;border:1px solid #e2dac5;border-radius:6px;" />
+            <img src="${image}" alt="A sample page from the 2026 Feng Shui Planner" width="440" style="display:block;width:100%;max-width:440px;height:auto;border:1px solid #e2dac5;border-radius:6px;" />
           </td></tr>
           <tr><td>
             <p style="margin:0 0 14px;font:16px/1.65 sans-serif;color:#0e3b2c;">Every practical chapter sits inside the same six-box structure. <em>What this means</em>, <em>do this</em>, <em>avoid this</em>, a <em>practitioner tip</em>, a <em>real home example</em>, and one closing line called <em>if you only do one thing</em>. You can read the whole section, or you can stop at the last line and still have everything you need.</p>

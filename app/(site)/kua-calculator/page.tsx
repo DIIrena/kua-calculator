@@ -374,7 +374,7 @@ export default async function KuaCalculatorPage(props: {
           <p>
             Your Kua number tells you about you: the directions that tend
             to support you and the ones to handle with care. The 2026
-            Annual Feng Shui Planner reads the other layer, the year. It
+            Feng Shui Planner reads the other layer, the year. It
             walks through which corners of any home to treat gently in
             2026 and which days suit which kind of decision. The two sit
             together: your directions, and the year laid over them.
@@ -384,7 +384,7 @@ export default async function KuaCalculatorPage(props: {
               href="/products/annual-feng-shui-planner-2026?from=kua-calculator"
               className="cta-primary"
             >
-              See the 2026 Annual Planner →
+              See the 2026 Feng Shui Planner →
             </Link>
           </p>
         </div>
