@@ -126,9 +126,11 @@ export async function fulfillPick3(formData: FormData) {
         firstName,
         downloadUrl: signed.signedUrl,
       });
-      await sendEmail({ to: email, subject: mail.subject, html: mail.html, text: mail.text });
+      const sent = await sendEmail({ to: email, subject: mail.subject, html: mail.html, text: mail.text });
+      if (sent.ok) back(product.slug, sessionId, "resent");
     }
-    back(product.slug, sessionId, "delivered");
+    // PDF could not be re-signed or the re-send failed; do not claim delivery.
+    back(product.slug, sessionId, "error");
   }
 
   const effYear = effectiveKuaYear(year, month, day).year;

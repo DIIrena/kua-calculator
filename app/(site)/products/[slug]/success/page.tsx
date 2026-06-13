@@ -154,6 +154,7 @@ export default async function SuccessPage(props: {
   // products use the three-field Kua form; the Move-In Date Report adds
   // a move-in window and posts to a different fulfilment action.
   const delivered = formStatus === "delivered";
+  const resent = formStatus === "resent";
   const invalid = formStatus === "invalid";
   const errored = formStatus === "error";
   const isMoveIn = product.personalizedForm === "movein";
@@ -168,13 +169,12 @@ export default async function SuccessPage(props: {
         <h1 className="product-heading">
           One step left: personalise your {product.shortTitle}.
         </h1>
-        {delivered ? (
+        {delivered || resent ? (
           <>
             <p className="product-lede" role="status">
-              Done. Your PDF is rendered and the download link is in
-              your inbox at {email || "your email address"}. The link
-              works for 7 days; reply to that email any time for a
-              fresh one.
+              {resent
+                ? `You have already personalised this ${product.shortTitle}. We have re-sent your download link to ${email || "your email address"}. The link works for 7 days; check your spam folder if it has not arrived in a few minutes.`
+                : `Done. Your ${product.shortTitle} is rendered and the download link is on its way to ${email || "your email address"}. The link works for 7 days.`}
             </p>
             <p>
               <Link href="/guide" className="article-back-link">
