@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import ProductGallery from "@/components/ProductGallery";
 
 export const metadata: Metadata = {
   title: "Cures and Crystals Catalogue | My Feng Shui Home",
@@ -54,6 +55,8 @@ export default async function CuresCatalogPage(props: {
           <a href="#waitlist">Skip to the waitlist →</a>
         </p>
       </section>
+
+      <ProductGallery slug="cures-catalog" title="Cures and Crystals Catalogue" />
 
       <section className="product-section">
         <h2>What is inside</h2>

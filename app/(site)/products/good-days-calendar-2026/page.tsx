@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import ProductGallery from "@/components/ProductGallery";
 
 // The 2026 Good-Days Calendar: the $9 companion product extracted
 // from the Planner's day-calendar layer. Printable PDF + a phone
@@ -58,6 +59,8 @@ export default async function GoodDaysCalendarPage(props: {
           <a href="#waitlist">Skip to the waitlist →</a>
         </p>
       </section>
+
+      <ProductGallery slug="good-days-calendar-2026" title="2026 Good-Days Calendar" />
 
       <section className="product-section">
         <h2>What is inside</h2>

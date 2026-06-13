@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import ProductGallery from "@/components/ProductGallery";
 
 export const metadata: Metadata = {
   title: "Five Elements Home Styling Workbook | My Feng Shui Home",
@@ -51,6 +52,8 @@ export default async function FiveElementsWorkbookPage(props: {
           <a href="#waitlist">Skip to the waitlist →</a>
         </p>
       </section>
+
+      <ProductGallery slug="five-elements-workbook" title="Five Elements Home Styling Workbook" />
 
       <section className="product-section">
         <h2>What is inside</h2>

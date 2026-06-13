@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import ProductGallery from "@/components/ProductGallery";
 import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
@@ -54,6 +55,8 @@ export default async function BedroomResetPage(props: {
           <a href="#waitlist">Skip to the waitlist →</a>
         </p>
       </section>
+
+      <ProductGallery slug="bedroom-reset" title="Bedroom and Relationship Reset" />
 
       <section className="product-section">
         <h2>Who it is for</h2>

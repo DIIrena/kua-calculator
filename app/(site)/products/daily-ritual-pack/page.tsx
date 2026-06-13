@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import ProductGallery from "@/components/ProductGallery";
 
 export const metadata: Metadata = {
   title: "Daily Ritual and Twenty Laws Pack | My Feng Shui Home",
@@ -52,6 +53,8 @@ export default async function DailyRitualPackPage(props: {
           <a href="#waitlist">Skip to the waitlist →</a>
         </p>
       </section>
+
+      <ProductGallery slug="daily-ritual-pack" title="Daily Ritual and Twenty Laws Pack" />
 
       <section className="product-section">
         <h2>What is inside</h2>
