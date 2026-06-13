@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
-import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
   title: "7-Day Home Reset | My Feng Shui Home",
@@ -48,11 +47,10 @@ export default async function SevenDayHomeResetPage(props: {
           time.
         </p>
         <p className="product-hero-launch-state">
-          The course is written and ready. Checkout is not live yet; join
-          the waitlist and we email you the moment it opens.
+          Available now. The welcome email arrives the moment you buy, then one short task email a day for seven days.
         </p>
         <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to the waitlist →</a>
+          <a href="#waitlist">Skip to checkout →</a>
         </p>
       </section>
 
@@ -120,16 +118,14 @@ export default async function SevenDayHomeResetPage(props: {
       </section>
 
       <section className="product-buy-section">
-        <h2>Join the waitlist.</h2>
+        <h2>Buy now.</h2>
         <p>
-          The course is written. When checkout goes live, we email you
-          the launch page and the early price. You can unsubscribe any
-          time.
+          Secure checkout. 7-day refund, no questions asked. The course begins the moment you buy.
         </p>
         <BuyButton
           productSlug="seven-day-home-reset"
           priceLabel="$19"
-          state="waitlist"
+          state="stripe-live"
           waitlistStatus={status}
         />
       </section>
@@ -141,8 +137,6 @@ export default async function SevenDayHomeResetPage(props: {
           </Link>
         </p>
       </section>
-
-      <FloatingWaitlistCTA />
     </div>
   );
 }

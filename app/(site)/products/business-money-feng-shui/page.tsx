@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import ProductGallery from "@/components/ProductGallery";
-import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
   title:
@@ -49,11 +48,10 @@ export default async function MoneyKitPage(props: {
           for your home and your work, keyed to your Kua.
         </p>
         <p className="product-hero-launch-state">
-          The Kit is finished and checkout opens shortly. Join the
-          waitlist and you get the launch price the day it does.
+          Available now. The files arrive by email the moment you buy.
         </p>
         <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to the waitlist →</a>
+          <a href="#waitlist">Skip to checkout →</a>
         </p>
       </section>
 
@@ -145,15 +143,14 @@ export default async function MoneyKitPage(props: {
       </section>
 
       <section className="product-buy-section">
-        <h2>Join the waitlist.</h2>
+        <h2>Buy now.</h2>
         <p>
-          The Money Kit is in development. When checkout goes live,
-          we email you the launch page and the early price.
+          Secure checkout. 7-day refund, no questions asked. Your files arrive by email the moment you buy.
         </p>
         <BuyButton
           productSlug="business-money-feng-shui"
           priceLabel="$19"
-          state="waitlist"
+          state="stripe-live"
           waitlistStatus={status}
         />
       </section>
@@ -165,8 +162,6 @@ export default async function MoneyKitPage(props: {
           </Link>
         </p>
       </section>
-
-      <FloatingWaitlistCTA />
     </div>
   );
 }

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import ProductCoverPreview from "@/components/ProductCoverPreview";
-import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
   title: "Move-In Date Report | My Feng Shui Home",
@@ -49,12 +48,10 @@ export default async function MoveInKitPage(props: {
           home, and a short sequence for the first week inside.
         </p>
         <p className="product-hero-launch-state">
-          The Move-In Date Report is in development and checkout is not
-          live yet. Join the waitlist and you are the first to hear when
-          it ships.
+          Available now. After you pay, you fill in a short form and the personalised PDF is generated and emailed to you within about a minute.
         </p>
         <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to the waitlist →</a>
+          <a href="#waitlist">Skip to checkout →</a>
         </p>
       </section>
 
@@ -126,16 +123,14 @@ export default async function MoveInKitPage(props: {
       </section>
 
       <section className="product-buy-section">
-        <h2>Join the waitlist.</h2>
+        <h2>Buy now.</h2>
         <p>
-          The Move-In Date Report is in development. When checkout goes
-          live, we email you the launch page and the early price. You
-          can unsubscribe any time.
+          Secure checkout. 7-day refund, no questions asked. You fill in a short form after paying and the PDF is emailed to you.
         </p>
         <BuyButton
           productSlug="move-in-kit"
           priceLabel="$29"
-          state="waitlist"
+          state="stripe-live"
           waitlistStatus={status}
         />
       </section>
@@ -147,8 +142,6 @@ export default async function MoveInKitPage(props: {
           </Link>
         </p>
       </section>
-
-      <FloatingWaitlistCTA />
     </div>
   );
 }

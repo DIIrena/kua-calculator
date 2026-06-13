@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
-import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
   title: "Complete Home Compass | My Feng Shui Home",
@@ -46,11 +45,10 @@ export default async function CompleteHomeCompassPage(props: {
           map in one place rather than a corner at a time.
         </p>
         <p className="product-hero-launch-state">
-          The reading is ready. Checkout is not live yet; join the
-          waitlist and we email you the moment it opens.
+          Available now. After you pay, you fill in a short form and the personalised PDF is generated and emailed to you within about a minute.
         </p>
         <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to the waitlist →</a>
+          <a href="#waitlist">Skip to checkout →</a>
         </p>
       </section>
 
@@ -101,15 +99,14 @@ export default async function CompleteHomeCompassPage(props: {
       </section>
 
       <section className="product-buy-section">
-        <h2>Join the waitlist.</h2>
+        <h2>Buy now.</h2>
         <p>
-          When checkout goes live, we email you the launch page and the
-          early price. You can unsubscribe any time.
+          Secure checkout. 7-day refund, no questions asked. You fill in a short form after paying and the PDF is emailed to you.
         </p>
         <BuyButton
           productSlug="complete-home-compass"
           priceLabel="$49"
-          state="waitlist"
+          state="stripe-live"
           waitlistStatus={status}
         />
       </section>
@@ -121,8 +118,6 @@ export default async function CompleteHomeCompassPage(props: {
           </Link>
         </p>
       </section>
-
-      <FloatingWaitlistCTA />
     </div>
   );
 }

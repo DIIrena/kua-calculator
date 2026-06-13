@@ -105,7 +105,7 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
     fulfillment: "personalized",
     recipeSlug: "extended-personal-kua",
     productPath: "/products/extended-personal-kua-report",
-    launched: false,
+    launched: true,
   },
   // The Move-In Date Report. Personalised, but rendered from a bespoke
   // template (not the block recipe): the buyer's move-in window read
@@ -120,7 +120,7 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
     fulfillment: "personalized",
     personalizedForm: "movein",
     productPath: "/products/move-in-kit",
-    launched: false,
+    launched: true,
   },
   // The 7-Day Home Reset. An email course: enrol on purchase, one email
   // a day for seven days via the drip cron.
@@ -133,7 +133,7 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
     fulfillment: "course",
     courseSlug: "seven-day-home-reset",
     productPath: "/products/seven-day-home-reset",
-    launched: false,
+    launched: true,
   },
   "good-days-calendar-2026": {
     slug: "good-days-calendar-2026",
@@ -174,7 +174,7 @@ const WAVE2: CommerceProduct[] = [
       },
     ],
     productPath: "/products/bedroom-reset",
-    launched: false,
+    launched: true,
   },
   {
     slug: "business-money-feng-shui",
@@ -190,7 +190,7 @@ const WAVE2: CommerceProduct[] = [
       },
     ],
     productPath: "/products/business-money-feng-shui",
-    launched: false,
+    launched: true,
   },
   {
     slug: "home-diagnostic-workbook",
@@ -206,7 +206,7 @@ const WAVE2: CommerceProduct[] = [
       },
     ],
     productPath: "/products/home-diagnostic-workbook",
-    launched: false,
+    launched: true,
   },
   {
     slug: "daily-ritual-pack",
@@ -222,7 +222,7 @@ const WAVE2: CommerceProduct[] = [
       },
     ],
     productPath: "/products/daily-ritual-pack",
-    launched: false,
+    launched: true,
   },
   {
     slug: "cures-catalog",
@@ -238,7 +238,7 @@ const WAVE2: CommerceProduct[] = [
       },
     ],
     productPath: "/products/cures-catalog",
-    launched: false,
+    launched: true,
   },
   {
     slug: "healthy-home-audit",
@@ -254,7 +254,7 @@ const WAVE2: CommerceProduct[] = [
       },
     ],
     productPath: "/products/healthy-home-audit",
-    launched: false,
+    launched: true,
   },
   {
     slug: "five-elements-workbook",
@@ -270,7 +270,7 @@ const WAVE2: CommerceProduct[] = [
       },
     ],
     productPath: "/products/five-elements-workbook",
-    launched: false,
+    launched: true,
   },
   {
     slug: "starter-deck",
@@ -286,7 +286,7 @@ const WAVE2: CommerceProduct[] = [
       },
     ],
     productPath: "/products/starter-deck",
-    launched: false,
+    launched: true,
   },
   {
     slug: "bazi-basics",
@@ -302,7 +302,7 @@ const WAVE2: CommerceProduct[] = [
       },
     ],
     productPath: "/products/bazi-basics",
-    launched: false,
+    launched: true,
   },
   {
     // The bundle delivers the three component PDFs; no separate file.
@@ -327,7 +327,7 @@ const WAVE2: CommerceProduct[] = [
       },
     ],
     productPath: "/products/whole-home-starter-bundle",
-    launched: false,
+    launched: true,
   },
 ];
 for (const p of WAVE2) {
@@ -347,7 +347,7 @@ for (const e of COMPASS_CATALOGUE) {
     fulfillment: "personalized",
     recipeSlug: e.slug,
     productPath: `/products/${e.slug}`,
-    launched: false,
+    launched: true,
   };
 }
 
@@ -362,7 +362,7 @@ const COMPASS_BUNDLES: CommerceProduct[] = [
     fulfillment: "personalized",
     recipeSlug: "all-nine-pillars-compass",
     productPath: "/products/all-nine-pillars-compass",
-    launched: false,
+    launched: true,
   },
   {
     slug: "all-twelve-spaces-compass",
@@ -373,7 +373,7 @@ const COMPASS_BUNDLES: CommerceProduct[] = [
     fulfillment: "personalized",
     recipeSlug: "all-twelve-spaces-compass",
     productPath: "/products/all-twelve-spaces-compass",
-    launched: false,
+    launched: true,
   },
   {
     slug: "complete-home-compass",
@@ -384,7 +384,7 @@ const COMPASS_BUNDLES: CommerceProduct[] = [
     fulfillment: "personalized",
     recipeSlug: "complete-home-compass",
     productPath: "/products/complete-home-compass",
-    launched: false,
+    launched: true,
   },
   {
     slug: "couple-compatibility-compass",
@@ -395,7 +395,7 @@ const COMPASS_BUNDLES: CommerceProduct[] = [
     fulfillment: "personalized",
     personalizedForm: "couple",
     productPath: "/products/couple-compatibility-compass",
-    launched: false,
+    launched: true,
   },
   {
     slug: "pick-three-pillars",
@@ -406,7 +406,7 @@ const COMPASS_BUNDLES: CommerceProduct[] = [
     fulfillment: "personalized",
     personalizedForm: "pick3",
     productPath: "/products/pick-three-pillars",
-    launched: false,
+    launched: true,
   },
   {
     slug: "pick-three-spaces",
@@ -417,7 +417,7 @@ const COMPASS_BUNDLES: CommerceProduct[] = [
     fulfillment: "personalized",
     personalizedForm: "pick3",
     productPath: "/products/pick-three-spaces",
-    launched: false,
+    launched: true,
   },
 ];
 for (const p of COMPASS_BUNDLES) {

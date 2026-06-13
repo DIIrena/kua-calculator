@@ -50,7 +50,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Extended Personal Kua Report",
     oneLiner:
       "The deep reading: your eight directions plus your bedroom, desk, and dining seat read for your Kua, a compatibility chapter, and a 2026 overlay.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$39",
   },
   {
@@ -59,7 +59,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Complete Home Compass",
     oneLiner:
       "The flagship: your eight directions, compatibility, all twelve rooms, all nine life areas, and the 2026 overlay, read for your Kua in one volume.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$49",
   },
   {
@@ -68,7 +68,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Twelve Spaces Compass",
     oneLiner:
       "Every room read for your Kua in one PDF: bedroom, office, dining, kitchen, living room, bathroom, entrance, hallway, storage, laundry, balcony, garage.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$29",
   },
   {
@@ -77,7 +77,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Nine Life Areas Compass",
     oneLiner:
       "All nine bagua life-area corners read for your Kua: wealth, recognition, relationships, creativity, helpful people, career, knowledge, family, health.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$29",
   },
   {
@@ -86,7 +86,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Couple Compatibility Compass",
     oneLiner:
       "Two people, one home: both Kua maps read together. Where you agree, where to take turns, and how to settle the shared bed and table.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$19",
   },
   {
@@ -95,7 +95,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Three Life Areas Compass",
     oneLiner:
       "Build your own bundle: choose any three of the nine life areas and get each read for your Kua, in one PDF.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$17",
   },
   {
@@ -104,7 +104,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Three Spaces Compass",
     oneLiner:
       "Build your own bundle: choose any three rooms and get each read for your Kua, in one PDF.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$17",
   },
   {
@@ -122,7 +122,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Move-In Date Report",
     oneLiner:
       "Your move-in window read day by day against the 2026 calendar, your Kua directions for the new home, and a first-week checklist.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$29",
   },
   {
@@ -131,7 +131,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Bedroom and Relationship Reset",
     oneLiner:
       "The bedroom walked from the door inward, with bed-direction readings for all nine Kua numbers and a couples section.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$14",
   },
   {
@@ -140,7 +140,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Business and Money Feng Shui Kit",
     oneLiner:
       "The office, the desk, the wealth corner, the kitchen stove. The practical money-channel reading for your home and business.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$19",
   },
   {
@@ -149,7 +149,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "10-Step Home Diagnostic Workbook",
     oneLiner:
       "Audit your own home the way a practitioner would: ten steps, fill-in worksheets, and a 90-day re-evaluation.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$14",
   },
   {
@@ -158,7 +158,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Daily Ritual and Twenty Laws Pack",
     oneLiner:
       "The twenty traditional laws as printable cards, plus morning and evening checklists for a calm daily rhythm.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$9",
   },
   {
@@ -167,7 +167,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "7-Day Home Reset",
     oneLiner:
       "A seven-day email course: one short email a day, one small task each, room by room. Nothing to buy, nothing to redecorate.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$19",
   },
   {
@@ -176,7 +176,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Cures and Crystals Catalogue",
     oneLiner:
       "Every cure and crystal as a compact reference card: what it is, where it goes, and what the tradition says.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$9",
   },
   {
@@ -185,7 +185,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Healthy Home Audit",
     oneLiner:
       "Nine conditions a home can support - air, light, damp, sound, more - audited with worksheets. No medical claims.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$19",
   },
   {
@@ -194,7 +194,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Five Elements Home Styling Workbook",
     oneLiner:
       "Read any room in five words - Wood, Fire, Earth, Metal, Water - and learn the two rules of what belongs next to what.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$12",
   },
   {
@@ -203,7 +203,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Learn Feng Shui Starter Deck",
     oneLiner:
       "Twenty-four printable flashcards of the working vocabulary, a bagua grid, and the first five moves a beginner makes.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$9",
   },
   {
@@ -212,7 +212,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "BaZi Basics: Read Your Own Chart",
     oneLiner:
       "An educational primer on the four pillars and the Ten Gods: read your own birth chart, and know where the reading stops.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$14",
   },
   {
@@ -221,7 +221,7 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     title: "Whole-Home Starter Bundle",
     oneLiner:
       "The Diagnostic Workbook, the Ritual Pack, and the Cures Catalogue together: audit, rhythm, cures. Three PDFs, one price.",
-    status: "waitlist",
+    status: "live",
     priceLabel: "$29",
   },
   {
@@ -348,7 +348,7 @@ export default async function ProductsPage(props: {
           Short, focused readings keyed to your Kua, one room or one life
           area at a time. $7 each, or $9 for the Year Ahead. Each is the
           same three-field reading as the Personal Compass, scoped to a
-          single part of your home. All on the waitlist for now.
+          single part of your home. All available now.
         </p>
         <ul className="products-grid">
           {COMPASS_CATALOGUE.map((e) => (
@@ -359,8 +359,8 @@ export default async function ProductsPage(props: {
                 aria-labelledby={`compass-${e.slug}-title`}
               >
                 <p className="product-shelf-status-row">
-                  <span className="product-shelf-status product-shelf-status-waitlist">
-                    Waitlist
+                  <span className="product-shelf-status product-shelf-status-live">
+                    Available now
                   </span>
                   <span className="product-shelf-price">
                     ${e.priceCents / 100}
@@ -373,9 +373,7 @@ export default async function ProductsPage(props: {
                   {e.topicLabel} Compass
                 </h3>
                 <p className="product-shelf-oneliner">{e.oneLiner}</p>
-                <p className="product-shelf-cta">
-                  Read more + join the waitlist →
-                </p>
+                <p className="product-shelf-cta">See the product →</p>
               </Link>
             </li>
           ))}
@@ -392,10 +390,9 @@ export default async function ProductsPage(props: {
           others.
         </p>
         <p>
-          The 2026 Planner is available now. The rest of the shelf
-          launches through 2026 - waitlist members get the early price
-          and an email the day each checkout opens. You can
-          unsubscribe any time.
+          Everything here is available now. One-time price, delivery by
+          email (instantly for the printable products, within about a
+          minute for the personalised ones), and a 7-day refund on each.
         </p>
       </section>
     </div>

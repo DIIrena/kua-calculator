@@ -48,11 +48,10 @@ export default async function CuresCatalogPage(props: {
           one-time. 23 pages.
         </p>
         <p className="product-hero-launch-state">
-          The Catalogue is finished and checkout opens shortly. Join
-          the waitlist and you get the launch price the day it does.
+          Available now. The files arrive by email the moment you buy.
         </p>
         <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to the waitlist →</a>
+          <a href="#waitlist">Skip to checkout →</a>
         </p>
       </section>
 
@@ -100,15 +99,14 @@ export default async function CuresCatalogPage(props: {
       </section>
 
       <section className="product-buy-section">
-        <h2>Join the waitlist.</h2>
+        <h2>Buy now.</h2>
         <p>
-          The Catalogue launches shortly. Join the list and we email
-          you the launch page and the early price.
+          Secure checkout. 7-day refund, no questions asked. Your files arrive by email the moment you buy.
         </p>
         <BuyButton
           productSlug="cures-catalog"
           priceLabel="$9"
-          state="waitlist"
+          state="stripe-live"
           waitlistStatus={status}
         />
       </section>
