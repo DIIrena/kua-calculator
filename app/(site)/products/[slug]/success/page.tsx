@@ -274,7 +274,7 @@ export default async function SuccessPage(props: {
                 </p>
               </div>
               <button type="submit" className="cta-primary">
-                Render my Compass
+                Render my reading
               </button>
             </form>
           </>

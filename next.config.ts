@@ -28,6 +28,15 @@ const nextConfig: NextConfig = {
     "/api/og/[slug]": ["./lib/fonts/*.ttf"],
     "/api/compass/[id]/render": ["./lib/fonts/*.ttf", "./content/blocks/*.md"],
     "/api/dev/sample-compass": ["./lib/fonts/*.ttf", "./content/blocks/*.md"],
+    // The post-checkout fulfilment server actions (fulfillCompass for the
+    // Compass + Extended Kua Report, fulfillMoveIn for the Move-In Report)
+    // run on this route and read content/blocks + the day-calendar JSON at
+    // runtime. Bundle them so personalised delivery works on Vercel.
+    "/products/[slug]/success": [
+      "./lib/fonts/*.ttf",
+      "./content/blocks/*.md",
+      "./lib/day-calendar-*.json",
+    ],
   },
   async redirects() {
     return [

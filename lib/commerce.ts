@@ -79,6 +79,17 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
     productPath: "/products/personal-feng-shui-compass",
     launched: false,
   },
+  "extended-personal-kua-report": {
+    slug: "extended-personal-kua-report",
+    shortTitle: "Extended Personal Kua Report",
+    priceCents: 3900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_EXTENDED",
+    fulfillment: "personalized",
+    recipeSlug: "extended-personal-kua",
+    productPath: "/products/extended-personal-kua-report",
+    launched: false,
+  },
   "good-days-calendar-2026": {
     slug: "good-days-calendar-2026",
     shortTitle: "2026 Good-Days Calendar",

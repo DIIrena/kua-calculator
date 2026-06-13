@@ -90,7 +90,7 @@ export function buildPersonalizationInviteEmail(input: {
   const html = shell(`
     <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#0e3b2c;">Payment received. One step left.</h1>
     <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">Your ${input.productTitle} is personalised to your Kua number. Fill in three fields (first name, birth date, gender) and the PDF is generated and emailed to you within about a minute.</p>
-    ${linkButton(input.formUrl, "Personalise my Compass")}
+    ${linkButton(input.formUrl, "Personalise my reading")}
     <p style="margin:18px 0 0;font:14px/1.6 sans-serif;color:#4f5b53;">The link stays valid; come back any time if now is not the moment.</p>
   `);
 
@@ -119,7 +119,7 @@ export function buildPersonalizedDeliveryEmail(input: {
   const html = shell(`
     <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#0e3b2c;">Your ${input.productTitle} is ready.</h1>
     <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">It is keyed to your Kua number, with your name on the cover. The link works for 7 days; if it expires, reply to this email and we send a fresh one. If you sign in with this email address, the file also stays on your account page.</p>
-    ${linkButton(input.downloadUrl, "Download my Compass (PDF)")}
+    ${linkButton(input.downloadUrl, "Download my PDF")}
   `);
 
   const text = [

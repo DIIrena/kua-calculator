@@ -35,6 +35,9 @@ export async function GET(request: Request) {
   const genderParam = url.searchParams.get("gender") || "male";
   const gender =
     genderParam === "female" ? ("female" as const) : ("male" as const);
+  // Which recipe to render. Defaults to the Compass; pass
+  // ?product=extended-personal-kua to smoke-test the Extended Report.
+  const recipeSlug = url.searchParams.get("product") || "personal-compass";
 
   let kua: number;
   let group: "east" | "west";
@@ -49,10 +52,10 @@ export async function GET(request: Request) {
   }
 
   const context = buildContext(firstName, kua, group);
-  const product = findProduct("personal-compass");
+  const product = findProduct(recipeSlug);
   if (!product) {
     return NextResponse.json(
-      { error: "product not found" },
+      { error: `product not found: ${recipeSlug}` },
       { status: 500 },
     );
   }
@@ -74,7 +77,7 @@ export async function GET(request: Request) {
     );
   }
 
-  const filename = `${firstName}-Personal-Feng-Shui-Compass.pdf`;
+  const filename = `${firstName}-${product.shortTitle.replace(/\s+/g, "-")}.pdf`;
   return new NextResponse(new Uint8Array(pdf), {
     status: 200,
     headers: {

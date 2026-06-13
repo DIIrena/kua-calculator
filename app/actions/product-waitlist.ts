@@ -25,6 +25,11 @@ const PRODUCTS: Record<string, ProductMeta> = {
     title: "Personal Feng Shui Compass",
     redirectPath: "/products/personal-feng-shui-compass",
   },
+  "extended-personal-kua-report": {
+    slug: "extended-personal-kua-report",
+    title: "Extended Personal Kua Report",
+    redirectPath: "/products/extended-personal-kua-report",
+  },
   "annual-feng-shui-planner-2026": {
     slug: "annual-feng-shui-planner-2026",
     title: "2026 Feng Shui Planner: Mid-Year Edition",

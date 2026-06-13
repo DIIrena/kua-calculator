@@ -44,6 +44,15 @@ const SHELF: ReadonlyArray<ShelfItem> = [
     priceLabel: "$14",
   },
   {
+    slug: "extended-personal-kua-report",
+    href: "/products/extended-personal-kua-report",
+    title: "Extended Personal Kua Report",
+    oneLiner:
+      "The deep reading: your eight directions plus your bedroom, desk, and dining seat read for your Kua, a compatibility chapter, and a 2026 overlay.",
+    status: "waitlist",
+    priceLabel: "$39",
+  },
+  {
     slug: "good-days-calendar-2026",
     href: "/products/good-days-calendar-2026",
     title: "2026 Good-Days Calendar",

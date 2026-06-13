@@ -395,7 +395,7 @@ export function buildHtml(
   </div>
 
   <div class="cover-center">
-    <h1 class="cover-title">${escapeHtml(context.firstName)}'s Personal Feng Shui <em>Compass</em></h1>
+    <h1 class="cover-title">${product.coverTitleHtml(escapeHtml(context.firstName))}</h1>
   </div>
 
   <div class="cover-bottom">
