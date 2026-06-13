@@ -112,19 +112,23 @@ export async function fulfillCompass(formData: FormData) {
   }
   if (!order) back(product.slug, sessionId, "error");
 
-  // Idempotency: an existing delivery means re-sign, not re-render.
-  const { data: priorDelivery } = await admin
-    .from("product_deliveries")
-    .select("pdf_path")
+  // One render per purchase. The PDF lives at a fixed path per order, and
+  // a product_responses row is written on the first successful render. If
+  // a response already exists, re-sign and re-send that same PDF instead
+  // of rendering a new one - so a single purchase cannot generate
+  // unlimited different readings from the reusable form link.
+  const pdfPath = `${product.recipeSlug ?? product.slug}/${order.id}.pdf`;
+  const { data: priorResponse } = await admin
+    .from("product_responses")
+    .select("id")
     .eq("order_id", order.id)
-    .order("delivered_at", { ascending: false })
     .limit(1)
     .maybeSingle();
 
-  if (priorDelivery?.pdf_path) {
+  if (priorResponse) {
     const { data: signed } = await admin.storage
       .from("product-pdfs")
-      .createSignedUrl(priorDelivery.pdf_path, DOWNLOAD_URL_TTL_SECONDS);
+      .createSignedUrl(pdfPath, DOWNLOAD_URL_TTL_SECONDS);
     if (signed?.signedUrl) {
       const mail = buildPersonalizedDeliveryEmail({
         productTitle: product.shortTitle,
@@ -169,10 +173,7 @@ export async function fulfillCompass(formData: FormData) {
     back(product.slug, sessionId, "error");
   }
 
-  // Upload to the private bucket.
-  const yyyy = String(now.getFullYear());
-  const mm = String(now.getMonth() + 1).padStart(2, "0");
-  const pdfPath = `${recipe.slug}/${yyyy}/${mm}/${order.id}.pdf`;
+  // Upload to the private bucket at the fixed per-order path declared above.
   const { error: uploadErr } = await admin.storage
     .from("product-pdfs")
     .upload(pdfPath, pdf, { contentType: "application/pdf", upsert: true });

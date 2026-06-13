@@ -107,17 +107,19 @@ export async function fulfillPick3(formData: FormData) {
   }
   if (!order) back(product.slug, sessionId, "error");
 
-  const { data: priorDelivery } = await admin
-    .from("product_deliveries")
-    .select("pdf_path")
+  // One render per purchase. Re-sign the same PDF rather than render a new
+  // one if this order already produced a response.
+  const pdfPath = `${product.slug}/${order.id}.pdf`;
+  const { data: priorResponse } = await admin
+    .from("product_responses")
+    .select("id")
     .eq("order_id", order.id)
-    .order("delivered_at", { ascending: false })
     .limit(1)
     .maybeSingle();
-  if (priorDelivery?.pdf_path) {
+  if (priorResponse) {
     const { data: signed } = await admin.storage
       .from("product-pdfs")
-      .createSignedUrl(priorDelivery.pdf_path, DOWNLOAD_URL_TTL_SECONDS);
+      .createSignedUrl(pdfPath, DOWNLOAD_URL_TTL_SECONDS);
     if (signed?.signedUrl) {
       const mail = buildPersonalizedDeliveryEmail({
         productTitle: product.shortTitle,
@@ -162,8 +164,6 @@ export async function fulfillPick3(formData: FormData) {
     back(product.slug, sessionId, "error");
   }
 
-  const now = new Date();
-  const pdfPath = `${product.slug}/${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, "0")}/${order.id}.pdf`;
   const { error: uploadErr } = await admin.storage
     .from("product-pdfs")
     .upload(pdfPath, pdf, { contentType: "application/pdf", upsert: true });

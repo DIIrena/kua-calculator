@@ -145,19 +145,21 @@ export async function fulfillMoveIn(formData: FormData) {
   }
   if (!order) back(product.slug, sessionId, "error");
 
-  // Idempotency: an existing delivery means re-sign, not re-render.
-  const { data: priorDelivery } = await admin
-    .from("product_deliveries")
-    .select("pdf_path")
+  // One render per purchase. Re-sign the same PDF rather than render a new
+  // one if this order already produced a response, so the reusable form
+  // link cannot generate unlimited different reports.
+  const pdfPath = `move-in-date-report/${order.id}.pdf`;
+  const { data: priorResponse } = await admin
+    .from("product_responses")
+    .select("id")
     .eq("order_id", order.id)
-    .order("delivered_at", { ascending: false })
     .limit(1)
     .maybeSingle();
 
-  if (priorDelivery?.pdf_path) {
+  if (priorResponse) {
     const { data: signed } = await admin.storage
       .from("product-pdfs")
-      .createSignedUrl(priorDelivery.pdf_path, DOWNLOAD_URL_TTL_SECONDS);
+      .createSignedUrl(pdfPath, DOWNLOAD_URL_TTL_SECONDS);
     if (signed?.signedUrl) {
       const mail = buildPersonalizedDeliveryEmail({
         productTitle: product.shortTitle,
@@ -206,11 +208,7 @@ export async function fulfillMoveIn(formData: FormData) {
     back(product.slug, sessionId, "error");
   }
 
-  // Upload to the private bucket.
-  const now = new Date();
-  const yyyy = String(now.getFullYear());
-  const mm = String(now.getMonth() + 1).padStart(2, "0");
-  const pdfPath = `move-in-date-report/${yyyy}/${mm}/${order.id}.pdf`;
+  // Upload to the private bucket at the fixed per-order path declared above.
   const { error: uploadErr } = await admin.storage
     .from("product-pdfs")
     .upload(pdfPath, pdf, { contentType: "application/pdf", upsert: true });
