@@ -58,32 +58,32 @@ One-time setup (already done by you): `product-pdfs` bucket, migrations 0007 + 0
 | [ ] | Twelve Spaces Compass | 29 | Every room read for your Kua in one PDF: bedroom, office, dining, kitchen, living room, bathroom, entrance, hallway, storage, laundry, balcony, and garage. | `STRIPE_PRICE_ALL_SPACES` |
 | [ ] | Complete Home Compass (flagship) | 49 | The flagship: your eight directions in depth, compatibility, all twelve rooms, all nine life areas, and the 2026 overlay, read for your Kua in one volume. | `STRIPE_PRICE_FLAGSHIP` |
 
-### Single-topic Compasses (all $7 except Year Ahead $9). Description = "Your <topic> read for your Kua: a short personalised PDF of the traditional placements for that part of your home, keyed to your number."
+### Single-topic Compasses (all $7 except Year Ahead $9)
 
-| Done | Name | $ | Vercel env var |
-|---|---|---|---|
-| [ ] | Bedroom Compass | 7 | `STRIPE_PRICE_BEDROOM_COMPASS` |
-| [ ] | Office Compass | 7 | `STRIPE_PRICE_OFFICE_COMPASS` |
-| [ ] | Dining Room Compass | 7 | `STRIPE_PRICE_DINING_ROOM_COMPASS` |
-| [ ] | Kitchen Compass | 7 | `STRIPE_PRICE_KITCHEN_COMPASS` |
-| [ ] | Living Room Compass | 7 | `STRIPE_PRICE_LIVING_ROOM_COMPASS` |
-| [ ] | Bathroom Compass | 7 | `STRIPE_PRICE_BATHROOM_COMPASS` |
-| [ ] | Entrance Compass | 7 | `STRIPE_PRICE_ENTRANCE_COMPASS` |
-| [ ] | Hallway Compass | 7 | `STRIPE_PRICE_HALLWAY_COMPASS` |
-| [ ] | Storage Compass | 7 | `STRIPE_PRICE_STORAGE_COMPASS` |
-| [ ] | Laundry Compass | 7 | `STRIPE_PRICE_LAUNDRY_COMPASS` |
-| [ ] | Balcony Compass | 7 | `STRIPE_PRICE_BALCONY_COMPASS` |
-| [ ] | Garage Compass | 7 | `STRIPE_PRICE_GARAGE_COMPASS` |
-| [ ] | Wealth Compass | 7 | `STRIPE_PRICE_WEALTH_COMPASS` |
-| [ ] | Recognition Compass | 7 | `STRIPE_PRICE_RECOGNITION_COMPASS` |
-| [ ] | Relationship Compass | 7 | `STRIPE_PRICE_RELATIONSHIP_COMPASS` |
-| [ ] | Creativity Compass | 7 | `STRIPE_PRICE_CREATIVITY_COMPASS` |
-| [ ] | Helpful People Compass | 7 | `STRIPE_PRICE_HELPFUL_PEOPLE_COMPASS` |
-| [ ] | Career Compass | 7 | `STRIPE_PRICE_CAREER_COMPASS` |
-| [ ] | Knowledge Compass | 7 | `STRIPE_PRICE_KNOWLEDGE_COMPASS` |
-| [ ] | Family Compass | 7 | `STRIPE_PRICE_FAMILY_COMPASS` |
-| [ ] | Health Compass | 7 | `STRIPE_PRICE_HEALTH_COMPASS` |
-| [ ] | Year Ahead Compass | 9 | `STRIPE_PRICE_YEAR_AHEAD_COMPASS` |
+| Done | Name | $ | Stripe description | Vercel env var |
+|---|---|---|---|---|
+| [ ] | Bedroom Compass | 7 | Your bedroom read for your Kua: the headboard wall in an ordinary season and a season of push, and the corners to keep for storage. | `STRIPE_PRICE_BEDROOM_COMPASS` |
+| [ ] | Office Compass | 7 | Your desk and work seat read for your Kua: which direction to face for ambitious work, which for steady focus, and the command position. | `STRIPE_PRICE_OFFICE_COMPASS` |
+| [ ] | Dining Room Compass | 7 | Your table read for your Kua: where the head of the household sits, the seat for connection, and the seat with momentum. | `STRIPE_PRICE_DINING_ROOM_COMPASS` |
+| [ ] | Kitchen Compass | 7 | Your kitchen read for your Kua: the stove, the cook's position, and the supportive direction to face while you work. | `STRIPE_PRICE_KITCHEN_COMPASS` |
+| [ ] | Living Room Compass | 7 | Your living room read for your Kua: the main seat in command position, the conversation circle, and the corner to keep clear. | `STRIPE_PRICE_LIVING_ROOM_COMPASS` |
+| [ ] | Bathroom Compass | 7 | Your bathroom read for your Kua: why a draining room suits a cautious direction, and how to keep it dry, closed, and in order. | `STRIPE_PRICE_BATHROOM_COMPASS` |
+| [ ] | Entrance Compass | 7 | Your front door and entrance read for your Kua: the approach, the threshold, and the first few steps in. | `STRIPE_PRICE_ENTRANCE_COMPASS` |
+| [ ] | Hallway Compass | 7 | Your hallways read for your Kua: keeping pass-through space clear, lit, and unpinched, and slowing a long straight run. | `STRIPE_PRICE_HALLWAY_COMPASS` |
+| [ ] | Storage Compass | 7 | Your storage and closets read for your Kua: giving the cautious directions a quiet, contained job so the good walls stay free. | `STRIPE_PRICE_STORAGE_COMPASS` |
+| [ ] | Laundry Compass | 7 | Your laundry read for your Kua: why utility space suits a cautious direction, kept dry, tidy, and in working order. | `STRIPE_PRICE_LAUNDRY_COMPASS` |
+| [ ] | Balcony Compass | 7 | Your balcony or terrace read for your Kua: the home's breathing edge, a calm sitting corner, light, air, and a little green. | `STRIPE_PRICE_BALCONY_COMPASS` |
+| [ ] | Garage Compass | 7 | Your garage or utility space read for your Kua: a heavy room suited to a cautious direction, kept ordered with a clean threshold. | `STRIPE_PRICE_GARAGE_COMPASS` |
+| [ ] | Wealth Compass | 7 | Your wealth corner (the Southeast) read for your Kua: what the tradition gives this sector and how to find and tend yours. | `STRIPE_PRICE_WEALTH_COMPASS` |
+| [ ] | Recognition Compass | 7 | Your recognition corner (the South) read for your Kua: the sector the tradition ties to reputation, kept bright and clear. | `STRIPE_PRICE_RECOGNITION_COMPASS` |
+| [ ] | Relationship Compass | 7 | Your relationship corner (the Southwest) read for your Kua: the sector the tradition ties to partnership, and how to tend it. | `STRIPE_PRICE_RELATIONSHIP_COMPASS` |
+| [ ] | Creativity Compass | 7 | Your creativity corner (the West) read for your Kua: the sector the tradition ties to projects, children, and play. | `STRIPE_PRICE_CREATIVITY_COMPASS` |
+| [ ] | Helpful People Compass | 7 | Your helpful-people corner (the Northwest) read for your Kua: the sector the tradition ties to mentors, support, and travel. | `STRIPE_PRICE_HELPFUL_PEOPLE_COMPASS` |
+| [ ] | Career Compass | 7 | Your career corner (the North) read for your Kua: the sector the tradition ties to your path and work, kept clear and moving. | `STRIPE_PRICE_CAREER_COMPASS` |
+| [ ] | Knowledge Compass | 7 | Your knowledge corner (the Northeast) read for your Kua: the sector the tradition ties to study, stillness, and self-knowledge. | `STRIPE_PRICE_KNOWLEDGE_COMPASS` |
+| [ ] | Family Compass | 7 | Your family corner (the East) read for your Kua: the sector the tradition ties to roots, household, and new growth. | `STRIPE_PRICE_FAMILY_COMPASS` |
+| [ ] | Health Compass | 7 | Your health centre (the middle of the home) read for your Kua: the heart that touches every area, kept open and clear. | `STRIPE_PRICE_HEALTH_COMPASS` |
+| [ ] | Year Ahead Compass | 9 | The 2026 solar year read against your Kua: how the year's cautious and supportive corners fall on your own directions. | `STRIPE_PRICE_YEAR_AHEAD_COMPASS` |
 
 ---
 
