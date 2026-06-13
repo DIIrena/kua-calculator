@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import BuyButton from "@/components/BuyButton";
 
 export const metadata: Metadata = {
@@ -60,6 +61,63 @@ export default async function StarterBundlePage(props: {
         <p className="product-hero-anchor">
           <a href="#waitlist">Skip to the waitlist →</a>
         </p>
+      </section>
+
+      <section
+        className="product-section"
+        aria-label="The three books in the bundle"
+      >
+        <h2>The three books.</h2>
+        <p>Everything in the bundle, on one shelf.</p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: "1.25rem",
+            marginTop: "1.25rem",
+          }}
+        >
+          {[
+            {
+              slug: "home-diagnostic-workbook",
+              label: "10-Step Home Diagnostic Workbook",
+            },
+            {
+              slug: "daily-ritual-pack",
+              label: "Daily Ritual and Twenty Laws Pack",
+            },
+            { slug: "cures-catalog", label: "Cures and Crystals Catalogue" },
+          ].map((b) => (
+            <figure key={b.slug} style={{ margin: 0 }}>
+              <Link href={`/products/${b.slug}`}>
+                <Image
+                  src={`/products/${b.slug}/cover-portrait.png`}
+                  alt={`${b.label}, front cover.`}
+                  width={1024}
+                  height={1536}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "4px",
+                    border: "1px solid #e2dac5",
+                    display: "block",
+                  }}
+                />
+              </Link>
+              <figcaption
+                style={{
+                  fontSize: "0.8rem",
+                  color: "#4f5b53",
+                  marginTop: "0.5rem",
+                  textAlign: "center",
+                  lineHeight: 1.4,
+                }}
+              >
+                {b.label}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
       <section className="product-section">

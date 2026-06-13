@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import ProductCoverPreview from "@/components/ProductCoverPreview";
 import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
@@ -56,6 +57,8 @@ export default async function MoveInKitPage(props: {
           <a href="#waitlist">Skip to the waitlist →</a>
         </p>
       </section>
+
+      <ProductCoverPreview slug="move-in-kit" title="Move-In Date Report" />
 
       <section className="product-section">
         <h2>Who it is for</h2>

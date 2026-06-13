@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import ProductCoverPreview from "@/components/ProductCoverPreview";
 import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
@@ -57,6 +58,8 @@ export default async function ExtendedPersonalKuaReportPage(props: {
           <a href="#waitlist">Skip to the waitlist →</a>
         </p>
       </section>
+
+      <ProductCoverPreview slug="extended-personal-kua-report" title="Extended Personal Kua Report" />
 
       <section className="product-section">
         <h2>Who it is for</h2>

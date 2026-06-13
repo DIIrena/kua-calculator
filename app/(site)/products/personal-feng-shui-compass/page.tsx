@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import ProductCoverPreview from "@/components/ProductCoverPreview";
 import FloatingWaitlistCTA from "@/components/FloatingWaitlistCTA";
 
 export const metadata: Metadata = {
@@ -62,6 +63,8 @@ export default async function PersonalFengShuiCompassPage(props: {
       </section>
 
       {/* Practical sections - practitioner voice */}
+      <ProductCoverPreview slug="personal-feng-shui-compass" title="Personal Feng Shui Compass" />
+
       <section className="product-section">
         <h2>Who it is for</h2>
         <p>
