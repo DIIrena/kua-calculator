@@ -3,6 +3,7 @@ import { ARTICLES } from "@/lib/articles";
 import { GUIDE_CLUSTERS, GUIDE_PAGES } from "@/lib/guide";
 import { LIFE_AREAS } from "@/lib/life-areas";
 import { SPACES } from "@/lib/spaces";
+import { COMPASS_CATALOGUE } from "@/lib/compass-catalogue";
 
 // Sitemap generated at build time. Lists every public URL with a
 // lastModified date so search engines (and AI crawlers) know what
@@ -74,6 +75,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: today,
       changeFrequency: "weekly",
       priority: 0.7,
+    },
+    {
+      url: `${SITE}/products/extended-personal-kua-report`,
+      lastModified: today,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${SITE}/products/seven-day-home-reset`,
+      lastModified: today,
+      changeFrequency: "monthly",
+      priority: 0.6,
     },
     {
       url: `${SITE}/products/annual-feng-shui-planner-2026`,
@@ -208,6 +221,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const compassEntries: MetadataRoute.Sitemap = COMPASS_CATALOGUE.map((e) => ({
+    url: `${SITE}/products/${e.slug}`,
+    lastModified: today,
+    changeFrequency: "monthly" as const,
+    priority: 0.55,
+  }));
+
   return [
     ...staticEntries,
     ...articleEntries,
@@ -215,5 +235,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...guidePageEntries,
     ...lifeEntries,
     ...spaceEntries,
+    ...compassEntries,
   ];
 }

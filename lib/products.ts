@@ -6,6 +6,12 @@
 // blocks under content/blocks/. The PDF assembler does not care about
 // the product slug; it just executes the recipe.
 
+import {
+  COMPASS_CATALOGUE,
+  compassBlocks,
+  compassEnvKey,
+} from "@/lib/compass-catalogue";
+
 // Note: the cover is not a content block. It is composed in
 // lib/pdf/template.ts from product metadata + customer first name.
 export type BlockId =
@@ -25,6 +31,29 @@ export type BlockId =
   | "room-desk"
   | "room-dining"
   | "year-overlay"
+  // Downstream Compass catalogue: shared mini framing + one focused topic
+  // block per Single-Space and Single-Life-Pillar Compass (see
+  // lib/compass-catalogue.ts).
+  | "welcome-mini"
+  | "closing-mini"
+  | "space-kitchen"
+  | "space-living-room"
+  | "space-bathroom"
+  | "space-entrance"
+  | "space-hallway"
+  | "space-storage"
+  | "space-laundry"
+  | "space-balcony"
+  | "space-garage"
+  | "pillar-wealth"
+  | "pillar-fame"
+  | "pillar-relationships"
+  | "pillar-creativity"
+  | "pillar-helpful-people"
+  | "pillar-career"
+  | "pillar-knowledge"
+  | "pillar-family"
+  | "pillar-health"
   // Direction quality blocks (the order in which they appear in the
   // PDF; assembler looks up the customer's Kua to fill in which
   // compass direction each quality maps to).
@@ -126,6 +155,23 @@ export const PRODUCTS: Record<string, Product> = {
     targetPages: { min: 34, max: 46 },
   },
 };
+
+// Build the downstream Compass catalogue recipes from the manifest. Each
+// is [welcome-mini, <topic block>, closing-mini] with its own cover wording.
+for (const e of COMPASS_CATALOGUE) {
+  PRODUCTS[e.slug] = {
+    slug: e.slug,
+    title: (firstName) => `${firstName}'s ${e.topicLabel} Compass`,
+    coverTitleHtml: (firstName) =>
+      `${firstName}'s ${e.topicLabel} <em>Compass</em>`,
+    shortTitle: `${e.topicLabel} Compass`,
+    priceCents: e.priceCents,
+    currency: "usd",
+    stripeEnvKey: compassEnvKey(e.slug),
+    blocks: compassBlocks(e) as BlockId[],
+    targetPages: { min: 4, max: 8 },
+  };
+}
 
 export function findProduct(slug: string): Product | null {
   return PRODUCTS[slug] ?? null;

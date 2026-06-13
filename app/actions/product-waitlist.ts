@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { createAdminClient } from "@/lib/supabase/server";
+import { COMPASS_CATALOGUE } from "@/lib/compass-catalogue";
 
 // Product-waitlist server action. Used by BuyButton in waitlist mode
 // while live payments are not yet wired. Captures email + product
@@ -101,6 +102,15 @@ const PRODUCTS: Record<string, ProductMeta> = {
     redirectPath: "/products/seven-day-home-reset",
   },
 };
+
+// Downstream Compass catalogue: register each slug so its waitlist form works.
+for (const e of COMPASS_CATALOGUE) {
+  PRODUCTS[e.slug] = {
+    slug: e.slug,
+    title: `${e.topicLabel} Compass`,
+    redirectPath: `/products/${e.slug}`,
+  };
+}
 
 function buildHtml(siteUrl: string, productTitle: string): string {
   const root = siteUrl.replace(/\/$/, "");

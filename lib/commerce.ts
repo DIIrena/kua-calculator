@@ -21,6 +21,8 @@
 //                     webhook sends the welcome email and a daily cron
 //                     (app/api/cron/drip) sends the rest.
 
+import { COMPASS_CATALOGUE, compassEnvKey } from "@/lib/compass-catalogue";
+
 export type Fulfillment = "static" | "personalized" | "course";
 
 export type CommerceProduct = {
@@ -328,6 +330,23 @@ const WAVE2: CommerceProduct[] = [
 ];
 for (const p of WAVE2) {
   COMMERCE_PRODUCTS[p.slug] = p;
+}
+
+// Downstream Compass catalogue (Single-Space, Single-Life-Pillar, Year
+// Ahead). All personalized via the standard Kua form, launched false until
+// each gets a Stripe Price + env var.
+for (const e of COMPASS_CATALOGUE) {
+  COMMERCE_PRODUCTS[e.slug] = {
+    slug: e.slug,
+    shortTitle: `${e.topicLabel} Compass`,
+    priceCents: e.priceCents,
+    currency: "usd",
+    stripeEnvKey: compassEnvKey(e.slug),
+    fulfillment: "personalized",
+    recipeSlug: e.slug,
+    productPath: `/products/${e.slug}`,
+    launched: false,
+  };
 }
 
 export function findCommerceProduct(slug: string): CommerceProduct | null {

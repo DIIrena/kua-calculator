@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { COMPASS_CATALOGUE } from "@/lib/compass-catalogue";
 
 export const metadata: Metadata = {
   title: "Paid guides and tools | My Feng Shui Home",
@@ -275,6 +276,51 @@ export default async function ProductsPage(props: {
                     : item.status === "live"
                       ? "See the product →"
                       : "Read more + join the waitlist →"}
+                </p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section
+        className="products-shelf"
+        aria-label="The Compass collection"
+      >
+        <h2 className="products-heading" style={{ fontSize: "1.6rem" }}>
+          The Compass collection.
+        </h2>
+        <p className="products-lede">
+          Short, focused readings keyed to your Kua, one room or one life
+          area at a time. $7 each, or $9 for the Year Ahead. Each is the
+          same three-field reading as the Personal Compass, scoped to a
+          single part of your home. All on the waitlist for now.
+        </p>
+        <ul className="products-grid">
+          {COMPASS_CATALOGUE.map((e) => (
+            <li key={e.slug} className="product-shelf-card">
+              <Link
+                href={`/products/${e.slug}`}
+                className="product-shelf-link"
+                aria-labelledby={`compass-${e.slug}-title`}
+              >
+                <p className="product-shelf-status-row">
+                  <span className="product-shelf-status product-shelf-status-waitlist">
+                    Waitlist
+                  </span>
+                  <span className="product-shelf-price">
+                    ${e.priceCents / 100}
+                  </span>
+                </p>
+                <h3
+                  id={`compass-${e.slug}-title`}
+                  className="product-shelf-title"
+                >
+                  {e.topicLabel} Compass
+                </h3>
+                <p className="product-shelf-oneliner">{e.oneLiner}</p>
+                <p className="product-shelf-cta">
+                  Read more + join the waitlist →
                 </p>
               </Link>
             </li>

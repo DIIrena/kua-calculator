@@ -24,7 +24,7 @@ If the bedroom is shared, there is a third good wall worth knowing. **{{yanNianD
 
 ## Reading the room from the door inward
 
-Stand in the doorway and read the room the way qi enters it: from the door, inward. Note where the door is, where the window is, where the solid interior walls run. The headboard wants a solid wall behind it, the door wants to be visible from the pillow without sitting up, and the bed wants to sit off the door's direct line rather than square in its path. Once you know which walls are solid and which carry your good directions, the headboard usually has only one or two honest homes.
+Stand in the doorway and read the room the way qi enters it: from the door, inward. Note where the door is, where the window is, where the solid interior walls run. The headboard wants a solid wall behind it, the door wants to be visible from the pillow without sitting up, and the bed wants to sit off the door's direct line rather than square in its path. Once you know which walls are solid and which carry your good directions, the headboard usually has only one or two sensible homes.
 
 ## Keep the cautious corners for storage
 

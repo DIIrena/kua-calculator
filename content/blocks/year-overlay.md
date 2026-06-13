@@ -21,7 +21,7 @@ Most years, the maps will agree in some corners and pull against each other in o
 
 ## Where the full reading lives
 
-This is the outline, not the year itself. The honest version is that the month-by-month and corner-by-corner treatment for the 2026 solar year - which exact sectors are handled carefully, which are favoured, how that changes as the months turn - is its own piece of work, and it lives in the **2026 Feng Shui Planner**.
+This is the outline, not the year itself. The plain version is that the month-by-month and corner-by-corner treatment for the 2026 solar year - which exact sectors are handled carefully, which are favoured, how that changes as the months turn - is its own piece of work, and it lives in the **2026 Feng Shui Planner**.
 
 If the annual layer is the part that interests you, that is the natural next step. It takes the conceptual frame above and fills in the specific arrangement for the year, sector by sector, so you can lay it over the personal map this report has given you.
 
