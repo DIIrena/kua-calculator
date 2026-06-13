@@ -939,6 +939,47 @@
         "npm build clean"
       ],
       "passes": true
+    },
+    {
+      "id": "PROD-010",
+      "title": "Extended Personal Kua Report ($39, personalized)",
+      "description": "Wave 3 remainder. A superset of the Compass: same name/DOB/gender inputs, same fulfilment action, plus five premium chapters (compatibility, bedroom, desk, dining, 2026 overlay). Recipe extended-personal-kua in lib/products.ts, 19 blocks. Cover generalized via product.coverTitleHtml.",
+      "acceptanceCriteria": [
+        "7 new blocks drafted + adversarially voice-checked (no em dashes, no outcome promises, no source mentions, correct per-quality direction tokens)",
+        "recipe + commerce entry (personalized, STRIPE_PRICE_EXTENDED, launched false) + page + shelf + waitlist slug",
+        "buildHtml cover + success form + delivery email generalized off 'Compass'",
+        "npm build clean; smoke-extended.mjs: all 19 blocks resolve, render, zero token leaks"
+      ],
+      "passes": true,
+      "notes": "Built 2026-06-13. Key finding: the compass personalized path had never run in production (launched:false), and buildHtml hardcoded 'Compass' on the cover plus the success form/email said 'Compass' - all generalized so a second personalized product works. The premium blocks needed NO new tokens; existing per-quality direction tokens + group variants covered compatibility/rooms/year-overlay. content/blocks bundling added to the success route's file tracing. Owner launch step: create Stripe $39 Price -> STRIPE_PRICE_EXTENDED env -> flip launched:true + BuyButton stripe-live."
+    },
+    {
+      "id": "PROD-009",
+      "title": "Move-In Date Report ($29, personalized, data-driven)",
+      "description": "Wave 3 remainder. Converts the move-in-kit waitlist product into a real personalized product rendered from a bespoke template. Buyer gives a move-in window + DOB/gender; the report reads the window against the verified 2026 day calendar, adds a Kua facing overlay and a first-week activation checklist.",
+      "acceptanceCriteria": [
+        "day-calendar CSV ported to lib/day-calendar-2026.json (243 days, Jul 2026-Feb 2027)",
+        "bespoke movein-template (day table with verdict chips, best/caution lists, directions overlay, activation checklist)",
+        "fulfill-movein action: validates + clamps window, computes Kua, renders, stores window in product_responses.extras",
+        "migration 0007 (extras jsonb); success page form branches by personalizedForm; commerce + page + shelf + waitlist updated",
+        "npm build clean; window filter verified"
+      ],
+      "passes": true,
+      "notes": "Built 2026-06-13. The success page form was hardcoded to compass fields; added a personalizedForm 'kua' | 'movein' discriminator so the move-in form (adds windowed date inputs, min/max clamped to the calendar) posts to fulfillMoveIn. JSON imported statically (not runtime read) so it bundles. Covers Jul 2026-Feb 2027 only; disclosed on the page; a 2027 edition follows. Owner launch step: create Stripe $29 Price -> STRIPE_PRICE_MOVEIN env -> flip launched:true + stripe-live."
+    },
+    {
+      "id": "PROD-015",
+      "title": "7-Day Home Reset + drip engine ($19, email course)",
+      "description": "Wave 3 remainder. A new product type: a paid email course. Buy once, get a welcome email plus one task email a day for seven days. New 'course' fulfilment type, a daily Vercel cron drip engine, signed one-click unsubscribe.",
+      "acceptanceCriteria": [
+        "8 emails (welcome + day 1-7) drafted + adversarially voice-checked",
+        "migration 0008 (course_enrollments); commerce 'course' type + courseSlug + entry",
+        "webhook enrol branch (enrol + welcome); /api/cron/drip (CRON_SECRET, 20h gate, ?dry=1); /api/unsubscribe (HMAC token)",
+        "email-course renderer (markdown -> inline HTML + unsubscribe footer); vercel.json cron; page + shelf + waitlist",
+        "npm build clean; unsubscribe token round-trip verified"
+      ],
+      "passes": true,
+      "notes": "Built 2026-06-13. The course is the third fulfilment type alongside static and personalized. Welcome sent by the webhook on enrol (day_sent 0, last_sent_at now); cron sends days 1..7 with a 20h spacing gate so a double-firing cron cannot double-send, and advances day_sent only after a successful send. Unsubscribe is stateless (HMAC of email:course keyed with AUTH_SECRET). Owner launch steps: create Stripe $19 Price -> STRIPE_PRICE_RESET env; set CRON_SECRET env; run migration 0008; flip launched:true + stripe-live."
     }
   ]
 }
