@@ -31,7 +31,7 @@ The four it treats with more caution are northeast, southwest, west, and northwe
 
 {{elementSwatches}}
 
-Look at the supportive four. Three of them - water, wood, wood - are elements the tradition associates with *motion*. Water flows, wood grows. South is the direction of being seen. The tradition reads East group as oriented toward expansion: learning, building, generating, being recognised. That does not mean every East group person is loud. Plenty are quiet. It is a description of the qualities the tradition associates with your favourable directions, not a personality test.
+Look at the supportive four. One is water, one is fire, and two are wood. Water and wood are the elements the tradition associates with *motion* - water flows, wood grows - so three of your four directions lean that way; the fourth, fire in the South, is the direction of being seen. The tradition reads East group as oriented toward expansion: learning, building, generating, being recognised. That does not mean every East group person is loud. Plenty are quiet. It is a description of the qualities the tradition associates with your favourable directions, not a personality test.
 
 <p class="pull-quote">The tradition reads these four as your supportive directions: <strong>North, South, East, Southeast</strong>.</p>
 
