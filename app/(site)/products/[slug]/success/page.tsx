@@ -8,6 +8,8 @@ import {
 } from "@/lib/commerce";
 import { createAdminClient } from "@/lib/supabase/server";
 import { fulfillCompass } from "@/app/actions/fulfill-compass";
+import { fulfillMoveIn } from "@/app/actions/fulfill-movein";
+import { DAY_CALENDAR_RANGE } from "@/lib/day-calendar";
 
 // Post-checkout success page for every buyable product.
 //
@@ -139,10 +141,13 @@ export default async function SuccessPage(props: {
     );
   }
 
-  // Personalized product: the three-field form.
+  // Personalized product: the post-checkout form. Most personalized
+  // products use the three-field Kua form; the Move-In Date Report adds
+  // a move-in window and posts to a different fulfilment action.
   const delivered = formStatus === "delivered";
   const invalid = formStatus === "invalid";
   const errored = formStatus === "error";
+  const isMoveIn = product.personalizedForm === "movein";
 
   return (
     <div className="page-content product-page">
@@ -168,15 +173,16 @@ export default async function SuccessPage(props: {
         ) : (
           <>
             <p className="product-lede">
-              Three fields. We compute your Kua server-side (the
-              Chinese New Year boundary is handled automatically),
-              render your PDF, and email it to {email || "you"} within
-              about a minute.
+              {isMoveIn
+                ? "We compute your Kua server-side, read your move-in window against the verified 2026 day calendar, render your PDF, and email it to "
+                : "Three fields. We compute your Kua server-side (the Chinese New Year boundary is handled automatically), render your PDF, and email it to "}
+              {email || "you"} within about a minute.
             </p>
             {invalid ? (
               <p className="lead-magnet-status lead-magnet-status-err" role="alert">
-                Please check the fields: a first name, a full birth
-                date, and a selection for the formula variant.
+                {isMoveIn
+                  ? `Please check the fields: a first name, a full birth date, the formula variant, and a move-in window inside ${DAY_CALENDAR_RANGE.start} to ${DAY_CALENDAR_RANGE.end}.`
+                  : "Please check the fields: a first name, a full birth date, and a selection for the formula variant."}
               </p>
             ) : null}
             {errored ? (
@@ -186,7 +192,10 @@ export default async function SuccessPage(props: {
                 it by hand.
               </p>
             ) : null}
-            <form action={fulfillCompass} className="success-personalize-form">
+            <form
+              action={isMoveIn ? fulfillMoveIn : fulfillCompass}
+              className="success-personalize-form"
+            >
               <input type="hidden" name="sessionId" value={sessionId} />
               <input type="hidden" name="productSlug" value={product.slug} />
               <div className="field">
@@ -273,8 +282,46 @@ export default async function SuccessPage(props: {
                   with.
                 </p>
               </div>
+              {isMoveIn ? (
+                <div className="field field-date">
+                  <span className="field-label" id="movein-window-label">
+                    Move-in window
+                  </span>
+                  <div
+                    className="date-row"
+                    role="group"
+                    aria-labelledby="movein-window-label"
+                  >
+                    <label className="date-sub">
+                      <span className="date-sub-label">From</span>
+                      <input
+                        name="moveStart"
+                        type="date"
+                        min={DAY_CALENDAR_RANGE.start}
+                        max={DAY_CALENDAR_RANGE.end}
+                        required
+                      />
+                    </label>
+                    <label className="date-sub">
+                      <span className="date-sub-label">To</span>
+                      <input
+                        name="moveEnd"
+                        type="date"
+                        min={DAY_CALENDAR_RANGE.start}
+                        max={DAY_CALENDAR_RANGE.end}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <p className="field-help">
+                    The calendar covers {DAY_CALENDAR_RANGE.start} to{" "}
+                    {DAY_CALENDAR_RANGE.end}. Pick the range of dates
+                    you might move within and we read every day in it.
+                  </p>
+                </div>
+              ) : null}
               <button type="submit" className="cta-primary">
-                Render my reading
+                {isMoveIn ? "Render my report" : "Render my reading"}
               </button>
             </form>
           </>

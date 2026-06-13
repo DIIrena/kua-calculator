@@ -64,11 +64,11 @@ const SHELF: ReadonlyArray<ShelfItem> = [
   {
     slug: "move-in-kit",
     href: "/products/move-in-kit",
-    title: "Move-In Date Selection + Activation Kit",
+    title: "Move-In Date Report",
     oneLiner:
-      "The traditional way to choose a move-in date, plus a home-blessing checklist to settle the energy on day one.",
+      "Your move-in window read day by day against the 2026 calendar, your Kua directions for the new home, and a first-week checklist.",
     status: "waitlist",
-    priceLabel: "$19 to $29",
+    priceLabel: "$29",
   },
   {
     slug: "bedroom-reset",

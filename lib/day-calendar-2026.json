@@ -1,0 +1,1953 @@
+{
+  "meta": {
+    "source": "2026 solar year day calendar (verified)",
+    "range": "2026-07-01 to 2027-02-28",
+    "count": 243
+  },
+  "days": [
+    {
+      "date": "2026-07-01",
+      "label": "1 July 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke. Month-level sector caution: M5 Horse."
+    },
+    {
+      "date": "2026-07-02",
+      "label": "2 July 2026",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day. Month-level sector caution: M5 Horse."
+    },
+    {
+      "date": "2026-07-03",
+      "label": "3 July 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Trine support: Yin (Tiger) day trines Horse year, supportive background. Month-level sector caution: M5 Horse."
+    },
+    {
+      "date": "2026-07-04",
+      "label": "4 July 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts. Month-level sector caution: M5 Horse."
+    },
+    {
+      "date": "2026-07-05",
+      "label": "5 July 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Month-level sector caution: M5 Horse."
+    },
+    {
+      "date": "2026-07-06",
+      "label": "6 July 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying. Month-level sector caution: M5 Horse."
+    },
+    {
+      "date": "2026-07-07",
+      "label": "7 July 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying"
+    },
+    {
+      "date": "2026-07-08",
+      "label": "8 July 2026",
+      "officer": "Jian (Establish)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Wei (Goat) day in Liu He partnership with Horse year"
+    },
+    {
+      "date": "2026-07-09",
+      "label": "9 July 2026",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Sector signal: M6 Goat: monthly 8W meets annual 6W in North."
+    },
+    {
+      "date": "2026-07-10",
+      "label": "10 July 2026",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-07-11",
+      "label": "11 July 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Xu (Dog) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M6 Goat: monthly 8W meets annual 6W in North."
+    },
+    {
+      "date": "2026-07-12",
+      "label": "12 July 2026",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts"
+    },
+    {
+      "date": "2026-07-13",
+      "label": "13 July 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke"
+    },
+    {
+      "date": "2026-07-14",
+      "label": "14 July 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations"
+    },
+    {
+      "date": "2026-07-15",
+      "label": "15 July 2026",
+      "officer": "Wei (Danger)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Yin (Tiger) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M6 Goat: monthly 8W meets annual 6W in North."
+    },
+    {
+      "date": "2026-07-16",
+      "label": "16 July 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Sector signal: M6 Goat: monthly 8W meets annual 6W in North."
+    },
+    {
+      "date": "2026-07-17",
+      "label": "17 July 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts"
+    },
+    {
+      "date": "2026-07-18",
+      "label": "18 July 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M6 Goat: monthly 8W meets annual 6W in North."
+    },
+    {
+      "date": "2026-07-19",
+      "label": "19 July 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying"
+    },
+    {
+      "date": "2026-07-20",
+      "label": "20 July 2026",
+      "officer": "Jian (Establish)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Wei (Goat) day in Liu He partnership with Horse year"
+    },
+    {
+      "date": "2026-07-21",
+      "label": "21 July 2026",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Sector signal: M6 Goat: monthly 8W meets annual 6W in North."
+    },
+    {
+      "date": "2026-07-22",
+      "label": "22 July 2026",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-07-23",
+      "label": "23 July 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Xu (Dog) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M6 Goat: monthly 8W meets annual 6W in North."
+    },
+    {
+      "date": "2026-07-24",
+      "label": "24 July 2026",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts"
+    },
+    {
+      "date": "2026-07-25",
+      "label": "25 July 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke"
+    },
+    {
+      "date": "2026-07-26",
+      "label": "26 July 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations"
+    },
+    {
+      "date": "2026-07-27",
+      "label": "27 July 2026",
+      "officer": "Wei (Danger)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Yin (Tiger) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M6 Goat: monthly 8W meets annual 6W in North."
+    },
+    {
+      "date": "2026-07-28",
+      "label": "28 July 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Sector signal: M6 Goat: monthly 8W meets annual 6W in North."
+    },
+    {
+      "date": "2026-07-29",
+      "label": "29 July 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts"
+    },
+    {
+      "date": "2026-07-30",
+      "label": "30 July 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M6 Goat: monthly 8W meets annual 6W in North."
+    },
+    {
+      "date": "2026-07-31",
+      "label": "31 July 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying"
+    },
+    {
+      "date": "2026-08-01",
+      "label": "1 August 2026",
+      "officer": "Jian (Establish)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Wei (Goat) day in Liu He partnership with Horse year"
+    },
+    {
+      "date": "2026-08-02",
+      "label": "2 August 2026",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Sector signal: M6 Goat: monthly 8W meets annual 6W in North."
+    },
+    {
+      "date": "2026-08-03",
+      "label": "3 August 2026",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-08-04",
+      "label": "4 August 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Xu (Dog) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M6 Goat: monthly 8W meets annual 6W in North."
+    },
+    {
+      "date": "2026-08-05",
+      "label": "5 August 2026",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts"
+    },
+    {
+      "date": "2026-08-06",
+      "label": "6 August 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke"
+    },
+    {
+      "date": "2026-08-07",
+      "label": "7 August 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Li Qiu (start of Monkey month) solar-term joint, reflective day"
+    },
+    {
+      "date": "2026-08-08",
+      "label": "8 August 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations. (Underlying positive: Yin (Tiger) day trines Horse year, supportive background; Caution takes precedence.)"
+    },
+    {
+      "date": "2026-08-09",
+      "label": "9 August 2026",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-08-10",
+      "label": "10 August 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Sector signal: M7 Monkey: monthly 9P meets annual 8W in East."
+    },
+    {
+      "date": "2026-08-11",
+      "label": "11 August 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts"
+    },
+    {
+      "date": "2026-08-12",
+      "label": "12 August 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M7 Monkey: monthly 9P meets annual 8W in East."
+    },
+    {
+      "date": "2026-08-13",
+      "label": "13 August 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying"
+    },
+    {
+      "date": "2026-08-14",
+      "label": "14 August 2026",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-08-15",
+      "label": "15 August 2026",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Sector signal: M7 Monkey: monthly 9P meets annual 8W in East."
+    },
+    {
+      "date": "2026-08-16",
+      "label": "16 August 2026",
+      "officer": "Man (Full)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Xu (Dog) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M7 Monkey: monthly 9P meets annual 8W in East."
+    },
+    {
+      "date": "2026-08-17",
+      "label": "17 August 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ping (Balance) day, good for steadying; not for new starts"
+    },
+    {
+      "date": "2026-08-18",
+      "label": "18 August 2026",
+      "officer": "Ding (Stable)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke"
+    },
+    {
+      "date": "2026-08-19",
+      "label": "19 August 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-08-20",
+      "label": "20 August 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations. (Underlying positive: Yin (Tiger) day trines Horse year, supportive background; Caution takes precedence.)"
+    },
+    {
+      "date": "2026-08-21",
+      "label": "21 August 2026",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-08-22",
+      "label": "22 August 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Sector signal: M7 Monkey: monthly 9P meets annual 8W in East."
+    },
+    {
+      "date": "2026-08-23",
+      "label": "23 August 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts"
+    },
+    {
+      "date": "2026-08-24",
+      "label": "24 August 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M7 Monkey: monthly 9P meets annual 8W in East."
+    },
+    {
+      "date": "2026-08-25",
+      "label": "25 August 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying"
+    },
+    {
+      "date": "2026-08-26",
+      "label": "26 August 2026",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-08-27",
+      "label": "27 August 2026",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Sector signal: M7 Monkey: monthly 9P meets annual 8W in East."
+    },
+    {
+      "date": "2026-08-28",
+      "label": "28 August 2026",
+      "officer": "Man (Full)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Xu (Dog) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M7 Monkey: monthly 9P meets annual 8W in East."
+    },
+    {
+      "date": "2026-08-29",
+      "label": "29 August 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ping (Balance) day, good for steadying; not for new starts"
+    },
+    {
+      "date": "2026-08-30",
+      "label": "30 August 2026",
+      "officer": "Ding (Stable)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke"
+    },
+    {
+      "date": "2026-08-31",
+      "label": "31 August 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-09-01",
+      "label": "1 September 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations. (Underlying positive: Yin (Tiger) day trines Horse year, supportive background; Caution takes precedence.)"
+    },
+    {
+      "date": "2026-09-02",
+      "label": "2 September 2026",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-09-03",
+      "label": "3 September 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Sector signal: M7 Monkey: monthly 9P meets annual 8W in East."
+    },
+    {
+      "date": "2026-09-04",
+      "label": "4 September 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts"
+    },
+    {
+      "date": "2026-09-05",
+      "label": "5 September 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M7 Monkey: monthly 9P meets annual 8W in East."
+    },
+    {
+      "date": "2026-09-06",
+      "label": "6 September 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying"
+    },
+    {
+      "date": "2026-09-07",
+      "label": "7 September 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-08",
+      "label": "8 September 2026",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-09",
+      "label": "9 September 2026",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Trine support: Xu (Dog) day trines Horse year, supportive background. Sector signal: M8 Rooster: double 9P in SE and double 8W in East (asymmetric with caution above).. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-10",
+      "label": "10 September 2026",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-11",
+      "label": "11 September 2026",
+      "officer": "Ping (Balance)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-12",
+      "label": "12 September 2026",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-13",
+      "label": "13 September 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Yin (Tiger) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M8 Rooster: double 9P in SE and double 8W in East (asymmetric with caution above).. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-14",
+      "label": "14 September 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-15",
+      "label": "15 September 2026",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-16",
+      "label": "16 September 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Sector signal: M8 Rooster: double 9P in SE and double 8W in East (asymmetric with caution above).. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-17",
+      "label": "17 September 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-18",
+      "label": "18 September 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M8 Rooster: double 9P in SE and double 8W in East (asymmetric with caution above).. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-19",
+      "label": "19 September 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-20",
+      "label": "20 September 2026",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-21",
+      "label": "21 September 2026",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Trine support: Xu (Dog) day trines Horse year, supportive background. Sector signal: M8 Rooster: double 9P in SE and double 8W in East (asymmetric with caution above).. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-22",
+      "label": "22 September 2026",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-23",
+      "label": "23 September 2026",
+      "officer": "Ping (Balance)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-24",
+      "label": "24 September 2026",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-25",
+      "label": "25 September 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Yin (Tiger) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M8 Rooster: double 9P in SE and double 8W in East (asymmetric with caution above).. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-26",
+      "label": "26 September 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-27",
+      "label": "27 September 2026",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-28",
+      "label": "28 September 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Sector signal: M8 Rooster: double 9P in SE and double 8W in East (asymmetric with caution above).. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-29",
+      "label": "29 September 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-09-30",
+      "label": "30 September 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M8 Rooster: double 9P in SE and double 8W in East (asymmetric with caution above).. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-10-01",
+      "label": "1 October 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-10-02",
+      "label": "2 October 2026",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-10-03",
+      "label": "3 October 2026",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Trine support: Xu (Dog) day trines Horse year, supportive background. Sector signal: M8 Rooster: double 9P in SE and double 8W in East (asymmetric with caution above).. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-10-04",
+      "label": "4 October 2026",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-10-05",
+      "label": "5 October 2026",
+      "officer": "Ping (Balance)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-10-06",
+      "label": "6 October 2026",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-10-07",
+      "label": "7 October 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Yin (Tiger) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M8 Rooster: double 9P in SE and double 8W in East (asymmetric with caution above).. Month-level sector caution: M8 Rooster."
+    },
+    {
+      "date": "2026-10-08",
+      "label": "8 October 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Han Lu (start of Dog month) solar-term joint, reflective day"
+    },
+    {
+      "date": "2026-10-09",
+      "label": "9 October 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations"
+    },
+    {
+      "date": "2026-10-10",
+      "label": "10 October 2026",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-10-11",
+      "label": "11 October 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Sector signal: M9 Dog: monthly 8W meets annual 9P in SE."
+    },
+    {
+      "date": "2026-10-12",
+      "label": "12 October 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts"
+    },
+    {
+      "date": "2026-10-13",
+      "label": "13 October 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M9 Dog: monthly 8W meets annual 9P in SE."
+    },
+    {
+      "date": "2026-10-14",
+      "label": "14 October 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying"
+    },
+    {
+      "date": "2026-10-15",
+      "label": "15 October 2026",
+      "officer": "Jian (Establish)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Xu (Dog) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M9 Dog: monthly 8W meets annual 9P in SE."
+    },
+    {
+      "date": "2026-10-16",
+      "label": "16 October 2026",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Sector signal: M9 Dog: monthly 8W meets annual 9P in SE."
+    },
+    {
+      "date": "2026-10-17",
+      "label": "17 October 2026",
+      "officer": "Man (Full)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke"
+    },
+    {
+      "date": "2026-10-18",
+      "label": "18 October 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ping (Balance) day, good for steadying; not for new starts"
+    },
+    {
+      "date": "2026-10-19",
+      "label": "19 October 2026",
+      "officer": "Ding (Stable)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Yin (Tiger) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M9 Dog: monthly 8W meets annual 9P in SE."
+    },
+    {
+      "date": "2026-10-20",
+      "label": "20 October 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-10-21",
+      "label": "21 October 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations"
+    },
+    {
+      "date": "2026-10-22",
+      "label": "22 October 2026",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-10-23",
+      "label": "23 October 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Sector signal: M9 Dog: monthly 8W meets annual 9P in SE."
+    },
+    {
+      "date": "2026-10-24",
+      "label": "24 October 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts"
+    },
+    {
+      "date": "2026-10-25",
+      "label": "25 October 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M9 Dog: monthly 8W meets annual 9P in SE."
+    },
+    {
+      "date": "2026-10-26",
+      "label": "26 October 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying"
+    },
+    {
+      "date": "2026-10-27",
+      "label": "27 October 2026",
+      "officer": "Jian (Establish)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Xu (Dog) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M9 Dog: monthly 8W meets annual 9P in SE."
+    },
+    {
+      "date": "2026-10-28",
+      "label": "28 October 2026",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Sector signal: M9 Dog: monthly 8W meets annual 9P in SE."
+    },
+    {
+      "date": "2026-10-29",
+      "label": "29 October 2026",
+      "officer": "Man (Full)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke"
+    },
+    {
+      "date": "2026-10-30",
+      "label": "30 October 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ping (Balance) day, good for steadying; not for new starts"
+    },
+    {
+      "date": "2026-10-31",
+      "label": "31 October 2026",
+      "officer": "Ding (Stable)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Yin (Tiger) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M9 Dog: monthly 8W meets annual 9P in SE."
+    },
+    {
+      "date": "2026-11-01",
+      "label": "1 November 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-11-02",
+      "label": "2 November 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations"
+    },
+    {
+      "date": "2026-11-03",
+      "label": "3 November 2026",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-11-04",
+      "label": "4 November 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Sector signal: M9 Dog: monthly 8W meets annual 9P in SE."
+    },
+    {
+      "date": "2026-11-05",
+      "label": "5 November 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts"
+    },
+    {
+      "date": "2026-11-06",
+      "label": "6 November 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M9 Dog: monthly 8W meets annual 9P in SE."
+    },
+    {
+      "date": "2026-11-07",
+      "label": "7 November 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M10 Pig: monthly 8W meets annual 1W in Centre."
+    },
+    {
+      "date": "2026-11-08",
+      "label": "8 November 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Xu (Dog) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M10 Pig: monthly 8W meets annual 1W in Centre."
+    },
+    {
+      "date": "2026-11-09",
+      "label": "9 November 2026",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-11-10",
+      "label": "10 November 2026",
+      "officer": "Chu (Remove)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke. (Underlying positive: Chu (Remove) day, good for clearance and fresh starts; Caution takes precedence.)"
+    },
+    {
+      "date": "2026-11-11",
+      "label": "11 November 2026",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-11-12",
+      "label": "12 November 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Yin (Tiger) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M10 Pig: monthly 8W meets annual 1W in Centre."
+    },
+    {
+      "date": "2026-11-13",
+      "label": "13 November 2026",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts"
+    },
+    {
+      "date": "2026-11-14",
+      "label": "14 November 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-11-15",
+      "label": "15 November 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations"
+    },
+    {
+      "date": "2026-11-16",
+      "label": "16 November 2026",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-11-17",
+      "label": "17 November 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Sector signal: M10 Pig: monthly 8W meets annual 1W in Centre."
+    },
+    {
+      "date": "2026-11-18",
+      "label": "18 November 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts"
+    },
+    {
+      "date": "2026-11-19",
+      "label": "19 November 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M10 Pig: monthly 8W meets annual 1W in Centre."
+    },
+    {
+      "date": "2026-11-20",
+      "label": "20 November 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Xu (Dog) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M10 Pig: monthly 8W meets annual 1W in Centre."
+    },
+    {
+      "date": "2026-11-21",
+      "label": "21 November 2026",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-11-22",
+      "label": "22 November 2026",
+      "officer": "Chu (Remove)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke. (Underlying positive: Chu (Remove) day, good for clearance and fresh starts; Caution takes precedence.)"
+    },
+    {
+      "date": "2026-11-23",
+      "label": "23 November 2026",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-11-24",
+      "label": "24 November 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Yin (Tiger) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M10 Pig: monthly 8W meets annual 1W in Centre."
+    },
+    {
+      "date": "2026-11-25",
+      "label": "25 November 2026",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts"
+    },
+    {
+      "date": "2026-11-26",
+      "label": "26 November 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-11-27",
+      "label": "27 November 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations"
+    },
+    {
+      "date": "2026-11-28",
+      "label": "28 November 2026",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-11-29",
+      "label": "29 November 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Sector signal: M10 Pig: monthly 8W meets annual 1W in Centre."
+    },
+    {
+      "date": "2026-11-30",
+      "label": "30 November 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts"
+    },
+    {
+      "date": "2026-12-01",
+      "label": "1 December 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Sector signal: M10 Pig: monthly 8W meets annual 1W in Centre."
+    },
+    {
+      "date": "2026-12-02",
+      "label": "2 December 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Xu (Dog) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M10 Pig: monthly 8W meets annual 1W in Centre."
+    },
+    {
+      "date": "2026-12-03",
+      "label": "3 December 2026",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-12-04",
+      "label": "4 December 2026",
+      "officer": "Chu (Remove)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke. (Underlying positive: Chu (Remove) day, good for clearance and fresh starts; Caution takes precedence.)"
+    },
+    {
+      "date": "2026-12-05",
+      "label": "5 December 2026",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2026-12-06",
+      "label": "6 December 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Yin (Tiger) day trines Horse year, supportive background (promoted to Action by pairing with monthly auspicious stack). Sector signal: M10 Pig: monthly 8W meets annual 1W in Centre."
+    },
+    {
+      "date": "2026-12-07",
+      "label": "7 December 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ping (Balance) day, good for steadying; not for new starts. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-08",
+      "label": "8 December 2026",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-09",
+      "label": "9 December 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-10",
+      "label": "10 December 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-11",
+      "label": "11 December 2026",
+      "officer": "Wei (Danger)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Wei (Goat) day in Liu He partnership with Horse year. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-12",
+      "label": "12 December 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-13",
+      "label": "13 December 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-14",
+      "label": "14 December 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Trine support: Xu (Dog) day trines Horse year, supportive background. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-15",
+      "label": "15 December 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-16",
+      "label": "16 December 2026",
+      "officer": "Jian (Establish)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-17",
+      "label": "17 December 2026",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-18",
+      "label": "18 December 2026",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Yin (Tiger) day trines Horse year, supportive background. Neutral under the tightened G2 rule (no G1 / G3 pairing).. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-19",
+      "label": "19 December 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ping (Balance) day, good for steadying; not for new starts. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-20",
+      "label": "20 December 2026",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-21",
+      "label": "21 December 2026",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-22",
+      "label": "22 December 2026",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Winter Solstice solar-term joint, cardinal transition. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-23",
+      "label": "23 December 2026",
+      "officer": "Wei (Danger)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Wei (Goat) day in Liu He partnership with Horse year. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-24",
+      "label": "24 December 2026",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-25",
+      "label": "25 December 2026",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-26",
+      "label": "26 December 2026",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches. Trine support: Xu (Dog) day trines Horse year, supportive background. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-27",
+      "label": "27 December 2026",
+      "officer": "Bi (Close)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Bi (Close) day, good for closures and tidying. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-28",
+      "label": "28 December 2026",
+      "officer": "Jian (Establish)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-29",
+      "label": "29 December 2026",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-30",
+      "label": "30 December 2026",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Yin (Tiger) day trines Horse year, supportive background. Neutral under the tightened G2 rule (no G1 / G3 pairing).. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2026-12-31",
+      "label": "31 December 2026",
+      "officer": "Ping (Balance)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ping (Balance) day, good for steadying; not for new starts. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2027-01-01",
+      "label": "1 January 2027",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2027-01-02",
+      "label": "2 January 2027",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2027-01-03",
+      "label": "3 January 2027",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2027-01-04",
+      "label": "4 January 2027",
+      "officer": "Wei (Danger)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Wei (Goat) day in Liu He partnership with Horse year. Month-level sector caution: M11 Rat."
+    },
+    {
+      "date": "2027-01-05",
+      "label": "5 January 2027",
+      "officer": "Wei (Danger)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Xiao Han (start of Ox month) solar-term joint, reflective day"
+    },
+    {
+      "date": "2027-01-06",
+      "label": "6 January 2027",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements"
+    },
+    {
+      "date": "2027-01-07",
+      "label": "7 January 2027",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts. Background: Xu (Dog) day trines Horse year, supportive background (G2 alone does not fire Action under the tightened rule)"
+    },
+    {
+      "date": "2027-01-08",
+      "label": "8 January 2027",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches"
+    },
+    {
+      "date": "2027-01-09",
+      "label": "9 January 2027",
+      "officer": "Bi (Close)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke"
+    },
+    {
+      "date": "2027-01-10",
+      "label": "10 January 2027",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-01-11",
+      "label": "11 January 2027",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Trine support: Yin (Tiger) day trines Horse year, supportive background"
+    },
+    {
+      "date": "2027-01-12",
+      "label": "12 January 2027",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-01-13",
+      "label": "13 January 2027",
+      "officer": "Ping (Balance)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ping (Balance) day, good for steadying; not for new starts"
+    },
+    {
+      "date": "2027-01-14",
+      "label": "14 January 2027",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts"
+    },
+    {
+      "date": "2027-01-15",
+      "label": "15 January 2027",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-01-16",
+      "label": "16 January 2027",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations"
+    },
+    {
+      "date": "2027-01-17",
+      "label": "17 January 2027",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-01-18",
+      "label": "18 January 2027",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements"
+    },
+    {
+      "date": "2027-01-19",
+      "label": "19 January 2027",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts. Background: Xu (Dog) day trines Horse year, supportive background (G2 alone does not fire Action under the tightened rule)"
+    },
+    {
+      "date": "2027-01-20",
+      "label": "20 January 2027",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches"
+    },
+    {
+      "date": "2027-01-21",
+      "label": "21 January 2027",
+      "officer": "Bi (Close)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke"
+    },
+    {
+      "date": "2027-01-22",
+      "label": "22 January 2027",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-01-23",
+      "label": "23 January 2027",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Trine support: Yin (Tiger) day trines Horse year, supportive background"
+    },
+    {
+      "date": "2027-01-24",
+      "label": "24 January 2027",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-01-25",
+      "label": "25 January 2027",
+      "officer": "Ping (Balance)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ping (Balance) day, good for steadying; not for new starts"
+    },
+    {
+      "date": "2027-01-26",
+      "label": "26 January 2027",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts"
+    },
+    {
+      "date": "2027-01-27",
+      "label": "27 January 2027",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-01-28",
+      "label": "28 January 2027",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations"
+    },
+    {
+      "date": "2027-01-29",
+      "label": "29 January 2027",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-01-30",
+      "label": "30 January 2027",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements"
+    },
+    {
+      "date": "2027-01-31",
+      "label": "31 January 2027",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts. Background: Xu (Dog) day trines Horse year, supportive background (G2 alone does not fire Action under the tightened rule)"
+    },
+    {
+      "date": "2027-02-01",
+      "label": "1 February 2027",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches"
+    },
+    {
+      "date": "2027-02-02",
+      "label": "2 February 2027",
+      "officer": "Bi (Close)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Zi (Rat) day clashes Tai Sui Horse, back-attacking the Grand Duke"
+    },
+    {
+      "date": "2027-02-03",
+      "label": "3 February 2027",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-02-04",
+      "label": "4 February 2027",
+      "officer": "Jian (Establish)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Li Chun (2027 solar year begins) solar-term joint, cardinal transition"
+    },
+    {
+      "date": "2027-02-05",
+      "label": "5 February 2027",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Trine support: Mao (Rabbit) day trines Goat year, supportive background"
+    },
+    {
+      "date": "2027-02-06",
+      "label": "6 February 2027",
+      "officer": "Man (Full)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-02-07",
+      "label": "7 February 2027",
+      "officer": "Ping (Balance)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ping (Balance) day, good for steadying; not for new starts"
+    },
+    {
+      "date": "2027-02-08",
+      "label": "8 February 2027",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts"
+    },
+    {
+      "date": "2027-02-09",
+      "label": "9 February 2027",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-02-10",
+      "label": "10 February 2027",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations"
+    },
+    {
+      "date": "2027-02-11",
+      "label": "11 February 2027",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-02-12",
+      "label": "12 February 2027",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements"
+    },
+    {
+      "date": "2027-02-13",
+      "label": "13 February 2027",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts. Background: Hai (Pig) day trines Goat year, supportive background (G2 alone does not fire Action under the tightened rule)"
+    },
+    {
+      "date": "2027-02-14",
+      "label": "14 February 2027",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches"
+    },
+    {
+      "date": "2027-02-15",
+      "label": "15 February 2027",
+      "officer": "Bi (Close)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Chou (Ox) day clashes Tai Sui Goat, back-attacking the Grand Duke"
+    },
+    {
+      "date": "2027-02-16",
+      "label": "16 February 2027",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-02-17",
+      "label": "17 February 2027",
+      "officer": "Chu (Remove)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Chu (Remove) day, good for clearance and fresh starts. Trine support: Mao (Rabbit) day trines Goat year, supportive background"
+    },
+    {
+      "date": "2027-02-18",
+      "label": "18 February 2027",
+      "officer": "Man (Full)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Yu Shui solar-term joint, reflective day"
+    },
+    {
+      "date": "2027-02-19",
+      "label": "19 February 2027",
+      "officer": "Ping (Balance)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ping (Balance) day, good for steadying; not for new starts"
+    },
+    {
+      "date": "2027-02-20",
+      "label": "20 February 2027",
+      "officer": "Ding (Stable)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Ding (Stable) day, good for settling; not for new starts"
+    },
+    {
+      "date": "2027-02-21",
+      "label": "21 February 2027",
+      "officer": "Zhi (Initiate)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-02-22",
+      "label": "22 February 2027",
+      "officer": "Po (Destruction)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Po (Destruction) day, avoid major initiations"
+    },
+    {
+      "date": "2027-02-23",
+      "label": "23 February 2027",
+      "officer": "Wei (Danger)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    },
+    {
+      "date": "2027-02-24",
+      "label": "24 February 2027",
+      "officer": "Cheng (Success)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Cheng (Success) day, good for closing agreements"
+    },
+    {
+      "date": "2027-02-25",
+      "label": "25 February 2027",
+      "officer": "Shou (Receive)",
+      "category": "Good for rest and planning",
+      "verdict": "Settling",
+      "note": "Shou (Receive) day, good for consolidating; not for new starts. Background: Hai (Pig) day trines Goat year, supportive background (G2 alone does not fire Action under the tightened rule)"
+    },
+    {
+      "date": "2027-02-26",
+      "label": "26 February 2027",
+      "officer": "Kai (Open)",
+      "category": "Good for action",
+      "verdict": "Favourable",
+      "note": "Kai (Open) day, good for openings and launches"
+    },
+    {
+      "date": "2027-02-27",
+      "label": "27 February 2027",
+      "officer": "Bi (Close)",
+      "category": "Caution",
+      "verdict": "Caution",
+      "note": "Chou (Ox) day clashes Tai Sui Goat, back-attacking the Grand Duke"
+    },
+    {
+      "date": "2027-02-28",
+      "label": "28 February 2027",
+      "officer": "Jian (Establish)",
+      "category": "Neutral",
+      "verdict": "Neutral",
+      "note": "Default operating day"
+    }
+  ]
+}

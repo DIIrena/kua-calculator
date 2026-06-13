@@ -37,7 +37,7 @@ const PRODUCTS: Record<string, ProductMeta> = {
   },
   "move-in-kit": {
     slug: "move-in-kit",
-    title: "Move-In Date Selection + Activation Kit",
+    title: "Move-In Date Report",
     redirectPath: "/products/move-in-kit",
   },
   "bedroom-reset": {

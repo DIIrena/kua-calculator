@@ -32,8 +32,15 @@ export type CommerceProduct = {
   fulfillment: Fulfillment;
   /** static only: paths inside the `product-files` bucket. */
   files?: Array<{ path: string; label: string }>;
-  /** personalized only: recipe slug in lib/products.ts PRODUCTS. */
+  /** personalized only: recipe slug in lib/products.ts PRODUCTS. Absent
+   *  for personalized products that render from a bespoke template
+   *  rather than the modular block recipe (e.g. the Move-In Date Report). */
   recipeSlug?: string;
+  /** personalized only: which post-checkout form + fulfilment action to
+   *  use. "kua" (default) collects name/DOB/gender and renders via the
+   *  block recipe (Compass, Extended Kua Report). "movein" adds a
+   *  move-in window and renders the day-calendar report. */
+  personalizedForm?: "kua" | "movein";
   /** The product landing page, used for checkout cancel_url. */
   productPath: string;
   /** Whether checkout is open for this product. /api/checkout refuses
@@ -88,6 +95,21 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
     fulfillment: "personalized",
     recipeSlug: "extended-personal-kua",
     productPath: "/products/extended-personal-kua-report",
+    launched: false,
+  },
+  // The Move-In Date Report. Personalised, but rendered from a bespoke
+  // template (not the block recipe): the buyer's move-in window read
+  // against the verified 2026 day calendar, plus a Kua facing overlay
+  // and a first-week activation checklist.
+  "move-in-kit": {
+    slug: "move-in-kit",
+    shortTitle: "Move-In Date Report",
+    priceCents: 2900,
+    currency: "usd",
+    stripeEnvKey: "STRIPE_PRICE_MOVEIN",
+    fulfillment: "personalized",
+    personalizedForm: "movein",
+    productPath: "/products/move-in-kit",
     launched: false,
   },
   "good-days-calendar-2026": {
