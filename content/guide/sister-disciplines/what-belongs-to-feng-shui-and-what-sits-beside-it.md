@@ -1,6 +1,6 @@
-Feng shui does not read a person, and it does not predict a date.
+Feng shui reads a place. It works on the room rather than the person or the date.
 
-It reads a place. That is the whole job. Everything else that travels beside it - the natal chart, the timing chart, the bowl of stones on a shelf - belongs to a different question and a different tradition. This page draws that outer boundary. If you have already met [the four schools inside feng shui](/guide/schools/four-feng-shui-schools-in-one-map), this is the page that begins where that one ends.
+That is the whole job. Everything else that travels beside it - the natal chart, the timing chart, the bowl of stones on a shelf - belongs to a different question and a different tradition. This page draws that outer boundary. If you have already met [the four schools inside feng shui](/guide/schools/four-feng-shui-schools-in-one-map), this is the page that begins where that one ends.
 
 ## What this cluster is not
 

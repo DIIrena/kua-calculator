@@ -6,7 +6,7 @@ For the broader framing, see the cluster opener on [feng shui and money without 
 
 ## The door as a money-paper station
 
-The door is not just a layout question. The layout side of it is covered in the room read for [the bedroom, kitchen, and front door](/guide/rooms/bedroom-kitchen-front-door). This page is about the door's **role** as the first surface money paper meets.
+The door is more than a layout question. The layout side of it is covered in the room read for [the bedroom, kitchen, and front door](/guide/rooms/bedroom-kitchen-front-door). This page is about the door's **role** as the first surface money paper meets.
 
 Think about the ninety seconds after a bill comes through the slot. Where does it go? Is there a tray, a hook, a small bowl, a clear shelf? Or does the post pile onto a chair, a stair tread, the radiator cover that was never meant to be a desk?
 
@@ -20,7 +20,7 @@ Four short questions to ask of your entry.
 
 *Preparation.* Is the surface set up to receive, with space cleared and a place for paper to land, or is it already buried before the post arrives?
 
-The door is not a magic threshold. It is a *handover point*. If the handover is broken, paper stalls.
+The door works as a plain *handover point*. If the handover is broken, paper stalls.
 
 ## The desk as a money-paper station
 

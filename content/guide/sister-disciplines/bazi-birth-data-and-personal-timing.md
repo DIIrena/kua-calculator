@@ -1,4 +1,4 @@
-A BaZi chart does not predict a life. It maps the materials a person arrived with.
+A BaZi chart maps the materials a person arrived with. It describes rather than predicts a life.
 
 BaZi is a sister discipline to feng shui, not a branch of it. Feng shui reads the place. BaZi reads the person. Treating them as the same thing is the error this cluster is built to prevent, and it is the reason we wrote a separate page for each.
 

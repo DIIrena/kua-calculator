@@ -8,7 +8,7 @@ Look at the three or four largest surfaces. The floor. The walls. The bed or the
 
 ## What shapes dominate?
 
-Now squint a little and look past the materials at the silhouettes. Vertical and rectangular reads as Wood. Triangular and pointed reads as Fire. Low and square reads as Earth. Round and oval reads as Metal. Wavy and irregular reads as Water. The shapes either confirm what the materials told you or quietly contradict it. A room with a wood floor but everything else round and white is not actually a Wood room. It is a Metal room with a wood platform.
+Now squint a little and look past the materials at the silhouettes. Vertical and rectangular reads as Wood. Triangular and pointed reads as Fire. Low and square reads as Earth. Round and oval reads as Metal. Wavy and irregular reads as Water. The shapes either confirm what the materials told you or quietly contradict it. A room with a wood floor but everything else round and white is actually a Metal room with a wood platform.
 
 ## What does the room feel like?
 
@@ -28,7 +28,7 @@ A modern open-plan kitchen. Stainless steel appliances. White cabinets. A glass 
 
 Materials: heavy Metal, with Water in the glass and the gloss. Shapes: mostly rectangular cabinets and a round pendant, so Metal again. Feel: clean but a touch cold, slightly sharp at the edges. Use: cooking and gathering, which wants warmth.
 
-You can already name what is missing. Wood, and possibly a small touch of Fire. A wooden cutting board left out on the counter. A bowl of fruit. A warm-toned bulb in the pendant in place of the cool white. None of these are renovations. They are the small additions the room was asking for.
+You can already name what is missing. Wood, and possibly a small touch of Fire. A wooden cutting board left out on the counter. A bowl of fruit. A warm-toned bulb in the pendant in place of the cool white. Each of these is a small addition the room was asking for, lighter than a renovation.
 
 The diagnostic tells you what is missing. The next page tells you the cleanest way to add it - [the two cycles that do the practical work](/guide/five-elements/the-productive-and-controlling-cycles).
 

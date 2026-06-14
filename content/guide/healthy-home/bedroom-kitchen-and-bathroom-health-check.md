@@ -1,10 +1,10 @@
-Three rooms carry most of the home's health work. They are also the three rooms most often treated by feng shui. This page runs the health read on each: **rest conditions** in the bedroom, **food safety** in the kitchen, **hygiene containment** in the bathroom. Not layout. Not command position. Not the working triangle. Those sit on sister pages and are linked once each below.
+Three rooms carry most of the home's health work. They are also the three rooms most often treated by feng shui. This page runs the health read on each: **rest conditions** in the bedroom, **food safety** in the kitchen, **hygiene containment** in the bathroom. Layout, command position, and the working triangle sit on sister pages and are linked once each below.
 
 ## Bedroom: rest conditions
 
 The bedroom's job is to support the body falling asleep and staying there. The wall the bed sits against is a layout question. The conditions inside the room are a health question.
 
-Cool the room at night. Roughly 16 to 19 degrees C is the band most bodies settle into. Darken the room. Use blackout curtains where a streetlight intrudes. Put a small piece of tape over a charger LED. Keep the phone on a shelf in another room, not on the pillow. Fresh air before sleep. Open a window for ten minutes while you brush your teeth. Clean bedding. Sheets washed weekly, pillows aired in sunlight when the weather allows. The mattress aired and rotated on a schedule you keep. No screens within arm's reach of the pillow.
+Cool the room at night. Roughly 16 to 19 degrees C is the band most bodies settle into. Darken the room. Use blackout curtains where a streetlight intrudes. Put a small piece of tape over a charger LED. Keep the phone on a shelf in another room, not on the pillow. Fresh air before sleep. Open a window for ten minutes while you brush your teeth. Clean bedding. Sheets washed weekly, pillows aired in sunlight when the weather allows. The mattress aired and rotated on a schedule you keep. Keep screens beyond arm's reach of the pillow.
 
 Sound matters too. Steady low ambient sound, a fan or a quiet rain track, settles a room more reliably than silence broken by intermittent noise.
 
@@ -36,7 +36,7 @@ Same moves the layout page teaches. Different reason for making them.
 
 ## Two things if nothing else
 
-Air the bedroom for ten minutes before sleep. Run the cooker hood whenever the stove is on. Verifiable, not aspirational.
+Air the bedroom for ten minutes before sleep. Run the cooker hood whenever the stove is on. Both are verifiable, things you can check rather than merely hope for.
 
 ## Where to go next
 

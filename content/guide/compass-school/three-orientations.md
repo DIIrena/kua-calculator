@@ -1,6 +1,6 @@
 This page assumes you know your Kua number and your four supportive directions. If you do not, [find your Kua number](/kua-calculator) first.
 
-The rule under all of it is small and easy to miss. The system reads the direction your body faces, not the orientation of the furniture. The headboard points where your head points when you lie down. The chair faces where your eyes face when you sit. The door faces where you face when you walk out of it.
+The rule under all of it is small and easy to miss. The system reads the direction your body faces rather than the orientation of the furniture. The headboard points where your head points when you lie down. The chair faces where your eyes face when you sit. The door faces where you face when you walk out of it.
 
 Furniture is just the frame.
 
@@ -76,7 +76,7 @@ The chair turns. The bed rarely does. If you can only do one this week, make it 
 
 **The door** is the third orientation. The tradition reads the door's facing as what the home is angled toward. You cannot move a front door. But you can know what it is doing.
 
-If the door faces one of your four supportive directions, the tradition reads the home as broadly aligned with you. If it faces one of the cautious four, the tradition does not say the home is wrong. It says the interior placements, the bed and the chair, carry more of the work. If you want one place to keep your four directions and your floor plan together, a [printable personal compass overlay](/products/personal-feng-shui-compass) is the simplest way. Perfect alignment is rare and not the point.
+If the door faces one of your four supportive directions, the tradition reads the home as broadly aligned with you. If it faces one of the cautious four, the tradition reads the home as workable and says the interior placements, the bed and the chair, carry more of the work. If you want one place to keep your four directions and your floor plan together, a [printable personal compass overlay](/products/personal-feng-shui-compass) is the simplest way. Perfect alignment is rare and not the point.
 
 ## A move to try this week.
 

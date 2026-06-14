@@ -2,7 +2,7 @@
 
 This glossary page covers the Five Elements, their cycles, the Eight Mansions directions other than Sheng Qi, the command position rule, and the folk-traditional objects most often sold as feng shui cures. Use it as a rescue index: get oriented in two sentences, then click the canonical page for the full treatment.
 
-**Bagua Mirror.** *Ba gua jing, "eight-trigram mirror".* A small octagonal mirror painted with the eight trigrams, traditionally hung outside above a front door so it reflects external sha qi back toward its source. It is an exterior tool, not interior decoration, despite the gift-shop version. See [Bagua mirrors in the cures cluster](/guide/cures/mirrors-plants-light-sound-and-symbols).
+**Bagua Mirror.** *Ba gua jing, "eight-trigram mirror".* A small octagonal mirror painted with the eight trigrams, traditionally hung outside above a front door so it reflects external sha qi back toward its source. It is an exterior tool, used outside rather than as interior decoration, despite the gift-shop version. See [Bagua mirrors in the cures cluster](/guide/cures/mirrors-plants-light-sound-and-symbols).
 
 **Chan Chu.** *Chan chu, also jin chan, "toad" or "golden toad".* The three-legged money frog, a folk-traditional wealth object placed near the front door facing inward, often shown with a coin in its mouth. It marks the wealth intention of the entry rather than doing anything on its own. See [symbolic cures on the cures page](/guide/cures/mirrors-plants-light-sound-and-symbols).
 

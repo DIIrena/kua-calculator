@@ -1,6 +1,6 @@
 The Bagua names nine areas of life. Eight sit around the edges of a floor plan, one sits in the middle. Each is tied to a compass direction and to one of the five elements. The labels below are consistent across most traditions, one of the few points where schools tend to agree.
 
-Before the walk, a quick orientation. The elements named here (Wood, Fire, Earth, Metal, Water) form a working vocabulary, not a mystical code. The [five elements as a design language](/guide/five-elements/five-elements-as-a-design-language) page covers that vocabulary on its own. The sector layout sits on top of the elements, and [what the map layer actually is](/guide/bagua/what-the-bagua-is) belongs on its own page. For [how to orient the map](/guide/bagua/compass-vs-front-door-methods) over your home, the methods page is the right read.
+Before the walk, a quick orientation. The elements named here (Wood, Fire, Earth, Metal, Water) form a working vocabulary, a plain set of terms rather than a mystical code. The [five elements as a design language](/guide/five-elements/five-elements-as-a-design-language) page covers that vocabulary on its own. The sector layout sits on top of the elements, and [what the map layer actually is](/guide/bagua/what-the-bagua-is) belongs on its own page. For [how to orient the map](/guide/bagua/compass-vs-front-door-methods) over your home, the methods page is the right read.
 
 Now the walk, starting in the south and turning clockwise through the corners.
 

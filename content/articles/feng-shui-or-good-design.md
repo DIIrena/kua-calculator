@@ -32,7 +32,7 @@ Now walk into a home that a Classical feng shui practitioner has worked on. You 
 
 Same recommendations. Different vocabulary.
 
-This is not a coincidence. It is the same recommendation arrived at by two different methods.
+This is the same recommendation arrived at by two different methods.
 
 ## Why the two methods converged.
 
@@ -40,7 +40,7 @@ There are two ways to explain the convergence, and both hold up.
 
 ### The first explanation: humans are predictable.
 
-Humans have not changed much in three thousand years. We have the same nervous systems, the same circadian rhythms, the same need for visual order, the same tendency to feel exposed when our backs are to a door.
+Humans have stayed much the same for three thousand years. We have the same nervous systems, the same circadian rhythms, the same need for visual order, the same tendency to feel exposed when our backs are to a door.
 
 Any practice that has worked with humans for a long time will eventually converge on the same recommendations as any other practice that takes humans seriously. Feng shui got there *first*, by trial and error and observation across thousands of homes over thousands of years. Environmental psychology got there in the twentieth century, by controlled studies in laboratories.
 
@@ -60,11 +60,11 @@ The fuller picture is this: most of the parts that survived are the parts that *
 
 Full disclosure: they do not agree on everything.
 
-**Feng shui says** specific compass directions have specific personal qualities for specific people. (Your Kua number tells you your four favourable directions.) Environmental psychology has nothing to say about this.
+**Feng shui says** specific compass directions have specific personal qualities for specific people. (Your Kua number tells you your four favourable directions.) Environmental psychology stays silent on this.
 
-**Feng shui says** the south-east corner is the wealth corner. Environmental psychology has nothing to say about this.
+**Feng shui says** the south-east corner is the wealth corner. Environmental psychology stays silent on this.
 
-**Feng shui says** the energy of a year affects what kinds of activity will succeed in that year. (The flying-star annual cycle.) Environmental psychology has nothing to say about this.
+**Feng shui says** the energy of a year affects what kinds of activity will succeed in that year. (The flying-star annual cycle.) Environmental psychology stays silent on this.
 
 These are the **type-3 claims** from our [evidence article](/articles/whats-the-evidence). They are matters of tradition. You can use them or not use them.
 

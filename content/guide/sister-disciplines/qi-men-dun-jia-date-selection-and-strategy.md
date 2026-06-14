@@ -1,4 +1,4 @@
-*Qi Men Dun Jia* does not open doors for you. It names windows you can choose to walk through. It reads a moment, not a building, and not a person.
+*Qi Men Dun Jia* names windows you can choose to walk through; the walking stays yours. It reads a moment, the moment of action, rather than a building or a person.
 
 This is the third sister discipline in this cluster, and it sits across from the other two by design. If you have already met [where feng shui ends and the sister disciplines begin](/guide/sister-disciplines/what-belongs-to-feng-shui-and-what-sits-beside-it), you know the spine: place, person, moment. *Qi Men Dun Jia*, usually shortened to **QMDJ**, owns the moment.
 
@@ -46,7 +46,7 @@ You will see "auspicious lucky hours" sold as guaranteed-result spell windows. T
 
 ## Where the annual planner fits
 
-Both QMDJ and Flying Stars sit inside a shared slow calendar of years, months, and solar terms that all Chinese metaphysics uses. [Our 2026 Annual Feng Shui Planner, which tracks the shared annual and monthly calendar these timing systems sit on](/products/annual-feng-shui-planner-2026), is a planner for that wider calendar. It is not a QMDJ tool. It is the surrounding clock.
+Both QMDJ and Flying Stars sit inside a shared slow calendar of years, months, and solar terms that all Chinese metaphysics uses. [Our 2026 Annual Feng Shui Planner, which tracks the shared annual and monthly calendar these timing systems sit on](/products/annual-feng-shui-planner-2026), is a planner for that wider calendar. It is the surrounding clock these systems sit on, a calendar companion rather than a QMDJ tool.
 
 ## Two things if nothing else
 

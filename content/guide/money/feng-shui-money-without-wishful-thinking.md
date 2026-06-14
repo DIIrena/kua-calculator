@@ -1,4 +1,4 @@
-Money is not summoned. It is handled. And the places in a home where it gets handled - the kitchen counter, the southeast corner, the front door, the desk, the drawer where the bills live - respond to the same six levers as every other cure in the practice.
+Money is handled, not summoned. And the places in a home where it gets handled - the kitchen counter, the southeast corner, the front door, the desk, the drawer where the bills live - respond to the same six levers as every other cure in the practice.
 
 ## What this cluster is not
 

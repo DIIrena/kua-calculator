@@ -1,6 +1,6 @@
 # The seven-step home walkthrough.
 
-This is the method consultants use when they walk through a home for the first time. The point is not to fix every problem on the first pass. The point is to **see** the home with structured eyes, name the top five issues, and pick one to start with.
+This is the method consultants use when they walk through a home for the first time. The point of the first pass is to **see** the home with structured eyes, name the top five issues, and pick one to start with. Fixing every problem comes later.
 
 Allow about an hour. Take a notebook. Walk slowly.
 
@@ -14,7 +14,7 @@ Note three things:
 - Is the path inward open or blocked?
 - Is the light good?
 
-Write what you see. Do not try to fix anything yet.
+Write what you see. Leave the fixing for later.
 
 ## Step 2. Find the centre of the floor plan.
 

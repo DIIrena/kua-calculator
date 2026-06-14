@@ -2,7 +2,7 @@ Form School asks one question. Compass School asks another.
 
 Form School reads the shape of what is around a building. The slope of the land. The way light enters. The path of the road. The room behind your chair. Compass School - *Li Qi Pai*, "school of patterns and qi" - reads the numbers underneath it. The orientation. The directions. The match between a household and the eight slices of the horizon their home sits inside.
 
-The two halves were brought together into the shape we use today during the Song and Ming periods. They have been working in tandem ever since. Form School is **not** Compass School. It comes first.
+The two halves were brought together into the shape we use today during the Song and Ming periods. They have been working in tandem ever since. Form School is its own discipline, distinct from Compass School, and it comes first.
 
 ## Form first, then Compass.
 

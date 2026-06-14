@@ -1,12 +1,12 @@
-Most people think feng shui means standing in one room and giving it a label. It does not. A reading is a walk, not a verdict. On a walkthrough you are reading four things, in this order. How the light moves. What the main seat or bed sees. Whether the main object sits in command position. What the room is being asked to do versus what it is set up for. Everything else is a footnote. If the framing still feels loose, the anchor sits at [what feng shui actually is](/guide/foundations/what-feng-shui-is-plainly).
+Most people think feng shui means standing in one room and giving it a label. In practice, a reading is a walk, a moving look at the whole home rather than a single verdict. On a walkthrough you are reading four things, in this order. How the light moves. What the main seat or bed sees. Whether the main object sits in command position. What the room is being asked to do versus what it is set up for. Everything else is a footnote. If the framing still feels loose, the anchor sits at [what feng shui actually is](/guide/foundations/what-feng-shui-is-plainly).
 
 ## Start at the front door, walk in the order qi walks
 
 <span class="guide-badge guide-badge-traditional">Traditional</span> *Qi* ("energy or breath") enters where you enter. So you start where it starts. Open the front door. Stand on the threshold for a beat. Then walk in.
 
-The **route** is not arbitrary. Door first. Then the room that greets the door, whatever it is. Then the kitchen. Then the bedroom. Then everything else in whatever order the floor plan suggests.
+The **route** follows a deliberate order. Door first. Then the room that greets the door, whatever it is. Then the kitchen. Then the bedroom. Then everything else in whatever order the floor plan suggests.
 
-Three rooms carry most of the weight: the entry, the kitchen, and the bedroom. The entry sets the tone every time anyone arrives. The kitchen feeds the household. The bedroom is where the guard goes down for a third of life. If your walk runs out of attention, those are the three rooms you do not skip.
+Three rooms carry most of the weight: the entry, the kitchen, and the bedroom. The entry sets the tone every time anyone arrives. The kitchen feeds the household. The bedroom is where the guard goes down for a third of life. If your walk runs out of attention, those are the three rooms to keep.
 
 ## Read four things, not a checklist
 

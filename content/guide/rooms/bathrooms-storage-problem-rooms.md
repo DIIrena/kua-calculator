@@ -1,4 +1,4 @@
-A bathroom in the wealth corner is not a crisis. A storage room is not an embarrassment. A beam over the bed is not a sentence. The rooms most people apologise for are the rooms most worth reading carefully. The work in this cluster is **containment**, naming what the room actually is, and a few small structural adjustments that change how the space reads.
+A bathroom in the wealth corner is a room you can work with. A storage room is a room with a job. A beam over the bed is a detail you can adjust around. The rooms most people apologise for are the rooms most worth reading carefully. The work in this cluster is **containment**, naming what the room actually is, and a few small structural adjustments that change how the space reads.
 
 ## Bathroom
 
@@ -22,7 +22,7 @@ Most homes treat storage as the overflow. This is the error. A storage room is a
 
 The principle is simple. A storage room that is organised, labelled, and accessed weekly is a room. A storage room that is dumped into and avoided is a hole the rest of the home leaks into. The leak is real. The cupboard you cannot open without something falling out is borrowing energy from the room next door.
 
-Storage rooms are often the room people most avoid. Open them anyway. Take everything out. Put back only what has a job. The rest leaves the house. This is not a productivity exercise; it is a structural one. A house with no leaking storage room reads differently across every other room.
+Storage rooms are often the room people most avoid. Open them anyway. Take everything out. Put back only what has a job. The rest leaves the house. This is a structural exercise, one that changes how the whole home reads. A house with no leaking storage room reads differently across every other room.
 
 ## Problem rooms
 
@@ -36,7 +36,7 @@ Dead-end rooms (the room at the end of a long corridor that nobody uses) collect
 
 Mixed-use rooms (the bedroom that is also an office, the dining room that is also a study) are a category we cover at [living, dining, and home office](/guide/rooms/living-dining-home-office). The principle here: one job **dominates** per session. The room can serve two functions across the week; it cannot serve two functions in the same hour. Close the laptop before bed. Clear the dining table before dinner. *One job per session*, even when the room does two.
 
-These rooms are not failures. The home is what it is. The work is reading it without flinching. The room you most avoid is usually the one worth opening first.
+These rooms are honest parts of the home. The home is what it is. The work is reading it without flinching. The room you most avoid is usually the one worth opening first.
 
 ## Where to go next
 

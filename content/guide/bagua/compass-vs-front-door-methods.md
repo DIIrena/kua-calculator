@@ -26,7 +26,7 @@ The advantage is portability. Any home, any room, any rental. No bearing require
 
 If you can take a compass bearing and want the tradition the rest of this guide teaches, use the **compass** method. It belongs to [the Classical compass school](/guide/compass-school/what-is-compass-school), and almost everything else in this cluster assumes it.
 
-If you are renting, travelling, or want a simpler first pass, the **front-door** method does real work. Many readers find it still trains the eye. It is not a lesser tool. It is a different tool.
+If you are renting, travelling, or want a simpler first pass, the **front-door** method does real work. Many readers find it still trains the eye. It is a different tool, a real one with its own job.
 
 Pick one. Stick with it. Switching methods mid-walk is the most common beginner mistake, and the fastest way to end up with a map that contradicts itself. If you start with the front-door method and later want the compass method, run the whole reading again from scratch.
 

@@ -2,9 +2,9 @@ A home that is cared for daily reads as cared for daily. The body that lives the
 
 ## Plants as part of the room
 
-Live **plants** belong in a healthy home for visible life, varied form, and the small daily care of watering. They do not belong as filtration. A few pots will not change indoor air in a real room. Treat plants as life in the space, not as a filter.
+Live **plants** belong in a healthy home for visible life, varied form, and the small daily care of watering. Treat plants as life in the space rather than as a filter; a few pots make their difference through presence rather than air quality.
 
-Frame plants instead as living company in the room. Pick tolerant species the first time around: pothos, snake plant, spider plant, peace lily, monstera, and the common ferns. Place them near windows, where the eye lands, and in scale with the room. One well-chosen plant beats five neglected ones.
+Frame plants as living company in the room. Pick tolerant species the first time around: pothos, snake plant, spider plant, peace lily, monstera, and the common ferns. Place them near windows, where the eye lands, and in scale with the room. One well-chosen plant beats five neglected ones.
 
 A wilting plant has turned from a feature into a tired corner. Water it, repot it, or replace it. For the living-energy cure family, see [the mirrors, plants, light, sound, and symbols page](/guide/cures/mirrors-plants-light-sound-and-symbols). For the wood-as-living-element framing, see [the five elements as a design language](/guide/five-elements/five-elements-as-a-design-language).
 

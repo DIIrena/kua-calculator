@@ -32,7 +32,7 @@ So the feng shui that survived to today comes from two streams: the **Classical*
 
 ## The three ideas behind everything.
 
-You do not need to know much to get going. Three concepts and you are most of the way there.
+A little knowledge is enough to get going. Three concepts and you are most of the way there.
 
 ### Qi.
 
@@ -54,7 +54,7 @@ That is most of yin-yang. You will recognise the pattern after one or two rooms.
 
 ### The five elements.
 
-Wood, fire, earth, metal, water. They are not literal materials, they are *qualities*: growth (wood), heat (fire), stability (earth), precision (metal), flow (water).
+Wood, fire, earth, metal, water. They are *qualities*: growth (wood), heat (fire), stability (earth), precision (metal), flow (water). Read them as qualities rather than as literal materials.
 
 Every room has all five in some mix. When the mix is wrong, the room feels off in a way that is hard to name. When the mix is right, the room *just works* and you cannot explain why.
 
@@ -80,4 +80,4 @@ If you want the deeper read, the [bagua map article](/articles/bagua-map-wealth-
 
 If you are still skeptical, we have an article called ["What's the evidence behind feng shui?"](/articles/whats-the-evidence) that does not try to convince you. It just shows you which parts of the tradition survive a hard look and which parts do not. Worth twenty minutes.
 
-Feng shui is not magic. It is a *structured* way of paying attention to where you live. That is it. That is the whole deal.
+Feng shui is a *structured* way of paying attention to where you live, grounded in observation rather than magic. That is it. That is the whole deal.

@@ -4,7 +4,7 @@ This is page 4 of 4 in the glossary. It covers the time-aware Xuan Kong family, 
 
 **Anshan.** *An shan, "desk hill".* The low foreground hill in front of an ideal Form School site, sitting between the immediate Vermilion Bird table and the distant Chaoshan view. It anchors the middle ground of the classic landscape reading. See [the Form School landscape terms](/guide/schools/form-school-vs-compass-school).
 
-**BaZi.** *Ba zi, "eight characters".* The Four Pillars of Destiny birth-chart system, a sister discipline that reads a person rather than a place. It is not feng shui itself, even though the two share elements and stems and branches. See [what BaZi is and is not](/guide/sister-disciplines/bazi-birth-data-and-personal-timing).
+**BaZi.** *Ba zi, "eight characters".* The Four Pillars of Destiny birth-chart system, a sister discipline that reads a person rather than a place. It sits beside feng shui as its own field, even though the two share elements and stems and branches. See [what BaZi is and is not](/guide/sister-disciplines/bazi-birth-data-and-personal-timing).
 
 **Chaoshan.** *Chao shan.* The distant facing mountain or feature in the Form School landscape, sitting beyond the closer Anshan. It provides the long view that anchors a site's outlook and gives the eye somewhere to rest. See [the Form School landscape terms](/guide/schools/form-school-vs-compass-school).
 
@@ -34,7 +34,7 @@ This is page 4 of 4 in the glossary. It covers the time-aware Xuan Kong family, 
 
 **Period 9.** *Jiu yun.* The current Xuan Kong period, running from 4 February 2024 to early February 2044. Its ruling star is 9 Purple, a Fire star in the south Li-trigram palace. See [the current Period](/guide/schools/flying-stars-btb-and-timing).
 
-**Qi Men Dun Jia.** *Qi men dun jia, "QMDJ".* A divination and date-selection system built on the nine palaces, used for strategy and timing rather than space. It is a sister discipline to feng shui, not feng shui itself. See [what QMDJ is and is not](/guide/sister-disciplines/qi-men-dun-jia-date-selection-and-strategy).
+**Qi Men Dun Jia.** *Qi men dun jia, "QMDJ".* A divination and date-selection system built on the nine palaces, used for strategy and timing rather than space. It is a sister discipline that stands beside feng shui as its own field. See [what QMDJ is and is not](/guide/sister-disciplines/qi-men-dun-jia-date-selection-and-strategy).
 
 **San He.** *San he, "three combinations".* One of the four major Compass School sub-schools, focused on the spatial relationships between mountains, water, and the site. It is strong on landform and orientation rather than time. See [the four schools in one map](/guide/schools/four-feng-shui-schools-in-one-map).
 

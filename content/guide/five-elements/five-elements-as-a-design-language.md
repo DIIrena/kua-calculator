@@ -1,4 +1,4 @@
-The five elements are not five literal substances. They are not a chemistry kit. They are not a horoscope, and the tradition does not use them to predict anything. They are *five qualities of motion, not five literal substances*, and they double as a vocabulary for describing how a room behaves. *Wu Xing*, "five phases", is the working name. Once the vocabulary lands, you stop seeing a room as furniture and start seeing it as five kinds of behaviour arranged in space.
+The five elements are *five qualities of motion*, and they double as a vocabulary for describing how a room behaves. The tradition treats them as qualities rather than literal substances, and uses them to describe rather than to predict. *Wu Xing*, "five phases", is the working name. Once the vocabulary lands, you stop seeing a room as furniture and start seeing it as five kinds of behaviour arranged in space.
 
 This page is the vocabulary layer. After it, you can walk through a furniture shop or scroll a feed and silently name what each piece is doing. A shorter catalogue read sits at the [five elements overview](/articles/five-elements) if you want the one-page summary first.
 
@@ -26,7 +26,7 @@ The vocabulary on this page feeds straight into the diagnostic. The next page, [
 
 If you want to apply this vocabulary across a whole year, the [2026 Planner](/products/annual-feng-shui-planner-2026) uses this vocabulary to suggest element moves, sector by sector, across the year. It is on the waitlist.
 
-The elements are not labels you stick on a room. They are a way of looking. Once you have the vocabulary, you can read a space the way a tailor reads a fabric.
+The elements are a way of looking, more than labels you stick on a room. Once you have the vocabulary, you can read a space the way a tailor reads a fabric.
 
 ## Where to go next.
 

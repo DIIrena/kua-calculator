@@ -1,4 +1,4 @@
-Your Kua number is a single digit between 1 and 9, skipping 5. It comes from your birth year and your gender at birth. That is the whole input. The calculator handles 5 separately, so you do not have to think about it.
+Your Kua number is a single digit between 1 and 9, skipping 5. It comes from your birth year and your gender at birth. That is the whole input. The calculator handles 5 separately, so you can leave it to the tool.
 
 What the number does is small and useful. It sorts you into one of two groups, and each group has four directions the tradition reads as supportive and four it asks you to handle with care.
 
@@ -8,7 +8,7 @@ If you have ten seconds, [find your Kua number](/kua-calculator). It returns the
 
 East group is 1, 3, 4, 9. West group is 2, 6, 7, 8. The supportive directions for one group are the cautious ones for the other. This is the biggest split in the system, which is why the calculator leads with it.
 
-East group's supportive directions are the ones the tradition associates with motion and **outward** work - learning, building, being seen. West group's are the ones the tradition associates with gathering and **inward** work - deepening, finishing, holding the harvest. That does not mean every East group person is loud. Plenty are quiet. It is a description of the qualities the tradition associates with your favourable directions, not a personality test.
+East group's supportive directions are the ones the tradition associates with motion and **outward** work - learning, building, being seen. West group's are the ones the tradition associates with gathering and **inward** work - deepening, finishing, holding the harvest. Plenty of East group people are quiet. It is a description of the qualities the tradition associates with your favourable directions, not a personality test.
 
 ## What your four directions are for.
 
@@ -16,11 +16,11 @@ East group's supportive directions are the ones the tradition associates with mo
 
 The other four have names too: Huo Hai, Wu Gui, Liu Sha, Jue Ming. The tradition treats them as lower-priority placements rather than anything to fear. <span class="guide-badge guide-badge-traditional">Traditional</span> They are simply the spots you assign last, after the supportive four have homes.
 
-You do not need to memorise any of this to start. The calculator returns your four supportive directions in everyday words. The names are useful later, when you want to choose between two rooms that otherwise look equivalent.
+You can start straight away: the calculator returns your four supportive directions in everyday words. The names are useful later, when you want to choose between two rooms that otherwise look equivalent.
 
 ## What about a mixed-group household.
 
-About half of all couples are mixed, and the tradition does not ask you to optimise the whole home for one person. <span class="guide-badge guide-badge-traditional">Traditional</span> The move is to assign functions instead. The shared bedroom can favour one partner's relationship direction, and the tradition points couples toward *Yan Nian*. The home office favours the person who actually uses it. The head-of-household dining seat favours whoever sits there most. <span class="guide-badge guide-badge-preference">Preference</span> *In a shared home you cannot optimise for everyone at once. Pick the main user of each room.*
+About half of all couples are mixed, and the tradition asks you to share the home across both people rather than optimise it for one. <span class="guide-badge guide-badge-traditional">Traditional</span> The move is to assign functions. The shared bedroom can favour one partner's relationship direction, and the tradition points couples toward *Yan Nian*. The home office favours the person who actually uses it. The head-of-household dining seat favours whoever sits there most. <span class="guide-badge guide-badge-preference">Preference</span> *In a shared home, pick the main user of each room and orient for that one person.*
 
 ## Frequently asked questions.
 
@@ -30,7 +30,7 @@ Your Kua number is a single digit between 1 and 9 (the tradition skips 5) calcul
 
 ### East group or West group, which am I?
 
-Your group follows directly from your Kua number. East group is 1, 3, 4, 9. West group is 2, 6, 7, 8. The supportive directions for one group are the cautious ones for the other, which is why the tradition leads with this split. If you do not know your Kua number yet, the free calculator returns your number and your group together. There is no need to memorise the formula.
+Your group follows directly from your Kua number. East group is 1, 3, 4, 9. West group is 2, 6, 7, 8. The supportive directions for one group are the cautious ones for the other, which is why the tradition leads with this split. If you do not know your Kua number yet, the free calculator returns your number and your group together. The calculator handles the formula for you.
 
 ## Where to go next.
 

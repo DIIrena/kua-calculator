@@ -410,12 +410,13 @@ export default async function HomePage(props: {
         aria-labelledby="honest-footer-heading"
       >
         <div className="page-prose">
-          <h2 id="honest-footer-heading">What we promise. And what we don&apos;t.</h2>
+          <h2 id="honest-footer-heading">What you can expect.</h2>
           <p>
-            We do not promise outcomes. Feng shui is a structured design
-            tradition, not a prediction. We tell you which moves the evidence
-            supports, which moves are traditional, and which moves are simply
-            preference. If we do not know, we say so.
+            Feng shui is a structured design tradition. We label which moves
+            the evidence supports, which moves are traditional, and which are
+            simply preference, and we say so when the answer is uncertain. We
+            describe what a move supports, and leave the outcome to your own
+            home.
           </p>
           <p>
             The Kua calculation runs in your browser. Anonymous use stays

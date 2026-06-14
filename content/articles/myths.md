@@ -1,4 +1,4 @@
-# Four feng shui myths we don't believe.
+# Four feng shui myths we set straight.
 
 Feng shui has been around for centuries. Most of what's printed about it in magazines was written by someone who skim-read one book in 1998. Here are four common myths, with a straight reading on each.
 
@@ -6,7 +6,7 @@ Feng shui has been around for centuries. Most of what's printed about it in maga
 
 Sometimes. Not always.
 
-The colour of the door depends on which direction it faces. South-facing doors traditionally work well in red because south is the fire direction. A red door facing **north** (a water direction) is fighting itself. There is no universal lucky door colour.
+The colour of the door depends on which direction it faces. South-facing doors traditionally work well in red because south is the fire direction. A red door facing **north** (a water direction) is fighting itself. The right colour is always the one that suits the door's direction.
 
 The practical version: paint your door a colour you like, that suits the house, and that you can see clearly from the street.
 
@@ -20,7 +20,7 @@ The reality: a fish tank is high-maintenance. If you do not love fishkeeping, sk
 
 ## Myth 3. Mirrors double the energy in a room.
 
-Mirrors are powerful in feng shui *because* they reflect. They are not always doubling something good.
+Mirrors are powerful in feng shui *because* they reflect. They double whatever they point at, good or bad.
 
 A mirror facing your front door reflects guests (and qi) straight back out. A mirror reflecting clutter doubles the clutter. A mirror behind your bed creates the bedroom most consistently flagged as a sleep problem in both the traditional and the modern reading.
 

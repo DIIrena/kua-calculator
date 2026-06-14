@@ -1,4 +1,4 @@
-The cycles look like theory. They read like a memorisation exercise the first time anyone meets them. They are not theory. They are a tool, and two of them do almost all the practical work.
+The cycles look like theory. They read like a memorisation exercise the first time anyone meets them. In practice they are a tool, and two of them do almost all the practical work.
 
 Here is the rule that runs the whole page. When in doubt, use the productive cycle first. Bring out the controlling cycle when the productive route is not pulling its weight. **The productive cycle** is the default tool. **The controlling cycle** is the heavier move, kept in reserve.
 
@@ -6,7 +6,7 @@ That is the whole idea. The rest of the page is how to use it.
 
 ## The productive cycle.
 
-Water feeds Wood. Wood fuels Fire. Fire burns down to ash and Earth. Earth bears Metal inside its ore. Metal cools in humid air and Water condenses on it. The chain is *something you can watch, not a guess*. Every link is something a person could observe happening.
+Water feeds Wood. Wood fuels Fire. Fire burns down to ash and Earth. Earth bears Metal inside its ore. Metal cools in humid air and Water condenses on it. The chain is *something you can watch*. Every link is something a person could observe happening.
 
 The practical move is one sentence. To add an element, add what produces it.
 
@@ -78,7 +78,7 @@ A bedroom that feels sharp and cold is usually heavy on Metal. The diagnostic pa
 
 This is a case where the productive cycle does not help. Adding Earth, the element that produces Metal, would only feed the Metal layer further. The move is the controlling cycle. Fire controls Metal.
 
-The right version of Fire in a bedroom is the quiet version. A warm-bulb bedside lamp instead of a cool-white overhead. A deep red or burnt-orange cushion. A small leather-bound book left out on the bedside table. A wool throw in a hot tone folded at the foot of the bed. None of these are bright or active; the bedroom is still meant for rest. They add the *quality* of Fire (warmth, weight, blush) without the stimulation.
+The right version of Fire in a bedroom is the quiet version. A warm-bulb bedside lamp instead of a cool-white overhead. A deep red or burnt-orange cushion. A small leather-bound book left out on the bedside table. A wool throw in a hot tone folded at the foot of the bed. All of these stay soft and still; the bedroom is still meant for rest. They add the *quality* of Fire (warmth, weight, blush) while keeping the room calm.
 
 For the wider logic on what the tradition supports in a sleeping room, see [the bedroom page](/space/bedroom) and the [Health life area](/life/health).
 

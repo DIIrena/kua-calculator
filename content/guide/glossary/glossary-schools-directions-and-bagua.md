@@ -16,7 +16,7 @@ This page is the rescue map for school lineages, directional terminology, and th
 
 **Dui.** *Dui, the lake trigram.* Top broken, bottom two solid. Mapped to west, Metal, youngest daughter, and the life area of children, creativity, and joy. See [the trigrams and life areas](/guide/bagua/the-nine-life-areas).
 
-**Early Heaven Bagua.** *Xian tian ba gua, "before heaven trigrams".* The cosmological Bagua arrangement attributed to Fu Xi, found on antique luopans and protective Bagua mirrors. It is not used for spatial mapping of a home. See [the two Bagua arrangements](/guide/bagua/what-the-bagua-is).
+**Early Heaven Bagua.** *Xian tian ba gua, "before heaven trigrams".* The cosmological Bagua arrangement attributed to Fu Xi, found on antique luopans and protective Bagua mirrors. It serves a cosmological and protective role, while the Later Heaven arrangement handles spatial mapping of a home. See [the two Bagua arrangements](/guide/bagua/what-the-bagua-is).
 
 **East and West Groups.** *Dong si ming and xi si ming, "east and west four lives".* The two Kua-number groupings in Eight Mansions. East-group numbers (1, 3, 4, 9) share one set of four favourable directions, and West-group numbers (2, 6, 7, 8) share another. See [East group vs West group on the Kua page](/guide/compass-school/find-your-kua-number).
 

@@ -1,10 +1,10 @@
-Form School is **not** Compass School. They are not rivals, and they are not two competing answers to the same question. They are the two halves of a single Classical practice. Each one asks a different question. One reads the place. The other reads the fit between the place and the people inside it. You may have already read [the four feng shui schools, in one map](/guide/schools/four-feng-shui-schools-in-one-map). This page is the close-up on the divide that map only names.
+Form School and Compass School are distinct. They are partners rather than rivals, two halves of a single Classical practice rather than competing answers to the same question. Each one asks a different question. One reads the place. The other reads the fit between the place and the people inside it. You may have already read [the four feng shui schools, in one map](/guide/schools/four-feng-shui-schools-in-one-map). This page is the close-up on the divide that map only names.
 
 ## What Form School reads
 
 Form School (*Luan Tou Pai*, "mountain head school") reads the shape of the landscape and the shape of the built environment around a home. The working rule is older than the schools themselves: qi rides on wind, and it is stopped at water. A good site sits in the land the way a person sits in an armchair. Backed, embraced on both sides, open in front. The four positions name those qualities in a vocabulary the tradition has carried for centuries. The Black Tortoise behind is the back support, ideally a hill or a taller, stable structure. The Green Dragon on the left is the slightly higher, winding form on your left as you face out from the door. The White Tiger on the right is the lower, broader presence on your right. The Red Phoenix in front is the open, friendly foreground, a park, a square, a calm body of water. The animals are *positions and qualities*, not literal creatures.
 
-In a city, buildings substitute for mountains and streets substitute for rivers. A curved street that wraps around your building is embracing. A straight road aimed at your front door is not. That second case is one example of *sha qi* ("cutting qi"). The term names the set of sharp forms aimed at a dwelling. The spear-road or T-junction case is the one most readers meet first. The full set belongs on the room-level walk in [how to read any room](/guide/rooms/how-to-read-any-room).
+In a city, buildings substitute for mountains and streets substitute for rivers. A curved street that wraps around your building is embracing. A straight road aimed at your front door cuts toward it instead. That second case is one example of *sha qi* ("cutting qi"). The term names the set of sharp forms aimed at a dwelling. The spear-road or T-junction case is the one most readers meet first. The full set belongs on the room-level walk in [how to read any room](/guide/rooms/how-to-read-any-room).
 
 ## What Compass School reads
 
@@ -12,7 +12,7 @@ Compass School (*Li Qi Pai*, "school of patterns and qi") reads the directional 
 
 ## Why Form comes first
 
-Form first. Then Compass. The order is not random, and it reflects how the tradition is taught.
+Form first. Then Compass. The order is deliberate, and it reflects how the tradition is taught.
 
 Form School answers the first question: is this place *liveable* in the first place? If the site is hostile, no compass reading rescues it. Picture a road aimed at the front door, no support behind, wind on every side. The working sequence most Classical practitioners follow is the same: site first, orientation second, household overlay third.
 

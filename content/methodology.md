@@ -1,6 +1,6 @@
 # Compass School Deep-Dive
 
-Compass School (Li Qi Pai) is the calculative half of Classical feng shui. Where Form School reads the shape of the land and structures surrounding a building, Compass School reads the numbers underneath it: the bearings of its walls, the dates that anchor it in time, and the birth data of the people who live in it. The two schools are not rivals. They are complementary lenses on the same site, and a serious Classical practitioner uses both.
+Compass School (Li Qi Pai) is the calculative half of Classical feng shui. Where Form School reads the shape of the land and structures surrounding a building, Compass School reads the numbers underneath it: the bearings of its walls, the dates that anchor it in time, and the birth data of the people who live in it. The two schools are complementary lenses on the same site, and a serious Classical practitioner uses both.
 
 This page covers what Compass School is and where it came from, the luopan compass at a high level, the 24 Mountains subdivision of the eight directions, the Kua number calculation with two worked examples, the Eight Mansions (Ba Zhai) personal-direction system, and how to apply all of this in daily life. It closes with a section on what the precision of Compass School does and does not buy you.
 
@@ -15,9 +15,9 @@ The school as a coherent system consolidated during the Song (960-1279) and Ming
 - **Xuan Kong** (Mysterious Subtlety). The Flying Stars system. Combines San Yuan time with compass space to produce a unique chart for every home.
 - **Eight Mansions** (Ba Zhai). The personal-direction system covered later on this page. Uses the inhabitant's birth year to identify four favourable and four unfavourable directions.
 
-Compass School diverges from Form School in one important way: it cannot be done by walking around. It requires measurement. Without a compass reading, no Compass School technique applies. Practitioners compress this into a single line: without a compass, nothing. It is the cleanest summary of the difference between the schools.
+Compass School diverges from Form School in one important way: it requires measurement. Where Form School can be read by walking around, Compass School needs a compass reading before any of its techniques apply. Practitioners compress this into a single line: without a compass, nothing. It is the cleanest summary of the difference between the schools.
 
-That does not mean Compass School is opposed to Form School. The Classical tradition treats Form first, then Compass. A site that fails Form - no support behind, sha qi at the front door, exposed on all sides - cannot be saved by clever compass work. Form School answers "is this place liveable in the first place?" Compass School answers "now that we know it is, how do we tune it for this specific household in this specific period?"
+Compass School works alongside Form School. The Classical tradition treats Form first, then Compass. A site that fails Form - no support behind, sha qi at the front door, exposed on all sides - cannot be saved by clever compass work. Form School answers "is this place liveable in the first place?" Compass School answers "now that we know it is, how do we tune it for this specific household in this specific period?"
 
 ## 2. The luopan (Luo Pan)
 
@@ -28,11 +28,11 @@ A few things to know without going into the rings in detail:
 - **It is a magnetic compass at heart.** A small magnetised needle in a central well points to magnetic north. Surrounding the needle is a rotating square base with multiple concentric printed rings of information.
 - **It carries directional, elemental, and temporal information layered together.** Different rings encode the eight directions, the 24 Mountains, the 64 hexagrams of the *Yi Jing*, the heavenly stems and earthly branches, the five elements at each direction, and sub-school-specific data. A San He luopan has different rings than a San Yuan luopan; a master luopan combines both.
 - **It is read by alignment.** The practitioner places the luopan flat, turns the rotating face until magnetic north on the needle aligns with the printed compass-north line, and reads outward through the rings at the bearing of interest.
-- **It is more reference than measuring device.** The luopan does not give any directional information a regular compass cannot. What it adds is a printed lookup table of everything Compass School needs to know about each bearing.
+- **It is more reference than measuring device.** The luopan gives the same directional information a regular compass does. What it adds is a printed lookup table of everything Compass School needs to know about each bearing.
 
 This page does not reproduce the specific ring-by-ring breakdown of any one practitioner's luopan. The detailed ring structure varies by lineage and by the practitioner who designed the instrument, and many modern luopan designs are proprietary works. What you need to know as a reader is what the luopan is *for*, not how to read every ring on a specific instrument.
 
-For amateur work, a luopan is not required. A regular hiking compass or even a smartphone compass app is sufficient for the techniques on this page. The luopan becomes useful when you need to look up which 24-Mountain sub-sector your bearing falls into without consulting a separate table, or when you are working in a sub-school whose rings are not standard. For learning purposes, a paper Bagua chart plus a basic compass replicates everything an amateur needs.
+For amateur work, any basic compass does the job. A regular hiking compass or even a smartphone compass app is sufficient for the techniques on this page. The luopan becomes useful when you need to look up which 24-Mountain sub-sector your bearing falls into without consulting a separate table, or when you are working in a sub-school whose rings are not standard. For learning purposes, a paper Bagua chart plus a basic compass replicates everything an amateur needs.
 
 Below is a simplified three-ring representation of the most basic Compass School information. A real luopan can have more than thirty rings; we show three, corresponding to the three information layers a beginner needs.
 
@@ -102,7 +102,7 @@ The names of the 24 Mountains are assembled from three older Chinese symbol sets
 
 Each 15-degree sub-sector therefore carries one of these 24 symbols. Within each 45-degree direction, the middle sub-sector is an Earthly Branch and the two flanking sub-sectors are either Heavenly Stems (in the cardinal directions) or a Stem plus a Trigram (in the intercardinal directions).
 
-You do not need to memorise the 24 Mountains. The point to understand is that compass readings in Classical practice can be precise to 15 degrees, and that the names of the sub-sectors are drawn from the older symbol systems that organise time and space in Chinese metaphysics - not assigned arbitrarily. When you see a feng shui report referring to a building as "facing Wu" or "sitting Zi," it is naming a specific 24-Mountain sub-sector, not making a generic south or north claim.
+The 24 Mountains are worth understanding rather than memorising. The point to grasp is that compass readings in Classical practice can be precise to 15 degrees, and that the names of the sub-sectors are drawn deliberately from the older symbol systems that organise time and space in Chinese metaphysics. When you see a feng shui report referring to a building as "facing Wu" or "sitting Zi," it is naming a specific 24-Mountain sub-sector, not making a generic south or north claim.
 
 ## 4. The direction-element-trigram mapping (recap)
 
@@ -312,7 +312,7 @@ Two practical notes. First, in a shared home you cannot optimise for everyone at
 
 Compass School is the most technically rigorous part of feng shui. Two practitioners working from the same compass reading and the same birth date will produce nearly identical Kua numbers and very similar Eight Mansions recommendations. That internal consistency is real and worth respecting.
 
-It also invites a kind of false confidence. The phrase "Kua 4 east-group" sounds like a measurable fact about a person. It is not. It is a culturally-developed classification scheme whose internal logic is well-documented, but whose predictive validity - does sleeping with your head pointing Sheng Qi actually correlate with better outcomes than sleeping with your head pointing Jue Ming? - has not been established by external evidence. The same caution applies to Flying Stars.
+It also invites a kind of false confidence. The phrase "Kua 4 east-group" sounds like a measurable fact about a person. It is really a culturally-developed classification scheme whose internal logic is well-documented, but whose predictive validity - does sleeping with your head pointing Sheng Qi actually correlate with better outcomes than sleeping with your head pointing Jue Ming? - has not been established by external evidence. The same caution applies to Flying Stars.
 
 The useful framing is this: Eight Mansions and the broader Compass School are useful as **structured decision tools** for arranging space. They give you a non-arbitrary way to choose between four equivalent-seeming bed orientations. They make tradeoffs explicit in a household where two people want different things. They link your space to a larger symbolic system that has organised Chinese architecture for centuries. None of that requires belief in the system's deterministic claims to be useful. A reader who treats the Kua number as a coordinator for design decisions - rather than as a fortune-teller's reading - gets the most out of the school without overcommitting to claims it cannot back up.
 

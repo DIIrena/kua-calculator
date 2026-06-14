@@ -6,7 +6,7 @@ That is a fair question.
 
 Below are **five small, testable feng shui interventions** you can run on your own home this week. Each takes one evening. Each has a way to tell whether it worked.
 
-These are not double-blind trials. They are *single-person experiments* on your own home, the way someone running a small dietary change on themselves would. They are how you find out which parts of the practice work for *you* without taking anyone else's word for it.
+These are *single-person experiments* on your own home, the way someone running a small dietary change on themselves would, rather than double-blind trials. They are how you find out which parts of the practice work for *you* without taking anyone else's word for it.
 
 Bring a notebook. The point is to **write down what you predict and what actually happens**. Skeptics who do this with seriousness almost always change their minds about at least one or two of the changes. A fair skeptic also changes their mind about one or two of the others (the ones that did *not* work). Both are fine.
 

@@ -8,7 +8,7 @@ Most living rooms try to be one big single zone. They aren't. A working living r
 
 The sofa wants a solid wall behind it. This is the **command-seat** logic applied to a living room. The main seat wants backing it can feel, a long sightline forward, and a clear diagonal line of sight to the door. A sofa with its back to the door tends to leave sitters on edge without knowing why.
 
-If a beam runs across the ceiling above the seating, move the seating out from under it. Or soften the beam so it stops reading as a weight overhead. Slanted ceilings ask the same question: don't put the main seat under the lowest part.
+If a beam runs across the ceiling above the seating, move the seating out from under it. Or soften the beam so it stops reading as a weight overhead. Slanted ceilings ask the same question: keep the main seat clear of the lowest part.
 
 Plants belong by element. Tall upright plants for vertical movement near a window. Round, full plants in a corner that feels hard. Anything thorny or sharp stays away from where people sit.
 

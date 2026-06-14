@@ -1,4 +1,4 @@
-It is not a manifestation board. It is not a wish-list. It is not a magic overlay. The Bagua is a structured way of looking at a floor plan. It divides any bounded space into eight sectors plus a centre. Each sector carries a direction, an element, and a life area. That is the whole tool.
+The Bagua is a structured way of looking at a floor plan. It stays a map layer, separate from a manifestation board, a wish-list, or a magic overlay. It divides any bounded space into eight sectors plus a centre. Each sector carries a direction, an element, and a life area. That is the whole tool.
 
 If feng shui itself is still new to you, the short framing on [what feng shui is, without the mystique](/guide/foundations/what-feng-shui-is-plainly) sets the wider context. This page stays on the map layer.
 
@@ -58,7 +58,7 @@ There are two historical arrangements of the eight trigrams. The difference matt
 
 ## Why a map layer, not a magic overlay.
 
-This is the part that matters. The Bagua does not *do* anything to a room. It does not charge a corner. It does not activate a wall. It tells you where to **look**.
+This is the part that matters. The Bagua tells you where to **look**. It works as a map over the room, rather than charging a corner or activating a wall.
 
 You stand in your home with a floor plan in your hand. You decide how to orient the map (the two methods are covered on [how to orient it over your home](/guide/bagua/compass-vs-front-door-methods)). Then you walk the home sector by sector. You ask what is there. You ask what is missing. You ask what the room is being used for. You ask whether the room's function sits comfortably with the life area the sector points at.
 

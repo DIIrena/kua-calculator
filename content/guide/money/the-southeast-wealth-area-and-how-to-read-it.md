@@ -1,12 +1,12 @@
 You have found it. Now how do you read it?
 
-The southeast corner is not a shrine. It is a **surface**. A small patch of your home that, if you watch it closely, tells you how the rest of the house is doing. The find-it walkthrough lives in [the longer read on the wealth corner](/articles/bagua-map-wealth-corner). This page assumes the corner is already mapped and asks the next question. What is it actually doing?
+The southeast corner is a **surface**. A small patch of your home that, if you watch it closely, tells you how the rest of the house is doing. The find-it walkthrough lives in [the longer read on the wealth corner](/articles/bagua-map-wealth-corner). This page assumes the corner is already mapped and asks the next question. What is it actually doing?
 
 The framing for the cluster sits in [feng shui and money without wishful thinking](/guide/money/feng-shui-money-without-wishful-thinking). The six levers used below come from [what feng shui cures actually are](/guide/cures/what-feng-shui-cures-actually-are).
 
 ## 1. Element: is anything alive in here
 
-<span class="guide-badge guide-badge-traditional">Traditional</span> The southeast is **Wood**. Wood is the element of observable growth. The question is not whether you own a plant. The question is whether the plant in this corner is *thriving* or just sitting there. A tired ficus, a leggy pothos, a dusty succulent reads the same as no plant at all. The element language is in [the five elements as a design language](/guide/five-elements/five-elements-as-a-design-language). Wood asks for green that is actually green this week.
+<span class="guide-badge guide-badge-traditional">Traditional</span> The southeast is **Wood**. Wood is the element of observable growth. The real question is whether the plant in this corner is *thriving* or just sitting there. A tired ficus, a leggy pothos, a dusty succulent reads the same as no plant at all. The element language is in [the five elements as a design language](/guide/five-elements/five-elements-as-a-design-language). Wood asks for green that is actually green this week.
 
 ## 2. Placement: is the corner reachable
 
@@ -14,11 +14,11 @@ The framing for the cluster sits in [feng shui and money without wishful thinkin
 
 ## 3. Visibility: can you see it on a normal day
 
-<span class="guide-badge guide-badge-tested">Tested</span> Sit where you usually sit. Stand where you usually stand. Does the southeast fall inside your line of sight, or is it in shadow, behind a pile, under a coat thrown over a chair? A corner in shadow is a corner you stop tending. **Visibility** is not decoration; it is the difference between something you notice and something you forget. A corner you cannot see on a normal Tuesday is a corner you will not refresh on a normal Tuesday either.
+<span class="guide-badge guide-badge-tested">Tested</span> Sit where you usually sit. Stand where you usually stand. Does the southeast fall inside your line of sight, or is it in shadow, behind a pile, under a coat thrown over a chair? A corner in shadow is a corner you stop tending. **Visibility** is what makes the difference between something you notice and something you forget. A corner you cannot see on a normal Tuesday is a corner you will not refresh on a normal Tuesday either.
 
 ## 4. Proportion: one clear thing, not five
 
-Walk back over. Count what is there. A shelf of charms, three plants, a small fountain, a bowl of coins, a citrine cluster, a framed affirmation. That is not care. That is *anxiety wearing the costume of care*. <span class="guide-badge guide-badge-tested">Tested</span> **Proportion** matters. One healthy plant. One clean surface. A lamp that works. The corner is allowed to do one job well. Overload reads as worry.
+Walk back over. Count what is there. A shelf of charms, three plants, a small fountain, a bowl of coins, a citrine cluster, a framed affirmation. That is *anxiety wearing the costume of care*. <span class="guide-badge guide-badge-tested">Tested</span> **Proportion** matters. One healthy plant. One clean surface. A lamp that works. The corner is allowed to do one job well. Overload reads as worry.
 
 ## 5. Timing: when did it last get attention
 

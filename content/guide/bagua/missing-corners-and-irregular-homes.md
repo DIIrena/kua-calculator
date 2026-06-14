@@ -8,7 +8,7 @@ The most common case is the **L-shape**. One wall steps in, and a sector of the 
 
 The rule of thumb is straightforward. If the step-in is deeper than roughly *a third* of that wall's length, the sector for that direction is **missing** rather than just irregular. Shallower than that, treat it as a notch in an otherwise rectangular plan.
 
-What this means in practice has nothing to do with drama. The life area for that direction is under-represented in the home's footprint. The tradition supports paying that sector closer attention. Use the rooms that border it. Use outdoor elements too, such as a plant, a light, or a sculpture that the inhabitants treat as part of the home. If the missing corner sits behind the [kitchen](/space/kitchen) or against the [living room](/space/living-room), those rooms carry more of the work.
+What this means in practice is practical and plain. The life area for that direction is under-represented in the home's footprint. The tradition supports paying that sector closer attention. Use the rooms that border it. Use outdoor elements too, such as a plant, a light, or a sculpture that the inhabitants treat as part of the home. If the missing corner sits behind the [kitchen](/space/kitchen) or against the [living room](/space/living-room), those rooms carry more of the work.
 
 Do not expect a mirror or a crystal to *restore* the corner. The work is noticing what is structurally absent, then deciding what to do with that information.
 

@@ -82,7 +82,7 @@ export default function AboutPage() {
           </h1>
           <p className="about-subhead">
             Feng shui, read through an architect&apos;s eyes: structure
-            first, energy with it, nothing you need to be afraid of.
+            first, energy with it, calm and practical throughout.
           </p>
           <p className="about-byline">
             Written by I.D., the architect behind My Feng Shui Home.
@@ -162,8 +162,8 @@ export default function AboutPage() {
           <ul className="about-positioning-list">
             <li>Architecture first.</li>
             <li>Feng shui with structure.</li>
-            <li>Energy without superstition.</li>
-            <li>Practical changes, never dangerous changes.</li>
+            <li>Energy, grounded in structure.</li>
+            <li>Practical, reversible changes.</li>
           </ul>
         </section>
 
@@ -228,20 +228,19 @@ export default function AboutPage() {
               use. The mind has fewer small frictions to fight.
             </p>
             <p>
-              I do not think feng shui should be frightening. I do not
-              think it should be used to promise money, love, health, or
-              success. I think it should be used as a thoughtful,
-              practical way to make better conditions around you. A desk
-              facing a better direction. A bed in a calmer position. An
-              entrance that is clear instead of blocked. Small things,
-              repeated every day, become part of your daily rhythm.
+              Feng shui, to me, is calm and practical: a thoughtful way
+              to make better conditions around you. A desk facing a
+              better direction. A bed in a calmer position. An entrance
+              that is clear and open. Small things, repeated every day,
+              become part of your daily rhythm. I keep it grounded, and
+              free of promises about money, love, health, or success.
             </p>
           </div>
         </section>
 
         <section className="about-section" aria-labelledby="what-it-is">
           <h2 id="what-it-is" className="about-section-title">
-            What this site is, and what it is not
+            What this site is
           </h2>
           <div className="about-section-body">
             <p>
@@ -250,10 +249,10 @@ export default function AboutPage() {
               which small changes you want to try in your own home.
             </p>
             <p>
-              This site is educational. It does not replace professional
-              architectural, structural, medical, financial, or legal
-              advice. If you want to understand the method behind the
-              calculators, the{" "}
+              This site is educational. For professional architectural,
+              structural, medical, financial, or legal matters, please
+              consult a qualified professional. If you want to understand
+              the method behind the calculators, the{" "}
               <Link href="/methodology">methodology page</Link> lays it
               out in full. If you want to understand how your account
               data is handled, the{" "}

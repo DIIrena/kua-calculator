@@ -40,13 +40,13 @@ Fixing it is one phone call and (often) a $40 part.
 
 ### Two: the cook needs to see the kitchen door.
 
-This is the **command position** rule, the same one that applies to the bed and the desk. The cook should not have their back to the kitchen door. If they do, they spend their cooking time at low-grade alert because their nervous system is monitoring an unseen entry.
+This is the **command position** rule, the same one that applies to the bed and the desk. The cook should keep the kitchen door in view rather than at their back. With their back to it, they spend their cooking time at low-grade alert because their nervous system is monitoring an unseen entry.
 
 The traditional fix is to rearrange the kitchen so the cook can see the door. The modern fix is the same. (Or hang one small mirror so the door is in the cook's peripheral view.)
 
 ### Three: fire and water should not fight.
 
-The stove (**fire**) and the sink (**water**) are two of the most consequential objects in the kitchen, and they are *opposite elements* in the five-element system. The tradition says they should not be **directly opposite each other**, and they should not be **immediately next to each other**.
+The stove (**fire**) and the sink (**water**) are two of the most consequential objects in the kitchen, and they are *opposite elements* in the five-element system. The tradition says to keep them apart, clear of being **directly opposite each other** and clear of being **immediately next to each other**.
 
 The modern reading is about splash zones and burns. (Hot oil two feet from a sink is a kitchen accident waiting to happen.)
 

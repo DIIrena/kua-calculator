@@ -1,4 +1,4 @@
-Feng shui is not one method. It is a family of methods. And **not** four rival schools fighting for the same job either. They answer different questions, in different vocabularies, with different tools. The most useful thing a beginner can do is hold a clean map of who answers what. Then the rest of this guide stops sounding like a single muddled tradition. Here is that map.
+Feng shui is a family of methods. And the four schools are colleagues rather than rivals fighting for the same job. They answer different questions, in different vocabularies, with different tools. The most useful thing a beginner can do is hold a clean map of who answers what. Then the rest of this guide stops sounding like a single muddled tradition. Here is that map.
 
 ## The four schools, named once
 
@@ -21,7 +21,7 @@ That is the map. Four questions, four schools, one each.
 
 ## How they fit together
 
-They share vocabulary. Qi, yin and yang, the five elements, the Bagua. They differ in what they measure. Form measures shape. Compass measures bearing. Flying Stars measures time on top of bearing. BTB reads the floor plan relative to the door, with intention as the active ingredient. They are not contradictory. The working rule is one method per question, stay consistent within it. The common beginner error is mixing a BTB door-aligned Bagua with Classical Kua directions in the same reading. Pick a method, then stay inside it.
+They share vocabulary. Qi, yin and yang, the five elements, the Bagua. They differ in what they measure. Form measures shape. Compass measures bearing. Flying Stars measures time on top of bearing. BTB reads the floor plan relative to the door, with intention as the active ingredient. They are compatible. The working rule is one method per question, stay consistent within it. The common beginner error is mixing a BTB door-aligned Bagua with Classical Kua directions in the same reading. Pick a method, then stay inside it.
 
 ## Where this guide goes next
 

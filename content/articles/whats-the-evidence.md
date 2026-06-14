@@ -2,7 +2,7 @@
 
 If you arrived at this article skeptical, **stay**. This article is for you.
 
-We are not going to try to convert you. We are going to walk through what the empirical literature actually says about the parts of feng shui that have been studied, name the parts that haven't, and let you decide.
+We are here to walk through what the empirical literature actually says about the parts of feng shui that have been studied, name the parts that haven't, and let you decide. The choice stays yours.
 
 Spoiler: *some* of feng shui survives a careful look. Some of it does not. The honest position is to say which is which.
 
@@ -10,7 +10,7 @@ Spoiler: *some* of feng shui survives a careful look. Some of it does not. The h
 
 Feng shui is roughly three thousand years old. The earliest empirical studies we would recognise as research-quality date from the 1970s. So we have evidence on maybe 5% of what the tradition claims, and tradition on the other 95%.
 
-That is normal for any ancient practice. (Acupuncture, the Mediterranean diet, mindfulness, and traditional Chinese medicine all share this evidence shape.) It does not make the practice false. It just means *the conversation about evidence is recent*.
+That is normal for any ancient practice. (Acupuncture, the Mediterranean diet, mindfulness, and traditional Chinese medicine all share this evidence shape.) It simply means *the conversation about evidence is recent*, and the practice itself stays an open question.
 
 There are roughly three kinds of feng shui claims, and they need to be evaluated differently.
 
@@ -32,7 +32,7 @@ This is the single most-supported claim in feng shui. Multiple studies in enviro
 
 The tradition has been saying *clear the front entrance, the centre of the home, and the bedroom* for two thousand years.
 
-The mechanism is not mystical. It is the same mechanism the studies describe.
+The mechanism is the same one the studies describe, ordinary rather than mystical.
 
 ### The bed-in-command-position rule reduces nervous-system load.
 
@@ -96,7 +96,7 @@ There is no scientific framework that would predict this. It is a system of trad
 
 The claim: hanging a small bagua-decorated mirror at the front door deflects negative energy from external sharp corners.
 
-There is no mechanism in physics or psychology that would do this. It is *symbolic protection*. (Which is not nothing; symbolic protection can produce real psychological reassurance.)
+There is no mechanism in physics or psychology that would do this. It is *symbolic protection*. (Which counts for something; symbolic protection can produce real psychological reassurance.)
 
 ### Date selection.
 
@@ -124,4 +124,4 @@ And if you want to actually run an experiment in your own home, the [five tests 
 
 A practice that has lasted three thousand years has done so for a reason. *Part* of that reason is empirical. *Part* of it is cultural. *Part* of it is the part that lives forever, which is that the practice gives people a structured way to pay attention to where they live.
 
-You can take any of those three. You do not have to take all three.
+You can take any of those three. Taking all three is entirely optional.

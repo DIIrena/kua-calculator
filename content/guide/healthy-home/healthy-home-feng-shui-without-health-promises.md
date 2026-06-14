@@ -1,4 +1,4 @@
-A home does not treat anyone, and it does not cure. It shapes the **conditions** a body lives inside. This cluster walks through the few moves a home can make that the evidence agrees are worth making, in the same vocabulary the cures cluster uses.
+A home shapes the **conditions** a body lives inside, rather than treating or curing anyone. This cluster walks through the few moves a home can make that the evidence agrees are worth making, in the same vocabulary the cures cluster uses.
 
 ## What this cluster is not
 
@@ -6,7 +6,7 @@ This is not medical advice. It is not a substitute for clinical care. It is not 
 
 ## Here is the working version
 
-Health is not a thing a room delivers. Health is a set of **conditions** the home can support or undermine. Six conditions sit at the centre of this cluster.
+Health is a set of **conditions** the home can support or undermine, more than a thing a room delivers. Six conditions sit at the centre of this cluster.
 
 - **Rest**: the room a body sleeps in.
 - **Air**: ventilation, freshness, the cooker hood when the stove is on.

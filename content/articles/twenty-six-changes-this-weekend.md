@@ -2,7 +2,7 @@
 
 Most feng shui guides start with theory. We're going to start with a list.
 
-Below are **twenty-six universally-safe changes** you can make to your home in one weekend. Nothing here needs a compass, a Kua number, new furniture, or money. Some take *five minutes*. The longest takes an afternoon.
+Below are **twenty-six universally-safe changes** you can make to your home in one weekend. Every change here works with what you already have: no compass, Kua number, new furniture, or money required. Some take *five minutes*. The longest takes an afternoon.
 
 We've grouped them by room, so you can walk through the home with the list in your hand and tick things off.
 
@@ -34,7 +34,7 @@ The stove and the sink are the two most consequential objects in the kitchen.
 
 **9. Throw out any cracked or chipped cup, plate, or bowl.** Broken means stuck in the tradition; in modern psychology, broken means low-grade cognitive load every time you reach for it.
 
-**10. Move the kitchen bin out of the line of sight from the cook's position.** The cook should not be looking at rubbish while they work.
+**10. Move the kitchen bin out of the line of sight from the cook's position.** The cook should look at clear surfaces while they work, with the bin out of view.
 
 ## In the bedroom (5 changes).
 

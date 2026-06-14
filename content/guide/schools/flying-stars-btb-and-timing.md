@@ -2,7 +2,7 @@ Form and Compass together still leave one question unanswered. *When*. A house o
 
 ## What Flying Stars actually does
 
-Flying Stars (*Xuan Kong Fei Xing*, "mysterious subtlety flying stars") is the time-aware sub-school of Compass School. It maps the nine *Luo Shu* numbers into the Bagua's nine palaces. Then it moves those numbers on a schedule across Periods (twenty-year cycles), years, and months. The numbers are not static decorations of the Bagua. They move.
+Flying Stars (*Xuan Kong Fei Xing*, "mysterious subtlety flying stars") is the time-aware sub-school of Compass School. It maps the nine *Luo Shu* numbers into the Bagua's nine palaces. Then it moves those numbers on a schedule across Periods (twenty-year cycles), years, and months. The numbers move; they are live positions on the Bagua rather than fixed decorations.
 
 The practical consequence is that the same room can be a wealth room in one Period and a quarrel room in the next. To read a building correctly under this method, you need both its location in space and its location in time.
 
@@ -22,13 +22,13 @@ For most readers, the annual layer is the useful one. Which corner of the home t
 
 ## BTB, on its own terms
 
-BTB (Black Sect Tantric Buddhism) is a 20th-century school shaped by Grandmaster Lin Yun (1932 to 2010). He brought it to the United States in the 1980s. It is anchored at the Yun Lin Temple in Berkeley. It draws on Tibetan Tantric Buddhism, Taoist thought, and Chinese folk practice. It is **not** Classical in modern dress, and it is not less real for being recent.
+BTB (Black Sect Tantric Buddhism) is a 20th-century school shaped by Grandmaster Lin Yun (1932 to 2010). He brought it to the United States in the 1980s. It is anchored at the Yun Lin Temple in Berkeley. It draws on Tibetan Tantric Buddhism, Taoist thought, and Chinese folk practice. It is **its own** modern school, distinct from the Classical lineages, and it is no less real for being recent.
 
-What makes BTB its own school is not just the door-anchored Bagua. It is the Three Secrets Reinforcement. The practitioner performs it at the moment a cure object is placed. Body is a hand gesture. Speech is a chant or personal affirmation. Mind is a picture of the outcome held as already done. Intention is BTB's stated active ingredient. No Classical school uses it. The evidence base for the intention claim is the weakest in feng shui. *Hold it lightly rather than tightly.*
+What makes BTB its own school is not just the door-anchored Bagua. It is the Three Secrets Reinforcement. The practitioner performs it at the moment a cure object is placed. Body is a hand gesture. Speech is a chant or personal affirmation. Mind is a picture of the outcome held as already done. Intention is BTB's stated active ingredient, unique to it among the schools. The evidence base for the intention claim is the weakest in feng shui. *Hold it lightly rather than tightly.*
 
 ## How BTB fits alongside Classical
 
-Same vocabulary, different lineage. The Bagua, the life-area sectors, and the cures catalogue all appear in both. The active mechanism does not. The reader's most useful skill is spotting which question is being asked. Then pick the school whose answer to that question you trust most. The single largest reading error is mixing the two inside one walk-through. Do not combine a BTB door-aligned Bagua with Classical Kua directions in the same recommendation. For the practical "pick one and stay with it" choice on Bagua orientation, see [the practical compass vs front-door choice for laying the Bagua](/guide/bagua/compass-vs-front-door-methods).
+Same vocabulary, different lineage. The Bagua, the life-area sectors, and the cures catalogue all appear in both. The active mechanism is where they part ways. The reader's most useful skill is spotting which question is being asked. Then pick the school whose answer to that question you trust most. The single largest reading error is mixing the two inside one walk-through. Keep a BTB door-aligned Bagua and Classical Kua directions in separate recommendations. For the practical "pick one and stay with it" choice on Bagua orientation, see [the practical compass vs front-door choice for laying the Bagua](/guide/bagua/compass-vs-front-door-methods).
 
 ## Where to go next
 

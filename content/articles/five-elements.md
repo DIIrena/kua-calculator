@@ -2,7 +2,7 @@
 
 In Chinese cosmology there are **five elements**: wood, fire, earth, metal, and water.
 
-They are not literal materials. They are five *qualities* a thing can have. A clock made of brass is metal in feng shui. A clock made of metal but shaped like a leaf is partly metal, partly wood. The element is about behaviour, not chemistry.
+They are five *qualities* a thing can have, read by behaviour rather than by material. A clock made of brass is metal in feng shui. A clock made of metal but shaped like a leaf is partly metal, partly wood. The element is about behaviour, not chemistry.
 
 The five elements show up everywhere in feng shui because rooms have all five qualities in some mix, and the mix changes how the room feels.
 
@@ -26,7 +26,7 @@ The **controlling cycle** is the order in which the elements limit each other: w
 
 ## The practical version.
 
-You do not need to memorise the cycles. You need to notice when a room is *only one element*.
+You can skip memorising the cycles. The one thing to notice is when a room is *only one element*.
 
 A bedroom that is all white linen, white walls, metal frames, and silver lamps is wall-to-wall metal. It will feel sharp and slightly cold. A small wooden picture frame, a green plant, or a warm wooden lamp base softens it within an afternoon.
 

@@ -2,7 +2,7 @@ A cure is a small, deliberate change to a room. It has a purpose you can name an
 
 ## What a cure is not
 
-A cure is not a charm. It does not switch a corner on. It does not push energy around. The verbs that belong here are physical: reflects, slows, brightens, softens, marks, refreshes. A lamp brightens a dark corner. A plant marks a sector you want to remember. A mirror reflects a view that was hidden. That is the register.
+A cure is a physical change, not a charm. The verbs that belong here are physical: reflects, slows, brightens, softens, marks, refreshes. A lamp brightens a dark corner. A plant marks a sector you want to remember. A mirror reflects a view that was hidden. That is the register.
 
 [The twelve feng shui myths article](/articles/twelve-feng-shui-myths-holding-you-back) covers why interior Bagua mirrors, casually placed fish tanks, and ceiling mirrors are not what the gift-shop version claims. Bagua mirrors in particular are for outdoor use against external *sha qi*, "sharp energy", not interior decoration.
 
