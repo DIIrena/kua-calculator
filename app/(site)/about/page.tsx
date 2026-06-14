@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-// /about page. The public author is "Irena", first name only: the
-// byline reads "Written by Irena, the architect behind My Feng Shui
-// Home". No last name, no photo, no location, no public email are
+// /about page. The public author is shown as the initials "I.D.": the
+// byline reads "Written by I.D., the architect behind My Feng Shui
+// Home". No full name, no photo, no location, no public email are
 // claimed on this surface.
 //
 // This page is the ONE place on the site where the credential
@@ -40,7 +40,7 @@ const organizationJsonLd = {
   description: "Feng shui guidance for real homes, written by an architect.",
   founder: {
     "@type": "Person",
-    name: "Irena",
+    name: "I.D.",
     url: "https://myfengshuihome.com/about",
   },
   knowsAbout: [
@@ -59,7 +59,7 @@ const organizationJsonLd = {
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Irena",
+  name: "I.D.",
   url: "https://myfengshuihome.com/about",
   jobTitle: "Architect",
   description:
@@ -85,7 +85,7 @@ export default function AboutPage() {
             first, energy with it, nothing you need to be afraid of.
           </p>
           <p className="about-byline">
-            Written by Irena, the architect behind My Feng Shui Home.
+            Written by I.D., the architect behind My Feng Shui Home.
             Licensed M.Sc.Arch. architect and lifelong feng shui reader.
           </p>
         </header>

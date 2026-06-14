@@ -26,7 +26,7 @@ export default async function ProductsPage(props: {
 
   return (
     <div className="page-content products-page">
-      <section className="products-hero">
+      <section className="products-hero products-hero-shop">
         <h1 className="visually-hidden">Shop</h1>
         <p className="products-lede">
           Printable guides, personalised readings keyed to your Kua,

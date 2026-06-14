@@ -229,9 +229,9 @@ a:hover { color: var(--clay-deep); }
 }
 
 .footer-ornament {
-  width: 60px;
+  width: 120px;
   margin: 0 auto var(--space-4);
-  color: var(--on-dark);
+  color: var(--clay);
 }
 
 .footer-ornament svg { display: block; width: 100%; height: auto; }
@@ -1422,7 +1422,7 @@ a:hover { color: var(--clay-deep); }
 .account-link:hover { color: var(--clay-deep); }
 
 .page-narrow {
-  max-width: 560px;
+  max-width: min(720px, 92vw);
   margin: var(--space-8) auto;
   padding: 0 clamp(var(--space-4), 5vw, var(--space-6));
 }
@@ -1434,13 +1434,13 @@ a:hover { color: var(--clay-deep); }
    Each uses the same horizontal padding system so the gutters
    stay consistent at every viewport. */
 .page-prose {
-  max-width: 720px;
+  max-width: min(840px, 92vw);
   margin: var(--space-8) auto;
   padding: 0 clamp(var(--space-4), 5vw, var(--space-6));
 }
 
 .page-content {
-  max-width: 1100px;
+  max-width: min(1320px, 92vw);
   margin: var(--space-8) auto;
   padding: 0 clamp(var(--space-4), 5vw, var(--space-6));
 }
@@ -5172,7 +5172,15 @@ a:hover { color: var(--clay-deep); }
    ============================================================ */
 
 /* --- /products shelf --- */
-.products-page { padding-top: var(--space-6); }
+.products-page { padding-top: var(--space-4); }
+
+/* The shop hero is one tightened line above the storefront: no 720px
+   cap (so the one-line description stays on one row on desktop) and
+   less vertical space than the default .products-hero. */
+.products-hero-shop {
+  max-width: none;
+  margin: 0 0 var(--space-5) 0;
+}
 
 /* The /guide library index. Uses the wide .page-content (1100px); this
    class only adds top spacing. Distinct from .guide-page, which caps
@@ -6123,10 +6131,16 @@ a:hover { color: var(--clay-deep); }
    ============================================================ */
 
 .about-page {
-  max-width: 720px;
+  max-width: min(940px, 92vw);
   margin: var(--space-8) auto;
   padding: 0 clamp(var(--space-4), 5vw, var(--space-6));
   color: var(--ink);
+}
+
+.about-section-body p,
+.about-subhead {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .about-hero {

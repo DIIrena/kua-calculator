@@ -4,7 +4,7 @@ import Link from "next/link";
 // every guide page. Server Component. No client JS, no analytics
 // import, no event handlers.
 //
-// The public author is "Irena", first name only. No last name, no
+// The public author is shown as the initials "I.D." No full name, no
 // location. The credential (M.Sc.Arch.) appears on /about only;
 // this byline deliberately does not repeat it.
 //
@@ -16,7 +16,7 @@ export default function AuthorByline() {
   return (
     <p className="author-byline" aria-label="About the author">
       <span className="author-byline-name">
-        Written by Irena, the architect behind My Feng Shui Home
+        Written by I.D., the architect behind My Feng Shui Home
       </span>
       <span className="author-byline-sep" aria-hidden="true">
         &middot;

@@ -48,8 +48,8 @@ export default function SiteFooter() {
         prediction.
       </p>
       <p className="footer-legal">
-        MyFengShuiHome.com is operated by <strong>Mens Sana LLC</strong>, a
-        Wyoming (USA) limited liability company. Powered by{" "}
+        MyFengShuiHome.com is operated by <strong>Mens Sana LLC</strong>.
+        Powered by{" "}
         <a href="https://menssana.art" rel="noopener">
           menssana.art
         </a>
