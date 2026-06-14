@@ -3,6 +3,8 @@ import Link from "next/link";
 import { auth } from "@/auth";
 import LeadMagnetForm from "@/components/LeadMagnetForm";
 import HomeRoomPicker from "@/components/HomeRoomPicker";
+import CalculatorIsland from "@/components/CalculatorIsland";
+import CalculatorScripts from "@/components/CalculatorScripts";
 import { ARTICLES, CATEGORIES, type ArticleCategory } from "@/lib/articles";
 
 const HOMEPAGE_CATEGORY_ORDER: ReadonlyArray<ArticleCategory> = [
@@ -13,16 +15,16 @@ const HOMEPAGE_CATEGORY_ORDER: ReadonlyArray<ArticleCategory> = [
 ];
 
 export const metadata: Metadata = {
-  title: "My Feng Shui Home - feng shui for real homes",
+  title: "My Feng Shui Home - free Kua calculator + feng shui for real homes",
   description:
-    "Feng shui for real homes. Every move labelled: tested, traditional, or preference. Free Kua calculator, a 14-point checklist, and a structured guide.",
+    "Find your Kua number free, right on the homepage. Then feng shui for real homes, with every move labelled: tested, traditional, or preference.",
   alternates: { canonical: "https://myfengshuihome.com/" },
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "My Feng Shui Home - feng shui for real homes",
+    title: "My Feng Shui Home - free Kua calculator + feng shui for real homes",
     description:
-      "Feng shui for real homes. Every move labelled: tested, traditional, or preference. Free Kua calculator, a 14-point checklist, and a structured guide.",
+      "Find your Kua number free, right on the homepage. Then feng shui for real homes, with every move labelled: tested, traditional, or preference.",
     url: "https://myfengshuihome.com/",
   },
 };
@@ -60,15 +62,15 @@ const FAQ: Array<{ q: string; a: string }> = [
   },
   {
     q: "What is the Kua number?",
-    a: "Your Kua number is a single digit from one to nine based on your birth year and gender. It sorts you into an East or West group and names four directions that traditionally support you and four to avoid. It takes ten seconds to calculate.",
+    a: "Your Kua number is a single digit from one to nine based on your birth year and gender. It sorts you into an East or West group and names four directions that traditionally support you and four to handle with care. It takes ten seconds to calculate.",
   },
   {
     q: "Is the site free?",
-    a: "The calculator, the methodology page, the room harmony checklist, and the teaser articles are all free with no account. Saving charts and reading the gated articles is free with an account. The paid guides and tools live on the products page. The free side of the site is the same site forever - paid content is opt-in.",
+    a: "The calculator, the methodology page, the room harmony checklist, and the teaser articles are all free with no account. Saving charts and reading the gated articles is free with an account. The paid guides and tools live on the shop page. The free side of the site is the same site forever - paid content is opt-in.",
   },
   {
     q: "What is the Personal Feng Shui Compass?",
-    a: "It is a personalised PDF keyed to your Kua number. It reads your East or West group, your four supportive directions and your four cautious directions, with traditional placements for the bed, the desk, and the dining seat, plus a seven-day experiment. It is personalised to your direction profile, the eight directions that follow from your Kua, not to your floor plan. $14 at launch, one-time, no subscription. The Compass is currently on its waitlist; checkout opens shortly.",
+    a: "It is a personalised PDF keyed to your Kua number. It reads your East or West group, your four supportive directions and your four cautious directions, with traditional placements for the bed, the desk, and the dining seat, plus a seven-day experiment. It is personalised to your direction profile, the eight directions that follow from your Kua, not to your floor plan. $14, one-time, no subscription. It is available now in the shop.",
   },
   {
     q: "What about Western feng shui versus Classical feng shui?",
@@ -87,50 +89,56 @@ const faqJsonLd = {
 };
 
 export default async function HomePage(props: {
-  searchParams: Promise<{ checklist?: string }>;
+  searchParams: Promise<{ checklist?: string; compass?: string }>;
 }) {
-  const { checklist: checklistStatus } = await props.searchParams;
+  const { checklist: checklistStatus, compass } = await props.searchParams;
   const session = await auth();
   const isSignedIn = Boolean(session?.user?.id);
+  const compassStatus =
+    compass === "sent" || compass === "invalid" || compass === "error"
+      ? (compass as "sent" | "invalid" | "error")
+      : null;
 
   return (
     <>
-      {/* Section 1 - Hero */}
-      <section className="home-hero" aria-labelledby="home-hero-heading">
-        <div className="home-hero-inner">
-          <p className="eyebrow">Free Kua calculator + 14-point checklist</p>
-          <h1 id="home-hero-heading" className="home-hero-heading">
-            Feng shui for real homes. Every move labelled: tested,
-            traditional, or preference.
+      {/* Section 1 - Hero + the calculator. The calculator sits at the
+          top so a first visit can calculate (and, on opt-in, save and be
+          emailed) straight away. */}
+      <section className="hero" aria-labelledby="home-hero-heading">
+        <div className="hero-inner">
+          <p className="eyebrow">Free Kua number calculator</p>
+          <h1 id="home-hero-heading">
+            Feng shui for real homes. Start with your Kua number.
           </h1>
-          <p className="home-hero-lede">
-            Start with your free Kua number. Then walk your home with
-            the structured guide. No fortunes, no upsells in the free
-            tier.
+          <p className="lede">
+            Enter your birth date and gender. You&apos;ll get your East or West
+            group, your four supportive directions, and four to handle with
+            care, each with one short line on how to use it. Ten seconds, free,
+            Chinese New Year boundary handled automatically.
           </p>
-          <div className="home-hero-actions">
-            <Link href="/kua-calculator" className="cta-primary">
-              Find my Kua number
-            </Link>
-            <Link href="/guide" className="home-hero-link">
-              Open the Ultimate Feng Shui Guide
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Section 2 - What feng shui actually is */}
+      <section
+        className="calculator-section"
+        aria-label="Kua number calculator"
+      >
+        <div className="calculator-inner">
+          <CalculatorIsland
+            isSignedIn={isSignedIn}
+            compassStatus={compassStatus}
+          />
+        </div>
+      </section>
+
+      {/* Section 2 - What feng shui actually is (affirmative) */}
       <section
         className="home-section home-section-paper honest-block"
         id="what-it-is"
         aria-labelledby="what-it-is-heading"
       >
         <div className="page-prose">
-          <h2 id="what-it-is-heading">What feng shui actually is. And what it isn&apos;t.</h2>
-          <p>
-            Feng shui is <strong>not</strong> a fortune. It is not a way to make
-            money appear. It is not a list of red things to put by your front door.
-          </p>
+          <h2 id="what-it-is-heading">What feng shui actually is.</h2>
           <p>
             Feng shui is a <strong>structured way of looking at a room</strong>.
             It asks where the door is. Where the bed is. Where the stove is.
@@ -144,11 +152,10 @@ export default async function HomePage(props: {
             makes you cook more.
           </p>
           <p>
-            Some of them are <em>traditional</em>. The wealth corner. The mirror
-            rules. The five-element pairings. We label those traditional, every
-            time, and we tell you what the evidence does and does not say.
+            Some of them are <em>traditional</em>: the wealth corner, the mirror
+            rules, the five-element pairings. We label those traditional, every
+            time, and we tell you what the evidence supports.
           </p>
-          <p>That is the whole deal.</p>
           <p className="home-credibility">
             Underneath the schools and the cures, feng shui is a way of
             reading space: orientation, movement, light, proportion,
@@ -157,15 +164,10 @@ export default async function HomePage(props: {
             <Link href="/about">More about who runs the site &rarr;</Link>
           </p>
           <p>
-            If you want the <strong>shortest</strong> way in, start with your
-            Kua number. It tells you which four directions in your home
-            traditionally <em>support</em> you and which four are
-            traditionally handled with more care. It takes ten seconds.
-          </p>
-          <p className="honest-block-actions">
-            <Link href="/kua-calculator" className="cta-primary">
-              Find my Kua number
-            </Link>
+            The shortest way in is your Kua number. It names the four
+            directions in your home that traditionally <em>support</em> you and
+            the four to handle with more care. It is right at the top of this
+            page, and it takes ten seconds.
           </p>
         </div>
       </section>
@@ -194,9 +196,8 @@ export default async function HomePage(props: {
             <Link href="/guide" className="tool-card">
               <h3>The Ultimate Feng Shui Guide</h3>
               <p>
-                Thirty-eight short pages. Browse by life area, by
-                room, by system, or by the problem you came here to fix. The
-                full library, no purchase, no account.
+                Thirty-eight short pages across eleven topics. Browse by
+                topic or search the whole library. No purchase, no account.
               </p>
               <span className="tool-card-cta">Open the guide &rarr;</span>
             </Link>
@@ -335,7 +336,7 @@ export default async function HomePage(props: {
             <div className="map-offer-text">
               <h3>The 2026 Feng Shui Planner: Mid-Year Edition</h3>
               <p>
-                Ninety-eight pages reading the feng shui year for your home.
+                More than eighty pages reading the feng shui year for your home.
                 The 2026 annual chart explained, a treatment for each of the
                 nine sectors, and a day-by-day calendar covering 243 days from
                 July 2026 to February 2027. Delivered by email within minutes
@@ -375,8 +376,8 @@ export default async function HomePage(props: {
           <div className="map-offer-shelf-teaser">
             <p>
               Also on the shelf: the{" "}
-              <strong>Personal Feng Shui Compass</strong> (waitlist), the{" "}
-              <strong>Move-In Kit</strong>, the{" "}
+              <strong>Personal Feng Shui Compass</strong>, the{" "}
+              <strong>Move-In Date Report</strong>, the{" "}
               <strong>Bedroom and Relationship Reset</strong>, and the{" "}
               <strong>Business and Money Kit</strong>. Each is its own
               focused book.
@@ -435,13 +436,15 @@ export default async function HomePage(props: {
       <section className="home-final-cta" aria-labelledby="final-cta-heading">
         <div className="home-final-cta-inner">
           <h2 id="final-cta-heading">
-            Start with your Kua number. Ten seconds.
+            Open the Ultimate Feng Shui Guide.
           </h2>
-          <Link href="/kua-calculator" className="cta-primary">
-            Find my Kua number
+          <Link href="/guide" className="cta-primary">
+            Browse the guide
           </Link>
         </div>
       </section>
+
+      <CalculatorScripts />
 
       <script
         type="application/ld+json"
