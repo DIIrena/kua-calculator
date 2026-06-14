@@ -9,7 +9,7 @@
 
 :root {
   /* color - ivory + pool-table green + true orange (matched to Pattern Palace 2026-06-09) */
-  --cream:       #fcfcf8;   /* canvas / body background (ivory white) */
+  --cream:       #ffffff;   /* canvas / body background (white) */
   --sand:        #f2f2ee;   /* textured panels, the hero (ivory-alt) */
   --sand-deep:   #d0c4a8;   /* texture shadow, hover (line-strong) */
   --paper:       #ffffff;   /* cards (crisp white lift) */
@@ -143,7 +143,7 @@ a:hover { color: var(--clay-deep); }
   display: inline-flex;
   width: 64px;
   height: 64px;
-  color: var(--clay);
+  color: var(--green);
   flex-shrink: 0;
 }
 
@@ -169,7 +169,7 @@ a:hover { color: var(--clay-deep); }
   /* Bumped from 1.15rem - now the only text next to the mark since the
      header rework demoted Kua Calculator to a nav item. */
   font-size: 1.6rem;
-  color: var(--clay);
+  color: var(--green);
   line-height: 1;
 }
 

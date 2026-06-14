@@ -250,7 +250,6 @@ const CORE: Omit<StoreProduct, "priceLabel">[] = [
       "Your Kua number and your eight personal directions, in ten seconds. Always free.",
     priceCents: 0,
     category: "free",
-    featured: true,
   },
 ];
 

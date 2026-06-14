@@ -27,15 +27,10 @@ export default async function ProductsPage(props: {
   return (
     <div className="page-content products-page">
       <section className="products-hero">
-        <p className="eyebrow">My Feng Shui Home</p>
-        <h1 className="products-heading">The shop.</h1>
+        <h1 className="visually-hidden">Shop</h1>
         <p className="products-lede">
           Printable guides, personalised readings keyed to your Kua,
-          build-your-own bundles, and a seven-day course. Browse by
-          category on the left, filter by price, or search.
-        </p>
-        <p className="products-lede">
-          One-time prices. 7-day refunds. No outcome promises.
+          build-your-own bundles, and a seven-day course.
         </p>
         {checkoutStatus === "error" ? (
           <p className="buy-button-status buy-button-status-err" role="alert">

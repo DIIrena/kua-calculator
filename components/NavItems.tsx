@@ -88,9 +88,9 @@ export default function NavItems({
         </div>
       </details>
 
-      {/* 4. Products - the paid shop */}
+      {/* 4. Shop - the paid shop */}
       <Link href="/products" className="site-nav-link site-nav-link-feature">
-        Products
+        Shop
       </Link>
 
       {/* 5. About - the architect-as-author trust page */}
