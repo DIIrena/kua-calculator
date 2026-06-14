@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SignOutButton from "@/components/SignOutButton";
+import GuideNavDropdown from "@/components/GuideNavDropdown";
 import { GUIDE_CLUSTERS } from "@/lib/guide";
 
 // Shared primary-nav item list. Used by both the desktop nav surface
@@ -43,34 +44,11 @@ export default function NavItems({
       ) : null}
 
       {/* 1. Guide - the full library. The dropdown lists the eleven
-          topics; Rooms is one of them. */}
-      <details className="nav-dropdown">
-        <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
-          Guide
-          <span className="nav-dropdown-caret" aria-hidden="true">
-            &#9662;
-          </span>
-        </summary>
-        <div className="nav-dropdown-panel" role="menu">
-          {guideTopics.map((c) => (
-            <Link
-              key={c.slug}
-              href={`/guide?view=${c.slug}`}
-              role="menuitem"
-              className="nav-dropdown-link"
-            >
-              {c.label}
-            </Link>
-          ))}
-          <Link
-            href="/guide"
-            role="menuitem"
-            className="nav-dropdown-link nav-dropdown-see-all"
-          >
-            All of the guide &rarr;
-          </Link>
-        </div>
-      </details>
+          topics; Rooms is one of them. Opens on hover and closes when the
+          pointer leaves (or focus moves out). */}
+      <GuideNavDropdown
+        topics={guideTopics.map((c) => ({ slug: c.slug, label: c.label }))}
+      />
 
       {/* 2. Shop - the paid shop (and the free calculator lives here too) */}
       <Link href="/products" className="site-nav-link site-nav-link-feature">

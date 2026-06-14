@@ -5174,6 +5174,11 @@ a:hover { color: var(--clay-deep); }
 /* --- /products shelf --- */
 .products-page { padding-top: var(--space-6); }
 
+/* The /guide library index. Uses the wide .page-content (1100px); this
+   class only adds top spacing. Distinct from .guide-page, which caps
+   article reading pages at 720px. */
+.guide-library { padding-top: var(--space-6); }
+
 .products-hero {
   text-align: center;
   margin: 0 auto var(--space-8) auto;

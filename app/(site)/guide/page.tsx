@@ -47,7 +47,7 @@ export default async function GuideIndexPage(props: {
     });
 
   return (
-    <div className="page-content guide-page">
+    <div className="page-content guide-library">
       <section className="products-hero">
         <h1 className="guide-index-heading">The Ultimate Feng Shui Guide</h1>
         <p className="guide-index-lede">
