@@ -76,9 +76,13 @@ export default async function SuccessPage(props: {
   let email = "";
   try {
     const session = await stripe.checkout.sessions.retrieve(sessionId);
+    const inCart = (session.metadata?.cartSlugs ?? "")
+      .split(",")
+      .map((s) => s.trim())
+      .includes(product.slug);
     paid =
       session.payment_status === "paid" &&
-      session.metadata?.productSlug === product.slug;
+      (session.metadata?.productSlug === product.slug || inCart);
     email =
       session.customer_details?.email ?? session.customer_email ?? "";
   } catch {

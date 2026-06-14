@@ -9,6 +9,7 @@ import {
   type StoreFilter,
   type StoreProduct,
 } from "@/lib/storefront";
+import { useCart } from "@/components/CartProvider";
 
 type PriceBand = "any" | "u10" | "10to25" | "25to50" | "o50";
 type SortKey = "featured" | "low" | "high";
@@ -42,42 +43,78 @@ function inBand(cents: number, band: PriceBand): boolean {
   }
 }
 
+// A filled heart, used as the price button background.
+function HeartShape() {
+  return (
+    <svg
+      className="price-heart-svg"
+      viewBox="0 0 32 29.6"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M23.6 0c-3.4 0-6.3 2.7-7.6 5.6C14.7 2.7 11.8 0 8.4 0 3.8 0 0 3.8 0 8.4c0 9.4 9.5 11.9 16 21.2 6.1-9.3 16-12.1 16-21.2C32 3.8 28.2 0 23.6 0z" />
+    </svg>
+  );
+}
+
 function ProductCard({ p }: { p: StoreProduct }) {
   const free = p.category === "free";
+  const { add, has } = useCart();
+  const [justAdded, setJustAdded] = useState(false);
+  const inCart = has(p.slug);
+
   return (
-    <li className="product-shelf-card">
-      <Link
-        href={p.href}
-        className="product-shelf-link"
-        aria-labelledby={`store-${p.slug}-title`}
-      >
-        <p className="product-shelf-status-row">
-          <span
-            className={`product-shelf-status ${
-              free ? "product-shelf-status-free" : "product-shelf-status-live"
-            }`}
-          >
-            {free ? "Free" : "Available now"}
-          </span>
-          <span className="product-shelf-price">
-            {p.onSale && p.wasCents ? (
-              <>
-                <s className="product-shelf-price-was">${p.wasCents / 100}</s>{" "}
-                {p.priceLabel}
-              </>
-            ) : (
-              p.priceLabel
-            )}
-          </span>
-        </p>
-        <h3 id={`store-${p.slug}-title`} className="product-shelf-title">
-          {p.title}
-        </h3>
-        <p className="product-shelf-oneliner">{p.oneLiner}</p>
-        <p className="product-shelf-cta">
-          {free ? "Open the tool →" : "See the product →"}
-        </p>
+    <li className="shop-card">
+      <Link href={p.href} className="shop-card-titlelink">
+        <h3 className="shop-card-title">{p.title}</h3>
       </Link>
+      <p className="shop-card-desc">{p.oneLiner}</p>
+
+      <div className="shop-card-foot">
+        {p.onSale && p.wasCents ? (
+          <s className="shop-card-was">${p.wasCents / 100}</s>
+        ) : null}
+
+        {free ? (
+          <Link
+            href={p.href}
+            className="price-heart"
+            aria-label={`${p.title}, free. Open the tool.`}
+          >
+            <HeartShape />
+            <span className="price-heart-amount">Free</span>
+          </Link>
+        ) : (
+          <button
+            type="button"
+            className={`price-heart price-heart-btn${
+              inCart || justAdded ? " is-added" : ""
+            }`}
+            aria-label={`Add ${p.title} to cart, ${p.priceLabel}`}
+            onClick={() => {
+              add({
+                slug: p.slug,
+                title: p.title,
+                priceCents: p.priceCents,
+                priceLabel: p.priceLabel,
+                href: p.href,
+              });
+              setJustAdded(true);
+            }}
+          >
+            <HeartShape />
+            <span className="price-heart-amount">{p.priceLabel}</span>
+          </button>
+        )}
+
+        <span className="shop-card-foot-label">
+          {free
+            ? "Open the tool"
+            : inCart || justAdded
+              ? "In cart ✓"
+              : "Add to cart"}
+        </span>
+      </div>
     </li>
   );
 }
@@ -109,9 +146,7 @@ export default function Storefront() {
     if (sort === "low") list.sort((a, b) => a.priceCents - b.priceCents);
     else if (sort === "high") list.sort((a, b) => b.priceCents - a.priceCents);
     else
-      list.sort(
-        (a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0),
-      );
+      list.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
     return list;
   }, [category, price, sort, q]);
 

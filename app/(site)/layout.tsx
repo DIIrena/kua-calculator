@@ -1,6 +1,7 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import VercelAnalytics from "@/components/VercelAnalytics";
+import { CartProvider } from "@/components/CartProvider";
 
 // Layout for the main site: adds the SiteHeader, the <main> landmark, and
 // the SiteFooter. The /embed route lives outside this group, so it renders
@@ -18,7 +19,7 @@ export default function SiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <CartProvider>
       <a href="#main" className="skip-link">
         Skip to content
       </a>
@@ -26,6 +27,6 @@ export default function SiteLayout({
       <main id="main">{children}</main>
       <SiteFooter />
       <VercelAnalytics />
-    </>
+    </CartProvider>
   );
 }

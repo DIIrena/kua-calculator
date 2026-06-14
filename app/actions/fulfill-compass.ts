@@ -75,10 +75,16 @@ export async function fulfillCompass(formData: FormData) {
   const stripe = getStripe();
   if (!stripe) back(product.slug, sessionId, "error");
   let email = "";
+  let inCart = false;
   try {
     const session = await stripe.checkout.sessions.retrieve(sessionId);
     const paid = session.payment_status === "paid";
-    const matches = session.metadata?.productSlug === product.slug;
+    inCart = (session.metadata?.cartSlugs ?? "")
+      .split(",")
+      .map((s) => s.trim())
+      .includes(product.slug);
+    const matches =
+      session.metadata?.productSlug === product.slug || inCart;
     email =
       session.customer_details?.email ?? session.customer_email ?? "";
     if (!paid || !matches || !email) back(product.slug, sessionId, "error");
@@ -87,13 +93,14 @@ export async function fulfillCompass(formData: FormData) {
   }
 
   const admin = createAdminClient();
+  const orderKey = inCart ? `${sessionId}#${product.slug}` : sessionId;
 
   // The order row (webhook normally created it; create here as a
   // fallback if the webhook lagged).
   let { data: order } = await admin
     .from("product_orders")
     .select("id")
-    .eq("stripe_session", sessionId)
+    .eq("stripe_session", orderKey)
     .maybeSingle();
   if (!order) {
     const { data: inserted } = await admin
@@ -101,7 +108,7 @@ export async function fulfillCompass(formData: FormData) {
       .insert({
         email: email.toLowerCase(),
         product_slug: product.slug,
-        stripe_session: sessionId,
+        stripe_session: orderKey,
         amount_cents: product.priceCents,
         currency: "usd",
         status: "paid",

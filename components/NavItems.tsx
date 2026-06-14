@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SignOutButton from "@/components/SignOutButton";
 import GuideNavDropdown from "@/components/GuideNavDropdown";
+import CartButton from "@/components/CartButton";
 import { GUIDE_CLUSTERS } from "@/lib/guide";
 
 // Shared primary-nav item list. Used by both the desktop nav surface
@@ -80,6 +81,9 @@ export default function NavItems({
           Sign in
         </Link>
       )}
+
+      {/* 5. Cart - the shopping bag, with a live item count. */}
+      <CartButton />
     </>
   );
 }
