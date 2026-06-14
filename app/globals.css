@@ -143,7 +143,7 @@ a:hover { color: var(--clay-deep); }
   display: inline-flex;
   width: 64px;
   height: 64px;
-  color: var(--green);
+  color: var(--clay);
   flex-shrink: 0;
 }
 
@@ -169,7 +169,7 @@ a:hover { color: var(--clay-deep); }
   /* Bumped from 1.15rem - now the only text next to the mark since the
      header rework demoted Kua Calculator to a nav item. */
   font-size: 1.6rem;
-  color: var(--green);
+  color: var(--clay);
   line-height: 1;
 }
 
