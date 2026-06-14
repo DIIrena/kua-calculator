@@ -302,6 +302,70 @@ a:hover { color: var(--clay-deep); }
   color: #a4b3aa;
 }
 
+/* Footer newsletter subscribe */
+.footer-subscribe {
+  max-width: 440px;
+  margin: 0 auto var(--space-5);
+}
+.footer-subscribe-label {
+  font-size: 0.95rem;
+  color: var(--on-dark);
+  margin: 0 0 var(--space-3) 0;
+}
+.footer-subscribe-form {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-subscribe-form input {
+  flex: 1 1 220px;
+  min-width: 0;
+  height: 46px;
+  padding: 0 var(--space-4);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--on-dark);
+  font: inherit;
+  font-size: 0.95rem;
+}
+.footer-subscribe-form input::placeholder { color: rgba(255, 255, 255, 0.6); }
+.footer-subscribe-form input:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 2px;
+}
+.footer-subscribe-btn {
+  height: 46px;
+  padding: 0 var(--space-5);
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--clay-deep);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 120ms ease;
+}
+.footer-subscribe-btn:hover { filter: brightness(1.12); }
+.footer-subscribe-btn:disabled { opacity: 0.65; cursor: default; }
+.footer-subscribe-status {
+  flex-basis: 100%;
+  font-size: 0.85rem;
+  margin: var(--space-2) 0 0 0;
+}
+.footer-subscribe-status.is-ok { color: #b3c0b7; }
+.footer-subscribe-status.is-err { color: #f0975a; }
+
+/* Refunds flow line */
+.refunds-flow {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--green-deep);
+  margin: 0 0 var(--space-5) 0;
+}
+
 /* ------------------------------------------------------------
    Hero
    ------------------------------------------------------------ */

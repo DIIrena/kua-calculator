@@ -30,11 +30,11 @@ const LAUNCH = {
 };
 const BUY = {
   static:
-    "Secure checkout. 7-day refund, no questions asked. Your files arrive by email the moment you buy.",
+    "Secure checkout. 7-day refund. Your files arrive by email the moment you buy.",
   personalized:
-    "Secure checkout. 7-day refund, no questions asked. You fill in a short form after paying and the PDF is emailed to you.",
+    "Secure checkout. 7-day refund. You fill in a short form after paying and the PDF is emailed to you.",
   course:
-    "Secure checkout. 7-day refund, no questions asked. The course begins the moment you buy.",
+    "Secure checkout. 7-day refund. The course begins the moment you buy.",
 };
 
 function typeFor(slug) {

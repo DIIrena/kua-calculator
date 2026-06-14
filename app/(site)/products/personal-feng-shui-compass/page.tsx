@@ -177,7 +177,7 @@ export default async function PersonalFengShuiCompassPage(props: {
         <p>
           $14, one-time. After paying you fill in three fields and the
           PDF is generated and emailed to you within about a minute.
-          7-day refund, no questions asked.
+          7-day refund.
         </p>
         <BuyButton
           productSlug="personal-feng-shui-compass"

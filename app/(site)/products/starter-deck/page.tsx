@@ -84,7 +84,7 @@ export default async function StarterDeckPage(props: {
             keep one group at a time on the desk.
           </li>
           <li>
-            7-day refund, no questions asked. Reply to the delivery
+            7-day refund. Reply to the delivery
             email any time for a fresh download link.
           </li>
         </ol>
@@ -103,7 +103,7 @@ export default async function StarterDeckPage(props: {
       <section className="product-buy-section">
         <h2>Buy now.</h2>
         <p>
-          Secure checkout. 7-day refund, no questions asked. Your files arrive by email the moment you buy.
+          Secure checkout. 7-day refund. Your files arrive by email the moment you buy.
         </p>
         <BuyButton
           productSlug="starter-deck"

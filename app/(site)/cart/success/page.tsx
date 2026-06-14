@@ -25,8 +25,8 @@ export default function CartSuccessPage() {
           </Link>
         </p>
         <p className="success-refund-note">
-          7-day refund on each item. The{" "}
-          <Link href="/refunds">refund policy</Link> is one page.
+          7-day refund on each item. See the{" "}
+          <Link href="/refunds">refund policy</Link>.
         </p>
       </section>
     </div>

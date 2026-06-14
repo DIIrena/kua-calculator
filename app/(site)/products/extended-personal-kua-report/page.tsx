@@ -169,7 +169,7 @@ export default async function ExtendedPersonalKuaReportPage(props: {
       <section className="product-buy-section">
         <h2>Buy now.</h2>
         <p>
-          Secure checkout. 7-day refund, no questions asked. You fill in a short form after paying and the PDF is emailed to you.
+          Secure checkout. 7-day refund. You fill in a short form after paying and the PDF is emailed to you.
         </p>
         <BuyButton
           productSlug="extended-personal-kua-report"

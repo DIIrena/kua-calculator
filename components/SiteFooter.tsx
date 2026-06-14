@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FooterSubscribe from "@/components/FooterSubscribe";
 
 // Site footer: the deep-ink counterweight, centred. Carries the brand
 // mark, the calm trust line that links to /about, the secondary public
@@ -32,6 +33,13 @@ export default function SiteFooter() {
       <p className="footer-tag">
         Architecture-led feng shui for real homes.
       </p>
+      <div className="footer-subscribe">
+        <p className="footer-subscribe-label">
+          Feng shui notes by email. A few calm, practical ideas, now and
+          then.
+        </p>
+        <FooterSubscribe />
+      </div>
       <nav className="footer-links" aria-label="Site sections">
         <Link href="/life">Life areas</Link>
         <Link href="/articles">Articles</Link>

@@ -148,7 +148,7 @@ export default async function StarterBundlePage(props: {
             across the set).
           </li>
           <li>
-            7-day refund, no questions asked, covering the whole
+            7-day refund, covering the whole
             bundle.
           </li>
         </ol>
@@ -157,7 +157,7 @@ export default async function StarterBundlePage(props: {
       <section className="product-buy-section">
         <h2>Buy now.</h2>
         <p>
-          Secure checkout. 7-day refund, no questions asked. Your files arrive by email the moment you buy.
+          Secure checkout. 7-day refund. Your files arrive by email the moment you buy.
         </p>
         <BuyButton
           productSlug="whole-home-starter-bundle"

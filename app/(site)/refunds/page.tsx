@@ -9,7 +9,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Refunds | My Feng Shui Home",
   description:
-    "7-day refund on every purchase, no questions asked. How refunds work and who operates the shop.",
+    "7-day refund on every purchase. How refunds work, how to ask, and who operates the shop.",
   alternates: { canonical: "https://myfengshuihome.com/refunds" },
   robots: { index: true, follow: true },
 };
@@ -21,17 +21,23 @@ export default function RefundsPage() {
         <p className="eyebrow">Refunds</p>
         <h1>The refund policy.</h1>
 
+        <p className="refunds-flow">
+          Feng shui is about flow. If a purchase is not flowing for you,
+          we clear it - a full refund within 7 days.
+        </p>
+
         <h2>The policy</h2>
         <p>
-          Every purchase on this site carries a <strong>7-day refund,
-          no questions asked</strong>. If you buy a guide, a planner,
+          Every purchase on this site carries a{" "}
+          <strong>7-day refund</strong>. If you buy a guide, a planner,
           or a personalised PDF and it is not what you wanted, email{" "}
           <a href="mailto:hello@myfengshuihome.com">
             hello@myfengshuihome.com
           </a>{" "}
-          within 7 days of the purchase and we refund the full amount.
-          You do not need to give a reason. You keep nothing and owe
-          nothing; the files simply stop being yours to use.
+          within 7 days of the purchase, include a line on what you were
+          hoping for, and we refund the full amount. Your reason helps us
+          make the next version better. You keep nothing and owe nothing;
+          the files simply stop being yours to use.
         </p>
 
         <h2>How fast</h2>

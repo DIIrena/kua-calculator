@@ -64,7 +64,7 @@ const PLANNER_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Is the Planner refundable?",
-    a: "Yes. Every purchase carries a 7-day refund, no questions asked. Email hello@myfengshuihome.com and the money goes back.",
+    a: "Yes. Every purchase carries a 7-day refund. Email hello@myfengshuihome.com and the money goes back.",
   },
   {
     q: "Will there be a 2027 edition?",
@@ -440,7 +440,7 @@ export default async function PlannerPage(props: {
             one.
           </li>
           <li>
-            <strong>7-day refund, no questions asked.</strong> Email
+            <strong>7-day refund.</strong> Email
             us and the money goes back.
           </li>
           <li>
@@ -500,7 +500,7 @@ export default async function PlannerPage(props: {
         <p>
           $19, one-time. The files arrive by email within a minute of
           purchase, and the download page shows them immediately.
-          7-day refund, no questions asked.
+          7-day refund.
         </p>
         <BuyButton
           productSlug="annual-feng-shui-planner-2026"

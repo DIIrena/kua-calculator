@@ -146,8 +146,8 @@ export default async function SuccessPage(props: {
             </p>
           ) : null}
           <p className="success-refund-note">
-            7-day refund, no questions asked. The{" "}
-            <Link href="/refunds">refund policy</Link> is one page.
+            7-day refund. See the{" "}
+            <Link href="/refunds">refund policy</Link>.
           </p>
         </section>
       </div>

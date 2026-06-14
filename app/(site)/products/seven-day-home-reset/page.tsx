@@ -120,7 +120,7 @@ export default async function SevenDayHomeResetPage(props: {
       <section className="product-buy-section">
         <h2>Buy now.</h2>
         <p>
-          Secure checkout. 7-day refund, no questions asked. The course begins the moment you buy.
+          Secure checkout. 7-day refund. The course begins the moment you buy.
         </p>
         <BuyButton
           productSlug="seven-day-home-reset"
