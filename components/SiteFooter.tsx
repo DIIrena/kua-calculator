@@ -30,8 +30,7 @@ export default function SiteFooter() {
         </svg>
       </div>
       <p className="footer-tag">
-        Architecture-led feng shui for real homes.{" "}
-        <Link href="/about">Read who runs the site</Link>.
+        Architecture-led feng shui for real homes.
       </p>
       <nav className="footer-links" aria-label="Site sections">
         <Link href="/life">Life areas</Link>

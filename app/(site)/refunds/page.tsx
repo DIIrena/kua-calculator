@@ -19,7 +19,7 @@ export default function RefundsPage() {
     <div className="page-content">
       <article className="page-prose refunds-page">
         <p className="eyebrow">Refunds</p>
-        <h1>The refund policy. One page.</h1>
+        <h1>The refund policy.</h1>
 
         <h2>The policy</h2>
         <p>

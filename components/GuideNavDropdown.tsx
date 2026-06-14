@@ -1,42 +1,25 @@
-"use client";
-
-import { useRef } from "react";
 import Link from "next/link";
 
 type Topic = { slug: string; label: string };
 
-// The Guide primary-nav dropdown. A native <details> so it works with no
-// JS (keyboard + touch toggle), enhanced on hover-capable devices so it
-// opens on mouse-enter and closes on mouse-leave (the panel should
-// disappear when the pointer moves away from the Guide item). Focus-out
-// also closes it so keyboard users are not left with a stuck-open panel.
+// The Guide primary-nav item. The "Guide" label is a real link to the
+// full library at /guide; on hover (or keyboard focus) a panel of the
+// eleven topics drops down. Pure CSS (no JS): the panel shows on
+// .nav-dropdown:hover / :focus-within and closes when the pointer or
+// focus leaves. On mobile the panel is hidden and "Guide" simply links
+// to /guide (topics live in the page's left rail).
 export default function GuideNavDropdown({ topics }: { topics: Topic[] }) {
-  const ref = useRef<HTMLDetailsElement>(null);
-
-  const openOnHover = () => {
-    const el = ref.current;
-    if (el && window.matchMedia("(hover: hover)").matches) el.open = true;
-  };
-  const close = () => {
-    if (ref.current) ref.current.open = false;
-  };
-
   return (
-    <details
-      ref={ref}
-      className="nav-dropdown"
-      onMouseEnter={openOnHover}
-      onMouseLeave={close}
-      onBlur={(e) => {
-        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) close();
-      }}
-    >
-      <summary className="nav-dropdown-summary nav-dropdown-summary-feature">
+    <div className="nav-dropdown">
+      <Link
+        href="/guide"
+        className="nav-dropdown-summary nav-dropdown-summary-feature"
+      >
         Guide
         <span className="nav-dropdown-caret" aria-hidden="true">
           &#9662;
         </span>
-      </summary>
+      </Link>
       <div className="nav-dropdown-panel" role="menu">
         {topics.map((t) => (
           <Link
@@ -44,7 +27,6 @@ export default function GuideNavDropdown({ topics }: { topics: Topic[] }) {
             href={`/guide?view=${t.slug}`}
             role="menuitem"
             className="nav-dropdown-link"
-            onClick={close}
           >
             {t.label}
           </Link>
@@ -53,11 +35,10 @@ export default function GuideNavDropdown({ topics }: { topics: Topic[] }) {
           href="/guide"
           role="menuitem"
           className="nav-dropdown-link nav-dropdown-see-all"
-          onClick={close}
         >
           All of the guide &rarr;
         </Link>
       </div>
-    </details>
+    </div>
   );
 }
