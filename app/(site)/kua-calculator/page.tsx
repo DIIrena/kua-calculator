@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "Free Kua number calculator. Enter your birth year and gender to get your East or West group, four favourable directions, and four to avoid.",
   robots: { index: true, follow: true },
+  alternates: { canonical: "https://myfengshuihome.com/kua-calculator" },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -137,16 +138,9 @@ const faqJsonLd = {
   ],
 };
 
-export default async function KuaCalculatorPage(props: {
-  searchParams: Promise<{ compass?: string }>;
-}) {
-  const { compass } = await props.searchParams;
+export default async function KuaCalculatorPage() {
   const session = await auth();
   const isSignedIn = Boolean(session?.user?.id);
-  const compassStatus =
-    compass === "sent" || compass === "invalid" || compass === "error"
-      ? (compass as "sent" | "invalid" | "error")
-      : null;
   return (
     <>
       <section className="hero" aria-labelledby="hero-heading">
@@ -190,10 +184,7 @@ export default async function KuaCalculatorPage(props: {
         aria-label="Kua number calculator"
       >
         <div className="calculator-inner">
-          <CalculatorIsland
-            isSignedIn={isSignedIn}
-            compassStatus={compassStatus}
-          />
+          <CalculatorIsland isSignedIn={isSignedIn} />
         </div>
       </section>
 

@@ -4703,10 +4703,14 @@ a:hover { color: var(--clay-deep); }
 
 .nav-dropdown-link:hover,
 .nav-dropdown-link:focus-visible {
-  background: var(--cream);
+  background: var(--sand);
   color: var(--ink) !important; /* override .site-nav a hover */
   border-bottom-color: transparent !important;
-  outline: none;
+}
+
+.nav-dropdown-link:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: -2px;
 }
 
 .nav-dropdown-pinned {

@@ -9,7 +9,6 @@
    a successful calculation. */
 
 import { saveChart } from "@/app/actions/save-chart";
-import { joinCompassFromKua } from "@/app/actions/compass-from-kua";
 
 // IMPORTANT: do NOT import BuyButton on this surface. BuyButton imports
 // trackEvent from @/lib/analytics, which is allowed on product pages
@@ -23,17 +22,11 @@ type Props = {
   // isSignedIn switches the save CTA between a Save form (signed-in) and a
   // soft sign-in invitation. Ignored when showSaveCta is false.
   isSignedIn?: boolean;
-  // compassStatus = "sent" | "invalid" | "error" | null. Renders a small
-  // status pill in the Compass card so the calculator surface confirms
-  // the waitlist join without leaving the page. Server action redirects
-  // back here with the param.
-  compassStatus?: "sent" | "invalid" | "error" | null;
 };
 
 export default function CalculatorIsland({
   showSaveCta = true,
   isSignedIn = false,
-  compassStatus = null,
 }: Props) {
   return (
     <>
@@ -276,17 +269,13 @@ export default function CalculatorIsland({
           Compass cards are stripped via the .post-result-stack--embed
           class that ui.js sets when the calculator runs inside /embed
           (main#main carries data-embed).
-          When the visitor just submitted the Compass waitlist form, the
-          server action redirects back with ?compass=sent and we render
-          the section visible from the start so the confirmation is
-          immediately readable.
-          No third-party JS. No analytics import. Forms use Next server
-          actions only. */}
+          No third-party JS. No analytics import. The cards are plain
+          links. */}
       <section
         id="post-result-cta"
         className="post-result-stack"
         aria-label="What to do next"
-        hidden={compassStatus === null}
+        hidden
       >
         <article
           className={
@@ -337,60 +326,24 @@ export default function CalculatorIsland({
 
         <article
           className="post-result-card secondary post-result-card-compass"
-          aria-label="Personal Feng Shui Compass waitlist"
+          aria-label="Personal Feng Shui Compass"
         >
           <h3 className="post-result-card-heading">
-            Get notified when the Personal Feng Shui Compass launches.
+            Your Personal Feng Shui Compass.
           </h3>
           <p className="post-result-card-body">
-            A small printable book keyed to your Kua and your eight
-            personal directions. Waitlist is open. You can unsubscribe
-            any time.
+            A short printable book keyed to your Kua and your eight
+            personal directions: the four that support you, the four to
+            handle with care, and a seven-day way to test the placement.
           </p>
-          <form
-            action={joinCompassFromKua}
-            className="compass-waitlist-form"
-          >
-            <label htmlFor="compass-email" className="visually-hidden">
-              Email address
-            </label>
-            <input
-              id="compass-email"
-              name="email"
-              type="email"
-              required
-              placeholder="you@example.com"
-              autoComplete="email"
-            />
-            <button type="submit" className="cta-secondary">
-              Join the Compass waitlist
-            </button>
-          </form>
-          {compassStatus === "sent" ? (
-            <p
-              className="compass-waitlist-status compass-waitlist-status-ok"
-              role="status"
-              aria-live="polite"
+          <p className="post-result-card-actions">
+            <a
+              href="/products/personal-feng-shui-compass?from=kua-calculator"
+              className="cta-secondary"
             >
-              You are on the list. We will email you when the Compass
-              launches.
-            </p>
-          ) : compassStatus === "invalid" ? (
-            <p
-              className="compass-waitlist-status compass-waitlist-status-err"
-              role="alert"
-            >
-              Please enter a valid email address and try again.
-            </p>
-          ) : compassStatus === "error" ? (
-            <p
-              className="compass-waitlist-status compass-waitlist-status-err"
-              role="alert"
-            >
-              We could not save that just now. Please try again in a
-              minute.
-            </p>
-          ) : null}
+              See the Compass
+            </a>
+          </p>
         </article>
       </section>
 

@@ -89,15 +89,11 @@ const faqJsonLd = {
 };
 
 export default async function HomePage(props: {
-  searchParams: Promise<{ checklist?: string; compass?: string }>;
+  searchParams: Promise<{ checklist?: string }>;
 }) {
-  const { checklist: checklistStatus, compass } = await props.searchParams;
+  const { checklist: checklistStatus } = await props.searchParams;
   const session = await auth();
   const isSignedIn = Boolean(session?.user?.id);
-  const compassStatus =
-    compass === "sent" || compass === "invalid" || compass === "error"
-      ? (compass as "sent" | "invalid" | "error")
-      : null;
 
   return (
     <>
@@ -124,10 +120,7 @@ export default async function HomePage(props: {
         aria-label="Kua number calculator"
       >
         <div className="calculator-inner">
-          <CalculatorIsland
-            isSignedIn={isSignedIn}
-            compassStatus={compassStatus}
-          />
+          <CalculatorIsland isSignedIn={isSignedIn} />
         </div>
       </section>
 
