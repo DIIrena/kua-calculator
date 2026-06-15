@@ -124,6 +124,62 @@
     return node;
   }
 
+  // Two people each keep their own Kua number (feng shui has no single
+  // "couple" number). Add a second summary panel so Person 2's number is
+  // shown as prominently as Person 1's, and label Person 1's parts, so it
+  // is clear both were calculated - not just the first person.
+  function addSecondPersonSummary(card, occ1, occ2) {
+    var header = card.querySelector(".result-header");
+    if (header) { header.classList.add("result-header--couple"); }
+
+    var eyebrow1 = card.querySelector(".result-eyebrow");
+    if (eyebrow1) { eyebrow1.textContent = "Person 1"; }
+
+    var p2group = occ2.group === "east" ? "East group" : "West group";
+    var panel = document.createElement("div");
+    panel.className = "result-summary result-summary-second";
+
+    var eb = document.createElement("p");
+    eb.className = "result-eyebrow";
+    eb.style.color = "#ffffff";
+    eb.textContent = "Person 2";
+
+    var num = document.createElement("p");
+    num.className = "result-kua";
+    num.style.color = "#ffffff";
+    var span = document.createElement("span");
+    span.style.color = "#ffffff";
+    span.textContent = String(occ2.kua);
+    num.appendChild(span);
+
+    var grp = document.createElement("p");
+    grp.className = "result-group";
+    var badge = document.createElement("span");
+    badge.className = "group-badge";
+    badge.dataset.group = occ2.group;
+    badge.textContent = p2group;
+    grp.appendChild(badge);
+
+    panel.appendChild(eb);
+    panel.appendChild(num);
+    panel.appendChild(grp);
+
+    var firstSummary = card.querySelector(".result-summary");
+    if (firstSummary && firstSummary.parentNode) {
+      firstSummary.parentNode.insertBefore(panel, firstSummary.nextSibling);
+    }
+
+    var line = card.querySelector(".result-line");
+    if (line) {
+      line.textContent =
+        "You each have your own Kua number. The eight directions below are Person 1's; the shared-rooms guide further down covers the rooms you both use.";
+    }
+    var subhead = card.querySelector(".result-subhead");
+    if (subhead) {
+      subhead.textContent = "Person 1's eight personal directions";
+    }
+  }
+
   function renderResult(occupant1, occupant2) {
     var resultRoot = $("#result");
     var resultTemplate = $("#result-template");
@@ -162,6 +218,10 @@
     occupant1.rows.forEach(function (row) {
       rowsContainer.appendChild(renderDirectionRow(rowTemplate, row));
     });
+
+    if (occupant2) {
+      addSecondPersonSummary(card, occupant1, occupant2);
+    }
 
     if (occupant2 && typeof window.renderSharedRooms === "function") {
       window.renderSharedRooms(card, occupant1, occupant2);

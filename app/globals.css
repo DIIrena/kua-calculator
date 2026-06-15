@@ -787,6 +787,25 @@ a:hover { color: var(--clay-deep); }
   padding: var(--space-5) var(--space-6);
 }
 
+/* Two-person (couple / shared-room) result: show both Kua numbers as
+   equal headline panels, with the one-line summary wrapping below. */
+.result-header--couple {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: stretch;
+}
+.result-header--couple .result-summary {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.result-header--couple .result-line {
+  flex-basis: 100%;
+  margin: 0;
+}
+
 .result-eyebrow {
   margin: 0;
   font-family: var(--font-body);
