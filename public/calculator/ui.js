@@ -128,7 +128,7 @@
   // "couple" number). Add a second summary panel so Person 2's number is
   // shown as prominently as Person 1's, and label Person 1's parts, so it
   // is clear both were calculated - not just the first person.
-  function addSecondPersonSummary(card, occ1, occ2) {
+  function setupCoupleResult(card, occ1, occ2) {
     var header = card.querySelector(".result-header");
     if (header) { header.classList.add("result-header--couple"); }
 
@@ -172,12 +172,16 @@
     var line = card.querySelector(".result-line");
     if (line) {
       line.textContent =
-        "You each have your own Kua number. The eight directions below are Person 1's; the shared-rooms guide further down covers the rooms you both use.";
+        "You each keep your own Kua number. The guide below shows which directions work for both of you in the rooms you share.";
     }
+    // Couple view: drop the single-person eight-directions block; the
+    // shared-rooms combination below is what matters for two people.
     var subhead = card.querySelector(".result-subhead");
-    if (subhead) {
-      subhead.textContent = "Person 1's eight personal directions";
-    }
+    if (subhead) { subhead.hidden = true; }
+    var directions = card.querySelector("[data-bind='directions']");
+    if (directions) { directions.hidden = true; }
+    var cny = card.querySelector(".cny-notice");
+    if (cny) { cny.hidden = true; }
   }
 
   function renderResult(occupant1, occupant2) {
@@ -214,13 +218,13 @@
       }
     }
 
-    var rowsContainer = card.querySelector("[data-bind='directions']");
-    occupant1.rows.forEach(function (row) {
-      rowsContainer.appendChild(renderDirectionRow(rowTemplate, row));
-    });
-
-    if (occupant2) {
-      addSecondPersonSummary(card, occupant1, occupant2);
+    if (!occupant2) {
+      var rowsContainer = card.querySelector("[data-bind='directions']");
+      occupant1.rows.forEach(function (row) {
+        rowsContainer.appendChild(renderDirectionRow(rowTemplate, row));
+      });
+    } else {
+      setupCoupleResult(card, occupant1, occupant2);
     }
 
     if (occupant2 && typeof window.renderSharedRooms === "function") {

@@ -131,6 +131,8 @@ export default function CalculatorIsland({
           </div>
         </fieldset>
 
+        {isSignedIn ? (
+          <>
         <div className="couples-toggle-row">
           <button
             type="button"
@@ -248,6 +250,17 @@ export default function CalculatorIsland({
             ></p>
           </div>
         </fieldset>
+          </>
+        ) : (
+          <div className="couples-locked">
+            <p className="couples-locked-note">
+              Combining two people, for couples and shared rooms, is a free
+              account feature.{" "}
+              <a href="/sign-in">Sign in or create a free account</a> to save
+              your chart and combine two people.
+            </p>
+          </div>
+        )}
 
         <div className="form-actions">
           <button type="submit" className="cta-primary">

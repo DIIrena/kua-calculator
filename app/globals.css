@@ -806,6 +806,20 @@ a:hover { color: var(--clay-deep); }
   margin: 0;
 }
 
+/* Anonymous calculator: the couples feature is gated to signed-in users. */
+.couples-locked { margin: var(--space-4) 0 var(--space-2) 0; }
+.couples-locked-note {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.couples-locked-note a {
+  color: var(--green-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .result-eyebrow {
   margin: 0;
   font-family: var(--font-body);
