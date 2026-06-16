@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
-import ProductGallery from "@/components/ProductGallery";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 
 export const metadata: Metadata = {
   title: "Cures and Crystals Catalogue | My Feng Shui Home",
@@ -55,7 +56,7 @@ export default async function CuresCatalogPage(props: {
         </p>
       </section>
 
-      <ProductGallery slug="cures-catalog" title="Cures and Crystals Catalogue" />
+      <ProductPreview slug="cures-catalog" title="Cures and Crystals Catalogue" />
 
       <section className="product-section">
         <h2>What is inside</h2>
@@ -97,6 +98,8 @@ export default async function CuresCatalogPage(props: {
           pages, card by card.
         </p>
       </section>
+
+      <FulfillmentBlock slug="cures-catalog" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

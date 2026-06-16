@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 
 export const metadata: Metadata = {
   title: "Twelve Spaces Compass | My Feng Shui Home",
@@ -52,6 +54,8 @@ export default async function AllTwelveSpacesCompassPage(props: {
         </p>
       </section>
 
+      <ProductPreview slug="all-twelve-spaces-compass" title="Twelve Spaces Compass" />
+
       <section className="product-section">
         <h2>What is inside</h2>
         <ul>
@@ -96,6 +100,8 @@ export default async function AllTwelveSpacesCompassPage(props: {
           is set up, not a fortune.
         </p>
       </section>
+
+      <FulfillmentBlock slug="all-twelve-spaces-compass" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

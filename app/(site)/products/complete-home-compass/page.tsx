@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 import FlagshipChooser from "@/components/FlagshipChooser";
 
 export const metadata: Metadata = {
@@ -53,6 +55,8 @@ export default async function CompleteHomeCompassPage(props: {
         </p>
       </section>
 
+      <ProductPreview slug="complete-home-compass" title="Complete Home Compass" />
+
       <section className="product-section">
         <h2>What is inside</h2>
         <ul>
@@ -100,6 +104,8 @@ export default async function CompleteHomeCompassPage(props: {
       </section>
 
       <FlagshipChooser current="complete" />
+
+      <FulfillmentBlock slug="complete-home-compass" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

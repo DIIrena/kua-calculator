@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 
 export const metadata: Metadata = {
   title: "Couple Compatibility Compass | My Feng Shui Home",
@@ -53,6 +55,8 @@ export default async function CoupleCompatibilityCompassPage(props: {
           <a href="#waitlist">Skip to checkout →</a>
         </p>
       </section>
+
+      <ProductPreview slug="couple-compatibility-compass" title="Couple Compatibility Compass" />
 
       <section className="product-section">
         <h2>What is inside</h2>
@@ -107,6 +111,8 @@ export default async function CoupleCompatibilityCompassPage(props: {
           own home.
         </p>
       </section>
+
+      <FulfillmentBlock slug="couple-compatibility-compass" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

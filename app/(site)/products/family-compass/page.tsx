@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import ProductPreview from "@/components/ProductPreview";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
 
 export const metadata: Metadata = {
   title: "Family Compass | My Feng Shui Home",
@@ -37,12 +39,16 @@ export default async function FamilyCompassPage(props: {
         </h1>
         <p className="product-lede">Your family corner (the East) read for your Kua: the sector the tradition ties to roots, household, and new growth.</p>
         <p className="product-hero-launch-state">
-          Available now. After you pay, you fill in a short form and the personalised PDF is generated and emailed to you within about a minute.
+          Available now. After you pay, you fill in a short form and the
+          personalised PDF is generated and emailed to you within about a
+          minute.
         </p>
         <p className="product-hero-anchor">
           <a href="#waitlist">Skip to checkout →</a>
         </p>
       </section>
+
+      <ProductPreview slug="family-compass" title="Family Compass" />
 
       <section className="product-section">
         <h2>What is inside</h2>
@@ -89,10 +95,13 @@ export default async function FamilyCompassPage(props: {
         </p>
       </section>
 
+      <FulfillmentBlock slug="family-compass" />
+
       <section className="product-buy-section">
         <h2>Buy now.</h2>
         <p>
-          Secure checkout. 7-day refund. You fill in a short form after paying and the PDF is emailed to you.
+          Secure checkout. 7-day refund. You fill in a
+          short form after paying and the PDF is emailed to you.
         </p>
         <BuyButton
           productSlug="family-compass"

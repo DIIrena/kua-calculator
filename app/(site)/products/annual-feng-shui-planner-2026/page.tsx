@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
 import FlagshipChooser from "@/components/FlagshipChooser";
 
 import PlannerSourceTracker from "@/components/PlannerSourceTracker";
@@ -495,6 +496,8 @@ export default async function PlannerPage(props: {
           </details>
         ))}
       </section>
+
+      <FulfillmentBlock slug="annual-feng-shui-planner-2026" />
 
       <section className="product-buy-section">
         <h2>Buy the Planner.</h2>

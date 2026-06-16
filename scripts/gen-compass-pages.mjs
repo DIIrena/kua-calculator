@@ -52,6 +52,8 @@ function page({ slug, label, priceCents, oneLiner }) {
   return `import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import ProductPreview from "@/components/ProductPreview";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
 
 export const metadata: Metadata = {
   title: "${title} | My Feng Shui Home",
@@ -97,6 +99,8 @@ export default async function ${comp}(props: {
         </p>
       </section>
 
+      <ProductPreview slug="${slug}" title="${title}" />
+
       <section className="product-section">
         <h2>What is inside</h2>
         <ul>
@@ -141,6 +145,8 @@ export default async function ${comp}(props: {
           otherwise look equivalent, not a fortune.
         </p>
       </section>
+
+      <FulfillmentBlock slug="${slug}" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

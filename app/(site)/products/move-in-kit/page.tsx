@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
-import ProductCoverPreview from "@/components/ProductCoverPreview";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 
 export const metadata: Metadata = {
   title: "Move-In Date Report | My Feng Shui Home",
@@ -55,7 +56,7 @@ export default async function MoveInKitPage(props: {
         </p>
       </section>
 
-      <ProductCoverPreview slug="move-in-kit" title="Move-In Date Report" />
+      <ProductPreview slug="move-in-kit" title="Move-In Date Report" />
 
       <section className="product-section">
         <h2>Who it is for</h2>
@@ -121,6 +122,8 @@ export default async function MoveInKitPage(props: {
           printable report you use yourself.
         </p>
       </section>
+
+      <FulfillmentBlock slug="move-in-kit" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

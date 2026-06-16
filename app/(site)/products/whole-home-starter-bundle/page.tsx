@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import BuyButton from "@/components/BuyButton";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 
 export const metadata: Metadata = {
   title: "Whole-Home Starter Bundle | My Feng Shui Home",
@@ -119,6 +121,8 @@ export default async function StarterBundlePage(props: {
         </div>
       </section>
 
+      <ProductPreview slug="whole-home-starter-bundle" title="Whole-Home Starter Bundle" />
+
       <section className="product-section">
         <h2>How the three fit together</h2>
         <ol>
@@ -153,6 +157,8 @@ export default async function StarterBundlePage(props: {
           </li>
         </ol>
       </section>
+
+      <FulfillmentBlock slug="whole-home-starter-bundle" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

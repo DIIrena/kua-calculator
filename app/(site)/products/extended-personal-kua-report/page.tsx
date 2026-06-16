@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
-import ProductCoverPreview from "@/components/ProductCoverPreview";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 
 export const metadata: Metadata = {
   title:
@@ -57,7 +58,7 @@ export default async function ExtendedPersonalKuaReportPage(props: {
         </p>
       </section>
 
-      <ProductCoverPreview slug="extended-personal-kua-report" title="Extended Personal Kua Report" />
+      <ProductPreview slug="extended-personal-kua-report" title="Extended Personal Kua Report" />
 
       <section className="product-section">
         <h2>Who it is for</h2>
@@ -165,6 +166,8 @@ export default async function ExtendedPersonalKuaReportPage(props: {
           That is what a decision tool is.
         </p>
       </section>
+
+      <FulfillmentBlock slug="extended-personal-kua-report" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

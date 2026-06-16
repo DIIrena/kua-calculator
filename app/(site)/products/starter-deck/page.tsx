@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
-import ProductGallery from "@/components/ProductGallery";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 
 export const metadata: Metadata = {
   title: "Learn Feng Shui Starter Deck | My Feng Shui Home",
@@ -53,7 +54,7 @@ export default async function StarterDeckPage(props: {
         </p>
       </section>
 
-      <ProductGallery slug="starter-deck" title="Learn Feng Shui Starter Deck" />
+      <ProductPreview slug="starter-deck" title="Learn Feng Shui Starter Deck" />
 
       <section className="product-section">
         <h2>What is inside</h2>
@@ -99,6 +100,8 @@ export default async function StarterDeckPage(props: {
           covered in more depth in the free guide.
         </p>
       </section>
+
+      <FulfillmentBlock slug="starter-deck" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

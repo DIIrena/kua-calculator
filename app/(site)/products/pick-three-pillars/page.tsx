@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 
 export const metadata: Metadata = {
   title: "Three Life Areas Compass | My Feng Shui Home",
@@ -51,6 +53,8 @@ export default async function PickThreePillarsPage(props: {
         </p>
       </section>
 
+      <ProductPreview slug="pick-three-pillars" title="Three Life Areas Compass" />
+
       <section className="product-section">
         <h2>How it works</h2>
         <ol>
@@ -75,6 +79,8 @@ export default async function PickThreePillarsPage(props: {
           way to decide where to put your attention, not a fortune.
         </p>
       </section>
+
+      <FulfillmentBlock slug="pick-three-pillars" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

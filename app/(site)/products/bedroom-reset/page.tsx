@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
-import ProductGallery from "@/components/ProductGallery";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 
 export const metadata: Metadata = {
   title:
@@ -54,7 +55,7 @@ export default async function BedroomResetPage(props: {
         </p>
       </section>
 
-      <ProductGallery slug="bedroom-reset" title="Bedroom and Relationship Reset" />
+      <ProductPreview slug="bedroom-reset" title="Bedroom and Relationship Reset" />
 
       <section className="product-section">
         <h2>Who it is for</h2>
@@ -140,6 +141,8 @@ export default async function BedroomResetPage(props: {
           using a method the tradition has refined over a long time.
         </p>
       </section>
+
+      <FulfillmentBlock slug="bedroom-reset" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

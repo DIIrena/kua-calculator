@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
-import ProductGallery from "@/components/ProductGallery";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 
 export const metadata: Metadata = {
   title: "BaZi Basics: Read Your Own Chart | My Feng Shui Home",
@@ -53,7 +54,7 @@ export default async function BaziBasicsPage(props: {
         </p>
       </section>
 
-      <ProductGallery slug="bazi-basics" title="BaZi Basics: Read Your Own Chart" />
+      <ProductPreview slug="bazi-basics" title="BaZi Basics: Read Your Own Chart" />
 
       <section className="product-section">
         <h2>What is inside</h2>
@@ -102,6 +103,8 @@ export default async function BaziBasicsPage(props: {
           pillar.
         </p>
       </section>
+
+      <FulfillmentBlock slug="bazi-basics" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

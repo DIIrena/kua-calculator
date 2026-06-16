@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
-import ProductGallery from "@/components/ProductGallery";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 
 export const metadata: Metadata = {
   title:
@@ -55,7 +56,7 @@ export default async function MoneyKitPage(props: {
         </p>
       </section>
 
-      <ProductGallery slug="business-money-feng-shui" title="Business and Money Feng Shui Kit" />
+      <ProductPreview slug="business-money-feng-shui" title="Business and Money Feng Shui Kit" />
 
       <section className="product-section">
         <h2>Who it is for</h2>
@@ -141,6 +142,8 @@ export default async function MoneyKitPage(props: {
           expect.
         </p>
       </section>
+
+      <FulfillmentBlock slug="business-money-feng-shui" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

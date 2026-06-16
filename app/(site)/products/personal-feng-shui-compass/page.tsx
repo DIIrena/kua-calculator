@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
-import ProductCoverPreview from "@/components/ProductCoverPreview";
+import FulfillmentBlock from "@/components/FulfillmentBlock";
+import ProductPreview from "@/components/ProductPreview";
 import FlagshipChooser from "@/components/FlagshipChooser";
 
 export const metadata: Metadata = {
@@ -64,7 +65,7 @@ export default async function PersonalFengShuiCompassPage(props: {
       </section>
 
       {/* Practical sections - practitioner voice */}
-      <ProductCoverPreview slug="personal-feng-shui-compass" title="Personal Feng Shui Compass" />
+      <ProductPreview slug="personal-feng-shui-compass" title="Personal Feng Shui Compass" />
 
       <section className="product-section">
         <h2>Who it is for</h2>
@@ -175,6 +176,8 @@ export default async function PersonalFengShuiCompassPage(props: {
       <FlagshipChooser current="compass" />
 
       {/* Closing - buy */}
+      <FulfillmentBlock slug="personal-feng-shui-compass" />
+
       <section className="product-buy-section">
         <h2>Buy the Compass.</h2>
         <p>
