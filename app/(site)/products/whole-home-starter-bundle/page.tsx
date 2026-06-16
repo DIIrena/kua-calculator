@@ -19,6 +19,13 @@ export const metadata: Metadata = {
     description:
       "Workbook + Ritual Pack + Cures Catalogue. Three PDFs, one price.",
     url: "https://myfengshuihome.com/products/whole-home-starter-bundle",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/whole-home-starter-bundle",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

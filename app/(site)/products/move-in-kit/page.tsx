@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     description:
       "Your move-in window read day by day, your Kua directions for the new home, and a first-week checklist. $29.",
     url: "https://myfengshuihome.com/products/move-in-kit",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/move-in-kit",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     description:
       "Read your own birth chart the way the tradition reads it. A self-description system, not a prediction.",
     url: "https://myfengshuihome.com/products/bazi-basics",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/bazi-basics",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

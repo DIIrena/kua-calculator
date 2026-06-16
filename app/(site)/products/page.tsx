@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     description:
       "Printable guides, personalised Kua readings, bundles, and a course. One-time prices, 7-day refunds.",
     url: "https://myfengshuihome.com/products",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/shop",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

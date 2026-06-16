@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     description:
       "Read any room in five words. Element spreads, worksheets, the two cycles, a balancing quick-table.",
     url: "https://myfengshuihome.com/products/five-elements-workbook",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/five-elements-workbook",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

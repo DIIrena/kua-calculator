@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Relationship Compass",
     description: "Your relationship corner (the Southwest) read for your Kua: the sector the tradition ties to partnership, and how to tend it.",
     url: "https://myfengshuihome.com/products/relationship-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/relationship-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Office Compass",
     description: "Your desk and work seat read for your Kua: which direction to face for ambitious work, which for steady focus, and the command position.",
     url: "https://myfengshuihome.com/products/office-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/office-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

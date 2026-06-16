@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Balcony Compass",
     description: "Your balcony or terrace read for your Kua: the home's breathing edge, a calm sitting corner, light, air, and a little green.",
     url: "https://myfengshuihome.com/products/balcony-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/balcony-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

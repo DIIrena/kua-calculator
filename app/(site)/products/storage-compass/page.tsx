@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Storage Compass",
     description: "Your storage and closets read for your Kua: giving the cautious directions a quiet, contained job so the good walls stay free.",
     url: "https://myfengshuihome.com/products/storage-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/storage-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

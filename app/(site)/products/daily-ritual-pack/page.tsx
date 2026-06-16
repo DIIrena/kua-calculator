@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     description:
       "Twenty traditional laws as printable cards + morning and evening checklists.",
     url: "https://myfengshuihome.com/products/daily-ritual-pack",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/daily-ritual-pack",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Hallway Compass",
     description: "Your hallways read for your Kua: keeping pass-through space clear, lit, and unpinched, and slowing a long straight run.",
     url: "https://myfengshuihome.com/products/hallway-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/hallway-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     description:
       "All nine bagua life-area corners read for your Kua, in one PDF. $29.",
     url: "https://myfengshuihome.com/products/all-nine-pillars-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/all-nine-pillars-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

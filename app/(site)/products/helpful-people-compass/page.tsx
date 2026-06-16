@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Helpful People Compass",
     description: "Your helpful-people corner (the Northwest) read for your Kua: the sector the tradition ties to mentors, support, and travel.",
     url: "https://myfengshuihome.com/products/helpful-people-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/helpful-people-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

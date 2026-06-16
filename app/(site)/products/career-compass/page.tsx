@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Career Compass",
     description: "Your career corner (the North) read for your Kua: the sector the tradition ties to your path and work, kept clear and moving.",
     url: "https://myfengshuihome.com/products/career-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/career-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

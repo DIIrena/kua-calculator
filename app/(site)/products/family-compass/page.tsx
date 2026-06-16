@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Family Compass",
     description: "Your family corner (the East) read for your Kua: the sector the tradition ties to roots, household, and new growth.",
     url: "https://myfengshuihome.com/products/family-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/family-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

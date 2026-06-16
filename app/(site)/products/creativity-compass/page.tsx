@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Creativity Compass",
     description: "Your creativity corner (the West) read for your Kua: the sector the tradition ties to projects, children, and play.",
     url: "https://myfengshuihome.com/products/creativity-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/creativity-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

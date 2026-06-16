@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Twelve Spaces Compass",
     description: "Every room of your home read for your Kua, in one PDF. $29.",
     url: "https://myfengshuihome.com/products/all-twelve-spaces-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/all-twelve-spaces-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     description:
       "Everything read for your Kua: directions, rooms, life areas, the year. $49.",
     url: "https://myfengshuihome.com/products/complete-home-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/complete-home-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

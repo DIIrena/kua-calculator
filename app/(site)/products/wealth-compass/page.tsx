@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Wealth Compass",
     description: "Your wealth corner (the Southeast) read for your Kua: what the tradition gives this sector and how to find and tend yours.",
     url: "https://myfengshuihome.com/products/wealth-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/wealth-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

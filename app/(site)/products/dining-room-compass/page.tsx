@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Dining Room Compass",
     description: "Your table read for your Kua: where the head of the household sits, the seat for connection, and the seat with momentum.",
     url: "https://myfengshuihome.com/products/dining-room-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/dining-room-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

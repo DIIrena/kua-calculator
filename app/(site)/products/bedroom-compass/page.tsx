@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Bedroom Compass",
     description: "Your bedroom read for your Kua: the headboard wall in an ordinary season and a season of push, and the corners to keep for storage.",
     url: "https://myfengshuihome.com/products/bedroom-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/bedroom-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

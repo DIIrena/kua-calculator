@@ -19,6 +19,13 @@ export const metadata: Metadata = {
     description:
       "The deep reading: your eight directions, your rooms read for your Kua, and a 2026 overlay. $39.",
     url: "https://myfengshuihome.com/products/extended-personal-kua-report",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/extended-personal-kua-report",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

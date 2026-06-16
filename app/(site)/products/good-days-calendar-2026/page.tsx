@@ -22,6 +22,13 @@ export const metadata: Metadata = {
     description:
       "243 days marked Action, Rest, Neutral, or Caution. Printable PDF + phone calendar file.",
     url: "https://myfengshuihome.com/products/good-days-calendar-2026",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/good-days-calendar-2026",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

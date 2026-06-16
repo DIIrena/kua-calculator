@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Health Compass",
     description: "Your health centre (the middle of the home) read for your Kua: the heart that touches every area, kept open and clear.",
     url: "https://myfengshuihome.com/products/health-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/health-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

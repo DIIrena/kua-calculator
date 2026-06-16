@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Laundry Compass",
     description: "Your laundry read for your Kua: why utility space suits a cautious direction, kept dry, tidy, and in working order.",
     url: "https://myfengshuihome.com/products/laundry-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/laundry-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

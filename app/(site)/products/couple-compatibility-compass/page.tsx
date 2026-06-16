@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     description:
       "Both of your Kua maps read together: where you agree, where to take turns, and how to settle shared furniture. $19.",
     url: "https://myfengshuihome.com/products/couple-compatibility-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/couple-compatibility-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

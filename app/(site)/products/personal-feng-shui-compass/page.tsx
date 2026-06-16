@@ -20,6 +20,13 @@ export const metadata: Metadata = {
     description:
       "A personalised PDF reading your Kua and your eight directions. $14.",
     url: "https://myfengshuihome.com/products/personal-feng-shui-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/personal-feng-shui-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Year Ahead Compass",
     description: "The 2026 solar year read against your Kua: how the year's cautious and supportive corners fall on your own directions.",
     url: "https://myfengshuihome.com/products/year-ahead-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/year-ahead-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

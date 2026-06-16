@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Living Room Compass",
     description: "Your living room read for your Kua: the main seat in command position, the conversation circle, and the corner to keep clear.",
     url: "https://myfengshuihome.com/products/living-room-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/living-room-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

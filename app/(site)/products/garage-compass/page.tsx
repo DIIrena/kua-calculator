@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Garage Compass",
     description: "Your garage or utility space read for your Kua: a heavy room suited to a cautious direction, kept ordered with a clean threshold.",
     url: "https://myfengshuihome.com/products/garage-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/garage-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

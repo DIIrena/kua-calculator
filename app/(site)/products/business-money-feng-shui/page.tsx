@@ -19,6 +19,13 @@ export const metadata: Metadata = {
     description:
       "The office, the desk, the wealth corner, the kitchen stove.",
     url: "https://myfengshuihome.com/products/business-money-feng-shui",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/business-money-feng-shui",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

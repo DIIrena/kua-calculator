@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     description:
       "One short email a day for a week, one small task each, room by room. $19.",
     url: "https://myfengshuihome.com/products/seven-day-home-reset",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/seven-day-home-reset",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

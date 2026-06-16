@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Three Spaces Compass",
     description: "Pick any three rooms, read for your Kua. $17.",
     url: "https://myfengshuihome.com/products/pick-three-spaces",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/pick-three-spaces",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

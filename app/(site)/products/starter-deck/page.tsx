@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     description:
       "Twenty-four flashcards and one map: the working vocabulary of feng shui, cut to fit your hand.",
     url: "https://myfengshuihome.com/products/starter-deck",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/starter-deck",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

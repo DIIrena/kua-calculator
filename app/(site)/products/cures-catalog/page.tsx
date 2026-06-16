@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     description:
       "Every cure and crystal as a compact reference card, organised by the six cure families.",
     url: "https://myfengshuihome.com/products/cures-catalog",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/cures-catalog",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

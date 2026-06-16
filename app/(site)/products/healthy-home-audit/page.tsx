@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     description:
       "Nine condition audits with fill-in worksheets, a room-by-room health check, and a daily-rhythm page.",
     url: "https://myfengshuihome.com/products/healthy-home-audit",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/healthy-home-audit",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

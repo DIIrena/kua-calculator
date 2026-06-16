@@ -67,6 +67,13 @@ export const metadata: Metadata = {
     title: "${title}",
     description: "${oneLiner}",
     url: "https://myfengshuihome.com/products/${slug}",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/${slug}",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

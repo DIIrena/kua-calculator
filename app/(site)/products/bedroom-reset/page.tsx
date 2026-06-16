@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     description:
       "A focused PDF reading the bedroom for your Kua.",
     url: "https://myfengshuihome.com/products/bedroom-reset",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/bedroom-reset",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

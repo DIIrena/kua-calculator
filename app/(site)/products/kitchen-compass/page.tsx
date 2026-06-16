@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Kitchen Compass",
     description: "Your kitchen read for your Kua: the stove, the cook's position, and the supportive direction to face while you work.",
     url: "https://myfengshuihome.com/products/kitchen-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/kitchen-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

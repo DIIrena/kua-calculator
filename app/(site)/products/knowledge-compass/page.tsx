@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Knowledge Compass",
     description: "Your knowledge corner (the Northeast) read for your Kua: the sector the tradition ties to study, stillness, and self-knowledge.",
     url: "https://myfengshuihome.com/products/knowledge-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/knowledge-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

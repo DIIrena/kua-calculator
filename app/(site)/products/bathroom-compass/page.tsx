@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Bathroom Compass",
     description: "Your bathroom read for your Kua: why a draining room suits a cautious direction, and how to keep it dry, closed, and in order.",
     url: "https://myfengshuihome.com/products/bathroom-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/bathroom-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

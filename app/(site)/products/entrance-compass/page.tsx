@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Entrance Compass",
     description: "Your front door and entrance read for your Kua: the approach, the threshold, and the first few steps in.",
     url: "https://myfengshuihome.com/products/entrance-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/entrance-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

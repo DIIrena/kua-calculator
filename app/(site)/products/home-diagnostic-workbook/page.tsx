@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     description:
       "Audit your own home the way a practitioner would. Ten steps, fill-in worksheets, 90-day re-evaluation.",
     url: "https://myfengshuihome.com/products/home-diagnostic-workbook",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/home-diagnostic-workbook",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

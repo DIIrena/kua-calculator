@@ -26,6 +26,13 @@ export const metadata: Metadata = {
     description:
       "Find your Kua number free, right on the homepage. Then feng shui for real homes, where key practical recommendations are labelled by their basis: design-supported, traditional, applied observation, or preference.",
     url: "https://myfengshuihome.com/",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/kua-calculator",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

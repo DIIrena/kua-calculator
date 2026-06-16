@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Recognition Compass",
     description: "Your recognition corner (the South) read for your Kua: the sector the tradition ties to reputation, kept bright and clear.",
     url: "https://myfengshuihome.com/products/recognition-compass",
+    images: [
+      {
+        url: "https://myfengshuihome.com/api/og/product/recognition-compass",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
