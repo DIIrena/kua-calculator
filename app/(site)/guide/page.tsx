@@ -55,6 +55,12 @@ export default async function GuideIndexPage(props: {
           Thirty-eight short pages across eleven topics. Pick a topic on
           the left, or search the whole library.
         </p>
+        <p className="guide-index-utility">
+          Looking for something specific?{" "}
+          <Link href="/search">Search the whole site</Link>. When you want a
+          reading keyed to your own home,{" "}
+          <Link href="/products">browse the shop</Link>.
+        </p>
         <div className="guide-legend" aria-label="What the labels mean">
           <p className="guide-legend-intro">
             Key practical recommendations are labelled where their basis

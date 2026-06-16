@@ -61,7 +61,12 @@ export default function NavItems({
         About
       </Link>
 
-      {/* 4. Account or Sign in - visually quieter than the public actions
+      {/* 4. Search - quiet utility link to the global search page */}
+      <Link href="/search" className="site-nav-link site-nav-link-quiet">
+        Search
+      </Link>
+
+      {/* 5. Account or Sign in - visually quieter than the public actions
             above. SignOutButton renders next to Account when signed-in. */}
       {signedIn ? (
         <>
@@ -82,7 +87,7 @@ export default function NavItems({
         </Link>
       )}
 
-      {/* 5. Cart - the shopping bag, with a live item count. */}
+      {/* 6. Cart - the shopping bag, with a live item count. */}
       <CartButton />
     </>
   );

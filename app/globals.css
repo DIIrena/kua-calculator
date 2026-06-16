@@ -6821,6 +6821,111 @@ a:hover { color: var(--clay-deep); }
   font-size: 0.85rem;
 }
 
+/* Calm utility lines (search + journey links on /guide and /products) */
+.guide-index-utility,
+.products-utility {
+  margin: 0.75rem 0 0;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== Global search (/search) ===== */
+.search-page {
+  max-width: 760px;
+}
+
+.search-h1 {
+  margin: 0 0 0.4rem;
+  color: #0e3b2c;
+}
+
+.search-lede {
+  margin: 0 0 1.4rem;
+  max-width: 60ch;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+.site-search-form {
+  margin: 0 0 1.25rem;
+}
+
+.site-search-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  color: #0e3b2c;
+  background: #ffffff;
+  border: 1px solid #e2dac5;
+  border-radius: 10px;
+}
+
+.site-search-input:focus-visible {
+  outline: 2px solid #0e3b2c;
+  outline-offset: 2px;
+}
+
+.site-search-hint {
+  margin: 0;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+.site-search-results {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.site-search-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.site-search-group-title {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d9531a;
+}
+
+.site-search-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.site-search-result {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.site-search-result:hover {
+  background: #f2f2ee;
+  border-color: #e2dac5;
+}
+
+.site-search-result-title {
+  display: block;
+  color: #0e3b2c;
+  font-weight: 600;
+}
+
+.site-search-result-sub {
+  display: block;
+  margin-top: 0.1rem;
+  color: var(--ink-2);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
 .storefront {
   display: grid;
   grid-template-columns: 220px 1fr;

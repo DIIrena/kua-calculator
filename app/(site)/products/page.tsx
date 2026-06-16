@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Storefront from "@/components/Storefront";
 
 export const metadata: Metadata = {
@@ -31,6 +32,10 @@ export default async function ProductsPage(props: {
         <p className="products-lede">
           Printable guides, personalised readings keyed to your Kua,
           build-your-own bundles, and a seven-day course.
+        </p>
+        <p className="products-utility">
+          New here? <Link href="/kua-calculator">Find your Kua number free</Link>{" "}
+          first, or <Link href="/search">search the site</Link>.
         </p>
         {checkoutStatus === "error" ? (
           <p className="buy-button-status buy-button-status-err" role="alert">
