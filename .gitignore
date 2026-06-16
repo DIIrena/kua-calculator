@@ -21,3 +21,12 @@ build/
 __pycache__/
 *.pyc
 *.egg-info/
+
+# Visual production - heavy binaries stay local (like the pin masters).
+# Keep tracked: prompts/, manifests/*.json, *.md review sheets, README.md
+visual-production/drafts/
+visual-production/approved/
+visual-production/contact-sheets/**/*.png
+visual-production/contact-sheets/**/*.jpg
+visual-production/contact-sheets/**/*.mp4
+visual-production/contact-sheets/**/*.webm
