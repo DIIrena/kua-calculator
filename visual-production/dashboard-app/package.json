@@ -1,0 +1,11 @@
+{
+  "name": "vp-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "Local-only Visual Production Dashboard for the H1 batch. Not deployed, not linked from the website. Reads and writes only inside visual-production/.",
+  "scripts": {
+    "start": "node server.js",
+    "regen": "node server.js --regen"
+  }
+}

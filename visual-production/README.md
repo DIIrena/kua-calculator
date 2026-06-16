@@ -30,6 +30,18 @@ draft -> contact sheet -> owner selects -> owner approves -> (separate) wiring t
 
 The agent stops at `approved/`. The owner does the Illustrator layout for covers and pins, and triggers wiring.
 
+## Local dashboard
+
+`dashboard-app/` is a private, local-only control panel for the H1 batch. It reads `manifests/manifest.json`, shows the 9 assets with their status, prompt, contact sheet, drafts, and notes, and writes changes back to the manifest plus the two markdown sheets (`manifests/2026-06-16-h1.md` and `dashboard.md`). It is not deployed, not linked from the website, and binds to `127.0.0.1` only.
+
+Run it from `dashboard-app/`:
+
+```
+node server.js
+```
+
+Then open http://127.0.0.1:4317 (override with `VP_DASHBOARD_PORT`). Stop with Ctrl+C. Zero dependencies, so nothing needs installing. The server writes only three files (an allowlist in `server.js`): the manifest, the batch review sheet, and `dashboard.md`. It cannot write `public/`, cannot edit any site code, and cannot publish or wire. See `dashboard-app/README.md` for detail.
+
 ## Generation and brand rules (canonical list in the spec)
 
 - 3 to 6 variations per image, 2 to 3 per video, always a contact sheet.

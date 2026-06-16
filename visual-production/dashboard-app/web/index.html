@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visual Production Dashboard - H1</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1>Visual Production Dashboard <span class="batch-tag" id="batchTag"></span></h1>
+      <button id="reloadBtn" class="btn ghost" type="button">Reload</button>
+    </div>
+    <div class="warning" id="warning" role="alert"></div>
+    <div class="subnote">
+      Local-only control panel. Not deployed, not linked from the website. Writes only inside
+      <code>visual-production/</code> (the manifest and two markdown files). It never touches
+      <code>public/</code> or any site code, and never publishes or wires.
+    </div>
+  </header>
+
+  <main id="grid" class="grid" aria-busy="true">
+    <p class="loading">Loading manifest...</p>
+  </main>
+
+  <!-- prompt viewer -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <strong id="modalTitle"></strong>
+        <button id="modalClose" class="btn ghost" type="button">Close</button>
+      </div>
+      <pre id="modalBody" class="modal-body"></pre>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

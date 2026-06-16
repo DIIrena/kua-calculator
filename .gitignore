@@ -30,3 +30,9 @@ visual-production/contact-sheets/**/*.png
 visual-production/contact-sheets/**/*.jpg
 visual-production/contact-sheets/**/*.mp4
 visual-production/contact-sheets/**/*.webm
+
+# Visual production local dashboard - app source is tracked; ignore local cache/logs.
+# (node_modules is already covered by the global rule above; listed for clarity.)
+visual-production/dashboard-app/node_modules/
+visual-production/dashboard-app/.cache/
+visual-production/dashboard-app/*.log
