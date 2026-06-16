@@ -4,11 +4,11 @@ If you arrived at this article skeptical, **stay**. This article is for you.
 
 We are here to walk through what the empirical literature actually says about the parts of feng shui that have been studied, name the parts that haven't, and let you decide. The choice stays yours.
 
-Spoiler: *some* of feng shui survives a careful look. Some of it does not. The honest position is to say which is which.
+Spoiler: *some* of feng shui survives a careful look. Some of it does not. The useful position is to say which is which.
 
 ## The setup.
 
-Feng shui is roughly three thousand years old. The earliest empirical studies we would recognise as research-quality date from the 1970s. So we have evidence on maybe 5% of what the tradition claims, and tradition on the other 95%.
+Feng shui is roughly three thousand years old. The earliest empirical studies we would recognise as research-quality date from the 1970s. So only a small, recent slice of what the tradition claims has been studied at all; the rest rests on tradition.
 
 That is normal for any ancient practice. (Acupuncture, the Mediterranean diet, mindfulness, and traditional Chinese medicine all share this evidence shape.) It simply means *the conversation about evidence is recent*, and the practice itself stays an open question.
 
@@ -24,37 +24,41 @@ A good feng shui guide tells you which type each claim is. A bad one pretends th
 
 ## Type 1: claims with evidence.
 
-These are the parts of the tradition that have survived empirical investigation.
+These are the parts of the tradition that overlap most with environmental design and psychology.
 
 ### Clutter affects cognition.
 
-This is the single most-supported claim in feng shui. Multiple studies in environmental psychology have found that **visual clutter degrades working memory, attention, and decision-making**. People in cluttered rooms perform worse on cognitive tasks, report more stress, and eat more.
+This is the clearest overlap between feng shui and environmental psychology. Multiple studies in environmental psychology have found that **visual clutter degrades working memory, attention, and decision-making**. People in cluttered rooms perform worse on cognitive tasks, report more stress, and eat more.
 
 The tradition has been saying *clear the front entrance, the centre of the home, and the bedroom* for two thousand years.
 
 The mechanism is the same one the studies describe, ordinary rather than mystical.
 
-### The bed-in-command-position rule reduces nervous-system load.
+*Source: McMains and Kastner (2011), on how competing visual stimuli use up limited attention; full citation in the [References](/editorial-method).*
 
-The traditional rule: from the bed, you should be able to see the door without turning your head.
+### Command position: a traditional rule, with a design principle behind it.
 
-The modern reading: a sleeping or half-sleeping human whose nervous system is monitoring an unseen entry is in low-grade alertness all night. The vagal-tone literature, the literature on hypervigilance and PTSD, and the basic ethology of mammalian sleep all agree.
+The traditional rule: from the bed (or the desk, or the main seat) you should be able to see the door without turning your head, and not lie on its direct line. That rule is classical feng shui, not a finding from sleep science.
 
-This is one of those cases where the tradition and the contemporary research point at the same thing using different vocabulary.
+The design principle behind it does have support. Prospect-refuge, a well-studied idea in environmental design, describes a consistent human preference for a spot that combines an open view of the approach with a protected back. Reading command position through prospect-refuge is an applied design observation: a non-mystical reason the arrangement tends to feel better, not proof that a given bed placement changes how you sleep. Sources are listed in the [References](/editorial-method) on the Editorial Method page.
 
 ### Natural light regulates sleep and mood.
 
-Feng shui has been recommending **morning brightness** and **warm dim evenings** for centuries. The chronobiology literature, particularly the work on circadian rhythm and melatonin suppression, has independently arrived at the same recommendation.
+Feng shui has been recommending **morning brightness** and **warm dim evenings** for centuries. Modern chronobiology describes the same daily light pattern the tradition recommends, through circadian rhythm and melatonin timing.
 
 The traditional vocabulary (the yang of morning, the yin of evening) maps cleanly to the modern vocabulary (cortisol rise, melatonin onset).
 
-### Plants in indoor spaces improve perceived air quality and mood.
+*Sources: Brainard et al. (2001) and Brown et al. (2022), on light timing, melatonin, and sleep; full citations in the [References](/editorial-method).*
+
+### Plants in indoor spaces support mood and focus.
 
 The tradition: living things bring qi.
 
-The research: the **biophilia hypothesis** has accumulated decent supporting evidence for the past three decades. People in rooms with living plants report better mood and concentration; some studies find small but real improvements in indoor air quality, though the magnitude is contested.
+The research: the **biophilia hypothesis** has accumulated decent supporting evidence over the past three decades. People in rooms with living plants tend to report better mood and concentration. (The popular claim that houseplants meaningfully clean indoor air does not hold at household scale, so we leave it out.)
 
-### The clean stove → cook more → eat better chain.
+*Sources: Wilson (1984) and Kaplan and Kaplan (1989), on nature and mood; Cummings and Waring (2020), on why potted plants do not meaningfully clean indoor air. See the [References](/editorial-method).*
+
+### The clean stove, cook more, eat better chain.
 
 Feng shui's claim that the stove is the wealth gateway is hard to test directly. The chain it implies, however, is well-documented: people with functional kitchens cook more, people who cook more eat better, and people who eat better spend less on food and report better energy.
 
@@ -88,7 +92,7 @@ These are the parts of feng shui that have no modern equivalent. We tell you abo
 
 ### Flying stars (the annual energy cycle).
 
-The Xuan Kong school claims that every year the energy of each compass direction changes according to a predictable cycle. Year 2024 was governed by the **nine star**; year 2025 by the **eight**; and so on.
+The Xuan Kong school works on two clocks, and it is easy to confuse them. A twenty-year **Period** sets the long backdrop: we are in **Period 9**, which runs from 2024 to 2043. Inside that, an **annual star** moves through the chart each year. The centre number runs downward year on year: it was **3 in 2024**, **2 in 2025**, and **1 in 2026**.
 
 There is no scientific framework that would predict this. It is a system of tradition. If it works for you as a way of organising your year and your home's maintenance schedule, it works. If it does not, it does not.
 
@@ -106,7 +110,7 @@ This is the territory of **Qi Men Dun Jia** and related practices. There is no e
 
 ## What this means in practice.
 
-If you are using feng shui as a *design system* (clutter, light, command position, plants, the stove, the bed), you are using the parts with the most evidence. These changes are almost certainly worth making regardless of what you think of the rest of the tradition.
+If you are using feng shui as a *design system* (clutter, light, command position, plants, the stove, the bed), you are using the parts with the most evidence. These changes are worth trying regardless of what you think of the rest of the tradition.
 
 If you are using feng shui as a *focus tool* (the bagua, the wealth corner, the relationship corner), you are using the parts that work the way attention always works. Whether that is "feng shui" or "any structured way of paying attention to a specific area" depends on how you want to think about it.
 

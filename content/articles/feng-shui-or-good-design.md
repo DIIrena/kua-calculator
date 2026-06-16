@@ -6,9 +6,9 @@ They are right.
 
 This is not the gotcha they think it is.
 
-The interesting question is not *"is feng shui really just design?"* It is *"why did a three-thousand-year-old practice arrive at the same conclusions as twentieth-century environmental design science?"*
+The interesting question is not *"is feng shui really just design?"* It is *"why did a three-thousand-year-old practice name so many of the same principles that twentieth-century environmental design later described?"*
 
-There are two defensible answers to that question, and both of them point at the same recommendation: do the work either way, because it works either way.
+There are two defensible answers to that question, and both of them point at the same recommendation: do the work, because the case for it does not depend on which explanation you prefer.
 
 ## What the two practices share.
 
@@ -52,13 +52,13 @@ This is the version that makes feng shui look less mystical and more like collec
 
 Three thousand years of feng shui *includes* a lot of advice that did not survive. Every century, working practitioners noticed which recommendations made people happier and which ones did not. The bad recommendations dropped out of the tradition. The good ones got passed down.
 
-What you are reading today is the *survivorship-bias filter* of three thousand years of trial and error.
+One way to read what you are reading today is as the *survivorship-bias filter* of three thousand years of trial and error.
 
-The fuller picture is this: most of the parts that survived are the parts that **also satisfy a non-mystical mechanism**. The ones that survived for purely mystical reasons (the bagua mirror, the flying-star annuals) are also still there. But the *core* of the practice (clutter, light, the three key points, the bed and stove and door) survived because *the underlying mechanism is real*.
+The fuller picture is this: most of the parts that survived are the parts that **also satisfy a non-mystical mechanism**. The ones that survived for purely mystical reasons (the bagua mirror, the flying-star annuals) are also still there. But the *core* of the practice (clutter, light, the three key points, the bed and stove and door) is also the part for which a non-mystical mechanism is most plausible.
 
 ## Where the two practices disagree.
 
-Full disclosure: they do not agree on everything.
+To be clear: they do not agree on everything.
 
 **Feng shui says** specific compass directions have specific personal qualities for specific people. (Your Kua number tells you your four favourable directions.) Environmental psychology stays silent on this.
 
@@ -74,7 +74,7 @@ This is unusual. Most pairs of overlapping practices have *contradictions*. Feng
 
 ## The practical version.
 
-If you are the kind of person who likes a mechanism, you can do feng shui as **environmental psychology with a Chinese vocabulary**. You will get most of the way there. You will be operating on the most-evidenced parts of the practice. You will probably outperform 80% of homes purely by paying structured attention to design.
+If you are the kind of person who likes a mechanism, you can do feng shui as **environmental psychology with a Chinese vocabulary**. You will get most of the way there. You will be operating on the most-evidenced parts of the practice. Either way, paying structured attention to a home's layout and light is worth doing on its own terms.
 
 If you are the kind of person who likes a tradition, you can do feng shui as **a coherent system of cultural design wisdom**. You will use the bagua, the Kua number, the wealth corner, the five-element pairings. You will be operating on the same actions, plus an extra layer of meaning that helps you remember to do them.
 
@@ -114,8 +114,8 @@ If you want to try the practice as an experiment, [five tests you can run this w
 
 If you want the practical version of the whole thing, the [twenty-six universal-safe changes article](/articles/twenty-six-changes-this-weekend) is the place to start.
 
-The mystery is not whether feng shui works. The interesting question is *why a practice that calls itself wind-and-water arrived at the same conclusions as twentieth-century environmental psychology three thousand years earlier*.
+The interesting question is not whether to call it feng shui or design. It is *why a practice that calls itself wind-and-water named so many of the same principles that twentieth-century environmental psychology later described*.
 
-That is the question we are most interested in. We do not have a final answer. We have a hypothesis (the survivorship-bias filter on a long tradition observing humans) and a working assumption (do the work either way).
+That is the question we are most interested in. We do not have a final answer. We have a hypothesis (the survivorship-bias filter on a long tradition observing humans) and a working assumption (do the work regardless of which explanation you prefer).
 
 That is what we use the practice for. That is the practice we recommend.

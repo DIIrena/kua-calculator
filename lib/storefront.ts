@@ -27,6 +27,13 @@ export type StoreProduct = {
   wasCents?: number;
   /** Shown in the "Featured items" row. */
   featured?: boolean;
+  /**
+   * Optional cover image path, e.g. "/products/<slug>/cover-thumb.png".
+   * A card renders the cover only when this is set, so a product without
+   * one never points at a missing file (no 404). Set this once the cover
+   * is produced and installed; leave unset until then.
+   */
+  image?: string;
 };
 
 function label(cents: number): string {

@@ -8,7 +8,7 @@ Crystals do not heal disease. They do not cleanse auras. They do not raise vibra
 
 ## The two readings, held together
 
-Every claim about crystals exists in two registers, and the discipline of this page is holding both at once.
+Each claim about crystals exists in two registers, and the discipline of this page is holding both at once.
 
 The **aesthetic and attentional** reading is the secure baseline. A coloured object placed with intention occupies a sector, marks it, and reminds the occupant of a chosen focus. A weighty piece on a desk slows the hand. A clear piece on a windowsill catches light. All of this holds on plain aesthetic and attentional grounds.
 

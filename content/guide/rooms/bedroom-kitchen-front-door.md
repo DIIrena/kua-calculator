@@ -4,13 +4,13 @@ Most readers think the three keys are about which direction the bed, the stove, 
 
 The starter moves at [the bedroom page](/space/bedroom) already cover command position, the wardrobe mirror, and the solid headboard against the wall. Take those as done. The **geometry** is what we go into here.
 
-The first thing to read is the bed's relationship to the door. <span class="guide-badge guide-badge-tested">Tested</span> Command position is the rule: you can see the door from the bed without lying on its direct line, ideally on the far diagonal from it. If the door swings straight at the foot of the bed, the body never fully settles. Move the bed sideways before you do anything else.
+The first thing to read is the bed's relationship to the door. <span class="guide-badge guide-badge-traditional">Traditional</span> Command position is the classical rule: you can see the door from the bed without lying on its direct line, ideally on the far diagonal from it. The design rationale is prospect-refuge, the preference for an open view of the approach from a protected spot. Move the bed sideways before you do anything else.
 
 Then look up and behind. The head of the bed wants a solid wall behind it. A window behind the head leaves the body without backing, and the room never quite closes around you. If the only wall you can use is the window wall, a heavy, lined curtain plus a tall, solid headboard is the working compromise.
 
 Paired warm reading lamps on each side of the bed. If the room is shared, the symmetry matters more, not less: matched lamps on matched surfaces. It is small. It compounds.
 
-<span class="guide-badge guide-badge-tested">Tested</span> Electronics live at distance. The bed is not a desk. The television, the router, the working laptop, the charging phone. All of them want to be across the room, ideally powered down overnight. The bedroom is the room where you have the **least guard up** all day. Treat it that way.
+<span class="guide-badge guide-badge-design-supported">Design-supported</span> Keep screens and chargers off the bedside. The reasons are practical: screen light in the evening pushes sleep later, notification chimes and buzzes interrupt rest, and a laptop or phone by the pillow turns the bed into a workspace, which works against winding down. Put the television, the laptop, and the charging phone across the room, ideally powered down overnight.
 
 <span class="guide-badge guide-badge-traditional">Traditional</span> Overhead matters. A beam directly over the bed reads as weight on the sleeper, and the body registers it even in sleep. Move the bed off the beam line. The deeper structural cases sit at [bathrooms, storage, and problem rooms](/guide/rooms/bathrooms-storage-problem-rooms).
 
@@ -24,7 +24,7 @@ Each has a job. Stove cooks. Sink cleans. Fridge holds. The walk between them sh
 
 <span class="guide-badge guide-badge-traditional">Traditional</span> Fire and water want separation. Stove and sink directly facing each other, or directly next to each other with nothing between, is the case to soften. A wood-element buffer between them does the work: a wooden chopping board left standing, a small herb planter, a wooden utensil block. Wood sits between them. Water feeds wood. Wood feeds fire. Placed between the two, the cycle reads as cooperation rather than collision. The longer money-and-stove version is in [the kitchen-stove-and-money article](/articles/kitchen-stove-and-money), and the kitchen sits upstream of [the Money life area](/life/money) for that reason.
 
-<span class="guide-badge guide-badge-tested">Tested</span> Lighting wants layers. Overhead for the whole room, task lighting directly over the cooking and prep surfaces (under-cabinet strips count), and one warm ambient source for evenings. A single ceiling bulb makes the cook squint at the knife.
+<span class="guide-badge guide-badge-design-supported">Design-supported</span> Lighting wants layers. Overhead for the whole room, task lighting directly over the cooking and prep surfaces (under-cabinet strips count), and one warm ambient source for evenings. A single ceiling bulb makes the cook squint at the knife.
 
 Sharp edges in open view keep low-level alertness on all day, even when you do not register it. If the knife block or magnetic strip points at the cook's body or the breakfast stools, turn it, move it, or put the knives behind a drawer.
 
@@ -34,7 +34,7 @@ The mouth of the home. There is no dedicated space page for the front door, so w
 
 Stand inside, just past the threshold, and look at what the door faces when it opens. A blank wall a few steps in is fine, even useful: the *qi* ("energy or breath") slows and settles. A window directly opposite the door sends it straight back out. A staircase climbing right at the door pulls arrival straight up the stairs and leaves the entry level unread. Another door directly behind it, especially the back door, creates a **through-gate**: arrival passes straight through and never lands. Soft visual breaks are the answer: a console table, a rug, a small plant, a screen, a hung piece of art at eye height. Something that says, here is the room.
 
-<span class="guide-badge guide-badge-tested">Tested</span> The settling zone is the metre or two just inside. Keep it clear and lit. Shoes contained, coats hung, post sorted. Clutter at the entry is the first impression the house makes on itself every time you walk in. Sweep the path outside, replace the bulb, oil the hinge. A diagnostic walk that starts at the door is the most revealing pass you can do: [the seven-step home walkthrough](/articles/diagnostic-walkthrough).
+<span class="guide-badge guide-badge-design-supported">Design-supported</span> The settling zone is the metre or two just inside. Keep it clear and lit. Shoes contained, coats hung, post sorted. Clutter at the entry is the first impression the house makes on itself every time you walk in. Sweep the path outside, replace the bulb, oil the hinge. A diagnostic walk that starts at the door is the most revealing pass you can do: [the seven-step home walkthrough](/articles/diagnostic-walkthrough).
 
 ## Why these three
 

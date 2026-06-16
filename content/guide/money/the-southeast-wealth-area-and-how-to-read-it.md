@@ -10,15 +10,15 @@ The framing for the cluster sits in [feng shui and money without wishful thinkin
 
 ## 2. Placement: is the corner reachable
 
-<span class="guide-badge guide-badge-tested">Tested</span> Stand in the room. Walk to the corner. **Can you?** Or is it behind a half-open door, jammed behind a chest of drawers, blocked by a laundry basket, on the path to nowhere? A corner you cannot reach is a corner you cannot tend. A corner you cannot tend stops being a corner and starts being storage.
+<span class="guide-badge guide-badge-observation">Applied observation</span> Stand in the room. Walk to the corner. **Can you?** Or is it behind a half-open door, jammed behind a chest of drawers, blocked by a laundry basket, on the path to nowhere? A corner you cannot reach is a corner you cannot tend. A corner you cannot tend stops being a corner and starts being storage.
 
 ## 3. Visibility: can you see it on a normal day
 
-<span class="guide-badge guide-badge-tested">Tested</span> Sit where you usually sit. Stand where you usually stand. Does the southeast fall inside your line of sight, or is it in shadow, behind a pile, under a coat thrown over a chair? A corner in shadow is a corner you stop tending. **Visibility** is what makes the difference between something you notice and something you forget. A corner you cannot see on a normal Tuesday is a corner you will not refresh on a normal Tuesday either.
+<span class="guide-badge guide-badge-observation">Applied observation</span> Sit where you usually sit. Stand where you usually stand. Does the southeast fall inside your line of sight, or is it in shadow, behind a pile, under a coat thrown over a chair? A corner in shadow is a corner you stop tending. **Visibility** is what makes the difference between something you notice and something you forget. A corner you cannot see on a normal Tuesday is a corner you will not refresh on a normal Tuesday either.
 
 ## 4. Proportion: one clear thing, not five
 
-Walk back over. Count what is there. A shelf of charms, three plants, a small fountain, a bowl of coins, a citrine cluster, a framed affirmation. That is *anxiety wearing the costume of care*. <span class="guide-badge guide-badge-tested">Tested</span> **Proportion** matters. One healthy plant. One clean surface. A lamp that works. The corner is allowed to do one job well. Overload reads as worry.
+Walk back over. Count what is there. A shelf of charms, three plants, a small fountain, a bowl of coins, a citrine cluster, a framed affirmation. That is *anxiety wearing the costume of care*. <span class="guide-badge guide-badge-observation">Applied observation</span> **Proportion** matters. One healthy plant. One clean surface. A lamp that works. The corner is allowed to do one job well. Overload reads as worry.
 
 ## 5. Timing: when did it last get attention
 

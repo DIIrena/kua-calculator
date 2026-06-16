@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import GuideLibrary from "@/components/GuideLibrary";
 import { GUIDE_CLUSTERS, GUIDE_PAGES } from "@/lib/guide";
 
@@ -54,6 +55,43 @@ export default async function GuideIndexPage(props: {
           Thirty-eight short pages across eleven topics. Pick a topic on
           the left, or search the whole library.
         </p>
+        <div className="guide-legend" aria-label="What the labels mean">
+          <p className="guide-legend-intro">
+            Key practical recommendations are labelled where their basis
+            matters:
+          </p>
+          <ul className="guide-legend-list">
+            <li>
+              <span className="guide-badge guide-badge-design-supported">
+                Design-supported
+              </span>{" "}
+              backed by environmental-design or building-science research.
+            </li>
+            <li>
+              <span className="guide-badge guide-badge-traditional">
+                Traditional
+              </span>{" "}
+              a classical feng shui teaching, offered as tradition.
+            </li>
+            <li>
+              <span className="guide-badge guide-badge-observation">
+                Applied observation
+              </span>{" "}
+              a pattern noticed in practice, not a formal study.
+            </li>
+            <li>
+              <span className="guide-badge guide-badge-preference">
+                Preference
+              </span>{" "}
+              a matter of taste. Take it or leave it.
+            </li>
+          </ul>
+          <p className="guide-legend-link">
+            <Link href="/editorial-method">
+              How we label and source claims
+            </Link>
+          </p>
+        </div>
       </section>
 
       <GuideLibrary

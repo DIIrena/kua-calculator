@@ -142,6 +142,10 @@ export default async function GuidePage(props: { params: Params }) {
         {page.readingTime} - last updated{" "}
         <time dateTime={page.lastUpdated}>{page.lastUpdated}</time>
       </p>
+      <p className="guide-page-labelnote">
+        Key recommendations are labelled where their basis matters.{" "}
+        <Link href="/editorial-method">What the labels mean</Link>.
+      </p>
 
       {gateRedirected ? (
         <section className="guide-page-gate">

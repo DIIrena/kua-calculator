@@ -6581,10 +6581,12 @@ a:hover { color: var(--clay-deep); }
 }
 
 /* ============================================================
-   Guide badges: Tested / Traditional / Preference.
-   Inline pills used inside guide content and in the hub
-   legend. Delivery of the homepage promise that every move
-   is labelled tested, traditional, or preference.
+   Guide badges: Design-supported / Traditional / Applied
+   observation / Personal preference. Inline pills used inside
+   guide content and in the hub legend. Key recommendations are
+   labelled so readers can tell a design-supported claim from a
+   traditional one. The legend on the guide index links to
+   /editorial-method.
    ============================================================ */
 
 .guide-badge {
@@ -6599,9 +6601,14 @@ a:hover { color: var(--clay-deep); }
   line-height: 1.5;
 }
 
-.guide-badge-tested {
+.guide-badge-design-supported {
   background: #dde6e0;
   color: #0a2a20;
+}
+
+.guide-badge-observation {
+  background: #dde6ee;
+  color: #28384a; /* 9.4:1 on #dde6ee, passes 4.5:1 */
 }
 
 .guide-badge-traditional {
@@ -6621,7 +6628,74 @@ a:hover { color: var(--clay-deep); }
   color: var(--ink-2);
 }
 
+/* The four-label legend on the /guide index. */
+.guide-legend {
+  margin-top: var(--space-3);
+  padding: 1.1rem 1.25rem;
+  background: #f2f2ee;
+  border: 1px solid #e2dac5;
+  border-radius: 12px;
+  max-width: 62ch;
+}
+
+.guide-legend-intro {
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+  color: #0e3b2c;
+}
+
+.guide-legend-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.guide-legend-list li {
+  font-size: 0.95rem;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+.guide-legend-link {
+  margin: 0.85rem 0 0;
+  font-size: 0.92rem;
+}
+
+/* Per-guide-page link to the label explainer. */
+.guide-page-labelnote {
+  margin: 0 0 var(--space-3);
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+
+/* The four labels, listed on /editorial-method. */
+.editorial-label-list {
+  display: grid;
+  gap: 0.9rem;
+  list-style: none;
+  padding: 0;
+}
+
+.editorial-label-list li {
+  line-height: 1.6;
+}
+
 /* ===== Storefront (/products shop) ===== */
+
+/* Optional product cover on a shop card. Only renders when a product
+   sets `image`, so an unset product never points at a missing file. */
+.shop-card-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e2dac5;
+  margin-bottom: 0.75rem;
+}
+
 .storefront {
   display: grid;
   grid-template-columns: 220px 1fr;

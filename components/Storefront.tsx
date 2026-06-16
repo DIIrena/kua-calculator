@@ -51,6 +51,25 @@ function ProductCard({ p }: { p: StoreProduct }) {
 
   return (
     <li className="shop-card">
+      {p.image ? (
+        <Link
+          href={p.href}
+          className="shop-card-coverlink"
+          tabIndex={-1}
+          aria-hidden="true"
+        >
+          {/* Renders only when the product sets `image`, so an unset
+              product never points at a missing file. */}
+          <img
+            src={p.image}
+            alt=""
+            width={1500}
+            height={1500}
+            loading="lazy"
+            className="shop-card-cover"
+          />
+        </Link>
+      ) : null}
       <Link href={p.href} className="shop-card-titlelink">
         <h3 className="shop-card-title">{p.title}</h3>
       </Link>

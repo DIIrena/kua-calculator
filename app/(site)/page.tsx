@@ -17,14 +17,14 @@ const HOMEPAGE_CATEGORY_ORDER: ReadonlyArray<ArticleCategory> = [
 export const metadata: Metadata = {
   title: "My Feng Shui Home - free Kua calculator + feng shui for real homes",
   description:
-    "Find your Kua number free, right on the homepage. Then feng shui for real homes, with every move labelled: tested, traditional, or preference.",
+    "Find your Kua number free, right on the homepage. Then feng shui for real homes, where key practical recommendations are labelled by their basis: design-supported, traditional, applied observation, or preference.",
   alternates: { canonical: "https://myfengshuihome.com/" },
   openGraph: {
     type: "website",
     locale: "en_US",
     title: "My Feng Shui Home - free Kua calculator + feng shui for real homes",
     description:
-      "Find your Kua number free, right on the homepage. Then feng shui for real homes, with every move labelled: tested, traditional, or preference.",
+      "Find your Kua number free, right on the homepage. Then feng shui for real homes, where key practical recommendations are labelled by their basis: design-supported, traditional, applied observation, or preference.",
     url: "https://myfengshuihome.com/",
   },
 };
@@ -140,14 +140,14 @@ export default async function HomePage(props: {
           </p>
           <p>Then it gives you a small number of changes to try.</p>
           <p>
-            Some of those changes are <em>testable</em>. Better light helps you
-            read. A bed you can see the door from helps you sleep. A clean stove
-            makes you cook more.
+            Some of those changes have a plain, practical rationale. Better
+            light helps you read. A clean stove makes you cook more. A clear
+            path to the door is easier to walk.
           </p>
           <p>
             Some of them are <em>traditional</em>: the wealth corner, the mirror
-            rules, the five-element pairings. We label those traditional, every
-            time, and we tell you what the evidence supports.
+            rules, the five-element pairings. Where a recommendation is
+            traditional, we say so, and we tell you what the evidence supports.
           </p>
           <p className="home-credibility">
             Underneath the schools and the cures, feng shui is a way of
@@ -412,11 +412,11 @@ export default async function HomePage(props: {
         <div className="page-prose">
           <h2 id="honest-footer-heading">What you can expect.</h2>
           <p>
-            Feng shui is a structured design tradition. We label which moves
-            the evidence supports, which moves are traditional, and which are
-            simply preference, and we say so when the answer is uncertain. We
-            describe what a move supports, and leave the outcome to your own
-            home.
+            Feng shui is a structured design tradition. Key practical
+            recommendations are labelled where their basis matters:
+            design-supported, traditional feng shui, applied observation, or
+            personal preference. We say so when the answer is uncertain, and we
+            describe what a move supports, leaving the outcome to your own home.
           </p>
           <p>
             The Kua calculation runs in your browser. Anonymous use stays

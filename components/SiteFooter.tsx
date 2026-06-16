@@ -3,9 +3,9 @@ import FooterSubscribe from "@/components/FooterSubscribe";
 
 // Site footer: the deep-ink counterweight, centred. Carries the brand
 // mark, the calm trust line that links to /about, the secondary public
-// navigation (Life areas, Articles, Methodology, Refunds, Privacy), the
-// free-tool one-liner, the framing reminder, and the company and
-// copyright block.
+// navigation (Life areas, Articles, Methodology, Editorial Method,
+// Refunds, Privacy), the free-tool one-liner, the framing reminder, and
+// the company and copyright block.
 //
 // Server Component. No client JS, no analytics import.
 export default function SiteFooter() {
@@ -44,6 +44,7 @@ export default function SiteFooter() {
         <Link href="/life">Life areas</Link>
         <Link href="/articles">Articles</Link>
         <Link href="/methodology">Methodology</Link>
+        <Link href="/editorial-method">Editorial Method</Link>
         <Link href="/refunds">Refunds</Link>
         <Link href="/privacy">Privacy</Link>
       </nav>

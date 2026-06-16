@@ -12,11 +12,11 @@ Three rooms carry most of the weight: the entry, the kitchen, and the bedroom. T
 
 A walkthrough is a *route, not a checklist*. You are reading four things in each room.
 
-One. <span class="guide-badge guide-badge-tested">Tested</span> How the light moves through the day. Morning light, midday light, evening light. Where it lands. Where it never reaches.
+One. <span class="guide-badge guide-badge-design-supported">Design-supported</span> How the light moves through the day. Morning light, midday light, evening light. Where it lands. Where it never reaches.
 
 Two. What the main seat or bed sees. Sit in it. Look out. Name what is in front of you, behind you, and at the edges.
 
-Three. <span class="guide-badge guide-badge-tested">Tested</span> Whether the main object sits in **command position**. The bed, the sofa, the stove, the desk chair. Can the person using it see the door without turning their head, while not sitting directly in line with it.
+Three. <span class="guide-badge guide-badge-traditional">Traditional</span> Whether the main object sits in **command position**. The bed, the sofa, the stove, the desk chair. Can the person using it see the door without turning their head, while not sitting directly in line with it.
 
 Four. What the room is being asked to do versus what it is set up for. A bedroom that is also a home office. A dining table that has become a mail sorter. The mismatch is the diagnosis.
 
