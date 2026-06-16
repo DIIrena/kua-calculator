@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import FlagshipChooser from "@/components/FlagshipChooser";
 
 import PlannerSourceTracker from "@/components/PlannerSourceTracker";
 
@@ -510,20 +511,7 @@ export default async function PlannerPage(props: {
         />
       </section>
 
-      <section className="product-section">
-        <h2>A different job from the Compass</h2>
-        <p>
-          The Planner reads the year for any home. If you also want
-          your personal directions, the eight compass bearings the
-          tradition associates with you specifically, that is what the{" "}
-          <Link href="/products/personal-feng-shui-compass">
-            Personal Feng Shui Compass
-          </Link>{" "}
-          covers. The Planner reads the year. The Compass reads you.
-          They are different jobs and they sit together neatly on a
-          shelf.
-        </p>
-      </section>
+      <FlagshipChooser current="planner" />
 
       <section className="product-back-section">
         <p>

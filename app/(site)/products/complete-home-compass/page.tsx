@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
+import FlagshipChooser from "@/components/FlagshipChooser";
 
 export const metadata: Metadata = {
   title: "Complete Home Compass | My Feng Shui Home",
@@ -97,6 +98,8 @@ export default async function CompleteHomeCompassPage(props: {
           not a fortune.
         </p>
       </section>
+
+      <FlagshipChooser current="complete" />
 
       <section className="product-buy-section">
         <h2>Buy now.</h2>

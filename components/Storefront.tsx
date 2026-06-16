@@ -13,10 +13,10 @@ import {
 import { useCart } from "@/components/CartProvider";
 
 // The /products storefront: a curated, grouped browse. The six featured
-// products lead; then a "Not sure what to buy?" comparison; then the
-// by-room and by-life-area compass selectors; then the named card-groups
-// for the rest. Every product and route is preserved. No product sets an
-// `image` yet, so cards render text-first with no broken cover.
+// products lead; then a "What should I use?" chooser; then the by-room
+// and by-life-area compass selectors; then the named card-groups for the
+// rest. Every product and route is preserved. No product sets an `image`
+// yet, so cards render text-first with no broken cover.
 
 function ProductCard({ p }: { p: StoreProduct }) {
   const free = p.category === "free";
@@ -149,76 +149,157 @@ function CompassSelector({
   );
 }
 
-function CompareBlock() {
+// The "What should I use?" chooser. Pick an intent; see one calm
+// recommendation. In-page anchors (#by-room-h / #by-life-h) jump to the
+// compass selectors below.
+type Choice = {
+  key: string;
+  intent: string;
+  title: string;
+  price: string;
+  line: string;
+  cta: string;
+  href: string;
+  secondary?: { label: string; href: string };
+};
+
+const CHOICES: Choice[] = [
+  {
+    key: "learn",
+    intent: "I'm just learning",
+    title: "Start free",
+    price: "Free",
+    line: "Find your Kua number, then read the guide. No purchase needed.",
+    cta: "Find my Kua number",
+    href: "/kua-calculator",
+    secondary: { label: "Open the guide", href: "/guide" },
+  },
+  {
+    key: "me",
+    intent: "My own directions",
+    title: "Personal Feng Shui Compass",
+    price: "$14",
+    line: "Your Kua and your eight directions, read in depth, with a seven-day experiment.",
+    cta: "View the Compass",
+    href: "/products/personal-feng-shui-compass",
+  },
+  {
+    key: "home",
+    intent: "My whole home",
+    title: "Complete Home Compass",
+    price: "$49",
+    line: "Every room and life area, compatibility, and a 2026 overlay, read for your Kua, in one volume.",
+    cta: "View the Complete Home Compass",
+    href: "/products/complete-home-compass",
+  },
+  {
+    key: "year",
+    intent: "Plan the year",
+    title: "2026 Annual Planner",
+    price: "$19",
+    line: "The feng shui year for your home, sector by sector, with a 243-day calendar.",
+    cta: "View the Planner",
+    href: "/products/annual-feng-shui-planner-2026",
+  },
+  {
+    key: "move",
+    intent: "I'm moving home",
+    title: "Move-In Date Report",
+    price: "$29",
+    line: "Your move-in window read day by day, with your Kua directions for the new home.",
+    cta: "View the Move-In Date Report",
+    href: "/products/move-in-kit",
+  },
+  {
+    key: "couple",
+    intent: "There are two of us",
+    title: "Couple Compatibility Compass",
+    price: "$19",
+    line: "Both Kua maps read together: where you agree, and how to settle shared rooms.",
+    cta: "View the Couple Compass",
+    href: "/products/couple-compatibility-compass",
+  },
+  {
+    key: "reset",
+    intent: "A guided week",
+    title: "7-Day Home Reset",
+    price: "$19",
+    line: "One short email a day, one small task each, room by room.",
+    cta: "View the 7-Day Reset",
+    href: "/products/seven-day-home-reset",
+  },
+  {
+    key: "one",
+    intent: "One room or life area",
+    title: "Single Room or Life Area Compass",
+    price: "from $7",
+    line: "Pick one room or one life area, each read for your Kua.",
+    cta: "Choose by room",
+    href: "#by-room-h",
+    secondary: { label: "Choose by life area", href: "#by-life-h" },
+  },
+];
+
+function ProductChooser() {
+  const [sel, setSel] = useState<string | null>(null);
+  const choice = CHOICES.find((c) => c.key === sel) ?? null;
+
   return (
     <section
-      className="collection products-compare"
-      aria-labelledby="compare-h"
+      className="collection products-chooser"
+      aria-labelledby="chooser-h"
     >
-      <h2 id="compare-h" className="collection-title">
-        Not sure what to buy?
+      <h2 id="chooser-h" className="collection-title">
+        What should I use?
       </h2>
       <p className="collection-sub">
-        Start free, then go as deep as you want. Every product stands alone.
+        Pick what you are after, and we will point you to one good fit. Every
+        product stands alone.
       </p>
-      <ol className="compare-steps">
-        <li>
-          <span className="compare-when">Just exploring</span>
-          <Link href="/kua-calculator" className="compare-what">
-            Free Kua Calculator
-          </Link>
-          <span className="compare-note">
-            Your Kua number and your eight directions, in ten seconds.
-          </span>
-        </li>
-        <li>
-          <span className="compare-when">One clear reading for you</span>
-          <Link
-            href="/products/personal-feng-shui-compass"
-            className="compare-what"
+      <div
+        className="chooser-options"
+        role="group"
+        aria-label="What are you after?"
+      >
+        {CHOICES.map((c) => (
+          <button
+            key={c.key}
+            type="button"
+            className={`chooser-option${sel === c.key ? " is-active" : ""}`}
+            aria-pressed={sel === c.key}
+            onClick={() => setSel(sel === c.key ? null : c.key)}
           >
-            Personal Feng Shui Compass, $14
-          </Link>
-          <span className="compare-note">
-            Your Kua read in depth, with a seven-day experiment to test it.
-          </span>
-        </li>
-        <li>
-          <span className="compare-when">Your whole home, every area</span>
-          <Link
-            href="/products/complete-home-compass"
-            className="compare-what"
-          >
-            Complete Home Compass, $49
-          </Link>
-          <span className="compare-note">
-            Every room and life area, read for your Kua, in one volume.
-          </span>
-        </li>
-        <li>
-          <span className="compare-when">Plan the year</span>
-          <Link
-            href="/products/annual-feng-shui-planner-2026"
-            className="compare-what"
-          >
-            2026 Annual Planner, $19
-          </Link>
-          <span className="compare-note">
-            The year ahead, sector by sector, with a day calendar.
-          </span>
-        </li>
-      </ol>
-      <p className="compare-situational">
-        For a specific situation: the{" "}
-        <Link href="/products/move-in-kit">Move-In Date Report</Link> for a
-        move, the{" "}
-        <Link href="/products/couple-compatibility-compass">
-          Couple Compatibility Compass
-        </Link>{" "}
-        for two people, and the{" "}
-        <Link href="/products/seven-day-home-reset">7-Day Home Reset</Link>{" "}
-        for a guided week.
-      </p>
+            {c.intent}
+          </button>
+        ))}
+      </div>
+
+      {choice ? (
+        <div className="chooser-result" role="status">
+          <p className="chooser-result-head">
+            <span className="chooser-result-title">{choice.title}</span>
+            <span className="chooser-result-price">{choice.price}</span>
+          </p>
+          <p className="chooser-result-line">{choice.line}</p>
+          <p className="chooser-result-actions">
+            <Link href={choice.href} className="cta-primary">
+              {choice.cta}
+            </Link>
+            {choice.secondary ? (
+              <Link
+                href={choice.secondary.href}
+                className="chooser-result-secondary"
+              >
+                {choice.secondary.label}
+              </Link>
+            ) : null}
+          </p>
+        </div>
+      ) : (
+        <p className="chooser-hint">
+          Pick an option above, or browse everything below.
+        </p>
+      )}
     </section>
   );
 }
@@ -228,6 +309,8 @@ export default function Storefront() {
 
   return (
     <div className="products-collections">
+      <ProductChooser />
+
       <section
         className="collection collection-featured"
         aria-labelledby="featured-h"
@@ -240,8 +323,6 @@ export default function Storefront() {
         </p>
         <CardGrid items={featured} />
       </section>
-
-      <CompareBlock />
 
       <CompassSelector
         id="by-room-h"

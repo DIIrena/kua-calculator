@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import ProductCoverPreview from "@/components/ProductCoverPreview";
+import FlagshipChooser from "@/components/FlagshipChooser";
 
 export const metadata: Metadata = {
   title:
@@ -170,6 +171,8 @@ export default async function PersonalFengShuiCompassPage(props: {
           That is what a decision tool is.
         </p>
       </section>
+
+      <FlagshipChooser current="compass" />
 
       {/* Closing - buy */}
       <section className="product-buy-section">

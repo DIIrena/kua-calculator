@@ -204,6 +204,10 @@ export default async function HomePage(props: {
               <span className="tool-card-cta">Read the methodology &rarr;</span>
             </Link>
           </div>
+          <p className="free-tools-next">
+            When you want the next practical tool for your own home,{" "}
+            <Link href="/products">see what to use</Link>.
+          </p>
         </div>
       </section>
 
