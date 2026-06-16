@@ -1,47 +1,22 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
-  STORE_PRODUCTS,
-  STORE_FILTERS,
-  countFor,
-  type StoreFilter,
   type StoreProduct,
+  featuredProducts,
+  roomCompasses,
+  lifeCompasses,
+  PRODUCT_GROUPS,
+  groupProducts,
 } from "@/lib/storefront";
 import { useCart } from "@/components/CartProvider";
 
-type PriceBand = "any" | "u10" | "10to25" | "25to50" | "o50";
-type SortKey = "featured" | "low" | "high";
-
-const PRICE_BANDS: { key: PriceBand; label: string }[] = [
-  { key: "any", label: "Any price" },
-  { key: "u10", label: "Under $10" },
-  { key: "10to25", label: "$10 to $25" },
-  { key: "25to50", label: "$25 to $50" },
-  { key: "o50", label: "Over $50" },
-];
-
-const SORTS: { key: SortKey; label: string }[] = [
-  { key: "featured", label: "Featured" },
-  { key: "low", label: "Lowest price" },
-  { key: "high", label: "Highest price" },
-];
-
-function inBand(cents: number, band: PriceBand): boolean {
-  switch (band) {
-    case "u10":
-      return cents < 1000;
-    case "10to25":
-      return cents >= 1000 && cents <= 2500;
-    case "25to50":
-      return cents > 2500 && cents <= 5000;
-    case "o50":
-      return cents > 5000;
-    default:
-      return true;
-  }
-}
+// The /products storefront: a curated, grouped browse. The six featured
+// products lead; then a "Not sure what to buy?" comparison; then the
+// by-room and by-life-area compass selectors; then the named card-groups
+// for the rest. Every product and route is preserved. No product sets an
+// `image` yet, so cards render text-first with no broken cover.
 
 function ProductCard({ p }: { p: StoreProduct }) {
   const free = p.category === "free";
@@ -116,7 +91,7 @@ function ProductCard({ p }: { p: StoreProduct }) {
           {free
             ? "Open the tool"
             : inCart || justAdded
-              ? "In cart ✓"
+              ? "In cart"
               : "Add to cart"}
         </span>
       </div>
@@ -124,150 +99,177 @@ function ProductCard({ p }: { p: StoreProduct }) {
   );
 }
 
-export default function Storefront() {
-  const [category, setCategory] = useState<StoreFilter>("all");
-  const [price, setPrice] = useState<PriceBand>("any");
-  const [sort, setSort] = useState<SortKey>("featured");
-  const [query, setQuery] = useState("");
-
-  const counts = useMemo(() => {
-    const m: Record<string, number> = {};
-    for (const f of STORE_FILTERS) m[f.key] = countFor(f.key);
-    return m;
-  }, []);
-
-  const q = query.trim().toLowerCase();
-
-  const filtered = useMemo(() => {
-    const list = STORE_PRODUCTS.filter((p) => {
-      if (category === "onsale" && !p.onSale) return false;
-      if (category !== "all" && category !== "onsale" && p.category !== category)
-        return false;
-      if (!inBand(p.priceCents, price)) return false;
-      if (q && !(`${p.title} ${p.oneLiner}`.toLowerCase().includes(q)))
-        return false;
-      return true;
-    });
-    if (sort === "low") list.sort((a, b) => a.priceCents - b.priceCents);
-    else if (sort === "high") list.sort((a, b) => b.priceCents - a.priceCents);
-    else
-      list.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
-    return list;
-  }, [category, price, sort, q]);
-
-  const isDefault =
-    category === "all" && price === "any" && sort === "featured" && q === "";
-  const featured = useMemo(
-    () => STORE_PRODUCTS.filter((p) => p.featured),
-    [],
+function CardGrid({ items }: { items: StoreProduct[] }) {
+  return (
+    <ul className="products-grid">
+      {items.map((p) => (
+        <ProductCard key={p.slug} p={p} />
+      ))}
+    </ul>
   );
+}
 
-  const activeLabel =
-    STORE_FILTERS.find((f) => f.key === category)?.label ?? "All";
+function CompassChip({ p }: { p: StoreProduct }) {
+  // Room and life-area compass titles all end in " Compass"; the chip
+  // shows just the room or area, with the price.
+  const short = p.title.replace(/\s*Compass$/, "");
+  return (
+    <li>
+      <Link href={p.href} className="product-chip">
+        <span className="product-chip-title">{short}</span>
+        <span className="product-chip-price">{p.priceLabel}</span>
+      </Link>
+    </li>
+  );
+}
+
+function CompassSelector({
+  id,
+  title,
+  sub,
+  items,
+}: {
+  id: string;
+  title: string;
+  sub: string;
+  items: StoreProduct[];
+}) {
+  return (
+    <section className="collection" aria-labelledby={id}>
+      <h2 id={id} className="collection-title">
+        {title}
+      </h2>
+      <p className="collection-sub">{sub}</p>
+      <ul className="product-chips">
+        {items.map((p) => (
+          <CompassChip key={p.slug} p={p} />
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function CompareBlock() {
+  return (
+    <section
+      className="collection products-compare"
+      aria-labelledby="compare-h"
+    >
+      <h2 id="compare-h" className="collection-title">
+        Not sure what to buy?
+      </h2>
+      <p className="collection-sub">
+        Start free, then go as deep as you want. Every product stands alone.
+      </p>
+      <ol className="compare-steps">
+        <li>
+          <span className="compare-when">Just exploring</span>
+          <Link href="/kua-calculator" className="compare-what">
+            Free Kua Calculator
+          </Link>
+          <span className="compare-note">
+            Your Kua number and your eight directions, in ten seconds.
+          </span>
+        </li>
+        <li>
+          <span className="compare-when">One clear reading for you</span>
+          <Link
+            href="/products/personal-feng-shui-compass"
+            className="compare-what"
+          >
+            Personal Feng Shui Compass, $14
+          </Link>
+          <span className="compare-note">
+            Your Kua read in depth, with a seven-day experiment to test it.
+          </span>
+        </li>
+        <li>
+          <span className="compare-when">Your whole home, every area</span>
+          <Link
+            href="/products/complete-home-compass"
+            className="compare-what"
+          >
+            Complete Home Compass, $49
+          </Link>
+          <span className="compare-note">
+            Every room and life area, read for your Kua, in one volume.
+          </span>
+        </li>
+        <li>
+          <span className="compare-when">Plan the year</span>
+          <Link
+            href="/products/annual-feng-shui-planner-2026"
+            className="compare-what"
+          >
+            2026 Annual Planner, $19
+          </Link>
+          <span className="compare-note">
+            The year ahead, sector by sector, with a day calendar.
+          </span>
+        </li>
+      </ol>
+      <p className="compare-situational">
+        For a specific situation: the{" "}
+        <Link href="/products/move-in-kit">Move-In Date Report</Link> for a
+        move, the{" "}
+        <Link href="/products/couple-compatibility-compass">
+          Couple Compatibility Compass
+        </Link>{" "}
+        for two people, and the{" "}
+        <Link href="/products/seven-day-home-reset">7-Day Home Reset</Link>{" "}
+        for a guided week.
+      </p>
+    </section>
+  );
+}
+
+export default function Storefront() {
+  const featured = featuredProducts();
 
   return (
-    <div className="storefront">
-      <aside className="storefront-sidebar" aria-label="Browse by category">
-        <h2 className="storefront-sidebar-title">Browse</h2>
-        <ul className="storefront-cats">
-          {STORE_FILTERS.map((f) => (
-            <li key={f.key}>
-              <button
-                type="button"
-                className="storefront-cat"
-                aria-pressed={category === f.key}
-                onClick={() => setCategory(f.key)}
-              >
-                <span>{f.label}</span>
-                <span className="storefront-cat-count">{counts[f.key]}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-        <p className="storefront-sidebar-note">
-          Every item is a one-time purchase. Printables arrive by email
-          instantly; personalised readings within about a minute; 7-day
-          refund on each.
+    <div className="products-collections">
+      <section
+        className="collection collection-featured"
+        aria-labelledby="featured-h"
+      >
+        <h2 id="featured-h" className="collection-title">
+          Featured
+        </h2>
+        <p className="collection-sub">
+          Six good starting points. Each one stands alone.
         </p>
-      </aside>
+        <CardGrid items={featured} />
+      </section>
 
-      <div className="storefront-main">
-        <div className="storefront-controls">
-          <div className="storefront-search">
-            <label htmlFor="store-search" className="visually-hidden">
-              Search products
-            </label>
-            <input
-              id="store-search"
-              type="search"
-              placeholder="Search all products"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-          </div>
-          <div className="storefront-selects">
-            <label className="storefront-select">
-              <span className="visually-hidden">Filter by price</span>
-              <select
-                value={price}
-                onChange={(e) => setPrice(e.target.value as PriceBand)}
-              >
-                {PRICE_BANDS.map((b) => (
-                  <option key={b.key} value={b.key}>
-                    Price: {b.label}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label className="storefront-select">
-              <span className="visually-hidden">Sort products</span>
-              <select
-                value={sort}
-                onChange={(e) => setSort(e.target.value as SortKey)}
-              >
-                {SORTS.map((s) => (
-                  <option key={s.key} value={s.key}>
-                    Sort: {s.label}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-        </div>
+      <CompareBlock />
 
-        {isDefault ? (
-          <section className="storefront-section" aria-label="Featured items">
-            <h2 className="storefront-section-title">Featured items</h2>
-            <ul className="products-grid">
-              {featured.map((p) => (
-                <ProductCard key={p.slug} p={p} />
-              ))}
-            </ul>
-          </section>
-        ) : null}
+      <CompassSelector
+        id="by-room-h"
+        title="Choose by room"
+        sub="Twelve single-room compasses, each read for your Kua. From $7."
+        items={roomCompasses()}
+      />
 
-        <section className="storefront-section" aria-label="Products">
-          <h2 className="storefront-section-title">
-            {isDefault ? "All items" : activeLabel}{" "}
-            <span className="storefront-section-count">
-              ({filtered.length})
-            </span>
+      <CompassSelector
+        id="by-life-h"
+        title="Choose by life area"
+        sub="Nine single-area compasses, each read for your Kua. From $7."
+        items={lifeCompasses()}
+      />
+
+      {PRODUCT_GROUPS.map((g) => (
+        <section
+          key={g.key}
+          className="collection"
+          aria-labelledby={`grp-${g.key}`}
+        >
+          <h2 id={`grp-${g.key}`} className="collection-title">
+            {g.label}
           </h2>
-          {filtered.length === 0 ? (
-            <p className="storefront-empty">
-              {category === "onsale"
-                ? "Nothing is on sale right now. Check back soon."
-                : "No products match those filters. Try widening the price or clearing the search."}
-            </p>
-          ) : (
-            <ul className="products-grid">
-              {filtered.map((p) => (
-                <ProductCard key={p.slug} p={p} />
-              ))}
-            </ul>
-          )}
+          <p className="collection-sub">{g.description}</p>
+          <CardGrid items={groupProducts(g)} />
         </section>
-      </div>
+      ))}
     </div>
   );
 }

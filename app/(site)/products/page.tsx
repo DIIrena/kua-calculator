@@ -4,7 +4,7 @@ import Storefront from "@/components/Storefront";
 export const metadata: Metadata = {
   title: "Shop | My Feng Shui Home",
   description:
-    "Printable guides, personalised Kua readings, bundles, and a 7-day course. One-time prices, 7-day refunds, no outcome promises. Browse by category, price, or search.",
+    "Printable guides, personalised Kua readings, bundles, and a 7-day course. One-time prices, 7-day refunds, no outcome promises. Featured picks, then browse by room, life area, or type.",
   alternates: { canonical: "https://myfengshuihome.com/products" },
   openGraph: {
     type: "website",

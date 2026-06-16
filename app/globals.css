@@ -6696,6 +6696,131 @@ a:hover { color: var(--clay-deep); }
   margin-bottom: 0.75rem;
 }
 
+/* Phase C: curated, grouped /products layout. */
+.products-collections {
+  display: grid;
+  gap: 2.75rem;
+}
+
+.collection {
+  display: grid;
+  gap: 1rem;
+}
+
+.collection-title {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #0e3b2c;
+}
+
+.collection-sub {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--ink-2);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+/* "Not sure what to buy?" comparison block */
+.products-compare {
+  background: #f2f2ee;
+  border: 1px solid #e2dac5;
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.compare-steps {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.compare-steps li {
+  display: grid;
+  grid-template-columns: minmax(11rem, 15rem) 1fr;
+  gap: 0.2rem 1.25rem;
+  align-items: baseline;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #e2dac5;
+}
+
+.compare-steps li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.compare-when {
+  font-weight: 600;
+  color: #0e3b2c;
+}
+
+.compare-what {
+  font-weight: 600;
+  color: #d9531a;
+}
+
+.compare-note {
+  grid-column: 2;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.compare-situational {
+  margin: 1.1rem 0 0;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 560px) {
+  .compare-steps li {
+    grid-template-columns: 1fr;
+  }
+  .compare-note {
+    grid-column: 1;
+  }
+}
+
+/* By-room / by-life-area compass selectors */
+.product-chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.product-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #e2dac5;
+  border-radius: 999px;
+  background: #ffffff;
+  text-decoration: none;
+  color: #0e3b2c;
+  font-size: 0.95rem;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.product-chip:hover {
+  border-color: #0e3b2c;
+  background: #fbf7ee;
+}
+
+.product-chip-price {
+  color: #d9531a;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
 .storefront {
   display: grid;
   grid-template-columns: 220px 1fr;

@@ -275,26 +275,112 @@ export const STORE_PRODUCTS: StoreProduct[] = [...CORE, ...CATALOGUE].map(
   (p) => ({ ...p, priceLabel: label(p.priceCents) }),
 );
 
-export type StoreFilter =
-  | "all"
-  | "printable"
-  | "personalised"
-  | "bundle"
-  | "course"
-  | "onsale";
+// ----- Phase C: curated collections for the /products page -----
+//
+// The /products page is a curated, grouped browse. The six featured
+// products are the clearest starting points and appear only at the top.
+// Every other product appears in exactly one place below: the 12 single-
+// space compasses and 9 single-pillar compasses are the "Choose by room"
+// and "Choose by life area" selectors; the remaining products fall into
+// one named card-group. No product or route is removed.
 
-export const STORE_FILTERS: { key: StoreFilter; label: string }[] = [
-  { key: "all", label: "All" },
-  { key: "printable", label: "Printables" },
-  { key: "personalised", label: "Personalised" },
-  { key: "bundle", label: "Bundles" },
-  { key: "course", label: "Course" },
-  { key: "onsale", label: "On sale" },
+const BY_SLUG: Record<string, StoreProduct> = Object.fromEntries(
+  STORE_PRODUCTS.map((p) => [p.slug, p]),
+);
+
+function pick(slugs: readonly string[]): StoreProduct[] {
+  return slugs.map((s) => BY_SLUG[s]).filter(Boolean) as StoreProduct[];
+}
+
+/** The featured collection, in display order. */
+export const FEATURED_SLUGS: readonly string[] = [
+  "personal-feng-shui-compass",
+  "complete-home-compass",
+  "annual-feng-shui-planner-2026",
+  "move-in-kit",
+  "couple-compatibility-compass",
+  "seven-day-home-reset",
 ];
 
-export function countFor(filter: StoreFilter): number {
-  if (filter === "all") return STORE_PRODUCTS.length;
-  if (filter === "onsale")
-    return STORE_PRODUCTS.filter((p) => p.onSale).length;
-  return STORE_PRODUCTS.filter((p) => p.category === filter).length;
+export function featuredProducts(): StoreProduct[] {
+  return pick(FEATURED_SLUGS);
+}
+
+/** Single-space compasses, in catalogue order: the "Choose by room" set. */
+export const ROOM_COMPASS_SLUGS: string[] = COMPASS_CATALOGUE.filter(
+  (e) => e.kind === "space",
+).map((e) => e.slug);
+
+/** Single-pillar compasses: the "Choose by life area" set. */
+export const LIFE_COMPASS_SLUGS: string[] = COMPASS_CATALOGUE.filter(
+  (e) => e.kind === "pillar",
+).map((e) => e.slug);
+
+export function roomCompasses(): StoreProduct[] {
+  return pick(ROOM_COMPASS_SLUGS);
+}
+
+export function lifeCompasses(): StoreProduct[] {
+  return pick(LIFE_COMPASS_SLUGS);
+}
+
+export type ProductGroup = {
+  key: string;
+  label: string;
+  description: string;
+  slugs: string[];
+};
+
+/** Named card-groups shown below the featured collection and the two
+ *  compass selectors. Featured products and the room/life compasses are
+ *  not repeated here. */
+export const PRODUCT_GROUPS: ProductGroup[] = [
+  {
+    key: "personal-reports",
+    label: "Personal direction reports",
+    description:
+      "Readings keyed to your Kua and your eight directions. The Personal Feng Shui Compass and the Complete Home Compass are in the featured collection above.",
+    slugs: ["extended-personal-kua-report"],
+  },
+  {
+    key: "timing",
+    label: "Annual timing tools",
+    description:
+      "Calendars and year overlays. The 2026 Annual Planner is in the featured collection above.",
+    slugs: ["good-days-calendar-2026", "year-ahead-compass"],
+  },
+  {
+    key: "workbooks",
+    label: "Workbooks and printable kits",
+    description:
+      "Self-contained printable PDFs to work through at your own pace.",
+    slugs: [
+      "bedroom-reset",
+      "business-money-feng-shui",
+      "home-diagnostic-workbook",
+      "daily-ritual-pack",
+      "cures-catalog",
+      "healthy-home-audit",
+      "five-elements-workbook",
+      "starter-deck",
+      "bazi-basics",
+    ],
+  },
+  {
+    key: "bundles",
+    label: "Bundles",
+    description:
+      "Several readings or printables in one volume. The Complete Home Compass and the Couple Compatibility Compass are in the featured collection above.",
+    slugs: [
+      "whole-home-starter-bundle",
+      "all-nine-pillars-compass",
+      "all-twelve-spaces-compass",
+      "pick-three-pillars",
+      "pick-three-spaces",
+    ],
+  },
+];
+
+export function groupProducts(group: ProductGroup): StoreProduct[] {
+  return pick(group.slugs);
 }
