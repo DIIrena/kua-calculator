@@ -1,13 +1,10 @@
-import Link from "next/link";
 import FooterSubscribe from "@/components/FooterSubscribe";
 
 // Site footer: the deep-ink counterweight, centred. Carries the brand
-// mark, the calm trust line that links to /about, the secondary public
-// navigation (Life areas, Articles, Methodology, Editorial Method,
-// Refunds, Privacy), the free-tool one-liner, the framing reminder, and
-// the company and copyright block.
+// mark, the email signup field, the calm trust line, the framing
+// reminder, and the copyright.
 //
-// Server Component. No client JS, no analytics import.
+// Server Component; the only client island is the FooterSubscribe form.
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
@@ -34,34 +31,11 @@ export default function SiteFooter() {
         Architecture-led feng shui for real homes.
       </p>
       <div className="footer-subscribe">
-        <p className="footer-subscribe-label">
-          Feng shui notes by email. A few calm, practical ideas, now and
-          then.
-        </p>
         <FooterSubscribe />
       </div>
-      <nav className="footer-links" aria-label="Site sections">
-        <Link href="/life">Life areas</Link>
-        <Link href="/articles">Articles</Link>
-        <Link href="/methodology">Methodology</Link>
-        <Link href="/editorial-method">Editorial Method</Link>
-        <Link href="/refunds">Refunds</Link>
-        <Link href="/privacy">Privacy</Link>
-      </nav>
-      <p className="footer-tag">
-        The Kua Calculator is a free tool from My Feng Shui Home.
-      </p>
       <p className="footer-honest">
         The Kua system is a structured tool for design decisions. It is not a
         prediction.
-      </p>
-      <p className="footer-legal">
-        MyFengShuiHome.com is operated by <strong>Mens Sana LLC</strong>.
-        Powered by{" "}
-        <a href="https://menssana.art" rel="noopener">
-          menssana.art
-        </a>
-        .
       </p>
       <p className="footer-copyright">
         &copy; 2026 Mens Sana LLC. All rights reserved. All content on this
