@@ -6689,6 +6689,9 @@ a:hover { color: var(--clay-deep); }
 .shop-card-cover {
   display: block;
   width: 100%;
+  /* height:auto lets aspect-ratio drive a square box; without it the img's
+     height="1500" attribute wins and the cover renders 1500px tall + cropped. */
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 10px;
