@@ -30,6 +30,7 @@ const LEVELS: Record<string, ProductAssetLevel> = {
   "personal-feng-shui-compass": "cover",
   "extended-personal-kua-report": "cover",
   "move-in-kit": "cover",
+  "complete-home-compass": "cover",
 };
 
 export function assetLevel(slug: string): ProductAssetLevel {
@@ -50,6 +51,7 @@ export const CARD_COVER_SLUGS: ReadonlySet<string> = new Set([
   "five-elements-workbook",
   "starter-deck",
   "bazi-basics",
+  "complete-home-compass",
 ]);
 
 // Optional page-count copy, used in the "what you receive" anchor only
