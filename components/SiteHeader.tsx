@@ -52,9 +52,6 @@ export default async function SiteHeader() {
             </g>
           </svg>
         </span>
-        <span className="brand-text">
-          <span className="brand-sub">My Feng Shui Home</span>
-        </span>
       </Link>
 
       {/* Desktop nav: always rendered, always visible at >880px. CSS
