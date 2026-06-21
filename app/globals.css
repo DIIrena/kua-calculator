@@ -5018,6 +5018,15 @@ a:hover { color: var(--clay-deep); }
   }
   .site-header {
     flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* Mobile: the full-width Menu hamburger wraps to its own row, leaving
+     the brand alone on the top row. Stretch the brand across that row
+     and centre its contents so the heart-house mark sits in the middle. */
+  .brand {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
   /* Compact mobile item sizing: smaller font, tighter padding,
      44px min tap target preserved by the min-height rule. */
