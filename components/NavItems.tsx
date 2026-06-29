@@ -10,7 +10,7 @@ import { GUIDE_CLUSTERS } from "@/lib/guide";
 //
 // Server Component only. No client JS, no analytics import.
 //
-// Primary nav (both surfaces): Guide / Shop / About / Account or Sign in.
+// Primary nav (both surfaces): Guide / Shop / Account or Sign in / Cart.
 //   - The Guide is the umbrella: its dropdown lists the eleven guide
 //     topics (the same eleven clusters the /guide library uses), so
 //     Rooms now lives inside the Guide rather than as its own item.
@@ -56,12 +56,7 @@ export default function NavItems({
         Shop
       </Link>
 
-      {/* 3. Search - quiet utility link to the global search page */}
-      <Link href="/search" className="site-nav-link site-nav-link-quiet">
-        Search
-      </Link>
-
-      {/* 4. Account or Sign in - visually quieter than the public actions
+      {/* 3. Account or Sign in - visually quieter than the public actions
             above. SignOutButton renders next to Account when signed-in. */}
       {signedIn ? (
         <>
@@ -82,7 +77,7 @@ export default function NavItems({
         </Link>
       )}
 
-      {/* 5. Cart - the shopping bag, with a live item count. */}
+      {/* 4. Cart - the shopping bag, with a live item count. */}
       <CartButton />
     </>
   );
