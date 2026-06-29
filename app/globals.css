@@ -500,7 +500,7 @@ a:hover { color: var(--clay-deep); }
 .field { display: flex; flex-direction: column; }
 
 .field-label,
-.field label {
+.field label:not(.radio) {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.15rem;
@@ -604,6 +604,7 @@ a:hover { color: var(--clay-deep); }
 }
 
 .radio {
+  position: relative;
   flex: 1 1 0;
   min-height: 50px;
   display: inline-flex;
