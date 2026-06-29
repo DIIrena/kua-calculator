@@ -48,26 +48,37 @@ export default async function SiteHeader() {
         <NavItems signedIn={signedIn} />
       </nav>
 
-      {/* Mobile nav: hidden by default; revealed at <=880px. Native
-          <details> hamburger, JS-free, WAI-ARIA disclosure pattern.
-          Compact summary row to avoid eating the first viewport. */}
-      <details className="mobile-nav-toggle">
-        <summary
-          className="mobile-nav-summary"
-          aria-label="Open menu"
+      {/* Mobile nav: hidden by default; revealed at <=880px. The native
+          <details> keeps the Menu/hamburger toggle JS-free (WAI-ARIA
+          disclosure pattern). The brand heart is a SEPARATE home link
+          overlaid on the centre of the bar (not inside the summary), so
+          tapping the heart goes to the homepage while Menu and the
+          hamburger still open the menu. */}
+      <div className="mobile-nav">
+        <Link
+          href="/"
+          className="mobile-brand-link"
+          aria-label="My Feng Shui Home, home"
         >
-          <span className="mobile-nav-summary-label">Menu</span>
-          <span className="mobile-nav-summary-mark" aria-hidden="true">
+          <span className="mobile-brand-mark" aria-hidden="true">
             <BrandHeart />
           </span>
-          <span className="mobile-nav-summary-icon" aria-hidden="true">
-            &#9776;
-          </span>
-        </summary>
-        <nav className="site-nav site-nav-mobile" aria-label="Primary (mobile)">
-          <NavItems signedIn={signedIn} />
-        </nav>
-      </details>
+        </Link>
+        <details className="mobile-nav-toggle">
+          <summary
+            className="mobile-nav-summary"
+            aria-label="Open menu"
+          >
+            <span className="mobile-nav-summary-label">Menu</span>
+            <span className="mobile-nav-summary-icon" aria-hidden="true">
+              &#9776;
+            </span>
+          </summary>
+          <nav className="site-nav site-nav-mobile" aria-label="Primary (mobile)">
+            <NavItems signedIn={signedIn} />
+          </nav>
+        </details>
+      </div>
     </header>
   );
 }

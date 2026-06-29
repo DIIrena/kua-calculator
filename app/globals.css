@@ -144,7 +144,7 @@ a:hover { color: var(--clay-deep); }
   justify-self: end;
 }
 
-.mobile-nav-toggle {
+.mobile-nav {
   grid-column: 3;
 }
 
@@ -4969,7 +4969,7 @@ a:hover { color: var(--clay-deep); }
    Desktop default: desktop nav visible, mobile toggle hidden.
    Mobile (<=880px): desktop nav hidden, hamburger toggle visible. */
 
-.mobile-nav-toggle {
+.mobile-nav {
   display: none;
 }
 
@@ -4985,16 +4985,17 @@ a:hover { color: var(--clay-deep); }
   .site-nav-desktop {
     display: none;
   }
-  .mobile-nav-toggle {
+  .mobile-nav {
     display: block;
+    position: relative;
     width: 100%;
   }
   .mobile-nav-summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 44px;
-    padding: var(--space-2) var(--space-3);
+    height: 76px;
+    padding: 0 var(--space-3);
     cursor: pointer;
     list-style: none;
     border-bottom: 1px solid var(--hairline);
@@ -5008,29 +5009,43 @@ a:hover { color: var(--clay-deep); }
   }
   .mobile-nav-summary-label {
     font-size: 0.95rem;
-    flex: 1 1 0;
   }
-  /* The brand heart, centred in the bar between the Menu label and the
-     hamburger, larger and in orange. Decorative (aria-hidden); tapping
-     anywhere on the bar, including the heart, toggles the menu. */
-  .mobile-nav-summary-mark {
+  .mobile-nav-summary-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+    color: var(--green-deep);
+  }
+  /* The brand heart: a separate home link overlaid on the centre of the
+     bar so tapping it goes to the homepage, while Menu and the hamburger
+     toggle the menu. It sits above the summary (z-index) and only covers
+     the centre, leaving the Menu label and hamburger tappable. */
+  .mobile-brand-link {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75px;
+    height: 76px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .mobile-brand-link:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  .mobile-brand-mark {
     display: inline-flex;
     width: 75px;
     height: 75px;
     color: var(--clay);
-    flex-shrink: 0;
   }
-  .mobile-nav-summary-mark svg {
+  .mobile-brand-mark svg {
     width: 100%;
     height: 100%;
     display: block;
-  }
-  .mobile-nav-summary-icon {
-    flex: 1 1 0;
-    text-align: right;
-    font-size: 1.1rem;
-    line-height: 1;
-    color: var(--green-deep);
   }
 }
 
@@ -5054,12 +5069,12 @@ a:hover { color: var(--clay-deep); }
   .site-header {
     grid-template-columns: 1fr;
   }
-  /* Mobile: the brand row is hidden; the heart mark lives in the menu
-     bar instead (see .mobile-nav-summary-mark). */
+  /* Mobile: the desktop brand row is hidden; the heart lives in the
+     mobile bar instead (.mobile-brand-link). */
   .brand {
     display: none;
   }
-  .mobile-nav-toggle {
+  .mobile-nav {
     grid-column: 1;
     justify-self: stretch;
   }
