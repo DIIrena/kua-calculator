@@ -160,8 +160,7 @@ export default async function HomePage(props: {
             Underneath the schools and the cures, feng shui is a way of
             reading space: orientation, movement, light, proportion,
             entrance, rest. My Feng Shui Home reads it that way because
-            the site is written by an architect.{" "}
-            <Link href="/about">More about who runs the site &rarr;</Link>
+            the site is written by an architect.
           </p>
           <p>
             The shortest way in is your Kua number. It names the four
@@ -434,18 +433,6 @@ export default async function HomePage(props: {
             anonymous. Anything you save to an account is stored on Supabase
             and is deletable at any time from your account page.
           </p>
-        </div>
-      </section>
-
-      {/* Section 9 - Final CTA strip */}
-      <section className="home-final-cta" aria-labelledby="final-cta-heading">
-        <div className="home-final-cta-inner">
-          <h2 id="final-cta-heading">
-            Open the Ultimate Feng Shui Guide.
-          </h2>
-          <Link href="/guide" className="cta-primary">
-            Browse the guide
-          </Link>
         </div>
       </section>
 

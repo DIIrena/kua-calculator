@@ -329,9 +329,8 @@ export default function EditorialMethodPage() {
         <h2>Who writes this</h2>
         <p>
           My Feng Shui Home is written and maintained by I.D., the
-          architect behind the site. The approach, architecture first and
-          feng shui with structure, is described on the{" "}
-          <Link href="/about">about page</Link>.
+          architect behind the site, who reads feng shui as spatial
+          guidance: architecture first, feng shui with structure.
         </p>
       </div>
     </div>

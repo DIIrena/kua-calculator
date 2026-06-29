@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "This site is run by an architect who reads feng shui as spatial guidance, not fortune-telling.",
   alternates: { canonical: "https://myfengshuihome.com/about" },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: false },
   openGraph: {
     type: "article",
     locale: "en_US",
