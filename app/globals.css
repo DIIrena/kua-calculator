@@ -131,12 +131,12 @@ a:hover { color: var(--clay-deep); }
   border-bottom: var(--border);
 }
 
-/* Logo mark lives in the centre column; the nav sits flush right in
-   the third column. The empty first column balances the nav so the
-   mark is truly centred. */
+/* Desktop: the brand (logo + wordmark) sits left in the first column;
+   the nav is flush right in the third column. On mobile the brand
+   centres and the wordmark is hidden (logo only). */
 .brand {
-  grid-column: 2;
-  justify-self: center;
+  grid-column: 1;
+  justify-self: start;
 }
 
 .site-nav-desktop {
@@ -5039,6 +5039,10 @@ a:hover { color: var(--clay-deep); }
   .brand {
     grid-column: 1;
     justify-self: center;
+  }
+  /* Mobile: logo only, centred. Hide the wordmark. */
+  .brand-text {
+    display: none;
   }
   .mobile-nav-toggle {
     grid-column: 1;
