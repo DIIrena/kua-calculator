@@ -20,30 +20,17 @@ import { GUIDE_CLUSTERS } from "@/lib/guide";
 // Items kept reachable via the footer: Life areas, Articles, Methodology,
 // Refunds, Privacy.
 
-export type NavSurface = "desktop" | "mobile";
-
 // The eleven guide topics, in reading order. Source of truth is
 // GUIDE_CLUSTERS in lib/guide.ts; the /guide library uses the same set.
 const guideTopics = [...GUIDE_CLUSTERS].sort((a, b) => a.order - b.order);
 
 export default function NavItems({
   signedIn,
-  surface,
 }: {
   signedIn: boolean;
-  surface: NavSurface;
 }) {
   return (
     <>
-      {/* Mobile-only: Start here links back to the homepage (the
-          calculator). The brand mark in SiteHeader already does this on
-          desktop. */}
-      {surface === "mobile" ? (
-        <Link href="/" className="site-nav-link">
-          Start here
-        </Link>
-      ) : null}
-
       {/* 1. Guide - the full library. The dropdown lists the eleven
           topics; Rooms is one of them. Opens on hover and closes when the
           pointer leaves (or focus moves out). */}

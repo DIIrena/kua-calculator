@@ -5008,8 +5008,26 @@ a:hover { color: var(--clay-deep); }
   }
   .mobile-nav-summary-label {
     font-size: 0.95rem;
+    flex: 1 1 0;
+  }
+  /* The brand heart, centred in the bar between the Menu label and the
+     hamburger, larger and in orange. Decorative (aria-hidden); tapping
+     anywhere on the bar, including the heart, toggles the menu. */
+  .mobile-nav-summary-mark {
+    display: inline-flex;
+    width: 75px;
+    height: 75px;
+    color: var(--clay);
+    flex-shrink: 0;
+  }
+  .mobile-nav-summary-mark svg {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
   .mobile-nav-summary-icon {
+    flex: 1 1 0;
+    text-align: right;
     font-size: 1.1rem;
     line-height: 1;
     color: var(--green-deep);
@@ -5036,12 +5054,9 @@ a:hover { color: var(--clay-deep); }
   .site-header {
     grid-template-columns: 1fr;
   }
+  /* Mobile: the brand row is hidden; the heart mark lives in the menu
+     bar instead (see .mobile-nav-summary-mark). */
   .brand {
-    grid-column: 1;
-    justify-self: center;
-  }
-  /* Mobile: logo only, centred. Hide the wordmark. */
-  .brand-text {
     display: none;
   }
   .mobile-nav-toggle {
