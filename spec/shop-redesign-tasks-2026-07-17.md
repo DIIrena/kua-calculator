@@ -21,7 +21,7 @@ Love Bundle). Summary of the target state:
 
 ## Phase A - MFSH
 
-- [ ] A1. Personal Compass $14 -> $19: code constants + copy; owner creates the $19
+- [x] A1. Personal Compass $14 -> $19: code constants + copy; owner creates the $19
       Stripe Price and updates the Vercel env var (stepwise walkthrough provided).
 - [ ] A2. Good Days free page (traffic asset, ships early): /good-days route, 2026
       dates on-page, email-gated printable, Complete Home + Move-In upsells, $9
@@ -58,3 +58,8 @@ Follow-on content task: 2027 Good Days dates (day-calendar data generation).
 ## Log
 
 (one line per completed task, newest last)
+
+- A1 (2026-07-17, commit 663ca72): price shipped in code; owner created the $19
+  Stripe Price + updated STRIPE_PRICE_COMPASS + redeployed; verified live - the
+  Stripe session shows $19.00. Learning: env-var changes error briefly while the
+  redeploy swaps; retry after ~60s before diagnosing.
