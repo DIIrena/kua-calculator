@@ -5407,12 +5407,8 @@ a:hover { color: var(--clay-deep); }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-4);
-}
-
-@media (min-width: 640px) {
-  .products-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (min-width: 980px) {
