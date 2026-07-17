@@ -131,7 +131,7 @@ export default async function SpaceRoomPage(props: { params: Params }) {
             </div>
             <div className="life-area-map-cta-card">
               <p className="map-page-price-eyebrow">The Personal Feng Shui Compass</p>
-              <p className="map-page-price-amount">$14</p>
+              <p className="map-page-price-amount">$19</p>
               <p className="map-page-price-suffix">
                 one-time, personalised
               </p>

@@ -337,24 +337,24 @@ export default function CalculatorIsland({
           </p>
         </article>
 
-        {/* The planner card reuses .post-result-card-compass so the existing
+        {/* The flagship card reuses .post-result-card-compass so the existing
             embed CSS (.post-result-stack--embed .post-result-card-compass)
             hides it on /embed without a stylesheet change. */}
         <article className="post-result-card secondary post-result-card-compass post-result-card-planner">
           <h3 className="post-result-card-heading">
-            The 2026 Feng Shui Planner.
+            The Complete Home Compass.
           </h3>
           <p className="post-result-card-body">
-            Your directions are the personal layer. The Planner reads the
-            year on top of them, sector by sector, July 2026 through
-            February 2027.
+            Your directions are the first layer. The Complete Home Compass
+            reads everything on top of them for your Kua: every room, every
+            life area, and the 2026 year, in one personalised book.
           </p>
           <p className="post-result-card-actions">
             <a
-              href="/products/annual-feng-shui-planner-2026?from=kua-calculator"
+              href="/products/complete-home-compass?from=kua-calculator"
               className="cta-secondary"
             >
-              See the Planner
+              See the Complete Home Compass
             </a>
           </p>
         </article>

@@ -1,12 +1,13 @@
 import Link from "next/link";
 
-// A calm three-way decision aid shown on the three flagship product pages
-// (Personal Compass, Complete Home Compass, 2026 Planner). It clarifies
-// which one does which job and highlights the one you are currently
-// reading about. Presentation only: no pricing logic, no checkout. The
-// prices shown are display copy matching the registry.
+// A calm three-way decision aid shown on the ladder product pages. It
+// clarifies which depth does which job and highlights the one you are
+// currently reading about. Presentation only: no pricing logic, no
+// checkout. The prices shown are display copy matching the registry.
+// ("planner" stays in the type so the delisted Planner page compiles;
+// no item carries it, so that page simply shows all three as links.)
 
-export type Flagship = "compass" | "complete" | "planner";
+export type Flagship = "compass" | "twelve" | "complete" | "planner";
 
 const ITEMS: {
   key: Flagship;
@@ -18,9 +19,16 @@ const ITEMS: {
   {
     key: "compass",
     title: "Personal Feng Shui Compass",
-    price: "$14",
+    price: "$19",
     href: "/products/personal-feng-shui-compass",
     best: "Your Kua and your eight directions, read in depth, with a seven-day experiment. The foundation: just you, in one focused book.",
+  },
+  {
+    key: "twelve",
+    title: "Twelve Spaces Compass",
+    price: "$29",
+    href: "/products/all-twelve-spaces-compass",
+    best: "Every room of your home read for your Kua, one chapter per room. The middle depth: your rooms, without the life areas.",
   },
   {
     key: "complete",
@@ -29,19 +37,12 @@ const ITEMS: {
     href: "/products/complete-home-compass",
     best: "Everything read for your Kua: all twelve rooms, all nine life areas, compatibility, and a 2026 overlay. The whole map in one volume.",
   },
-  {
-    key: "planner",
-    title: "2026 Annual Planner",
-    price: "$19",
-    href: "/products/annual-feng-shui-planner-2026",
-    best: "The feng shui year for your home, sector by sector, with a 243-day calendar. It reads the year, not your personal directions.",
-  },
 ];
 
 export default function FlagshipChooser({ current }: { current: Flagship }) {
   return (
     <section className="product-section flagship-chooser" aria-labelledby="flagship-h">
-      <h2 id="flagship-h">Compass, Complete Home, or Planner?</h2>
+      <h2 id="flagship-h">One book, three depths: which Compass?</h2>
       <p className="flagship-chooser-lede">
         Three ways in, three different jobs. They sit together neatly, and
         you do not need all three.
