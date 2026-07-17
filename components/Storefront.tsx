@@ -4,19 +4,17 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   type StoreProduct,
-  featuredProducts,
-  roomCompasses,
-  lifeCompasses,
-  PRODUCT_GROUPS,
-  groupProducts,
+  ladderProducts,
+  momentProducts,
+  kitProducts,
 } from "@/lib/storefront";
 import { useCart } from "@/components/CartProvider";
 
-// The /products storefront: a curated, grouped browse. The six featured
-// products lead; then a "What should I use?" chooser; then the by-room
-// and by-life-area compass selectors; then the named card-groups for the
-// rest. Every product and route is preserved. No product sets an `image`
-// yet, so cards render text-first with no broken cover.
+// The /products storefront (curated shelf, shop-redesign A4). The
+// chooser leads; then the three-card ladder (the primary decision);
+// then two quiet rows: situational products and printable kits; then
+// the free strip. Delisted products keep live URLs but do not appear
+// here.
 
 function ProductCard({ p }: { p: StoreProduct }) {
   const free = p.category === "free";
@@ -109,46 +107,6 @@ function CardGrid({ items }: { items: StoreProduct[] }) {
   );
 }
 
-function CompassChip({ p }: { p: StoreProduct }) {
-  // Room and life-area compass titles all end in " Compass"; the chip
-  // shows just the room or area, with the price.
-  const short = p.title.replace(/\s*Compass$/, "");
-  return (
-    <li>
-      <Link href={p.href} className="product-chip">
-        <span className="product-chip-title">{short}</span>
-        <span className="product-chip-price">{p.priceLabel}</span>
-      </Link>
-    </li>
-  );
-}
-
-function CompassSelector({
-  id,
-  title,
-  sub,
-  items,
-}: {
-  id: string;
-  title: string;
-  sub: string;
-  items: StoreProduct[];
-}) {
-  return (
-    <section className="collection" aria-labelledby={id}>
-      <h2 id={id} className="collection-title">
-        {title}
-      </h2>
-      <p className="collection-sub">{sub}</p>
-      <ul className="product-chips">
-        {items.map((p) => (
-          <CompassChip key={p.slug} p={p} />
-        ))}
-      </ul>
-    </section>
-  );
-}
-
 // The "What should I use?" chooser. Pick an intent; see one calm
 // recommendation. In-page anchors (#by-room-h / #by-life-h) jump to the
 // compass selectors below.
@@ -195,11 +153,11 @@ const CHOICES: Choice[] = [
   {
     key: "year",
     intent: "Plan the year",
-    title: "2026 Annual Planner",
-    price: "$19",
-    line: "The feng shui year for your home, sector by sector, with a 243-day calendar.",
-    cta: "View the Planner",
-    href: "/products/annual-feng-shui-planner-2026",
+    title: "Complete Home Compass",
+    price: "$49",
+    line: "The 2026 overlay for your home is inside the Complete Home Compass, along with every room and life area, read for your Kua.",
+    cta: "View the Complete Home Compass",
+    href: "/products/complete-home-compass",
   },
   {
     key: "move",
@@ -211,15 +169,6 @@ const CHOICES: Choice[] = [
     href: "/products/move-in-kit",
   },
   {
-    key: "couple",
-    intent: "There are two of us",
-    title: "Couple Compatibility Compass",
-    price: "$19",
-    line: "Both Kua maps read together: where you agree, and how to settle shared rooms.",
-    cta: "View the Couple Compass",
-    href: "/products/couple-compatibility-compass",
-  },
-  {
     key: "reset",
     intent: "A guided week",
     title: "7-Day Home Reset",
@@ -227,16 +176,6 @@ const CHOICES: Choice[] = [
     line: "One short email a day, one small task each, room by room.",
     cta: "View the 7-Day Reset",
     href: "/products/seven-day-home-reset",
-  },
-  {
-    key: "one",
-    intent: "One room or life area",
-    title: "Single Room or Life Area Compass",
-    price: "from $7",
-    line: "Pick one room or one life area, each read for your Kua.",
-    cta: "Choose by room",
-    href: "#by-room-h",
-    secondary: { label: "Choose by life area", href: "#by-life-h" },
   },
 ];
 
@@ -305,52 +244,63 @@ function ProductChooser() {
 }
 
 export default function Storefront() {
-  const featured = featuredProducts();
-
   return (
     <div className="products-collections">
       <ProductChooser />
 
       <section
         className="collection collection-featured"
-        aria-labelledby="featured-h"
+        aria-labelledby="ladder-h"
       >
-        <h2 id="featured-h" className="collection-title">
-          Featured
+        <h2 id="ladder-h" className="collection-title">
+          The readings
         </h2>
         <p className="collection-sub">
-          Six good starting points. Each one stands alone.
+          Three depths, one system: your directions, every room, or the
+          whole home in one volume. Each stands alone.
         </p>
-        <CardGrid items={featured} />
+        <CardGrid items={ladderProducts()} />
       </section>
 
-      <CompassSelector
-        id="by-room-h"
-        title="Choose by room"
-        sub="Twelve single-room compasses, each read for your Kua. From $7."
-        items={roomCompasses()}
-      />
+      <section
+        className="collection collection-quiet"
+        aria-labelledby="moments-h"
+      >
+        <h2 id="moments-h" className="collection-title">
+          For particular moments
+        </h2>
+        <p className="collection-sub">
+          A move, or a guided week of small tasks.
+        </p>
+        <CardGrid items={momentProducts()} />
+      </section>
 
-      <CompassSelector
-        id="by-life-h"
-        title="Choose by life area"
-        sub="Nine single-area compasses, each read for your Kua. From $7."
-        items={lifeCompasses()}
-      />
+      <section
+        className="collection collection-quiet"
+        aria-labelledby="kits-h"
+      >
+        <h2 id="kits-h" className="collection-title">
+          Kits and guides
+        </h2>
+        <p className="collection-sub">
+          The Nine Life Areas reading is also included in the Complete
+          Home Compass; the printable kits stand on their own.
+        </p>
+        <CardGrid items={kitProducts()} />
+      </section>
 
-      {PRODUCT_GROUPS.map((g) => (
-        <section
-          key={g.key}
-          className="collection"
-          aria-labelledby={`grp-${g.key}`}
-        >
-          <h2 id={`grp-${g.key}`} className="collection-title">
-            {g.label}
-          </h2>
-          <p className="collection-sub">{g.description}</p>
-          <CardGrid items={groupProducts(g)} />
-        </section>
-      ))}
+      <section className="collection products-free-strip" aria-labelledby="free-h">
+        <h2 id="free-h" className="collection-title">
+          Start free
+        </h2>
+        <p className="collection-sub">
+          The <Link href="/kua-calculator">Kua calculator</Link> gives you
+          your number and your eight directions in about ten seconds. The{" "}
+          <Link href="/good-days">Good Days calendar</Link> lists every
+          favourable date from July 2026 to February 2027. Both free, no
+          account.
+        </p>
+      </section>
     </div>
   );
 }

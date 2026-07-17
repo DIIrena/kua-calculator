@@ -5,13 +5,13 @@ import Storefront from "@/components/Storefront";
 export const metadata: Metadata = {
   title: "Shop | My Feng Shui Home",
   description:
-    "Printable guides, personalised Kua readings, bundles, and a 7-day course. One-time prices, instant delivery, no outcome promises. Featured picks, then browse by room, life area, or type.",
+    "Nine calm products: personalised Kua readings at three depths, printable kits, and a 7-day course. One-time prices, instant delivery, no outcome promises.",
   alternates: { canonical: "https://myfengshuihome.com/products" },
   openGraph: {
     type: "website",
     title: "Shop - My Feng Shui Home",
     description:
-      "Printable guides, personalised Kua readings, bundles, and a course. One-time prices, instant delivery.",
+      "Nine calm products: personalised readings, printable kits, and a course. One-time prices, instant delivery.",
     url: "https://myfengshuihome.com/products",
     images: [
       {
@@ -37,8 +37,8 @@ export default async function ProductsPage(props: {
       <section className="products-hero products-hero-shop">
         <h1 className="visually-hidden">Shop</h1>
         <p className="products-lede">
-          Printable guides, personalised readings keyed to your Kua,
-          build-your-own bundles, and a seven-day course.
+          Personalised readings at three depths, printable kits, and a
+          seven-day course. Nine products, each one earning its place.
         </p>
         <p className="products-utility">
           New here? <Link href="/kua-calculator">Find your Kua number free</Link>{" "}

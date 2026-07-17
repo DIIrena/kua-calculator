@@ -8,7 +8,7 @@ import { GUIDE_PAGES, GUIDE_CLUSTERS } from "@/lib/guide";
 import { ARTICLES } from "@/lib/articles";
 import { SPACES } from "@/lib/spaces";
 import { LIFE_AREAS } from "@/lib/life-areas";
-import { STORE_PRODUCTS } from "@/lib/storefront";
+import { STORE_PRODUCTS, VISIBLE_SLUGS } from "@/lib/storefront";
 import type { SearchEntry } from "@/lib/search-types";
 
 const clusterLabel = (slug: string) =>
@@ -96,8 +96,12 @@ export function buildSearchIndex(): SearchEntry[] {
   }
 
   // Products. The free calculator is the Start-here item, not a product.
+  // Only the curated shelf is indexed (A4); delisted products keep live
+  // URLs but are not surfaced by search.
+  const visible = new Set(VISIBLE_SLUGS);
   for (const pr of STORE_PRODUCTS) {
     if (pr.category === "free") continue;
+    if (!visible.has(pr.slug)) continue;
     entries.push({
       id: `product-${pr.slug}`,
       type: "product",

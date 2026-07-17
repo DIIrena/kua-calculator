@@ -3,7 +3,7 @@ import { ARTICLES } from "@/lib/articles";
 import { GUIDE_CLUSTERS, GUIDE_PAGES } from "@/lib/guide";
 import { LIFE_AREAS } from "@/lib/life-areas";
 import { SPACES } from "@/lib/spaces";
-import { COMPASS_CATALOGUE } from "@/lib/compass-catalogue";
+import { VISIBLE_SLUGS } from "@/lib/storefront";
 
 // Sitemap generated at build time. Lists every public URL with a
 // lastModified date so search engines (and AI crawlers) know what
@@ -71,138 +71,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${SITE}/products/personal-feng-shui-compass`,
-      lastModified: today,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${SITE}/products/extended-personal-kua-report`,
-      lastModified: today,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${SITE}/products/seven-day-home-reset`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/annual-feng-shui-planner-2026`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/move-in-kit`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/bedroom-reset`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/business-money-feng-shui`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/good-days-calendar-2026`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/home-diagnostic-workbook`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/daily-ritual-pack`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/cures-catalog`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/healthy-home-audit`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/five-elements-workbook`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/starter-deck`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/bazi-basics`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/whole-home-starter-bundle`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/complete-home-compass`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.65,
-    },
-    {
-      url: `${SITE}/products/all-twelve-spaces-compass`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/all-nine-pillars-compass`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/couple-compatibility-compass`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/products/pick-three-pillars`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.55,
-    },
-    {
-      url: `${SITE}/products/pick-three-spaces`,
-      lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.55,
-    },
-    {
       url: `${SITE}/checklist`,
       lastModified: today,
       changeFrequency: "monthly",
@@ -263,11 +131,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const compassEntries: MetadataRoute.Sitemap = COMPASS_CATALOGUE.map((e) => ({
-    url: `${SITE}/products/${e.slug}`,
+  // Only the curated shelf is listed (shop-redesign A4). Delisted
+  // products keep live URLs but are not in the sitemap.
+  const productEntries: MetadataRoute.Sitemap = VISIBLE_SLUGS.map((slug) => ({
+    url: `${SITE}/products/${slug}`,
     lastModified: today,
-    changeFrequency: "monthly" as const,
-    priority: 0.55,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
   }));
 
   return [
@@ -277,6 +147,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...guidePageEntries,
     ...lifeEntries,
     ...spaceEntries,
-    ...compassEntries,
+    ...productEntries,
   ];
 }

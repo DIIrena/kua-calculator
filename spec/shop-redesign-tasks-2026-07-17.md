@@ -28,7 +28,7 @@ Love Bundle). Summary of the target state:
       product redirect. Owner pins on publish.
 - [x] A3. Covers for all-twelve-spaces (ladder card) + all-nine-pillars: factory
       render -> owner review -> wire.
-- [ ] A4. Shop curation: LADDER/MOMENT/KIT slug lists, Storefront rows + decoy notes,
+- [x] A4. Shop curation: LADDER/MOMENT/KIT slug lists, Storefront rows + decoy notes,
       chooser update, search index + sitemap prune.
 - [ ] A5. Homepage spotlight swap to flagship + MFSH favicon (green circle, orange
       logo, app/icon.svg + apple-icon.png).
@@ -73,3 +73,10 @@ Follow-on content task: 2027 Good Days dates (day-calendar data generation).
   colonnade) covers rendered, owner-approved with one change (orange logo, the
   pin treatment), wired via product-assets.ts. Learning: the cover factory now
   takes a logoColor param; orange logo is the owner's preference going forward.
+- A4 (2026-07-18): the curated shelf ships - 9 products in 4 sections (readings
+  ladder $19/$29/$49, moments, kits, free strip), chooser trimmed to 6 answers
+  ("Plan the year" repoints to Complete Home), search + sitemap allowlisted to
+  VISIBLE_SLUGS. Verified locally: 9 cards, zero hidden-slug leaks, sitemap
+  exactly 9 product URLs, /search?q=kitchen surfaces no product. Learning: all
+  shop visibility now flows from one place (VISIBLE_SLUGS in lib/storefront.ts);
+  re-listing a product later is a one-line change.

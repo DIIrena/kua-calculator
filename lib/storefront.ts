@@ -301,95 +301,50 @@ function pick(slugs: readonly string[]): StoreProduct[] {
   return slugs.map((s) => BY_SLUG[s]).filter(Boolean) as StoreProduct[];
 }
 
-/** The featured collection, in display order. */
-export const FEATURED_SLUGS: readonly string[] = [
+/* ------------------------------------------------------------------
+ * Curated shelf (shop-redesign A4, owner-approved 2026-07-17).
+ * These three lists are the ONLY products shown on /products. Every
+ * other product keeps its live URL and stays buyable, but is delisted
+ * from the shop, the search index, and the sitemap. Love/relationship
+ * products live on myfengshuilove.com only.
+ * ------------------------------------------------------------------ */
+
+/** The ladder: the primary three-tier decision, in display order. */
+export const LADDER_SLUGS: readonly string[] = [
   "personal-feng-shui-compass",
+  "all-twelve-spaces-compass",
   "complete-home-compass",
-  "annual-feng-shui-planner-2026",
+];
+
+/** Situational products: shown small, below the ladder. */
+export const MOMENT_SLUGS: readonly string[] = [
   "move-in-kit",
-  "couple-compatibility-compass",
   "seven-day-home-reset",
 ];
 
-export function featuredProducts(): StoreProduct[] {
-  return pick(FEATURED_SLUGS);
-}
-
-/** Single-space compasses, in catalogue order: the "Choose by room" set. */
-export const ROOM_COMPASS_SLUGS: string[] = COMPASS_CATALOGUE.filter(
-  (e) => e.kind === "space",
-).map((e) => e.slug);
-
-/** Single-pillar compasses: the "Choose by life area" set. */
-export const LIFE_COMPASS_SLUGS: string[] = COMPASS_CATALOGUE.filter(
-  (e) => e.kind === "pillar",
-).map((e) => e.slug);
-
-export function roomCompasses(): StoreProduct[] {
-  return pick(ROOM_COMPASS_SLUGS);
-}
-
-export function lifeCompasses(): StoreProduct[] {
-  return pick(LIFE_COMPASS_SLUGS);
-}
-
-export type ProductGroup = {
-  key: string;
-  label: string;
-  description: string;
-  slugs: string[];
-};
-
-/** Named card-groups shown below the featured collection and the two
- *  compass selectors. Featured products and the room/life compasses are
- *  not repeated here. */
-export const PRODUCT_GROUPS: ProductGroup[] = [
-  {
-    key: "personal-reports",
-    label: "Personal direction reports",
-    description:
-      "Readings keyed to your Kua and your eight directions. The Personal Feng Shui Compass and the Complete Home Compass are in the featured collection above.",
-    slugs: ["extended-personal-kua-report"],
-  },
-  {
-    key: "timing",
-    label: "Annual timing tools",
-    description:
-      "Calendars and year overlays. The 2026 Annual Planner is in the featured collection above.",
-    slugs: ["good-days-calendar-2026", "year-ahead-compass"],
-  },
-  {
-    key: "workbooks",
-    label: "Workbooks and printable kits",
-    description:
-      "Self-contained printable PDFs to work through at your own pace.",
-    slugs: [
-      "bedroom-reset",
-      "business-money-feng-shui",
-      "home-diagnostic-workbook",
-      "daily-ritual-pack",
-      "cures-catalog",
-      "healthy-home-audit",
-      "five-elements-workbook",
-      "starter-deck",
-      "bazi-basics",
-    ],
-  },
-  {
-    key: "bundles",
-    label: "Bundles",
-    description:
-      "Several readings or printables in one volume. The Complete Home Compass and the Couple Compatibility Compass are in the featured collection above.",
-    slugs: [
-      "whole-home-starter-bundle",
-      "all-nine-pillars-compass",
-      "all-twelve-spaces-compass",
-      "pick-three-pillars",
-      "pick-three-spaces",
-    ],
-  },
+/** Printable kits + the remaining part-bundle. */
+export const KIT_SLUGS: readonly string[] = [
+  "all-nine-pillars-compass",
+  "business-money-feng-shui",
+  "whole-home-starter-bundle",
+  "cures-catalog",
 ];
 
-export function groupProducts(group: ProductGroup): StoreProduct[] {
-  return pick(group.slugs);
+/** Everything visible on the shop, and the search/sitemap allowlist. */
+export const VISIBLE_SLUGS: readonly string[] = [
+  ...LADDER_SLUGS,
+  ...MOMENT_SLUGS,
+  ...KIT_SLUGS,
+];
+
+export function ladderProducts(): StoreProduct[] {
+  return pick(LADDER_SLUGS);
+}
+
+export function momentProducts(): StoreProduct[] {
+  return pick(MOMENT_SLUGS);
+}
+
+export function kitProducts(): StoreProduct[] {
+  return pick(KIT_SLUGS);
 }
