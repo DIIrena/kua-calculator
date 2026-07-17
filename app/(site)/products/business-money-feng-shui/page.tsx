@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import BuyButton from "@/components/BuyButton";
-import FulfillmentBlock from "@/components/FulfillmentBlock";
-import ProductPreview from "@/components/ProductPreview";
+import ProductLanding, { type LandingConfig } from "@/components/ProductLanding";
+
+// Business and Money Feng Shui Kit on the landing template (B4).
 
 export const metadata: Metadata = {
-  title:
-    "Business and Money Feng Shui Kit | My Feng Shui Home",
+  title: "Business and Money Feng Shui Kit | My Feng Shui Home",
   description:
     "The office, the desk, the wealth corner, the kitchen stove. The practical money-channel reading for your home and business, keyed to your Kua.",
   alternates: {
@@ -17,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Business and Money Feng Shui Kit",
     description:
-      "The office, the desk, the wealth corner, the kitchen stove.",
+      "The office, the desk, the wealth corner, the stove: the money-channel reading. $19.",
     url: "https://myfengshuihome.com/products/business-money-feng-shui",
     images: [
       {
@@ -29,9 +27,80 @@ export const metadata: Metadata = {
   },
 };
 
+const CONFIG: LandingConfig = {
+  slug: "business-money-feng-shui",
+  title: "The Business and Money Feng Shui Kit",
+  eyebrow: "The money channel",
+  headline: "Where money runs through your home.",
+  subhead:
+    "A kitchen with a clean stove. A desk you want to sit at. A wealth corner the household quietly tends. The tradition reads these as one channel, and this focused printable book reads that channel for your home and your work, with a chapter on applying your own Kua to each.",
+  priceLabel: "$19",
+  priceCents: 1900,
+  cover: "/products/business-money-feng-shui/cover-portrait.png",
+  seoDescription:
+    "A practical feng shui reading of the money channel in a home: the desk, the office, the wealth corner, and the stove, with honest labelling of tradition versus design evidence.",
+  promise: [
+    "Money advice is the loudest, least honest corner of feng shui: wealth vases, frog figurines, promises. This Kit takes the opposite posture. The tradition does have a coherent reading of how money moves through a home, and it runs through unglamorous places: the stove, the desk, the corner you never dust.",
+    "The Kit reads that channel end to end: the desk (position, facing, the wall behind you, the window), the wealth corner walkthrough including which symbolic cures the tradition uses and which we deliberately leave out, and the kitchen and stove section, the part most people skip and the part the tradition weighs heaviest.",
+    "Every claim is labelled: design evidence, tradition, or preference. There is a daily money practice drawn from the tradition, with no mysticism attached, and a worked example of a freelancer's home office showing how the moves combine. No promised outcomes, ever: a home cannot sign clients. It can make the work seat easier to sit down at.",
+  ],
+  steps: [
+    {
+      title: "Pay once",
+      body: "$19, one-time. No subscription.",
+    },
+    {
+      title: "The PDF arrives",
+      body: "By email, the moment you buy. No forms, no waiting.",
+    },
+    {
+      title: "Read with your Kua",
+      body: "The applying-your-number chapter keys the desk and corner readings to your own directions (free calculator, ten seconds).",
+    },
+  ],
+  inside: [
+    "The desk reading: position, facing, the wall behind, the window.",
+    "The wealth-corner walkthrough, with the small symbolic cures the tradition uses and the ones we leave out, named.",
+    "The kitchen and stove section: the part most people skip and the part that quietly matters most in the traditional reading.",
+    "A daily money practice drawn from the tradition. No mysticism, no promises.",
+    "A worked example: a freelancer's home office, showing how the moves combine.",
+  ],
+  forWho: [
+    "You work from home, or your kitchen table is sometimes an office.",
+    "You have heard of the wealth corner and want it read honestly, not sold to.",
+    "You want the desk, the corner, and the stove treated as one system.",
+  ],
+  notForWho: [
+    "You want a promise of income. This book will not make one.",
+    "You want your full direction profile read: that is the Personal Compass; the two pair well.",
+    "You expect crystals-fix-everything content. The cures chapter is the most sceptical text we publish.",
+  ],
+  faq: [
+    {
+      q: "Is this personalised to my Kua?",
+      a: "It is a printable book, the same for every reader, with a dedicated chapter for applying your own Kua number to the desk and corner readings. Find your number free with the calculator, then read with it in hand.",
+    },
+    {
+      q: "Does it apply to a business premises or just a home?",
+      a: "Both. The channel reading is the same method at both scales: the seat, the facing, the corner, and what stands behind you. The worked example is a home office because that is where most readers work.",
+    },
+    {
+      q: "Will it tell me to buy a wealth vase or a money frog?",
+      a: "No. The wealth-corner chapter names the traditional cures, explains what the tradition claims for them, labels every claim, and tells you plainly which ones we consider preference rather than practice.",
+    },
+    {
+      q: "What format is it?",
+      a: "A typeset PDF, emailed the moment you buy. It prints cleanly at home.",
+    },
+  ],
+  buyLine:
+    "Secure checkout. The PDF arrives by email the moment you buy.",
+  finalNote: "A printable PDF, yours to keep. One-time, no subscription.",
+};
+
 type SearchParams = Promise<{ waitlist?: string }>;
 
-export default async function MoneyKitPage(props: {
+export default async function BusinessMoneyPage(props: {
   searchParams: SearchParams;
 }) {
   const { waitlist } = await props.searchParams;
@@ -40,138 +109,5 @@ export default async function MoneyKitPage(props: {
       ? (waitlist as "sent" | "invalid" | "error")
       : null;
 
-  return (
-    <div className="page-content product-page">
-      <section className="product-hero">
-        <p className="eyebrow">My Feng Shui Home</p>
-        <h1 className="product-heading">
-          The <em>Business and Money Feng Shui Kit</em>.
-        </h1>
-        <p className="product-lede">
-          A kitchen with a clean stove. A desk you actually want to
-          sit at. A wealth corner the household pays a little quiet
-          attention to. The tradition reads each of these as part of
-          one larger channel - the channel money runs through. This
-          Kit is the focused printable book that reads that channel
-          for your home and your work, keyed to your Kua.
-        </p>
-        <p className="product-hero-launch-state">
-          Available now. The files arrive by email the moment you buy.
-        </p>
-        <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to checkout →</a>
-        </p>
-      </section>
-
-      <ProductPreview slug="business-money-feng-shui" title="Business and Money Feng Shui Kit" />
-
-      <section className="product-section">
-        <h2>Who it is for</h2>
-        <p>
-          You are a freelancer, a small-business owner, a creative
-          professional, or a household that wants the money side of
-          the home read seriously. You work from home, or partly from
-          home, or you have a small studio. You want the practical
-          reading, not the magazine version.
-        </p>
-      </section>
-
-      <section className="product-section">
-        <h2>What it helps with</h2>
-        <ul>
-          <li>
-            Picking the desk position and chair facing for your Kua.
-          </li>
-          <li>
-            Finding the south-east wealth corner of your home, and
-            knowing what to do in it.
-          </li>
-          <li>
-            Reading the kitchen as the wealth-channel hinge - the
-            stove, the sink, the wood that mediates between them.
-          </li>
-          <li>
-            A short wallet, ledger, and daily-money practice section
-            drawn from the tradition.
-          </li>
-        </ul>
-      </section>
-
-      <section className="product-section">
-        <h2>What is inside</h2>
-        <ul>
-          <li>
-            The desk reading: position, facing, the wall behind, the
-            window.
-          </li>
-          <li>
-            The wealth-corner walkthrough, with the small symbolic
-            cures the tradition uses and the ones we leave out.
-          </li>
-          <li>
-            The kitchen and stove section - the part most people skip
-            and the part that quietly moves the needle.
-          </li>
-          <li>
-            A daily money practice section drawn from the tradition,
-            no mysticism, no promises.
-          </li>
-          <li>
-            A short worked example of a freelancer's home office, to
-            show how the moves combine.
-          </li>
-        </ul>
-      </section>
-
-      <section className="product-section">
-        <h2>How it works</h2>
-        <ol>
-          <li>You pay once. $19, no subscription.</li>
-          <li>
-            The PDF arrives by email within a minute. The desk-facing
-            table inside covers all nine Kua numbers, so you look up
-            yours in the book. No forms to fill.
-          </li>
-          <li>
-            Reply to the delivery
-            email any time for a fresh download link.
-          </li>
-        </ol>
-      </section>
-
-      <section className="product-section">
-        <h2>What it is not</h2>
-        <p>
-          It is not a wealth-attraction product. The tradition shapes
-          the conditions a home offers; it does not promise money
-          arrives. The framing here is the same as everywhere else on
-          the site: a structured way to choose, not a fortune to
-          expect.
-        </p>
-      </section>
-
-      <FulfillmentBlock slug="business-money-feng-shui" />
-
-      <section className="product-buy-section">
-        <h2>Buy now.</h2>
-        <p>
-          Secure checkout. Your files arrive by email the moment you buy.
-        </p>
-        <BuyButton
-          productSlug="business-money-feng-shui"
-          priceLabel="$19"
-          state="stripe-live"
-          waitlistStatus={status}
-        />
-      </section>
-
-      <section className="product-back-section">
-        <p>
-          <Link href="/products" className="article-back-link">
-            ← Back to all products
-          </Link>
-        </p>
-      </section>
-    </div>
-  );
+  return <ProductLanding config={CONFIG} waitlistStatus={status} />;
 }

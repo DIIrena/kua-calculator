@@ -37,10 +37,10 @@ Love Bundle). Summary of the target state:
 
 ## Phase B - Landing pages (MFSH)
 
-- [ ] B1. Landing template components + Complete Home pilot page; owner reviews live.
-- [ ] B2. Rollout: personal-feng-shui-compass, all-twelve-spaces-compass.
-- [ ] B3. Rollout: move-in-kit, seven-day-home-reset, all-nine-pillars-compass.
-- [ ] B4. Rollout: business-money-feng-shui, whole-home-starter-bundle, cures-catalog.
+- [x] B1. Landing template components + Complete Home pilot page; owner reviews live.
+- [x] B2. Rollout: personal-feng-shui-compass, all-twelve-spaces-compass.
+- [x] B3. Rollout: move-in-kit, seven-day-home-reset, all-nine-pillars-compass.
+- [x] B4. Rollout: business-money-feng-shui, whole-home-starter-bundle, cures-catalog.
 
 ## Phase C - MFSL (sister repo; deploy stays owner-gated)
 
@@ -96,3 +96,12 @@ Follow-on content task: 2027 Good Days dates (day-calendar data generation).
   (3 drafts, consented lists only, nothing wired). PHASE A COMPLETE. Learning:
   Stripe's own session log doubles as the shop-to-checkout click metric, which
   keeps the no-trackers rule intact for free.
+- B1-B4 (2026-07-18, autonomous session): components/ProductLanding.tsx (config-driven
+  9-section direct-response template, FAQ+Product JSON-LD, one buy form + three
+  anchor CTAs) + all 8 visible MFSH product pages rebuilt as LandingConfigs.
+  Copy scaled to price; honest for/not-for on every page; included-in-flagship
+  answered on both part-bundles; Move-In answers the free Good Days page
+  honestly. PHASE B COMPLETE on MFSH. Owner review pending on the live pages;
+  template revisions propagate to all pages at once. Learning: preserving each
+  page/s best existing copy (the kettle lede) inside the new framework beats
+  rewriting from zero.
