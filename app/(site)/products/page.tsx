@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Storefront from "@/components/Storefront";
 
 export const metadata: Metadata = {
@@ -36,14 +35,6 @@ export default async function ProductsPage(props: {
     <div className="page-content products-page">
       <section className="products-hero products-hero-shop">
         <h1 className="visually-hidden">Shop</h1>
-        <p className="products-lede">
-          Personalised readings at three depths, printable kits, and a
-          seven-day course. Nine products, each one earning its place.
-        </p>
-        <p className="products-utility">
-          New here? <Link href="/kua-calculator">Find your Kua number free</Link>{" "}
-          first, or <Link href="/search">search the site</Link>.
-        </p>
         {checkoutStatus === "error" ? (
           <p className="buy-button-status buy-button-status-err" role="alert">
             Something went wrong on our end. You were not charged. Try again
