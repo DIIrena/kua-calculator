@@ -485,13 +485,18 @@ a:hover { color: var(--clay-deep); }
   border: 0;
   padding: 0;
   margin: 0 0 var(--space-5) 0;
+}
+
+/* The grid sits on an inner div because Firefox does not apply
+   grid or flex layout to fieldset elements. */
+.occupant-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-5);
 }
 
 @media (min-width: 560px) {
-  .occupant {
+  .occupant-grid {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
     gap: var(--space-6);
   }
@@ -561,6 +566,15 @@ a:hover { color: var(--clay-deep); }
   text-transform: uppercase;
   color: var(--ink-2);
   margin-bottom: var(--space-1);
+}
+
+/* Shown only when date and gender share a row: it mirrors the height
+   of the Year/Month/Day sub-labels so the gender buttons sit on the
+   same line as the date inputs. */
+.radio-align-spacer { display: none; }
+
+@media (min-width: 560px) {
+  .radio-align-spacer { display: block; }
 }
 
 .field-help {

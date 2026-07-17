@@ -34,6 +34,10 @@ export default function CalculatorIsland({
         <fieldset className="occupant" data-occupant="1">
           <legend className="visually-hidden">About you</legend>
 
+          {/* The two-column grid lives on this inner div, not on the
+              fieldset: Firefox ignores display:grid on fieldset, which
+              left the date and gender fields stacked on desktop. */}
+          <div className="occupant-grid">
           <div className="field field-date">
             <span className="field-label" id="date-1-label">
               Birth date
@@ -107,6 +111,15 @@ export default function CalculatorIsland({
             <span className="field-label" id="gender-1-label">
               Gender
             </span>
+            {/* Invisible twin of the Year/Month/Day sub-labels so the
+                gender buttons line up with the date inputs when the two
+                fields share a row. */}
+            <span
+              className="date-sub-label radio-align-spacer"
+              aria-hidden="true"
+            >
+              &nbsp;
+            </span>
             <div
               className="radio-row"
               role="radiogroup"
@@ -128,6 +141,7 @@ export default function CalculatorIsland({
               aria-live="polite"
               hidden
             ></p>
+          </div>
           </div>
         </fieldset>
 
@@ -160,6 +174,7 @@ export default function CalculatorIsland({
             About your partner or housemate
           </legend>
 
+          <div className="occupant-grid">
           <div className="field field-date">
             <span className="field-label" id="date-2-label">
               Birth date
@@ -227,6 +242,12 @@ export default function CalculatorIsland({
             <span className="field-label" id="gender-2-label">
               Gender
             </span>
+            <span
+              className="date-sub-label radio-align-spacer"
+              aria-hidden="true"
+            >
+              &nbsp;
+            </span>
             <div
               className="radio-row"
               role="radiogroup"
@@ -248,6 +269,7 @@ export default function CalculatorIsland({
               aria-live="polite"
               hidden
             ></p>
+          </div>
           </div>
         </fieldset>
           </>
