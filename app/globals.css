@@ -7363,8 +7363,8 @@ a:hover { color: var(--clay-deep); }
   position: relative;
   display: inline-grid;
   place-items: center;
-  width: 70px;
-  height: 63px;
+  width: 56px;
+  height: 50px;
   border: none;
   background: transparent;
   padding: 0;
