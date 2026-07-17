@@ -36,6 +36,8 @@ const LEVELS: Record<string, ProductAssetLevel> = {
   "complete-home-compass": "cover",
   "couple-compatibility-compass": "cover",
   "seven-day-home-reset": "cover",
+  "all-twelve-spaces-compass": "cover",
+  "all-nine-pillars-compass": "cover",
 };
 
 export function assetLevel(slug: string): ProductAssetLevel {
@@ -61,6 +63,8 @@ export const CARD_COVER_SLUGS: ReadonlySet<string> = new Set([
   "couple-compatibility-compass",
   "move-in-kit",
   "seven-day-home-reset",
+  "all-twelve-spaces-compass",
+  "all-nine-pillars-compass",
 ]);
 
 // Optional page-count copy, used in the "what you receive" anchor only

@@ -26,7 +26,7 @@ Love Bundle). Summary of the target state:
 - [x] A2. Good Days free page (traffic asset, ships early): /good-days route, 2026
       dates on-page, email-gated printable, Complete Home + Move-In upsells, $9
       product redirect. Owner pins on publish.
-- [ ] A3. Covers for all-twelve-spaces (ladder card) + all-nine-pillars: factory
+- [x] A3. Covers for all-twelve-spaces (ladder card) + all-nine-pillars: factory
       render -> owner review -> wire.
 - [ ] A4. Shop curation: LADDER/MOMENT/KIT slug lists, Storefront rows + decoy notes,
       chooser update, search index + sitemap prune.
@@ -69,3 +69,7 @@ Follow-on content task: 2027 Good Days dates (day-calendar data generation).
   Complete Home + Move-In upsells, print CSS, old $9 product URL 301s here.
   Learning: the existing JSON already covers early 2027, so the page honestly
   says "2026 and 2027" today; Mar-Dec 2027 remains a data task. Owner: pin it.
+- A3 (2026-07-18): Twelve Spaces (3x4 room grid) + Nine Life Areas (nine-pillar
+  colonnade) covers rendered, owner-approved with one change (orange logo, the
+  pin treatment), wired via product-assets.ts. Learning: the cover factory now
+  takes a logoColor param; orange logo is the owner's preference going forward.
