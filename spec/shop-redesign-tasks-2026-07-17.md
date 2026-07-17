@@ -30,7 +30,7 @@ Love Bundle). Summary of the target state:
       render -> owner review -> wire.
 - [x] A4. Shop curation: LADDER/MOMENT/KIT slug lists, Storefront rows + decoy notes,
       chooser update, search index + sitemap prune.
-- [ ] A5. Homepage spotlight swap to flagship + MFSH favicon (green circle, orange
+- [x] A5. Homepage spotlight swap to flagship + MFSH favicon (green circle, orange
       logo, app/icon.svg + apple-icon.png).
 - [ ] A6. Measurement baseline note + 3 welcome-email drafts (approve-only, nothing
       wired to send).
@@ -80,3 +80,8 @@ Follow-on content task: 2027 Good Days dates (day-calendar data generation).
   exactly 9 product URLs, /search?q=kitchen surfaces no product. Learning: all
   shop visibility now flows from one place (VISIBLE_SLUGS in lib/storefront.ts);
   re-listing a product later is a one-line change.
+- A5 (2026-07-18): homepage spotlight now sells the $49 flagship (was the
+  Planner); shelf teaser updated (Twelve Spaces in, Bedroom Reset out - it is
+  MFSL-bound); favicon rebuilt to the owner spec: green circle + orange
+  heart-house (icon.svg), apple-icon.png rendered opaque green via Resvg so
+  iOS masking never shows a white tile.

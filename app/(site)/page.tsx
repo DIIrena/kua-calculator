@@ -337,41 +337,39 @@ export default async function HomePage(props: {
           </p>
           <div className="map-offer-grid">
             <div className="map-offer-text">
-              <h3>The 2026 Feng Shui Planner: Mid-Year Edition</h3>
+              <h3>The Complete Home Compass</h3>
               <p>
-                More than eighty pages reading the feng shui year for your home.
-                The 2026 annual chart explained, a treatment for each of the
-                nine sectors, and a day-by-day calendar covering 243 days from
-                July 2026 to February 2027. Delivered by email within minutes
-                as a PDF, an EPUB, and a phone calendar file.
+                The flagship: everything we read, in one book, keyed to you.
+                Your eight directions in depth, how your group pairs with
+                another, all twelve rooms, all nine life areas, and the shape
+                of the 2026 year against your Kua. Around 115 to 165 typeset
+                pages, generated for you and emailed within about a minute.
               </p>
               <ul className="map-offer-bullets">
-                <li>The 2026 annual chart, explained sector by sector</li>
+                <li>Your full Kua profile and a personalised bagua chart</li>
                 <li>
-                  Nine sector treatments: what to do, what to skip, and what is
-                  traditional in each
+                  All eight direction chapters: four supportive, four to
+                  handle with care
                 </li>
-                <li>
-                  The 243-day day-by-day calendar, July 2026 to February 2027
-                </li>
-                <li>The ten-step home walkthrough for the year ahead</li>
-                <li>Instant delivery by email</li>
+                <li>All twelve room chapters and all nine life-area chapters</li>
+                <li>The 2026 overlay and a seven-day experiment</li>
+                <li>Your name on the cover; emailed within about a minute</li>
               </ul>
             </div>
             <aside className="map-offer-price-card" aria-label="Price">
-              <p className="map-offer-price-eyebrow">The 2026 Feng Shui Planner</p>
-              <p className="map-offer-price-amount">$19</p>
+              <p className="map-offer-price-eyebrow">The Complete Home Compass</p>
+              <p className="map-offer-price-amount">$49</p>
               <p className="map-offer-price-suffix">
                 Available now. One-time, no subscription.
               </p>
               <Link
-                href="/products/annual-feng-shui-planner-2026"
+                href="/products/complete-home-compass"
                 className="cta-primary"
               >
-                Get the Planner
+                Get the Complete Home Compass
               </Link>
               <p className="map-offer-price-note">
-                PDF + EPUB + phone calendar file. Yours to keep.
+                A personalised PDF, yours to keep.
               </p>
             </aside>
           </div>
@@ -380,8 +378,8 @@ export default async function HomePage(props: {
             <p>
               Also on the shelf: the{" "}
               <strong>Personal Feng Shui Compass</strong>, the{" "}
-              <strong>Move-In Date Report</strong>, the{" "}
-              <strong>Bedroom and Relationship Reset</strong>, and the{" "}
+              <strong>Twelve Spaces Compass</strong>, the{" "}
+              <strong>Move-In Date Report</strong>, and the{" "}
               <strong>Business and Money Kit</strong>. Each is its own
               focused book.
             </p>
