@@ -45,7 +45,6 @@ function ProductCard({ p }: { p: StoreProduct }) {
       <Link href={p.href} className="shop-card-titlelink">
         <h3 className="shop-card-title">{p.title}</h3>
       </Link>
-      <p className="shop-card-desc">{p.oneLiner}</p>
 
       <div className="shop-card-foot">
         {p.onSale && p.wasCents ? (
