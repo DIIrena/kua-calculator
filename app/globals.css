@@ -7487,3 +7487,68 @@ a:hover { color: var(--clay-deep); }
   margin: var(--space-3) 0 0 0;
 }
 .cart-continue { text-align: left; margin: var(--space-3) 0 0 0; }
+
+/* ============================================================
+   Header on green: the header mirrors the footer. Footer-green
+   surface, orange brand mark + wordmark (same orange as the
+   footer heart), white menu. Scoped overrides only; the base
+   header rules above are unchanged.
+   ============================================================ */
+.site-header {
+  background: var(--ink);
+  border-bottom: 0;
+}
+.site-header :focus-visible {
+  outline-color: var(--on-dark);
+}
+.site-header .brand-mark,
+.site-header .brand-sub {
+  color: var(--clay);
+}
+.site-header .site-nav-link,
+.site-header .site-nav > a,
+.site-header .site-nav button.account-link {
+  color: var(--on-dark);
+}
+.site-header .site-nav-link:hover,
+.site-header .site-nav-link:focus-visible,
+.site-header .site-nav a:hover,
+.site-header .site-nav a:focus-visible,
+.site-header .site-nav button.account-link:hover,
+.site-header .site-nav button.account-link:focus-visible {
+  color: var(--on-dark);
+  border-bottom-color: var(--clay);
+}
+.site-header .site-nav-link-feature { color: var(--on-dark); }
+.site-header .site-nav-link-feature:hover { color: var(--on-dark); }
+.site-header .site-nav-link-quiet { color: #cfdad3; }
+.site-header .site-nav-link-quiet:hover,
+.site-header .site-nav-link-quiet:focus-visible { color: var(--on-dark); }
+.site-header .nav-dropdown-summary,
+.site-header .nav-dropdown-summary-feature { color: var(--on-dark); }
+.site-header .nav-dropdown-summary:hover,
+.site-header .nav-dropdown:hover > .nav-dropdown-summary,
+.site-header .nav-dropdown:focus-within > .nav-dropdown-summary,
+.site-header .nav-dropdown-summary:focus-visible {
+  color: var(--on-dark);
+  border-bottom-color: var(--clay);
+}
+.site-header .nav-dropdown-caret { color: #cfdad3; }
+.site-header .cart-button-icon { color: var(--on-dark); }
+
+@media (max-width: 880px) {
+  .site-header .mobile-nav-summary {
+    color: var(--on-dark);
+    border-bottom-color: rgba(255, 255, 255, 0.25);
+  }
+  .site-header .mobile-nav-summary:focus-visible {
+    outline-color: var(--on-dark);
+  }
+  .site-header .mobile-nav-summary-icon { color: var(--on-dark); }
+  .site-header .mobile-brand-link:focus-visible {
+    outline-color: var(--on-dark);
+  }
+  .site-header .site-nav-mobile .site-nav-link {
+    border-bottom-color: rgba(255, 255, 255, 0.22);
+  }
+}
