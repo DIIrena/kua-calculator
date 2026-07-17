@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import BuyButton from "@/components/BuyButton";
-import FulfillmentBlock from "@/components/FulfillmentBlock";
-import ProductPreview from "@/components/ProductPreview";
+import ProductLanding, { type LandingConfig } from "@/components/ProductLanding";
+
+// 7-Day Home Reset on the long-form landing template (B3). The course:
+// one short email a day, one small task each.
 
 export const metadata: Metadata = {
   title: "7-Day Home Reset | My Feng Shui Home",
@@ -27,6 +27,81 @@ export const metadata: Metadata = {
   },
 };
 
+const CONFIG: LandingConfig = {
+  slug: "seven-day-home-reset",
+  title: "The 7-Day Home Reset",
+  eyebrow: "The guided week",
+  headline: "One small task a day. A calmer home by Sunday.",
+  subhead:
+    "A seven-day email course: one short email each morning, one small task each day, each doable in ten to twenty minutes with things you already own. No shopping, no redecorating, no app, nothing to log in to.",
+  priceLabel: "$19",
+  priceCents: 1900,
+  cover: "/products/seven-day-home-reset/cover-portrait.png",
+  seoDescription:
+    "A seven-day feng shui email course: one small task per day, room by room, with nothing to buy and no outcome promises.",
+  promise: [
+    "Most of what helps a home is small and quiet, and most of us never get to it because it never becomes a plan. The list of little fixes lives in the back of your head, gets longer, and turns into dread. A free weekend never rescues it.",
+    "The 7-Day Home Reset is the plan. For seven days you get one short email a day, each with a single small task in a deliberate order: a slow look around, the front door, light and air, the bedroom, the desk, the kitchen, the clutter that has stopped moving, and a final day on keeping the one change that helped most.",
+    "The voice is calm and practical throughout: a way to read and adjust your rooms, not a fortune. Do the task, or skip it; the next email comes either way, and the series simply ends after day seven.",
+  ],
+  steps: [
+    {
+      title: "Pay once",
+      body: "$19, one-time. No subscription, no recurring fee.",
+    },
+    {
+      title: "The welcome email arrives",
+      body: "Right away, so you know the shape of the week. Day one lands the next morning.",
+    },
+    {
+      title: "One task a day, seven days",
+      body: "Ten to twenty minutes each, with things you already own. Then it ends; nothing keeps sending.",
+    },
+  ],
+  inside: [
+    "A welcome email the moment you join, then one email a day for seven days.",
+    "One small task per day, each doable in ten to twenty minutes with things you already own.",
+    "The week in order: a slow look around, the front door, light and air, the bedroom, the desk, the kitchen, clutter and flow, and keeping what helped.",
+    "One-click unsubscribe on every email; the series stops the moment you use it.",
+  ],
+  forWho: [
+    "You want a calmer home but the big overhaul never happens.",
+    "You would rather be handed one doable thing a day than a long list to dread.",
+    "You like gentle structure that fits an ordinary working week.",
+  ],
+  notForWho: [
+    "You want a personalised reading of your directions: that is what the Compasses are for (and this course pairs well after one).",
+    "You want a decluttering bootcamp or a renovation plan. The tasks are small on purpose.",
+    "You expect promised outcomes. The course adjusts rooms; it makes no predictions.",
+  ],
+  faq: [
+    {
+      q: "Is this personalised to my Kua?",
+      a: "No, and honestly: it does not need to be. The seven tasks are the moves that help almost any home: light, air, the door, the bed, the desk, the kitchen, the clutter. If you want your directions read, the Personal Compass does that; the two pair well.",
+    },
+    {
+      q: "What if I miss a day?",
+      a: "Nothing bad happens. The emails stay in your inbox, the tasks have no deadline, and the order still works a day or a week later. It is a calm week, not a challenge.",
+    },
+    {
+      q: "Is it really not a subscription?",
+      a: "Really. One payment, eight emails total (welcome plus seven days), then it ends. Every email carries a one-click unsubscribe that stops the series instantly.",
+    },
+    {
+      q: "Do I need to buy anything for the tasks?",
+      a: "No. Every task uses what you already own. The course never asks you to shop, and there are no product links inside the emails.",
+    },
+    {
+      q: "When does day one arrive?",
+      a: "The welcome email arrives right away; day one lands the next morning, and the rest follow daily. Starting on any weekday works.",
+    },
+  ],
+  buyLine:
+    "Secure checkout. The welcome email arrives right away and day one lands the next morning.",
+  finalNote:
+    "Eight emails in total, then it ends. One-time, no subscription.",
+};
+
 type SearchParams = Promise<{ waitlist?: string }>;
 
 export default async function SevenDayHomeResetPage(props: {
@@ -38,118 +113,5 @@ export default async function SevenDayHomeResetPage(props: {
       ? (waitlist as "sent" | "invalid" | "error")
       : null;
 
-  return (
-    <div className="page-content product-page">
-      <section className="product-hero">
-        <p className="eyebrow">My Feng Shui Home</p>
-        <h1 className="product-heading">
-          The <em>7-Day Home Reset</em>.
-        </h1>
-        <p className="product-lede">
-          Most of what helps a home is small and quiet, and most of us
-          never get to it because it never becomes a plan. This is the
-          plan. For seven days you get one short email a day, each with a
-          single small task: the front door, the air and light, the bed,
-          the desk, the kitchen, the clutter that has stopped moving. No
-          shopping, no redecorating, nothing that needs a free weekend.
-          By the end of the week your home is reset, one calm step at a
-          time.
-        </p>
-        <p className="product-hero-launch-state">
-          Available now. The welcome email arrives the moment you buy, then one short task email a day for seven days.
-        </p>
-        <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to checkout →</a>
-        </p>
-      </section>
-
-      <ProductPreview slug="seven-day-home-reset" title="7-Day Home Reset" />
-
-      <section className="product-section">
-        <h2>Who it is for</h2>
-        <p>
-          You want your home to feel calmer and more supportive, but a
-          big overhaul never happens. You would rather be handed one
-          small, doable thing a day than a long list to dread. You like
-          the idea of a gentle structure that fits around an ordinary
-          week.
-        </p>
-      </section>
-
-      <section className="product-section">
-        <h2>What you get</h2>
-        <ul>
-          <li>
-            A welcome email the moment you join, then one email a day for
-            seven days.
-          </li>
-          <li>
-            One small task per day, each doable in ten to twenty minutes
-            with things you already own.
-          </li>
-          <li>
-            Seven rooms and themes in order: a slow look around, the
-            front door, light and air, the bedroom, the desk, the
-            kitchen, clutter and flow, and a final day on keeping the one
-            change that helped.
-          </li>
-          <li>
-            A calm, practical voice throughout. A way to read and adjust
-            your rooms, not a fortune.
-          </li>
-        </ul>
-      </section>
-
-      <section className="product-section">
-        <h2>How it works</h2>
-        <ol>
-          <li>You pay once. There is no subscription, no recurring fee.</li>
-          <li>
-            The welcome email arrives right away, and then one task email
-            a day for the next seven days.
-          </li>
-          <li>
-            Do the task, or do not. There is no app and nothing to log
-            in to. Every email has a one-click unsubscribe, and the
-            series stops the moment you use it.
-          </li>
-        </ol>
-      </section>
-
-      <section className="product-section">
-        <h2>What it is not</h2>
-        <p>
-          It is not a subscription. You pay once for the seven days, and
-          the emails stop on their own at the end. It is not a personal
-          reading of your home or your Kua; for that, the free Kua
-          calculator and the personalised readings on this site go
-          deeper. And it does not promise outcomes. It is a structured,
-          gentle way to give your home a week of steady attention.
-        </p>
-      </section>
-
-      <FulfillmentBlock slug="seven-day-home-reset" />
-
-      <section className="product-buy-section">
-        <h2>Buy now.</h2>
-        <p>
-          Secure checkout. The course begins the moment you buy.
-        </p>
-        <BuyButton
-          productSlug="seven-day-home-reset"
-          priceLabel="$19"
-          state="stripe-live"
-          waitlistStatus={status}
-        />
-      </section>
-
-      <section className="product-back-section">
-        <p>
-          <Link href="/products" className="article-back-link">
-            ← Back to all products
-          </Link>
-        </p>
-      </section>
-    </div>
-  );
+  return <ProductLanding config={CONFIG} waitlistStatus={status} />;
 }

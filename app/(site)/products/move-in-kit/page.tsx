@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import BuyButton from "@/components/BuyButton";
-import FulfillmentBlock from "@/components/FulfillmentBlock";
-import ProductPreview from "@/components/ProductPreview";
+import ProductLanding, { type LandingConfig } from "@/components/ProductLanding";
+
+// Move-In Date Report on the long-form landing template (B3). The
+// life-event product: a move-in window read day by day.
 
 export const metadata: Metadata = {
   title: "Move-In Date Report | My Feng Shui Home",
@@ -27,6 +27,81 @@ export const metadata: Metadata = {
   },
 };
 
+const CONFIG: LandingConfig = {
+  slug: "move-in-kit",
+  title: "The Move-In Date Report",
+  eyebrow: "For the move",
+  headline: "Choose your move-in day with a method, not a guess.",
+  subhead:
+    "You give us the window you might move within; we read every day in it against the verified 2026 day calendar and your own Kua. Your best days pulled out, the ones to handle with care flagged, your directions for the new home, and a first-week sequence for settling in.",
+  priceLabel: "$29",
+  priceCents: 2900,
+  cover: "/products/move-in-kit/cover-portrait.png",
+  seoDescription:
+    "A personalised reading of a move-in window against the traditional 2026 day calendar, with Kua directions for the new home and a first-week checklist.",
+  promise: [
+    "The box is taped, the keys are in your hand, and the only thing left is choosing the day you walk in. Most people pick whatever the van company had free. The tradition has an actual method for this, and it takes your birth data and your dates, not your hopes.",
+    "The Move-In Date Report reads every day in your window against the verified 2026 day calendar: which dates it treats as favourable for a move, which suit settling, and which to handle with care, each with the reason named. Then it adds the part no generic calendar can: your own Kua directions for the new home, so the bed and the main work seat start in the right place on day one.",
+    "It closes with a first-week sequence: the threshold, light and air, the kitchen, the bed, the work seat, in order. A calm structured start, not a superstition checklist, and it says plainly which parts are tradition.",
+  ],
+  steps: [
+    {
+      title: "Pay once",
+      body: "$29, one-time. No subscription.",
+    },
+    {
+      title: "Give us your window",
+      body: "Your name, birth date, gender, and the date range you might move within (inside July 2026 to February 2027).",
+    },
+    {
+      title: "Your report arrives",
+      body: "Within about a minute the personalised PDF is generated and emailed to you.",
+    },
+  ],
+  inside: [
+    "A day-by-day reading of your move-in window: each date marked favourable, settling, neutral, or handle-with-care, with the reason.",
+    "Your best move days pulled out as a short list, and the care days listed separately so planning takes one glance.",
+    "Your four supportive directions for the new home, read from your Kua, for placing the bed and the main work seat.",
+    "The first-week activation sequence: threshold, light and air, kitchen, bed, work seat, in order.",
+  ],
+  forWho: [
+    "You are moving between July 2026 and February 2027 and the date is still yours to choose.",
+    "You want the new home to start deliberately, not by removal-van logistics alone.",
+    "You like a one-glance answer backed by a visible method.",
+  ],
+  notForWho: [
+    "Your date is already fixed and unchangeable: the report still reads your week-one setup, but its main job is choosing the day.",
+    "You want a guarantee the move goes well. It reads a traditional calendar; it promises nothing.",
+    "Your window falls outside July 2026 to February 2027 (the verified calendar's current range).",
+  ],
+  faq: [
+    {
+      q: "What if none of my possible days is favourable?",
+      a: "The report never leaves you with a blank. Every day is graded, so if the window is tight you see the best available day and what the tradition suggests pairing with it: which jobs to do on the settling days either side.",
+    },
+    {
+      q: "Where do the day readings come from?",
+      a: "From the traditional twelve-officers day calendar for the 2026 solar year, the same verified dataset behind our free Good Days page and the Planner. The free page shows everyone's dates; the report reads your specific window and adds your Kua layer.",
+    },
+    {
+      q: "The free Good Days page exists. Why pay?",
+      a: "The free page lists the generally favourable dates for everyone. The report reads your exact window day by day including the in-between days, pulls out your best options, and adds what the free page cannot: your own directions for the new home and the first-week sequence.",
+    },
+    {
+      q: "We are a couple with different Kua numbers.",
+      a: "The date reading is shared (the calendar is the calendar), and the report is keyed to one person's directions for the setup. For both profiles read together, the Couple Compatibility Compass on our sister site reads two people as a pair.",
+    },
+    {
+      q: "What format does it arrive in?",
+      a: "A typeset PDF, emailed within about a minute of the form. Print the day list and pin it where the packing happens.",
+    },
+  ],
+  buyLine:
+    "Secure checkout. After paying you fill in the short form, including your possible date window, and the personalised PDF is emailed within about a minute.",
+  finalNote:
+    "A personalised PDF, yours to keep. One-time, no subscription.",
+};
+
 type SearchParams = Promise<{ waitlist?: string }>;
 
 export default async function MoveInKitPage(props: {
@@ -38,120 +113,5 @@ export default async function MoveInKitPage(props: {
       ? (waitlist as "sent" | "invalid" | "error")
       : null;
 
-  return (
-    <div className="page-content product-page">
-      <section className="product-hero">
-        <p className="eyebrow">My Feng Shui Home</p>
-        <h1 className="product-heading">
-          The <em>Move-In Date Report</em>.
-        </h1>
-        <p className="product-lede">
-          The box is taped, the keys are in your hand, and the only
-          thing left is choosing the day you walk in. The tradition has
-          a method for that. You give us the window you might move
-          within, and we read every day in it against the verified 2026
-          calendar: the days it treats as favourable for a move, the
-          ones good for settling, and the ones to handle with care. The
-          report adds your own Kua directions for setting up the new
-          home, and a short sequence for the first week inside.
-        </p>
-        <p className="product-hero-launch-state">
-          Available now. After you pay, you fill in a short form and the personalised PDF is generated and emailed to you within about a minute.
-        </p>
-        <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to checkout →</a>
-        </p>
-      </section>
-
-      <ProductPreview slug="move-in-kit" title="Move-In Date Report" />
-
-      <section className="product-section">
-        <h2>Who it is for</h2>
-        <p>
-          You are about to move house between now and early 2027, and
-          you want to use the traditional calendar to choose the day,
-          plus a clear checklist for settling in once you are inside.
-        </p>
-      </section>
-
-      <section className="product-section">
-        <h2>What is inside</h2>
-        <ul>
-          <li>
-            A day-by-day reading of your move-in window: each date
-            marked favourable, settling, neutral, or one to handle with
-            care, with a one-line note.
-          </li>
-          <li>
-            Your best move days inside the window pulled out as a short
-            list, and the days to handle with care listed separately.
-          </li>
-          <li>
-            Your four supportive directions for the new home, read from
-            your Kua, for placing the bed and the main work seat as you
-            set up.
-          </li>
-          <li>
-            A first-week activation sequence: the threshold, light and
-            air, the kitchen, the bed, and the work seat, in order.
-          </li>
-        </ul>
-      </section>
-
-      <section className="product-section">
-        <h2>How it works</h2>
-        <ol>
-          <li>You pay once. There is no subscription, no recurring fee.</li>
-          <li>
-            You fill in a short form: first name, birth date, gender,
-            and the move-in window you are considering. We compute your
-            Kua server-side and read the window against the calendar.
-          </li>
-          <li>
-            Within about a minute, the PDF is emailed to you with a
-            download link. Reply to the delivery email any time for a
-            fresh one.
-          </li>
-        </ol>
-      </section>
-
-      <section className="product-section">
-        <h2>What it is not</h2>
-        <p>
-          The day calendar covers the 2026 solar year, July 2026 through
-          February 2027. If your move falls outside that span, this
-          edition will not cover it; a later edition will pick up 2027.
-        </p>
-        <p>
-          It is not a guarantee that the move goes well. It shapes the
-          conditions; movers, weather, and life still happen. It is also
-          not a substitute for an in-person consultation. It is a
-          printable report you use yourself.
-        </p>
-      </section>
-
-      <FulfillmentBlock slug="move-in-kit" />
-
-      <section className="product-buy-section">
-        <h2>Buy now.</h2>
-        <p>
-          Secure checkout. You fill in a short form after paying and the PDF is emailed to you.
-        </p>
-        <BuyButton
-          productSlug="move-in-kit"
-          priceLabel="$29"
-          state="stripe-live"
-          waitlistStatus={status}
-        />
-      </section>
-
-      <section className="product-back-section">
-        <p>
-          <Link href="/products" className="article-back-link">
-            ← Back to all products
-          </Link>
-        </p>
-      </section>
-    </div>
-  );
+  return <ProductLanding config={CONFIG} waitlistStatus={status} />;
 }
