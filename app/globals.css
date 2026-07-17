@@ -495,17 +495,23 @@ a:hover { color: var(--clay-deep); }
   gap: var(--space-5);
 }
 
+/* 1.5fr : 1fr with a narrow column gap makes all five controls
+   (year, month, day, male, female) come out the same width, so the
+   row reads as one continuous line. */
 @media (min-width: 560px) {
   .occupant-grid {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    gap: var(--space-6);
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: var(--space-5) var(--space-4);
   }
 }
 
 .field { display: flex; flex-direction: column; }
 
+/* .date-sub is excluded: this rule's inline-block display and 1.15rem
+   font were overriding the .date-sub flex column below, which pushed
+   the date inputs about 7px lower than the gender buttons. */
 .field-label,
-.field label:not(.radio) {
+.field label:not(.radio):not(.date-sub) {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.15rem;
