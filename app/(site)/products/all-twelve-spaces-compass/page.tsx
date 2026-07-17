@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import BuyButton from "@/components/BuyButton";
-import FulfillmentBlock from "@/components/FulfillmentBlock";
-import ProductPreview from "@/components/ProductPreview";
+import ProductLanding, { type LandingConfig } from "@/components/ProductLanding";
+
+// Twelve Spaces Compass on the long-form landing template (B2). The
+// middle rung of the ladder: every room read for one person's Kua.
 
 export const metadata: Metadata = {
   title: "Twelve Spaces Compass | My Feng Shui Home",
@@ -26,6 +26,82 @@ export const metadata: Metadata = {
   },
 };
 
+const CONFIG: LandingConfig = {
+  slug: "all-twelve-spaces-compass",
+  title: "The Twelve Spaces Compass",
+  eyebrow: "The middle depth",
+  headline: "Walk your whole home with one book in hand.",
+  subhead:
+    "Twelve rooms, read one at a time for your Kua: bedroom, office, dining, kitchen, living room, bathroom, entrance, hallway, storage, laundry, balcony, garage. Each chapter gives the traditional placements for that room keyed to your number. One personalised PDF, emailed within about a minute.",
+  priceLabel: "$29",
+  priceCents: 2900,
+  cover: "/products/all-twelve-spaces-compass/cover-portrait.png",
+  seoDescription:
+    "A personalised feng shui reading of all twelve rooms of the home, chapter by chapter, keyed to your Kua number.",
+  promise: [
+    "Room advice is where feng shui gets practical, and where it usually falls apart: the bedroom tip from one site quietly contradicts the kitchen rule from another, and neither knows anything about you. A room reading without your directions is half a reading.",
+    "The Twelve Spaces Compass reads every room against your Kua number, one chapter per room, so the same thread runs from the bedroom to the garage: which supportive directions each room should use for your profile, which cautious ones to keep for other jobs, and the command position where it applies. Where the reasoning is design evidence rather than tradition, the chapter says so.",
+    "It is the twelve single-room readings together in one coherent volume, at a bundle price: walk the home once over a weekend, book in hand, one small move per room.",
+  ],
+  steps: [
+    {
+      title: "Pay once",
+      body: "$29, one-time. No subscription.",
+    },
+    {
+      title: "Fill in three fields",
+      body: "First name, birth date, gender. Your Kua is computed server-side.",
+    },
+    {
+      title: "Your book arrives",
+      body: "Within about a minute the personalised PDF is generated and emailed to you, your name on the cover.",
+    },
+  ],
+  inside: [
+    "One chapter for each of the twelve rooms, read for your Kua number and your East or West group.",
+    "For every room: which supportive directions to use, which cautious ones to keep for other jobs, and the command position where it applies.",
+    "One small move per room: concrete, reversible, testable.",
+    "A whole-home walkthrough you can follow room by room over a weekend.",
+  ],
+  forWho: [
+    "You want the whole home settled, room by room, in one pass.",
+    "You know your directions (or will in ten seconds, free) and want them applied where you live.",
+    "You want the twelve single-room readings without buying twelve books.",
+  ],
+  notForWho: [
+    "You also want the nine life areas, compatibility, and the 2026 year: the Complete Home Compass contains this entire book and the rest.",
+    "You want a prediction. It reads your direction profile; it promises no outcomes.",
+    "You want floor-plan-specific consulting. It reads your directions per room, not your blueprints.",
+  ],
+  faq: [
+    {
+      q: "Is this included in the Complete Home Compass?",
+      a: "Yes, in full. The Complete Home Compass ($49) contains all twelve room chapters plus the nine life areas, the eight direction chapters, compatibility, and the 2026 overlay. Buy this one when the rooms are what you need; buy the flagship when you want everything.",
+    },
+    {
+      q: "How is each room personalised?",
+      a: "Every chapter is keyed to your Kua number: which wall the tradition gives your bed, which way your desk faces, which corners suit storage for your profile. Two readers with different numbers get different placements in the same rooms.",
+    },
+    {
+      q: "My home does not have all twelve spaces.",
+      a: "Almost nobody's does. The chapters are self-contained, so you read the rooms you have and keep the rest for the next home. A balcony chapter you do not need today costs you nothing.",
+    },
+    {
+      q: "Do I need to know feng shui first?",
+      a: "No. The welcome chapter sets up your profile and the handful of terms, and each room chapter explains what it needs as it goes.",
+    },
+    {
+      q: "What format does it arrive in?",
+      a: "A typeset PDF, emailed within about a minute of the short form. It prints cleanly at home if you prefer paper for the walkthrough.",
+    },
+  ],
+  buyLine:
+    "Secure checkout. After paying you fill in three fields and the personalised PDF is generated and emailed to you within about a minute.",
+  finalNote:
+    "A personalised PDF, one chapter per room, yours to keep. One-time, no subscription.",
+  ladder: "twelve",
+};
+
 type SearchParams = Promise<{ waitlist?: string }>;
 
 export default async function AllTwelveSpacesCompassPage(props: {
@@ -37,99 +113,5 @@ export default async function AllTwelveSpacesCompassPage(props: {
       ? (waitlist as "sent" | "invalid" | "error")
       : null;
 
-  return (
-    <div className="page-content product-page">
-      <section className="product-hero">
-        <p className="eyebrow">My Feng Shui Home</p>
-        <h1 className="product-heading">
-          The <em>Twelve Spaces Compass</em>.
-        </h1>
-        <p className="product-lede">
-          Twelve rooms, read one at a time for your Kua: the bedroom, the
-          office, the dining table, the kitchen, the living room, the
-          bathroom, the entrance, the hallways, storage, laundry, the
-          balcony, and the garage. Each chapter gives the traditional
-          placements for that room keyed to your number, so you can walk
-          your whole home with one book in hand. The twelve single-room
-          readings together, at a bundle price.
-        </p>
-        <p className="product-hero-launch-state">
-          Available now. After you pay, you fill in a short form and the personalised PDF is generated and emailed to you within about a minute.
-        </p>
-        <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to checkout →</a>
-        </p>
-      </section>
-
-      <ProductPreview slug="all-twelve-spaces-compass" title="Twelve Spaces Compass" />
-
-      <section className="product-section">
-        <h2>What is inside</h2>
-        <ul>
-          <li>
-            One chapter for each of the twelve rooms, read for your Kua
-            number and your East or West group.
-          </li>
-          <li>
-            For every room: which supportive directions to use, which
-            cautious ones to keep for other jobs, and the command position
-            where it applies.
-          </li>
-          <li>One small move per room, with your name on the cover.</li>
-          <li>
-            A whole-home walkthrough you can follow room by room over a
-            weekend.
-          </li>
-        </ul>
-      </section>
-
-      <section className="product-section">
-        <h2>How it works</h2>
-        <ol>
-          <li>You pay once. $29, no subscription.</li>
-          <li>
-            You fill in three fields: first name, birth date, gender. We
-            compute your Kua server-side.
-          </li>
-          <li>
-            Within about a minute, the PDF is generated and emailed to you
-            with a download link.
-          </li>
-        </ol>
-      </section>
-
-      <section className="product-section">
-        <h2>What it is not</h2>
-        <p>
-          It reads your direction profile, the eight directions that
-          follow from your Kua, not your floor plan, and it does not
-          promise outcomes. It is a structured way to decide how each room
-          is set up, not a fortune.
-        </p>
-      </section>
-
-      <FulfillmentBlock slug="all-twelve-spaces-compass" />
-
-      <section className="product-buy-section">
-        <h2>Buy now.</h2>
-        <p>
-          Secure checkout. You fill in a short form after paying and the PDF is emailed to you.
-        </p>
-        <BuyButton
-          productSlug="all-twelve-spaces-compass"
-          priceLabel="$29"
-          state="stripe-live"
-          waitlistStatus={status}
-        />
-      </section>
-
-      <section className="product-back-section">
-        <p>
-          <Link href="/products" className="article-back-link">
-            ← Back to all products
-          </Link>
-        </p>
-      </section>
-    </div>
-  );
+  return <ProductLanding config={CONFIG} waitlistStatus={status} />;
 }
