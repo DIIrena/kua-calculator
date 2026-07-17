@@ -18,7 +18,7 @@ import { GUIDE_CLUSTERS } from "@/lib/guide";
 //     homepage, and it is also listed in the Shop as a free item.
 //
 // Items kept reachable via the footer: Life areas, Articles, Methodology,
-// Refunds, Privacy.
+// Legal, Privacy.
 
 // The eleven guide topics, in reading order. Source of truth is
 // GUIDE_CLUSTERS in lib/guide.ts; the /guide library uses the same set.

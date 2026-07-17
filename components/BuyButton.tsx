@@ -210,7 +210,7 @@ export default function BuyButton({
           </button>
         </form>
         <p className="buy-button-note">
-          Secure checkout. 7-day refund.
+          Secure checkout.
         </p>
       </div>
     );
@@ -241,7 +241,7 @@ export default function BuyButton({
           Buy now
         </a>
         <p className="buy-button-note">
-          Secure checkout. 7-day refund.
+          Secure checkout.
         </p>
       </div>
     );

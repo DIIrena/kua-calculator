@@ -7,8 +7,8 @@
 //   3. Personalised delivery: the rendered PDF link, sent by the
 //      fulfil action after the form is submitted.
 //
-// Voice rules: no outcome promises, no em dashes, 7-day refund
-// language, one calm cross-sell line maximum.
+// Voice rules: no outcome promises, no em dashes, no refund
+// pointers (the policy lives at /legal), one calm cross-sell line maximum.
 
 const BRAND = "My Feng Shui Home";
 
@@ -25,7 +25,7 @@ function shell(bodyHtml: string): string {
           ${bodyHtml}
         </td></tr>
         <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#4f5b53;border-top:1px solid #e2dac5;">
-          7-day refund. Reply to this email if a link
+          Reply to this email if a link
           stops working and we send a fresh one.
         </td></tr>
       </table>
@@ -74,7 +74,7 @@ export function buildStaticDeliveryEmail(input: {
       ? `\n${input.crossSellLine.text} ${input.crossSellLine.url}`
       : "",
     "",
-    "7-day refund.",
+    "Questions? Just reply to this email.",
     `${BRAND} - myfengshuihome.com`,
   ].join("\n");
 
@@ -102,7 +102,7 @@ export function buildPersonalizationInviteEmail(input: {
     "",
     input.formUrl,
     "",
-    "7-day refund.",
+    "Questions? Just reply to this email.",
     `${BRAND} - myfengshuihome.com`,
   ].join("\n");
 
@@ -131,7 +131,7 @@ export function buildPersonalizedDeliveryEmail(input: {
     "",
     "The link works for 7 days. Reply to this email for a fresh one.",
     "",
-    "7-day refund.",
+    "Questions? Just reply to this email.",
     `${BRAND} - myfengshuihome.com`,
   ].join("\n");
 

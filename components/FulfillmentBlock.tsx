@@ -57,7 +57,7 @@ export default function FulfillmentBlock({ slug }: { slug: string }) {
     { k: "How it arrives", v: arrives },
     { k: "Format", v: format },
     { k: "Checkout", v: "Secure checkout. One-time purchase, no subscription." },
-    { k: "Refund", v: "7-day refund on every purchase." },
+    { k: "Support", v: "A person answers at hello@myfengshuihome.com." },
     { k: "Re-download", v: redownload },
   ];
 

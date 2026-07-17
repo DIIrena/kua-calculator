@@ -146,8 +146,9 @@ export default async function SuccessPage(props: {
             </p>
           ) : null}
           <p className="success-refund-note">
-            7-day refund. See the{" "}
-            <Link href="/refunds">refund policy</Link>.
+            Questions about your order? Write to
+            hello@myfengshuihome.com, or see the{" "}
+            <Link href="/legal">legal page</Link>.
           </p>
         </section>
       </div>

@@ -150,7 +150,7 @@ export async function GET(
       title: "The Shop",
       price: null,
       tagline:
-        "Printable guides, personalised Kua readings, and tools. One-time prices, 7-day refunds.",
+        "Printable guides, personalised Kua readings, and tools. One-time prices, instant delivery.",
     };
   } else {
     const p = STORE_PRODUCTS.find((x) => x.slug === slug);

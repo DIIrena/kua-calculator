@@ -133,7 +133,7 @@ export default async function BedroomResetPage(props: {
             No forms to fill.
           </li>
           <li>
-            7-day refund. Reply to the delivery
+            Reply to the delivery
             email any time for a fresh download link.
           </li>
         </ol>
@@ -154,7 +154,7 @@ export default async function BedroomResetPage(props: {
       <section className="product-buy-section">
         <h2>Buy now.</h2>
         <p>
-          Secure checkout. 7-day refund. Your files arrive by email the moment you buy.
+          Secure checkout. Your files arrive by email the moment you buy.
         </p>
         <BuyButton
           productSlug="bedroom-reset"

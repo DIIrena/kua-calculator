@@ -48,6 +48,14 @@ const nextConfig: NextConfig = {
         destination: "/products/personal-feng-shui-compass",
         permanent: true,
       },
+      // The refund policy now lives inside the consolidated legal page.
+      // The old URL is referenced by the Stripe support settings and may
+      // be indexed; 301 keeps every existing pointer working.
+      {
+        source: "/refunds",
+        destination: "/legal",
+        permanent: true,
+      },
     ];
   },
   async headers() {

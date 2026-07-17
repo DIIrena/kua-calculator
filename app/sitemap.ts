@@ -209,7 +209,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${SITE}/refunds`,
+      url: `${SITE}/legal`,
       lastModified: today,
       changeFrequency: "yearly",
       priority: 0.3,

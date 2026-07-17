@@ -68,19 +68,32 @@ export default async function CompleteHomeCompassPage(props: {
         <h2>What is inside</h2>
         <ul>
           <li>
-            Your full Kua profile and a personalised bagua chart, with the
-            one-page at-a-glance summary.
+            Your full Kua profile and a personalised bagua chart, with a
+            one-page printable at-a-glance card.
           </li>
           <li>
-            All eight direction chapters, four supportive and four to
-            handle with care, read for your Kua.
+            A find-your-eight-directions chapter: the phone-compass
+            walkthrough, a worked floor-plan example, and a Room Map
+            worksheet pre-filled with your directions.
+          </li>
+          <li>
+            The your-Kua-element chapter and the five before-the-compass
+            form checks the reference books pair with every direction.
+          </li>
+          <li>
+            All eight direction chapters read for your Kua, each with a
+            compass diagram, do-this and avoid-this lists, a practitioner
+            tip, and a real home worked through.
           </li>
           <li>The compatibility chapter, for two people in one home.</li>
           <li>All twelve room chapters and all nine life-area chapters.</li>
-          <li>The 2026 overlay and a seven-day experiment.</li>
           <li>
-            Around 95 to 145 typeset pages, in our brand, with your name on
-            the cover.
+            The 2026 overlay, the hard-cases chapter, and the seven-day
+            experiment with a printable log page.
+          </li>
+          <li>
+            Around 115 to 165 typeset pages, in our brand, with your name
+            on the cover.
           </li>
         </ul>
       </section>
@@ -117,7 +130,7 @@ export default async function CompleteHomeCompassPage(props: {
       <section className="product-buy-section">
         <h2>Buy now.</h2>
         <p>
-          Secure checkout. 7-day refund. You fill in a short form after paying and the PDF is emailed to you.
+          Secure checkout. You fill in a short form after paying and the PDF is emailed to you.
         </p>
         <BuyButton
           productSlug="complete-home-compass"

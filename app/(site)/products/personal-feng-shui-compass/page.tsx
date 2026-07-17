@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "Personal Feng Shui Compass | A personalised PDF reading your Kua",
   description:
-    "A personalised, 25-30 page PDF reading your Kua number, your East or West group, your four supportive directions, and your four to handle with care. No outcome promises.",
+    "A personalised PDF of roughly 50 typeset pages reading your Kua number, your East or West group, your four supportive directions, and your four to handle with care. With diagrams, real-home examples, and printable worksheets. No outcome promises.",
   alternates: {
     canonical:
       "https://myfengshuihome.com/products/personal-feng-shui-compass",
@@ -117,28 +117,50 @@ export default async function PersonalFengShuiCompassPage(props: {
             sectors highlighted.
           </li>
           <li>
-            A short orientation explainer (how to read a direction for
-            sleeping, for sitting, and for a door).
+            A one-page printable <em>at-a-glance</em> card: your whole
+            reading on a single sheet, built to be pinned.
           </li>
           <li>
-            One-page <em>at-a-glance</em> summary card you can flip
-            back to without re-reading the whole book.
+            A <em>your Kua element</em> chapter: the colours, materials,
+            and dressing customs the tradition attaches to your own
+            element, and where to spend them on your favourable walls.
           </li>
           <li>
-            Four chapters for your four supportive directions (Sheng
-            Qi, Tian Yi, Yan Nian, Fu Wei), each read for your Kua.
+            A <em>before the compass</em> chapter with the five form
+            checks the reference books always pair with direction work:
+            the command position, solid backing for the bed, mirrors,
+            sharp edges, and beams.
           </li>
           <li>
-            Four shorter chapters for your four cautious directions,
-            framed as lower-priority placements, not curses.
+            A <em>find your eight directions</em> chapter: a
+            twenty-minute phone-compass walkthrough with a worked
+            floor-plan example, ending in a Room Map worksheet
+            pre-filled with your own directions.
           </li>
           <li>
-            A seven-day experiment to test a single change in your
-            home.
+            Eight direction chapters, each read for your Kua, each with
+            a compass diagram showing where it falls for you, concrete
+            do-this and avoid-this lists, a practitioner tip, and a
+            real home worked through - plus the traditional recipe for
+            activating your own relationship corner.
           </li>
           <li>
-            Roughly 25 to 30 typeset pages, designed in our brand and
-            keyed to your name on the cover.
+            Bed and desk placement diagrams that settle the two rules
+            people mix up: where the head points, and where the body
+            faces.
+          </li>
+          <li>
+            A <em>hard cases</em> chapter: a partner in the opposite
+            group, studios, the bed that cannot move, renting, and
+            open-plan homes.
+          </li>
+          <li>
+            The seven-day experiment with a printable log page, so your
+            first change gets an honest verdict.
+          </li>
+          <li>
+            Roughly 50 typeset pages, designed in our brand and keyed
+            to your name on the cover.
           </li>
         </ul>
       </section>
@@ -190,7 +212,6 @@ export default async function PersonalFengShuiCompassPage(props: {
         <p>
           $14, one-time. After paying you fill in three fields and the
           PDF is generated and emailed to you within about a minute.
-          7-day refund.
         </p>
         <BuyButton
           productSlug="personal-feng-shui-compass"

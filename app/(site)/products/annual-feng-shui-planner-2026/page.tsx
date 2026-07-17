@@ -65,8 +65,8 @@ const PLANNER_FAQ: ReadonlyArray<{ q: string; a: string }> = [
     a: "Three files: a print-ready PDF, an EPUB for e-readers, and an ICS calendar file that adds the 243 day readings to Apple Calendar or Google Calendar.",
   },
   {
-    q: "Is the Planner refundable?",
-    a: "Yes. Every purchase carries a 7-day refund. Email hello@myfengshuihome.com and the money goes back.",
+    q: "What if something is wrong with my copy?",
+    a: "Email hello@myfengshuihome.com with what you were hoping for and we make it right. The details live on the legal page.",
   },
   {
     q: "Will there be a 2027 edition?",
@@ -442,8 +442,8 @@ export default async function PlannerPage(props: {
             one.
           </li>
           <li>
-            <strong>7-day refund.</strong> Email
-            us and the money goes back.
+            <strong>Questions?</strong> Email
+            us and a person answers.
           </li>
           <li>
             <strong>The 2027 edition</strong> ships in January 2027 as
@@ -504,7 +504,6 @@ export default async function PlannerPage(props: {
         <p>
           $19, one-time. The files arrive by email within a minute of
           purchase, and the download page shows them immediately.
-          7-day refund.
         </p>
         <BuyButton
           productSlug="annual-feng-shui-planner-2026"

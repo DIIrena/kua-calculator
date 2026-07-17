@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FooterSubscribe from "@/components/FooterSubscribe";
 
 // Site footer: the deep-ink counterweight, centred. Carries the brand
@@ -40,6 +41,11 @@ export default function SiteFooter() {
       <p className="footer-copyright">
         &copy; 2026 Mens Sana LLC. All rights reserved. All content on this
         site is protected by copyright.
+      </p>
+      <p className="footer-links-row">
+        <Link href="/legal">Legal</Link>
+        <span aria-hidden="true"> &middot; </span>
+        <Link href="/privacy">Privacy</Link>
       </p>
     </footer>
   );

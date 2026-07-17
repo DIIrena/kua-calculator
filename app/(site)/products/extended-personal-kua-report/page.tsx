@@ -120,22 +120,36 @@ export default async function ExtendedPersonalKuaReportPage(props: {
             highlighted.
           </li>
           <li>
-            A one-page at-a-glance summary card you can flip back to
-            without re-reading the book.
+            A one-page printable at-a-glance card: your whole reading
+            on a single sheet, built to be pinned.
           </li>
           <li>
-            Eight direction chapters, four supportive and four to handle
-            with care, each read for your Kua.
+            The your-Kua-element chapter (colours, materials, dressing
+            customs for your element) and the before-the-compass form
+            checks: command position, solid backing, mirrors, edges,
+            beams.
+          </li>
+          <li>
+            A find-your-eight-directions chapter: a twenty-minute
+            phone-compass walkthrough with a worked floor-plan example
+            and a Room Map worksheet pre-filled with your directions.
+          </li>
+          <li>
+            Eight direction chapters, each read for your Kua, each with
+            a compass diagram, do-this and avoid-this lists, a
+            practitioner tip, and a real home worked through.
           </li>
           <li>
             Five further chapters: compatibility, the bedroom, the desk,
             the dining table, and the 2026 overlay.
           </li>
           <li>
-            A seven-day experiment to test a single change in your home.
+            A hard-cases chapter (opposite-group partner, studios, the
+            bed that cannot move, renting, open plans), plus the
+            seven-day experiment with a printable log page.
           </li>
           <li>
-            Roughly 34 to 46 typeset pages, designed in our brand and
+            Roughly 56 to 70 typeset pages, designed in our brand and
             keyed to your name on the cover.
           </li>
         </ul>
@@ -179,7 +193,7 @@ export default async function ExtendedPersonalKuaReportPage(props: {
       <section className="product-buy-section">
         <h2>Buy now.</h2>
         <p>
-          Secure checkout. 7-day refund. You fill in a short form after paying and the PDF is emailed to you.
+          Secure checkout. You fill in a short form after paying and the PDF is emailed to you.
         </p>
         <BuyButton
           productSlug="extended-personal-kua-report"

@@ -72,8 +72,8 @@ export default function CartContents({
               </button>
             </form>
             <p className="cart-note">
-              One secure payment for everything in your cart. 7-day refund on
-              each item. Printable files arrive by email; a personalised
+              One secure payment for everything in your cart.
+              Printable files arrive by email; a personalised
               reading includes a short form right after checkout.
             </p>
             <p className="cart-continue">

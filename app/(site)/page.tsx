@@ -331,7 +331,7 @@ export default async function HomePage(props: {
           </h2>
           <p className="home-section-lede">
             Each gives you a structured way to decide what to do in the
-            room you are standing in. One-time prices, 7-day refunds, no
+            room you are standing in. One-time prices, instant delivery, no
             outcome promises. The spotlight one is below; the rest of the
             shelf is one click away.
           </p>
@@ -355,7 +355,7 @@ export default async function HomePage(props: {
                   The 243-day day-by-day calendar, July 2026 to February 2027
                 </li>
                 <li>The ten-step home walkthrough for the year ahead</li>
-                <li>Instant delivery, 7-day refund</li>
+                <li>Instant delivery by email</li>
               </ul>
             </div>
             <aside className="map-offer-price-card" aria-label="Price">

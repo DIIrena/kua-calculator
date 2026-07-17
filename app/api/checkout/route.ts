@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
     custom_text: {
       submit: {
         message:
-          "Digital download, delivered immediately by email. By purchasing you agree to immediate delivery and waive the EU 14-day withdrawal right. 7-day refund policy applies either way.",
+          "Digital download, delivered immediately by email. By purchasing you agree to immediate delivery and waive the EU 14-day withdrawal right. Full terms: myfengshuihome.com/legal.",
       },
     },
   });

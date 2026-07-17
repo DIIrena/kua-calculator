@@ -125,7 +125,7 @@ export default async function GoodDaysCalendarPage(props: {
         <h2>Buy the Calendar.</h2>
         <p>
           $9, one-time. The printable PDF and the phone calendar file
-          arrive by email the moment you buy. 7-day refund.
+          arrive by email the moment you buy.
         </p>
         <BuyButton
           productSlug="good-days-calendar-2026"

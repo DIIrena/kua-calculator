@@ -319,6 +319,22 @@ a:hover { color: var(--clay-deep); }
   color: #a4b3aa;
 }
 
+/* Quiet legal links under the copyright line */
+.footer-links-row {
+  margin: var(--space-2) 0 0;
+  font-size: 0.78rem;
+  color: #a4b3aa;
+}
+.footer-links-row a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.footer-links-row a:hover,
+.footer-links-row a:focus-visible {
+  color: #fcfcf8;
+}
+
 /* Footer newsletter subscribe */
 .footer-subscribe {
   max-width: 440px;

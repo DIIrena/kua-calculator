@@ -5,13 +5,13 @@ import Storefront from "@/components/Storefront";
 export const metadata: Metadata = {
   title: "Shop | My Feng Shui Home",
   description:
-    "Printable guides, personalised Kua readings, bundles, and a 7-day course. One-time prices, 7-day refunds, no outcome promises. Featured picks, then browse by room, life area, or type.",
+    "Printable guides, personalised Kua readings, bundles, and a 7-day course. One-time prices, instant delivery, no outcome promises. Featured picks, then browse by room, life area, or type.",
   alternates: { canonical: "https://myfengshuihome.com/products" },
   openGraph: {
     type: "website",
     title: "Shop - My Feng Shui Home",
     description:
-      "Printable guides, personalised Kua readings, bundles, and a course. One-time prices, 7-day refunds.",
+      "Printable guides, personalised Kua readings, bundles, and a course. One-time prices, instant delivery.",
     url: "https://myfengshuihome.com/products",
     images: [
       {
@@ -70,7 +70,7 @@ export default async function ProductsPage(props: {
         <p>
           Everything is available now. Printable products arrive by email
           the moment you buy; personalised readings within about a minute;
-          the course begins right away. A 7-day refund covers each.
+          the course begins right away. Everything is yours to keep.
         </p>
       </section>
     </div>
