@@ -107,27 +107,21 @@ function CardGrid({ items }: { items: StoreProduct[] }) {
 }
 
 export default function Storefront() {
+  // All shop products in one uniform grid. The grid is responsive:
+  // 1 column on mobile, 2 on tablet, 3 on desktop (see .products-grid).
+  const products = [
+    ...ladderProducts(),
+    ...momentProducts(),
+    ...kitProducts(),
+  ];
+
   return (
     <div className="products-collections">
       <section
         className="collection collection-featured"
-        aria-label="The readings"
+        aria-label="Products"
       >
-        <CardGrid items={ladderProducts()} />
-      </section>
-
-      <section
-        className="collection collection-quiet"
-        aria-label="For particular moments"
-      >
-        <CardGrid items={momentProducts()} />
-      </section>
-
-      <section
-        className="collection collection-quiet"
-        aria-label="Kits and guides"
-      >
-        <CardGrid items={kitProducts()} />
+        <CardGrid items={products} />
       </section>
     </div>
   );
