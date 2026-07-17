@@ -3,6 +3,7 @@ import BuyButton, { type BuyButtonState } from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
 import FlagshipChooser, { type Flagship } from "@/components/FlagshipChooser";
+import { autolinkProducts } from "@/components/autolinkProducts";
 
 // The long-form landing template (shop-redesign Phase B). One component,
 // one content config per product, so copy revisions land everywhere at
@@ -91,7 +92,9 @@ export default function ProductLanding({
         <div className="landing-hero-text">
           <p className="eyebrow">{c.eyebrow}</p>
           <h1 id="landing-h1">{c.headline}</h1>
-          <p className="landing-subhead">{c.subhead}</p>
+          <p className="landing-subhead">
+            {autolinkProducts(c.subhead, c.slug)}
+          </p>
           <p className="landing-hero-cta">
             <a href="#buy" className="cta-primary">
               Get it, {c.priceLabel}
@@ -120,7 +123,7 @@ export default function ProductLanding({
       {/* 3. The promise narrative */}
       <section className="product-section landing-promise" aria-label="Why this exists">
         {c.promise.map((p) => (
-          <p key={p.slice(0, 24)}>{p}</p>
+          <p key={p.slice(0, 24)}>{autolinkProducts(p, c.slug)}</p>
         ))}
       </section>
 
@@ -155,7 +158,7 @@ export default function ProductLanding({
         <h2 id="inside-h">What is inside</h2>
         <ul className="landing-inside-list">
           {c.inside.map((b) => (
-            <li key={b.slice(0, 24)}>{b}</li>
+            <li key={b.slice(0, 24)}>{autolinkProducts(b, c.slug)}</li>
           ))}
         </ul>
       </section>
@@ -168,7 +171,7 @@ export default function ProductLanding({
             <h3>For you if</h3>
             <ul>
               {c.forWho.map((b) => (
-                <li key={b.slice(0, 24)}>{b}</li>
+                <li key={b.slice(0, 24)}>{autolinkProducts(b, c.slug)}</li>
               ))}
             </ul>
           </div>
@@ -176,7 +179,7 @@ export default function ProductLanding({
             <h3>Not for you if</h3>
             <ul>
               {c.notForWho.map((b) => (
-                <li key={b.slice(0, 24)}>{b}</li>
+                <li key={b.slice(0, 24)}>{autolinkProducts(b, c.slug)}</li>
               ))}
             </ul>
           </div>
@@ -192,7 +195,9 @@ export default function ProductLanding({
         {c.faq.map((qa) => (
           <details key={qa.q} className="product-faq-item">
             <summary>{qa.q}</summary>
-            <div className="product-faq-answer">{qa.a}</div>
+            <div className="product-faq-answer">
+              {autolinkProducts(qa.a, c.slug)}
+            </div>
           </details>
         ))}
       </section>

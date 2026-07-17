@@ -7503,6 +7503,14 @@ a:hover { color: var(--clay-deep); }
   margin: var(--space-2) 0 var(--space-3);
 }
 .landing-subhead { font-size: 1.05rem; line-height: 1.6; color: var(--ink-2); }
+
+/* Inline cross-links to other products, injected by autolinkProducts. */
+.product-inline-link {
+  color: var(--green-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.product-inline-link:hover { color: var(--clay); }
 .landing-hero-cta {
   display: flex;
   align-items: center;
