@@ -27,10 +27,15 @@ const LEVELS: Record<string, ProductAssetLevel> = {
   // renders its own cover on the page; its sample pages are named
   // differently, so it is intentionally not a ProductPreview "full".
   "annual-feng-shui-planner-2026": "cover",
-  "personal-feng-shui-compass": "cover",
+  // Compass v2 (2026-07-17): interior sample pages regenerated from the
+  // corrected 45-page sample render (Maya, Kua 4) - the at-a-glance card
+  // and the Sheng Qi chapter opener.
+  "personal-feng-shui-compass": "full",
   "extended-personal-kua-report": "cover",
   "move-in-kit": "cover",
   "complete-home-compass": "cover",
+  "couple-compatibility-compass": "cover",
+  "seven-day-home-reset": "cover",
 };
 
 export function assetLevel(slug: string): ProductAssetLevel {
@@ -52,10 +57,14 @@ export const CARD_COVER_SLUGS: ReadonlySet<string> = new Set([
   "starter-deck",
   "bazi-basics",
   "complete-home-compass",
+  "personal-feng-shui-compass",
+  "couple-compatibility-compass",
+  "move-in-kit",
+  "seven-day-home-reset",
 ]);
 
 // Optional page-count copy, used in the "what you receive" anchor only
 // where the figure is genuinely known. Omitted = not shown.
 export const KNOWN_PAGES: Record<string, string> = {
-  "complete-home-compass": "around 95 to 145 pages",
+  "complete-home-compass": "around 115 to 165 pages",
 };
