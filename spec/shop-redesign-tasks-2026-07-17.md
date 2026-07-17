@@ -32,7 +32,7 @@ Love Bundle). Summary of the target state:
       chooser update, search index + sitemap prune.
 - [x] A5. Homepage spotlight swap to flagship + MFSH favicon (green circle, orange
       logo, app/icon.svg + apple-icon.png).
-- [ ] A6. Measurement baseline note + 3 welcome-email drafts (approve-only, nothing
+- [x] A6. Measurement baseline note + 3 welcome-email drafts (approve-only, nothing
       wired to send).
 
 ## Phase B - Landing pages (MFSH)
@@ -84,4 +84,15 @@ Follow-on content task: 2027 Good Days dates (day-calendar data generation).
   Planner); shelf teaser updated (Twelve Spaces in, Bedroom Reset out - it is
   MFSL-bound); favicon rebuilt to the owner spec: green circle + orange
   heart-house (icon.svg), apple-icon.png rendered opaque green via Resvg so
-  iOS masking never shows a white tile.
+  iOS masking never shows a white tile. Follow-up in the same task: the
+  calculator post-result card and FlagshipChooser still sold the delisted
+  Planner, and FlagshipChooser + /life + /space CTAs still said $14 - all
+  retargeted to the ladder and $19. Learning: price/product references hide in
+  display-copy components; sweep components/ and app/ for the product name AND
+  the old price string whenever a product is delisted or repriced.
+- A6 (2026-07-18): spec/measurement-baseline-2026-07-18.md (THE metric: Stripe
+  checkout sessions created vs completed - zero new analytics needed, since
+  every Buy click already creates a session) + spec/welcome-emails-2026-07-18.md
+  (3 drafts, consented lists only, nothing wired). PHASE A COMPLETE. Learning:
+  Stripe's own session log doubles as the shop-to-checkout click metric, which
+  keeps the no-trackers rule intact for free.
