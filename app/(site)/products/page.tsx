@@ -50,14 +50,6 @@ export default async function ProductsPage(props: {
       <Storefront />
 
       <section className="products-honest-footer">
-        <h2>What this shop is, and what it is not.</h2>
-        <p>
-          Every item here is a printable PDF, a personalised PDF, a course,
-          or a free tool. There are no consultations, no subscriptions, no
-          recurring fees. You pay once and you keep what you bought. Each
-          product is self-contained: you can buy one without buying any of
-          the others.
-        </p>
         <p>
           Everything is available now. Printable products arrive by email
           the moment you buy; personalised readings within about a minute;
