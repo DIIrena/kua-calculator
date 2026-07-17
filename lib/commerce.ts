@@ -88,7 +88,7 @@ export const COMMERCE_PRODUCTS: Record<string, CommerceProduct> = {
   "personal-feng-shui-compass": {
     slug: "personal-feng-shui-compass",
     shortTitle: "Personal Feng Shui Compass",
-    priceCents: 1400,
+    priceCents: 1900,
     currency: "usd",
     stripeEnvKey: "STRIPE_PRICE_COMPASS",
     fulfillment: "personalized",

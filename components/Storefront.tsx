@@ -178,7 +178,7 @@ const CHOICES: Choice[] = [
     key: "me",
     intent: "My own directions",
     title: "Personal Feng Shui Compass",
-    price: "$14",
+    price: "$19",
     line: "Your Kua and your eight directions, read in depth, with a seven-day experiment.",
     cta: "View the Compass",
     href: "/products/personal-feng-shui-compass",

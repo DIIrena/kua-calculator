@@ -152,7 +152,7 @@ const CORE: Omit<StoreProduct, "priceLabel">[] = [
     title: "Personal Feng Shui Compass",
     oneLiner:
       "Your Kua read in depth: four supportive directions, four to handle with care, and a seven-day experiment to test it.",
-    priceCents: 1400,
+    priceCents: 1900,
     category: "personalised",
     featured: true,
   },

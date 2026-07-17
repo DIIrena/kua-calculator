@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Personal Feng Shui Compass",
     description:
-      "A personalised PDF reading your Kua and your eight directions. $14.",
+      "A personalised PDF reading your Kua and your eight directions. $19.",
     url: "https://myfengshuihome.com/products/personal-feng-shui-compass",
     images: [
       {
@@ -210,12 +210,12 @@ export default async function PersonalFengShuiCompassPage(props: {
       <section className="product-buy-section">
         <h2>Buy the Compass.</h2>
         <p>
-          $14, one-time. After paying you fill in three fields and the
+          $19, one-time. After paying you fill in three fields and the
           PDF is generated and emailed to you within about a minute.
         </p>
         <BuyButton
           productSlug="personal-feng-shui-compass"
-          priceLabel="$14"
+          priceLabel="$19"
           state="stripe-live"
           waitlistStatus={status}
         />

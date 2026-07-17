@@ -77,7 +77,7 @@ const FAQ: Array<{ q: string; a: string }> = [
   },
   {
     q: "What is the Personal Feng Shui Compass?",
-    a: "It is a personalised PDF keyed to your Kua number. It reads your East or West group, your four supportive directions and your four cautious directions, with traditional placements for the bed, the desk, and the dining seat, plus a seven-day experiment. It is personalised to your direction profile, the eight directions that follow from your Kua, not to your floor plan. $14, one-time, no subscription. It is available now in the shop.",
+    a: "It is a personalised PDF keyed to your Kua number. It reads your East or West group, your four supportive directions and your four cautious directions, with traditional placements for the bed, the desk, and the dining seat, plus a seven-day experiment. It is personalised to your direction profile, the eight directions that follow from your Kua, not to your floor plan. $19, one-time, no subscription. It is available now in the shop.",
   },
   {
     q: "What about Western feng shui versus Classical feng shui?",
