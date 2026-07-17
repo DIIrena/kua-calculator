@@ -23,7 +23,7 @@ Love Bundle). Summary of the target state:
 
 - [x] A1. Personal Compass $14 -> $19: code constants + copy; owner creates the $19
       Stripe Price and updates the Vercel env var (stepwise walkthrough provided).
-- [ ] A2. Good Days free page (traffic asset, ships early): /good-days route, 2026
+- [x] A2. Good Days free page (traffic asset, ships early): /good-days route, 2026
       dates on-page, email-gated printable, Complete Home + Move-In upsells, $9
       product redirect. Owner pins on publish.
 - [ ] A3. Covers for all-twelve-spaces (ladder card) + all-nine-pillars: factory
@@ -63,3 +63,9 @@ Follow-on content task: 2027 Good Days dates (day-calendar data generation).
   Stripe Price + updated STRIPE_PRICE_COMPASS + redeployed; verified live - the
   Stripe session shows $19.00. Learning: env-var changes error briefly while the
   redeploy swaps; retry after ~60s before diagnosing.
+- A2 (2026-07-18): /good-days ships - 77 favourable days (Jul 2026-Feb 2027) from
+  day-calendar-2026.json, month sections + caution lists, honest-framing box,
+  email capture (optional notes opt-in stored to product_waitlist "good-days"),
+  Complete Home + Move-In upsells, print CSS, old $9 product URL 301s here.
+  Learning: the existing JSON already covers early 2027, so the page honestly
+  says "2026 and 2027" today; Mar-Dec 2027 remains a data task. Owner: pin it.

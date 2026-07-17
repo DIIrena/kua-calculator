@@ -56,6 +56,13 @@ const nextConfig: NextConfig = {
         destination: "/legal",
         permanent: true,
       },
+      // The $9 Good Days Calendar product is retired; its dates are now
+      // the free /good-days page (shop-redesign task A2).
+      {
+        source: "/products/good-days-calendar-2026",
+        destination: "/good-days",
+        permanent: true,
+      },
     ];
   },
   async headers() {

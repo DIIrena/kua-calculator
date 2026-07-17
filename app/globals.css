@@ -7489,6 +7489,59 @@ a:hover { color: var(--clay-deep); }
 .cart-continue { text-align: left; margin: var(--space-3) 0 0 0; }
 
 /* ============================================================
+   Free Good Days page (shop-redesign A2)
+   ============================================================ */
+.good-days-lede { font-size: 1.05rem; line-height: 1.6; }
+.good-days-honest {
+  background: var(--sand);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.95rem;
+  color: var(--ink-2);
+}
+.good-days-legend p { font-size: 0.98rem; }
+.good-days-month h2 {
+  border-bottom: 2px solid var(--clay);
+  padding-bottom: var(--space-1);
+}
+.good-days-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+.good-days-list li {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.good-days-officer { color: var(--ink-2); }
+.good-days-caution { font-size: 0.9rem; color: var(--ink-2); }
+.good-days-email {
+  background: var(--sand);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-top: var(--space-6);
+}
+.lead-magnet-checkbox-row { font-size: 0.9rem; margin: var(--space-2) 0 0; }
+.lead-magnet-checkbox-row input { accent-color: var(--clay); margin-right: 4px; }
+.good-days-upsell {
+  border-top: 1px solid var(--hairline);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+}
+@media print {
+  .site-header, .site-footer, .good-days-email, .good-days-upsell, .refunds-back { display: none !important; }
+  .good-days-list li { border: 1px solid #ccc; break-inside: avoid; }
+}
+
+/* ============================================================
    Header on green: the header mirrors the footer. Footer-green
    surface, orange brand mark + wordmark (same orange as the
    footer heart), white menu. Scoped overrides only; the base
