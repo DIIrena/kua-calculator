@@ -7489,6 +7489,90 @@ a:hover { color: var(--clay-deep); }
 .cart-continue { text-align: left; margin: var(--space-3) 0 0 0; }
 
 /* ============================================================
+   Long-form product landing (shop-redesign Phase B)
+   ============================================================ */
+.landing-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-6);
+  align-items: center;
+  padding: var(--space-6) 0 var(--space-5);
+}
+.landing-hero-text h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  line-height: 1.12;
+  color: var(--green);
+  margin: var(--space-2) 0 var(--space-3);
+}
+.landing-subhead { font-size: 1.05rem; line-height: 1.6; color: var(--ink-2); }
+.landing-hero-cta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-4);
+}
+.landing-cta-note { font-size: 0.85rem; color: var(--ink-2); }
+.landing-hero-cover img {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  display: block;
+  margin: 0 auto;
+}
+.landing-promise p { font-size: 1.02rem; line-height: 1.65; }
+.landing-steps-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+.landing-steps-list li { display: flex; gap: var(--space-3); align-items: flex-start; }
+.landing-step-num {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--on-dark);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.landing-steps-list h3 { margin: 0 0 4px; font-size: 1rem; }
+.landing-steps-list p { margin: 0; font-size: 0.92rem; color: var(--ink-2); }
+.landing-mid-cta { margin-top: var(--space-5); }
+.landing-inside-list li { margin-bottom: var(--space-2); line-height: 1.55; }
+.landing-who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+.landing-who-grid > div {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+}
+.landing-who-grid h3 { margin-top: 0; }
+.landing-who-grid li { margin-bottom: var(--space-2); line-height: 1.5; }
+.landing-final-note { font-size: 0.92rem; color: var(--ink-2); }
+.landing-support-note { font-size: 0.88rem; color: var(--ink-2); }
+@media (max-width: 760px) {
+  .landing-hero { grid-template-columns: 1fr; padding-top: var(--space-4); }
+  .landing-hero-cover { order: -1; }
+  .landing-hero-cover img { max-width: 220px; }
+  .landing-steps-list { grid-template-columns: 1fr; }
+  .landing-who-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    Curated shelf (shop-redesign A4): quiet rows + free strip
    ============================================================ */
 .collection-quiet .collection-title { font-size: 1.15rem; }

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import BuyButton from "@/components/BuyButton";
-import FulfillmentBlock from "@/components/FulfillmentBlock";
-import ProductPreview from "@/components/ProductPreview";
-import FlagshipChooser from "@/components/FlagshipChooser";
+import ProductLanding, { type LandingConfig } from "@/components/ProductLanding";
+
+// The Complete Home Compass: the flagship, and the pilot page of the
+// long-form landing template (shop-redesign B1). All copy lives in the
+// config; the section system lives in components/ProductLanding.tsx.
 
 export const metadata: Metadata = {
   title: "Complete Home Compass | My Feng Shui Home",
@@ -28,6 +28,91 @@ export const metadata: Metadata = {
   },
 };
 
+const CONFIG: LandingConfig = {
+  slug: "complete-home-compass",
+  title: "The Complete Home Compass",
+  eyebrow: "The flagship reading",
+  headline: "Your whole home, read as one system.",
+  subhead:
+    "Everything we read, in one book, keyed to you: your eight directions in depth, how your group pairs with another person, all twelve rooms, all nine life areas, and the shape of the 2026 year against your Kua. Around 115 to 165 typeset pages, generated for you, with your name on the cover.",
+  priceLabel: "$49",
+  priceCents: 4900,
+  cover: "/products/complete-home-compass/cover-portrait.png",
+  seoDescription:
+    "A personalised feng shui reading of the whole home: eight directions, twelve rooms, nine life areas, compatibility, and the 2026 overlay, keyed to your Kua number.",
+  promise: [
+    "Most feng shui advice arrives in fragments: a tip for the bedroom, a rule for the desk, a warning about mirrors. None of it is necessarily wrong, but a home is one system, and fragments read in isolation are how the advice starts to contradict itself. You fix the bedroom by the bedroom rule and break the money corner by the money rule, and nobody tells you which one should win.",
+    "The Complete Home Compass reads everything together, and reads it for you specifically. Your Kua number decides which directions the tradition marks as supportive for you and which to handle with care, and that one thread runs through every chapter: every room, every life area, every placement call is made against your profile, not a generic reader's. Where a recommendation rests on design evidence, the book says so. Where it is tradition, it says that too, plainly.",
+    "It reads your direction profile, not your floor plan, and it promises no outcomes. What it gives you is the complete, structured map for deciding how your home is arranged: one book, one system, no contradictions.",
+  ],
+  steps: [
+    {
+      title: "Pay once",
+      body: "$49, one-time. No subscription, no upsells at checkout.",
+    },
+    {
+      title: "Fill in three fields",
+      body: "First name, birth date, gender. Your Kua is computed server-side; nothing else is asked.",
+    },
+    {
+      title: "Your book arrives",
+      body: "Within about a minute the full PDF is generated and emailed to you, your name on the cover, with a download link.",
+    },
+  ],
+  inside: [
+    "Your full Kua profile and a personalised bagua chart, with a one-page printable at-a-glance card.",
+    "A find-your-eight-directions chapter: the phone-compass walkthrough, a worked floor-plan example, and a Room Map worksheet pre-filled with your directions.",
+    "The your-Kua-element chapter and the five before-the-compass form checks the reference books pair with every direction.",
+    "All eight direction chapters read for your Kua, each with a compass diagram, do-this and avoid-this lists, a practitioner tip, and a real home worked through.",
+    "The compatibility chapter, for two people in one home.",
+    "All twelve room chapters and all nine life-area chapters.",
+    "The 2026 overlay, the hard-cases chapter, and the seven-day experiment with a printable log page.",
+    "Around 115 to 165 typeset pages, in our brand, with your name on the cover.",
+  ],
+  forWho: [
+    "You want the entire map in one place, not a corner at a time.",
+    "You like knowing why: every call is labelled design evidence, tradition, or preference.",
+    "You share the home: the compatibility chapter reads two profiles together.",
+    "You would rather read one coherent book than reconcile twenty tips.",
+  ],
+  notForWho: [
+    "You want a fortune. This is a structured reading of your direction profile, not a prediction.",
+    "You want a floor-plan consultation. It reads your directions, not your blueprints, and we sell no consultations.",
+    "You only need one room or your own directions: the smaller Compasses below do exactly that for less.",
+  ],
+  faq: [
+    {
+      q: "Do I need to know any feng shui first?",
+      a: "No. The book explains what it needs as it goes, starting from your Kua number, and carries a glossary for the handful of terms that recur. The free calculator on this site is the only preparation that helps, and it takes ten seconds.",
+    },
+    {
+      q: "How personalised is it really?",
+      a: "The structure is the same for every reader; the readings are not. Your Kua number changes which directions are supportive, which rooms get which treatment, and what the 2026 overlay says for you. Two people with different Kua numbers receive genuinely different guidance on the same pages, and your name is on the cover.",
+    },
+    {
+      q: "How is this different from the Personal Compass or the Twelve Spaces Compass?",
+      a: "Depth. The Personal Compass ($19) reads just you: your eight directions. The Twelve Spaces Compass ($29) reads every room. The Complete Home Compass contains both readings plus the nine life areas, compatibility for two people, and the 2026 overlay, in one volume.",
+    },
+    {
+      q: "Does it use my floor plan?",
+      a: "No. It reads your direction profile, which applies to any home you live in, including the next one. That is a deliberate limit: it keeps the reading honest and useful without pretending to be an on-site consultation.",
+    },
+    {
+      q: "What format does it arrive in, and can I print it?",
+      a: "A typeset PDF, emailed within about a minute of the form. It prints cleanly at home on A4 or Letter; the at-a-glance card and the experiment log are designed to be printed and pinned up.",
+    },
+    {
+      q: "We are two people with different Kua numbers. Whose book is it?",
+      a: "The book is keyed to one person, and its compatibility chapter reads how your group pairs with the other person for the shared rooms. For two full books, each person orders their own.",
+    },
+  ],
+  buyLine:
+    "Secure checkout. After paying you fill in the three fields and the personalised PDF is generated and emailed to you within about a minute.",
+  finalNote:
+    "A personalised PDF, around 115 to 165 pages, yours to keep. One-time, no subscription.",
+  ladder: "complete",
+};
+
 type SearchParams = Promise<{ waitlist?: string }>;
 
 export default async function CompleteHomeCompassPage(props: {
@@ -39,114 +124,5 @@ export default async function CompleteHomeCompassPage(props: {
       ? (waitlist as "sent" | "invalid" | "error")
       : null;
 
-  return (
-    <div className="page-content product-page">
-      <section className="product-hero">
-        <p className="eyebrow">My Feng Shui Home</p>
-        <h1 className="product-heading">
-          The <em>Complete Home Compass</em>.
-        </h1>
-        <p className="product-lede">
-          Everything we read, in one book, keyed to you. Your eight
-          directions in depth, how your group pairs with another, all
-          twelve rooms, all nine life areas, and the shape of the 2026
-          year against your Kua. It is the whole library bound into a
-          single personalised volume, for the reader who wants the entire
-          map in one place rather than a corner at a time.
-        </p>
-        <p className="product-hero-launch-state">
-          Available now. After you pay, you fill in a short form and the personalised PDF is generated and emailed to you within about a minute.
-        </p>
-        <p className="product-hero-anchor">
-          <a href="#waitlist">Skip to checkout →</a>
-        </p>
-      </section>
-
-      <ProductPreview slug="complete-home-compass" title="Complete Home Compass" />
-
-      <section className="product-section">
-        <h2>What is inside</h2>
-        <ul>
-          <li>
-            Your full Kua profile and a personalised bagua chart, with a
-            one-page printable at-a-glance card.
-          </li>
-          <li>
-            A find-your-eight-directions chapter: the phone-compass
-            walkthrough, a worked floor-plan example, and a Room Map
-            worksheet pre-filled with your directions.
-          </li>
-          <li>
-            The your-Kua-element chapter and the five before-the-compass
-            form checks the reference books pair with every direction.
-          </li>
-          <li>
-            All eight direction chapters read for your Kua, each with a
-            compass diagram, do-this and avoid-this lists, a practitioner
-            tip, and a real home worked through.
-          </li>
-          <li>The compatibility chapter, for two people in one home.</li>
-          <li>All twelve room chapters and all nine life-area chapters.</li>
-          <li>
-            The 2026 overlay, the hard-cases chapter, and the seven-day
-            experiment with a printable log page.
-          </li>
-          <li>
-            Around 115 to 165 typeset pages, in our brand, with your name
-            on the cover.
-          </li>
-        </ul>
-      </section>
-
-      <section className="product-section">
-        <h2>How it works</h2>
-        <ol>
-          <li>You pay once. $49, no subscription.</li>
-          <li>
-            You fill in three fields: first name, birth date, gender. We
-            compute your Kua server-side.
-          </li>
-          <li>
-            Within a minute or two, the full PDF is generated and emailed
-            to you with a download link.
-          </li>
-        </ol>
-      </section>
-
-      <section className="product-section">
-        <h2>What it is not</h2>
-        <p>
-          It is long, but it is still a reading of your direction profile,
-          not your floor plan, and it does not promise outcomes. It is the
-          complete structured map for deciding how your home is arranged,
-          not a fortune.
-        </p>
-      </section>
-
-      <FlagshipChooser current="complete" />
-
-      <FulfillmentBlock slug="complete-home-compass" />
-
-      <section className="product-buy-section">
-        <h2>Buy now.</h2>
-        <p>
-          Secure checkout. You fill in a short form after paying and the PDF is emailed to you.
-        </p>
-        <BuyButton
-          productSlug="complete-home-compass"
-          priceLabel="$49"
-          state="stripe-live"
-          waitlistStatus={status}
-        />
-      </section>
-
-      <section className="product-back-section">
-        <p>
-          <Link href="/products" className="article-back-link">
-            ← Back to all products
-          </Link>
-        </p>
-      </section>
-    </div>
-  );
+  return <ProductLanding config={CONFIG} waitlistStatus={status} />;
 }
