@@ -67,6 +67,21 @@ export const CARD_COVER_SLUGS: ReadonlySet<string> = new Set([
   "all-nine-pillars-compass",
 ]);
 
+// Products that ship a booklet-mockup cover (cover-mockup.png) for the
+// shop card: the real PDF cover composited as a printed book on a soft
+// background. Preferred over the flat cover-thumb.png when present.
+// Built by scripts/build-mockup-cover.mjs.
+export const MOCKUP_COVER_SLUGS: ReadonlySet<string> = new Set([
+  "personal-feng-shui-compass",
+  "all-twelve-spaces-compass",
+  "complete-home-compass",
+  "move-in-kit",
+  "seven-day-home-reset",
+  "all-nine-pillars-compass",
+  "business-money-feng-shui",
+  "cures-catalog",
+]);
+
 // Optional page-count copy, used in the "what you receive" anchor only
 // where the figure is genuinely known. Omitted = not shown.
 export const KNOWN_PAGES: Record<string, string> = {

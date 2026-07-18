@@ -4,7 +4,7 @@
 // sale" is a cross-cutting flag, not a category.
 
 import { COMPASS_CATALOGUE } from "@/lib/compass-catalogue";
-import { CARD_COVER_SLUGS } from "@/lib/product-assets";
+import { CARD_COVER_SLUGS, MOCKUP_COVER_SLUGS } from "@/lib/product-assets";
 
 export type StoreCategory =
   | "printable" // single printable PDFs, delivered by email instantly
@@ -276,11 +276,14 @@ export const STORE_PRODUCTS: StoreProduct[] = [...CORE, ...CATALOGUE].map(
   (p) => ({
     ...p,
     priceLabel: label(p.priceCents),
-    // Show the real square cover on the shop card only for products whose
-    // cover-thumb.png exists. Everything else stays text-first (no 404).
-    image: CARD_COVER_SLUGS.has(p.slug)
-      ? `/products/${p.slug}/cover-thumb.png`
-      : undefined,
+    // Shop-card cover: prefer the booklet mockup (real PDF cover on a soft
+    // background), fall back to the flat square thumb, else text-first (so
+    // nothing 404s).
+    image: MOCKUP_COVER_SLUGS.has(p.slug)
+      ? `/products/${p.slug}/cover-mockup.png`
+      : CARD_COVER_SLUGS.has(p.slug)
+        ? `/products/${p.slug}/cover-thumb.png`
+        : undefined,
   }),
 );
 

@@ -6804,10 +6804,13 @@ a:hover { color: var(--clay-deep); }
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid #e2dac5;
-  margin-bottom: 0.75rem;
+  /* Full-bleed to the card's top edge (Etsy/Amazon tile), rounded only at
+     the top to match the card corners. */
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  border: none;
+  margin-bottom: 0;
 }
+.shop-card-coverlink { display: block; }
 
 /* Phase C: curated, grouped /products layout. */
 .products-collections {
@@ -7344,11 +7347,19 @@ a:hover { color: var(--clay-deep); }
   background: var(--paper);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-md);
-  padding: var(--space-5);
+  /* No outer padding: the cover full-bleeds to the top edge and the text
+     area carries its own padding, marketplace-tile style. */
+  padding: 0;
+  overflow: hidden;
   transition: border-color 150ms ease, transform 150ms ease;
 }
 .shop-card:hover { border-color: var(--green); transform: translateY(-2px); }
-.shop-card-titlelink { text-decoration: none; color: var(--ink); }
+.shop-card-titlelink {
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  padding: var(--space-4) var(--space-4) 0;
+}
 .shop-card-titlelink:hover .shop-card-title,
 .shop-card-titlelink:focus-visible .shop-card-title {
   color: var(--green-deep);
@@ -7361,6 +7372,12 @@ a:hover { color: var(--clay-deep); }
   font-size: 1.15rem;
   line-height: 1.25;
   margin: 0 0 var(--space-2) 0;
+  /* Clamp to two lines so cards keep a uniform height. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .shop-card-desc {
   font-size: 0.95rem;
@@ -7375,6 +7392,7 @@ a:hover { color: var(--clay-deep); }
   align-items: center;
   gap: 4px;
   margin-top: auto;
+  padding: var(--space-2) var(--space-4) var(--space-4);
 }
 .shop-card-was { font-size: 0.8rem; color: var(--ink-2); }
 .price-heart {
