@@ -43,6 +43,8 @@ export default function SiteFooter() {
         site is protected by copyright.
       </p>
       <p className="footer-links-row">
+        <Link href="/good-days">Good days calendar</Link>
+        <span aria-hidden="true"> &middot; </span>
         <Link href="/legal">Legal</Link>
         <span aria-hidden="true"> &middot; </span>
         <Link href="/privacy">Privacy</Link>
