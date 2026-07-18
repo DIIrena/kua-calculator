@@ -42,6 +42,16 @@ Love Bundle). Summary of the target state:
 - [x] B3. Rollout: move-in-kit, seven-day-home-reset, all-nine-pillars-compass.
 - [x] B4. Rollout: business-money-feng-shui, whole-home-starter-bundle, cures-catalog.
 
+## Resume prompt for a fresh session (Phase C)
+
+> Continue the shop redesign, Phase C (MFSL). Read this tracker first: Phases
+> A+B are done and live on myfengshuihome.com; C1-C6 remain, in the separate
+> repo projects/myfengshuilove (it has its own uncommitted local changes -
+> stage only your own files). Protocol: one task per go, build + commit +
+> push after each task, then stop for the owner's "next". Start with C1; its
+> Stripe test verification needs owner dashboard steps - do the code side and
+> provide a stepwise walkthrough. Do NOT deploy MFSL; deploy is owner-gated.
+
 ## Phase C - MFSL (sister repo; deploy stays owner-gated)
 
 - [ ] C1. Love Bundle: commerce entry + fulfilment recipe + Stripe test-mode
