@@ -1,0 +1,115 @@
+<!doctype html>
+<!--
+  Animated How to Read Any Room pin (locked MFSH template, 1000x1500).
+  Timeline (15s): title in; divider draws; small floor plan draws in the
+  top third; the four checklist rows appear one at a time and tick; the
+  first row's number ring is THE single orange accent; URL in.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #fcfcf8; }
+  #stage { width: 1000px; height: 1500px; position: relative; overflow: hidden; }
+  svg { display: block; }
+  text { font-family: "EB Garamond", serif; font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="stage">
+<svg id="pin" width="1000" height="1500" viewBox="0 0 1000 1500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="1500" fill="#fcfcf8"/>
+  <rect x="0" y="0" width="1000" height="385" fill="#0e3b2c"/>
+  <rect x="0" y="1387.7" width="1000" height="112.3" fill="#0e3b2c"/>
+  <g id="logo" opacity="0"></g>
+  <text id="t1" x="500" y="245" text-anchor="middle" font-size="72" fill="#fcfcf8" opacity="0">How to Read Any Room:</text>
+  <text id="t2" x="500" y="330" text-anchor="middle" font-size="72" fill="#fcfcf8" opacity="0">A 4-Step Walk</text>
+  <line id="divider" x1="0" y1="385" x2="0" y2="385" stroke="#d9531a" stroke-width="2.7"/>
+  <g id="plan"></g>
+  <g id="rows"></g>
+  <text id="url" x="500" y="1457" text-anchor="middle" font-size="36" fill="#fcfcf8" letter-spacing="1.8" opacity="0">myfengshuihome.com</text>
+  <rect id="progress" x="0" y="1494" width="0" height="6" fill="#d9531a"/>
+</svg>
+</div>
+<script>
+const GREEN = "#0e3b2c", ORANGE = "#d9531a";
+const DUR = 15;
+const logoG = document.getElementById("logo");
+fetch("file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/assets/logo.svg")
+  .then((r) => r.text())
+  .then((raw) => {
+    const inner = raw.slice(raw.indexOf("<g"), raw.lastIndexOf("</g>") + 4).replace("#0e3b2c", ORANGE);
+    logoG.innerHTML = '<svg x="420" y="50" width="160" height="160" viewBox="0 0 709 709">' + inner + "</svg>";
+    window.__logoReady = true;
+  });
+
+// ---- small plan, top third of the middle zone ----
+const px = 290, py = 455, pw = 420, ph = 300, sw = 3.2;
+const planG = document.getElementById("plan");
+const planLines = [];
+function addLine(x1, y1, x2, y2, w) {
+  const el = document.createElementNS("http://www.w3.org/2000/svg", "line");
+  el.setAttribute("x1", x1); el.setAttribute("y1", y1);
+  el.setAttribute("x2", x1); el.setAttribute("y2", y1);
+  el.setAttribute("stroke", GREEN); el.setAttribute("stroke-width", w);
+  planG.appendChild(el);
+  planLines.push({ el, x1, y1, x2, y2 });
+}
+addLine(px, py, px + 160, py, sw * 1.3);
+addLine(px + 240, py, px + pw, py, sw * 1.3);
+addLine(px + pw, py, px + pw, py + ph, sw * 1.3);
+addLine(px + pw, py + ph, px, py + ph, sw * 1.3);
+addLine(px, py + ph, px, py, sw * 1.3);
+addLine(px + 260, py, px + 260, py + 170, sw);
+addLine(px, py + 170, px + 260, py + 170, sw);
+
+// ---- the four checklist rows ----
+const STEPS = ["The light", "What the main seat sees", "Command position", "Use vs setup"];
+const rowsG = document.getElementById("rows");
+const rowEls = STEPS.map((txt, i) => {
+  const ly = 880 + i * 122;
+  const accent = i === 0; // THE single orange accent
+  const ringColor = accent ? ORANGE : GREEN;
+  const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  g.setAttribute("opacity", "0");
+  g.innerHTML =
+    '<circle cx="170" cy="' + (ly - 14) + '" r="30" fill="none" stroke="' + ringColor + '" stroke-width="3.6"/>' +
+    '<text x="170" y="' + (ly - 2) + '" text-anchor="middle" font-size="36" fill="' + ringColor + '">' + (i + 1) + "</text>" +
+    '<text x="232" y="' + ly + '" font-size="42" fill="' + GREEN + '">' + txt + "</text>" +
+    '<line x1="150" y1="' + (ly + 42) + '" x2="150" y2="' + (ly + 42) + '" stroke="' + GREEN + '" stroke-width="2" class="rowline" data-x2="850"/>';
+  rowsG.appendChild(g);
+  return g;
+});
+
+const clamp01 = (v) => Math.max(0, Math.min(1, v));
+const ease = (v) => 1 - Math.pow(1 - v, 3);
+const seg = (t, a, b) => clamp01((t - a) / (b - a));
+
+window.seek = function (t) {
+  const p1 = ease(seg(t, 0.2, 1.2)), p2 = ease(seg(t, 0.8, 1.9)), pl = ease(seg(t, 0.0, 0.9));
+  logoG.setAttribute("opacity", pl);
+  const t1 = document.getElementById("t1"), t2 = document.getElementById("t2");
+  t1.setAttribute("opacity", p1); t1.setAttribute("transform", `translate(0 ${(1 - p1) * 18})`);
+  t2.setAttribute("opacity", p2); t2.setAttribute("transform", `translate(0 ${(1 - p2) * 18})`);
+  document.getElementById("divider").setAttribute("x2", 1000 * ease(seg(t, 2.2, 3.2)));
+  planLines.forEach((L, i) => {
+    const p = ease(seg(t, 3.2 + i * 0.16, 4.0 + i * 0.16));
+    L.el.setAttribute("x2", L.x1 + (L.x2 - L.x1) * p);
+    L.el.setAttribute("y2", L.y1 + (L.y2 - L.y1) * p);
+  });
+  rowEls.forEach((g, i) => {
+    const start = 5.6 + i * 1.5;
+    const p = ease(seg(t, start, start + 0.7));
+    g.setAttribute("opacity", p);
+    g.setAttribute("transform", `translate(0 ${(1 - p) * 16})`);
+    const line = g.querySelector(".rowline");
+    const pu = ease(seg(t, start + 0.3, start + 1.1));
+    line.setAttribute("x2", 150 + (Number(line.dataset.x2) - 150) * pu);
+  });
+  document.getElementById("url").setAttribute("opacity", ease(seg(t, 12.6, 13.6)));
+  document.getElementById("progress").setAttribute("width", 1000 * clamp01(t / DUR));
+};
+window.seek(0);
+</script>
+</body>
+</html>
