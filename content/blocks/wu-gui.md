@@ -1,46 +1,42 @@
 # Your Wu Gui direction is {{direction}}
 
-Wu Gui is the second of your four cautious directions. Its name translates as *Five Ghosts*, which sounds far more dramatic than the thing it describes. For you, {{firstName}}, it points {{direction}}.
+Wu Gui is the second of your four cautious directions. Its name translates as **Five Ghosts**, which sounds far more dramatic than the thing it describes, and for you, {{firstName}}, it points **{{direction}}**.
 
-So let us defuse the name first. There are no ghosts. The five-ghosts label is old shorthand, and the tradition uses it for a direction it associates with small friction: arguments, crossed wires, the thing that gets misplaced and turns up a week later in a coat pocket. Lost car keys, not lost years.
+So let us defuse the name first. There are no ghosts. The label is old shorthand for a direction the tradition associates with small friction: arguments, crossed wires, the thing that gets misplaced and turns up a week later in a coat pocket. Lost car keys, not lost years.
 
-## What Wu Gui means
+{{miniCompass}}
 
-The full name is *Wu Gui* (<span lang="zh-Hant">五鬼</span>). It is a **lower-priority** direction, not a curse and not a verdict on your life. The tradition associates this wall with miscommunication and minor dispute, the same way it associates other walls with rest or focus. That is an association the system carries, not a force acting on your home.
+## What this means
 
-It helps to say what this *is not*. Your Wu Gui wall is not the reason a conversation went badly, or a hire did not work out, or a quiet evening turned tense. Those have their own ordinary causes. Acoustics, tiredness, a hard week, a chair that puts someone's back to the door. The compass does not explain your relationships or your job. It only tells you which wall the tradition would rather you used lightly.
+The full name is *Wu Gui* (<span lang="zh-Hant">五鬼</span>), and it marks a **lower-priority** wall, not a curse. The tradition associates this direction with miscommunication and minor dispute the same way it associates other walls with rest or focus. That is an association the system carries, not a force acting on your home.
 
-So the practical reading is calm. Wu Gui is the direction traditionally kept for **low-stakes** things, with important seats kept off it. Nothing more loaded than that.
+It helps to say what this is not. Your Wu Gui wall is not the reason a conversation went badly or a quiet evening turned tense. Those have ordinary causes: acoustics, tiredness, a hard week, a chair that puts someone's back to the door. The compass does not explain your relationships. It only tells you which wall the tradition would rather you used lightly.
 
-## How the tradition reads it
+## Give it this
 
-In many homes there is a corner that quietly collects the dull stuff. The reference folder nobody reopens. The plant that gets watered out of habit. The drawer of spare cables and the small brass elephant an aunt sent in 2008. The tradition would point to a wall like that and say: *this is the kind of work Wu Gui does well.* A corner that holds things rather than radiates them.
+- **Laundry**, the hamper, the airing rack.
+- **Cleaning supplies** and the cupboard the vacuum lives in.
+- **Deep storage**: seasonal boxes, the closet opened twice a year, the reference books that never come down, the drawer of spare cables and the small brass elephant an aunt sent in 2008.
+- **The general overflow** that every home needs somewhere to put.
 
-Practitioners traditionally kept the difficult-conversation seats *off* this wall, not because the wall causes difficulty, but because the tradition prefers to give those seats a more supportive direction when the room allows it. It is a placement preference, the same as choosing the quieter side of a hotel hallway. You lose nothing by honouring it, and the choice is yours.
+Storage is this wall's *native* function. A tidy utility wall here is a small quiet win, not a compromise.
 
-The thing to hold onto is that nothing breaks here. The tradition reads Wu Gui as a wall of small repeated friction, not collapse. Treat it gently and it asks very little of you.
+## Keep off it
 
-## What to put here
+- **The difficult-conversation seats.** Practitioners traditionally kept the chairs where hard talks happen off this wall - not because the wall causes difficulty, but because those seats deserve a supportive direction when the room allows one.
+- **The desk where disputes get handled.** If part of your work is negotiation, complaints, or delicate email, prefer a favourable facing for that seat.
+- **The bed, when another wall will take it.** Any supportive wall beats this one; even Huo Hai, the milder cautious wall, is the better fallback.
 
-This is where Wu Gui becomes genuinely useful rather than something to manage. The wall is well suited to **utility**.
+## When you cannot avoid it
 
-- Laundry, the hamper, the airing rack.
-- Cleaning supplies and the cupboard the vacuum lives in.
-- Storage: seasonal boxes, the closet you open twice a year for a winter coat, reference books you rarely pull down.
-- The general overflow that every home needs somewhere to put.
+Sometimes the bedroom has one bed-shaped slot and it sits on Wu Gui. This is common and survivable. The tradition's softening moves are mild and cost little: put something solid between you and the wall (a heavy headboard, a chest), prefer a closed cupboard to open shelves on that side, and keep the colours there calm and earth-toned rather than loud or reflective. None of this is a fix, and none of it needs to be. It lowers the volume on a wall you have to live with, and the seven-day test will tell you whether the room reads differently.
 
-Things that do not need attention sit here comfortably. Storage is its *native* function, and a tidy utility wall is a small quiet win rather than a compromise.
+## Practitioner tip
 
-## If the layout forces your hand
+When a household tells me one room "always ends in bickering," I check the ordinary suspects before the compass: a TV that competes with every conversation, chairs at awkward angles, an overhead light that flattens everyone by 9pm. Fix those first. If the room happens to sit on Wu Gui too, I move the talks that matter to a friendlier seat and give the room a job it can win at, like holding the laundry beautifully. The compass is the second opinion here, never the first.
 
-Sometimes the room decides for you. The flat is small. The bedroom has one bed-shaped slot and it happens to sit on Wu Gui. The desk only fits one way. This is common, and it is not a problem to lose sleep over.
+## A real home
 
-When you cannot move the function, the tradition's standard moves are mild and worth knowing:
+Filip is Kua 6, so his Wu Gui points east. In his flat the east end of the living room held two armchairs by the window, and by habit that was where he and his brother ended up for the monthly money conversation about their late mother's flat. The talks kept going sideways. Was that the wall? The honest answer is: the chairs also faced a glaring window, the seat angles were confrontational, and the topic was hard. Filip changed the geography instead of litigating the cause. The money talks moved to the dining table, where his seat faces his Yan Nian, and the east window corner became the plant-and-bookshelf end of the room. The talks did not become easy. They became *possible*, which is what a better seat can honestly offer.
 
-- Place a solid piece of furniture, a chest or a heavy headboard, between you and the wall.
-- Prefer a closed cupboard to open shelves on that side.
-- Keep the colours on that side calm and earth-toned, and skip anything reflective.
-
-None of this is a fix, and none of it needs to be. It is a *softening*. If you would rather, the cleaner option is simply to give the important function a kinder wall and let Wu Gui keep the laundry. Either choice is a reasonable one.
-
-The summary is short. Wu Gui is the wall the tradition would point at and say *keep this one light*. Hand it the cleaning cupboard and let it do its quiet work.
+<p class="one-thing"><strong>If you only do one thing:</strong> move the hardest regular conversation in your home off the {{direction}} seat and onto one that faces a supportive direction.</p>

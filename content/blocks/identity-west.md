@@ -52,7 +52,7 @@ The three elements not on your supportive list - wood, water, and fire - sit in 
 
 About half of all couples are mixed: one West, one East. In that case your supportive directions are largely your partner's cautious directions, and the reverse.
 
-The classical answer is not to optimise the whole home for one of you. It is to assign each *function* to the person whose use of it matters most. The shared bed orients to whichever partner's sleep is hardest to protect. The shared desk, if there is one, to whoever does the more demanding work there. The dining table seats each of you in your own supportive direction. Most homes have more rooms and corners than they have people, so this is usually less of a compromise than it sounds. A deeper two-person reading is in the works for this line. For now, it is enough to know the two halves of the compass are not the same, and the home is large enough for both.
+The classical answer is not to optimise the whole home for one of you. It is to assign each *function* to the person whose use of it matters most. The shared bed orients to whichever partner's sleep is hardest to protect. The shared desk, if there is one, to whoever does the more demanding work there. The dining table seats each of you in your own supportive direction. Most homes have more rooms and corners than they have people, so this is usually less of a compromise than it sounds. The hard-cases chapter near the end of this book gives the working rules for a shared home, and the Couple Compatibility Compass reads two full charts together if you ever want the deeper treatment. For now, it is enough to know the two halves of the compass are not the same, and the home is large enough for both.
 
 ## The four qualities, named
 
@@ -64,3 +64,5 @@ Each of your four supportive directions carries a traditional name. You will rea
 - **Fu Wei** - the anchor. The mildest. For study, stillness, and steady focus.
 
 Your four cautious directions are Huo Hai, Wu Gui, Liu Sha, and Jue Ming. We spend less time on them, and we treat them as lower-priority placements rather than as anything to fear. You will read each in its own short chapter too.
+
+Next comes your whole reading on a single page, and then the twenty minutes that turn these names into the walls of your own home.

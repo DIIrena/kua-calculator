@@ -21,7 +21,8 @@ const OUT_DIR = path.join(VP_ROOT, 'drafts', 'pins');
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const puppeteer = require(path.join(PROJECT_ROOT, 'node_modules', 'puppeteer-core'));
 
-const htmlPath = path.resolve(process.argv[2] || path.join(__dirname, 'pin-video-good-days.html'));
+const [htmlFile, htmlQuery] = (process.argv[2] || 'pin-video-good-days.html').split('?');
+const htmlPath = path.resolve(__dirname, htmlFile);
 const outName = process.argv[3] || 'good-days-2026-video';
 const DUR = Number(process.argv[4] || 15);
 const FPS = Number(process.argv[5] || 30);
@@ -35,7 +36,10 @@ const FPS = Number(process.argv[5] || 30);
   });
   const page = await browser.newPage();
   await page.setViewport({ width: 1000, height: 1500 });
-  await page.goto('file:///' + htmlPath.replace(/\\/g, '/').replace(/ /g, '%20'), { waitUntil: 'networkidle0' });
+  const url =
+    'file:///' + htmlPath.replace(/\\/g, '/').replace(/ /g, '%20') +
+    (htmlQuery ? '?' + htmlQuery : '');
+  await page.goto(url, { waitUntil: 'networkidle0' });
   await page.waitForFunction('window.__logoReady === true && typeof window.seek === "function"', { timeout: 15000 });
 
   const total = Math.round(DUR * FPS);

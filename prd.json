@@ -980,6 +980,255 @@
       ],
       "passes": true,
       "notes": "Built 2026-06-13. The course is the third fulfilment type alongside static and personalized. Welcome sent by the webhook on enrol (day_sent 0, last_sent_at now); cron sends days 1..7 with a 20h spacing gate so a double-firing cron cannot double-send, and advances day_sent only after a successful send. Unsubscribe is stateless (HMAC of email:course keyed with AUTH_SECRET). Owner launch steps: create Stripe $19 Price -> STRIPE_PRICE_RESET env; set CRON_SECRET env; run migration 0008; flip launched:true + stripe-live."
+    },
+    {
+      "id": "CV2-001",
+      "title": "Architect spec + prd stories for Compass v2",
+      "description": "Write spec/architect-2026-07-16.md from the approved plan and append the CV2 story list to prd.json.",
+      "acceptanceCriteria": [
+        "spec/architect-2026-07-16.md exists and records the brief, execution model, gaps, owner decisions, and skills audit.",
+        "prd.json contains CV2-001 through CV2-014 with concrete acceptance criteria."
+      ],
+      "priority": 54,
+      "passes": true,
+      "notes": "Spec at spec/architect-2026-07-16.md; approved plan at ~/.claude/plans/hi-fable-i-want-adaptive-wozniak.md."
+    },
+    {
+      "id": "CV2-002",
+      "title": "SVG generators and tokens for the v2 visual system",
+      "description": "Add miniCompassSvg (ring with one highlighted sector, olive for supportive / clay-soft for cautious), bedPlacementSvg and deskPlacementSvg (schematic room diagrams that disambiguate head-points-toward vs body-faces), floorPlanExampleSvg (static worked example), and worksheet frame helpers (ruled lines, day boxes) to lib/pdf/svg-marks.ts. Wire tokens in lib/blocks.ts: {{miniCompass}} resolves per direction block via BLOCK_TO_QUALITY; {{bedPlacement}}/{{deskPlacement}} resolve to the block's direction; static tokens for the floor plan and worksheet frames.",
+      "acceptanceCriteria": [
+        "All new generators exported from lib/pdf/svg-marks.ts using the brand palette constants.",
+        "{{miniCompass}} in a direction block renders the correct highlighted sector for the customer's Kua (verified for an east and a west Kua via the dev sample route).",
+        "Placement diagrams label the wall and the facing arrow in plain English.",
+        "npm run build passes."
+      ],
+      "priority": 55,
+      "passes": true,
+      "notes": "Generators + tokens + template CSS + dev-route auth relaxed for local renders. Visual verification lands with the first content that uses the tokens (CV2-004 render)."
+    },
+    {
+      "id": "CV2-003",
+      "title": "New chapter: Find your eight directions + Room Map worksheet",
+      "description": "New block content/blocks/find-your-directions.md: phone-compass walkthrough (promoted and expanded from pillar-wealth.md), standing at the centre, reading each wall, magnetic-north note, worked example on the floorPlanExampleSvg, closing with a fill-in Room Map worksheet (room / wall direction / which of my eight qualities lands there). Uses per-quality direction tokens so the worksheet header row is personalised.",
+      "acceptanceCriteria": [
+        "Block exists, renders in the sample PDF between the at-a-glance card and how-to-use.",
+        "Walkthrough is numbered steps, practitioner voice, no em dashes, no outcome promises.",
+        "Worksheet page paginates cleanly (no orphaned frame).",
+        "ATTRIBUTION_BLOCKS.md gains a row for the new block."
+      ],
+      "priority": 56,
+      "passes": true,
+      "notes": "Chapter + Room Map worksheet written; smoke green. Recipe placement lands in CV2-011; pagination check at CV2-014 render."
+    },
+    {
+      "id": "CV2-004",
+      "title": "Re-author sheng-qi and tian-yi chapters",
+      "description": "Re-author the two strongest supportive chapters on the six-section practitioner template (What this means / Do this / Avoid this / Practitioner tip / Real home example / If you only do one thing), keeping each chapter's audited factual spine and best prose. Add {{miniCompass}} and one placement diagram per chapter. One idea per paragraph, max two technical terms per paragraph, under ~900 words per chapter body.",
+      "acceptanceCriteria": [
+        "Both chapters follow the six-section arc and end on 'If you only do one thing'.",
+        "Each has a concrete Real home example with specific spatial details.",
+        "Each renders its mini compass and a placement diagram in the sample PDF.",
+        "Factual direction rules unchanged from the audited originals."
+      ],
+      "priority": 57,
+      "passes": true,
+      "notes": "Rendered and visually verified for Kua 3 east (South SQ / North TY): mini compasses correct, placement diagrams legible, one-thing panel renders. Rose needle shortened after review."
+    },
+    {
+      "id": "CV2-005",
+      "title": "Re-author yan-nian and fu-wei chapters",
+      "description": "Same treatment as CV2-004 for the remaining two supportive chapters.",
+      "acceptanceCriteria": [
+        "Both chapters follow the six-section arc with real home examples and diagrams.",
+        "Factual direction rules unchanged from the audited originals."
+      ],
+      "priority": 58,
+      "passes": true,
+      "notes": "Both chapters on the six-section arc, 807-933 words, smoke green. Diagrams: yan-nian bed, fu-wei desk."
+    },
+    {
+      "id": "CV2-006",
+      "title": "Re-author huo-hai and wu-gui chapters",
+      "description": "Same treatment for the two mildest cautious chapters, kept shorter, keeping the lower-priority-not-curses framing, each gaining a 'when you cannot avoid it' mitigation subsection mined from the library.",
+      "acceptanceCriteria": [
+        "Both chapters follow the six-section arc, shorter than supportive chapters.",
+        "Each includes a mitigation subsection for unavoidable placements.",
+        "Tone stays calm: cautious directions framed as lower-priority placements, never as threats."
+      ],
+      "priority": 59,
+      "passes": true,
+      "notes": "Both on the six-section arc with mitigation subsections; tone calm; smoke green."
+    },
+    {
+      "id": "CV2-007",
+      "title": "Re-author liu-sha and jue-ming chapters",
+      "description": "Same treatment as CV2-006 for the remaining two cautious chapters.",
+      "acceptanceCriteria": [
+        "Both chapters follow the six-section arc with mitigation subsections.",
+        "Jue Ming keeps the strongest de-dramatising framing (the name is scarier than the reading)."
+      ],
+      "priority": 60,
+      "passes": true,
+      "notes": "Both on the six-section arc; liu-sha v1 'East group person' copy bug fixed; jue-ming keeps corner-not-a-verdict close; smoke green."
+    },
+    {
+      "id": "CV2-008",
+      "title": "New chapter: The hard cases (FAQ)",
+      "description": "New block content/blocks/faq-hard-cases.md answering the five questions buyers actually hit: partner from the opposite group (East/West couple rule paraphrased from library chapter 19), studio apartment, the bed that cannot move, renting, open-plan rooms. Each answer uses Do this bullets and ends with one clear move.",
+      "acceptanceCriteria": [
+        "Block exists with the five cases, practitioner voice.",
+        "Couple answer is consistent with the Couple Compatibility product (points to it, does not duplicate it).",
+        "ATTRIBUTION_BLOCKS.md updated for the chapter-19 material."
+      ],
+      "priority": 61,
+      "passes": true,
+      "notes": "Five hard cases written; couple case follows the library's whose-function rule and points to Couple Compatibility instead of duplicating it; smoke green."
+    },
+    {
+      "id": "CV2-009",
+      "title": "Experiment log worksheet + at-a-glance card redesign",
+      "description": "Upgrade experiment.md with a printable seven-day experiment log worksheet (before-note lines, seven day boxes, verdict line). Redesign summary.md as a true full-page printable reference card: personal bagua ring plus the eight-direction table, framed for pinning.",
+      "acceptanceCriteria": [
+        "Experiment log paginates as its own printable page.",
+        "Summary card carries the personal bagua and all eight per-quality direction tokens on one page.",
+        "Both render correctly in the sample PDF."
+      ],
+      "priority": 62,
+      "passes": true,
+      "notes": "Card verified single-page in render (bagua + 8 rows + reading rules); experiment log paginates as its own clean sheet."
+    },
+    {
+      "id": "CV2-010",
+      "title": "Momentum pass on framing blocks",
+      "description": "Tighten welcome.md (add the one-paragraph journey map), identity-east.md / identity-west.md, how-to-use.md (add the one-sitting reading note), and closing.md (add what-to-explore-next pointing up the product ladder). No structural change; the goal is pace.",
+      "acceptanceCriteria": [
+        "Welcome states in one paragraph what the reader will be able to do by the last page.",
+        "Closing names the Extended Report and Complete Home Compass as next steps without hype.",
+        "No paragraph carries more than one idea; no em dashes."
+      ],
+      "priority": 63,
+      "passes": true,
+      "notes": "Welcome journey map, identity forward-pointers + hard-cases reference, how-to-use one-sitting note, closing product-ladder update. Smoke green."
+    },
+    {
+      "id": "CV2-011",
+      "title": "Recipes, page bands, smoke expectations, attribution",
+      "description": "Add find-your-directions, faq-hard-cases and the worksheet-bearing blocks to the personal-compass, extended-personal-kua, and complete-home-compass recipes in lib/products.ts. Recalibrate targetPages for all three from actual sample renders. Update scripts/smoke-blocks.mjs and scripts/smoke-extended.mjs expectations. Complete ATTRIBUTION_BLOCKS.md for all new/rewritten blocks.",
+      "acceptanceCriteria": [
+        "All three recipes updated; block order matches the v2 table of contents.",
+        "targetPages bands match measured page counts of fresh sample renders.",
+        "Both smoke scripts pass.",
+        "Every new or substantially rewritten block has an attribution row."
+      ],
+      "priority": 64,
+      "passes": true,
+      "notes": "Recipes updated for 3 tiers; measured bands: personal 45 (band 38-50), extended 56 (52-68), complete 121 (110-160); both smokes green; attribution ledger complete for all new/rewritten blocks."
+    },
+    {
+      "id": "CV2-012",
+      "title": "PDF template polish",
+      "description": "Typography and layout pass on lib/pdf/template.ts per UI/UX Pro Max: chapter-opener treatment, print styles for worksheet pages (frames must not split across pages), spacing rhythm, page-break rules for the six-section arc.",
+      "acceptanceCriteria": [
+        "Worksheet frames never split across a page break.",
+        "Chapter openers are visually distinct (rule, spacing, or numbering), consistent across chapters.",
+        "Body text >= 10.5pt equivalent with line-height >= 1.5; contrast 4.5:1."
+      ],
+      "priority": 65,
+      "passes": true,
+      "notes": "Clay opener bar on every chapter h1; one-thing panel break guards; card CSS; worksheet frames verified unsplit in renders; body 11pt/1.65 ink-on-white."
+    },
+    {
+      "id": "CV2-013",
+      "title": "Sales pages for the three tiers",
+      "description": "Update the What-is-inside lists and page counts on personal-feng-shui-compass, extended-personal-kua-report, and complete-home-compass pages to describe v2 (worksheets, diagrams, find-your-directions, hard cases). Fix the 25-30 page claim to the real measured band. Keep honest framing and the What-it-is-not section.",
+      "acceptanceCriteria": [
+        "Page-count claims match products.ts targetPages on all three pages.",
+        "New chapters and worksheets appear in What is inside.",
+        "Zero em dashes, zero outcome promises (grep check)."
+      ],
+      "priority": 66,
+      "passes": true,
+      "notes": "Three sales pages updated: page counts match measured bands (45 / 52-68 / 110-160), new chapters and worksheets in What-is-inside, KNOWN_PAGES fixed; zero em dashes, zero outcome promises; tsc clean."
+    },
+    {
+      "id": "CV2-014",
+      "title": "Full verification",
+      "description": "Render sample PDFs for Kua 1 male, a Kua-5-case female (5 -> 2/8 substitution), Kua 6 west, and an east-group child birth date. Check visuals, pagination, page bands, one-sitting read-through, smoke scripts, npm run build. Append learnings to progress.txt.",
+      "acceptanceCriteria": [
+        "All four sample PDFs render with correct per-Kua directions in mini compasses.",
+        "Page counts inside the new bands; both smoke scripts and npm run build pass.",
+        "Read-through confirms every chapter ends on 'If you only do one thing' and every spread has a visual.",
+        "progress.txt has one paragraph per CV2 task, leading with the learning."
+      ],
+      "priority": 67,
+      "passes": true,
+      "notes": "npm run build green; 6 sample renders (Kua 1/3/6/8-via-5/9 + child DOB) all correct vs KUA_MAP; card single-page; worksheets unsplit; both smokes green; sales claims match measured bands."
+    },
+    {
+      "id": "CV2-015-DATA",
+      "title": "OWNER DECISION: correct the Kua 4 and Kua 9 Eight Mansions assignments",
+      "description": "Cross-checking KUA_MAP against the classical Da You Nian derivation (verified symmetric for every trigram pair, and matching the repo for Kua 1/2/3/6/7/8) shows two rows diverge from the classical Eight Mansions table. Kua 4 currently duplicates Kua 1: classically it is SQ=N, TY=S, YN=E, FW=SE, HH=NW, WG=SW, LS=W, JM=NE. Kua 9 favourable half is correct but the cautious half is cycled: classically HH=NE, WG=W, JM=NW (LS=SW is already right). The divergence originates in the library chapter 06 worked example (hedged there as approximately). East/West group splits are unaffected, so free-calculator group statements stay true; only per-quality labels are off for these two Kua numbers. Fix = lib/directions.ts KUA_MAP + public/calculator/directions.js KUA_MAP (kept in sync) + the chapter-06 example + content/methodology.md if it repeats it. Because this changes live outputs for Kua 4 and Kua 9 users (including any already-delivered readings), the owner must approve before it ships.",
+      "acceptanceCriteria": [
+        "Owner has explicitly approved the data change.",
+        "KUA_MAP corrected identically in lib/directions.ts and public/calculator/directions.js.",
+        "projects/feng-shui/content/06-compass-school.md worked example and kua-calculator content/methodology.md updated to match.",
+        "Smoke tests re-run; sample PDFs for Kua 4 and Kua 9 show the corrected assignments."
+      ],
+      "priority": 68,
+      "passes": true,
+      "notes": "Owner approved 2026-07-17. Corrected in lib/directions.ts, public/calculator/directions.js, chapter 06, both methodology.md files, myfengshuilove lib+calculator, and all four smoke-script token sets. Verified via renders: Kua 4, Kua 9 (and Kua 1) chapter headings match the classical Da You Nian table exactly; smokes and tsc green."
+    },
+    {
+      "id": "CV3-001",
+      "title": "Kua-element + activation data and tokens",
+      "description": "Per-Kua element data map (element, colors to wear/bring in, materials, forms, prosperity-dressing note) and per-Kua Yan Nian activation recipes, sourced from advice-base ADV-0042..46, 0162..69, 0231, 0290..94. New tokens: kuaElement, kuaElementColors, kuaElementMaterials, kuaElementForms, kuaElementDress, kuaElementIcon, yanNianActivation. Smoke stubs updated.",
+      "acceptanceCriteria": [
+        "Data map covers Kua 1,2,3,4,6,7,8,9 (5 handled by gender substitution upstream).",
+        "Tokens resolve in blocks; tsc green; both smokes green."
+      ],
+      "priority": 69,
+      "passes": true,
+      "notes": "Data map + 6 tokens + element icon export; tsc and smoke green."
+    },
+    {
+      "id": "CV3-002",
+      "title": "New chapter: Your Kua element",
+      "description": "New block kua-element.md after identity: the element your Kua carries, colors to wear and bring in, materials and forms, prosperity dressing (marked as folk custom), how the element plays with the favourable walls. Honest framing; one-thing close; element icon figure.",
+      "acceptanceCriteria": [
+        "Renders personalised for east and west samples.",
+        "No outcome promises; folk customs labelled as such.",
+        "ATTRIBUTION_BLOCKS.md row added with ADV ids and source books."
+      ],
+      "priority": 70,
+      "passes": true,
+      "notes": "Renders personalised (Maya/Wood verified east; Vera/Earth render west 50pp); folk customs labelled; attribution row added."
+    },
+    {
+      "id": "CV3-003",
+      "title": "Form-checks chapter + Yan Nian activation section",
+      "description": "New block before-the-compass.md (form first, compass second): command position at the desk, solid backing behind the headboard, both-sides access for couples, no mirror facing the bed, poison arrows and beams. Placed before the direction chapters. Plus an Activating your corner section in yan-nian.md driven by {{yanNianActivation}}.",
+      "acceptanceCriteria": [
+        "Checklist chapter renders before sheng-qi.",
+        "Yan Nian shows the per-Kua recipe for both sample groups.",
+        "Honest traditional-activator framing throughout; ATTRIBUTION rows added."
+      ],
+      "priority": 71,
+      "passes": true,
+      "notes": "Form-checks chapter renders before sheng-qi; Yan Nian activation verified for Kua 4 (dragon/jade/east recipe, matches corrected classical YN); attribution rows added."
+    },
+    {
+      "id": "CV3-004",
+      "title": "Recipes, bands, sales pages, verification for the advice layer",
+      "description": "Add the two new blocks to all three tiers; re-measure page bands; update the three sales pages (What is inside + page counts); render Kua 4 east and Kua 8 west samples; smokes + build green; progress.txt entries.",
+      "acceptanceCriteria": [
+        "All three recipes updated; bands match measured renders.",
+        "Sales page counts match products.ts.",
+        "npm run build, smoke-blocks, smoke-extended all green."
+      ],
+      "priority": 72,
+      "passes": true,
+      "notes": "Three recipes updated; measured 50/61/126pp, bands 44-56/56-70/115-165; sales pages + KNOWN_PAGES updated; build + both smokes green; owner samples refreshed to v3."
     }
   ]
 }

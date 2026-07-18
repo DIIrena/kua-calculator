@@ -16,14 +16,20 @@ import rehypeStringify from "rehype-stringify";
 const BLOCKS_DIR =
   "c:/Users/User/Documents/IRENA/AI AUTOMATION/my-claude-workspace/projects/kua-calculator/content/blocks";
 
-// Sample reader: Kua 4, East. KUA_MAP[4] = {N:FW,NE:WG,E:TY,SE:SQ,S:YN,SW:HH,W:JM,NW:LS}
+// Sample reader: Kua 4, East. KUA_MAP[4] = {N:SQ,NE:JM,E:YN,SE:FW,S:TY,SW:WG,W:LS,NW:HH}
+// (classical rows; corrected 2026-07-17, CV2-015-DATA)
 const TOKENS = {
   firstName: "Maya", kuaNumber: "4", kuaGroup: "East",
-  shengQiDir: "Southeast", tianYiDir: "East", yanNianDir: "South", fuWeiDir: "North",
-  huoHaiDir: "Southwest", wuGuiDir: "Northeast", liuShaDir: "Northwest", jueMingDir: "West",
+  shengQiDir: "North", tianYiDir: "South", yanNianDir: "East", fuWeiDir: "Southeast",
+  huoHaiDir: "Northwest", wuGuiDir: "Southwest", liuShaDir: "West", jueMingDir: "Northeast",
   brandMark: "<svg></svg>", personalBagua: "<svg></svg>",
   elementIcons: "<svg></svg>", elementSwatches: "<svg></svg>",
-  direction: "Southeast", directionShort: "SE", pinyin: "Sheng Qi", gloss: "Generating energy",
+  miniCompass: "<svg></svg>", bedPlacement: "<svg></svg>",
+  deskPlacement: "<svg></svg>", floorPlanExample: "<svg></svg>",
+  personalBaguaCompact: "<svg></svg>",
+  kuaElement: "Wood", kuaElementColors: "greens", kuaElementMaterials: "plants",
+  kuaElementDress: "slim cuts", kuaElementIcon: "<svg></svg>", yanNianActivation: "a recipe",
+  direction: "North", directionShort: "N", pinyin: "Sheng Qi", gloss: "Generating energy",
 };
 
 const renderer = unified()
@@ -47,6 +53,16 @@ for (const f of files) {
   if (emDash) problems.push("EM DASH");
   if (err) problems.push(`RENDER ERROR ${err}`);
   if (!/<h1/.test(html) && !err) problems.push("NO H1");
+  // A shared block (no -east/-west variant suffix) must not hardcode ONE
+  // group's name: mentioning exactly one of "East group" / "West group"
+  // in the raw source means west-group buyers read east copy or vice
+  // versa (the liu-sha v1 bug). Mentioning both (e.g. "East or West
+  // group") is fine, as is the {{kuaGroup}} token.
+  if (!/-(east|west)\.md$/.test(f)) {
+    const hasEast = /\bEast[- ]group\b/i.test(src);
+    const hasWest = /\bWest[- ]group\b/i.test(src);
+    if (hasEast !== hasWest) problems.push("SINGLE-GROUP PHRASE");
+  }
   if (problems.length) { failures++; console.log(`  FAIL ${f.padEnd(26)} ${problems.join("; ")}`); }
 }
 console.log(`\n${files.length} blocks checked, ${failures} failure(s).`);

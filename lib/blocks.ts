@@ -31,7 +31,17 @@ import {
   personalBaguaSvg,
   elementIconsSvg,
   elementSwatchesSvg,
+  miniCompassSvg,
+  bedPlacementSvg,
+  deskPlacementSvg,
+  floorPlanExampleSvg,
+  elementIconSvg,
 } from "@/lib/pdf/svg-marks";
+import {
+  kuaElement,
+  elementProfile,
+  yanNianActivation,
+} from "@/lib/kua-element";
 
 /** Age threshold (exclusive) below which we prefer the `-child.md`
  *  variant of a block if it exists. Below this we swap the adult
@@ -121,12 +131,54 @@ function substituteTokens(
     liuShaDir: () => dirLabel("LS"),
     jueMingDir: () => dirLabel("JM"),
     brandMark: () => (cachedBrandMark ??= brandMarkSvg()),
+    // Per-chapter visuals (CV2-002). Empty string when the block has
+    // no direction mapping, so a stray token can never crash a render.
+    miniCompass: () =>
+      direction
+        ? miniCompassSvg(
+            direction.compass,
+            direction.compassLabel,
+            direction.pinyin,
+            direction.favourable,
+          )
+        : "",
+    bedPlacement: () =>
+      direction
+        ? bedPlacementSvg(
+            direction.compass,
+            direction.compassLabel,
+            direction.favourable,
+          )
+        : "",
+    deskPlacement: () =>
+      direction
+        ? deskPlacementSvg(
+            direction.compass,
+            direction.compassLabel,
+            direction.favourable,
+          )
+        : "",
+    floorPlanExample: () => floorPlanExampleSvg(),
+    // Kua-element layer (CV3). All derive from the Kua number alone.
+    kuaElement: () => elementProfile(context.kuaNumber).label,
+    kuaElementColors: () => elementProfile(context.kuaNumber).colors,
+    kuaElementMaterials: () => elementProfile(context.kuaNumber).materials,
+    kuaElementDress: () => elementProfile(context.kuaNumber).dress,
+    kuaElementIcon: () => elementIconSvg(kuaElement(context.kuaNumber)),
+    yanNianActivation: () => yanNianActivation(context.kuaNumber),
     personalBagua: () =>
       (cachedPersonalBagua ??= personalBaguaSvg(
         context.kuaNumber,
         context.kuaGroup,
         context.byQuality,
       )),
+    personalBaguaCompact: () =>
+      personalBaguaSvg(
+        context.kuaNumber,
+        context.kuaGroup,
+        context.byQuality,
+        true,
+      ),
     elementIcons: () =>
       (cachedElementIcons ??= elementIconsSvg(context.kuaGroup)),
     elementSwatches: () =>

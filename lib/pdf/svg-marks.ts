@@ -115,6 +115,9 @@ export function personalBaguaSvg(
   kua: number,
   group: KuaGroup,
   byQuality?: ByQualityMap,
+  /** Compact render for the one-page reference card: smaller box,
+   *  tighter margins, same drawing. */
+  compact: boolean = false,
 ): string {
   const favourable = new Set<Compass>(
     group === "east" ? EAST_GROUP_FAVOURABLE : WEST_GROUP_FAVOURABLE,
@@ -173,7 +176,11 @@ export function personalBaguaSvg(
   // ViewBox extends to 480px tall to leave room for the legend below
   // the bagua. Render width stays 280px; height scales proportionally
   // (280 * 480 / 400 = 336).
-  return `<svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" width="280" height="336" style="display:block;margin:10mm auto 12mm auto;">
+  const w = compact ? 180 : 280;
+  const h = compact ? 216 : 336;
+  const mg = compact ? "2mm auto 3mm auto" : "10mm auto 12mm auto";
+
+  return `<svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" style="display:block;margin:${mg};">
   <!-- Outer hairline ring -->
   <circle cx="${CENTER}" cy="${CENTER}" r="${R_OUTER + 4}" fill="none" stroke="${C.hairline}" stroke-width="0.8"/>
   <!-- 8 sectors -->
@@ -277,6 +284,24 @@ function iconCell(svg: string, label: string): string {
 </td>`;
 }
 
+/** Single element icon + label, centred. Used by the Kua-element
+ *  chapter (CV3) to show the one element the customer's Kua carries. */
+export function elementIconSvg(element: string): string {
+  const icons: Record<string, () => string> = {
+    water: waterIcon,
+    fire: fireIcon,
+    wood: woodIcon,
+    metal: metalIcon,
+    earth: earthIcon,
+  };
+  const icon = icons[element];
+  if (!icon) return "";
+  return `<div style="text-align:center;margin:6mm auto 7mm auto;">
+  <div style="display:inline-block;">${icon()}</div>
+  <div style="font-family:'Hanken Grotesk';font-size:11pt;font-weight:700;color:${C.ink};margin-top:3mm;letter-spacing:2.4px;">${element.toUpperCase()}</div>
+</div>`;
+}
+
 export function elementIconsSvg(group: KuaGroup): string {
   // For East group: water (N), fire (S), wood (E+SE) - three icons.
   // For West group: earth (SW+NE), metal (W+NW) - two icons.
@@ -334,4 +359,232 @@ export function elementSwatchesSvg(group: KuaGroup): string {
   return `<table style="border-collapse:collapse;margin:6mm auto 4mm auto;"><tr>
 ${cells}
 </tr></table>`;
+}
+
+// ============================================================
+// Compass v2 visual system (CV2-002).
+//
+// miniCompassSvg      - compact ring with ONE highlighted sector; sits
+//                       at the top of each direction chapter so the
+//                       reader sees where the chapter's quality lives
+//                       on their own compass.
+// bedPlacementSvg /   - schematic plan-view diagrams that settle the
+// deskPlacementSvg      "head points toward vs body faces" confusion
+//                       visually. The furniture stays fixed (target
+//                       wall at the top) and the small compass rose
+//                       rotates so the chapter's direction reads "up".
+// floorPlanExampleSvg - static worked example for the find-your-
+//                       directions chapter: a small flat with the
+//                       eight directions drawn from the centre.
+// ============================================================
+
+/** Compass rose letter positions rotated so `up` is at the top. */
+function rotatedRose(
+  cx: number,
+  cy: number,
+  r: number,
+  up: Compass,
+  accent: string,
+): string {
+  const ring = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${C.paper}" stroke="${C.hairline}" stroke-width="1.5"/>`;
+  const ticks = COMPASS_LIST.map((c) => {
+    const deg = SECTOR_CENTRE_DEG[c] - SECTOR_CENTRE_DEG[up];
+    const rad = (deg * Math.PI) / 180;
+    const lx = cx + (r - 20) * Math.sin(rad);
+    const ly = cy - (r - 20) * Math.cos(rad);
+    const tx = cx + (r - 6) * Math.sin(rad);
+    const ty = cy - (r - 6) * Math.cos(rad);
+    const t2x = cx + (r - 13) * Math.sin(rad);
+    const t2y = cy - (r - 13) * Math.cos(rad);
+    const isUp = c === up;
+    const label = `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="${isUp ? 17 : 13}" font-weight="${isUp ? 800 : 600}" fill="${isUp ? accent : C.ink2}">${c}</text>`;
+    const tick = `<line x1="${tx.toFixed(1)}" y1="${ty.toFixed(1)}" x2="${t2x.toFixed(1)}" y2="${t2y.toFixed(1)}" stroke="${isUp ? accent : C.hairline}" stroke-width="${isUp ? 2.5 : 1.2}"/>`;
+    return tick + "\n  " + label;
+  }).join("\n  ");
+  // Needle pointing up (to the highlighted direction). Kept short so
+  // its tip never crowds the highlighted letter above it.
+  const needle = `<path d="M ${cx} ${cy - r + 44} L ${cx - 7} ${cy + 10} L ${cx} ${cy + 2} L ${cx + 7} ${cy + 10} Z" fill="${accent}" opacity="0.9"/>
+  <circle cx="${cx}" cy="${cy}" r="4.5" fill="${C.ink}"/>`;
+  return ring + "\n  " + ticks + "\n  " + needle;
+}
+
+/**
+ * Compact personalised compass for a direction chapter. All eight
+ * sectors in quiet sand except the chapter's direction, filled and
+ * stroked in the quality tone (olive for supportive, clay for
+ * cautious), with the direction word and quality name in the well.
+ */
+export function miniCompassSvg(
+  compass: Compass,
+  compassLabel: string,
+  qualityName: string,
+  favourable: boolean,
+): string {
+  const accent = favourable ? C.olive : C.clay;
+  const fill = favourable ? C.oliveSoft : C.claySoft;
+
+  const sectors = COMPASS_LIST.map((c) => {
+    const isHit = c === compass;
+    const path = sectorPath(SECTOR_CENTRE_DEG[c]);
+    return `<path d="${path}" fill="${isHit ? fill : C.sand}" stroke="${C.paper}" stroke-width="2"/>`;
+  }).join("\n  ");
+
+  // Re-stroke the highlighted sector on top so its outline is not
+  // painted over by its neighbours.
+  const hitOutline = `<path d="${sectorPath(SECTOR_CENTRE_DEG[compass])}" fill="none" stroke="${accent}" stroke-width="2.5"/>`;
+
+  const labels = COMPASS_LIST.map((c) => {
+    const pos = deg2xy(SECTOR_CENTRE_DEG[c], R_LABEL);
+    const isHit = c === compass;
+    return `<text x="${pos.x.toFixed(2)}" y="${pos.y.toFixed(2)}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="${isHit ? 19 : 15}" font-weight="${isHit ? 800 : 600}" fill="${isHit ? accent : C.ink2}">${c}</text>`;
+  }).join("\n  ");
+
+  // Small pointer nub at the inner edge of the highlighted sector.
+  const nub = deg2xy(SECTOR_CENTRE_DEG[compass], R_INNER + 10);
+  const pointer = `<circle cx="${nub.x.toFixed(2)}" cy="${nub.y.toFixed(2)}" r="5" fill="${accent}"/>`;
+
+  const dirWord = compassLabel.toUpperCase();
+  const dirSize = dirWord.length > 7 ? 20 : 26;
+
+  return `<div class="figure">
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="185" height="185" style="display:block;margin:0 auto;">
+  <circle cx="${CENTER}" cy="${CENTER}" r="${R_OUTER + 4}" fill="none" stroke="${C.hairline}" stroke-width="0.8"/>
+  ${sectors}
+  ${hitOutline}
+  ${labels}
+  ${pointer}
+  <circle cx="${CENTER}" cy="${CENTER}" r="${R_INNER - 2}" fill="#ffffff" stroke="${C.hairline}" stroke-width="1"/>
+  <text x="${CENTER}" y="${CENTER - 16}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="10" font-weight="600" fill="${C.ink2}" letter-spacing="2">${qualityName.toUpperCase()}</text>
+  <text x="${CENTER}" y="${CENTER + 10}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="${dirSize}" font-weight="800" fill="${accent}">${dirWord}</text>
+</svg>
+<p class="figure-caption">Your ${qualityName} direction on the compass: <strong>${compassLabel}</strong>.</p>
+</div>`;
+}
+
+/**
+ * Plan-view bed diagram. The target wall is always drawn at the top;
+ * the rose on the right shows how the whole picture sits in the
+ * reader's real home for THIS direction.
+ */
+export function bedPlacementSvg(
+  compass: Compass,
+  compassLabel: string,
+  favourable: boolean,
+): string {
+  const accent = favourable ? C.olive : C.clay;
+  const soft = favourable ? C.oliveSoft : C.claySoft;
+  return `<div class="figure">
+<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" width="440" height="220" style="display:block;margin:0 auto;">
+  <!-- Room -->
+  <rect x="40" y="52" width="280" height="230" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <!-- The target wall, emphasised -->
+  <line x1="40" y1="52" x2="320" y2="52" stroke="${accent}" stroke-width="5"/>
+  <text x="180" y="34" text-anchor="middle" font-family="Hanken Grotesk" font-size="14" font-weight="800" fill="${accent}" letter-spacing="1.5">THE ${compassLabel.toUpperCase()} WALL</text>
+  <!-- Bed: headboard against the target wall -->
+  <rect x="120" y="56" width="120" height="14" rx="3" fill="${accent}"/>
+  <rect x="120" y="70" width="120" height="130" rx="6" fill="${soft}" stroke="${accent}" stroke-width="1.5"/>
+  <rect x="130" y="78" width="44" height="26" rx="4" fill="${C.paper}" stroke="${C.hairline}" stroke-width="1"/>
+  <rect x="186" y="78" width="44" height="26" rx="4" fill="${C.paper}" stroke="${C.hairline}" stroke-width="1"/>
+  <line x1="120" y1="146" x2="240" y2="146" stroke="${C.paper}" stroke-width="3"/>
+  <!-- Arrow: top of the head points at the wall -->
+  <line x1="180" y1="188" x2="180" y2="120" stroke="${C.ink}" stroke-width="2.5"/>
+  <path d="M 180 108 L 173 122 L 187 122 Z" fill="${C.ink}"/>
+  <text x="180" y="216" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="600" fill="${C.ink}">the top of your head</text>
+  <text x="180" y="234" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="600" fill="${C.ink}">points ${compassLabel}</text>
+  <!-- Rotated rose -->
+  ${rotatedRose(490, 167, 92, compass, accent)}
+  <text x="490" y="290" text-anchor="middle" font-family="Hanken Grotesk" font-size="12" font-weight="600" fill="${C.ink2}">in your home, ${compassLabel} is wherever</text>
+  <text x="490" y="307" text-anchor="middle" font-family="Hanken Grotesk" font-size="12" font-weight="600" fill="${C.ink2}">the ${compass} on your phone compass sits</text>
+</svg>
+<p class="figure-caption">The bed read for ${compassLabel}: headboard on the ${compassLabel} wall, so the top of your head points ${compassLabel}.</p>
+</div>`;
+}
+
+/**
+ * Plan-view desk diagram: the body faces the direction; the chair,
+ * not the desk, is what the system reads.
+ */
+export function deskPlacementSvg(
+  compass: Compass,
+  compassLabel: string,
+  favourable: boolean,
+): string {
+  const accent = favourable ? C.olive : C.clay;
+  const soft = favourable ? C.oliveSoft : C.claySoft;
+  return `<div class="figure">
+<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" width="440" height="220" style="display:block;margin:0 auto;">
+  <!-- Room -->
+  <rect x="40" y="52" width="280" height="230" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="40" y1="52" x2="320" y2="52" stroke="${accent}" stroke-width="5"/>
+  <text x="180" y="34" text-anchor="middle" font-family="Hanken Grotesk" font-size="14" font-weight="800" fill="${accent}" letter-spacing="1.5">FACING ${compassLabel.toUpperCase()}</text>
+  <!-- Desk against the top wall -->
+  <rect x="110" y="66" width="140" height="34" rx="4" fill="${soft}" stroke="${accent}" stroke-width="1.5"/>
+  <!-- Chair + person -->
+  <rect x="152" y="118" width="56" height="12" rx="6" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="180" cy="148" r="16" fill="${C.paper}" stroke="${C.ink}" stroke-width="2"/>
+  <!-- Gaze arrow: the body faces the wall -->
+  <line x1="180" y1="196" x2="180" y2="118" stroke="${C.ink}" stroke-width="2.5"/>
+  <path d="M 180 106 L 173 120 L 187 120 Z" fill="${C.ink}"/>
+  <text x="180" y="224" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="600" fill="${C.ink}">your body faces</text>
+  <text x="180" y="242" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="600" fill="${C.ink}">${compassLabel} while you sit</text>
+  <!-- Rotated rose -->
+  ${rotatedRose(490, 167, 92, compass, accent)}
+  <text x="490" y="290" text-anchor="middle" font-family="Hanken Grotesk" font-size="12" font-weight="600" fill="${C.ink2}">turn the chair, not the desk -</text>
+  <text x="490" y="307" text-anchor="middle" font-family="Hanken Grotesk" font-size="12" font-weight="600" fill="${C.ink2}">the system reads where you look</text>
+</svg>
+<p class="figure-caption">The seat read for ${compassLabel}: the chair turns so your body faces ${compassLabel}.</p>
+</div>`;
+}
+
+/**
+ * Static worked example for the find-your-directions chapter: a small
+ * flat, a reader standing at the centre, and the eight directions
+ * drawn out to the walls. North is up.
+ */
+export function floorPlanExampleSvg(): string {
+  const cx = 320;
+  const cy = 232;
+  // Spokes to the eight directions, drawn from the centre dot.
+  const spokes = COMPASS_LIST.map((c) => {
+    const deg = SECTOR_CENTRE_DEG[c];
+    const rad = (deg * Math.PI) / 180;
+    const r = 150;
+    const x = cx + r * Math.sin(rad);
+    const y = cy - r * Math.cos(rad);
+    const lx = cx + (r + 22) * Math.sin(rad);
+    const ly = cy - (r + 22) * Math.cos(rad);
+    const isN = c === "N";
+    return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="${C.olive}" stroke-width="${isN ? 2 : 1}" stroke-dasharray="${isN ? "none" : "4 4"}" opacity="0.55"/>
+  <text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk" font-size="${isN ? 17 : 13}" font-weight="${isN ? 800 : 700}" fill="${isN ? C.clay : C.ink}">${c}</text>`;
+  }).join("\n  ");
+
+  const roomLabel = (x: number, y: number, label: string) =>
+    `<text x="${x}" y="${y}" text-anchor="middle" font-family="Hanken Grotesk" font-size="11.5" font-weight="700" fill="${C.ink2}" letter-spacing="1.2">${label}</text>`;
+
+  return `<div class="figure">
+<svg viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" width="470" height="345" style="display:block;margin:0 auto;">
+  <!-- Outer walls -->
+  <rect x="120" y="60" width="400" height="344" fill="${C.paper}" stroke="${C.ink}" stroke-width="3"/>
+  <!-- Inner walls -->
+  <line x1="320" y1="60" x2="320" y2="200" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="120" y1="200" x2="520" y2="200" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="400" y1="200" x2="400" y2="404" stroke="${C.ink2}" stroke-width="1.5"/>
+  <!-- Door notch (entrance, south wall) -->
+  <line x1="292" y1="404" x2="348" y2="404" stroke="${C.paper}" stroke-width="4"/>
+  <path d="M 292 404 A 56 56 0 0 1 348 404" fill="none" stroke="${C.hairline}" stroke-width="1.2"/>
+  <!-- Room names -->
+  ${roomLabel(220, 138, "KITCHEN")}
+  ${roomLabel(420, 138, "BEDROOM")}
+  ${roomLabel(252, 316, "LIVING ROOM")}
+  ${roomLabel(460, 316, "BATH")}
+  ${roomLabel(320, 434, "ENTRANCE")}
+  <!-- Spokes + direction letters -->
+  ${spokes}
+  <!-- The reader at the centre -->
+  <circle cx="${cx}" cy="${cy}" r="9" fill="${C.clay}"/>
+  <circle cx="${cx}" cy="${cy}" r="15" fill="none" stroke="${C.clay}" stroke-width="1.5" opacity="0.5"/>
+  <text x="${cx}" y="${cy + 34}" text-anchor="middle" font-family="Hanken Grotesk" font-size="12" font-weight="700" fill="${C.clay}">you stand here</text>
+</svg>
+<p class="figure-caption">A worked example: one reading from the centre of the home gives every room its directions. In this flat the bedroom sits northeast, the kitchen northwest, the entrance south.</p>
+</div>`;
 }

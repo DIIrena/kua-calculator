@@ -1,45 +1,36 @@
 # Your Fu Wei direction is {{direction}}
 
-Which room in your home is the quiet one? Not the busy one, not the social one. The one you go to when you want to think rather than do. The chair you reach for when the work is slow and long and needs you to stay put. Most homes have a room like that, even if nobody decided it on purpose.
+Which room in your home is the quiet one? Not the busy one, not the social one. The one you go to when you want to think rather than do. Most homes have a room like that, even if nobody decided it on purpose. The tradition has a direction for it, and for you, {{firstName}}, it points **{{direction}}**.
 
-The tradition has a direction for that room, and it is the mildest of your four supportive directions.
+{{miniCompass}}
 
-For you, {{firstName}}, your Fu Wei direction is **{{direction}}**.
+## What this means
 
-## What Fu Wei means
+The full name is *Fu Wei* (<span lang="zh-Hant">伏位</span>), usually glossed as "stability" and more literally as **"the crouching position"**: the body settled, low to the ground, hard to move. Of your four supportive directions it is the gentlest, and the one most readers pass over. That is the mistake this chapter is about.
 
-The full name is *Fu Wei* (<span lang="zh-Hant">伏位</span>). It is usually glossed as "stability," and more literally as "the crouching position": the body settled, low to the ground, hard to move. Of your four supportive directions it is the gentlest. It is also the one most readers pass over, and that is the mistake this chapter is about.
+The four supportive directions are not rungs of a ladder; they are four **functions**. Sheng Qi does the visible, ambitious work. Tian Yi does the recovery. Yan Nian keeps the connections. Fu Wei does none of that loud work. The tradition associates it with calm, deep focus, and self-knowledge: the slow, unhurried attention that does not announce itself. People already name this direction without the word. The reader calls it *their chair*. The writer calls it *their desk*. The student calls it the corner of the library where the work moves in a way it does not move at the kitchen table.
 
-The other three are easier to notice. The tradition gives Sheng Qi to forward push, Tian Yi to recovery, Yan Nian to relationship. Fu Wei does none of that loud work. The tradition associates it instead with *calm*, with deep focus, and with self-knowledge: the slow, unhurried kind of attention that does not announce itself.
+## Do this
 
-These are not the four rungs of a ladder. They are four **functions**, and a person can use all of them. But many lives lean hardest on one. If your work is long-form, or your temperament runs quiet, the function you may lean on most is the one the tradition calls Fu Wei.
+- **Turn the study desk to face {{direction}}** if your main output is produced over weeks rather than days. The chair, not the desk, is what the system reads. A solid wall behind you helps; a window to the side rather than straight ahead helps too.
+- **Keep a second, slower seat facing {{direction}}** if your doing-desk already uses Sheng Qi. Practitioners kept a *doing* seat and a *thinking* seat for people whose lives needed both. A reading chair or a bench under a window is enough.
+- **Give it the meditation cushion.** This is the seat the tradition most often assigns to Fu Wei: cushion against the {{direction}} side of the room, sitting so you face {{direction}}, looking back into the room.
+- **House the contemplative things on the {{direction}} side.** The journal, the altar if you keep one, one object that matters and nothing else. A steady reminder that the slow part of life has a place to live.
 
-## Why it is underestimated
+{{deskPlacement}}
 
-Read the rankings quickly and it is easy to assume the mildest of four is the least useful. That is the first wrong turn.
+## Avoid this
 
-The system is not a sports league. The four supportive directions do not compete; they cover different needs. Sheng Qi is the direction the tradition gives to ambition and visible work. Fu Wei is the one it gives to study and stillness. So the question is not which is strongest. The question is which kind of work fills more of your week.
+- **Do not rank it last because it is mildest.** The system is not a sports league. The question is not which direction is strongest, but which kind of work fills more of your week.
+- **Do not give it the sprint.** Fu Wei work is long-form. Deadlines, pitches, and launches belong to Sheng Qi; sending them here just makes the quiet seat restless.
+- **Do not default the bed here.** The bed is read by where the head points, not where the body faces, and for most sleepers the tradition favours Tian Yi for the headboard. Fu Wei earns the daytime seats. If the {{direction}} wall is the only favourable wall your bedroom offers, it is still a good wall; a favourable headboard beats a cautious one every time.
 
-People already name this direction without the word. The reader calls it their chair. The writer calls it their desk. The student calls it the corner of the library they go back to because the work *moves* there in a way it does not move at the kitchen table. All of them are describing the same function, and the tradition has a single word for it.
+## Practitioner tip
 
-So here is the part that is easy to miss. The high achiever, the one who already pushes hard all week, is often the one who needs Fu Wei most and uses it least. They orient everything toward the active directions, and then wonder why long, slow work feels like *running in sand*. The push is not what is missing. The settling is. For a reader like that, Fu Wei is not the fourth thing in this book. It may be the first.
+The people who need Fu Wei most are usually the ones who use it least. The high achiever orients everything toward the active directions and then wonders why long, slow work feels like *running in sand*. The push is not what is missing. The settling is. When I meet a reader like that, I do not touch their Sheng Qi desk. I add one quiet chair, facing Fu Wei, with nothing on the table beside it, and ask them to take the last twenty minutes of the workday there. For a reader like that, Fu Wei is not the fourth direction in this book. It may be the first.
 
-## Best uses
+## A real home
 
-Fu Wei is the direction the tradition reserves for the seats where you stay put and go deep. Three uses cover almost everyone.
+Tomás is Kua 7, so his Fu Wei points west. He is exactly the reader described above: a project manager whose whole flat was tuned for output, desk facing his Sheng Qi, phone charging at arm's reach. The west side of his living room held a bookshelf and an armchair he mostly saw over the top of a laptop. His one change was subtraction. The laptop was banned from the armchair, the chair was turned to face the west wall of books, and the last twenty minutes of his working day moved there with a paper notebook. He reports, in the plainest terms, that the day now has a place where it ends. The tradition would call that the crouching position doing its job: nothing generated, nothing repaired, just the settling that lets tomorrow start clean.
 
-**The study desk.** If your main output is produced over weeks rather than days, this is where the tradition would point your work. Turn the chair so your **body faces {{direction}}** while you sit. The desk can point however the room allows; it is the direction your body looks that the tradition reads. A solid wall behind you helps. A window to the side rather than straight ahead helps too, because direct light in front of you over long sessions pulls the eye off the page.
-
-**The reading chair.** If you already use a more active direction for ambitious work, the tradition would still suggest a second seat for the slow thinking. A reading chair, a bench under a window, a small desk in another room. Sit in it facing **{{direction}}**. Practitioners often described this as the difference between the *doing* seat and the *thinking* seat, and kept both for people whose lives needed both.
-
-**The meditation cushion.** This is the seat the tradition most often gives to Fu Wei. Place the cushion against the wall on the **{{direction}}** side of the room, and sit on it **facing {{direction}}**, looking back into the room. The aim is to face the direction consistently, not to pick the wall that photographs best.
-
-A note on the bed, because the rule is different. The bed is read by where the head points, not where the body faces. If you want to bring your sleep into your supportive half, the headboard sits against the **{{direction}}** wall so your head rests toward it. For most sleepers, though, the tradition tends to favour Tian Yi for the bed and keeps Fu Wei for the daytime seats.
-
-If you keep an altar, a journal, or any contemplative practice that needs no second person, the {{direction}} corner of a quiet room is its traditional home. A small bowl of clean water, a candle, one object that matters and nothing else. The tradition would call this honouring the direction. A modern reader can call it a steady reminder that the slow part of life has a place to live.
-
-## A move to try
-
-Pick one seat where you do slow, sitting work - the desk, the reading chair, or the cushion - and turn it so your body faces **{{direction}}**. Test it the standard way: the seven-day method in the last chapter applies. The tradition associates this direction with settling, which is not dramatic. Watch for something small and quiet, not a transformation.
-
-The slow part of your life has a direction. For you, {{firstName}}, it is **{{direction}}**.
+<p class="one-thing"><strong>If you only do one thing:</strong> choose one seat where you do slow, sitting work, turn it to face {{direction}}, and keep it free of the fast work for a week.</p>

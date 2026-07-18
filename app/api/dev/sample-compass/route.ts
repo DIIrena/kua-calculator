@@ -21,12 +21,17 @@ export const maxDuration = 60;
 export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
-  const session = await auth();
-  if (!session?.user) {
-    return NextResponse.json(
-      { error: "unauthorized; sign in first" },
-      { status: 401 },
-    );
+  // Local dev renders skip the sign-in gate so sample PDFs can be
+  // generated headlessly (smoke checks, layout QA). Production still
+  // requires a signed-in account.
+  if (process.env.NODE_ENV === "production") {
+    const session = await auth();
+    if (!session?.user) {
+      return NextResponse.json(
+        { error: "unauthorized; sign in first" },
+        { status: 401 },
+      );
+    }
   }
 
   const url = new URL(request.url);

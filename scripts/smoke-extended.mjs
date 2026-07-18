@@ -20,36 +20,45 @@ const BLOCKS_DIR = path.join(ROOT, "content", "blocks");
 
 // The extended recipe's block order (mirror of lib/products.ts).
 const RECIPE = [
-  "welcome-extended", "identity", "summary", "how-to-use",
+  "welcome-extended", "identity", "kua-element", "summary",
+  "find-your-directions", "how-to-use", "before-the-compass",
   "sheng-qi", "tian-yi", "yan-nian", "fu-wei",
   "huo-hai", "wu-gui", "liu-sha", "jue-ming",
   "compatibility", "room-bedroom", "room-desk", "room-dining",
-  "year-overlay", "experiment", "closing-extended",
+  "year-overlay", "faq-hard-cases", "experiment", "closing-extended",
 ];
 
 // Sample reader: Kua 4, East group. Directions from KUA_MAP[4].
-// { N:FW, NE:WG, E:TY, SE:SQ, S:YN, SW:HH, W:JM, NW:LS }
+// { N:SQ, NE:JM, E:YN, SE:FW, S:TY, SW:WG, W:LS, NW:HH }
+// (classical rows; corrected 2026-07-17, CV2-015-DATA)
 const TOKENS = {
   firstName: "Marco",
   kuaNumber: "4",
   kuaGroup: "East",
-  shengQiDir: "Southeast",
-  tianYiDir: "East",
-  yanNianDir: "South",
-  fuWeiDir: "North",
-  huoHaiDir: "Southwest",
-  wuGuiDir: "Northeast",
-  liuShaDir: "Northwest",
-  jueMingDir: "West",
+  shengQiDir: "North",
+  tianYiDir: "South",
+  yanNianDir: "East",
+  fuWeiDir: "Southeast",
+  huoHaiDir: "Northwest",
+  wuGuiDir: "Southwest",
+  liuShaDir: "West",
+  jueMingDir: "Northeast",
   // SVG tokens render to <svg> markup at runtime; stub as a marker so the
   // unresolved-token check does not false-positive on them.
   brandMark: "<svg></svg>",
   personalBagua: "<svg></svg>",
+  personalBaguaCompact: "<svg></svg>",
   elementIcons: "<svg></svg>",
   elementSwatches: "<svg></svg>",
+  miniCompass: "<svg></svg>",
+  bedPlacement: "<svg></svg>",
+  deskPlacement: "<svg></svg>",
+  floorPlanExample: "<svg></svg>",
+  kuaElement: "Wood", kuaElementColors: "greens", kuaElementMaterials: "plants",
+  kuaElementDress: "slim cuts", kuaElementIcon: "<svg></svg>", yanNianActivation: "a recipe",
   // Direction-quality token (only meaningful in direction blocks).
-  direction: "Southeast",
-  directionShort: "SE",
+  direction: "North",
+  directionShort: "N",
   pinyin: "Sheng Qi",
   gloss: "Generating energy",
 };

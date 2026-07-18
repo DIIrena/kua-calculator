@@ -28,4 +28,6 @@ The last chapter gives you one structured seven-day experiment to start with. Fo
 
 **The Chinese New Year wrinkle.** Your Kua is calculated from your *Chinese solar-calendar* year, which can differ from the Gregorian year if you were born in January or early February. If you were born before Chinese New Year of your birth year, your Kua belongs to the previous year. The calculation in this guide already accounts for that if a full birth date was given.
 
-**The rest of your household.** This guide is read for you. If you live with a partner, a child, a parent, or a housemate, each has their own Kua and their own four-and-four directions. You can compute any of them, free, in ten seconds at *myfengshuihome.com*. The Couple Compatibility reading, when it ships, takes the next step and reads two people together.
+**The rest of your household.** This guide is read for you. If you live with a partner, a child, a parent, or a housemate, each has their own Kua and their own four-and-four directions. You can compute any of them, free, in ten seconds at *myfengshuihome.com*. The hard-cases chapter near the end gives the working rules for a shared home, and the Couple Compatibility Compass reads two full charts together.
+
+One reading note. The book is built to be finished in one sitting: short chapters, one idea per paragraph, a diagram wherever a diagram says it faster, and every chapter closing on the single move that matters most. Read straight through with a pencil, and let the worksheets catch what you decide.

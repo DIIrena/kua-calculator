@@ -16,6 +16,10 @@ out/
 dist/
 build/
 
+# Local sample renders for owner review - regenerate via
+# /api/dev/sample-compass; never commit the binaries.
+samples/
+
 # Python (retired Flask app - kept so any leftover venv is ignored)
 .venv/
 __pycache__/

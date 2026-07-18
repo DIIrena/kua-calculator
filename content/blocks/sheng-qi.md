@@ -1,52 +1,42 @@
 # Your Sheng Qi direction is {{direction}}
 
-Sheng Qi is the *generating* direction, the strongest of your four favourable directions, and for you, {{firstName}}, it points {{direction}}.
+Sheng Qi is the *generating* direction, the strongest of your four favourable directions, and for you, {{firstName}}, it points **{{direction}}**.
 
-## What Sheng Qi means
+The full name is *Sheng Qi* (<span lang="zh-Hant">生氣</span>), "generating qi" - the source of energy. It is the senior officer of your four good directions. If Tian Yi is the direction the tradition gives to recovery, Yan Nian the one it gives to connection, and Fu Wei the one it gives to steadiness, Sheng Qi is the one it gives to **action**.
 
-The full name is *Sheng Qi* (<span lang="zh-Hant">生氣</span>), which translates to "generating qi" or, more loosely, "the source of energy." It is the senior officer of the four good directions. If Tian Yi is the direction the tradition gives to recovery, Yan Nian the one it gives to connection, and Fu Wei the one it gives to steadiness, Sheng Qi is the one it gives to *action*. It is the direction associated with ambitious, forward-pushing work.
+{{miniCompass}}
 
-The tradition has built three small rules around it. The first, the most-cited, is the rule of the headboard: a bed whose headboard sits on your Sheng Qi wall, so your head points that way, is traditionally read as the energising bed position. The second is the rule of the working seat: a desk where your body faces your Sheng Qi direction is the seat the tradition associates with drive. The third is the rule of the front door: a home whose entrance opens to the Sheng Qi direction of the head of household is, by tradition, an auspicious home.
+## What this means
 
-For you, the direction this lives in is **{{direction}}**.
+The tradition reads Sheng Qi as the direction of forward motion. Not relaxation. Not love. Not study. Motion. When your body is aligned with it, the system associates the position with energy, drive, and the appetite for ambitious work. That is an association the tradition makes, not a result it hands you. Whether you notice it over a week is yours to observe.
 
-If your front door opens roughly to this direction, the system reads it as a strong configuration. If it does not, that is fine. Most people do not get to choose their front door. The headboard and the desk are the moves you actually control, and those alone carry most of what the tradition associates with Sheng Qi.
+Three small rules have grown up around this direction. The bed whose headboard sits on the Sheng Qi wall is read as the energising bed. The seat that faces Sheng Qi is read as the seat with drive. The front door that opens toward it is read as an auspicious door. Of the three, only two are usually yours to change, and one of those turns on castors.
 
-## What Sheng Qi is for
+## Do this
 
-The tradition gives Sheng Qi a specific job. It is the direction of *forward motion*. Not relaxation. Not love. Not study. Motion.
+- **Turn your desk chair to face {{direction}}** for ambitious work: the long project, the difficult piece of writing, anything that needs a sustained push. The chair faces the direction; the desk can sit any way it likes. What the system reads is where your body looks.
+- **Give Sheng Qi the bed in a season of push.** A launch, a new job, months where you want to wake ready to move: for such a stretch, the headboard goes on the {{direction}} wall. In ordinary seasons the bed belongs to Tian Yi, which is the next chapter.
+- **Take the {{direction}}-facing chair for conversations that matter.** When you sit across from someone and the stakes are real, choose the seat that lets your body open toward {{direction}}. It costs nothing to try.
+- **Aim your morning at it.** The spot where you stand for the first cup of the day, the window you look out of for the first thirty seconds: orient that corner so your body opens {{direction}}.
 
-Use it for:
+{{deskPlacement}}
 
-- **The desk**, when the work is ambitious. A long project, a difficult piece of writing, anything that needs a sustained push. Face {{direction}} at the desk and the tradition reads the orientation as the one that supports active work. The chair faces this direction; the desk itself can face any way. What the system reads is where the *body* looks, so it is the chair you turn.
-- **The bed**, in a season that calls for a push. A launch. A new job. A stretch of months where you want to wake ready to move rather than ready to rest. Putting the headboard on the {{direction}} wall for such a season is a long-standing Classical recommendation. Outside those seasons, the tradition often sends the bed elsewhere, which is the next thing this chapter covers.
-- **The chair for important conversations.** When you sit across from someone and the conversation matters, take the chair that lets your body face {{direction}}. It is a traditional placement, and it costs nothing to try.
-- **The morning corner.** The spot you stand in for the first cup of the day, the window you look out of for the first thirty seconds. Orient that corner so your body opens {{direction}}.
+## Avoid this
 
-The pattern is the same in each use. Where the function is active, ambitious, decisive, the tradition turns the body toward Sheng Qi. Where the function is passive, recovering, settling, it turns the body toward one of the other three favourable directions instead.
+- **Do not give Sheng Qi the bed in a tired season.** The tradition reads a Sheng Qi bed as energising, which is exactly wrong for someone who needs deep rest more than a push. That season belongs to Tian Yi.
+- **Do not rearrange the desk itself.** People shove furniture around and change nothing, because the desk was never the point. The chair is the instrument. Turn the chair.
+- **Do not chase the front door.** If your entrance already opens roughly {{direction}}, enjoy the reading. If it does not, leave it alone. Most people do not get to choose their front door, and the headboard and the chair carry most of what this direction offers.
 
-Sheng Qi is not the right direction for everything. The tradition reads a Sheng Qi bed as energising, which is exactly the wrong thing for someone who needs deep rest more than a push. For that, the tradition points the bed to **Tian Yi**, the healing direction, which is the next chapter. In most ordinary seasons the bed defaults to Tian Yi; Sheng Qi is the substitution made during stretches that need momentum. Both are correct readings. The question is which season you are in.
+## Practitioner tip
 
-## What the tradition associates with it
+The question I ask before recommending Sheng Qi for anything is not "what is the best direction" but "what season are you in". A push season gets Sheng Qi. An ordinary season gets Tian Yi. Both are correct readings; the calendar of your own life decides between them. People who skip that question end up sleeping in a bed tuned for a sprint they are not running.
 
-When the body is aligned with Sheng Qi, the tradition associates the direction with energy, drive, and the appetite for ambitious work. This is the *quality the tradition gives the direction*, not a result it hands you. Hold it as an association the system makes, the same way it associates Tian Yi with rest and Yan Nian with connection.
+## A real home
 
-When the bed instead points at one of the four cautious directions, the tradition reads the configuration the other way: as the harder one to wake well in, the one it would move first. You may find a room reads differently to you once a favourable direction is in play. You may not. The tradition makes the association; whether you notice it over a week is yours to observe.
+Dana is a Kua 8 reader, so her Sheng Qi points southwest. Her flat is small: the bedroom fits the bed one way only, headboard on the north wall, and that is not negotiable because the radiator owns the other wall. So she left the bed alone. Instead she looked at her desk, which sat facing a bookshelf, and turned the chair a quarter-turn so her body faced the southwest window while she worked. Total cost: nothing. The desk did not move; a lamp did. She was mid-way through a certification she had been stalling on, and she gave the new seat the seven-day test from the last chapter, then kept it. The bed never moved. It did not need to. One aligned seat, used four hours a day, was the version of Sheng Qi her floor plan actually offered.
 
-## The hard thing
+## When the wall will not cooperate
 
-Most people cannot put the headboard on their Sheng Qi wall without moving furniture they have lived with for years. The closet is on the wrong wall. The window is on the wrong wall. The radiator is on the wrong wall. The bedroom is small and there is only one way the bed fits.
+Most people cannot put the headboard on their Sheng Qi wall without moving furniture they have lived with for years. Two things are worth knowing. First, partial credit is real: if the {{direction}} wall is taken, any of your other three favourable walls beats a cautious one, and that rough adjustment is the one the tradition weights most. Second, the bed is not the only lever. The chair almost always turns, and for someone whose work is the main thing they push forward, the working seat is often the move that matters more. Perfect alignment is rare and not the point. **Better than you had before** is the point.
 
-Two things worth knowing about this.
-
-First, partial credit is real. If you cannot put the headboard on the {{direction}} wall, put it on any of your other three favourable walls before you settle for a cautious one. Tian Yi, Yan Nian, and Fu Wei are all reasonable bed positions; the four to avoid are covered later in this book. The bed on *any* good wall beats the bed on a bad one. The difference between Sheng Qi and Tian Yi for the headboard is a fine adjustment. The difference between any good direction and any cautious one is the rough adjustment, and the rough adjustment is the one the tradition weights most.
-
-Second, the bed is not the only lever. If the bed has to stay where it is, *change the desk*. The desk is almost always rearrangeable. Turn your chair so your body faces {{direction}} while you work, and you have applied Sheng Qi to the part of the day the tradition ties most closely to generating. For someone whose work is the main thing they push forward, the working-direction move is often the one that matters most. The sleeping move is about waking; the working move is about *doing*. Different jobs, both worth doing, both read from the same Sheng Qi mapping.
-
-Perfect Sheng Qi alignment is rare and not the point. **Better** than you had before is the point. The system is a decision tool, not a discipline.
-
-## A move to try
-
-The easy first move for Sheng Qi is the desk, because it turns. Find the {{direction}} side of the room and turn your chair so your body faces that wall while you work. The morning corner is the second move - the spot where you stand for the first cup of the day. Orient that corner toward {{direction}} too. The full seven-day method for testing changes like these lives in the last chapter; the principle is the same here.
-
-Your Sheng Qi direction is {{direction}}. Mark it on the floor plan in your head.
+<p class="one-thing"><strong>If you only do one thing:</strong> today, turn your desk chair so your body faces {{direction}} while you work, and write the move on your Room Map.</p>

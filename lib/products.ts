@@ -19,8 +19,12 @@ export type BlockId =
   | "welcome"
   | "welcome-extended"
   | "identity"
+  | "kua-element"
   | "summary"
+  | "find-your-directions"
   | "how-to-use"
+  | "before-the-compass"
+  | "faq-hard-cases"
   | "experiment"
   | "closing"
   | "closing-extended"
@@ -96,14 +100,17 @@ export const PRODUCTS: Record<string, Product> = {
     coverTitleHtml: (firstName) =>
       `${firstName}'s Personal Feng Shui <em>Compass</em>`,
     shortTitle: "Personal Feng Shui Compass",
-    priceCents: 1400,
+    priceCents: 1900,
     currency: "usd",
     stripeEnvKey: "STRIPE_PRICE_ID_PERSONAL_COMPASS",
     blocks: [
       "welcome",
       "identity",
+      "kua-element",
       "summary",
+      "find-your-directions",
       "how-to-use",
+      "before-the-compass",
       "sheng-qi",
       "tian-yi",
       "yan-nian",
@@ -112,10 +119,11 @@ export const PRODUCTS: Record<string, Product> = {
       "wu-gui",
       "liu-sha",
       "jue-ming",
+      "faq-hard-cases",
       "experiment",
       "closing",
     ],
-    targetPages: { min: 20, max: 26 },
+    targetPages: { min: 44, max: 56 },
   },
   // The Extended Personal Kua Report. A superset of the Compass: the
   // same eight-direction reading, plus five premium chapters
@@ -134,8 +142,11 @@ export const PRODUCTS: Record<string, Product> = {
     blocks: [
       "welcome-extended",
       "identity",
+      "kua-element",
       "summary",
+      "find-your-directions",
       "how-to-use",
+      "before-the-compass",
       "sheng-qi",
       "tian-yi",
       "yan-nian",
@@ -149,10 +160,11 @@ export const PRODUCTS: Record<string, Product> = {
       "room-desk",
       "room-dining",
       "year-overlay",
+      "faq-hard-cases",
       "experiment",
       "closing-extended",
     ],
-    targetPages: { min: 34, max: 46 },
+    targetPages: { min: 56, max: 70 },
   },
 };
 
@@ -218,15 +230,17 @@ PRODUCTS["complete-home-compass"] = {
   currency: "usd",
   stripeEnvKey: "STRIPE_PRICE_FLAGSHIP",
   blocks: [
-    "welcome-extended", "identity", "summary", "how-to-use",
+    "welcome-extended", "identity", "kua-element", "summary", "find-your-directions",
+    "how-to-use",
+    "before-the-compass",
     "sheng-qi", "tian-yi", "yan-nian", "fu-wei",
     "huo-hai", "wu-gui", "liu-sha", "jue-ming",
     "compatibility",
     ...ALL_SPACE_BLOCKS,
     ...ALL_PILLAR_BLOCKS,
-    "year-overlay", "experiment", "closing-extended",
+    "year-overlay", "faq-hard-cases", "experiment", "closing-extended",
   ],
-  targetPages: { min: 95, max: 145 },
+  targetPages: { min: 115, max: 165 },
 };
 
 export function findProduct(slug: string): Product | null {

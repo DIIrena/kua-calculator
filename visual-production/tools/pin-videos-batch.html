@@ -1,0 +1,417 @@
+<!doctype html>
+<!--
+  Batch of 10 animated pins on the locked MFSH template (1000x1500).
+  Select with ?pin=<key>. Shared shell: logo+title in (0-2.2s), divider
+  draws (2.2-3.2), per-pin art (3.2-12.4), URL in (12.6+), progress bar.
+  Single-accent rule: exactly one orange detail per pin's middle zone.
+  Keys: bed-stove-door, command-position, east-west, five-elements,
+  whole-home, eight-directions, twelve-rooms, nine-areas, move-dates,
+  cures-honest.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #fcfcf8; }
+  #stage { width: 1000px; height: 1500px; overflow: hidden; }
+  svg { display: block; }
+  text { font-family: "EB Garamond", serif; font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+const GREEN = "#0e3b2c", ORANGE = "#d9531a", IVORY = "#fcfcf8";
+const DUR = 15, SVGNS = "http://www.w3.org/2000/svg";
+const clamp01 = (v) => Math.max(0, Math.min(1, v));
+const ease = (v) => 1 - Math.pow(1 - v, 3);
+const seg = (t, a, b) => clamp01((t - a) / (b - a));
+
+// ---------- shared shell ----------
+function el(tag, attrs, parent) {
+  const n = document.createElementNS(SVGNS, tag);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  (parent || svgRoot).appendChild(n);
+  return n;
+}
+let svgRoot, logoG, t1El, t2El, dividerEl, urlEl, progressEl;
+function buildShell(titleLines) {
+  document.getElementById("stage").innerHTML =
+    '<svg width="1000" height="1500" viewBox="0 0 1000 1500" xmlns="' + SVGNS + '"></svg>';
+  svgRoot = document.querySelector("svg");
+  el("rect", { width: 1000, height: 1500, fill: IVORY });
+  el("rect", { x: 0, y: 0, width: 1000, height: 385, fill: GREEN });
+  el("rect", { x: 0, y: 1387.7, width: 1000, height: 112.3, fill: GREEN });
+  logoG = el("g", { opacity: 0 });
+  const baselines = titleLines.length === 1 ? [315] : [245, 330];
+  t1El = el("text", { x: 500, y: baselines[0], "text-anchor": "middle", "font-size": 72, fill: IVORY, opacity: 0 });
+  t1El.textContent = titleLines[0];
+  t2El = titleLines[1]
+    ? el("text", { x: 500, y: baselines[1], "text-anchor": "middle", "font-size": 72, fill: IVORY, opacity: 0 })
+    : null;
+  if (t2El) t2El.textContent = titleLines[1];
+  dividerEl = el("line", { x1: 0, y1: 385, x2: 0, y2: 385, stroke: ORANGE, "stroke-width": 2.7 });
+  urlEl = el("text", { x: 500, y: 1457, "text-anchor": "middle", "font-size": 36, fill: IVORY, "letter-spacing": 1.8, opacity: 0 });
+  urlEl.textContent = "myfengshuihome.com";
+  progressEl = el("rect", { x: 0, y: 1494, width: 0, height: 6, fill: ORANGE });
+  fetch("file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/assets/logo.svg")
+    .then((r) => r.text())
+    .then((raw) => {
+      const inner = raw.slice(raw.indexOf("<g"), raw.lastIndexOf("</g>") + 4).replace("#0e3b2c", ORANGE);
+      logoG.innerHTML = '<svg x="420" y="50" width="160" height="160" viewBox="0 0 709 709">' + inner + "</svg>";
+      window.__logoReady = true;
+    });
+}
+function shellSeek(t) {
+  const p1 = ease(seg(t, 0.2, 1.2)), p2 = ease(seg(t, 0.8, 1.9));
+  logoG.setAttribute("opacity", ease(seg(t, 0, 0.9)));
+  t1El.setAttribute("opacity", p1);
+  t1El.setAttribute("transform", "translate(0 " + (1 - p1) * 18 + ")");
+  if (t2El) {
+    t2El.setAttribute("opacity", p2);
+    t2El.setAttribute("transform", "translate(0 " + (1 - p2) * 18 + ")");
+  }
+  dividerEl.setAttribute("x2", 1000 * ease(seg(t, 2.2, 3.2)));
+  urlEl.setAttribute("opacity", ease(seg(t, 12.6, 13.6)));
+  progressEl.setAttribute("width", 1000 * clamp01(t / DUR));
+}
+
+// ---------- primitives ----------
+function makeLines(group, segs, w) {
+  return segs.map((s) => {
+    const ln = el("line", { x1: s[0], y1: s[1], x2: s[0], y2: s[1], stroke: GREEN, "stroke-width": s[4] || w || 3.4 }, group);
+    return { ln, s };
+  });
+}
+function drawLines(lines, t, start, per, dur) {
+  lines.forEach((L, i) => {
+    const p = ease(seg(t, start + i * per, start + i * per + dur));
+    L.ln.setAttribute("x2", L.s[0] + (L.s[2] - L.s[0]) * p);
+    L.ln.setAttribute("y2", L.s[1] + (L.s[3] - L.s[1]) * p);
+  });
+}
+function makeRows(group, items, x, yStart, gap, size, accentIdx) {
+  return items.map((txt, i) => {
+    const y = yStart + i * gap;
+    const color = i === accentIdx ? ORANGE : GREEN;
+    const g = el("g", { opacity: 0 }, group);
+    const ring = el("circle", { cx: x, cy: y - 13, r: 29, fill: "none", stroke: color, "stroke-width": 3.4 }, g);
+    const num = el("text", { x: x, y: y - 1, "text-anchor": "middle", "font-size": 34, fill: color }, g);
+    num.textContent = i + 1;
+    const label = el("text", { x: x + 56, y: y, "font-size": size || 42, fill: GREEN }, g);
+    label.textContent = txt;
+    return g;
+  });
+}
+function showRows(rows, t, start, per, dur) {
+  rows.forEach((g, i) => {
+    const p = ease(seg(t, start + i * per, start + i * per + dur));
+    g.setAttribute("opacity", p);
+    g.setAttribute("transform", "translate(0 " + (1 - p) * 16 + ")");
+  });
+}
+
+// ---------- the ten pins ----------
+const PINS = {
+  "bed-stove-door": {
+    titles: ["The Bed, the Stove,", "and the Door"],
+    setup() {
+      const g = el("g", {});
+      const px = 250, py = 460, pw = 500, ph = 360;
+      this.plan = makeLines(g, [
+        [px, py, px + 190, py, 0, 4.4], [px + 280, py, px + pw, py, 0, 4.4],
+        [px + pw, py, px + pw, py + ph, 0, 4.4], [px + pw, py + ph, px, py + ph, 0, 4.4],
+        [px, py + ph, px, py, 0, 4.4],
+        [px + 250, py, px + 250, py + 200, 0, 3.2], [px, py + 200, px + 250, py + 200, 0, 3.2],
+      ]);
+      this.bed = el("rect", { x: px + 40, y: py + 40, width: 110, height: 70, fill: "none", stroke: GREEN, "stroke-width": 3.2, opacity: 0 });
+      this.stove = el("rect", { x: px + 320, y: py + 60, width: 70, height: 44, fill: "none", stroke: GREEN, "stroke-width": 3.2, opacity: 0 });
+      this.rows = makeRows(g, ["The bed sees the door", "The cook sees the room", "The entry does not point through"], 150, 990, 122, 40, 0);
+    },
+    seek(t) {
+      drawLines(this.plan, t, 3.2, 0.16, 0.9);
+      this.bed.setAttribute("opacity", ease(seg(t, 4.6, 5.2)));
+      this.stove.setAttribute("opacity", ease(seg(t, 5.0, 5.6)));
+      showRows(this.rows, t, 6.0, 1.4, 0.7);
+    },
+  },
+  "command-position": {
+    titles: ["The Command Position,", "Plainly"],
+    setup() {
+      const g = el("g", {});
+      const px = 260, py = 470, pw = 480, ph = 420;
+      this.plan = makeLines(g, [
+        [px, py, px + pw, py, 0, 4.4],
+        [px + pw, py, px + pw, py + ph - 130, 0, 4.4],
+        [px + pw, py + ph, px + pw, py + ph, 0, 4.4],
+        [px + pw, py + ph, px, py + ph, 0, 4.4],
+        [px, py + ph, px, py, 0, 4.4],
+        [px + pw, py + ph - 60, px + pw, py + ph, 0, 4.4],
+      ]);
+      this.bed = el("rect", { x: px + 50, y: py + 60, width: 130, height: 200, rx: 8, fill: "none", stroke: GREEN, "stroke-width": 3.6, opacity: 0 });
+      this.sight = el("line", { x1: px + 115, y1: py + 160, x2: px + 115, y2: py + 160, stroke: GREEN, "stroke-width": 2.4, "stroke-dasharray": "10 10" });
+      this.sightTarget = { x: px + pw - 10, y: py + ph - 95 };
+      this.dot = el("circle", { cx: px + 115, cy: py + 160, r: 0, fill: ORANGE });
+      this.caption = el("text", { x: 500, y: 1080, "text-anchor": "middle", "font-size": 40, fill: GREEN, opacity: 0 });
+      this.caption.textContent = "See the door. Do not sleep in its path.";
+    },
+    seek(t) {
+      drawLines(this.plan, t, 3.2, 0.15, 0.9);
+      this.bed.setAttribute("opacity", ease(seg(t, 4.6, 5.3)));
+      const ps = ease(seg(t, 5.6, 7.2));
+      this.sight.setAttribute("x2", 375 + (this.sightTarget.x - 375) * ps);
+      this.sight.setAttribute("y2", 630 + (this.sightTarget.y - 630) * ps);
+      this.dot.setAttribute("r", 13 * ease(seg(t, 7.4, 8.0)));
+      this.caption.setAttribute("opacity", ease(seg(t, 8.4, 9.4)));
+    },
+  },
+  "east-west": {
+    titles: ["Your Kua Number:", "East Group or West?"],
+    setup() {
+      const g = el("g", {});
+      const cx = 500, cy = 830, R = 300;
+      const rot = -Math.PI / 2 + Math.PI / 8;
+      const pts = [];
+      for (let k = 0; k < 8; k++) {
+        const a = rot + (k * Math.PI) / 4;
+        pts.push([cx + R * Math.cos(a), cy + R * Math.sin(a)]);
+      }
+      this.oct = makeLines(g, pts.map((p, k) => {
+        const q = pts[(k + 1) % 8];
+        return [p[0], p[1], q[0], q[1], 3.4];
+      }));
+      this.arms = [];
+      for (let k = 0; k < 8; k++) {
+        const a = -Math.PI / 2 + (k * Math.PI) / 4;
+        const east = k % 2 === 0; // alternating for the visual split
+        this.arms.push({
+          ln: el("line", { x1: cx, y1: cy, x2: cx, y2: cy, stroke: GREEN, "stroke-width": east ? 7 : 2.6 }, g),
+          x2: cx + (R - 24) * Math.cos(a), y2: cy + (R - 24) * Math.sin(a), k,
+        });
+      }
+      this.hub = el("circle", { cx, cy, r: 0, fill: ORANGE });
+      this.caption = el("text", { x: 500, y: 1250, "text-anchor": "middle", "font-size": 40, fill: GREEN, opacity: 0 });
+      this.caption.textContent = "Four directions support you. Four need care.";
+    },
+    seek(t) {
+      drawLines(this.oct, t, 3.2, 0.12, 0.7);
+      this.arms.forEach((A) => {
+        const p = ease(seg(t, 4.6 + A.k * 0.45, 5.2 + A.k * 0.45));
+        A.ln.setAttribute("x2", 500 + (A.x2 - 500) * p);
+        A.ln.setAttribute("y2", 830 + (A.y2 - 830) * p);
+      });
+      this.hub.setAttribute("r", 16 * ease(seg(t, 8.6, 9.2)));
+      this.caption.setAttribute("opacity", ease(seg(t, 9.4, 10.4)));
+    },
+  },
+  "five-elements": {
+    titles: ["The Five Elements,", "as a Design Language"],
+    setup() {
+      const g = el("g", {});
+      const names = ["Wood", "Fire", "Earth", "Metal", "Water"];
+      const cx0 = 180, gap = 160, cy = 760;
+      this.glyphs = names.map((n, i) => {
+        const x = cx0 + i * gap;
+        const grp = el("g", { opacity: 0 }, g);
+        const color = i === 1 ? ORANGE : GREEN; // Fire = the single accent
+        if (i === 0) el("rect", { x: x - 24, y: cy - 62, width: 48, height: 124, fill: "none", stroke: color, "stroke-width": 4 }, grp);
+        if (i === 1) el("polygon", { points: (x - 52) + "," + (cy + 52) + " " + x + "," + (cy - 62) + " " + (x + 52) + "," + (cy + 52), fill: "none", stroke: color, "stroke-width": 4 }, grp);
+        if (i === 2) el("rect", { x: x - 56, y: cy - 40, width: 112, height: 80, fill: "none", stroke: color, "stroke-width": 4 }, grp);
+        if (i === 3) el("circle", { cx: x, cy, r: 54, fill: "none", stroke: color, "stroke-width": 4 }, grp);
+        if (i === 4) {
+          const d = "M " + (x - 58) + " " + cy + " q 15 -34 29 0 q 15 34 29 0 q 15 -34 29 0";
+          el("path", { d, fill: "none", stroke: color, "stroke-width": 4 }, grp);
+        }
+        const lb = el("text", { x, y: cy + 130, "text-anchor": "middle", "font-size": 36, fill: GREEN }, grp);
+        lb.textContent = n;
+        return grp;
+      });
+      this.caption = el("text", { x: 500, y: 1120, "text-anchor": "middle", "font-size": 40, fill: GREEN, opacity: 0 });
+      this.caption.textContent = "Materials, shapes, and colours, not magic.";
+    },
+    seek(t) {
+      this.glyphs.forEach((grp, i) => {
+        const p = ease(seg(t, 3.6 + i * 1.1, 4.4 + i * 1.1));
+        grp.setAttribute("opacity", p);
+        grp.setAttribute("transform", "translate(0 " + (1 - p) * 18 + ")");
+      });
+      this.caption.setAttribute("opacity", ease(seg(t, 9.6, 10.6)));
+    },
+  },
+  "whole-home": {
+    titles: ["Your Whole Home,", "Read as One System"],
+    setup() {
+      const g = el("g", {});
+      const cx = 500, cy = 860, c = 190, gp = c * 0.05;
+      this.cells = [];
+      for (let i = -1; i <= 1; i++)
+        for (let j = -1; j <= 1; j++) {
+          if (i === 0 && j === 0) continue;
+          const ox = cx + i * c + i * gp, oy = cy + j * c + j * gp;
+          this.cells.push({
+            elx: el("rect", { x: ox - c / 2, y: oy - c / 2, width: c, height: c, fill: "none", stroke: GREEN, "stroke-width": 3.6, opacity: 0 }),
+            idx: (i + 1) * 3 + (j + 1),
+          });
+        }
+      this.centre = el("rect", { x: cx - c / 2, y: cy - c / 2, width: c, height: c, fill: ORANGE, opacity: 0 });
+    },
+    seek(t) {
+      this.cells.forEach((cell, n) => {
+        const p = ease(seg(t, 3.4 + n * 0.7, 4.2 + n * 0.7));
+        cell.elx.setAttribute("opacity", p);
+      });
+      this.centre.setAttribute("opacity", ease(seg(t, 9.6, 10.6)));
+    },
+  },
+  "eight-directions": {
+    titles: ["Your Eight Directions,", "Read in Depth"],
+    setup() {
+      const g = el("g", {});
+      const cx = 500, cy = 850, R = 300, hub = 40;
+      const rot = -Math.PI / 2 + Math.PI / 8;
+      const pts = [];
+      for (let k = 0; k < 8; k++) {
+        const a = rot + (k * Math.PI) / 4;
+        pts.push([cx + R * Math.cos(a), cy + R * Math.sin(a)]);
+      }
+      this.oct = makeLines(g, pts.map((p, k) => {
+        const q = pts[(k + 1) % 8];
+        return [p[0], p[1], q[0], q[1], 3.4];
+      }));
+      this.arms = [];
+      for (let k = 0; k < 8; k++) {
+        const a = -Math.PI / 2 + (k * Math.PI) / 4;
+        this.arms.push({
+          ln: el("line", { x1: cx + hub * Math.cos(a), y1: cy + hub * Math.sin(a), x2: cx + hub * Math.cos(a), y2: cy + hub * Math.sin(a), stroke: GREEN, "stroke-width": 3.4 }, g),
+          sx: cx + hub * Math.cos(a), sy: cy + hub * Math.sin(a),
+          x2: cx + (R - 22) * Math.cos(a), y2: cy + (R - 22) * Math.sin(a), k,
+        });
+      }
+      this.hubEl = el("circle", { cx, cy, r: hub, fill: "none", stroke: GREEN, "stroke-width": 3.4, opacity: 0 });
+      // the single accent: one arm redrawn orange
+      this.accent = el("line", { x1: cx, y1: cy - hub, x2: cx, y2: cy - hub, stroke: ORANGE, "stroke-width": 7 });
+      this.accentDot = el("circle", { cx, cy: cy - R + 22, r: 0, fill: ORANGE });
+      this.accentTarget = cy - R + 22;
+    },
+    seek(t) {
+      drawLines(this.oct, t, 3.2, 0.12, 0.7);
+      this.hubEl.setAttribute("opacity", ease(seg(t, 4.4, 5.0)));
+      this.arms.forEach((A) => {
+        const p = ease(seg(t, 4.8 + A.k * 0.4, 5.4 + A.k * 0.4));
+        A.ln.setAttribute("x2", A.sx + (A.x2 - A.sx) * p);
+        A.ln.setAttribute("y2", A.sy + (A.y2 - A.sy) * p);
+      });
+      const pa = ease(seg(t, 8.6, 9.6));
+      this.accent.setAttribute("y2", (850 - 40) + (this.accentTarget - (850 - 40)) * pa);
+      this.accentDot.setAttribute("r", 12 * ease(seg(t, 9.6, 10.1)));
+    },
+  },
+  "twelve-rooms": {
+    titles: ["Every Room of Your Home,", "One Chapter Each"],
+    setup() {
+      const g = el("g", {});
+      const cx = 500, cy = 870, cell = 150;
+      const x0 = cx - 1.5 * cell, y0 = cy - 2 * cell;
+      const segs = [
+        [x0, y0, x0 + 3 * cell, y0, 4.2], [x0 + 3 * cell, y0, x0 + 3 * cell, y0 + 4 * cell, 4.2],
+        [x0 + 3 * cell, y0 + 4 * cell, x0, y0 + 4 * cell, 4.2], [x0, y0 + 4 * cell, x0, y0, 4.2],
+        [x0 + cell, y0, x0 + cell, y0 + 4 * cell, 3], [x0 + 2 * cell, y0, x0 + 2 * cell, y0 + 4 * cell, 3],
+        [x0, y0 + cell, x0 + 3 * cell, y0 + cell, 3], [x0, y0 + 2 * cell, x0 + 3 * cell, y0 + 2 * cell, 3],
+        [x0, y0 + 3 * cell, x0 + 3 * cell, y0 + 3 * cell, 3],
+      ];
+      this.grid = makeLines(g, segs.map((s) => [s[0], s[1], s[2], s[3], s[4]]));
+      this.room = el("rect", { x: x0 + cell, y: y0 + cell, width: cell, height: cell, fill: ORANGE, opacity: 0 });
+    },
+    seek(t) {
+      drawLines(this.grid, t, 3.4, 0.35, 1.0);
+      this.room.setAttribute("opacity", ease(seg(t, 8.8, 9.8)));
+    },
+  },
+  "nine-areas": {
+    titles: ["Nine Life Areas,", "Nine Fixed Corners"],
+    setup() {
+      const g = el("g", {});
+      const names = ["Wealth", "Recognition", "Love", "Family", "Health", "Creativity", "Knowledge", "Career", "Helpful"];
+      const cx = 500, cy = 860, cell = 210;
+      const x0 = cx - 1.5 * cell, y0 = cy - 1.5 * cell;
+      const segs = [
+        [x0, y0, x0 + 3 * cell, y0, 4.2], [x0 + 3 * cell, y0, x0 + 3 * cell, y0 + 3 * cell, 4.2],
+        [x0 + 3 * cell, y0 + 3 * cell, x0, y0 + 3 * cell, 4.2], [x0, y0 + 3 * cell, x0, y0, 4.2],
+        [x0 + cell, y0, x0 + cell, y0 + 3 * cell, 3], [x0 + 2 * cell, y0, x0 + 2 * cell, y0 + 3 * cell, 3],
+        [x0, y0 + cell, x0 + 3 * cell, y0 + cell, 3], [x0, y0 + 2 * cell, x0 + 3 * cell, y0 + 2 * cell, 3],
+      ];
+      this.grid = makeLines(g, segs);
+      this.tint = el("rect", { x: x0, y: y0, width: cell, height: cell, fill: ORANGE, opacity: 0 });
+      this.labels = names.map((n, i) => {
+        const col = i % 3, row = Math.floor(i / 3);
+        const lb = el("text", { x: x0 + col * cell + cell / 2, y: y0 + row * cell + cell / 2 + 12, "text-anchor": "middle", "font-size": 34, fill: GREEN, opacity: 0 }, g);
+        lb.textContent = n;
+        return lb;
+      });
+    },
+    seek(t) {
+      drawLines(this.grid, t, 3.2, 0.3, 1.0);
+      this.labels.forEach((lb, i) => lb.setAttribute("opacity", ease(seg(t, 6.0 + i * 0.55, 6.5 + i * 0.55))));
+      this.tint.setAttribute("opacity", 0.22 * ease(seg(t, 11.2, 12.0)));
+    },
+  },
+  "move-dates": {
+    titles: ["Moving Home?", "Read Your Dates First"],
+    setup() {
+      const g = el("g", {});
+      const dx = 210, dy = 500, dw = 200, dh = 330;
+      this.door = makeLines(g, [
+        [dx, dy, dx + dw, dy, 4.2], [dx + dw, dy, dx + dw, dy + dh, 4.2],
+        [dx + dw, dy + dh, dx, dy + dh, 4.2], [dx, dy + dh, dx, dy, 4.2],
+      ]);
+      this.leaf = el("line", { x1: dx, y1: dy + dh, x2: dx, y2: dy + dh, stroke: GREEN, "stroke-width": 4.2 });
+      this.leafTarget = { x: dx, y: dy + dh - 210 };
+      this.arc = el("path", { d: "", fill: "none", stroke: GREEN, "stroke-width": 3.2, opacity: 0 });
+      this.arc.setAttribute("d", "M " + dx + " " + (dy + dh - 210) + " A 210 210 0 0 1 " + (dx + 210) + " " + (dy + dh));
+      const gx = 520, gy = 540, cellc = 68;
+      const segs = [];
+      for (let i = 0; i <= 4; i++) segs.push([gx + i * cellc, gy, gx + i * cellc, gy + 4 * cellc, 3]);
+      for (let j = 0; j <= 4; j++) segs.push([gx, gy + j * cellc, gx + 4 * cellc, gy + j * cellc, 3]);
+      this.grid = makeLines(g, segs);
+      this.day = el("rect", { x: gx + 2 * cellc, y: gy + cellc, width: cellc, height: cellc, fill: ORANGE, opacity: 0 });
+      this.caption = el("text", { x: 500, y: 1120, "text-anchor": "middle", "font-size": 40, fill: GREEN, opacity: 0 });
+      this.caption.textContent = "Your window, read day by day.";
+    },
+    seek(t) {
+      drawLines(this.door, t, 3.2, 0.15, 0.8);
+      const pl = ease(seg(t, 4.4, 5.2));
+      this.leaf.setAttribute("y2", (830) + (this.leafTarget.y - 830) * pl);
+      this.arc.setAttribute("opacity", ease(seg(t, 5.2, 5.9)));
+      drawLines(this.grid, t, 5.8, 0.14, 0.7);
+      this.day.setAttribute("opacity", ease(seg(t, 8.8, 9.6)));
+      this.caption.setAttribute("opacity", ease(seg(t, 9.8, 10.8)));
+    },
+  },
+  "cures-honest": {
+    titles: ["Feng Shui Cures,", "Labelled Honestly"],
+    setup() {
+      const g = el("g", {});
+      this.rows = makeRows(g, ["Tested: a design reason exists", "Traditional: the books prescribe it", "Preference: simply taste"], 170, 640, 190, 42, 0);
+      this.caption = el("text", { x: 500, y: 1230, "text-anchor": "middle", "font-size": 40, fill: GREEN, opacity: 0 });
+      this.caption.textContent = "Every cure card carries exactly one label.";
+    },
+    seek(t) {
+      showRows(this.rows, t, 3.6, 2.0, 0.8);
+      this.caption.setAttribute("opacity", ease(seg(t, 10.2, 11.2)));
+    },
+  },
+};
+
+// ---------- boot ----------
+const key = new URLSearchParams(location.search).get("pin") || "bed-stove-door";
+const pin = PINS[key];
+buildShell(pin.titles);
+pin.setup();
+window.seek = function (t) {
+  shellSeek(t);
+  pin.seek(t);
+};
+window.seek(0);
+</script>
+</body>
+</html>

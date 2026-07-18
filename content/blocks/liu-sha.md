@@ -1,45 +1,42 @@
 # Your Liu Sha direction is {{direction}}
 
-Liu Sha is the third of your four cautious directions. Its name, *Liu Sha* (<span lang="zh-Hant">六煞</span>), translates as "Six Killings." The name is alarming; the thing it describes is not. For you, {{firstName}}, it points **{{direction}}**.
+Liu Sha is the third of your four cautious directions. Its name, *Liu Sha* (<span lang="zh-Hant">六煞</span>), translates as **"Six Killings."** The name is alarming; the thing it describes is not. For you, {{firstName}}, it points **{{direction}}**.
 
-So before anything else, set the name down. This is not a curse. It does not reach out of a wall and rearrange your life. It is a **lower-priority direction**, one corner of eight, and the whole of its guidance fits in a sentence: do not anchor a primary daily function here when the floor plan gives you a choice.
+Set the name down before anything else. This is not a curse, and it does not reach out of a wall to rearrange your life. It is a lower-priority direction, one corner of eight, and its whole guidance fits in a sentence: do not anchor a primary daily function here when the floor plan gives you a choice.
 
-## What the tradition associates with it
+{{miniCompass}}
 
-The tradition reads {{direction}}, for an East group person, as the direction associated with **broken plans**, lost chances, and small misunderstandings that drag on longer than they should. Some older texts stretch this to low-grade legal trouble and a kind of slow, unannounced emotional volatility.
+## What this means
 
-Hold all of that lightly. It is *traditional association*, the inherited vocabulary of the system, not a forecast of your week. Nobody is claiming a wall caused the project that stalled or the friendship that drifted. The tradition simply files those felt-qualities under this direction, the way it files restful sleep under another. It is a category, not a sentence passed on you.
+The tradition files under this direction the felt-qualities of **broken plans**, lost chances, and small misunderstandings that drag on longer than they should; some older texts stretch it to low-grade legal trouble and a slow, unannounced volatility. Hold all of that lightly. It is the system's inherited vocabulary, not a forecast of your week. Nobody is claiming a wall caused the project that stalled. The tradition files those qualities here the way it files restful sleep under Tian Yi: a category, not a sentence passed on you.
 
-On the gradient of the four, Liu Sha sits in the middle. Milder than *Jue Ming*, which comes next. A touch sharper than *Huo Hai* and *Wu Gui*, which you have already read. The system treats it as a placement to keep ordinary, not a thing to fear.
+On the gradient of the four cautious directions, Liu Sha sits in the middle: a touch sharper than Huo Hai and Wu Gui, which you have read, and milder than Jue Ming, which comes next.
 
-## The appropriate uses
+## Give it this
 
-The good news is how easy this corner is to satisfy. {{direction}} is happiest doing work that asks nothing of it, and most homes have that work in abundance.
-
-**Hallways and corridors.** A {{direction}} hallway is doing exactly what the direction is best at: carrying you through without asking you to stay. The body passes; the space releases it. In many homes this is the highest use of a Liu Sha sector.
-
-**Utility, laundry, and linen.** Rooms whose job is *containment* of things you touch on a schedule. You enter, you leave, the room asks nothing of you. The tradition reads these as a comfortable fit.
-
-**Pass-through and transit.** The landing at the top of the stairs. The mud room. The strip of corridor where the dog's water bowl lives. These occupy the sector without asking it to perform.
-
-**Closets and deep storage.** The suitcase you use twice a year. The seasonal-decoration boxes. The single rollerblade from a hobby that did not take. All of them are good {{direction}} tenants. They hold space and ask for nothing.
+- **Hallways and corridors.** A {{direction}} hallway is the highest use of this sector in many homes: it carries you through without asking you to stay.
+- **Utility, laundry, and linen.** Rooms whose job is containment. You enter, you leave, the room asks nothing of you.
+- **Pass-through space.** The landing at the top of the stairs, the mud room, the strip of corridor where the dog's water bowl lives.
+- **Closets and deep storage.** The twice-a-year suitcase, the decoration boxes, the single rollerblade from a hobby that did not take.
 
 Name the corner, give it one of these jobs, and you are done. There is no ritual to perform and nothing to buy.
 
-## If your layout forces a bed or desk here
+## Keep off it
 
-Some rooms decide for you. The window is on one wall, the door on another, the radiator on a third, and there is exactly one place the bed fits. If that place points the headboard at {{direction}}, the answer is not to wrestle the furniture into a spot it cannot go. You work with what the room allows, and you reach first for a different lever.
+- **The headboard**, while any supportive wall can take it.
+- **The chair you spend your evenings in.** Long, settled hours are exactly what this sector is not for.
+- **The main work seat facing it.** The chair turns; let it face a favourable direction even if the desk cannot move.
 
-**The favourable wall comes first.** Before you accept the cautious wall, check whether any of your four supportive directions has a workable spot for the headboard. A bed against a favourable wall, even an awkward one, is the cleaner choice. Try that first.
+## When you cannot avoid it
 
-**If the bed truly cannot move,** the tradition offers a softener, and it is plain carpentry, not magic. A solid headboard with weight to it, not a frame of bars or slats. A heavy textile on the wall behind, a thick hung rug or tapestry, so the head rests against something substantial. And one calm object on the bedside table that you actually look at, a small lamp with a warm bulb or a single framed photograph. The point is modest: the wall the body sleeps against carries weight, fabric, and one quiet place for the eye to land, so the room is not asking the body to do all the settling on its own.
+Some rooms decide for you: window on one wall, door on another, radiator on the third, and exactly one place the bed fits. Work the order first: a favourable wall beats everything, and any of your *other* cautious walls beats this one for the bed. If the headboard truly must point {{direction}}, the tradition's softener is plain carpentry, not magic. A solid headboard with real weight to it, not bars or slats. A heavy textile hung on the wall behind, so the head rests against something substantial. One calm object on the bedside table for the eye to land on, a warm lamp or a single framed photograph. It is not the same as a favourable wall, and the tradition does not pretend otherwise. It is also not the same as the bare-wall version, and that difference takes one afternoon.
 
-A bed pointed {{direction}} with those softeners is not the same as a bed on a favourable wall, and the tradition does not pretend otherwise. It is also not the same as the bare-wall version, and the difference is real and takes an afternoon.
+## Practitioner tip
 
-**The desk is the other lever, and the easier one.** A desk moves far more readily than a bed. *Turn the chair* so your body faces one of your four favourable directions while you work, and you have applied the adjustment to the part of the day when you are most awake. The bed is the long, slow input. The desk is the short, sharp one. If the slow input cannot move, move the sharp one.
+Liu Sha is where I teach people the difference between the slow lever and the sharp one. The bed is the slow input: eight unconscious hours, hard to move. The desk is the sharp input: four alert hours, and the chair turns in two seconds. When a floor plan traps the slow lever on this wall, I never fight the furniture. I soften the bed with the carpentry above and spend all my effort on the sharp lever, giving the working chair the best favourable facing the room allows. If the slow input cannot move, move the sharp one.
 
-## The short summary
+## A real home
 
-Liu Sha is a name with more weight than its guidance. Keep a primary bed or desk off the {{direction}} wall when you can. When the room refuses, soften the headboard and turn the desk. Otherwise, hand the corner a hallway, a closet, or the laundry, and let it get on with the quiet work it does well.
+Lena is Kua 8, so her Liu Sha points east, and her studio flat is the trap case: one bed-shaped alcove, headboard east, no other option. She did the whole protocol in a weekend. Saturday: a solid oak headboard from the second-hand market replaced the metal-bar frame, and a woven wall hanging went up behind it. Sunday: her desk chair, which had faced the same east wall out of habit, turned to face southwest, her Sheng Qi. The bed stayed exactly where the flat insists it stays. What changed was everything she had control over: the wall behind her head got heavier and calmer, and her waking hours got a favourable facing. That is the entire Liu Sha playbook, executed for the price of a used headboard.
 
-Your Liu Sha direction is {{direction}}. Give it an easy job, and you can stop thinking about it.
+<p class="one-thing"><strong>If you only do one thing:</strong> check what your {{direction}} corner is doing today; if it is a hallway, a closet, or the laundry, it is already solved.</p>

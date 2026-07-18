@@ -25,6 +25,8 @@ const BRAND = {
   olive: "#0e3b2c",     // dark olive for accents
   clay: "#d9531a",      // warm clay for emphasis
   sand: "#f2f2ee",      // soft sand for rules / dividers
+  hairline: "#e2dac5",  // warm hairline (matches svg-marks)
+  rule: "#b9b4a5",      // write-on ruled lines in worksheets
 };
 
 let fontsCache: { regular: string; bold: string; extraBold: string } | null =
@@ -286,6 +288,18 @@ export function buildHtml(
     letter-spacing: -0.005em;
   }
 
+  /* Chapter opener mark: a short clay bar above every block h1, the
+     same on every chapter, so page-flipping readers always know where
+     a chapter starts. */
+  .block h1::before {
+    content: "";
+    display: block;
+    width: 14mm;
+    height: 1.2mm;
+    background: ${BRAND.clay};
+    margin-bottom: 5mm;
+  }
+
   .block h2 {
     font-size: 13pt;
     line-height: 1.3;
@@ -382,6 +396,155 @@ export function buildHtml(
     border: none;
     border-top: 1px solid ${BRAND.sand};
     margin: 8mm 0;
+  }
+
+  /* ------------------------------------------------------------------
+     Compass v2: figures, worksheets, and the six-section chapter arc.
+     ------------------------------------------------------------------ */
+
+  /* A figure is an SVG (mini compass, placement diagram, floor plan)
+     plus its caption. Never split from its caption. */
+  .figure {
+    margin: 6mm auto 7mm auto;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  .figure-caption {
+    font-size: 9.5pt;
+    line-height: 1.45;
+    color: ${BRAND.olive};
+    margin: 2.5mm auto 0 auto;
+    max-width: 130mm;
+    text-align: center !important;
+    hyphens: none !important;
+  }
+
+  /* Printable worksheet panel. The whole frame stays on one page. */
+  .worksheet {
+    background: ${BRAND.cream};
+    border: 1px solid ${BRAND.hairline};
+    border-radius: 2.5mm;
+    padding: 7mm 8mm;
+    margin: 6mm 0;
+    page-break-inside: avoid;
+  }
+
+  .worksheet .ws-title {
+    font-size: 13pt;
+    font-weight: 800;
+    color: ${BRAND.ink};
+    margin: 0 0 1.5mm 0;
+    letter-spacing: 0.01em;
+  }
+
+  .worksheet .ws-hint {
+    font-size: 9pt;
+    color: ${BRAND.olive};
+    margin: 0 0 5mm 0;
+    text-align: left;
+  }
+
+  /* A ruled line the reader writes on. */
+  .worksheet .ws-line {
+    border-bottom: 0.6pt solid ${BRAND.rule};
+    height: 9mm;
+  }
+
+  .worksheet .ws-label {
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: ${BRAND.olive};
+    margin: 4mm 0 0.5mm 0;
+    text-align: left;
+  }
+
+  /* Worksheet tables: visible cell frames (unlike the quiet reference
+     tables), generous fill-in row height. */
+  .worksheet table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2mm 0 0 0;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+
+  .worksheet th {
+    text-align: left;
+    font-weight: 700;
+    color: ${BRAND.olive};
+    font-size: 8.5pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2mm 2.5mm;
+    border: 0.6pt solid ${BRAND.rule};
+    background: ${BRAND.paper};
+  }
+
+  .worksheet td {
+    border: 0.6pt solid ${BRAND.rule};
+    padding: 2mm 2.5mm;
+    height: 9mm;
+    vertical-align: top;
+    text-align: left;
+    color: ${BRAND.ink};
+  }
+
+  /* The at-a-glance card (summary block) must fit ONE page: tighter
+     heading margins and denser tables than the book default, so the
+     bagua, both direction tables, and the three reading rules print
+     as a single pinnable sheet. */
+  .block--summary h1 {
+    font-size: 19pt;
+    margin-bottom: 3mm;
+  }
+
+  .block--summary h2 {
+    margin: 4mm 0 1.5mm 0;
+  }
+
+  .block--summary p {
+    margin-bottom: 2.5mm;
+  }
+
+  .block--summary table {
+    margin: 2mm 0 3mm 0;
+    font-size: 9pt;
+  }
+
+  .block--summary th, .block--summary td {
+    padding: 1.6mm 2.5mm;
+  }
+
+  .block--summary .card-rules {
+    font-size: 9pt;
+    line-height: 1.55;
+    color: ${BRAND.olive};
+    border-top: 1px solid ${BRAND.sand};
+    padding-top: 2.5mm;
+    margin-top: 1mm;
+  }
+
+  /* The six-section chapter arc: the closing one-liner gets the
+     pull-quote treatment automatically via the .one-thing class. */
+  .block .one-thing {
+    font-size: 12.5pt;
+    line-height: 1.45;
+    font-weight: 700;
+    color: ${BRAND.ink};
+    background: ${BRAND.cream};
+    border-left: 2.5mm solid ${BRAND.clay};
+    margin: 7mm 0 2mm 0;
+    padding: 4.5mm 6mm;
+    text-align: left;
+    page-break-inside: avoid;
+    page-break-before: avoid;
+  }
+
+  .block .one-thing strong {
+    color: ${BRAND.clay};
   }
 </style>
 </head>

@@ -1,6 +1,6 @@
 # What now, {{firstName}}
 
-You have read the whole book. The four directions the tradition reads as supportive for you, and the four it asks you to handle with care. Each chapter named the compass direction it points to for your Kua, so the system is no longer abstract. You have a *map*.
+You have read the whole book. The four directions the tradition reads as supportive for you, and the four it asks you to handle with care. Each chapter named the compass direction it points to for your Kua, and if you filled in the Room Map, the system is no longer abstract in your own rooms. You have a map in the most literal sense.
 
 Pick one move this week. Just one. The desk is the easiest to try; the bed is the one the tradition weights most; the morning corner is the cheapest. Any one of them is enough to test the idea in your own home. Make it, leave it for seven days, and notice, without forcing the question, whether anything feels different. If it does, keep it. If it does not, you have lost only the few minutes it took to move a chair.
 
@@ -16,7 +16,7 @@ You are {{firstName}}, Kua {{kuaNumber}}, {{kuaGroup}} group. Your generating di
 
 This is the foundation product, the **Personal Feng Shui Compass**: your Kua, your group, your eight directions. You do not need anything else to begin using it.
 
-A few more focused readings are in the works for this line. The two most likely to arrive first are a *Couple Compatibility* reading, for households whose two people fall into different Kua groups, and a *Year Ahead* reading that reads the current astrological year against your Kua. When either is ready, the email address on the cover is how we will tell you. We will not put you on a list you did not ask for.
+If you want to go further, the same three-field reading extends in three directions at *myfengshuihome.com*. The *Extended Personal Kua Report* adds the compatibility chapter, three room applications, and the year overlay. The *Couple Compatibility Compass* reads two full charts together, for households whose two people want the shared map. And the *Complete Home Compass* is the whole line in one book: every space, every life area, read for your Kua. None of them is required. The book in your hands is complete on its own.
 
 ## What this book promises
 
