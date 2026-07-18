@@ -58,12 +58,18 @@ Love Bundle). Summary of the target state:
       verification (delivers Couple PDF + Relationship PDF + static Bedroom Reset).
       Code side shipped; owner verification steps in
       myfengshuilove/spec/love-bundle-stripe-test-2026-07-18.md.
-- [ ] C2. Bundle landing page + shop trim to 4 items.
-- [ ] C3. MFSL homepage rebuild (bundle hero, calculator section two) + MFSL favicon
+- [x] C2. Bundle landing page + shop trim to 4 items.
+- [x] C3. MFSL homepage rebuild (bundle hero, calculator section two) + MFSL favicon
       (orange circle, white logo).
-- [ ] C4. Guide/articles/methodology removal + nav/sitemap/search prune.
-- [ ] C5. Landing template port to the 3 single-product pages.
-- [ ] C6. (Owner-gated) deploy runbook + cross-pointer bands on both sites.
+- [x] C4. Guide/articles/methodology removal + nav/sitemap/search prune.
+- [x] C5. Landing template port to the 3 single-product pages.
+- [x] C6. Deploy runbook + cross-pointer bands on both sites. Code side done; the
+      DEPLOY ITSELF stays owner-gated - the full path is
+      myfengshuilove/spec/deploy-runbook-2026-07-18.md, and the Home site's band
+      is hidden behind NEXT_PUBLIC_MFSL_LIVE until launch.
+
+PHASE C CODE COMPLETE (2026-07-18). Remaining to go live: the owner runs the C1
+Stripe test walkthrough, then the deploy runbook.
 
 Follow-on content task: 2027 Good Days dates (day-calendar data generation).
 
@@ -128,3 +134,23 @@ Follow-on content task: 2027 Good Days dates (day-calendar data generation).
   owner runs the Stripe test-mode purchase locally. Learning: the couple form
   already collects everything the whole bundle needs, so mixed fulfilment cost
   one registry field and one action extension, no new form or webhook work.
+- C2-C6 (2026-07-18, autonomous session; MFSL commits 345c78e/bfb4cb0/0cf2c93/
+  c72139c/b046e8e, MFSH commit 20ec605): full Phase C code shipped in one run,
+  owner-approved switch from one-task-per-go to autonomous. C2: ProductLanding +
+  autolinkProducts ported (no ladder section on the love site), bundle landing
+  live, shop/sitemap/search trimmed to 4 slugs. C3: bundle-led homepage with the
+  calculator as an explained section two; orange-circle/white-mark favicon
+  mirrors the Home favicon. C4: guide/articles/methodology deleted (80 files,
+  -6k lines); /life + /space kept as free teasers with their article rails
+  replaced by sister-site pointers and their stale $14 funnels by the $29
+  bundle funnel; all internal links repointed at myfengshuihome.com. C5: the 3
+  singles on the template, each answering the bundle question honestly. C6:
+  deploy runbook written; MFSL footer band live-pointing at MFSH; MFSH band
+  env-gated (NEXT_PUBLIC_MFSL_LIVE) so production never links an undeployed
+  domain. Also this session, outside Phase C: the uncommitted Compass v2/v3 +
+  the owner-approved Kua 4/9 classical correction were verified green and
+  pushed in both repos (MFSH aeeb04c + c25302f; MFSL c4d1c4d) - the live Home
+  site had been serving the OLD Kua 4/9 rows until that push. Learning: an
+  approved fix that stays uncommitted is indistinguishable from an unapproved
+  one in production; verify-commit-push belongs in the same session as the
+  approval.
