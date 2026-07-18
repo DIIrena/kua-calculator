@@ -1,0 +1,140 @@
+<!doctype html>
+<!--
+  Animated Good Days pin (locked MFSH template, 1000x1500), driven by a
+  deterministic window.seek(t) so every captured frame is exact.
+  Palette: green #0e3b2c, ivory #fcfcf8, orange #d9531a. Fonts: the
+  owner's installed EB Garamond (Bold).
+  Timeline (15s): 0-2.2 title in; 2.2-3.2 divider draws; 3.0-5.0 grid
+  draws; 5.0-10.5 day dots appear; 10.5-12.5 orange ring draws; 12.5-15
+  URL in + calm hold. Thin orange progress bar throughout.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #fcfcf8; }
+  #stage { width: 1000px; height: 1500px; position: relative; overflow: hidden; }
+  svg { display: block; }
+  text { font-family: "EB Garamond", serif; font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="stage">
+<svg id="pin" width="1000" height="1500" viewBox="0 0 1000 1500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="1500" fill="#fcfcf8"/>
+  <rect x="0" y="0" width="1000" height="385" fill="#0e3b2c"/>
+  <rect x="0" y="1387.7" width="1000" height="112.3" fill="#0e3b2c"/>
+  <g id="logo" opacity="0"></g>
+  <text id="t1" x="500" y="245" text-anchor="middle" font-size="72" fill="#fcfcf8" opacity="0">Good Days to Move,</text>
+  <text id="t2" x="500" y="330" text-anchor="middle" font-size="72" fill="#fcfcf8" opacity="0">Sign, and Start in 2026</text>
+  <line id="divider" x1="0" y1="385" x2="0" y2="385" stroke="#d9531a" stroke-width="2.7"/>
+  <g id="cal"></g>
+  <g id="dots"></g>
+  <circle id="ringdot" cx="0" cy="0" r="0" fill="#0e3b2c"/>
+  <circle id="ring" cx="0" cy="0" r="34" fill="none" stroke="#d9531a" stroke-width="5" opacity="0"/>
+  <text id="url" x="500" y="1457" text-anchor="middle" font-size="36" fill="#fcfcf8" letter-spacing="1.8" opacity="0">myfengshuihome.com</text>
+  <rect id="progress" x="0" y="1494" width="0" height="6" fill="#d9531a"/>
+</svg>
+</div>
+<script>
+const GREEN = "#0e3b2c", ORANGE = "#d9531a";
+const DUR = 15;
+const cx = 500, zoneTop = 385, zoneBot = 1387.7;
+const cy = (zoneTop + zoneBot) / 2;
+const cols = 7, rows = 5, cell = 104;
+const W = cols * cell, H = rows * cell;
+const x0 = cx - W / 2, y0 = cy - H / 2 + 20;
+const sw = 3.2;
+const DOTS = [[1,0],[3,0],[5,1],[0,1],[2,2],[6,2],[1,3],[4,3],[3,4],[5,4]];
+const RING = { x: x0 + 4 * cell + cell / 2, y: y0 + 1 * cell + cell / 2 };
+
+// Build static structure once.
+const logoG = document.getElementById("logo");
+fetch("file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/assets/logo.svg")
+  .then((r) => r.text())
+  .then((raw) => {
+    const inner = raw.slice(raw.indexOf("<g"), raw.lastIndexOf("</g>") + 4).replace("#0e3b2c", ORANGE);
+    logoG.innerHTML = '<svg x="420" y="50" width="160" height="160" viewBox="0 0 709 709">' + inner + "</svg>";
+    window.__logoReady = true;
+  });
+
+const calG = document.getElementById("cal");
+// grid lines as individual elements so they can draw in
+const gridLines = [];
+function addLine(x1, y1, x2, y2, w) {
+  const el = document.createElementNS("http://www.w3.org/2000/svg", "line");
+  el.setAttribute("x1", x1); el.setAttribute("y1", y1);
+  el.setAttribute("x2", x1); el.setAttribute("y2", y1);
+  el.setAttribute("stroke", GREEN); el.setAttribute("stroke-width", w);
+  calG.appendChild(el);
+  gridLines.push({ el, x1, y1, x2, y2 });
+}
+addLine(x0, y0 - 26, x0 + W, y0 - 26, sw * 1.6);
+addLine(x0, y0, x0 + W, y0, sw);
+addLine(x0, y0 + H, x0 + W, y0 + H, sw);
+addLine(x0, y0, x0, y0 + H, sw);
+addLine(x0 + W, y0, x0 + W, y0 + H, sw);
+for (let i = 1; i < cols; i++) addLine(x0 + i * cell, y0, x0 + i * cell, y0 + H, sw);
+for (let j = 1; j < rows; j++) addLine(x0, y0 + j * cell, x0 + W, y0 + j * cell, sw);
+
+const dotsG = document.getElementById("dots");
+const dotEls = DOTS.map(([c, rw]) => {
+  const el = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  el.setAttribute("cx", x0 + c * cell + cell / 2);
+  el.setAttribute("cy", y0 + rw * cell + cell / 2);
+  el.setAttribute("r", 0); el.setAttribute("fill", GREEN);
+  dotsG.appendChild(el);
+  return el;
+});
+
+const ring = document.getElementById("ring");
+ring.setAttribute("cx", RING.x); ring.setAttribute("cy", RING.y);
+const ringdot = document.getElementById("ringdot");
+ringdot.setAttribute("cx", RING.x); ringdot.setAttribute("cy", RING.y);
+const RING_CIRC = 2 * Math.PI * 34;
+ring.setAttribute("stroke-dasharray", RING_CIRC);
+
+const clamp01 = (v) => Math.max(0, Math.min(1, v));
+const ease = (v) => 1 - Math.pow(1 - v, 3); // easeOutCubic
+const seg = (t, a, b) => clamp01((t - a) / (b - a));
+
+window.seek = function (t) {
+  // title + logo
+  const p1 = ease(seg(t, 0.2, 1.2)), p2 = ease(seg(t, 0.8, 1.9)), pl = ease(seg(t, 0.0, 0.9));
+  logoG.setAttribute("opacity", pl);
+  const t1 = document.getElementById("t1"), t2 = document.getElementById("t2");
+  t1.setAttribute("opacity", p1); t1.setAttribute("transform", `translate(0 ${(1 - p1) * 18})`);
+  t2.setAttribute("opacity", p2); t2.setAttribute("transform", `translate(0 ${(1 - p2) * 18})`);
+  // divider draws
+  const pd = ease(seg(t, 2.2, 3.2));
+  document.getElementById("divider").setAttribute("x2", 1000 * pd);
+  // grid draws (staggered)
+  gridLines.forEach((L, i) => {
+    const p = ease(seg(t, 3.0 + i * 0.07, 3.9 + i * 0.07));
+    L.el.setAttribute("x2", L.x1 + (L.x2 - L.x1) * p);
+    L.el.setAttribute("y2", L.y1 + (L.y2 - L.y1) * p);
+  });
+  // dots pop in one by one
+  dotEls.forEach((el, i) => {
+    const p = ease(seg(t, 5.0 + i * 0.5, 5.45 + i * 0.5));
+    el.setAttribute("r", 10 * p);
+  });
+  // the single orange accent: ring draws, then a gentle settle
+  const pr = ease(seg(t, 10.5, 12.3));
+  ring.setAttribute("opacity", pr > 0 ? 1 : 0);
+  ring.setAttribute("stroke-dashoffset", RING_CIRC * (1 - pr));
+  ringdot.setAttribute("r", 10 * ease(seg(t, 11.6, 12.1)));
+  const pulse = seg(t, 12.3, 13.0);
+  const rr = 34 + Math.sin(pulse * Math.PI) * 4;
+  ring.setAttribute("r", rr);
+  ring.setAttribute("stroke-dasharray", 2 * Math.PI * rr);
+  if (pr >= 1 && pulse >= 1) ring.setAttribute("stroke-dashoffset", 0);
+  // URL
+  document.getElementById("url").setAttribute("opacity", ease(seg(t, 12.5, 13.5)));
+  // progress bar
+  document.getElementById("progress").setAttribute("width", 1000 * clamp01(t / DUR));
+};
+window.seek(0);
+</script>
+</body>
+</html>
