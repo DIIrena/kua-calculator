@@ -63,7 +63,7 @@ export default function GoodDaysPage() {
   return (
     <div className="page-content">
       <article className="page-prose good-days-page">
-        <p className="eyebrow">Free date calendar</p>
+        <p className="eyebrow">The date calendar</p>
         <h1>Good days in 2026 and 2027.</h1>
 
         <section className="good-days-legend" aria-label="How to read this">

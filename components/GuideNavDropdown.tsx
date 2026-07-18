@@ -36,7 +36,7 @@ export default function GuideNavDropdown({ topics }: { topics: Topic[] }) {
           role="menuitem"
           className="nav-dropdown-link nav-dropdown-see-all"
         >
-          Good days in 2026 and 2027 (free)
+          Good days in 2026 and 2027
         </Link>
         <Link
           href="/guide"
