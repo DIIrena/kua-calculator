@@ -27,6 +27,13 @@ type Day = {
   note: string;
 };
 
+// The month opened by default: today's month while the calendar covers
+// it, otherwise the first month of the range.
+const CURRENT_MONTH = (() => {
+  const now = new Date().toISOString().slice(0, 7);
+  return now >= "2026-07" && now <= "2027-02" ? now : "2026-07";
+})();
+
 const MONTH_NAMES: Record<string, string> = {
   "2026-07": "July 2026",
   "2026-08": "August 2026",
@@ -75,9 +82,19 @@ export default function GoodDaysPage() {
           const monthDays = days.filter((d) => d.date.startsWith(m));
           const favourable = monthDays.filter((d) => d.verdict === "Favourable");
           const caution = monthDays.filter((d) => d.verdict === "Caution");
+          const isCurrent = m === CURRENT_MONTH;
           return (
-            <section key={m} className="good-days-month" aria-label={MONTH_NAMES[m]}>
-              <h2>{MONTH_NAMES[m]}</h2>
+            <details
+              key={m}
+              className="good-days-month"
+              open={isCurrent}
+            >
+              <summary>
+                <span className="good-days-month-name">{MONTH_NAMES[m]}</span>
+                <span className="good-days-month-count">
+                  {favourable.length} favourable days
+                </span>
+              </summary>
               <ul className="good-days-list">
                 {favourable.map((d) => (
                   <li key={d.date}>
@@ -93,9 +110,14 @@ export default function GoodDaysPage() {
                   {caution.map((d) => dayNumber(d.date)).join(", ")}.
                 </p>
               ) : null}
-            </section>
+            </details>
           );
         })}
+
+        <p className="good-days-more">
+          March to December 2027 will be added here as soon as the 2027
+          day calendar is verified.
+        </p>
 
         <section className="good-days-email" id="gd-email" aria-label="Email me the calendar">
           <h2>Keep it by the calendar.</h2>
