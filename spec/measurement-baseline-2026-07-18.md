@@ -25,7 +25,11 @@ Append one line to the table below:
 
 | Week of | Checkout sessions created | Completed (sales) | Orders total to date | good-days emails | Notes |
 |---|---|---|---|---|---|
-| 2026-07-13 | (owner fills) | 0 | 0 | 0 | Baseline week: redesigned shelf shipped 2026-07-18 (A1-A5). |
+| 2026-07-13 | ~4 (all internal tests) | 0 | 0 | 0 | Baseline week: redesigned shelf + landing pages shipped 2026-07-17/18. The ~4 Stripe sessions were Claude's price-verification checkouts (Jul 17-18, abandoned, never paid), not customers. True customer activity this week: zero across the board, as expected pre-traffic. |
+
+Zero-week note: an empty Payments screen IS the reading. When Stripe shows
+"no payments," record 0 and move on; the row still counts. Internal test
+sessions (ours) get annotated so they are never mistaken for demand.
 
 ## Decision triggers (set now, so future-us cannot rationalise)
 
