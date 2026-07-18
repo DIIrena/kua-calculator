@@ -38,6 +38,17 @@ export default function SiteFooter() {
         The Kua system is a structured tool for design decisions. It is not a
         prediction.
       </p>
+      {/* Sister-site cross-pointer (shop redesign C6). Gated on
+          NEXT_PUBLIC_MFSL_LIVE so it appears only once the love site is
+          deployed: set the var to 1 in Vercel and redeploy at launch. */}
+      {process.env.NEXT_PUBLIC_MFSL_LIVE === "1" ? (
+        <p className="footer-sister-band">
+          Sharing your home with someone you love? Our sister site{" "}
+          <a href="https://myfengshuilove.com">My Feng Shui Love</a>{" "}
+          reads two people together: the couple reading, the bedroom,
+          and the free two-person calculator.
+        </p>
+      ) : null}
       <p className="footer-copyright">
         &copy; 2026 Mens Sana LLC. All rights reserved. All content on this
         site is protected by copyright.

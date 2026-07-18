@@ -313,6 +313,24 @@ a:hover { color: var(--clay-deep); }
   color: var(--on-dark);
 }
 
+/* Sister-site cross-pointer band (shop redesign C6). */
+.footer-sister-band {
+  max-width: 56ch;
+  margin: var(--space-4) auto 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #b3c0b7;
+}
+.footer-sister-band a {
+  color: #f08a3c;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.footer-sister-band a:hover,
+.footer-sister-band a:focus-visible {
+  color: var(--on-dark);
+}
+
 .footer-copyright {
   margin: var(--space-2) 0 0;
   font-size: 0.78rem;
