@@ -54,8 +54,10 @@ Love Bundle). Summary of the target state:
 
 ## Phase C - MFSL (sister repo; deploy stays owner-gated)
 
-- [ ] C1. Love Bundle: commerce entry + fulfilment recipe + Stripe test-mode
+- [x] C1. Love Bundle: commerce entry + fulfilment recipe + Stripe test-mode
       verification (delivers Couple PDF + Relationship PDF + static Bedroom Reset).
+      Code side shipped; owner verification steps in
+      myfengshuilove/spec/love-bundle-stripe-test-2026-07-18.md.
 - [ ] C2. Bundle landing page + shop trim to 4 items.
 - [ ] C3. MFSL homepage rebuild (bundle hero, calculator section two) + MFSL favicon
       (orange circle, white logo).
@@ -115,3 +117,14 @@ Follow-on content task: 2027 Good Days dates (day-calendar data generation).
   template revisions propagate to all pages at once. Learning: preserving each
   page/s best existing copy (the kettle lede) inside the new framework beats
   rewriting from zero.
+- C1 (2026-07-18, MFSL commit bf84a05): the $29 Love Bundle ships as a
+  personalized "couple" product with a new bundleExtras field in commerce.ts:
+  one couple form fulfils three deliverables in one email (Couple PDF, the
+  relationship-compass recipe rendered for person 1, static Bedroom Reset
+  signed from product-files). Extra PDFs render BEFORE the response row is
+  written so the resend path can always re-sign everything; the bundle never
+  claims a partial delivery. Stub buy page (noindex, stripe-test) + stepwise
+  owner walkthrough in myfengshuilove/spec/love-bundle-stripe-test-2026-07-18.md;
+  owner runs the Stripe test-mode purchase locally. Learning: the couple form
+  already collects everything the whole bundle needs, so mixed fulfilment cost
+  one registry field and one action extension, no new form or webhook work.
