@@ -58,22 +58,8 @@ export default function GoodDaysPage() {
       <article className="page-prose good-days-page">
         <p className="eyebrow">Free date calendar</p>
         <h1>Good days in 2026 and 2027.</h1>
-        <p className="good-days-lede">
-          The traditional day calendar reads each date by its officer and
-          its relationship to the year. Below is every day it marks as
-          favourable for starting, signing, and moving, from July 2026
-          through February 2027, with the reason for each. Free to read,
-          free to print, no account.
-        </p>
-        <p className="good-days-honest">
-          Honest framing, as always: these are traditional readings, not
-          predictions. A favourable day supports the conditions for a calm
-          start; it does not decide the outcome. Choose dates that also
-          work for your life.
-        </p>
 
         <section className="good-days-legend" aria-label="How to read this">
-          <h2>How to read this</h2>
           <p>
             The tradition assigns each day one of twelve officers, and each
             officer a character. We group them plainly: <strong>favourable</strong>{" "}
