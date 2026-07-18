@@ -1,8 +1,10 @@
 # Welcome sequence drafts (task A6) - DRAFTS ONLY, NOTHING SENDS
 
-**Status:** prepared for owner approval. Not wired. Nothing sends until the
-owner explicitly asks for the sending to be built and enabled. Per the June
-decision, email stays prepared-only until the owner calls the list ready.
+**Status:** APPROVED by the owner 2026-07-18, with the owner's own copy
+edits (warmer welcome, tightened paragraphs). Still not
+wired: nothing sends until the owner explicitly asks for the sending to be
+built and enabled. Per the June decision, email stays prepared-only until
+the owner calls the list ready.
 
 **Audience:** the consented lists only - people who ticked the optional notes
 box on the Good Days page (`product_waitlist` slug `good-days`) or the
@@ -20,14 +22,13 @@ day 7. Then nothing scheduled; occasional one-off notes only.
 
 ## Email 1 - Welcome (on join)
 
-**Subject:** A calm way into feng shui for your home
+**Subject:** A way into feng shui for your home
 
-Hello, and thank you for asking to hear from us.
+Hello, and thank you for joining :)
 
-My Feng Shui Home is a quiet, practical guide to feng shui for real homes,
-written by an architect. Nothing here asks you to believe anything; it gives
-you a structured way to notice your space, and it says plainly which
-recommendations rest on design evidence and which are tradition.
+My Feng Shui Home is a practical guide to feng shui written by an architect. 
+It gives you a structured way to notice your space, and it says plainly 
+which recommendations rest on design evidence and which are tradition.
 
 Two free things worth keeping:
 
@@ -36,8 +37,7 @@ Two free things worth keeping:
 - The Good Days calendar lists every favourable date from July 2026 to
   February 2027, with the reason for each: myfengshuihome.com/good-days
 
-That is all for today. The occasional note from here on is one idea at a
-time, and you can leave with one click any time.
+Have a great day!
 
 I.D.
 
@@ -70,19 +70,19 @@ I.D.
 
 **Subject:** When one room is not enough
 
-Most feng shui advice hands you fragments: a tip for the bedroom, a rule for
-the desk, a warning about mirrors. The fragments are not wrong, but a home is
-one system, and reading it room by room without the connections is how the
-advice starts to contradict itself.
+Most feng shui advice hands you fragments: a tip for the bedroom, 
+a rule for the desk, a warning about mirrors. 
+A home is one system, and reading it room by room without the connections 
+is how the advice starts to contradict itself.
 
 That is what the Complete Home Compass is for. It reads everything for your
 Kua in one personalised book: all eight directions, all twelve rooms, all
-nine life areas, how your group pairs with another person, and the shape of
-the 2026 year, around 115 to 165 typeset pages with your name on the cover.
-$49, one-time, generated and emailed within about a minute:
+nine life areas, and more, around 115 to 165 your personal pages.
+$49, one-time, emailed within about a minute:
 myfengshuihome.com/products/complete-home-compass
 
-If a whole book is more than you need right now, the free guide remains free
-forever: myfengshuihome.com/guide
+If a whole book is more than you need right now, 
+check out the free guide on the website myfengshuihome.com/guide 
+or find your cup of tea: myfengshuihome.com/products
 
 I.D.
