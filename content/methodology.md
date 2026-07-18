@@ -256,39 +256,39 @@ Once you know your Kua number, you know your personal mapping of the eight direc
 - **Liu Sha** (六煞, "six killings"). The name is more dramatic than the reading. Traditionally associated with broken plans and drawn-out misunderstandings. A lower-priority direction; generally avoid anchoring important functions here when the layout gives you a choice.
 - **Huo Hai** (禍害, "mishap"). The gentlest of the four to treat with care. Traditionally associated with low-level friction and minor setbacks. Comfortable for ancillary functions such as storage.
 
-Each Kua number has a specific mapping of these eight qualities to the eight compass directions. The mapping is fully specified by the East-group / West-group system and by the symmetry that Kua 1 and Kua 6 have opposite mappings, Kua 2 and Kua 9 have opposite mappings, and so on. Detailed Kua-direction tables are widely published in cultural-commons feng shui references.
+Each Kua number has a specific mapping of these eight qualities to the eight compass directions. The East-group / West-group split fixes which HALF of the compass is favourable; the assignment of the four named qualities within each half is trigram-specific and follows the classical Eight Mansions pairing table (the Da You Nian formula), which is cultural-commons knowledge reproduced consistently across classical references. The two worked examples below follow that classical table exactly.
 
 ### Example Eight Mansions reading for the Kua 4 male above
 
-A male with Kua 4 (East group) has approximately this mapping:
+A male with Kua 4 (East group) has this mapping:
 
-- Sheng Qi: southeast.
-- Tian Yi: east.
-- Yan Nian: south.
-- Fu Wei: north.
-- Huo Hai: southwest.
-- Wu Gui: northeast.
-- Liu Sha: northwest.
-- Jue Ming: west.
+- Sheng Qi: north.
+- Tian Yi: south.
+- Yan Nian: east.
+- Fu Wei: southeast.
+- Huo Hai: northwest.
+- Wu Gui: southwest.
+- Liu Sha: west.
+- Jue Ming: northeast.
 
 In practice, this means:
 
-- His best bed orientation has the head pointing southeast (Sheng Qi) or east (Tian Yi).
-- His best work-desk facing is south (Yan Nian) for negotiation work or southeast (Sheng Qi) for ambitious solo work.
-- He should avoid sleeping with his head pointing west (Jue Ming) and avoid sitting with his back to the west at his desk.
+- His best bed orientation has the head pointing north (Sheng Qi) or south (Tian Yi).
+- His best work-desk facing is east (Yan Nian) for negotiation work or north (Sheng Qi) for ambitious solo work.
+- He should avoid sleeping with his head pointing northeast (Jue Ming) and avoid sitting with his back to the northeast at his desk.
 
 ### Example Eight Mansions reading for the Kua 9 female above
 
-A female with Kua 9 (East group) has approximately this mapping:
+A female with Kua 9 (East group) has this mapping:
 
 - Sheng Qi: east.
 - Tian Yi: southeast.
 - Yan Nian: north.
 - Fu Wei: south.
-- Huo Hai: west.
-- Wu Gui: northwest.
+- Huo Hai: northeast.
+- Wu Gui: west.
 - Liu Sha: southwest.
-- Jue Ming: northeast.
+- Jue Ming: northwest.
 
 She and the Kua 4 male share the East group, so their good and bad halves of the compass overlap - but their specific best directions are not identical. In a shared home, an Eight Mansions practitioner balances the two profiles, typically by prioritising the head-of-household or by giving each occupant the favourable direction in their personal spaces (bed orientation, desk facing).
 

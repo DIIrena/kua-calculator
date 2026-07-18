@@ -170,11 +170,11 @@ const KUA_MAP: Record<number, Record<Compass, QualityCode>> = {
   1: { N: "FW", NE: "WG", E: "TY", SE: "SQ", S: "YN", SW: "JM", W: "HH", NW: "LS" },
   2: { N: "JM", NE: "SQ", E: "HH", SE: "WG", S: "LS", SW: "FW", W: "TY", NW: "YN" },
   3: { N: "TY", NE: "LS", E: "FW", SE: "YN", S: "SQ", SW: "HH", W: "JM", NW: "WG" },
-  4: { N: "FW", NE: "WG", E: "TY", SE: "SQ", S: "YN", SW: "HH", W: "JM", NW: "LS" },
+  4: { N: "SQ", NE: "JM", E: "YN", SE: "FW", S: "TY", SW: "WG", W: "LS", NW: "HH" },
   6: { N: "LS", NE: "TY", E: "WG", SE: "HH", S: "JM", SW: "YN", W: "SQ", NW: "FW" },
   7: { N: "HH", NE: "YN", E: "JM", SE: "LS", S: "WG", SW: "TY", W: "FW", NW: "SQ" },
   8: { N: "WG", NE: "FW", E: "LS", SE: "JM", S: "HH", SW: "SQ", W: "YN", NW: "TY" },
-  9: { N: "YN", NE: "JM", E: "SQ", SE: "TY", S: "FW", SW: "LS", W: "HH", NW: "WG" },
+  9: { N: "YN", NE: "HH", E: "SQ", SE: "TY", S: "FW", SW: "LS", W: "WG", NW: "JM" },
 };
 
 export const DIRECTION_ORDER: Compass[] = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
