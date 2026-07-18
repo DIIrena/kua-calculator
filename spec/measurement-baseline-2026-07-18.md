@@ -31,6 +31,13 @@ Zero-week note: an empty Payments screen IS the reading. When Stripe shows
 "no payments," record 0 and move on; the row still counts. Internal test
 sessions (ours) get annotated so they are never mistaken for demand.
 
+Distribution context for reading the next rows: 14 pins went to Pinterest on
+2026-07-18 (4 published same day + 10 scheduled, one per day through
+~2026-07-28). Pinterest impressions typically ramp over 2-6 weeks, so weeks
+of 2026-07-20 and 2026-07-27 are the first where non-zero traffic and
+good-days email captures become plausible; judge the shelf only after the
+cadence has run.
+
 ## Decision triggers (set now, so future-us cannot rationalise)
 
 - After 60-90 days: any visible product with **zero checkout sessions** in the
