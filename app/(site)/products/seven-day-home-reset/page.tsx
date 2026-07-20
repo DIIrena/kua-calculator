@@ -34,6 +34,8 @@ const CONFIG: LandingConfig = {
   headline: "One small task a day. A calmer home by Sunday.",
   subhead:
     "A seven-day email course: one short email each morning, one small task each day, each doable in ten to twenty minutes with things you already own. No shopping, no redecorating, no app, nothing to log in to.",
+  heroPromise:
+    "By Sunday you will have moved through your home one small task at a time, with the single change that matters most already made in each room.",
   priceLabel: "$19",
   priceCents: 1900,
   cover: "/products/seven-day-home-reset/cover-portrait.png",

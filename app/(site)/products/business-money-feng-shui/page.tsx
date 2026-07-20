@@ -34,6 +34,8 @@ const CONFIG: LandingConfig = {
   headline: "Where money runs through your home.",
   subhead:
     "A kitchen with a clean stove. A desk you want to sit at. A wealth corner the household quietly tends. The tradition reads these as one channel, and this focused printable book reads that channel for your home and your work, with a chapter on applying your own Kua to each.",
+  heroPromise:
+    "By the end you will know where the money sectors fall across your home and workspace, and the first clutter, light, and placement move each one is asking for.",
   priceLabel: "$19",
   priceCents: 1900,
   cover: "/products/business-money-feng-shui/cover-portrait.png",

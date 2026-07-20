@@ -33,6 +33,8 @@ const CONFIG: LandingConfig = {
   headline: "Nine corners of your home, each with a job.",
   subhead:
     "The bagua splits a home into nine life areas, each in a fixed compass corner: wealth, recognition, relationships, creativity, helpful people, career, knowledge, family, and the health centre. This reading takes all nine at once and reads each corner against your Kua. One personalised PDF, emailed within about a minute.",
+  heroPromise:
+    "By the end you will know which corner of your home holds each of the nine life areas, and the one thing each corner is asking you to clear, light, or tend first.",
   priceLabel: "$29",
   priceCents: 2900,
   cover: "/products/all-nine-pillars-compass/cover-portrait.png",

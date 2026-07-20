@@ -35,6 +35,8 @@ const CONFIG: LandingConfig = {
   headline: "Your whole home, read as one system.",
   subhead:
     "Everything we read, in one book, keyed to you: your eight directions in depth, how your group pairs with another person, all twelve rooms, all nine life areas, and the shape of the 2026 year against your Kua. Around 115 to 165 typeset pages, generated for you, with your name on the cover.",
+  heroPromise:
+    "By the end you will have read every room and every life area of your home as one system, with a clear order of the changes to make first, the whole home worked through in a single book keyed to your Kua.",
   priceLabel: "$49",
   priceCents: 4900,
   cover: "/products/complete-home-compass/cover-portrait.png",

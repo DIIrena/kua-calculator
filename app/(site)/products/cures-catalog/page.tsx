@@ -34,6 +34,8 @@ const CONFIG: LandingConfig = {
   headline: "Every cure on a card, every claim labelled.",
   subhead:
     "Around 25 cure cards organised by the six families (light, sound, water, plants, colour, objects), 15 crystal cards, and a one-page placement quick-table. Each card says what it is, where it goes, what the tradition claims, and what the modern reading adds, labelled Tested, Traditional, or Preference. 23 pages, $9.",
+  heroPromise:
+    "By the end you can look at any cure you have heard of and tell whether it is tested, traditional, or preference, and keep only the ones worth your shelf space.",
   priceLabel: "$9",
   priceCents: 900,
   cover: "/products/cures-catalog/cover-portrait.png",

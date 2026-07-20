@@ -7856,3 +7856,19 @@ a:hover { color: var(--clay-deep); }
   margin-left: 0;
   margin-right: 0;
 }
+
+/* Hero felt-outcome line (2026-07-20 review, W4). Leads the buy zone with
+   what the reader will be able to do, in brand green, weightier than the
+   descriptive subhead above it. */
+.landing-hero-promise {
+  margin: 1rem 0 0;
+  font-size: 1.12rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--ink);
+}
+@media (min-width: 720px) {
+  .landing-hero-promise {
+    font-size: 1.2rem;
+  }
+}

@@ -35,6 +35,8 @@ const CONFIG: LandingConfig = {
   headline: "Read the home. Build the rhythm. Pick the cures.",
   subhead:
     "Three printable books that work as one method: the 10-Step Home Diagnostic Workbook to read your home, the Daily Ritual and Twenty Laws Pack to build the daily rhythm, and the Cures and Crystals Catalogue for the finishing layer. Three PDFs, one order, by email the moment you buy.",
+  heroPromise:
+    "By the end you will have read your home, set a simple daily rhythm, and picked only the cures worth keeping, the three moves that turn a one-time read into a habit.",
   priceLabel: "$29",
   priceCents: 2900,
   seoDescription:

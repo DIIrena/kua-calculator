@@ -33,6 +33,8 @@ const CONFIG: LandingConfig = {
   headline: "Walk your whole home with one book in hand.",
   subhead:
     "Twelve rooms, read one at a time for your Kua: bedroom, office, dining, kitchen, living room, bathroom, entrance, hallway, storage, laundry, balcony, garage. Each chapter gives the traditional placements for that room keyed to your number. One personalised PDF, emailed within about a minute.",
+  heroPromise:
+    "By the end you can stand in any room in your home and know the one placement that matters there, the bed, the stove, the desk, the sofa, and fix the easiest one before the week is out.",
   priceLabel: "$29",
   priceCents: 2900,
   cover: "/products/all-twelve-spaces-compass/cover-portrait.png",

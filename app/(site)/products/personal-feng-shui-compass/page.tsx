@@ -37,6 +37,8 @@ const CONFIG: LandingConfig = {
   headline: "Your eight directions, read properly.",
   subhead:
     "A personalised book of roughly 50 typeset pages reading your Kua number: your East or West group, the four directions the tradition says support you, the four to handle with care, and exactly what to do with each in a real home. Your name on the cover, emailed within about a minute.",
+  heroPromise:
+    "By the end you will know which wall your bed's headboard should sit against, which way to face your desk, and where the long conversations belong, and you can change one of them tonight.",
   priceLabel: "$19",
   priceCents: 1900,
   cover: "/products/personal-feng-shui-compass/cover-portrait.png",

@@ -23,6 +23,10 @@ export type LandingConfig = {
   eyebrow: string;
   headline: string;
   subhead: string;
+  /** One felt-outcome line (W4): what the reader will be able to DO after
+   *  buying, stated concretely and honestly. Leads the hero with the
+   *  "after" instead of the methodology. No outcome promises. */
+  heroPromise?: string;
   priceLabel: string;
   /** Portrait cover path; omit for products without one. */
   cover?: string;
@@ -99,6 +103,9 @@ export default function ProductLanding({
           <p className="landing-subhead">
             {autolinkProducts(c.subhead, c.slug)}
           </p>
+          {c.heroPromise ? (
+            <p className="landing-hero-promise">{c.heroPromise}</p>
+          ) : null}
           <p className="landing-hero-cta">
             <a href="#buy" className="cta-primary">
               Get it, {c.priceLabel}

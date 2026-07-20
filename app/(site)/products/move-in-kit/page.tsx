@@ -34,6 +34,8 @@ const CONFIG: LandingConfig = {
   headline: "Choose your move-in day with a method, not a guess.",
   subhead:
     "You give us the window you might move within; we read every day in it against the verified 2026 day calendar and your own Kua. Your best days pulled out, the ones to handle with care flagged, your directions for the new home, and a first-week sequence for settling in.",
+  heroPromise:
+    "By the end you will have your best move-in days pulled out of the window you are considering, the ones to handle with care flagged, and a first-week order for settling the new place.",
   priceLabel: "$29",
   priceCents: 2900,
   cover: "/products/move-in-kit/cover-portrait.png",
