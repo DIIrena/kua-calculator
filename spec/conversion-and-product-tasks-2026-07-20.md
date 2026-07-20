@@ -179,3 +179,16 @@ exist. profiles.marketing_opt_in exists (account page only). Lead magnet stores 
 - [ ] P8. Shelf promise lines (shared source with C2, written once in LandingConfig).
 - [ ] P9. 2027 refresh path doc + truth-matrix housekeeping (fulfilment owner-verified
       2026-07-20).
+- C0 (2026-07-20, second pass): send-launch-email.mjs extended with move-in-kit +
+  newsletter templates and --no-coupon mode; dry-runs verified for all 4 segments
+  (20 newsletter + 3 product signups, zero ever emailed); stepwise owner walkthrough
+  at spec/waitlist-send-walkthrough-2026-07-20.md. Learning: the footer subscribe
+  form has been quietly filling a real newsletter list (product_waitlist slug
+  "newsletter") since June 7; the overdue send is the warmest revenue action.
+- C1 (2026-07-20, second pass): Vercel Analytics turned out fully wired with the
+  exact privacy exclusions the hard rules demand, so C1 became the missing joiner:
+  scripts/funnel-readout.mjs (orders/revenue, deliveries, list growth, waitlists,
+  opt-ins from Supabase) + spec/funnel-readout-guide.md (Vercel views -> Stripe
+  sessions -> DB, act on the largest drop; UTM-per-pin convention). Learning: the
+  45-day readout shows 3 test orders and $3.61 total revenue; the funnel numbers
+  confirm the owner's "traffic but no sales" report and give the baseline to beat.
