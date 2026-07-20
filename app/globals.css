@@ -8008,3 +8008,19 @@ a:hover { color: var(--clay-deep); }
   display: block;
   margin-bottom: 0.5rem;
 }
+
+/* C2 (2026-07-20): trust surfaces on the shelf + homepage offer strip. */
+.products-shelf-trust {
+  margin: 1rem auto 0;
+  justify-content: center;
+}
+
+.map-offer-trust {
+  margin: 1.75rem auto 0;
+  justify-content: center;
+}
+
+.products-honest-footer .guarantee-note {
+  max-width: 560px;
+  margin: 0.9rem auto 0;
+}

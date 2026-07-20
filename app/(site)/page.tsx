@@ -6,6 +6,7 @@ import HomeRoomPicker from "@/components/HomeRoomPicker";
 import CalculatorIsland from "@/components/CalculatorIsland";
 import CalculatorScripts from "@/components/CalculatorScripts";
 import SocialProof from "@/components/SocialProof";
+import { TrustRow } from "@/components/TrustRow";
 import { ARTICLES, CATEGORIES, type ArticleCategory } from "@/lib/articles";
 
 const HOMEPAGE_CATEGORY_ORDER: ReadonlyArray<ArticleCategory> = [
@@ -374,6 +375,8 @@ export default async function HomePage(props: {
               </p>
             </aside>
           </div>
+
+          <TrustRow className="map-offer-trust" />
 
           <div className="map-offer-shelf-teaser">
             <p>

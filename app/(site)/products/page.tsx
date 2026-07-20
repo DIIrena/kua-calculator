@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Storefront from "@/components/Storefront";
+import { TrustRow, GuaranteeNote } from "@/components/TrustRow";
 
 export const metadata: Metadata = {
   title: "Shop | My Feng Shui Home",
@@ -45,6 +46,7 @@ export default async function ProductsPage(props: {
             Checkout cancelled. Nothing was charged.
           </p>
         ) : null}
+        <TrustRow className="products-shelf-trust" />
       </section>
 
       <Storefront />
@@ -55,6 +57,7 @@ export default async function ProductsPage(props: {
           the moment you buy; personalised readings within about a minute;
           the course begins right away. Everything is yours to keep.
         </p>
+        <GuaranteeNote />
       </section>
     </div>
   );
