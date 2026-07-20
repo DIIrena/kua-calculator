@@ -8110,3 +8110,11 @@ a:hover { color: var(--clay-deep); }
   font-size: 0.95rem;
   color: var(--ink-2, #4f5b53);
 }
+
+/* P8 (2026-07-20): the felt-outcome line on shop cards. */
+.shop-card-line {
+  margin: 0.35rem 0 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ink-2, #4f5b53);
+}

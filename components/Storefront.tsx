@@ -46,6 +46,12 @@ function ProductCard({ p }: { p: StoreProduct }) {
         <h3 className="shop-card-title">{p.title}</h3>
       </Link>
 
+      {/* P8 (2026-07-20): the felt-outcome line. The cards carried only
+          title + price, which the live audit read as "functionality
+          unclear"; the one-liner already existed in the registry and
+          simply was not rendered. */}
+      <p className="shop-card-line">{p.oneLiner}</p>
+
       <div className="shop-card-foot">
         {p.onSale && p.wasCents ? (
           <s className="shop-card-was">${p.wasCents / 100}</s>
