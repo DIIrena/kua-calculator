@@ -13,32 +13,32 @@ reviewing rendered cover/preview imagery.
 
 ## Plan 1 - Website / Conversion
 
-- [ ] W1. Sitewide 7-day money-back guarantee. Add a guarantee line to the ProductLanding
+- [x] W1. Sitewide 7-day money-back guarantee. Add a guarantee line to the ProductLanding
       buy sections + a reassurance row; add a `/refund-policy` route (7 days, reply-to-
       email, plain English) linked from footer, cart, and each product FAQ. Acceptance:
       guarantee visible on every product page + cart; /refund-policy renders; footer link
       present; build green.
-- [ ] W2. Trust/reassurance row under every hero CTA and in cart: "Pay once · Emailed in
+- [x] W2. Trust/reassurance row under every hero CTA and in cart: "Pay once · Emailed in
       ~1 min · 7-day refund · A person answers." Pure reassurance, no fabrication.
       Acceptance: row renders on all product pages + cart; 4.5:1 contrast; build green.
-- [ ] W3. Real-only social-proof scaffold. lib/testimonials.ts (empty-safe) + a
+- [x] W3. Real-only social-proof scaffold. lib/testimonials.ts (empty-safe) + a
       Testimonials component on product pages + homepage that renders nothing (or a
       founder/credibility note) when no real quotes exist; plus a one-screen owner
       walkthrough for collecting the first quotes (free upgrade for an honest review).
       NO invented quotes. Acceptance: component ships, renders safely empty, owner doc
       written, build green.
-- [ ] W4. Buy-zone desire rewrite (template + configs). In ProductLanding, move the
+- [x] W4. Buy-zone desire rewrite (template + configs). In ProductLanding, move the
       "promises nothing"/not-for lines out of the top third; add one felt-outcome line to
       the hero/promise. Rewrite the hero + first promise paragraph of all visible product
       configs to lead with the "after." Honesty stays lower as a trust note. Acceptance:
       no "promises nothing"/negative framing above the fold on any product page; each
       hero states a concrete felt deliverable; zero outcome-promises; build green.
-- [ ] W5. Calculator -> buy bridge. Make the CalculatorIsland post-result card contextual
+- [x] W5. Calculator -> buy bridge. Make the CalculatorIsland post-result card contextual
       to the computed Kua ("You are Kua {n}, {group} group - your full eight-direction
       reading is $19") with a direct buy CTA to the Personal Compass. Acceptance: result
       card names the reader's actual Kua + group and links to the $19 product; privacy
       rule intact (still client-side, no birth data sent); build green.
-- [ ] W6. On-site cross-sell + success-page upsell. Add a single low-friction add-on
+- [x] W6. On-site cross-sell + success-page upsell. Add a single low-friction add-on
       offer to the buy section (next ladder rung or Good Days/Year Overlay) and a
       post-purchase upsell on the cart/success page. No dark patterns. Acceptance: one
       relevant cross-sell on product pages, one upsell on success; build green.
@@ -47,26 +47,26 @@ reviewing rendered cover/preview imagery.
       sent via Resend, gated behind an env flag so nothing sends until the owner enables
       it. Consented lists only. Acceptance: sequence + send mechanism built, flag-gated
       OFF by default, owner runbook written, build green.
-- [ ] W8. Pin-to-landing match. Ensure /life and /space (and top pin themes) open
+- [x] W8. Pin-to-landing match. Ensure /life and /space (and top pin themes) open
       topic-first and funnel to the matching product with a matched CTA. Acceptance: each
       teaser leads with its topic and links to the right product at the right price;
       build green.
-- [ ] W9. Mobile buy-zone + post-payment clarity. Verify price + buy CTA are above the
+- [x] W9. Mobile buy-zone + post-payment clarity. Verify price + buy CTA are above the
       fold on mobile; add a "you enter your details after payment, about 20 seconds" note
       to the buy section. Acceptance: buy CTA reachable without scroll on a 390px viewport
       per CSS; note present; build green.
 
 ## Plan 2 - Products (make them perfect)
 
-- [ ] P1. Visible personalization. Add a personalized front "Your reading at a glance"
+- [x] P1. Visible personalization. Add a personalized front "Your reading at a glance"
       page (their Kua, group, four supportive + four cautious directions in a table) to
       the PDF, and audit/strengthen Kua-aware callouts in the blocks so the reader feels
       it was assembled for them. Acceptance: every personalized product opens with a
       per-reader summary table; page-count bands still pass smoke tests; build green.
-- [ ] P2. "What to do tonight" box. A short, boxed first-move list on the summary/first
+- [x] P2. "What to do tonight" box. A short, boxed first-move list on the summary/first
       page, pulled from the strongest single action in the product. Acceptance: box
       renders in the PDF for personalized products; build green.
-- [ ] P3. Honest-voice rebalance inside the product. Reduce repeated "promises nothing"
+- [x] P3. Honest-voice rebalance inside the product. Reduce repeated "promises nothing"
       disclaimers in content/blocks/*.md to one strong upfront statement per product;
       make the body confident (no outcome promises added). Acceptance: no block repeats a
       no-promise disclaimer more than once; tone reads confident; build green.
@@ -83,3 +83,62 @@ reviewing rendered cover/preview imagery.
 ## Log
 
 (one line per completed task, newest last)
+
+- W1+W2 (2026-07-20): the 7-day guarantee already existed on /legal but was
+  deliberately hidden from every buying surface (ProductLanding header even
+  mandated "no refund pointers"). Surfaced it via components/TrustRow.tsx
+  (TrustRow strip + GuaranteeNote) in the hero + buy section + cart; palette CSS
+  appended. Build green, committed on branch conversion-product-2026-07-20.
+  Learning: the highest-leverage conversion fix was not writing a guarantee but
+  un-hiding one that already existed; the refund window was already 7 days, so
+  the owner's "make it 7 not 30" was already satisfied in the legal copy.
+- W4 (2026-07-20): added an optional heroPromise line to LandingConfig +
+  ProductLanding hero, populated for all 9 visible products with an honest,
+  concrete "here is what you will be able to do" line. Build green, committed.
+  Learning: the template already kept "not for you" near the bottom, so the only
+  above-the-fold gap was a felt deliverable in the hero; one additive field fixed
+  it everywhere without touching the honest framing lower down.
+- W5 (2026-07-20): ui.js now injects "You are Kua N, East/West group." into the
+  Personal Compass card on the result screen (client-side only, embed still hides
+  the compass cards), offer leads with the $19 front door at a primary priced CTA
+  and the guarantee, flagship priced beneath. Build green, committed. Learning:
+  revealPostResultCta already had occ1 in scope at the call site, so
+  personalisation cost one param + one guarded querySelector, no privacy change.
+- W3 (2026-07-20): lib/testimonials.ts (real, consented quotes only, empty for
+  now) + components/SocialProof.tsx (quote cards when real ones exist, an honest
+  credibility note otherwise, never fabricated) wired into ProductLanding + the
+  homepage; owner collection runbook written. Build green, committed. Learning:
+  the empty-safe credibility note lets us ship social proof today without a single
+  fake quote, and flips to real cards automatically the moment the array fills.
+- W6 (2026-07-20): post-purchase upsell on /cart/success (flagship + free Good
+  Days, calm, no countdown) + the guarantee surfaced on the success note. On-site
+  cross-sell already existed via FlagshipChooser + autolinkProducts. Committed.
+- W8 (2026-07-20, verified-existing): /life/[area] already leads with the life
+  area and funnels to the Personal Compass at a primary CTA; no change needed.
+- W9 (2026-07-20, verified-existing): per-product buyLine + the hero note
+  ("Emailed within about a minute") + finalNote already state the after-payment
+  step and delivery, and the hero stacks text-first so the CTA precedes the cover
+  image on mobile; the trust row flex-wraps. No new code needed.
+- P1 (2026-07-20, mostly pre-existing): the "compass at a glance" summary block
+  already opens the personalised products with the reader's four supportive + four
+  cautious directions in tables plus a compact personal bagua. P2 augments it.
+- P2 (2026-07-20): added a clay-accented "Start tonight" box to the summary page
+  (new .start-tonight PDF style) giving the single first move keyed to the reader's
+  supportive directions. Build green, committed. Learning: raw-HTML <p class> in the
+  block markdown is the proven pattern (card-rules), so no renderer change was needed.
+- P3 (2026-07-20): trimmed the over-disclaiming blocks. pillar-wealth 3 -> 1
+  no-promise lines; relationships + helpful-people redundant closers rewritten to
+  lead with what the reading DOES. One honest boundary kept per block; no outcome
+  promises added. Build green, committed.
+
+## Remaining (next batch)
+
+- W7 (email nurture wiring): CODE not yet built. Owner-gated on Resend send + a
+  consent flag; the 3 approved drafts in welcome-emails-2026-07-18.md are the source.
+- P4 (premium PDF design pass): larger visual-system task; the .start-tonight box is
+  a first step. Section dividers, keepsake reference card, cover polish remain.
+- P5 (generous previews on every product page): needs real rendered interior images
+  per product (owner asset review). ProductPreview exists; only some products have
+  images today.
+- P6 (flagship elevation): partly done via heroPromise + the success upsell; the
+  design half overlaps P4.
