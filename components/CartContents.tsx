@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCart } from "@/components/CartProvider";
+import { TrustRow, GuaranteeNote } from "@/components/TrustRow";
 
 function money(cents: number): string {
   if (cents === 0) return "Free";
@@ -71,6 +72,8 @@ export default function CartContents({
                 Check out
               </button>
             </form>
+            <GuaranteeNote />
+            <TrustRow className="cart-trust" />
             <p className="cart-note">
               One secure payment for everything in your cart.
               Printable files arrive by email; a personalised

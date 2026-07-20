@@ -7779,3 +7779,80 @@ a:hover { color: var(--clay-deep); }
     border-bottom-color: rgba(255, 255, 255, 0.22);
   }
 }
+
+/* ---------------------------------------------------------------------
+   Trust signals (2026-07-20 conversion review, W1 + W2)
+   The 7-day guarantee and a four-item reassurance strip, surfaced at the
+   point of decision (hero, buy section, cart). Palette-matched; the
+   guarantee reads in brand green with an orange tick.
+   --------------------------------------------------------------------- */
+
+.trust-row {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: var(--ink-2);
+}
+.trust-row li {
+  position: relative;
+  padding-left: 1.15rem;
+}
+.trust-row li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--clay);
+  font-weight: 700;
+}
+.landing-hero-trust {
+  margin-top: 1.25rem;
+}
+
+.guarantee-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  max-width: 44ch;
+  margin: 1rem auto 0;
+  padding: 0.75rem 0.95rem;
+  background: var(--green-soft);
+  border-radius: 10px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--ink);
+  text-align: left;
+}
+.guarantee-note a {
+  color: var(--green-deep);
+  text-decoration: underline;
+  font-weight: 600;
+}
+.guarantee-badge {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--clay);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* In the cart the row sits left-aligned under the checkout button. */
+.cart-trust {
+  justify-content: flex-start;
+}
+.cart-summary .guarantee-note {
+  margin-left: 0;
+  margin-right: 0;
+}

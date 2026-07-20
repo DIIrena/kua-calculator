@@ -4,6 +4,7 @@ import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
 import FlagshipChooser, { type Flagship } from "@/components/FlagshipChooser";
 import { autolinkProducts } from "@/components/autolinkProducts";
+import { TrustRow, GuaranteeNote } from "@/components/TrustRow";
 
 // The long-form landing template (shop-redesign Phase B). One component,
 // one content config per product, so copy revisions land everywhere at
@@ -11,7 +12,10 @@ import { autolinkProducts } from "@/components/autolinkProducts";
 // hero -> what you receive -> promise -> look inside -> how it works ->
 // what's inside -> who it's for / not for -> FAQ -> final CTA.
 // Rules: one Buy action (three CTAs, one form at #buy), price visible at
-// every CTA, no urgency, no testimonials, no refund pointers.
+// every CTA, no urgency, no fabricated testimonials.
+// 2026-07-20 conversion review (W1+W2): the real 7-day guarantee and a
+// four-item reassurance strip are now surfaced at the point of decision.
+// The earlier "no refund pointers" rule was the review's headline mistake.
 
 export type LandingConfig = {
   slug: string;
@@ -103,6 +107,7 @@ export default function ProductLanding({
               One-time. Emailed within about a minute.
             </span>
           </p>
+          <TrustRow className="landing-hero-trust" />
         </div>
         {c.cover ? (
           <div className="landing-hero-cover">
@@ -214,6 +219,7 @@ export default function ProductLanding({
           state={buyState}
           waitlistStatus={waitlistStatus}
         />
+        <GuaranteeNote />
         <p className="landing-final-note">{c.finalNote}</p>
         <p className="landing-support-note">
           Questions first? Write to hello@myfengshuihome.com. A person
