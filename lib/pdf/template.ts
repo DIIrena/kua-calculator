@@ -565,6 +565,100 @@ export function buildHtml(
   .block .one-thing strong {
     color: ${BRAND.clay};
   }
+
+  /* ------------------------------------------------------------------
+     P4 (2026-07-20): the premium finishing layer.
+     ------------------------------------------------------------------ */
+
+  /* Every chapter closes with a quiet centered hairline, so the eye
+     gets a designed landing at the end of each block instead of the
+     text simply stopping. */
+  .block::after {
+    content: "";
+    display: block;
+    width: 26mm;
+    height: 0.5mm;
+    background: ${BRAND.hairline};
+    margin: 11mm auto 0 auto;
+  }
+
+  /* Framed cover: a single warm hairline border set inside the page
+     margins turns the title page into a plate. */
+  .cover {
+    border: 0.6pt solid ${BRAND.hairline};
+    padding: 14mm 12mm;
+  }
+
+  /* Keepsake reference card: the last page renders the reader's eight
+     directions as a cut-out card. The dashed rule is the cut line. */
+  .keepsake {
+    page-break-before: always;
+    text-align: center;
+  }
+
+  .keepsake .keepsake-hint {
+    font-size: 9.5pt;
+    color: ${BRAND.olive};
+    margin: 0 0 6mm 0;
+  }
+
+  .keepsake .keepsake-card {
+    display: inline-block;
+    width: 118mm;
+    border: 0.8pt dashed ${BRAND.rule};
+    border-radius: 3mm;
+    padding: 8mm 9mm 7mm 9mm;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  .keepsake .keepsake-name {
+    font-size: 13pt;
+    font-weight: 800;
+    color: ${BRAND.ink};
+    margin: 3mm 0 0.5mm 0;
+  }
+
+  .keepsake .keepsake-kua {
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: ${BRAND.clay};
+    margin: 0 0 5mm 0;
+  }
+
+  .keepsake table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+    margin: 0 0 2mm 0;
+  }
+
+  .keepsake th {
+    font-size: 8pt;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: ${BRAND.olive};
+    border-bottom: 0.6pt solid ${BRAND.hairline};
+    padding: 1.2mm 2mm;
+    text-align: left;
+  }
+
+  .keepsake td {
+    padding: 1.2mm 2mm;
+    text-align: left;
+    color: ${BRAND.ink};
+    border-bottom: 0.4pt solid ${BRAND.sand};
+  }
+
+  .keepsake .keepsake-good td:first-child { font-weight: 700; }
+
+  .keepsake .keepsake-footer {
+    font-size: 8pt;
+    color: ${BRAND.olive};
+    margin: 4mm 0 0 0;
+  }
 </style>
 </head>
 <body>
@@ -588,8 +682,41 @@ export function buildHtml(
 
 ${assembledBlocksHtml}
 
+${keepsakeCardHtml(context, groupLabel)}
+
 </body>
 </html>`;
+}
+
+/** The cut-out keepsake card: the reader's eight directions on one
+ *  card-sized panel, closing every personalised book (P4). */
+function keepsakeCardHtml(context: BlockContext, groupLabel: string): string {
+  const dirs = Object.values(context.byCompass);
+  const order = ["SQ", "TY", "YN", "FW", "HH", "LS", "WG", "JM"];
+  const sorted = [...dirs].sort(
+    (a, b) => order.indexOf(a.qualityCode) - order.indexOf(b.qualityCode),
+  );
+  const good = sorted.filter((d) => d.favourable);
+  const care = sorted.filter((d) => !d.favourable);
+  const row = (d: (typeof dirs)[number]) =>
+    `<tr><td>${d.compassLabel}</td><td>${d.pinyin}</td><td>${d.gloss}</td></tr>`;
+  return `<section class="keepsake">
+  <p class="keepsake-hint">Cut along the dashed line and keep this where you plan your week.</p>
+  <div class="keepsake-card">
+    ${brandMarkSvg(34, BRAND.olive)}
+    <p class="keepsake-name">${escapeHtml(context.firstName)}'s directions</p>
+    <p class="keepsake-kua">KUA ${context.kuaNumber} · ${groupLabel.toUpperCase()}</p>
+    <table class="keepsake-good">
+      <thead><tr><th>Supportive</th><th></th><th></th></tr></thead>
+      <tbody>${good.map(row).join("")}</tbody>
+    </table>
+    <table>
+      <thead><tr><th>Handle with care</th><th></th><th></th></tr></thead>
+      <tbody>${care.map(row).join("")}</tbody>
+    </table>
+    <p class="keepsake-footer">myfengshuihome.com · read the room first, then the direction</p>
+  </div>
+</section>`;
 }
 
 function escapeHtml(s: string): string {

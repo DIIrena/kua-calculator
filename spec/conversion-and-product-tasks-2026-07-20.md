@@ -192,3 +192,22 @@ exist. profiles.marketing_opt_in exists (account page only). Lead magnet stores 
   sessions -> DB, act on the largest drop; UTM-per-pin convention). Learning: the
   45-day readout shows 3 test orders and $3.61 total revenue; the funnel numbers
   confirm the owner's "traffic but no sales" report and give the baseline to beat.
+- C2 (2026-07-20): TrustRow + GuaranteeNote on /products shelf hero/footer and the
+  homepage paid-offer strip. Learning: W1/W2 trust stopped one click too deep; the
+  live shelf (where cold traffic lands) carried zero reassurance until now.
+- C3 (2026-07-20): checklist form gains an unchecked opt-in writing to the same
+  newsletter list the footer fills; truthful conditional email footer; /api/
+  unsubscribe deletes note-list rows outright; privacy page documents the list;
+  send script signs per-recipient one-click unsubscribe links. Learning: the
+  "no list" promise was already half-superseded by the footer form; unifying on
+  one list with explicit consent resolved the contradiction instead of hiding it.
+- C4 (2026-07-20): the three owner-approved welcome drafts wired verbatim
+  (lib/welcome-sequence.ts) + /api/cron/welcome (flag-gated OFF, dry-run mode,
+  20h spacing, migration 0010 for progress). Runbook written. Learning: the
+  drafts were 3 emails, not the planned 4; wiring exactly the approved copy and
+  noting the 4th as future beats inventing unapproved copy.
+- C5 (2026-07-20): $9 Good-Days Calendar joins the featured shelf row as the
+  cold-traffic impulse rung; pin UTM convention documented in the pipeline
+  README; /space verified already funneling topic-first.
+- C6 (2026-07-20): 2027 Planner waitlist block on the planner page via a new
+  waitlist slug; launch email later targets exactly that segment.
