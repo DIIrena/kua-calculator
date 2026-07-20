@@ -181,7 +181,7 @@ export default function BuyButton({
             placeholder="you@example.com"
             autoComplete="email"
           />
-          <button type="submit" className="cta-primary">
+          <button type="submit" className="cta-primary cta-buy">
             Join the waitlist
           </button>
         </form>
@@ -205,7 +205,7 @@ export default function BuyButton({
         </p>
         <form action="/api/checkout" method="post" className="buy-button-form">
           <input type="hidden" name="productSlug" value={productSlug} />
-          <button type="submit" className="cta-primary">
+          <button type="submit" className="cta-primary cta-buy">
             Buy now
           </button>
         </form>
@@ -235,7 +235,7 @@ export default function BuyButton({
         </p>
         <a
           href={lemonSqueezyUrl}
-          className="cta-primary"
+          className="cta-primary cta-buy"
           rel="noopener noreferrer"
         >
           Buy now

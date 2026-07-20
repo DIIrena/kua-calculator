@@ -171,7 +171,7 @@ export default async function GuidePage(props: { params: Params }) {
                 <p className="in-article-cta-text">{page.cta.rationale}</p>
               ) : null}
               <p className="in-article-cta-actions">
-                <Link href={page.cta.href} className="cta-primary">
+                <Link href={page.cta.href} className="cta-primary cta-buy">
                   {page.cta.label}
                 </Link>
               </p>

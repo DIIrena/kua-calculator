@@ -232,3 +232,11 @@ exist. profiles.marketing_opt_in exists (account page only). Lead magnet stores 
 - P9 (2026-07-20): spec/annual-refresh-2027.md (full 2027 map: what carries a 2026
   stamp, who gets emailed, timeline) + truth-matrix addendum (fulfilment
   owner-verified, shelf now 10 visible).
+- Buy buttons orange (owner request, 2026-07-20 evening): new .cta-buy modifier on
+  13 buy-intent controls (BuyButton x3, cart checkout, product hero + buy anchor,
+  homepage flagship, life/space funnels, guide + article CTAs, calculator compass
+  card) plus the shop-card price hearts. Fill is --clay-cta #c64812 (4.8:1 with
+  white, AA) hovering to brand --clay #d9531a (which alone is only ~3.7:1, so it
+  brightens rather than rests). In-cart hearts flip green. Non-buy CTAs
+  (calculator, checklist, auth, downloads, render forms) stay green; success-page
+  upsells stay deliberately calm cta-secondary.

@@ -361,7 +361,7 @@ export default function CalculatorIsland({
           <p className="post-result-card-actions">
             <a
               href="/products/personal-feng-shui-compass?from=kua-calculator"
-              className="cta-primary"
+              className="cta-primary cta-buy"
             >
               See the Compass, $19
             </a>

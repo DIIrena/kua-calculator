@@ -137,7 +137,7 @@ export default async function SpaceRoomPage(props: { params: Params }) {
               </p>
               <Link
                 href="/products/personal-feng-shui-compass"
-                className="cta-primary"
+                className="cta-primary cta-buy"
               >
                 See the Compass
               </Link>

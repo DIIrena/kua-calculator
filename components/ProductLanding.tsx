@@ -153,7 +153,7 @@ export default function ProductLanding({
             <p className="landing-hero-promise">{c.heroPromise}</p>
           ) : null}
           <p className="landing-hero-cta">
-            <a href="#buy" className="cta-primary">
+            <a href="#buy" className="cta-primary cta-buy">
               Get it, {c.priceLabel}
             </a>
             <span className="landing-cta-note">
@@ -259,7 +259,7 @@ export default function ProductLanding({
           ))}
         </ol>
         <p className="landing-mid-cta">
-          <a href="#buy" className="cta-primary">
+          <a href="#buy" className="cta-primary cta-buy">
             Get it, {c.priceLabel}
           </a>
         </p>

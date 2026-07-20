@@ -16,6 +16,10 @@
   --green:       #0e3b2c;   /* pool-table dark green - the brand green */
   --green-deep:  #0a2a20;   /* darker green - links, hover */
   --clay:        #d9531a;   /* true orange - the kinetic pop */
+  --clay-cta:    #c64812;   /* deep true orange for buy-button fills:
+                               4.8:1 with white text (AA); --clay itself
+                               is only ~3.7:1, so it serves as the hover
+                               brightening, not the resting fill */
   --clay-deep:   #b8430e;   /* darker orange - hover */
   --green-soft:  #dde6e0;   /* pale sage - chart favourable fill (AAA with ink) */
   --clay-soft:   #f8d8c5;   /* pale peach - chart avoid fill (AAA with ink) */
@@ -8117,4 +8121,41 @@ a:hover { color: var(--clay-deep); }
   font-size: 0.88rem;
   line-height: 1.5;
   color: var(--ink-2, #4f5b53);
+}
+
+/* Buy buttons are orange (owner request 2026-07-20). `.cta-buy` rides on
+   .cta-primary and recolors every control that starts or leads to a
+   purchase; informational and free-tool CTAs stay green. Resting fill is
+   --clay-cta (AA with white text), hover brightens to the brand --clay. */
+.cta-buy {
+  background: var(--clay-cta);
+  border-color: var(--clay-cta);
+}
+
+.cta-buy:hover {
+  background: var(--clay);
+  border-color: var(--clay);
+}
+
+/* The shop-card price hearts ARE the add-to-cart buttons: orange at
+   rest, brightening on hover; a heart already in the cart flips to
+   green so state stays readable. */
+.price-heart-shape {
+  background-color: var(--clay-cta);
+}
+
+.price-heart:hover .price-heart-shape {
+  background-color: var(--clay);
+}
+
+.price-heart.is-added .price-heart-shape {
+  background-color: var(--green);
+}
+
+.price-heart-amount {
+  color: var(--clay-cta);
+}
+
+.price-heart.is-added .price-heart-amount {
+  color: var(--green);
 }

@@ -20,7 +20,7 @@ export default function InArticleCta({ article }: { article: Article }) {
         <p className="in-article-cta-text">{cta.rationale}</p>
       ) : null}
       <p className="in-article-cta-actions">
-        <Link href={cta.href} className="cta-primary">
+        <Link href={cta.href} className="cta-primary cta-buy">
           {cta.label}
         </Link>
       </p>

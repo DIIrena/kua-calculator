@@ -68,7 +68,7 @@ export default function CartContents({
                 name="slugs"
                 value={items.map((i) => i.slug).join(",")}
               />
-              <button type="submit" className="cta-primary cart-checkout-btn">
+              <button type="submit" className="cta-primary cta-buy cart-checkout-btn">
                 Check out
               </button>
             </form>

@@ -366,7 +366,7 @@ export default async function HomePage(props: {
               </p>
               <Link
                 href="/products/complete-home-compass"
-                className="cta-primary"
+                className="cta-primary cta-buy"
               >
                 Get the Complete Home Compass
               </Link>
