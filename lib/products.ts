@@ -23,6 +23,7 @@ export type BlockId =
   | "summary"
   | "find-your-directions"
   | "how-to-use"
+  | "house-match"
   | "before-the-compass"
   | "faq-hard-cases"
   | "experiment"
