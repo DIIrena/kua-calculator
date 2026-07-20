@@ -326,6 +326,10 @@ export const LADDER_SLUGS: readonly string[] = [
 export const MOMENT_SLUGS: readonly string[] = [
   "move-in-kit",
   "seven-day-home-reset",
+  // C5/P8 (2026-07-20): the $9 impulse rung. The shelf renders only
+  // these groups (the featured flag is not read here), so visibility
+  // means membership.
+  "good-days-calendar-2026",
 ];
 
 /** Printable kits + the remaining part-bundle. */
