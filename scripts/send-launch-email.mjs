@@ -19,6 +19,7 @@
 // re-run never double-sends.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { createHmac } from "node:crypto";
 import path from "node:path";
 
 const ROOT = process.cwd();
@@ -109,7 +110,24 @@ function withoutCoupon(t) {
   };
 }
 
-function renderHtml(t) {
+// One-click unsubscribe for the newsletter segment. Mirrors
+// lib/unsubscribe-token.ts exactly (HMAC of "email:newsletter" keyed
+// with AUTH_SECRET, base64url), so /api/unsubscribe accepts the link.
+function unsubscribeUrl(email) {
+  const secret = process.env.AUTH_SECRET || "";
+  const t = createHmac("sha256", secret)
+    .update(`${email.toLowerCase()}:newsletter`)
+    .digest("base64url");
+  const e = Buffer.from(email.toLowerCase()).toString("base64url");
+  return `${SITE}/api/unsubscribe?e=${e}&c=newsletter&t=${t}`;
+}
+
+function unsubFooterHtml(email) {
+  if (product !== "newsletter") return "";
+  return ` <a href="${unsubscribeUrl(email)}" style="color:#4f5b53;">Unsubscribe with one click</a> and your address is deleted from the list.`;
+}
+
+function renderHtml(t, recipientEmail = "preview@example.com") {
   const body = t.paragraphs
     .map(
       (p) =>
@@ -130,7 +148,11 @@ function renderHtml(t) {
           <p style="margin:18px 0 0;"><a href="${t.ctaUrl}" style="display:inline-block;background:#0e3b2c;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">${t.ctaLabel}</a></p>
         </td></tr>
         <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#4f5b53;border-top:1px solid #e2dac5;">
-          You receive this because you joined this product's waitlist on myfengshuihome.com. This is the launch email you signed up for; there is no recurring newsletter behind it. Reply to this email and a person reads it.
+          ${
+            product === "newsletter"
+              ? `You receive this because you subscribed on myfengshuihome.com. Reply to this email and a person reads it.${unsubFooterHtml(recipientEmail)}`
+              : "You receive this because you joined this product's waitlist on myfengshuihome.com. This is the launch email you signed up for; there is no recurring newsletter behind it. Reply to this email and a person reads it."
+          }
         </td></tr>
       </table>
       <div style="font-size:12px;color:#4f5b53;padding-top:14px;">myfengshuihome.com</div>
@@ -224,10 +246,17 @@ if (!RESEND_KEY) {
   process.exit(1);
 }
 
-const html = renderHtml(template);
+if (product === "newsletter" && !process.env.AUTH_SECRET) {
+  console.error("Missing AUTH_SECRET; newsletter unsubscribe links cannot be signed.");
+  process.exit(1);
+}
+
 const text = renderText(template);
 const sentNow = [];
 for (const to of recipients) {
+  // Newsletter emails are rendered per recipient so each carries its
+  // own signed one-click unsubscribe link.
+  const html = renderHtml(template, to);
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {

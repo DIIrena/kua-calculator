@@ -31,9 +31,16 @@ export default function LeadMagnetForm({ preFilledEmail }: Props) {
           Email me the checklist
         </button>
       </div>
+      <label className="lead-magnet-optin">
+        <input type="checkbox" name="newsletter_opt_in" value="on" />
+        <span>
+          Also send me the occasional note: seasonal reminders and new free
+          tools, a few times a year, one-click unsubscribe.
+        </span>
+      </label>
       <p className="lead-magnet-note">
-        One email. The PDF. We do not add you to any list. You can sign up later
-        if you want more.
+        The checklist arrives in one email either way. Leave the box unticked
+        and that single email is all we ever send.
       </p>
     </form>
   );

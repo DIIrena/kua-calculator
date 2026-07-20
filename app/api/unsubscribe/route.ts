@@ -45,6 +45,30 @@ export async function GET(req: NextRequest) {
   }
 
   const admin = createAdminClient();
+
+  // The newsletter list lives in product_waitlist (slug "newsletter").
+  // Unsubscribing there means deleting the row: we keep nothing.
+  if (c === "newsletter") {
+    const { error } = await admin
+      .from("product_waitlist")
+      .delete()
+      .eq("email", email)
+      .eq("product_slug", "newsletter");
+    if (error) {
+      console.error("[unsubscribe] newsletter delete failed:", error.message);
+      return page(
+        "Something went wrong",
+        "We could not process that just now. Reply to any of the emails and we will remove you by hand.",
+        500,
+      );
+    }
+    return page(
+      "You are unsubscribed",
+      "Your address is removed from the list entirely. Nothing else changes, and you can browse or subscribe again any time.",
+      200,
+    );
+  }
+
   const { error } = await admin
     .from("course_enrollments")
     .update({ unsubscribed: true })

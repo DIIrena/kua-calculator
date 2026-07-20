@@ -11,7 +11,13 @@ import { redirect } from "next/navigation";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function buildHtml(siteUrl: string): string {
+function footerLine(optedIn: boolean): string {
+  return optedIn
+    ? "One email with the link, and the occasional note you ticked the box for. Every note carries a one-click unsubscribe."
+    : "One email. The link. We do not add you to any list. You can sign up for a free account later if you want more.";
+}
+
+function buildHtml(siteUrl: string, optedIn: boolean): string {
   const root = siteUrl.replace(/\/$/, "");
   return `<!doctype html>
 <html lang="en">
@@ -32,7 +38,7 @@ function buildHtml(siteUrl: string): string {
             <p style="margin:16px 0 0;text-align:center;font:13px sans-serif;color:#4f5b53;">Or save it to your home screen and come back when you have ten minutes.</p>
           </td></tr>
           <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#4f5b53;border-top:1px solid #e2dac5;">
-            One email. The link. We do not add you to any list. You can sign up for a free account later if you want more.
+            ${footerLine(optedIn)}
           </td></tr>
         </table>
         <div style="font-size:12px;color:#4f5b53;padding-top:14px;">
@@ -56,6 +62,7 @@ My Feng Shui Home - myfengshuihome.com`;
 
 export async function sendChecklist(formData: FormData) {
   const email = String(formData.get("email") ?? "").trim().toLowerCase();
+  const optedIn = formData.get("newsletter_opt_in") === "on";
 
   if (!EMAIL_RE.test(email)) {
     redirect("/?checklist=invalid#checklist-heading");
@@ -63,6 +70,28 @@ export async function sendChecklist(formData: FormData) {
 
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://myfengshuihome.com";
+
+  // Consented capture (C3): only when the visitor ticked the box, add
+  // them to the shared newsletter list (product_waitlist, slug
+  // "newsletter" - the same list the footer subscribe form fills). The
+  // unique (email, product_slug) index makes re-submits harmless.
+  if (optedIn) {
+    try {
+      const { createAdminClient } = await import("@/lib/supabase/server");
+      const admin = createAdminClient();
+      const { error } = await admin
+        .from("product_waitlist")
+        .upsert(
+          { email, product_slug: "newsletter" },
+          { onConflict: "email,product_slug", ignoreDuplicates: true },
+        );
+      if (error) {
+        console.error("[lead-magnet] opt-in insert failed:", error.message);
+      }
+    } catch (err) {
+      console.error("[lead-magnet] opt-in insert threw:", err);
+    }
+  }
 
   const apiKey = process.env.AUTH_RESEND_KEY;
   if (!apiKey) {
@@ -81,7 +110,7 @@ export async function sendChecklist(formData: FormData) {
         from: "My Feng Shui Home <hello@myfengshuihome.com>",
         to: email,
         subject: "Your 14-point room harmony checklist",
-        html: buildHtml(siteUrl),
+        html: buildHtml(siteUrl, optedIn),
         text: TEXT,
       }),
     });

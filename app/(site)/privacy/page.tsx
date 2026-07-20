@@ -63,6 +63,17 @@ export default function PrivacyPage() {
         and occasional feng shui guidance. We do not sell or share your email.
       </p>
 
+      <h2>The newsletter</h2>
+      <p>
+        If you subscribe in the site footer, tick the newsletter box on the
+        checklist form, or join a product waitlist, we store that email
+        address and the date you gave it, and nothing else. We write rarely.
+        Every note carries a one-click unsubscribe link that deletes your
+        address from the list entirely, and replying with the word
+        unsubscribe does the same. The calculator itself is unchanged by any
+        of this: your birth data never leaves your browser when you use it.
+      </p>
+
       <h2>Deleting your account</h2>
       <p>
         You can delete your account at any time from your{" "}
