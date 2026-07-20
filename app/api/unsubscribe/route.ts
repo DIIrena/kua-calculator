@@ -46,14 +46,15 @@ export async function GET(req: NextRequest) {
 
   const admin = createAdminClient();
 
-  // The newsletter list lives in product_waitlist (slug "newsletter").
-  // Unsubscribing there means deleting the row: we keep nothing.
-  if (c === "newsletter") {
+  // The note lists live in product_waitlist (slugs "newsletter" and
+  // "good-days"). Unsubscribing from notes means deleting the rows on
+  // BOTH lists: one click, fully out, we keep nothing.
+  if (c === "newsletter" || c === "good-days") {
     const { error } = await admin
       .from("product_waitlist")
       .delete()
       .eq("email", email)
-      .eq("product_slug", "newsletter");
+      .in("product_slug", ["newsletter", "good-days"]);
     if (error) {
       console.error("[unsubscribe] newsletter delete failed:", error.message);
       return page(
