@@ -23,3 +23,5 @@ Your whole reading on one page, built to be printed and pinned. The rest of the 
 | **Jue Ming** *(total loss)* | Bathroom, deep storage. The one to treat with the most care. | **{{jueMingDir}}** |
 
 <p class="card-rules"><strong>How to read a direction, in three lines.</strong> For the bed: the wall the headboard sits against, so your head points that way. For a desk or seat: the direction your body faces; the chair, not the desk, is what the system reads. For a door or room: the direction it faces as it opens.</p>
+
+<p class="start-tonight"><strong>Start tonight.</strong> One change, ten minutes. Stand in the room you use most and notice which way you face when you sit or sleep there. If it is not one of your four supportive directions above, turn the chair, or move the headboard to the wall that lets your head point toward <strong>{{shengQiDir}}</strong> or <strong>{{tianYiDir}}</strong>. That single move is the whole method in miniature; the rest of the book is where and how to do it everywhere else.</p>

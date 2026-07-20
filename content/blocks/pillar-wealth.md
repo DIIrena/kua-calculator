@@ -10,7 +10,7 @@ That is the plain frame, and it is worth saying plainly before anything else.
 
 **This corner is a place to direct attention and care. It is not a promise of money, and nothing in this reading can guarantee a financial result.**
 
-What a cared-for Southeast can do is real but modest. It can change the cues your space gives you about money each day. It can remove small frictions, a dark corner, a pile of broken things, that quietly cost attention. It can give one fixed spot for the intention you already hold. What it cannot do is replace the work, conjure money from nothing, or hand you an outcome. The frame here is modest, more modest than the market that sells it.
+What a cared-for Southeast does is real and specific. It changes the cues your space gives you about money each day. It removes the small frictions, a dark corner, a pile of broken things, that quietly cost you attention. And it gives one fixed spot for the intention you already hold. It supports the work; it does not replace it.
 
 ## How to find your Southeast
 
@@ -35,7 +35,7 @@ The single most consistent thing this sector asks of you is unglamorous: keep it
 
 ## Traditional activators
 
-Once the corner is clear and lit, there are two classic activators. Both are framed as custom, not as levers that produce money.
+Once the corner is clear and lit, there are two classic activators, both traditional customs rather than switches.
 
 - **A healthy living plant.** The Southeast is Wood, and a living, well-kept plant introduces growth into a sector associated with growth. Round-leaved plants are the folk favourite, the leaves read as coins, but the operative word is *healthy*. A thriving plant you actually water is the cure; a dying or dusty one works against it, and dried or artificial-looking material reads as the opposite of fresh growth. If you will not tend a plant, do not place one.
 - **Gentle moving water.** Wood is fed by Water in the element logic, so a small tabletop fountain is the second classic activator. Two rules travel with it: keep the water moving and clean, since stagnant water reverses the intent, and aim any flow *inward* toward the room rather than out toward a door or window. If a fountain is impractical, an image of clear, healthy moving water in the same corner is the usual stand-in.

@@ -390,6 +390,25 @@ export function buildHtml(
     font-weight: 800;
   }
 
+  /* "Start tonight" box (2026-07-20 review, P2): the single first move,
+     called out in a clay-accented panel so the reader has one concrete
+     thing to do before they finish reading. Stays on one page. */
+  .block .start-tonight {
+    font-size: 11pt;
+    line-height: 1.55;
+    color: ${BRAND.ink};
+    background: #fbeee6;
+    border: 1px solid ${BRAND.clay};
+    border-radius: 2.5mm;
+    margin: 8mm 0;
+    padding: 5mm 6mm;
+    page-break-inside: avoid;
+  }
+  .block .start-tonight strong {
+    color: ${BRAND.clay};
+    font-weight: 800;
+  }
+
   /* Closing block carries the small product-catalogue list; tighten
      line height there. */
   .block--closing hr {

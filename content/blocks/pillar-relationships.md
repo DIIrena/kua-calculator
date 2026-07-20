@@ -11,7 +11,7 @@ Two things follow from that, and both are worth holding plainly:
 - The Southwest is associated with *relationships of all kinds*, not only romance. Close friendship, the bond between people who share a home, the steadiness of a long partnership - the corner reads them all under the same heading of connection.
 - It is associated with *receiving* rather than *seeking*. The tradition treats this corner as the ground you keep ready, not a switch that produces a partner. Tending it is a way of orienting your attention, not a guarantee about who walks through the door.
 
-This is a quality the tradition assigns the direction. It is not a result handed to you. Read it the way you would read any association the system makes: as a lens, not a promise.
+This is a quality the tradition assigns the direction, a lens for where to put your attention. Read it the way you would read any association the system makes.
 
 ## Think in pairs, not singles
 
@@ -51,7 +51,7 @@ Inside the bedroom, the tradition's relationship cues are practical and worth kn
 - **No mirror reflecting the bed.** This is one of the cleanest rules the tradition gives, read across lineages as unsettling to a body half-asleep and as introducing a third presence into the room. If a mirrored wardrobe faces the bed, the simple move is to relocate, swap, or cover it.
 - **Paired, not solo, in what the room shows.** Two pillows used, two matching lamps, photographs of two people rather than a lone portrait, and the previous-relationship mementos kept out.
 
-None of this promises anything about finding or keeping a partner. It arranges the room so its signals point toward connection rather than solitude, which is the only thing the tradition claims to do.
+What all of this does is arrange the room so its signals point toward connection rather than solitude. That is what the tradition claims for the corner, and it is worth doing well.
 
 ## The Kua overlay: check your own directions
 

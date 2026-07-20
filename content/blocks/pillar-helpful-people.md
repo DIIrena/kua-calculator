@@ -46,4 +46,4 @@ The smallest first move is the clear-out. Find the Northwest of your home, or of
 
 If your Northwest happens to be one of your supportive directions, add a second move: the next time you sit down to ask someone for help or advice, take the seat that lets your body face Northwest. If your Northwest is one of the cautious four, skip the facing and keep the corner clear instead; let one of {{shengQiDir}}, {{tianYiDir}}, {{yanNianDir}}, or {{fuWeiDir}} be the direction you sit and face.
 
-The reading does not promise the mentor or the journey. It gives you a fixed corner, a clear element, and a way to check it against your own chart. What you notice over the following week is yours to observe.
+This reading gives you a fixed corner, a clear element, and a way to check it against your own chart. What you notice over the following week is yours to observe.
