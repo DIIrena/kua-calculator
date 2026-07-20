@@ -7931,3 +7931,36 @@ a:hover { color: var(--clay-deep); }
   font-size: 0.9rem;
   color: var(--ink-2);
 }
+
+/* Post-purchase upsell (W6). Two calm cards on the success page. */
+.success-next {
+  max-width: 860px;
+  margin: 2.5rem auto 0;
+  padding: 0 1rem;
+}
+.success-next h2 {
+  margin-bottom: 1rem;
+}
+.success-next-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) {
+  .success-next-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.success-next-card {
+  padding: 1.25rem;
+  background: var(--paper);
+  border: 1px solid var(--green-soft);
+  border-radius: 12px;
+}
+.success-next-card h3 {
+  margin: 0 0 0.5rem;
+}
+.success-next-card p {
+  line-height: 1.55;
+  color: var(--ink-2);
+}

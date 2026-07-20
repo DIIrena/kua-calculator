@@ -27,8 +27,46 @@ export default function CartSuccessPage() {
         <p className="success-refund-note">
           Questions about your order? Write to
           hello@myfengshuihome.com, or see the{" "}
-          <Link href="/legal">legal page</Link>.
+          <Link href="/legal">legal page</Link>. Not what you hoped for? The
+          7-day money-back guarantee has you covered.
         </p>
+      </section>
+
+      {/* Post-purchase upsell (W6). Calm, one step deeper, plus a free
+          goodwill asset. No pressure, no countdown. */}
+      <section className="success-next" aria-labelledby="success-next-h">
+        <h2 id="success-next-h">While you wait, two things worth having</h2>
+        <div className="success-next-grid">
+          <article className="success-next-card">
+            <h3>Read your whole home next</h3>
+            <p>
+              If you bought a single reading, the Complete Home Compass reads
+              everything for your Kua in one book: every room, every life
+              area, and the 2026 year. It is the deepest reading we make.
+            </p>
+            <p>
+              <Link
+                href="/products/complete-home-compass?from=success"
+                className="cta-secondary"
+              >
+                See the Complete Home Compass, $49
+              </Link>
+            </p>
+          </article>
+          <article className="success-next-card">
+            <h3>Your good days for 2026, free</h3>
+            <p>
+              A calendar of the traditionally favourable days for a move, a
+              start, or a reset, keyed to the year. Free, printable, yours to
+              keep.
+            </p>
+            <p>
+              <Link href="/good-days?from=success" className="cta-secondary">
+                Get the Good Days calendar
+              </Link>
+            </p>
+          </article>
+        </div>
       </section>
     </div>
   );
