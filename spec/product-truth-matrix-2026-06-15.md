@@ -80,3 +80,13 @@ Stripe state `launched`; page state `stripe-live`; Store `listed`; Meta $ `=`; R
   - `pick3` (rows 43, 44): three-choice form assembles + renders.
   - `course` (row 5): buy -> enrol + welcome email -> drip cron sends days 1-7; unsubscribe works.
 - **No test has been run for any family.** Running one purchase per family is the remaining verification before treating fulfilment as proven.
+
+## Addendum 2026-07-20
+
+Fulfilment verification: the owner confirmed on 2026-07-20 that live test
+purchases were run and delivery works ("I already tested and it is live and
+working"). The Test column's "untested" status above is superseded for the
+tested families; the funnel readout (scripts/funnel-readout.mjs) shows the
+3 test orders. Catalogue note: the shop shelf now lists 10 products
+(VISIBLE_SLUGS in lib/storefront.ts); everything else keeps a live URL but
+is delisted from the shelf.

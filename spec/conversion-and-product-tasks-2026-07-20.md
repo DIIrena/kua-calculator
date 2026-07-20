@@ -211,3 +211,24 @@ exist. profiles.marketing_opt_in exists (account page only). Lead magnet stores 
   README; /space verified already funneling topic-first.
 - C6 (2026-07-20): 2027 Planner waitlist block on the planner page via a new
   waitlist slug; launch email later targets exactly that segment.
+- P4 (2026-07-20): premium finishing layer in lib/pdf/template.ts: chapter-closing
+  hairlines, framed cover plate, and the cut-out keepsake card built from
+  BlockContext (zero per-product content cost). Smoke tests green.
+- P5 part 1 (2026-07-20): owner-gated preview pipeline: render-sample-previews.mjs
+  (five personalised recipes via the existing dev route, sample buyer Ana/Kua 8) +
+  build-bundle-cover.mjs (three real component covers fanned; review copy in
+  scripts/out/previews, --install after approval) + walkthrough. Learning: the dev
+  sample route already accepted ?product=, so the whole pipeline is fetch + save.
+- P6 (2026-07-20): optional comparison block in LandingConfig, populated for the
+  flagship: three tiers, honest registry-fact rows, highlighted $49 column,
+  per-page value math anchor.
+- P7 (2026-07-20): where-to-start pointer in both delivery emails (at-a-glance +
+  Start tonight for personalised; read-one-section for printables), HTML + text.
+- P8 (2026-07-20): the shop cards never rendered the registry one-liners (title +
+  price only - the live audit's "functionality unclear" verbatim). Cards now carry
+  sharpened outcome lines for all ten visible products. Also fixed C5 properly:
+  the shelf renders group membership, not the featured flag, so Good-Days joined
+  MOMENT_SLUGS. Learning: verify the RENDER path, not just the data path.
+- P9 (2026-07-20): spec/annual-refresh-2027.md (full 2027 map: what carries a 2026
+  stamp, who gets emailed, timeline) + truth-matrix addendum (fulfilment
+  owner-verified, shelf now 10 visible).
