@@ -63,6 +63,9 @@ const CORE: Omit<StoreProduct, "priceLabel">[] = [
       "243 days marked Action, Rest, Neutral, or Caution, as a printable PDF and a phone calendar file.",
     priceCents: 900,
     category: "printable",
+    // C5 (2026-07-20): the $9 impulse rung for cold shelf-first
+    // visitors; the featured row otherwise starts at $19.
+    featured: true,
   },
   {
     slug: "bedroom-reset",

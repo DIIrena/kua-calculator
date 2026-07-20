@@ -51,3 +51,14 @@ Then open http://127.0.0.1:4317 (override with `VP_DASHBOARD_PORT`). Stop with C
 - No fake testimonials. No fortune-telling language (no "activate", "manifest", "charge"), no outcome promises, no consultation language, no urgency.
 - Banned objects: Buddha statues, incense, red envelopes, coins, money trees, dragons, Chinese-character overlays, lucky bamboo, oranges the fruit, bagua mirrors, glowing or energy effects.
 - Generated diagrams and pins carry no baked-in title text; the owner sets type and final layout in Illustrator.
+
+## Pin links carry UTM parameters (C5, 2026-07-20)
+
+Every pin's destination link must be tagged so per-pin performance shows up
+in Vercel Analytics with zero code:
+
+`https://myfengshuihome.com/<page>?utm_source=pinterest&utm_campaign=<pin-name>`
+
+Use a short, stable `<pin-name>` slug per pin (for example
+`planner-243-days-v1`). The weekly funnel readout
+(spec/funnel-readout-guide.md) reads these out per campaign.
