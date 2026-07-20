@@ -12,6 +12,8 @@ The full name is *Jue Ming* (<span lang="zh-Hant">絕命</span>). What it descri
 
 Two things are true at once, and the chapter asks you to hold both. Of all the directions in your chart, this is the one most worth treating with care. And of all the directions in your chart, this is *still a direction*, the same kind of thing as the other seven.
 
+Its star name is **Po Jun, the Breaker**, and the tradition does not soften it: this is the most cautious of your eight directions. That is precisely why the classical assignment for it is containment, the bathroom, the storage, the rooms where nothing important anchors. A named danger with a settled job is not a threat; it is a solved problem.
+
 ## Give it this
 
 - **The bathroom.** The canonical tenant: it contains and disposes, and asks no one to linger.

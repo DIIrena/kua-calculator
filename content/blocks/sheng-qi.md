@@ -12,6 +12,8 @@ The tradition reads Sheng Qi as the direction of forward motion. Not relaxation.
 
 Three small rules have grown up around this direction. The bed whose headboard sits on the Sheng Qi wall is read as the energising bed. The seat that faces Sheng Qi is read as the seat with drive. The front door that opens toward it is read as an auspicious door. Of the three, only two are usually yours to change, and one of those turns on castors.
 
+In the older star vocabulary the tradition gives this direction a name of its own: **Tan Lang**, the Wolf star. The wolf is the hunter of the eight, the one that moves first and eats first, and that is exactly the character this direction carries. When you meet the year's flying stars later in this book, you are meeting the same family of names; the tradition describes one system through two vocabularies, and Sheng Qi is its most ambitious voice.
+
 ## Do this
 
 - **Turn your desk chair to face {{direction}}** for ambitious work: the long project, the difficult piece of writing, anything that needs a sustained push. The chair faces the direction; the desk can sit any way it likes. What the system reads is where your body looks.
@@ -20,6 +22,16 @@ Three small rules have grown up around this direction. The bed whose headboard s
 - **Aim your morning at it.** The spot where you stand for the first cup of the day, the window you look out of for the first thirty seconds: orient that corner so your body opens {{direction}}.
 
 {{deskPlacement}}
+
+## The wealth extension
+
+One modern practice lineage goes a step further with this direction and treats Sheng Qi as your **personal wealth direction**, extending it from where you face into how you move through the home. Three applications, in rising order of commitment:
+
+- **Enter through it when you can.** If your home has more than one way in, or your route to the door crosses the floor plan, favour the path that passes through your {{direction}} quadrant.
+- **Enter your working room through it.** Same idea one scale down: where the room has two approaches, take the one through the room's own {{direction}} portion.
+- **Put the desk IN the quadrant, not just facing the direction.** Stand in the middle of the room you work in, find {{direction}}, and place the desk inside that wedge of the room, with your body facing {{direction}} as before. This is the fullest version of the placement.
+
+The rule that makes the third application possible everywhere is worth knowing by name: **each room repeats the whole-house grid in miniature**. North in the house is north in every room of it, so your {{direction}} exists at room scale even when the house-scale {{direction}} sector belongs to the bathroom or the neighbour. If you rent a single room, this rule is why the whole system still works for you at full strength.
 
 ## Avoid this
 

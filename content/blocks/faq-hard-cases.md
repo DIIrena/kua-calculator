@@ -52,4 +52,33 @@ No walls between kitchen, living, and dining: where does one sector end and the 
 
 One clear move: place the seat you use most inside a favourable wedge, facing a favourable direction, and let the plan stay open around it.
 
+## "I was born in January, and calculators disagree about me"
+
+They disagree about the calendar, not about you. Your Kua comes from the *Chinese* year of your birth, and there are two conventions for where that year begins. This report uses the **Chinese New Year** date, which moves between late January and mid February. Classical compass lineages often use the solar term **Li Chun**, fixed around 4 February. Most years the two agree; some years they differ by days, and a birthday inside that gap gets a different year, so a different Kua, depending on the convention.
+
+- **The arithmetic is never the problem.** When two calculators disagree about a January or early-February birth, the year boundary is almost always the reason.
+- **A worked example:** someone born on 28 January 1990 belongs, for Kua purposes, to 1989 under both conventions, because both boundaries fall after that date in 1990.
+- **If your birthday sits in the gap** between 4 February and that year's Chinese New Year, run the free calculator once with your real birth date and once as if born the year before, and read both profiles. The honest tiebreak is the same seven-day test this book uses for everything else: give the disputed bed or seat a week under each reading and keep the one your own mornings vote for.
+
+One clear move: check the year boundary before doubting the reading. Boundary first, arithmetic second.
+
+## "I live in the southern hemisphere"
+
+A fair question with a genuinely split answer, and this book will not pretend otherwise.
+
+- **The flip school** points out that the classical map encodes northern skies: south means the midday sun, north means winter cold. Below the equator the midday sun is in the north, so this school swaps north and south to follow the real sun. A minority of southern practitioners work this way, seriously and consistently.
+- **The no-flip school** answers that compass feng shui is built on the earth's **magnetic field**, not the sun's path. A compass finds the same poles in Buenos Aires as in Beijing, so the system is one system worldwide. Notably, some manuals written *for* the southern hemisphere take exactly this position.
+- **This report follows the no-flip convention:** your directions are read from the magnetic compass, unflipped, worldwide. If you prefer the flip school, apply it consistently to everything. What does not work is mixing the two conventions in one home.
+
+One clear move: pick one convention, write it on your Room Map, and never mix.
+
+## "Another calculator gave me a different Kua"
+
+Two honest causes, in the order to check them.
+
+- **The year boundary first.** If you were born in January or early February, see the January case above; this explains nearly all disagreements.
+- **Formula variants second.** Lineages teach several arithmetic routes to the same eight profiles: one subtracts from ten, another from eleven on a different base; births from 2000 onward shift the digits again. Different-looking arithmetic that lands in the same classical Eight Mansions table is a variant, not an error.
+
+One clear move: when in doubt, ignore the number and compare the *directions*. Two correct calculators may narrate the arithmetic differently, but your four supportive and four cautious directions should come out the same.
+
 <p class="one-thing"><strong>If you only remember one rule from this chapter:</strong> when a home refuses one of this book's placements, the placement was never the point - the body was. Move the body's facing, soften what cannot move, and the system bends to any floor plan, shared, small, rented, or open.</p>

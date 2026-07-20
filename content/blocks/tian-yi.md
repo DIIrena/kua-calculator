@@ -12,6 +12,8 @@ Here is the line worth sitting with before you decide anything: in Classical pra
 
 The reasoning is plain. Most life is not a launch. Most weeks are the slow accumulation of a body that does laundry, goes to work, has feelings about its parents, catches a cold in October. The tradition reads the Sheng Qi bed as suited to a stretch of active pushing, and the Tian Yi bed as suited to the long ordinary stretches that make up most of a life. Neither ranks above the other. They belong to different **seasons**.
 
+The tradition's older name for this direction is **Ju Men, the Gate**. A gate is what lets the right things in and keeps the wrong things out, and that is the character of Tian Yi: recovery, stable wellbeing, and, the tradition adds, support from mentors older than you. Many practitioners rank this direction above Sheng Qi for one specific job, the bed, because a gate guards you best while you sleep.
+
 ## Do this
 
 - **Put the headboard on the {{direction}} wall** for ordinary seasons, so the top of your head points {{direction}} while you sleep. This is the single placement the tradition would set first in most homes.

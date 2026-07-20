@@ -12,6 +12,8 @@ The full name is *Wu Gui* (<span lang="zh-Hant">五鬼</span>), and it marks a *
 
 It helps to say what this is not. Your Wu Gui wall is not the reason a conversation went badly or a quiet evening turned tense. Those have ordinary causes: acoustics, tiredness, a hard week, a chair that puts someone's back to the door. The compass does not explain your relationships. It only tells you which wall the tradition would rather you used lightly.
 
+The star behind this direction is **Lian Zhen**, and its classical file is the least flattering of the eight: arguments, betrayal, hidden friction. One more thing belongs in this chapter for honesty's sake. You may someday meet the phrase **Five Ghosts Transport Fortune** (Wu Gui Yun Cai): a real, lineage-transmitted advanced technique that deliberately activates this direction under strict conditions in pursuit of rapid wealth. It exists, it is not a contradiction of this chapter, and it is not a beginner's tool. The working rule for this book stays what it is: give Wu Gui the storage, not the seat.
+
 ## Give it this
 
 - **Laundry**, the hamper, the airing rack.

@@ -12,6 +12,8 @@ The full name is *Yan Nian* (<span lang="zh-Hant">延年</span>), literally **"l
 
 Hold the claim loosely, because it is small and testable. Some configurations of body and direction are *said to* make the conversations that build connection feel slightly easier. You cannot prove a seat lengthened a friendship. You can notice, over a season, whether a corner became the one your household keeps returning to.
 
+In the star vocabulary this direction is **Wu Qu, the Military star**. The name sounds severe until you remember what long campaigns actually require: loyalty, endurance, and people who hold the line beside you for years. That is why the tradition hands Yan Nian the marriage bed, the dining table, and every seat where a bond matters more than a victory.
+
 ## Do this
 
 - **Point a couple's shared headboard at the {{direction}} wall**, so both heads rest toward it. Where Tian Yi is the healing headboard, Yan Nian is the relationship one: the orientation the tradition ties to a partnership ageing well, rather than to waking sharp.

@@ -6,7 +6,9 @@ Everything after this page assumes you can stand in your own home and point at y
 
 ## What you need
 
-- **A compass.** The compass app on your phone is enough. A physical compass is even better, because phones can be nudged by wiring and appliances. Either way, take your reading a step away from the fridge, the TV, and anything with a motor in it, and if the number looks unsteady, take three readings and use the middle one.
+- **A compass.** The compass app on your phone is enough. A physical compass is even better, because phones can be nudged by wiring and appliances. Take your reading a step away from the fridge, the TV, and anything with a motor in it, and keep the compass away from your phone, your belt buckle, and the building's metal fittings while you read.
+
+When a reading matters, use the field protocol practitioners use. Take **three readings along the same wall**: far left, far right, and centre, standing the same distance out from the wall each time. The reason is honest physics: reinforced concrete, parked cars, and buried services all bend a magnetic bearing locally, and three points reveal what one point hides. If the three agree, any of them serves. **If they disagree, use the centre reading.**
 - **Paper and a pencil.** A rough sketch, not a blueprint. Boxes for rooms.
 - **Twenty quiet minutes.** Walk it alone the first time. It goes faster and you notice more.
 
@@ -36,7 +38,7 @@ Look at the example above and then at your own sketch. You are looking for the s
 
 ## Step 5: Read one room closely
 
-The whole-home view tells you which rooms sit where. For furniture moves you also want the room-level view, and it works exactly the same way. Stand in the middle of your bedroom, find north again, and name the four walls. Now the sentences in the chapters ahead become physical. "The headboard on your {{tianYiDir}} wall" stops being an idea and becomes *that wall, the one with the picture on it*.
+The whole-home view tells you which rooms sit where. For furniture moves you also want the room-level view, and it rests on a rule worth knowing by name: **each room repeats the whole-house grid in miniature**. North in the house is north in every room of it, and so is every other direction. This is the rule that makes the system renter-proof: even when you control a single room, all eight of your directions exist inside it at full strength. Stand in the middle of your bedroom, find north again, and name the four walls. Now the sentences in the chapters ahead become physical. "The headboard on your {{tianYiDir}} wall" stops being an idea and becomes *that wall, the one with the picture on it*.
 
 Do the same in the room where you work. Those two rooms, the bedroom and the workroom, carry most of what this book will ask you to do.
 

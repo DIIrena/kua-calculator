@@ -26,7 +26,7 @@ The last chapter gives you one structured seven-day experiment to start with. Fo
 
 ## Two small notes before you start
 
-**The Chinese New Year wrinkle.** Your Kua is calculated from your *Chinese solar-calendar* year, which can differ from the Gregorian year if you were born in January or early February. If you were born before Chinese New Year of your birth year, your Kua belongs to the previous year. The calculation in this guide already accounts for that if a full birth date was given.
+**The January wrinkle.** Your Kua is calculated from the *Chinese* year, which can differ from the Gregorian year if you were born in January or early February. This report uses the Chinese New Year boundary: born before that year's New Year date, your Kua belongs to the previous year, and the calculation has already accounted for it. Some classical lineages anchor the year to the solar term Li Chun, around 4 February, instead; the two boundaries usually agree and occasionally differ by days. If you have ever seen two calculators disagree about a January birthday, that boundary is almost always the reason, and the hard-cases chapter near the end gives the full answer.
 
 **The rest of your household.** This guide is read for you. If you live with a partner, a child, a parent, or a housemate, each has their own Kua and their own four-and-four directions. You can compute any of them, free, in ten seconds at *myfengshuihome.com*. The hard-cases chapter near the end gives the working rules for a shared home, and the Couple Compatibility Compass reads two full charts together.
 

@@ -12,6 +12,8 @@ The tradition associates Huo Hai with low-grade friction: misplaced keys, a drau
 
 Most homes already have a corner like this. Many households have been using it well for years without a name for what they were doing.
 
+Its star name is **Lu Cun**, and among the four cautious directions this is the mildest, what practitioners sometimes call the best of the bad four. The tradition reads it as the direction of small frictions rather than large ones: the low-level setback, the minor irritation. That mildness is useful; when a floor plan forces a compromise, this is the cautious direction you compromise with first.
+
 ## Give it this
 
 - **Storage.** Cupboards, closets, the seasonal coats, the boxes of decorations, the cables you keep meaning to sort.

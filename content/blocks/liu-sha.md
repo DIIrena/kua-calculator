@@ -12,6 +12,8 @@ The tradition files under this direction the felt-qualities of **broken plans**,
 
 On the gradient of the four cautious directions, Liu Sha sits in the middle: a touch sharper than Huo Hai and Wu Gui, which you have read, and milder than Jue Ming, which comes next.
 
+The tradition's star name for this direction is **Wen Qu**. Its classical associations run to entanglements: disputes that grow legs, volatility that feeds on attention. The practical reading is simple: this is not a direction to anchor anything important to, and it is a perfectly good direction for the functions of a home that need no anchor at all.
+
 ## Give it this
 
 - **Hallways and corridors.** A {{direction}} hallway is the highest use of this sector in many homes: it carries you through without asking you to stay.

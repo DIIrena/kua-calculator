@@ -10,6 +10,8 @@ The full name is *Fu Wei* (<span lang="zh-Hant">伏位</span>), usually glossed 
 
 The four supportive directions are not rungs of a ladder; they are four **functions**. Sheng Qi does the visible, ambitious work. Tian Yi does the recovery. Yan Nian keeps the connections. Fu Wei does none of that loud work. The tradition associates it with calm, deep focus, and self-knowledge: the slow, unhurried attention that does not announce itself. People already name this direction without the word. The reader calls it *their chair*. The writer calls it *their desk*. The student calls it the corner of the library where the work moves in a way it does not move at the kitchen table.
 
+The old star name here is **Fu Bi, the Assistant pair**: two quiet helpers rather than one loud hero, which tells you the register this direction works in. There is also a detail worth savouring in how Fu Wei is derived: it is the one direction produced by changing nothing at all. Your own trigram, unaltered, is Fu Wei. Stability is what you are before anything is added. And in a house that matches your group, this direction tends to fall in the house's own sitting quadrant, the quadrant its back rests in, which is why the tradition treats home base and stability as one idea.
+
 ## Do this
 
 - **Turn the study desk to face {{direction}}** if your main output is produced over weeks rather than days. The chair, not the desk, is what the system reads. A solid wall behind you helps; a window to the side rather than straight ahead helps too.
