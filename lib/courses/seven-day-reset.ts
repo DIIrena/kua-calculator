@@ -130,6 +130,8 @@ That is the whole task. A few quiet minutes of moving air, nothing more. Tomorro
 
 The good news is that the bedroom asks for less doing, not more. The work here is mostly about taking things away and letting the room go quiet.
 
+One rule before any furniture moves, today and every day after: physical problems outrank symbolic refinements. A sharp corner at the head of the bed, a door that cannot open fully, a blocked path: fix those first, always. If a "better" position would trade a real, felt problem for a theoretical gain, decline the trade.
+
 ## Where the bed sits
 
 There is one idea that does most of the work, and it is about the bed.
@@ -228,6 +230,8 @@ Then look at the surface itself. Months of cooked-on splatter make the stove fee
 
 So give it a proper wipe. The burners, the grates or rings, the knobs, the surround. Take your time with one stretch of it rather than rushing the whole thing.
 
+Then adopt the tradition's smallest kitchen habit: use the stove daily, even briefly, and rotate which burners you use so all of them work and all of them see use. The tradition reads the stove as the home's prosperity engine, and an engine that runs daily reads as wealth in motion; the mundane half is that a stove used daily stays clean, functional, and noticed. And if your stove and sink face each other directly across the kitchen, the old fire-and-water standoff, the renter-safe buffer is a visually distinct mat on the floor between them, or a small faceted crystal hung midway.
+
 ## Clear one stretch of counter
 
 Kitchen counters collect things. Mail, a charger, the appliance you used last week, a few jars that never went back. A buried working surface is a kitchen that has gone a little stagnant, and the practical version is just as real: you have nowhere to actually cook.
@@ -282,6 +286,8 @@ Naming it is half the work. Once you see it as a stalled spot rather than just "
 Now walk your most-used route through the home, slowly. Notice where you turn sideways, step over something, or nudge a box with your foot without thinking. A door that only opens partway, a bag parked at the bottom of the stairs, a basket narrowing a hallway: these are the places where movement gets pinched, and a door that cannot swing fully is one of the clearest examples.
 
 You stop noticing these snags. The point of today is to notice one of them again.
+
+Here is the one-minute tool for that, worth keeping long after this course: stand in a room's doorway and answer four questions. What blocks the path? What does the seat or bed look at? What has not moved in a year? Which corner does the eye avoid? The room's answers are your to-do list, and the audit costs sixty seconds.
 
 ## Why a small clearance, not a purge
 

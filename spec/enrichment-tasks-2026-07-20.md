@@ -8,20 +8,20 @@ free-update-to-buyers is standing policy for the future. prd.json OFF LIMITS
 commit -> one Log line. Practitioner voice + five-point satisfaction standard
 govern every task. Zero em dashes, zero outcome promises.
 
-- [ ] ENR-001 Ladder core: 8 direction blocks (wandering-star identities, sheng-qi
+- [x] ENR-001 Ladder core: 8 direction blocks (wandering-star identities, sheng-qi
       micro-applications, fu-wei anchor, wu-gui depth signal), find-your-directions +
       how-to-use (3-reading protocol, room-as-microcosm), faq-hard-cases (+3 answers),
       year-overlay tripled. Test renders: personal + nine-pillars; bands updated.
-- [ ] ENR-002 house-match NEW block + extended-personal-kua + complete-home recipes +
+- [x] ENR-002 house-match NEW block + extended-personal-kua + complete-home recipes +
       flagship comparison row + renders + bands.
-- [ ] ENR-003 Rooms pass: room-bedroom/desk/dining, space-kitchen/entrance/bathroom/
+- [x] ENR-003 Rooms pass: room-bedroom/desk/dining, space-kitchen/entrance/bathroom/
       hallway/balcony, compatibility. Twelve-spaces render + bands.
-- [ ] ENR-004 Move-in template: premise lineage, Tai Sui cautions, personal timing.
-- [ ] ENR-005 Business Kit silent second edition in annual-feng-shui-planner +
+- [x] ENR-004 Move-in template: premise lineage, Tai Sui cautions, personal timing.
+- [x] ENR-005 Business Kit silent second edition in annual-feng-shui-planner +
       Start-here page + storefront scorecard worksheet + ending card + rebuild.
-- [ ] ENR-006 home-diagnostic-workbook + (ritual pack if non-padding) + cures
+- [x] ENR-006 home-diagnostic-workbook + (ritual pack if non-padding) + cures
       expanded at $9, each with Start-here + ending card; rebuilds.
-- [ ] ENR-007 Course day-fit insertions (forms-first, stove/fire-water, doorway audit).
+- [x] ENR-007 Course day-fit insertions (forms-first, stove/fire-water, doorway audit).
 - [ ] ENR-008 Experience gate: five-point test x9, delivery-email pointer alignment,
       hygiene scripts, before/after table, CLAUDE.md products fix.
 - [ ] ENR-009 Preview refresh: re-render the five sample PDFs from enriched content
@@ -79,3 +79,29 @@ govern every task. Zero em dashes, zero outcome promises.
   card ending. 8.4k -> 10.7k words; PDF rebuilt 42 pages via the planner
   pipeline; page-30 render spot-checked (typography + brand rules clean). Silent
   update per owner decision. Owner uploads the rebuilt PDF at the gate.
+- ENR-006 (2026-07-21): all three bundle components deepened at $9, planner
+  pipeline rebuilds green. Cures Catalogue 8,230 words / 25 pages: candle
+  number-and-colour code, Pa Kua two-logics reconciliation (mechanism vs source
+  reading, gentlest-option tiebreak), six new symbol cards (Qilin, dragon-headed
+  turtle, money cat honesty card, dragon-phoenix pair rule, prosperity bowl incl.
+  the bathroom-in-wealth-sector counterweight, doubling mirrors), the money
+  frog's morning/evening working day, numbers-and-shapes reference card,
+  catalogue-on-one-card ending. Diagnostic Workbook 6,775 words / 28 pages:
+  forms-first governing law up front, sixty-second doorway audit as the first
+  win, missing-corner decision kit (proportional test, longer-segment rule,
+  additions convention), sha distance heuristic (close-and-straight-on rule).
+  Ritual Pack 3,638 words / 13 pages: staged whole-home method (surfaces first,
+  one room per session) + clean-then-intention sequencing law. Learning: the
+  ritual pack took only what was non-padding; its small size is honest, the
+  staging method was the one genuinely missing piece. Owner uploads all three
+  rebuilt PDFs at the gate; no kua-calculator code changed in this task.
+- ENR-007 (2026-07-21): three day-fit insertions into the Seven-Day Reset course
+  (lib/courses/seven-day-reset.ts). Day 3 bed day: the forms-first rule stated
+  as a standing law before any furniture advice. Day 5 kitchen day: stove-daily
+  habit with burner rotation ("wealth in motion" reading + the mundane half) and
+  the renter-safe fire-water buffer for stove-sink standoffs. Day 6 clutter day:
+  the sixty-second doorway audit as a keep-forever tool. Build green. Learning:
+  the course bodies already carried the mundane-first voice, so each insertion
+  needed the tradition's reading AND the practical half in one breath to fit;
+  single-paragraph insertions at existing anchors kept every day's one-task
+  shape intact.
