@@ -287,6 +287,7 @@ export function buildMoveInHtml(data: MoveInData): string {
     <li><strong>San Sha, the Three Killings,</strong> covers a full quarter of the compass. Its rule is memorable: you may face it, but you must not have it at your back, and you do not renovate in it.</li>
   </ul>
   <p>Two softeners keep this practical. Exposure scales with activity: a home that merely contains an afflicted sector feels it far less than one whose front door faces it. And there is a classical workaround for work that cannot wait: <strong>start the project before the solar year turns at Li Chun, in early February.</strong> A renovation already underway when the new positions arrive is not a fresh disturbance; the January start under the outgoing year's positions is the traditional escape. Where these three positions sit in the current year is mapped, sector by sector, in the year's Feng Shui Planner.</p>
+  <p>One last piece of timing counsel the tradition applies to every big beginning, moves included: the calendar is only half the timing. Launching a major change in the middle of a family health crisis or an unstable stretch at home is read as building on disturbed ground, which is metaphysics and plain good sense saying the same thing. If the household is mid-storm, a favourable date does not outrank waiting for the water to settle.</p>
 </section>
 
 <section class="section">

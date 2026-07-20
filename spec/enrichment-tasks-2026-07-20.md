@@ -67,3 +67,6 @@ govern every task. Zero em dashes, zero outcome promises.
   treads; balcony the four-part garden recipe; compatibility three couple
   refinements. Both smoke suites green (a transient double-run crash earlier
   resolved on rerun). Twelve-spaces band measured at the gate.
+- ENR-004 complete (2026-07-21): the ch22 personal-timing counsel landed as the
+  closing paragraph of the renovation section (calendar is half the timing;
+  disturbed-ground counsel). Build green. ENR-004 done.
