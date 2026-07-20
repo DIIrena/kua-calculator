@@ -337,12 +337,40 @@ export default function CalculatorIsland({
           </p>
         </article>
 
-        {/* The flagship card reuses .post-result-card-compass so the existing
-            embed CSS (.post-result-stack--embed .post-result-card-compass)
-            hides it on /embed without a stylesheet change. */}
+        {/* The Compass offer, personalised to the result the reader just
+            saw (W5). ui.js fills the data-bind="kua-offer" line with their
+            own Kua + group after a successful calculation; it stays hidden
+            until then and on server render. Both compass cards carry
+            .post-result-card-compass so the existing embed CSS hides them on
+            /embed without a stylesheet change. */}
+        <article
+          className="post-result-card secondary post-result-card-compass post-result-card-offer"
+          aria-label="Personal Feng Shui Compass"
+        >
+          <h3 className="post-result-card-heading">
+            Your Personal Feng Shui Compass, $19.
+          </h3>
+          <p className="post-result-card-kua" data-bind="kua-offer" hidden></p>
+          <p className="post-result-card-body">
+            You now have your four supportive directions and your four to
+            handle with care. The Compass reads them for your Kua: which wall
+            the headboard wins, which way the desk faces, and a seven-day way
+            to test one change. Emailed within about a minute, with a 7-day
+            money-back guarantee.
+          </p>
+          <p className="post-result-card-actions">
+            <a
+              href="/products/personal-feng-shui-compass?from=kua-calculator"
+              className="cta-primary"
+            >
+              See the Compass, $19
+            </a>
+          </p>
+        </article>
+
         <article className="post-result-card secondary post-result-card-compass post-result-card-planner">
           <h3 className="post-result-card-heading">
-            The Complete Home Compass.
+            The whole home, read as one system.
           </h3>
           <p className="post-result-card-body">
             Your directions are the first layer. The Complete Home Compass
@@ -354,29 +382,7 @@ export default function CalculatorIsland({
               href="/products/complete-home-compass?from=kua-calculator"
               className="cta-secondary"
             >
-              See the Complete Home Compass
-            </a>
-          </p>
-        </article>
-
-        <article
-          className="post-result-card secondary post-result-card-compass"
-          aria-label="Personal Feng Shui Compass"
-        >
-          <h3 className="post-result-card-heading">
-            Your Personal Feng Shui Compass.
-          </h3>
-          <p className="post-result-card-body">
-            A short printable book keyed to your Kua and your eight
-            personal directions: the four that support you, the four to
-            handle with care, and a seven-day way to test the placement.
-          </p>
-          <p className="post-result-card-actions">
-            <a
-              href="/products/personal-feng-shui-compass?from=kua-calculator"
-              className="cta-secondary"
-            >
-              See the Compass
+              See the Complete Home Compass, $49
             </a>
           </p>
         </article>

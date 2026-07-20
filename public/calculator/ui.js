@@ -279,7 +279,7 @@
       var occ2 = (o2.data && o2.hasInput && o2.data.yearRaw && o2.data.gender) ? buildOccupant(o2.data) : null;
       renderResult(occ1, occ2);
       revealSaveChartCta(occ1);
-      revealPostResultCta();
+      revealPostResultCta(occ1);
     } catch (err) {
       showError("date-1", err.message || "Sorry, something went wrong. Check your inputs and try again.");
     }
@@ -309,7 +309,7 @@
   // minimal and tracker-free. Detection looks for data-embed="true" on
   // main#main (set by app/embed/layout.tsx). No fetch / XHR / beacon
   // is introduced here; the file stays vanilla and tracker-free.
-  function revealPostResultCta() {
+  function revealPostResultCta(occ1) {
     var stack = document.getElementById("post-result-cta");
     if (!stack) return;
     stack.hidden = false;
@@ -317,6 +317,16 @@
     var isEmbed = mainEl && mainEl.dataset && mainEl.dataset.embed === "true";
     if (isEmbed) {
       stack.classList.add("post-result-stack--embed");
+    }
+    // Personalise the Compass offer line with the reader's own result
+    // (W5, 2026-07-20 conversion review). This only reads occ1, which was
+    // computed in the browser; nothing is sent anywhere. No fetch/XHR/beacon.
+    var offerLine = stack.querySelector("[data-bind='kua-offer']");
+    if (offerLine && occ1) {
+      var groupLabel = occ1.group === "east" ? "East group" : "West group";
+      offerLine.textContent =
+        "You are Kua " + occ1.kua + ", " + groupLabel + ".";
+      offerLine.hidden = false;
     }
   }
 
