@@ -154,10 +154,10 @@ export default function ProductLanding({
           ) : null}
           <p className="landing-hero-cta">
             <a href="#buy" className="cta-primary cta-buy">
-              Get it, {c.priceLabel}
+              Get it
             </a>
             <span className="landing-cta-note">
-              One-time. Emailed within about a minute.
+              {c.priceLabel}, one-time. Emailed within about a minute.
             </span>
           </p>
           <TrustRow className="landing-hero-trust" />
@@ -260,8 +260,9 @@ export default function ProductLanding({
         </ol>
         <p className="landing-mid-cta">
           <a href="#buy" className="cta-primary cta-buy">
-            Get it, {c.priceLabel}
+            Get it
           </a>
+          <span className="landing-cta-note">{c.priceLabel}, one-time.</span>
         </p>
       </section>
 

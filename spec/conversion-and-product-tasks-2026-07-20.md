@@ -249,3 +249,10 @@ exist. profiles.marketing_opt_in exists (account page only). Lead magnet stores 
   carries a FREE Good-Days card as the cold-traffic entry instead. Learning:
   check redirects before relisting a delisted product; the registry entry alone
   does not tell the strategy.
+- Owner refinement (2026-07-20 evening): buy buttons centered on the page and
+  price moved OUT of the button label into the adjacent note ("Get it" + "$19,
+  one-time" beneath). Applied to the ProductLanding hero + mid CTA, the BuyButton
+  block (price, trust, button, note now centered), and the calculator compass
+  card ("See the Compass"; the card heading already states the price). This
+  supersedes the earlier "price visible at every CTA" template rule: the price
+  stays visible AT the CTA, no longer INSIDE it.
