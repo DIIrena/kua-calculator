@@ -6,6 +6,11 @@ import FlagshipChooser, { type Flagship } from "@/components/FlagshipChooser";
 import { autolinkProducts } from "@/components/autolinkProducts";
 import { TrustRow, GuaranteeNote } from "@/components/TrustRow";
 import SocialProof from "@/components/SocialProof";
+import {
+  testimonialsForProduct,
+  averageRating,
+  ratedCount,
+} from "@/lib/testimonials";
 
 // The long-form landing template (shop-redesign Phase B). One component,
 // one content config per product, so copy revisions land everywhere at
@@ -71,6 +76,36 @@ export default function ProductLanding({
       acceptedAnswer: { "@type": "Answer", text: qa.a },
     })),
   };
+  // Ratings schema is emitted ONLY from real, rated reviews. When none exist
+  // the aggregateRating/review fields are omitted entirely, so Google never
+  // sees a fabricated star snippet.
+  const productReviews = testimonialsForProduct(c.slug);
+  const avgRating = averageRating(productReviews);
+  const nRated = ratedCount(productReviews);
+  const ratingFields =
+    avgRating !== null && nRated > 0
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: avgRating.toFixed(1),
+            reviewCount: String(nRated),
+            bestRating: "5",
+            worstRating: "1",
+          },
+          review: productReviews
+            .filter((t) => typeof t.rating === "number")
+            .map((t) => ({
+              "@type": "Review",
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: String(t.rating),
+                bestRating: "5",
+              },
+              author: { "@type": "Person", name: t.attribution },
+              reviewBody: t.quote,
+            })),
+        }
+      : {};
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -83,6 +118,7 @@ export default function ProductLanding({
       availability: "https://schema.org/InStock",
       url: `https://myfengshuihome.com/products/${c.slug}`,
     },
+    ...ratingFields,
   };
 
   return (

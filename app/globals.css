@@ -7964,3 +7964,47 @@ a:hover { color: var(--clay-deep); }
   line-height: 1.55;
   color: var(--ink-2);
 }
+
+/* Star ratings on social proof. Real reviews only; the component omits the
+   stars entirely when a review carries no genuine rating. */
+.stars {
+  display: inline-flex;
+  gap: 1px;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.stars .star {
+  color: #d9d3c4; /* empty star: pale sand */
+}
+.stars .star--on {
+  color: #e0a615; /* filled star: warm gold, distinct from the clay CTA */
+}
+.social-proof-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.9rem;
+  margin-bottom: 0.9rem;
+}
+.social-proof-head h2 {
+  margin: 0;
+}
+.social-proof-aggregate {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+}
+.social-proof-aggregate .stars {
+  font-size: 1.05rem;
+}
+.social-proof-aggregate-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.social-proof-item blockquote .stars {
+  display: block;
+  margin-bottom: 0.5rem;
+}

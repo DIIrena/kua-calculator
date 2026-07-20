@@ -33,9 +33,20 @@ Open `lib/testimonials.ts` and append to the `TESTIMONIALS` array:
 {
   quote: "Their exact words, verbatim, nothing added.",
   attribution: "Maja, bought the Complete Home Compass",
+  rating: 5, // ONLY the number they actually gave; omit if they gave none
   productSlug: "complete-home-compass", // omit for a general brand quote
 },
 ```
+
+- `rating` present -> the review shows a visible star row on the page, and the
+  product page emits honest AggregateRating schema (so Google can show star
+  snippets). Record only the rating the reader genuinely gave; if they sent a
+  sentence but no number, omit `rating` rather than assuming five. An empty list
+  emits no stars and no schema.
+- **The delivery emails now ask automatically.** Every static and personalised
+  delivery email ends with a calm, optional "a sentence, and a rating out of 5 if
+  you like, just reply" note. Replies land in hello@myfengshuihome.com; you paste
+  the genuine ones (with their number) into the array above.
 
 - `productSlug` present -> the quote shows on that product page (and any general
   quote also shows there).

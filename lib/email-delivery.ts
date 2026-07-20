@@ -40,6 +40,28 @@ function linkButton(href: string, label: string): string {
   return `<p style="margin:14px 0 0;"><a href="${href}" style="display:inline-block;background:#0e3b2c;color:#ffffff;text-decoration:none;font:600 15px sans-serif;padding:13px 26px;border-radius:999px;">${label}</a></p>`;
 }
 
+// Review request appended to delivery emails (2026-07-20). The single
+// fastest, most honest way to get real reviews: ask the buyer who now has
+// the product in hand. Reply-to-email keeps it frictionless and consented;
+// the owner records genuine replies (with the reader's rating) into
+// lib/testimonials.ts. No incentive is stated here, no pressure, and it is
+// explicitly optional, so nothing about it is deceptive or coercive.
+function reviewRequestHtml(): string {
+  return `<div style="margin:26px 0 0;padding:16px 18px;background:#f2f2ee;border-radius:10px;">
+    <p style="margin:0 0 6px;font:600 15px sans-serif;color:#0e3b2c;">One small favour, if it was useful</p>
+    <p style="margin:0;font:14px/1.6 sans-serif;color:#4f5b53;">If this helped you decide something about your home, I would love a sentence on what it was, and a rating out of 5 if you like. Just reply to this email. Real notes from readers help other people more than anything else we can say, and it is always optional.</p>
+  </div>`;
+}
+
+function reviewRequestText(): string {
+  return [
+    "One small favour, if it was useful:",
+    "If this helped you decide something about your home, I would love a",
+    "sentence on what it was, and a rating out of 5 if you like. Just reply",
+    "to this email. Always optional.",
+  ].join("\n");
+}
+
 export function buildStaticDeliveryEmail(input: {
   productTitle: string;
   links: Array<{ url: string; label: string }>;
@@ -60,6 +82,7 @@ export function buildStaticDeliveryEmail(input: {
     <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">Thank you for the purchase. Your files are below. The links work for 7 days; if one expires, reply to this email and we send a fresh one.</p>
     ${linksHtml}
     ${crossSellHtml}
+    ${reviewRequestHtml()}
   `);
 
   const text = [
@@ -73,6 +96,8 @@ export function buildStaticDeliveryEmail(input: {
     input.crossSellLine
       ? `\n${input.crossSellLine.text} ${input.crossSellLine.url}`
       : "",
+    "",
+    reviewRequestText(),
     "",
     "Questions? Just reply to this email.",
     `${BRAND} - myfengshuihome.com`,
@@ -120,6 +145,7 @@ export function buildPersonalizedDeliveryEmail(input: {
     <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#0e3b2c;">Your ${input.productTitle} is ready.</h1>
     <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">It is keyed to your Kua number, with your name on the cover. The link works for 7 days; if it expires, reply to this email and we send a fresh one. If you sign in with this email address, the file also stays on your account page.</p>
     ${linkButton(input.downloadUrl, "Download my PDF")}
+    ${reviewRequestHtml()}
   `);
 
   const text = [
@@ -130,6 +156,8 @@ export function buildPersonalizedDeliveryEmail(input: {
     `Download: ${input.downloadUrl}`,
     "",
     "The link works for 7 days. Reply to this email for a fresh one.",
+    "",
+    reviewRequestText(),
     "",
     "Questions? Just reply to this email.",
     `${BRAND} - myfengshuihome.com`,
