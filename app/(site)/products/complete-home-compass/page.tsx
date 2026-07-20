@@ -127,6 +127,7 @@ const CONFIG: LandingConfig = {
       { feature: "All twelve rooms, chapter by chapter", included: [false, true, true] },
       { feature: "All nine life areas, chapter by chapter", included: [false, false, true] },
       { feature: "East and West group compatibility", included: [false, false, true] },
+      { feature: "Your home's own House Trigram match", included: [false, false, true] },
       { feature: "The 2026 overlay for your Kua", included: [false, false, true] },
       { feature: "Seven-day experiment with a printable log", included: [true, true, true] },
       { feature: "Cut-out keepsake card of your directions", included: [true, true, true] },

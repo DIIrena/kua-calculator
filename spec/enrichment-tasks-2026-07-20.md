@@ -42,3 +42,10 @@ govern every task. Zero em dashes, zero outcome promises.
   fact-check against lib/cny.ts caught a would-be honesty bug: the library teaches
   the solar boundary but the product computes lunar CNY; the copy now states OUR
   convention instead of parroting the library's.
+- ENR-002 (2026-07-20): NEW house-match block (~1000 words, practitioner voice,
+  house-reading worksheet, one-thing closer) inserted after jue-ming in both the
+  extended-personal-kua and complete-home recipes; flagship comparison table gains
+  the House Trigram match row (flagship-only tick). Smoke tests + site build green.
+  Learning: the loud-fail insertion script caught the CRLF anchor mismatch
+  immediately; recipe edits went through the Edit tool instead, which is now the
+  standing rule for TS files in this repo.
