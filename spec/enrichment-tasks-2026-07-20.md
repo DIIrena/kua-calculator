@@ -22,9 +22,9 @@ govern every task. Zero em dashes, zero outcome promises.
 - [x] ENR-006 home-diagnostic-workbook + (ritual pack if non-padding) + cures
       expanded at $9, each with Start-here + ending card; rebuilds.
 - [x] ENR-007 Course day-fit insertions (forms-first, stove/fire-water, doorway audit).
-- [ ] ENR-008 Experience gate: five-point test x9, delivery-email pointer alignment,
+- [x] ENR-008 Experience gate: five-point test x9, delivery-email pointer alignment,
       hygiene scripts, before/after table, CLAUDE.md products fix.
-- [ ] ENR-009 Preview refresh: re-render the five sample PDFs from enriched content
+- [x] ENR-009 Preview refresh: re-render the five sample PDFs from enriched content
       into scripts/out/previews for the owner's imagery review.
 
 ## Log
