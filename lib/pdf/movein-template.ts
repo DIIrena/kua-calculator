@@ -249,6 +249,7 @@ export function buildMoveInHtml(data: MoveInData): string {
 <section class="section">
   <h1>Reading your window</h1>
   <p>This report reads the move-in window you gave us, ${escapeHtml(data.window.startLabel)} to ${escapeHtml(data.window.endLabel)}, against the verified day calendar for the 2026 solar year. For each day it gives a plain reading: a day the tradition treats as favourable for a move, one good for settling rather than starting, an ordinary day, or one to handle with care.</p>
+  <p>One thing worth knowing about why the move-in date matters at all. Most classical lineages date a building's chart from its construction; a respected teaching line (the Yap Cheng Hai school among them) dates it from the day the occupants move in, on the reasoning that new occupants are a new configuration of heaven, earth, and person, and therefore new qi. On that reading, the day you carry your life through the door is not an errand. It is the founding date of the home you are about to live in, which is exactly why it deserves the deliberate choice this report exists to give you.</p>
   ${data.clamped ? `<p>Part of the window you entered falls outside the dates this report covers (July 2026 to February 2027), so the reading below is for the portion that overlaps.</p>` : ""}
   <p class="pull-quote">Pick a favourable day if one falls when you can move. If not, a settling or ordinary day is fine, and the activation steps matter more than the date.</p>
   <p class="legend"><strong>Favourable</strong>: good for a move, a start, an opening. &nbsp; <strong>Settling</strong>: good for consolidating, not new starts. &nbsp; <strong>Neutral</strong>: an ordinary day. &nbsp; <strong>Caution</strong>: handle a major move with care.</p>
@@ -275,6 +276,17 @@ export function buildMoveInHtml(data: MoveInData): string {
   <p>You are Kua ${data.kua}, the ${groupLabel}. These are the four directions the tradition reads as supportive for you. As you set up the new home, give the bed, the main work seat, and the chairs that matter to these directions where the layout allows.</p>
   ${directionsTable(data.favourable)}
   <p>Your four cautious directions are ${data.cautious.map((d) => escapeHtml(d.compassLabel)).join(", ")}. These are the corners to hand to storage, the wardrobe, the bathroom, and the laundry rather than the bed or the main desk. They are lower-priority placements, not problems.</p>
+</section>
+
+<section class="section">
+  <h1>If you are also renovating</h1>
+  <p>Moves and renovations travel together, so this page belongs in your report even if the tools stay in their box this year. The tradition names three positions each year that share one instruction: do not disturb them with major building work.</p>
+  <ul>
+    <li><strong>Tai Sui, the Grand Duke,</strong> occupies a narrow sector matching the year's zodiac animal. No ground-breaking, demolition, or heavy renovation there during its year.</li>
+    <li><strong>Sui Po, the Year Breaker,</strong> is always the sector directly opposite Tai Sui, under the same instruction.</li>
+    <li><strong>San Sha, the Three Killings,</strong> covers a full quarter of the compass. Its rule is memorable: you may face it, but you must not have it at your back, and you do not renovate in it.</li>
+  </ul>
+  <p>Two softeners keep this practical. Exposure scales with activity: a home that merely contains an afflicted sector feels it far less than one whose front door faces it. And there is a classical workaround for work that cannot wait: <strong>start the project before the solar year turns at Li Chun, in early February.</strong> A renovation already underway when the new positions arrive is not a fresh disturbance; the January start under the outgoing year's positions is the traditional escape. Where these three positions sit in the current year is mapped, sector by sector, in the year's Feng Shui Planner.</p>
 </section>
 
 <section class="section">

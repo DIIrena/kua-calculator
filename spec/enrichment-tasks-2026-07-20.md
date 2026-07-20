@@ -49,3 +49,11 @@ govern every task. Zero em dashes, zero outcome promises.
   Learning: the loud-fail insertion script caught the CRLF anchor mismatch
   immediately; recipe edits went through the Edit tool instead, which is now the
   standing rule for TS files in this repo.
+- ENR-004 part 1 (2026-07-21): move-in template gains its premise with lineage
+  backing (move-in-date school, Yap Cheng Hai line: new occupants = new chart,
+  making the founding-date framing the product's own reason to exist) and a new
+  "If you are also renovating" section (Tai Sui / Sui Po / San Sha, the
+  face-but-never-back rule, exposure-scales-with-activity, and the before-Li-Chun
+  January workaround), pointing to the Planner for the year's positions. Build
+  green. The ch22 personal-timing counsel waits for the rooms-pass fact sheet
+  before the final line is written.
