@@ -41,7 +41,7 @@ Next.js (App Router, TypeScript) on Vercel. **Auth.js v5 (NextAuth)** runs on th
 | `app/(site)/account/chart/[id]/page.tsx` | Auth-gated chart view: bagua + cards + Email + Print + Delete. (Stages 2, 3). |
 | `app/(site)/articles/page.tsx` | Articles index (Stage 4). |
 | `app/(site)/articles/[slug]/page.tsx` | Dynamic article route with gating + Article JSON-LD (Stage 4). |
-| `app/(site)/home-harmony-map/page.tsx` | $29 sales page for the Home Harmony Map; Stripe deferred to Stage 5 (Stage 4). |
+| `app/(site)/products/` | The shop: shelf page + one sales page per product. The old Home Harmony Map page is retired. |
 | `app/(site)/checklist/page.tsx` | Printable 14-point room harmony checklist; lead-magnet destination (Stage 4). |
 | `app/sitemap.ts` | Sitemap; iterates the ARTICLES registry so new articles auto-list (Stage 4). |
 | `lib/articles.ts` | Article metadata registry + renderArticle / findArticle (Stage 4). |
@@ -60,6 +60,33 @@ Next.js (App Router, TypeScript) on Vercel. **Auth.js v5 (NextAuth)** runs on th
 | `supabase/migrations/0002_nextauth.sql` | Current schema: `next_auth` adapter tables, recreated `profiles` + `saved_charts` (FK to `next_auth.users`, RLS off), new-user trigger. |
 | `.env.example` | Documents the seven environment variables. |
 | `README.md` | Run + deploy instructions. |
+
+## Products layer (the current commerce architecture)
+
+The product line-up is registry-driven; do not hand-edit sales pages to change
+what a product contains. The registries and their single sources of truth:
+
+- `lib/products.ts` - the personalised-PDF catalogue: one recipe of content
+  blocks per product (BlockId union + `PRODUCTS`), prices, Stripe env keys,
+  target page bands. `lib/compass-catalogue.ts` generates the mini Compass
+  entries.
+- `content/blocks/*.md` - the content blocks the PDF assembler
+  (`lib/blocks.ts` + `lib/pdf/template.ts`) stitches into personalised PDFs.
+  Paraphrase-only; every change logs a row in
+  `content/blocks/ATTRIBUTION_BLOCKS.md`.
+- `lib/storefront.ts` - what the shelf and homepage show (cards, order,
+  visibility). `lib/commerce.ts` + `lib/fulfill.ts` - checkout and delivery
+  (static files from Supabase storage, personalised via the post-checkout
+  form, course via enrollment).
+- `lib/pdf/movein-template.ts` and `lib/pdf/couple-template.ts` - the two
+  personalised products with their own templates. `lib/courses/seven-day-reset.ts`
+  - the email course bodies.
+- Static PDFs (planner, cures, workbook, ritual pack, business kit) are built
+  in `projects/annual-feng-shui-planner/` and uploaded by the owner to the
+  Supabase `product-files` bucket; this repo never builds them.
+- `spec/product-truth-matrix-2026-06-15.md` - the truth matrix: every product,
+  its fulfilment path, files, env keys, and verification state. Update it when
+  a product changes shape.
 
 ## Shared agent context
 

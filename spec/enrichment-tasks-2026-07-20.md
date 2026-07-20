@@ -105,3 +105,56 @@ govern every task. Zero em dashes, zero outcome promises.
   needed the tradition's reading AND the practical half in one breath to fit;
   single-paragraph insertions at existing anchors kept every day's one-task
   shape intact.
+
+## ENR-008 experience gate results (2026-07-21)
+
+Five-point standard: orient in 60s / first win tonight / designed peak / one
+interactive moment / designed ending. All nine shelf products PASS:
+
+| Product | Orient | First win | Peak | Interactive | Ending |
+|---|---|---|---|---|---|
+| Personal Compass | at-a-glance page + Start tonight box | Start tonight box | star identities + wealth extension | three-reading protocol + 7-day experiment | closing + keepsake card |
+| Twelve Spaces | welcome-mini, per-space one-move shape | bedroom height rules | entrance approach reading | bedroom scorecard + dining doorway method | closing-mini |
+| Complete Home | as Personal | Start tonight box | house-match + year method | house-reading worksheet | closing-extended |
+| Move-in Kit | Reading your window | pick the window | renovation section | date-window reading | personal-timing close |
+| Seven-Day Reset | day 1 orients | day 1 task tonight | day 6 doorway audit | one task per day | day 7 close |
+| Nine Pillars | welcome-mini | per-pillar one-moves | wealth pillar | per-pillar moves | closing-mini |
+| Business Kit | How to Use + the one line | Start tonight, 5 min | two worked walkthroughs | storefront scorecard | kit on one card |
+| Starter Bundle | each component opens with a start card | doorway audit tonight | frog working day + missing-corner kit | worksheets throughout | three designed closings |
+| Cures Catalogue | How to read a card | Start tonight corner move | money frog working day | pull-the-card + quick-table | catalogue on one card |
+
+Before/after (words where tracked, measured pages after):
+
+| Product | Words before -> after | Pages after (old band) |
+|---|---|---|
+| Personal Compass | blocks corpus now 50,282 w | 56 (band was 44-56) |
+| Extended Kua Report | +house-match, +year method | 75 (band was 56-70) |
+| Nine Pillars | unchanged this phase | 38 (band was 40-66, est.) |
+| Twelve Spaces | +9 deepening sections | 47 (band was 50-78, est.) |
+| Complete Home | superset of all above | 142 (band was 115-165) |
+| Year-Ahead / enriched minis | year-overlay 560 -> ~1,100 w | 9 (band was 4-8) |
+| Business Kit | 8,400 -> 10,712 | 42 |
+| Cures Catalogue | -> 8,292 | 25 |
+| Diagnostic Workbook | -> 6,774 | 28 |
+| Ritual Pack | -> 3,684 | 13 |
+
+- ENR-008 (2026-07-21): experience gate passed. Hygiene scans green across every
+  touched file (0 em/en dashes by codepoint scan with positive control; 0
+  outcome promises, one benign hit). Gap found and closed: cures catalogue and
+  ritual pack lacked the up-front first-win card the other statics have; both
+  gained a Start tonight card and were rebuilt (25pp / 13pp, counts unchanged).
+  Static delivery email's Where-to-start pointer rewritten to match what every
+  static PDF now opens with (softened to "first move" because the Planner's is
+  "Your first move this week", not tonight). Personalised pointer already
+  matched. CLAUDE.md stale Phase-3/home-harmony-map row replaced with a
+  Products-layer section pointing at the registries + truth matrix. Page bands
+  measured in one dev session (Ana/Kua 8 samples) and recentred in
+  lib/products.ts: personal 48-64, extended 64-86, pillars 32-44, spaces 40-54,
+  complete 120-164, minis 4-10 (enriched space minis and year-ahead render at
+  9pp). Smoke suites + build green. Learning: three of the five old bands were
+  estimates that had never seen a measured render; the nine-pillars "regression"
+  to 38pp was the estimate being wrong, not content shrinking.
+- ENR-009 (2026-07-21): five sample previews re-rendered from enriched content
+  into scripts/out/previews (Ana, Kua 8): personal 56pp, extended 75pp, pillars
+  38pp, spaces 47pp, complete 142pp, plus a year-ahead sample as band evidence.
+  Owner review of imagery stays gated per P5; nothing installed into public/.

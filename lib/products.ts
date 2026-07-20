@@ -124,7 +124,7 @@ export const PRODUCTS: Record<string, Product> = {
       "experiment",
       "closing",
     ],
-    targetPages: { min: 44, max: 56 },
+    targetPages: { min: 48, max: 64 },
   },
   // The Extended Personal Kua Report. A superset of the Compass: the
   // same eight-direction reading, plus five premium chapters
@@ -166,7 +166,7 @@ export const PRODUCTS: Record<string, Product> = {
       "experiment",
       "closing-extended",
     ],
-    targetPages: { min: 56, max: 70 },
+    targetPages: { min: 64, max: 86 },
   },
 };
 
@@ -183,7 +183,7 @@ for (const e of COMPASS_CATALOGUE) {
     currency: "usd",
     stripeEnvKey: compassEnvKey(e.slug),
     blocks: compassBlocks(e) as BlockId[],
-    targetPages: { min: 4, max: 8 },
+    targetPages: { min: 4, max: 10 },
   };
 }
 
@@ -208,7 +208,7 @@ PRODUCTS["all-nine-pillars-compass"] = {
   currency: "usd",
   stripeEnvKey: "STRIPE_PRICE_ALL_PILLARS",
   blocks: ["welcome-mini", ...ALL_PILLAR_BLOCKS, "closing-mini"],
-  targetPages: { min: 40, max: 66 },
+  targetPages: { min: 32, max: 44 },
 };
 
 PRODUCTS["all-twelve-spaces-compass"] = {
@@ -220,7 +220,7 @@ PRODUCTS["all-twelve-spaces-compass"] = {
   currency: "usd",
   stripeEnvKey: "STRIPE_PRICE_ALL_SPACES",
   blocks: ["welcome-mini", ...ALL_SPACE_BLOCKS, "closing-mini"],
-  targetPages: { min: 50, max: 78 },
+  targetPages: { min: 40, max: 54 },
 };
 
 PRODUCTS["complete-home-compass"] = {
@@ -243,7 +243,7 @@ PRODUCTS["complete-home-compass"] = {
     ...ALL_PILLAR_BLOCKS,
     "year-overlay", "faq-hard-cases", "experiment", "closing-extended",
   ],
-  targetPages: { min: 115, max: 165 },
+  targetPages: { min: 120, max: 164 },
 };
 
 export function findProduct(slug: string): Product | null {

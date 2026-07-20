@@ -81,7 +81,7 @@ export function buildStaticDeliveryEmail(input: {
     <h1 style="margin:0 0 12px;font:700 22px sans-serif;color:#0e3b2c;">Your ${input.productTitle} is ready.</h1>
     <p style="margin:0 0 12px;font:16px/1.6 sans-serif;color:#0e3b2c;">Thank you for the purchase. Your files are below. The links work for 7 days; if one expires, reply to this email and we send a fresh one.</p>
     ${linksHtml}
-    <p style="margin:18px 0 0;font:14px/1.6 sans-serif;color:#0e3b2c;"><strong>Where to start:</strong> save the PDF somewhere you will find it again (or print it), then read just the first section tonight. One section, applied, beats the whole book skimmed.</p>
+    <p style="margin:18px 0 0;font:14px/1.6 sans-serif;color:#0e3b2c;"><strong>Where to start:</strong> save the PDF somewhere you will find it again (or print it), then open the first pages and make the small first move waiting there; every guide opens with one. One move, applied, beats the whole book skimmed.</p>
     ${crossSellHtml}
     ${reviewRequestHtml()}
   `);
@@ -95,8 +95,9 @@ export function buildStaticDeliveryEmail(input: {
     "",
     "Links work for 7 days. Reply to this email for a fresh link.",
     "",
-    "Where to start: save the PDF, then read just the first section",
-    "tonight. One section, applied, beats the whole book skimmed.",
+    "Where to start: save the PDF, then open the first pages and make",
+    "the small first move waiting there; every guide opens with one.",
+    "One move, applied, beats the whole book skimmed.",
     input.crossSellLine
       ? `\n${input.crossSellLine.text} ${input.crossSellLine.url}`
       : "",
