@@ -240,3 +240,12 @@ exist. profiles.marketing_opt_in exists (account page only). Lead magnet stores 
   brightens rather than rests). In-cart hearts flip green. Non-buy CTAs
   (calculator, checklist, auth, downloads, render forms) stay green; success-page
   upsells stay deliberately calm cta-secondary.
+- Owner corrections (2026-07-20 evening): (1) uniform CTA pills: .cta-primary is
+  now inline-flex with centered text so anchor and button pills render one height;
+  (2) guarantee badge green, orange stays exclusive to buy buttons; (3) the $9
+  Good-Days shelf card was WRONG: the shop redesign had already made Good-Days
+  the free email catcher (/good-days, capture slug good-days, old product URL
+  301s there) and the owner remembered the strategy correctly. The shelf now
+  carries a FREE Good-Days card as the cold-traffic entry instead. Learning:
+  check redirects before relisting a delisted product; the registry entry alone
+  does not tell the strategy.

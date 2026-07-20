@@ -56,6 +56,8 @@ const CORE: Omit<StoreProduct, "priceLabel">[] = [
     featured: true,
   },
   {
+    // Delisted from the shelf: /products/good-days-calendar-2026 301s to
+    // the free page. Kept in the registry for old links and the cart.
     slug: "good-days-calendar-2026",
     href: "/products/good-days-calendar-2026",
     title: "2026 Good-Days Calendar",
@@ -63,9 +65,18 @@ const CORE: Omit<StoreProduct, "priceLabel">[] = [
       "Plan the next 243 days around the good ones: every day marked Action, Rest, Neutral, or Caution, as a printable PDF and a phone calendar file.",
     priceCents: 900,
     category: "printable",
-    // C5 (2026-07-20): the $9 impulse rung for cold shelf-first
-    // visitors; the featured row otherwise starts at $19.
-    featured: true,
+  },
+  {
+    // The free Good-Days page IS the cold-traffic entry rung and the
+    // email catcher (owner strategy; corrected 2026-07-20 evening after
+    // the $9 card briefly returned to the shelf by mistake).
+    slug: "good-days-free",
+    href: "/good-days",
+    title: "2026 Good-Days Calendar",
+    oneLiner:
+      "Every favourable day from July 2026 to February 2027 with the reason for each, free on the page; we email you the printable link.",
+    priceCents: 0,
+    category: "free",
   },
   {
     slug: "bedroom-reset",
@@ -326,10 +337,9 @@ export const LADDER_SLUGS: readonly string[] = [
 export const MOMENT_SLUGS: readonly string[] = [
   "move-in-kit",
   "seven-day-home-reset",
-  // C5/P8 (2026-07-20): the $9 impulse rung. The shelf renders only
-  // these groups (the featured flag is not read here), so visibility
-  // means membership.
-  "good-days-calendar-2026",
+  // The free Good-Days page card: the cold-traffic entry point and
+  // email catcher (corrected from the $9 product card, 2026-07-20).
+  "good-days-free",
 ];
 
 /** Printable kits + the remaining part-bundle. */

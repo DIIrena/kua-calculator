@@ -7845,7 +7845,10 @@ a:hover { color: var(--clay-deep); }
   width: 1.4rem;
   height: 1.4rem;
   border-radius: 50%;
-  background: var(--clay);
+  /* Green, not orange (owner, 2026-07-20 evening): orange is reserved
+     for buy buttons, and the guarantee note must reassure quietly, not
+     compete with them. */
+  background: var(--green);
   color: #ffffff;
   font-size: 0.85rem;
   font-weight: 700;
@@ -8158,4 +8161,15 @@ a:hover { color: var(--clay-deep); }
 
 .price-heart.is-added .price-heart-amount {
   color: var(--green);
+}
+
+/* Uniform buy/CTA pills (owner, 2026-07-20 evening): anchors and buttons
+   sharing .cta-primary now render identically: one height, text centered
+   both ways, whether the element is an <a> or a <button>. */
+.cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
 }
