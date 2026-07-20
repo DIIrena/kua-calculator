@@ -5,6 +5,7 @@ import ProductPreview from "@/components/ProductPreview";
 import FlagshipChooser, { type Flagship } from "@/components/FlagshipChooser";
 import { autolinkProducts } from "@/components/autolinkProducts";
 import { TrustRow, GuaranteeNote } from "@/components/TrustRow";
+import SocialProof from "@/components/SocialProof";
 
 // The long-form landing template (shop-redesign Phase B). One component,
 // one content config per product, so copy revisions land everywhere at
@@ -197,6 +198,10 @@ export default function ProductLanding({
           </div>
         </div>
       </section>
+
+      {/* Social proof: real quotes when they exist, an honest credibility
+          note until then (W3). Never fabricated. */}
+      <SocialProof scope="product" slug={c.slug} />
 
       {/* Ladder cross-sell (the three reading depths) */}
       {c.ladder ? <FlagshipChooser current={c.ladder} /> : null}

@@ -5,6 +5,7 @@ import LeadMagnetForm from "@/components/LeadMagnetForm";
 import HomeRoomPicker from "@/components/HomeRoomPicker";
 import CalculatorIsland from "@/components/CalculatorIsland";
 import CalculatorScripts from "@/components/CalculatorScripts";
+import SocialProof from "@/components/SocialProof";
 import { ARTICLES, CATEGORIES, type ArticleCategory } from "@/lib/articles";
 
 const HOMEPAGE_CATEGORY_ORDER: ReadonlyArray<ArticleCategory> = [
@@ -389,6 +390,14 @@ export default async function HomePage(props: {
               </Link>
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Social proof (W3): real quotes when they exist, an honest
+          credibility note until then. Never fabricated. */}
+      <section className="home-section" aria-label="Where this comes from">
+        <div className="page-prose">
+          <SocialProof scope="home" />
         </div>
       </section>
 
