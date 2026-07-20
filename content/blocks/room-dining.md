@@ -27,3 +27,11 @@ A round or oval table makes this easy, since any chair can be turned to any faci
 The kitchen sits behind every meal as the place a home is fed from. The tradition treats the stove with particular care, as the source where the family's food is produced, and the practical reading agrees: keep it clean, keep it tidy, keep it in good repair. A polished stove and a clear working surface are a different object from a cluttered, neglected one, and the difference is felt by whoever cooks.
 
 Keep the cook able to see the kitchen doorway without turning, give the working area light and clear space, and let the room read as cared-for. These are matters of order and maintenance, not of any promise. The table reads from the chair; the kitchen reads from the care you keep it in.
+
+## Read the room's own corners
+
+The dining room carries a small map of its own, and reading it takes one minute. Stand in the doorway looking in. The far-left corner from where you stand is the room's own wealth pocket; the far-right is its relationships pocket. Now check what actually occupies each, and match the contents to the job. The classic activations: in the far-left, a warm lamp on a daily timer and one accent in deep red or gold; in the far-right, paired objects - two frames, two vases, two matching plants. The centre belongs to the table itself; the pockets support it and never compete with it.
+
+If a large window falls in either pocket, treat it as a slow leak: hold the zone with curtains of real fabric weight and a rug between table and window.
+
+And one honest note on shape. This book keeps the round-table preference, because no corner points at any seat and the geometry treats every diner equally. But a respected decor school reads the opposite way and prizes the square room and square table for stability. That is a genuine school divergence, not an error to correct; if the square table is yours and loved, keep it, and let the corners point between the seats.

@@ -57,3 +57,13 @@ govern every task. Zero em dashes, zero outcome promises.
   January workaround), pointing to the Planner for the year's positions. Build
   green. The ch22 personal-timing counsel waits for the rooms-pass fact sheet
   before the final line is written.
+- ENR-003 (2026-07-21): nine blocks enriched as appended deepening sections (the
+  older-generation room/space blocks carry no one-thing anchor, so end-append with
+  written transitions was the safe insertion). Bedroom gained the room-shape
+  scorecard + qi-lane; desk gained the four-fault clinic; dining gained the
+  doorway small-bagua method; kitchen the Heaven's Gate + burner rotation;
+  entrance the five approach cues + landing-as-Ming-Tang; bathroom the
+  containment-vs-red divergence; hallway the staircase file + leaky-wallet
+  treads; balcony the four-part garden recipe; compatibility three couple
+  refinements. Both smoke suites green (a transient double-run crash earlier
+  resolved on rerun). Twelve-spaces band measured at the gate.

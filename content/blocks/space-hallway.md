@@ -56,3 +56,9 @@ Two further door notes belong to corridors specifically:
 A hallway asks less of you than any room in the home, and the tradition is plain about that. You do not need it on a favourable direction. You only need it to do its one job well: carry movement from room to room without pinching it, without dimming it, and without letting it rush.
 
 So walk your corridors once with these five questions. Is the floor clear. Is it well lit, every bulb warm and working. Does anything long and straight need a runner, a picture, or a plant to slow it. Do the doors open fully. And do any two doors face off across the hall. Most hallways need only one or two small corrections, and all of them are the kind you can finish in an afternoon.
+
+## The staircase file
+
+Stairs are the home's vertical artery, and the tradition reads them structurally. A stair facing the front door needs a break in the line of sight: a faceted crystal at the foot, art at eye level on the landing, or a runner that slows the eye, because a direct view up or down a flight reads as qi escaping before it settles. Two faults that placement cannot fully cure, only soften with planting at the base and consistent light: the spiral stair, which the tradition reads as a drill through the home's volume, and any stair at the exact centre of the floor plan. Along the corridor itself, doors should not face each other squarely; the tradition calls them quarrelling doors.
+
+And one money reading with a refreshingly literal cure: gaps between treads, or loose ill-fitting steps, are read as value slipping through the openings, the staircase as a leaky wallet. The remedy is carpentry, not a charm. Fix the treads.

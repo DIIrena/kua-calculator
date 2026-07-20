@@ -51,3 +51,15 @@ So check it against your own set rather than assume. If the compass sector your 
 The entrance is the rare high-leverage fix you can finish in fifteen minutes. Clear the threshold: move every shoe and bag out of the door's swing arc so it opens fully. Wipe the door, polish the handle, check that the light works. Then look at where the first three steps land and give that spot one calm anchor - a small lamp, a mat, a single plant, one piece of art at eye level.
 
 You will not have changed which way your door faces, {{firstName}}, and you do not need to. You will have given the mouth of your home a clear, lit, open place to draw energy in, which is the part the tradition reads most closely and the part that was always yours to set.
+
+## The approach reads first
+
+Practitioners begin before the door, because the outside is a fair proxy for how the inside is kept. Five cues, each with its reading and its cure:
+
+- **A cracked or stained walkway** reads as neglect: patch it, wash it, or line the path edge with low planting.
+- **A dark porch** reads as unwelcoming: one warm light on a dusk sensor settles it.
+- **A hidden or faded house number** reads as a home that does not want to be found: a readable number at eye height, lit at night.
+- **A dying plant by the door** reads as depleted vitality: replace it or remove it; an empty pot beats a dead occupant.
+- **A straight hard path** pushes arrival at the house too fast: a gentle curve softens it, and where the concrete is fixed, edge planting rounds the felt geometry.
+
+Behind these cues sits an old idea worth owning: the **Ming Tang**, the bright hall, the open space before a dwelling where qi collects and settles before entering. At house scale it is the forecourt or front garden. At apartment scale it is simply the landing outside your door - which is why a clear, swept, lit landing is not housekeeping but feng shui, and the cheapest bright hall you will ever own.

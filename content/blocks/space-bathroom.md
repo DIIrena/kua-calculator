@@ -58,3 +58,9 @@ Neither pattern is a thing you must fix at any cost. They are siting preferences
 Start with the door and the lid, because they cost nothing and you control them entirely. Close the bathroom door tonight and make a habit of closing the lid. Then take one slow look at the room: is the light working, is the air moving, are the surfaces dry? Fix whichever of those is weakest first.
 
 Then, when you have a quiet minute, work out which sector your bathroom sits in and check it against your own directions. If it falls in **{{jueMingDir}}** or **{{wuGuiDir}}**, the tradition reads the placement as well chosen and asks only that you keep it contained. If it falls in one of your four supportive directions, lean a little harder on the same habits. Either way the work is the same small set of moves. This reading is a decision tool, not a discipline, and the bathroom is the room where the easiest moves carry most of the weight.
+
+## The colour question
+
+The bathroom is already the most water-dominant room in the home, which settles its palette question by logic rather than taste: more watery colour - deep blues, aquatic murals - doubles down on the element that wants containing. The colours that contain are **earth tones and warm whites**, grounding the water the same way the closed door and lowered lid do.
+
+Honesty requires naming the dissent: one decor school argues the reverse, that a draining room should be lifted with vivid reds and oranges. This book sides with containment, and records the red bathroom as a genuine school divergence rather than a mistake. Pick one logic and let the room be consistent about it.

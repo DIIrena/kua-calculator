@@ -58,3 +58,7 @@ You do not need a renovation to correct this. You need the edge cleared and kept
 The easiest first move is the chair, because it turns. Step onto your balcony, sit in the corner, and notice which way you face. If it is one of your supportive directions, leave it. If not, rotate the seat so your body opens toward {{fuWeiDir}} for quiet or {{tianYiDir}} for rest. Then clear one thing off the edge that does not belong there, and put one living plant where it can catch the light.
 
 That is the whole practice: an edge that breathes, a corner that faces a direction that supports you, and a space kept cared for rather than crowded. The balcony asks very little. Give it light, air, a little green, and a clear view out, and the tradition reads it as the home breathing the way it is meant to.
+
+## The garden, miniaturised
+
+The classical garden composes four things in balance: water, stone, living plants, and a place for people. A garden of plants alone reads as incomplete; the stone supplies the earth that balances the wood. For a balcony, the recipe miniaturises without losing a single part: **one water element** (a bowl, a small self-contained fountain), **one stone** (a single feature pebble or small statue), **living plants**, and **a seat you actually use**, because a garden lived in circulates qi while one only looked at stagnates. If the balcony opens to a wide view or open water, a rail planter or a framed sightline gives the eye a near anchor against all that distance. Four objects, one chair, and the smallest garden in the tradition is complete.

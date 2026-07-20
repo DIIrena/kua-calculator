@@ -71,3 +71,9 @@ The last instruction is the simplest and the one most people feel fastest. The t
 - **Keep the bin closed and the drains clean.** Both read as the room handling its waste rather than holding it.
 
 A clean, clear, well-ordered kitchen with the stove cared for, the cook able to see the door, and fire and water given a little room from each other is, in this tradition, a kitchen doing what a kitchen is for. None of it is a guarantee of anything. It is a set of small, sensible decisions you can make about the room where the home is fed, and most of them you can start on tonight.
+
+## Two traditions worth knowing
+
+The first concerns placement. A stove at the exact northwest of the home sits in the sector the tradition calls **Heaven's Gate**, associated with the household's patriarch and its benefactors, and a fire burning there is a classical caution - a tradition claim, plainly flagged as one. Nobody rebuilds a kitchen over it. Where the layout is fixed, the standard softening is an immaculately kept stove and an earth-element buffer nearby: ceramic, stone, a clay pot doing quiet duty.
+
+The second concerns use. The tradition reads the stove as the home's prosperity engine, and an engine that never runs reads as idle wealth. So use the stove daily, even briefly - the kettle boiled on it, a pan warmed - and **rotate the burners so all of them work and all of them see use**. The mundane half of the claim is free: a stove used daily is a stove kept clean, functional, and noticed.

@@ -38,3 +38,11 @@ If your partner is in the other group, the shared pieces need a rule, because wh
 No birth data for a partner was collected for this reading, so this page cannot name their group for you. You can find it in under a minute with the free Kua calculator on the site: enter their birth year and sex, read off their group, and bring it back here. Once you know whether they share the {{kuaGroup}} group or hold the mirror, every rule above applies directly.
 
 The tradition gives you a way to choose between arrangements that otherwise look equal. It does not make a claim about the relationship itself. Treat {{yanNianDir}} and {{tianYiDir}} as directions the tradition points to for the shared bed, settle the pieces you both touch, and let each of you keep your own chair turned your own way.
+
+## Three refinements for couples
+
+**The bedroom's own wealth pocket.** The bedroom carries a miniature map of its own, and practitioner material sometimes activates its far-southeast pocket as a couple's shared-building corner: one small paired token there, and nothing more. No fountain, no water feature; water stays out of bedrooms. The relationship logic of the southwest remains the primary read; this pocket is for couples who want the room to hold both stories, rest and shared plans, without importing office energy.
+
+**The formal pair.** Mandarin ducks are the familiar couple symbol; the dragon and phoenix together are the formal one, the imperial couple, yang and yin in balance. Their place is the southwest relationships sector or the couple's living space, and the rule that matters is always as a pair; a lone phoenix carries widowhood symbolism in some traditions and is avoided in relationship placements.
+
+**Earth, not fire.** Western styling codes romance as fire: flames, red, candlelight. The Chinese relationship sector runs on the opposite logic; the southwest is earth, the element of stability and endurance, and its activators are grounded, paired, and calm. By all means keep the candles for the evening itself. For the standing arrangement of the relationship corner, think stone and pairs rather than heat.

@@ -35,3 +35,13 @@ You have four cautious directions, and two of them the tradition treats as the m
 Most bedrooms do not let you put the headboard exactly where you want it. The closet is on the wrong wall, the window is on the wrong wall, the room is small and the bed fits one way. When the ideal wall is taken, the move is straightforward: put the headboard on **any** of your supportive walls - {{tianYiDir}}, {{shengQiDir}}, {{yanNianDir}}, or your anchor direction {{fuWeiDir}} - before you settle for a cautious one. The difference between two good walls is a fine adjustment. The difference between a good wall and a cautious one is the rough adjustment, and the rough adjustment is the one the tradition weights most.
 
 Perfect alignment is rare and not the point. Better than you had is the point. The bedroom read is a decision tool, not a discipline, and the first decision is simply which wall holds your head.
+
+## The room itself has a verdict
+
+Before any furniture moves, practitioners read the room's outline, because an outline problem caps what placement can fix. A square or rectangular bedroom circulates evenly and suits rest: the unremarkable ideal. A round room over-concentrates and offers no solid backing. Triangles and trapeziums leave sharp dead zones; in a trapezium, set the bed along the parallel walls. In an L or T shape, watch the inner corner, which projects a small point into the room, and know the standard repair: built-in storage that squares the perimeter. An L with the notch filled by a wardrobe bank is, for reading purposes, a rectangle again.
+
+One more line the tradition draws through the room: the door's straight path. Door-borne qi crosses in a lane, and a bed standing anywhere in that lane is disturbed regardless of which end points where - the bedroom door and the ensuite door both count. The fix is usually a sideways slide of the bed rather than a rotation; where the room refuses even that, a full-height screen between door and bed breaks the lane.
+
+## Two small height rules
+
+The nightstand whose top edge rides higher than the mattress presents a small hard line at your head all night; match it to the mattress height or below, and where a tall dresser's corner aims at the bed, a draped runner softens the edge. At the other end, an anchor at the footboard - a chest, a bench, a defined rug - grounds the bed's open end; it is a preference rather than a rule, and it doubles as the screen the door-lane remedy calls for. And one tradition worth knowing at life's boundaries: some lineages renew the bed, or at least the mattress, after a serious illness in it or the end of the relationship it hosted. The metaphysical claim is untestable; the psychological one is plain enough to act on.

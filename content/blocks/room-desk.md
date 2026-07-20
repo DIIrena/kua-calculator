@@ -38,3 +38,9 @@ If the room cannot give you both the right direction and a view of the door, tak
 ## A move to try
 
 Turn your chair so your body faces {{fuWeiDir}} for your ordinary focused work, check that you can see the door from the side without sitting in its line, and reserve the swing to {{shengQiDir}} for the seasons when you are pushing something forward. Better than you had is the point, not perfection.
+
+## The desk clinic
+
+Four faults account for most working seats, and each has a settled repair. **Back to a window:** no backing, plus glare and draft; a high-backed chair and a partly drawn blind rebuild the mountain, or reposition if the room allows. **A mirror behind or facing the desk:** the exposure read, doubled; move the mirror or the desk. **A beam or a harsh light directly overhead:** pressure on the seat; shift the task light forward and to the side, or slide the desk off the beam's line. **The open-plan desk in a thoroughfare:** screen one side, anchor the other with storage, and give a long-occupancy seat a constructed back - a partition, a storage run, a high chair-back - because a seat with no mountain wears its owner down quietly.
+
+The positive template never changes: solid wall behind, door visible, light from the side, one healthy plant in reach. Everything in the clinic above is just a route back to it.
