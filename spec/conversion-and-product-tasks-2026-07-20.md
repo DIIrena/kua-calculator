@@ -142,3 +142,40 @@ reviewing rendered cover/preview imagery.
   images today.
 - P6 (flagship elevation): partly done via heroPromise + the success upsell; the
   design half overlaps P4.
+
+## Second pass (2026-07-20, approved): C0-C6 website + P4-P9 products
+
+Supabase reality check folded in: product_waitlist holds 23 rows = 20 "newsletter"
+(footer subscribe, collecting since 2026-06-07, never emailed) + 1 planner + 1 personal
+compass + 1 move-in kit. scripts/send-launch-email.mjs exists (dry-run default, sent-log
+dedupe) but covers only 2 slugs and promises an EARLYLIST Stripe coupon that may not
+exist. profiles.marketing_opt_in exists (account page only). Lead magnet stores nothing.
+
+- [ ] C0. Waitlist + newsletter first send (owner-gated --live). Extend
+      send-launch-email.mjs with move-in-kit and newsletter templates + --no-coupon
+      mode; dry-run all four segments; stepwise owner walkthrough (create EARLYLIST in
+      Stripe OR send --no-coupon; review previews; run --live per segment).
+- [ ] C1. Funnel measurement: Vercel Web Analytics + Supabase step counters
+      (shelf_view, product_view, checkout_completed, capture_optin) via no-PII beacon
+      on shop surfaces only; calculator + /embed stay tracker-free. Weekly readout doc.
+- [ ] C2. Shelf-level trust + desire: TrustRow + guarantee + empty-safe stars on
+      /products and homepage shop strip; one felt-outcome line per card; bundle cover.
+- [ ] C3. Consented capture unification: optional opt-in on checklist form writing to
+      the same newsletter list; one-click unsubscribe route + token; privacy copy
+      update keeping the calculator promise distinct; account-page invitation reuses
+      profiles.marketing_opt_in.
+- [ ] C4. Welcome sequence (finishes W7): 4 emails from the approved drafts, env-flag
+      gated OFF, Resend, owner runbook.
+- [ ] C5. Cold-traffic front door: one $9 product featured for shelf-first visitors;
+      pin ref params logged into counters; /space pin continuity check.
+- [ ] C6. 2027 seasonal engine: 2027 Planner waitlist card (existing waitlist infra);
+      mid-year edition copy states what July buyers get now vs the 2027 edition.
+- [ ] P4. Premium PDF design pass: cover treatment, section dividers, pull-quote +
+      worksheet styling, keepsake reference card.
+- [ ] P5. Look-inside previews on all 9 visible products (owner reviews all imagery
+      before ship).
+- [ ] P6. Flagship elevation: value comparison vs $19/$29 rungs on the $49 page.
+- [ ] P7. Delivery-email unboxing polish in lib/email-delivery.ts.
+- [ ] P8. Shelf promise lines (shared source with C2, written once in LandingConfig).
+- [ ] P9. 2027 refresh path doc + truth-matrix housekeeping (fulfilment owner-verified
+      2026-07-20).

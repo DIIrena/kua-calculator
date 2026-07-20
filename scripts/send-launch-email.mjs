@@ -71,7 +71,43 @@ const TEMPLATES = {
     ctaLabel: "See the Compass and buy",
     ctaUrl: `${SITE}/products/personal-feng-shui-compass`,
   },
+  "move-in-kit": {
+    subject: "The Move-In Date Report is live.",
+    heading: "Your move date, mapped.",
+    paragraphs: [
+      "You joined the waitlist for the Move-In Date Report. Checkout is now open.",
+      "Give it your moving window and it maps the traditional day quality across every date in it: the days classical calendars favour for a move, the days they advise around, and why, in plain English. You pay, enter your window, and the report is rendered and emailed to you within about a minute.",
+      "7-day refund.",
+    ],
+    ctaLabel: "See the Move-In Report and buy",
+    ctaUrl: `${SITE}/products/move-in-kit`,
+  },
+  newsletter: {
+    subject: "You subscribed at myfengshuihome.com. Here is your first note.",
+    heading: "Hello from My Feng Shui Home.",
+    paragraphs: [
+      "You left your email in the footer of myfengshuihome.com to hear from us. This is the first note we have ever sent, so thank you for the patience.",
+      "Here is what is live for you today. The free Kua calculator gives you your number, your East or West group, and your eight personal directions in under a minute, nothing to sign up for. Around it sits a free guide of 38 pages, from a room-by-room walkthrough to the honest explanation of what feng shui can and cannot do.",
+      "If you want the personal version, the Personal Feng Shui Compass ($19) turns your Kua into a full reading for your own rooms, rendered as a PDF and emailed within about a minute of checkout. Every product carries a 7-day refund.",
+      "We write rarely and only when there is something worth your time. Reply with the word unsubscribe and we remove you the same day; reply with anything else and a person reads it.",
+    ],
+    ctaLabel: "Get your Kua number free",
+    ctaUrl: `${SITE}/`,
+  },
 };
+
+// --no-coupon support: strip any paragraph that references the EARLYLIST
+// Stripe code (for sends where the owner has not created the coupon), and
+// normalise the refund line that referenced the code.
+function withoutCoupon(t) {
+  return {
+    ...t,
+    subject: t.subject.replace(" Your early price is inside.", "").trim(),
+    paragraphs: t.paragraphs
+      .filter((p) => !p.includes("EARLYLIST"))
+      .map((p) => (p === "7-day refund, code or no code." ? "7-day refund." : p)),
+  };
+}
 
 function renderHtml(t) {
   const body = t.paragraphs
@@ -126,10 +162,11 @@ const args = Object.fromEntries(
 
 const product = args.product;
 const live = args.live === true;
+const noCoupon = args["no-coupon"] === true;
 
 if (!product || !TEMPLATES[product]) {
   console.error(
-    `Usage: node scripts/send-launch-email.mjs --product=<slug> [--live]\n` +
+    `Usage: node scripts/send-launch-email.mjs --product=<slug> [--live] [--no-coupon]\n` +
       `Known products: ${Object.keys(TEMPLATES).join(", ")}`,
   );
   process.exit(1);
@@ -139,7 +176,7 @@ if (!SUPABASE_URL || !SERVICE_KEY) {
   process.exit(1);
 }
 
-const template = TEMPLATES[product];
+const template = noCoupon ? withoutCoupon(TEMPLATES[product]) : TEMPLATES[product];
 mkdirSync(OUT_DIR, { recursive: true });
 
 // Fetch the waitlist segment via PostgREST.
