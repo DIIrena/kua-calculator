@@ -70,3 +70,12 @@ govern every task. Zero em dashes, zero outcome promises.
 - ENR-004 complete (2026-07-21): the ch22 personal-timing counsel landed as the
   closing paragraph of the renovation section (calendar is half the timing;
   disturbed-ground counsel). Build green. ENR-004 done.
+- ENR-005 (2026-07-21): the Business Kit gained its true business half, ~2300 new
+  words across ten sections (five reversals, site selection + negative neighbours,
+  storefront Ming Tang, serpentine path + White-Tiger-in/Dragon-out, the register
+  five rules, office floor incl. the reception back-to-door fault, four-gates
+  water at owner level, both worked walkthroughs, timing counsel, storefront
+  scorecard worksheet) plus the start-tonight card up front and the kit-on-one-
+  card ending. 8.4k -> 10.7k words; PDF rebuilt 42 pages via the planner
+  pipeline; page-30 render spot-checked (typography + brand rules clean). Silent
+  update per owner decision. Owner uploads the rebuilt PDF at the gate.
