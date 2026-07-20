@@ -51,6 +51,15 @@ export type LandingConfig = {
   buyLine: string;
   /** Render the ladder cross-sell with this item current. */
   ladder?: Flagship;
+  /** P6 (2026-07-20): optional value-anchor comparison. Rendered as a
+   *  compact tier table between the promise and the steps. Only the
+   *  flagship uses it today. `rows` maps a feature line to which tiers
+   *  include it; `anchorLine` is the one-sentence value math. */
+  comparison?: {
+    tiers: { label: string; price: string; current?: boolean }[];
+    rows: { feature: string; included: boolean[] }[];
+    anchorLine: string;
+  };
   /** Schema.org Product description. */
   seoDescription: string;
   priceCents: number;
@@ -178,6 +187,60 @@ export default function ProductLanding({
 
       {/* 4. Look inside */}
       <ProductPreview slug={c.slug} title={c.title} />
+
+      {/* 4b. Value anchor (P6): the tier comparison, flagship only */}
+      {c.comparison ? (
+        <section
+          className="product-section landing-comparison"
+          aria-labelledby="comparison-h"
+        >
+          <h2 id="comparison-h">Which depth is yours?</h2>
+          <div className="landing-comparison-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <span className="visually-hidden">Feature</span>
+                  </th>
+                  {c.comparison.tiers.map((t) => (
+                    <th
+                      scope="col"
+                      key={t.label}
+                      className={t.current ? "comparison-current" : ""}
+                    >
+                      {t.label}
+                      <span className="comparison-price">{t.price}</span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {c.comparison.rows.map((r) => (
+                  <tr key={r.feature}>
+                    <th scope="row">{r.feature}</th>
+                    {r.included.map((inc, i) => (
+                      <td
+                        key={i}
+                        className={
+                          c.comparison!.tiers[i]?.current
+                            ? "comparison-current"
+                            : ""
+                        }
+                      >
+                        <span aria-hidden="true">{inc ? "✓" : "·"}</span>
+                        <span className="visually-hidden">
+                          {inc ? "included" : "not included"}
+                        </span>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="landing-comparison-anchor">{c.comparison.anchorLine}</p>
+        </section>
+      ) : null}
 
       {/* 5. How it works */}
       <section className="product-section landing-steps" aria-labelledby="steps-h">

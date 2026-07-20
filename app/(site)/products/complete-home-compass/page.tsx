@@ -113,6 +113,27 @@ const CONFIG: LandingConfig = {
   finalNote:
     "A personalised PDF, around 115 to 165 pages, yours to keep. One-time, no subscription.",
   ladder: "complete",
+  // P6: the value anchor. Columns match the ladder; the flagship column
+  // is highlighted. Feature rows are honest registry facts, no padding.
+  comparison: {
+    tiers: [
+      { label: "Personal Compass", price: "$19" },
+      { label: "Twelve Spaces", price: "$29" },
+      { label: "Complete Home", price: "$49", current: true },
+    ],
+    rows: [
+      { feature: "Your Kua profile and personal bagua chart", included: [true, true, true] },
+      { feature: "All eight directions read in depth", included: [true, false, true] },
+      { feature: "All twelve rooms, chapter by chapter", included: [false, true, true] },
+      { feature: "All nine life areas, chapter by chapter", included: [false, false, true] },
+      { feature: "East and West group compatibility", included: [false, false, true] },
+      { feature: "The 2026 overlay for your Kua", included: [false, false, true] },
+      { feature: "Seven-day experiment with a printable log", included: [true, true, true] },
+      { feature: "Cut-out keepsake card of your directions", included: [true, true, true] },
+    ],
+    anchorLine:
+      "Around 115 to 165 personalised pages for $49: less than half a dollar per page, and the two smaller books are both inside it.",
+  },
 };
 
 type SearchParams = Promise<{ waitlist?: string }>;

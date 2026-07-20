@@ -8055,3 +8055,58 @@ a:hover { color: var(--clay-deep); }
 .planner-2027-waitlist h2 {
   margin-top: 0;
 }
+
+/* P6 (2026-07-20): flagship value-anchor comparison table. */
+.landing-comparison-scroll {
+  overflow-x: auto;
+}
+
+.landing-comparison table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 480px;
+}
+
+.landing-comparison th,
+.landing-comparison td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--sand, #e2dac5);
+  text-align: center;
+}
+
+.landing-comparison thead th {
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.landing-comparison tbody th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ink, #0e3b2c);
+}
+
+.landing-comparison .comparison-price {
+  display: block;
+  font-weight: 800;
+  color: var(--clay, #d9531a);
+}
+
+.landing-comparison .comparison-current {
+  background: var(--cream-alt, #f2f2ee);
+}
+
+.landing-comparison thead th.comparison-current {
+  border-top: 3px solid var(--clay, #d9531a);
+}
+
+.landing-comparison td span[aria-hidden] {
+  font-weight: 700;
+  color: var(--olive, #0e3b2c);
+}
+
+.landing-comparison-anchor {
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  color: var(--ink-2, #4f5b53);
+}
