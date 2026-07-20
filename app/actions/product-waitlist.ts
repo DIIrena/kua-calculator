@@ -36,6 +36,15 @@ const PRODUCTS: Record<string, ProductMeta> = {
     title: "2026 Feng Shui Planner: Mid-Year Edition",
     redirectPath: "/products/annual-feng-shui-planner-2026",
   },
+  // C6 (2026-07-20): the 2027 edition waitlist collects intent months
+  // before the January 2027 launch. No 2027 page exists yet; signups
+  // return to the 2026 planner page, and the launch email targets this
+  // segment via send-launch-email.mjs when the edition ships.
+  "annual-feng-shui-planner-2027": {
+    slug: "annual-feng-shui-planner-2027",
+    title: "2027 Feng Shui Planner (ships January 2027)",
+    redirectPath: "/products/annual-feng-shui-planner-2026",
+  },
   "move-in-kit": {
     slug: "move-in-kit",
     title: "Move-In Date Report",

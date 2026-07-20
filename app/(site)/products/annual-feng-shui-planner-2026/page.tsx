@@ -4,6 +4,7 @@ import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import FlagshipChooser from "@/components/FlagshipChooser";
+import { joinProductWaitlist } from "@/app/actions/product-waitlist";
 
 import PlannerSourceTracker from "@/components/PlannerSourceTracker";
 
@@ -514,6 +515,49 @@ export default async function PlannerPage(props: {
       </section>
 
       <FlagshipChooser current="planner" />
+
+      <section
+        className="product-section planner-2027-waitlist"
+        aria-labelledby="planner-2027-heading"
+      >
+        <h2 id="planner-2027-heading">Planning further ahead?</h2>
+        <p>
+          The 2027 edition ships in January 2027 as a full twelve-month
+          book. Join its waitlist and you hear the moment it goes live,
+          with the early price; 2026 buyers also receive the 30 percent
+          renewal offer.
+        </p>
+        <form action={joinProductWaitlist} className="lead-magnet-form">
+          <input
+            type="hidden"
+            name="productSlug"
+            value="annual-feng-shui-planner-2027"
+          />
+          <label
+            className="lead-magnet-label"
+            htmlFor="planner-2027-email"
+          >
+            Your email
+          </label>
+          <div className="lead-magnet-row">
+            <input
+              id="planner-2027-email"
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              placeholder="you@example.com"
+              className="lead-magnet-input"
+            />
+            <button type="submit" className="cta-secondary">
+              Join the 2027 waitlist
+            </button>
+          </div>
+          <p className="lead-magnet-note">
+            One confirmation now, one launch email in January. Nothing else.
+          </p>
+        </form>
+      </section>
 
       <section className="product-back-section">
         <p>

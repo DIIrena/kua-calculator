@@ -8043,3 +8043,15 @@ a:hover { color: var(--clay-deep); }
   accent-color: var(--clay, #d9531a);
   flex-shrink: 0;
 }
+
+/* C6 (2026-07-20): the 2027 planner waitlist block. */
+.planner-2027-waitlist {
+  background: var(--cream-alt, #f2f2ee);
+  border: 1px solid var(--sand, #e2dac5);
+  border-radius: var(--radius-lg, 14px);
+  padding: 1.5rem 1.75rem;
+}
+
+.planner-2027-waitlist h2 {
+  margin-top: 0;
+}
