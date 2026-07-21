@@ -43,7 +43,7 @@ ATTRIBUTION_BLOCKS.md rows.
 - [x] PRM-009 scripts/smoke-pillars.mjs (8-Kua assertions) + CHAPTER_PLAN fill.
 - [x] PRM-010 Render QA: bands (per-kind mini bands), photos-empty pagination
       check, page-by-page review, brand amendments, push.
-- [ ] PRM-011 Advice base (feng-shui project): ADB-1 sweep (+80-120 entries,
+- [x] PRM-011 Advice base (feng-shui project): ADB-1 sweep (+80-120 entries,
       helpful-people category added), ADB-2 by-room views, ADB-3 dashboard tab.
 
 Owner gates: 12 images generated from the prompts file into content/photos/
@@ -131,3 +131,15 @@ preview-imagery pass.
   smokes + build green. Learning: the empirical East/West identical-pagination
   check is the one test that makes static CHAPTER_PLAN trustworthy; run it on
   every future content change to these blocks.
+- PRM-011 (2026-07-21): the advice base grew 355 -> 438 entries (ADV-0356..0438,
+  audit PASS: 0 verbatim, 0 quote, 0 trace problems, zero em dashes), mined
+  from chapters 13-22 with real extract-line locators. The three measured gaps
+  closed: fame 11 -> 19, helpful-people 0 -> 13 (new category added to schema +
+  views), children/creativity 2 -> 13. build_views.py now also emits by-room/
+  (17 room files + a room-by-category matrix), and the internal dashboard
+  gained a /rooms tab (room selector + life-area filter), verified serving
+  locally. feng-shui is NOT a git repo, so those changes sit on disk for the
+  owner's review; its CLAUDE.md advice-base row updated to match reality.
+  Spot-verified from the main loop: 438 entries, 13 helpful-people, 18
+  by-room files, audit verdict PASS. Premium Nine Areas phase COMPLETE;
+  remaining gates are the owner's 12 photos and the sample review.
