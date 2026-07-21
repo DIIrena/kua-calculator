@@ -353,5 +353,11 @@ REBRAND work can lift this directly into `:root` in `main.css`.
 - Fill the page with colour. Restraint is the brand.
 - Use hard offset shadows, bold blocks, or loud accents.
 - Promise outcomes or sell mystique.
-- Use em dashes, emoji icons, or raster images.
+- Use em dashes, emoji icons, or raster images in the site UI. (Scoped
+  exception, owner-approved 2026-07-21: photographic plates in the brand's
+  quiet-luxury art direction are allowed inside PDF products and product
+  marketing; the interface itself stays SVG-only. Art direction for those
+  plates: warm ivory rooms, natural daylight, matte wood, linen, ceramic
+  and brass, restrained deep-green and terracotta accents, no people, no
+  readable text.)
 - Default to Inter, Roboto, Arial, or Space Grotesk.

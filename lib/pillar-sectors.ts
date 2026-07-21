@@ -156,15 +156,15 @@ export const WANDERING_STAR: Record<QualityCode, string> = {
  *  from measured renders at PRM-009; 0 means "not yet measured" and the
  *  map falls back to chapter-order badges instead of page numbers. */
 export const CHAPTER_PLAN: Partial<Record<BlockId, number>> = {
-  "pillar-wealth": 0,
-  "pillar-fame": 0,
-  "pillar-relationships": 0,
-  "pillar-creativity": 0,
-  "pillar-helpful-people": 0,
-  "pillar-career": 0,
-  "pillar-knowledge": 0,
-  "pillar-family": 0,
-  "pillar-health": 0,
+  "pillar-wealth": 5,
+  "pillar-fame": 14,
+  "pillar-relationships": 21,
+  "pillar-creativity": 30,
+  "pillar-helpful-people": 38,
+  "pillar-career": 46,
+  "pillar-knowledge": 54,
+  "pillar-family": 63,
+  "pillar-health": 70,
 };
 
 /** Resolve the branch markers in a pillar block's markdown. Keeps the

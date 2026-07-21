@@ -188,7 +188,10 @@ for (const e of COMPASS_CATALOGUE) {
     currency: "usd",
     stripeEnvKey: compassEnvKey(e.slug),
     blocks: compassBlocks(e) as BlockId[],
-    targetPages: { min: 4, max: 10 },
+    // Pillar minis carry the premium chapter design (opener, tips page,
+    // recap card) and run longer than the space/year minis.
+    targetPages:
+      e.kind === "pillar" ? { min: 9, max: 17 } : { min: 4, max: 10 },
   };
 }
 
@@ -213,7 +216,7 @@ PRODUCTS["all-nine-pillars-compass"] = {
   currency: "usd",
   stripeEnvKey: "STRIPE_PRICE_ALL_PILLARS",
   blocks: ["welcome-pillars", ...ALL_PILLAR_BLOCKS, "closing-pillars"],
-  targetPages: { min: 32, max: 44 },
+  targetPages: { min: 70, max: 90 },
 };
 
 PRODUCTS["all-twelve-spaces-compass"] = {
@@ -248,7 +251,7 @@ PRODUCTS["complete-home-compass"] = {
     ...ALL_PILLAR_BLOCKS,
     "year-overlay", "faq-hard-cases", "experiment", "closing-extended",
   ],
-  targetPages: { min: 120, max: 164 },
+  targetPages: { min: 160, max: 200 },
 };
 
 export function findProduct(slug: string): Product | null {

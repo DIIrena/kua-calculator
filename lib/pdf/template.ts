@@ -633,8 +633,8 @@ export function buildHtml(
      so the cover composition never shifts. */
   .cover-plate {
     width: 128mm;
-    height: 96mm;
-    margin: 12mm auto 0 auto;
+    height: 82mm;
+    margin: 10mm auto 0 auto;
     border-radius: 3mm;
     background-size: cover;
     background-position: center;

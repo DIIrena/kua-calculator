@@ -40,8 +40,8 @@ ATTRIBUTION_BLOCKS.md rows.
       false "cannot assume" sentence.
 - [x] PRM-008 Chapters 7-9 (knowledge, family, health): same; health neutral
       centre panel, no markers.
-- [ ] PRM-009 scripts/smoke-pillars.mjs (8-Kua assertions) + CHAPTER_PLAN fill.
-- [ ] PRM-010 Render QA: bands (per-kind mini bands), photos-empty pagination
+- [x] PRM-009 scripts/smoke-pillars.mjs (8-Kua assertions) + CHAPTER_PLAN fill.
+- [x] PRM-010 Render QA: bands (per-kind mini bands), photos-empty pagination
       check, page-by-page review, brand amendments, push.
 - [ ] PRM-011 Advice base (feng-shui project): ADB-1 sweep (+80-120 entries,
       helpful-people category added), ADB-2 by-room views, ADB-3 dashboard tab.
@@ -115,3 +115,19 @@ preview-imagery pass.
   structural gate written BEFORE the writers ran is what made the lost verify
   stage a non-event - acceptance criteria in code beat acceptance criteria in
   agents.
+- PRM-009+010 (2026-07-21): render QA passed on the photo-fallback path (the
+  owner's images slot in later without touching pagination). Measured: the
+  bundle renders 79pp for BOTH an East (Kua 9) and a West (Kua 6) sample -
+  the fixed-signature property holds; wealth mini 13pp; complete-home 180pp.
+  CHAPTER_PLAN filled (5/14/21/30/38/46/54/63/70) and verified stable on
+  re-render; the p2 map shows correct per-Kua verdict tints and real page
+  numbers. Bands updated: bundle {70,90}, pillar minis {9,17} via a per-kind
+  band in the catalogue loop, complete-home {160,200}. One layout bug caught
+  in review: the 96mm cover plate pushed the date to p2; 82mm returned it.
+  Named-page footers CONFIRMED working ("Wealth - Southeast - 5"). Visual
+  page-by-page: cover, map, opener, verdict panel (Kua 9 SE = Ju Men
+  supportive, only that branch printed), recap card, keepsake gloss all
+  correct. Brand raster exception recorded in CLAUDE.md + BRAND_BOOK. All
+  smokes + build green. Learning: the empirical East/West identical-pagination
+  check is the one test that makes static CHAPTER_PLAN trustworthy; run it on
+  every future content change to these blocks.

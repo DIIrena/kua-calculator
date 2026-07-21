@@ -133,7 +133,11 @@ Conventions:    - Accessibility-first: labels for all inputs, aria where needed,
   anonymous calculator use or to `/embed`, which remain privacy-pure.
   Privacy copy must keep this distinction clear (see
   `app/(site)/privacy/page.tsx` and the calculator FAQ).
-- Inline SVG only, no raster images.
+- Inline SVG only, no raster images, **in the site UI**. Scoped exception
+  (owner-approved 2026-07-21): generated-photo plates are allowed inside PDF
+  products and product marketing. Product photos live in `content/photos/`
+  (see its README + `lib/pdf/photos.ts`); every image passes the owner's
+  review gate before it ships.
 - Accessibility checks at every UI task: contrast, focus, keyboard, labels.
 
 ## Per-task protocol (Ralph)
