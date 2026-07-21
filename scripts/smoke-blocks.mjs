@@ -30,7 +30,33 @@ const TOKENS = {
   kuaElement: "Wood", kuaElementColors: "greens", kuaElementMaterials: "plants",
   kuaElementDress: "slim cuts", kuaElementIcon: "<svg></svg>", yanNianActivation: "a recipe",
   direction: "North", directionShort: "N", pinyin: "Sheng Qi", gloss: "Generating energy",
+  // Pillar-sector tokens (PRM-001). Values arbitrary; presence is the test.
+  sectorName: "Southeast", sectorShort: "SE", sectorElement: "Wood",
+  sectorTrigram: "Xun", sectorVerdict: "supportive", sectorStar: "Tan Lang",
+  sectorPinyin: "Fu Wei", sectorGloss: "Stability",
+  sectorVerdictPanel: "<div class=\"verdict-panel\"></div>",
+  sectorMiniMap: "<svg></svg>", sectorElementIcon: "<svg></svg>",
+  nineAreasMap: "<svg></svg>",
 };
+
+// The eight pillar blocks with a fixed compass sector; their markdown may
+// carry {{#supportive}}/{{#cautious}} branch markers, resolved at load by
+// lib/pillar-sectors.ts resolveSectorBranches. pillar-health (the Centre)
+// and every other block must carry NO markers.
+const SECTOR_BRANCH_BLOCKS = new Set([
+  "pillar-wealth", "pillar-fame", "pillar-relationships", "pillar-creativity",
+  "pillar-helpful-people", "pillar-career", "pillar-knowledge", "pillar-family",
+]);
+
+// Mirror of resolveSectorBranches in lib/pillar-sectors.ts.
+function resolveBranches(src, verdict) {
+  const drop = verdict === "supportive" ? "cautious" : "supportive";
+  return src
+    .replace(new RegExp(`\\{\\{#${verdict}\\}\\}([\\s\\S]*?)\\{\\{\\/${verdict}\\}\\}`, "g"), "$1")
+    .replace(new RegExp(`\\{\\{#${drop}\\}\\}[\\s\\S]*?\\{\\{\\/${drop}\\}\\}`, "g"), "");
+}
+
+const MARKER_RE = /\{\{[#/](supportive|cautious)\}\}/;
 
 const renderer = unified()
   .use(remarkParse).use(remarkGfm)
@@ -43,12 +69,25 @@ const files = readdirSync(BLOCKS_DIR)
 let failures = 0;
 for (const f of files) {
   const src = readFileSync(path.join(BLOCKS_DIR, f), "utf-8");
-  const sub = src.replace(/\{\{(\w+)\}\}/g, (whole, k) => (k in TOKENS ? TOKENS[k] : whole));
+  const baseId = f.replace(/\.md$/, "").replace(/-(east|west|child)(-child)?$/, "");
+  const problems0 = [];
+  let resolved = src;
+  if (SECTOR_BRANCH_BLOCKS.has(baseId)) {
+    // Both verdicts must resolve to marker-free text.
+    for (const verdict of ["supportive", "cautious"]) {
+      const out = resolveBranches(src, verdict);
+      if (MARKER_RE.test(out)) problems0.push(`UNBALANCED MARKERS (${verdict})`);
+    }
+    resolved = resolveBranches(src, "supportive");
+  } else if (MARKER_RE.test(src)) {
+    problems0.push("MARKERS IN UNMAPPED BLOCK");
+  }
+  const sub = resolved.replace(/\{\{(\w+)\}\}/g, (whole, k) => (k in TOKENS ? TOKENS[k] : whole));
   const leftover = sub.match(/\{\{\w+\}\}/g);
   const emDash = /—/.test(sub);
   let html = "", err = null;
   try { html = String(await renderer.process(sub)); } catch (e) { err = e.message; }
-  const problems = [];
+  const problems = [...problems0];
   if (leftover) problems.push(`UNRESOLVED ${[...new Set(leftover)].join(",")}`);
   if (emDash) problems.push("EM DASH");
   if (err) problems.push(`RENDER ERROR ${err}`);

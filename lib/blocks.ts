@@ -42,6 +42,15 @@ import {
   elementProfile,
   yanNianActivation,
 } from "@/lib/kua-element";
+import {
+  PILLAR_TO_SECTOR,
+  PILLAR_META,
+  WANDERING_STAR,
+  resolveSectorBranches,
+  sectorVerdictFor,
+  sectorVerdictPanelHtml,
+} from "@/lib/pillar-sectors";
+import { nineAreasMapSvg, sectorMiniMapSvg } from "@/lib/pdf/svg-marks";
 
 /** Age threshold (exclusive) below which we prefer the `-child.md`
  *  variant of a block if it exists. Below this we swap the adult
@@ -99,6 +108,14 @@ function substituteTokens(
 ): string {
   const quality = BLOCK_TO_QUALITY[blockId];
   const direction = quality ? context.byQuality[quality] : null;
+
+  // Pillar-chapter layer: the block's fixed bagua sector (if any) and
+  // the buyer's Direction landing on it. Powers the resolved verdict
+  // tokens; all of them return "" for blocks without a sector, per the
+  // stray-token-never-crashes convention.
+  const pillarSector = PILLAR_TO_SECTOR[blockId];
+  const pillarDir = pillarSector ? context.byCompass[pillarSector] : null;
+  const pillarMeta = PILLAR_META[blockId];
 
   // Inline SVG tokens. Generated lazily so blocks that do not use them
   // do not pay the string-concatenation cost.
@@ -183,6 +200,26 @@ function substituteTokens(
       (cachedElementIcons ??= elementIconsSvg(context.kuaGroup)),
     elementSwatches: () =>
       (cachedElementSwatches ??= elementSwatchesSvg(context.kuaGroup)),
+    // Pillar-sector tokens (premium Nine Areas design). Resolved from
+    // the block's fixed sector against the buyer's chart.
+    sectorName: () => pillarMeta?.sectorLabel ?? "",
+    sectorShort: () => pillarSector ?? "",
+    sectorElement: () => pillarMeta?.elementLabel ?? "",
+    sectorTrigram: () => pillarMeta?.trigram ?? "",
+    sectorVerdict: () =>
+      pillarDir ? (pillarDir.favourable ? "supportive" : "handle with care") : "",
+    sectorStar: () => (pillarDir ? WANDERING_STAR[pillarDir.qualityCode] : ""),
+    sectorPinyin: () => pillarDir?.pinyin ?? "",
+    sectorGloss: () => pillarDir?.gloss ?? "",
+    sectorVerdictPanel: () =>
+      pillarMeta
+        ? sectorVerdictPanelHtml(blockId, context.firstName, context.byCompass)
+        : "",
+    sectorMiniMap: () =>
+      pillarMeta ? sectorMiniMapSvg(pillarMeta, pillarDir?.favourable ?? null) : "",
+    sectorElementIcon: () =>
+      pillarMeta ? elementIconSvg(pillarMeta.element) : "",
+    nineAreasMap: () => nineAreasMapSvg(context.byCompass),
   };
 
   return template.replace(/\{\{(\w+)\}\}/g, (whole, key) => {
@@ -238,7 +275,11 @@ export async function loadBlock(
     context.kuaGroup,
     context.ageYears,
   );
-  const substituted = substituteTokens(source, context, blockId);
+  const branched = resolveSectorBranches(
+    source,
+    sectorVerdictFor(blockId, context.byCompass),
+  );
+  const substituted = substituteTokens(branched, context, blockId);
   const file = await renderer.process(substituted);
   return String(file);
 }

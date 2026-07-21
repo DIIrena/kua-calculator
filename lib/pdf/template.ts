@@ -200,6 +200,9 @@ export function buildHtml(
   .cover {
     page-break-after: always;
     height: 253mm; /* A4 297mm minus 22mm margins top+bottom */
+    /* border-box so the framed-cover padding and border stay INSIDE the
+       253mm; without this the cover overflowed onto a broken page 2. */
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     text-align: center;

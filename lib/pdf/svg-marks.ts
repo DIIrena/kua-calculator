@@ -588,3 +588,113 @@ export function floorPlanExampleSvg(): string {
 <p class="figure-caption">A worked example: one reading from the centre of the home gives every room its directions. In this flat the bedroom sits northeast, the kitchen northwest, the entrance south.</p>
 </div>`;
 }
+
+// ============================================================
+// Premium Nine Areas design (PRM-002).
+// nineAreasMapSvg: the full-page "your nine areas at a glance"
+// verdict map. 3x3 grid, north at the top (consistent with every
+// other compass visual in the product), each cell carrying the
+// life area, its sector, its element, and the BUYER'S resolved
+// verdict. The centre cell is Health, which carries no verdict.
+// sectorMiniMapSvg: the small chapter-opener locator, same grid
+// with only the chapter's sector filled.
+// ============================================================
+
+import type { PillarMeta } from "@/lib/pillar-sectors";
+import { PILLAR_META, CHAPTER_PLAN } from "@/lib/pillar-sectors";
+
+// Minimal direction shape read off context.byCompass; keeps this layer
+// decoupled from lib/directions.ts (same pattern as ByQualityMap).
+type ByCompassMap = Record<Compass, { favourable: boolean }>;
+
+// Grid position of each sector with north at the top.
+const GRID_POS: Record<Compass, { col: number; row: number }> = {
+  NW: { col: 0, row: 0 }, N: { col: 1, row: 0 }, NE: { col: 2, row: 0 },
+  W:  { col: 0, row: 1 },                        E:  { col: 2, row: 1 },
+  SW: { col: 0, row: 2 }, S: { col: 1, row: 2 }, SE: { col: 2, row: 2 },
+};
+
+export function nineAreasMapSvg(byCompass: ByCompassMap): string {
+  const CELL_W = 158;
+  const CELL_H = 118;
+  const GAP = 8;
+  const PAD = 14;
+  const W = PAD * 2 + CELL_W * 3 + GAP * 2;
+  const H = PAD * 2 + CELL_H * 3 + GAP * 2 + 26; // + north marker strip
+
+  const entries = Object.entries(PILLAR_META) as Array<[
+    string,
+    PillarMeta,
+  ]>;
+
+  const cells = entries
+    .map(([blockId, meta]) => {
+      const pos = meta.sector ? GRID_POS[meta.sector] : { col: 1, row: 1 };
+      const x = PAD + pos.col * (CELL_W + GAP);
+      const y = 26 + PAD + pos.row * (CELL_H + GAP);
+      const fav = meta.sector ? byCompass[meta.sector].favourable : null;
+      const fill = fav === null ? C.sand : fav ? C.oliveSoft : C.claySoft;
+      const verdictText =
+        fav === null
+          ? "the still point"
+          : fav
+            ? "supportive - lean in"
+            : "handle with care";
+      const verdictColor = fav === null ? C.ink2 : C.ink;
+      const chapter = CHAPTER_PLAN[blockId as keyof typeof CHAPTER_PLAN] ?? 0;
+      const pageBadge = chapter > 0 ? `p. ${chapter}` : `Ch. ${meta.order}`;
+      const sectorLine = meta.sector
+        ? `${meta.sectorLabel} - ${meta.elementLabel}`
+        : `Centre - ${meta.elementLabel}`;
+      return `<g>
+  <rect x="${x}" y="${y}" width="${CELL_W}" height="${CELL_H}" rx="10" fill="${fill}" stroke="${C.hairline}" stroke-width="1"/>
+  <text x="${x + 14}" y="${y + 30}" font-family="Hanken Grotesk" font-size="17" font-weight="700" fill="${C.ink}">${meta.areaLabel}</text>
+  <text x="${x + 14}" y="${y + 50}" font-family="Hanken Grotesk" font-size="12" fill="${C.ink2}">${sectorLine}</text>
+  <text x="${x + 14}" y="${y + 76}" font-family="Hanken Grotesk" font-size="12.5" font-weight="700" fill="${verdictColor}">${fav === null ? "" : fav ? "✦ " : "○ "}${verdictText}</text>
+  <text x="${x + 14}" y="${y + 100}" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.clay}">${pageBadge}</text>
+</g>`;
+    })
+    .join("\n");
+
+  return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" width="100%" style="display:block;" role="img" aria-label="Your nine life areas at a glance">
+  <text x="${W / 2}" y="16" text-anchor="middle" font-family="Hanken Grotesk" font-size="12" font-weight="700" letter-spacing="2" fill="${C.ink2}">N ↑ &#160; NORTH AT THE TOP</text>
+${cells}
+</svg>`;
+}
+
+export function sectorMiniMapSvg(
+  meta: PillarMeta,
+  favourable: boolean | null,
+): string {
+  const CELL = 26;
+  const GAP = 3;
+  const PAD = 2;
+  const W = PAD * 2 + CELL * 3 + GAP * 2;
+  const H = W + 14;
+
+  const active = meta.sector ? GRID_POS[meta.sector] : { col: 1, row: 1 };
+  const fill =
+    favourable === null ? C.sand : favourable ? C.oliveSoft : C.claySoft;
+
+  const cells: string[] = [];
+  for (let row = 0; row < 3; row++) {
+    for (let col = 0; col < 3; col++) {
+      const x = PAD + col * (CELL + GAP);
+      const y = 12 + PAD + row * (CELL + GAP);
+      const isActive = col === active.col && row === active.row;
+      cells.push(
+        `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="4" fill="${isActive ? fill : C.paper}" stroke="${isActive ? C.ink : C.hairline}" stroke-width="${isActive ? 1.4 : 1}"/>`,
+      );
+      if (isActive) {
+        cells.push(
+          `<text x="${x + CELL / 2}" y="${y + CELL / 2 + 4}" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">${meta.sector ?? "⊙"}</text>`,
+        );
+      }
+    }
+  }
+
+  return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" style="display:block;" role="img" aria-label="${meta.areaLabel} sector locator">
+  <text x="${W / 2}" y="9" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" font-weight="700" letter-spacing="1.5" fill="${C.ink2}">N</text>
+${cells.join("\n")}
+</svg>`;
+}

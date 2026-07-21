@@ -61,6 +61,13 @@ const TOKENS = {
   directionShort: "N",
   pinyin: "Sheng Qi",
   gloss: "Generating energy",
+  // Pillar-sector tokens (PRM-001).
+  sectorName: "Southeast", sectorShort: "SE", sectorElement: "Wood",
+  sectorTrigram: "Xun", sectorVerdict: "supportive", sectorStar: "Tan Lang",
+  sectorPinyin: "Fu Wei", sectorGloss: "Stability",
+  sectorVerdictPanel: "<div class=\"verdict-panel\"></div>",
+  sectorMiniMap: "<svg></svg>", sectorElementIcon: "<svg></svg>",
+  nineAreasMap: "<svg></svg>",
 };
 
 const GROUP = "east";
@@ -81,7 +88,13 @@ async function resolveBlock(id) {
 }
 
 function substitute(text) {
-  return text.replace(/\{\{(\w+)\}\}/g, (whole, key) =>
+  // Resolve pillar branch markers as the supportive variant (mirror of
+  // lib/pillar-sectors.ts resolveSectorBranches); smoke-blocks.mjs
+  // checks both variants and marker balance exhaustively.
+  const branched = text
+    .replace(/\{\{#supportive\}\}([\s\S]*?)\{\{\/supportive\}\}/g, "$1")
+    .replace(/\{\{#cautious\}\}[\s\S]*?\{\{\/cautious\}\}/g, "");
+  return branched.replace(/\{\{(\w+)\}\}/g, (whole, key) =>
     key in TOKENS ? TOKENS[key] : whole,
   );
 }
