@@ -37,6 +37,8 @@ const TOKENS = {
   sectorVerdictPanel: "<div class=\"verdict-panel\"></div>",
   sectorMiniMap: "<svg></svg>", sectorElementIcon: "<svg></svg>",
   nineAreasMap: "<svg></svg>",
+  introPhotoBand: "<div class=\"opener-photo\"></div>",
+  closingPhotoBand: "<div class=\"opener-photo\"></div>",
 };
 
 // The eight pillar blocks with a fixed compass sector; their markdown may

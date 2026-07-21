@@ -32,7 +32,7 @@ ATTRIBUTION_BLOCKS.md rows.
       assembleProductHtml + named-page footers (verify, degrade gracefully).
 - [x] PRM-004 Photo pipeline: content/photos/ + lib/pdf/photos.ts fixed-height
       fallback + next.config tracing + folder-budget smoke; prompts file saved.
-- [ ] PRM-005 welcome-pillars ({{nineAreasMap}} at-a-glance) + closing-pillars +
+- [x] PRM-005 welcome-pillars ({{nineAreasMap}} at-a-glance) + closing-pillars +
       BlockId union + recipe swap; keepsake grid fix + gloss.
 - [ ] PRM-006 Chapters 1-3 (wealth, fame, relationships): verdict panel + branch
       markers + enrichment + tips page + recap + attribution.
@@ -86,3 +86,14 @@ preview-imagery pass.
   Typecheck + build green. Footer support verified at first render (PRM-010).
   Learning: injecting the opener in the assembler instead of markdown means
   the nine mini compasses inherit the whole design with no per-file edits.
+- PRM-005 (2026-07-21): welcome-pillars opens with the personalised nine-cell
+  verdict map as page 2 (the at-a-glance page and the product's designed peak)
+  followed by the nine-area welcome with the chapter-rhythm guide;
+  closing-pillars is the designed ending: clear-the-Centre-first as rule one,
+  then the area that stung, then lean-green/tend-orange, honest close, and the
+  Complete Home Compass bridge replacing the old free-calculator downsell.
+  BlockId union + recipe swapped for the bundle only; the 22 single-topic
+  products keep the correct minis. Keepsake gained the classical-names gloss.
+  Smoke 49 blocks green, typecheck + build green. Learning: the map page
+  doubles as the reading-order aid, so the welcome prose never has to explain
+  navigation - the picture already did.

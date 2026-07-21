@@ -980,6 +980,7 @@ function keepsakeCardHtml(context: BlockContext, groupLabel: string): string {
       <thead><tr><th>Handle with care</th><th></th><th></th></tr></thead>
       <tbody>${care.map(row).join("")}</tbody>
     </table>
+    <p class="keepsake-gloss">Classical names. The tradition reads these as cautions to place around, not verdicts on your life.</p>
     <p class="keepsake-footer">myfengshuihome.com · read the room first, then the direction</p>
   </div>
 </section>`;

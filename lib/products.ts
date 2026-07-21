@@ -41,6 +41,11 @@ export type BlockId =
   // lib/compass-catalogue.ts).
   | "welcome-mini"
   | "closing-mini"
+  // Nine-areas bundle framing (premium design): nine-area scope + the
+  // personalised at-a-glance verdict map. The minis stay correct for
+  // the 22 single-topic products.
+  | "welcome-pillars"
+  | "closing-pillars"
   | "space-kitchen"
   | "space-living-room"
   | "space-bathroom"
@@ -207,7 +212,7 @@ PRODUCTS["all-nine-pillars-compass"] = {
   priceCents: 2900,
   currency: "usd",
   stripeEnvKey: "STRIPE_PRICE_ALL_PILLARS",
-  blocks: ["welcome-mini", ...ALL_PILLAR_BLOCKS, "closing-mini"],
+  blocks: ["welcome-pillars", ...ALL_PILLAR_BLOCKS, "closing-pillars"],
   targetPages: { min: 32, max: 44 },
 };
 

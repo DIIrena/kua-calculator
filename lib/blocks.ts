@@ -221,6 +221,11 @@ function substituteTokens(
     sectorElementIcon: () =>
       pillarMeta ? elementIconSvg(pillarMeta.element) : "",
     nineAreasMap: () => nineAreasMapSvg(context.byCompass),
+    // Fixed-height photo bands for the pillar framing blocks. Same
+    // fallback contract as the chapter openers: identical pagination
+    // with or without the owner's images.
+    introPhotoBand: () => photoBandHtml("intro"),
+    closingPhotoBand: () => photoBandHtml("closing"),
   };
 
   return template.replace(/\{\{(\w+)\}\}/g, (whole, key) => {
@@ -283,6 +288,15 @@ export async function loadBlock(
   const substituted = substituteTokens(branched, context, blockId);
   const file = await renderer.process(substituted);
   return String(file);
+}
+
+/** A fixed-height photo band for a non-pillar slot (intro/closing).
+ *  Falls back to the calm sand gradient with the brand mark. */
+function photoBandHtml(name: string): string {
+  const photo = photoDataUri(name);
+  return photo
+    ? `<div class="opener-photo" style="background-image:url('${photo}')"></div>`
+    : `<div class="opener-photo opener-photo--fallback">${brandMarkSvg(56)}</div>`;
 }
 
 /** The injected chapter-opener header for pillar blocks: fixed-height
