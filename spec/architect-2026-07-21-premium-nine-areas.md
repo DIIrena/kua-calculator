@@ -30,7 +30,7 @@ ATTRIBUTION_BLOCKS.md rows.
 - [x] PRM-002 SVG: nineAreasMapSvg, sectorMiniMapSvg, sector compass extension.
 - [ ] PRM-003 Design system: template.ts components + opener injection in
       assembleProductHtml + named-page footers (verify, degrade gracefully).
-- [ ] PRM-004 Photo pipeline: content/photos/ + lib/pdf/photos.ts fixed-height
+- [x] PRM-004 Photo pipeline: content/photos/ + lib/pdf/photos.ts fixed-height
       fallback + next.config tracing + folder-budget smoke; prompts file saved.
 - [ ] PRM-005 welcome-pillars ({{nineAreasMap}} at-a-glance) + closing-pillars +
       BlockId union + recipe swap; keepsake grid fix + gloss.
@@ -64,3 +64,12 @@ preview-imagery pass.
   Learning: the token regex rejecting # and / means an unresolved marker can
   never be half-substituted - the failure mode is visible text, which smoke
   catches, so the preprocessor needs no defensive parser.
+- PRM-004 (2026-07-21): photo pipeline before the design system because the
+  opener injection imports it. lib/pdf/photos.ts mirrors the font loader
+  (readFileSync -> data URI, warm cache, null on absence); tracing config
+  bundles content/photos/*.jpg on all three PDF routes; folder README carries
+  the manifest + export settings; smoke-blocks enforces the 2.5MB budget
+  (Vercel 4.5MB response ceiling minus the ~1MB text PDF). The 12 prompts
+  shipped to spec/image-prompts-nine-areas-2026-07-21.md for the owner.
+  Learning: caching null (missing file stays missing per instance) is what
+  makes the fallback contract cheap - no per-render fs probing.

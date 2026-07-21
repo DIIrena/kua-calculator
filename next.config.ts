@@ -26,8 +26,16 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/api/chart-image/[id]": ["./lib/fonts/*.ttf"],
     "/api/og/[slug]": ["./lib/fonts/*.ttf"],
-    "/api/compass/[id]/render": ["./lib/fonts/*.ttf", "./content/blocks/*.md"],
-    "/api/dev/sample-compass": ["./lib/fonts/*.ttf", "./content/blocks/*.md"],
+    "/api/compass/[id]/render": [
+      "./lib/fonts/*.ttf",
+      "./content/blocks/*.md",
+      "./content/photos/*.jpg",
+    ],
+    "/api/dev/sample-compass": [
+      "./lib/fonts/*.ttf",
+      "./content/blocks/*.md",
+      "./content/photos/*.jpg",
+    ],
     // The post-checkout fulfilment server actions (fulfillCompass for the
     // Compass + Extended Kua Report, fulfillMoveIn for the Move-In Report)
     // run on this route and read content/blocks + the day-calendar JSON at
@@ -35,6 +43,7 @@ const nextConfig: NextConfig = {
     "/products/[slug]/success": [
       "./lib/fonts/*.ttf",
       "./content/blocks/*.md",
+      "./content/photos/*.jpg",
       "./lib/day-calendar-*.json",
     ],
   },

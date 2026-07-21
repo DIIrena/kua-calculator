@@ -104,5 +104,29 @@ for (const f of files) {
   }
   if (problems.length) { failures++; console.log(`  FAIL ${f.padEnd(26)} ${problems.join("; ")}`); }
 }
+// Photo-folder budget: content/photos JPEGs must total <= 2.5MB so the
+// finished PDF stays under Vercel's 4.5MB response limit.
+try {
+  const { statSync } = await import("node:fs");
+  const photosDir = path.join(BLOCKS_DIR, "..", "photos");
+  const jpgs = readdirSync(photosDir).filter((f) => f.endsWith(".jpg"));
+  const total = jpgs.reduce(
+    (n, f) => n + statSync(path.join(photosDir, f)).size,
+    0,
+  );
+  if (total > 2.5 * 1024 * 1024) {
+    failures++;
+    console.log(
+      `  FAIL content/photos/ over budget: ${(total / 1048576).toFixed(2)}MB of 2.50MB across ${jpgs.length} file(s)`,
+    );
+  } else if (jpgs.length) {
+    console.log(
+      `  photos: ${jpgs.length} plate(s), ${(total / 1048576).toFixed(2)}MB of 2.50MB budget`,
+    );
+  }
+} catch {
+  // folder absent: fine, the design falls back per lib/pdf/photos.ts
+}
+
 console.log(`\n${files.length} blocks checked, ${failures} failure(s).`);
 process.exit(failures ? 1 : 0);
