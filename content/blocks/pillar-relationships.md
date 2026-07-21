@@ -1,6 +1,6 @@
 # Your relationship corner, {{firstName}}
 
-In the eight-sided map that feng shui lays over a home, one sector is fixed to the love and partnership life-area for everyone, regardless of who lives there or how they sleep. It sits in the **Southwest**. The tradition gives this corner the Kun trigram - three soft, broken lines, the most yielding shape in the whole system - and reads it as the receptive, nurturing ground where relationship lives. The Southwest does not move with your birth chart. It is the same compass sector in your home as in everyone else's. What changes from person to person is how your own directions land on top of it, and that is the part of this reading you can actually check.
+In the eight-sided map that feng shui lays over a home, one sector is fixed to the love and partnership life-area for everyone, regardless of who lives there or how they sleep. It sits in the **Southwest**. The tradition gives this corner the Kun trigram - three soft, broken lines, the most yielding shape in the whole system - and reads it as the receptive, nurturing ground where relationship lives. The Southwest does not move with your birth chart. It is the same compass sector in your home as in everyone else's. What changes from person to person is how your own directions land on top of it, and that part of the reading has already been worked out for you in this chapter.
 
 ## What the tradition associates with the Southwest
 
@@ -24,6 +24,8 @@ So the practical instinct in the Southwest is to look for singles and consider p
 - **Earth shapes and earth tones.** Because Kun is Earth, the corner takes square and low forms, ceramics, and warm earth colours - terracotta, soft beige, muted pink, warm brown - more naturally than tall, spiky, or cold-coloured objects.
 
 <p class="pull-quote">In the relationship corner, the tradition reads two of a thing as partnership and one of a thing as solitude. So it asks a simple question of the space: what here is standing alone?</p>
+
+The tradition also grades pairs, and the grading is worth knowing. Two cups from one set carry the reading more strongly than two lookalikes that met on your shelf; origin is part of the symbolism. Mandarin ducks, the tradition's favourite paired emblem, are set either facing each other or facing the same way, never scattered as though unacquainted. And some pairs are only ever read as pairs: the dragon and the phoenix travel together, always as a couple, and a phoenix displayed alone carries widowhood symbolism in some lineages, which is why practitioners keep the lone phoenix out of relationship placements entirely. If a paired emblem loses its partner, retire it rather than displaying the survivor.
 
 What the tradition steers away from in this corner is just as clear: a single lone object set as the centrepiece, aggressive imagery (weapons, predatory animals, conflict scenes), and anything tied to a partnership that has ended. Mementos of a previous relationship are read as the past occupying the space meant for the present.
 
@@ -51,21 +53,78 @@ Inside the bedroom, the tradition's relationship cues are practical and worth kn
 - **No mirror reflecting the bed.** This is one of the cleanest rules the tradition gives, read across lineages as unsettling to a body half-asleep and as introducing a third presence into the room. If a mirrored wardrobe faces the bed, the simple move is to relocate, swap, or cover it.
 - **Paired, not solo, in what the room shows.** Two pillows used, two matching lamps, photographs of two people rather than a lone portrait, and the previous-relationship mementos kept out.
 
+One more pocket is worth knowing. The bedroom's own map also has a Southeast corner, the room's small wealth pocket, and the tradition lets it hold a couple's shared-resources token. Keep it a paired object, two coins in one dish rather than one, and never water; water stays out of bedrooms no matter which sector they sit in.
+
 What all of this does is arrange the room so its signals point toward connection rather than solitude. That is what the tradition claims for the corner, and it is worth doing well.
 
-## The Kua overlay: check your own directions
+## A room ready to be shared
 
-Here is where the reading becomes yours, {{firstName}}. The Southwest is fixed for everyone, but your personal directions are not, and the tradition reads the corner differently depending on how the two line up.
+The tradition also reads a bedroom the way you might read a guest list: does this room actually have space for two lives, or only for one? The checklist works the same whether you are single and seeking or settled and tending.
 
-Your Kua number is **{{kuaNumber}}**, which places you in **the {{kuaGroup}} group**. From that, the system draws your four supportive directions and your four to handle with care. The one most tied to *this* theme is your relationship direction, **{{yanNianDir}}** - the direction the tradition associates with connection and harmony between people.
+For the single and seeking, these are the signals the tradition takes as a room ready to be shared:
 
-Two separate checks, then:
+- **Two working nightstands**, even before there is anyone to use the second.
+- **Both sides of the bed reachable**, walked around rather than climbed over.
+- **Half the wardrobe genuinely empty**, not theoretically empty.
+- **Paired lamps, and both pillows in use**, so the bed reads as a bed for two.
+- **No solo self-portrait as the room's centrepiece**; the dominant image should not be one person alone.
 
-1. **Check the fixed Southwest sector against your own directions.** Look at where the Southwest falls in your personal set. If your Southwest is one of your four supportive directions ({{shengQiDir}}, {{tianYiDir}}, {{yanNianDir}}, {{fuWeiDir}}), this corner is doubly strong for you, and tending it works with your own map rather than against it. If your Southwest is instead one of your four to handle with care ({{huoHaiDir}}, {{wuGuiDir}}, {{liuShaDir}}, {{jueMingDir}}), treat the corner gently: keep it clean, keep it paired, and lean more on your personal relationship direction below rather than forcing this sector to do heavy work.
-2. **Use your relationship direction, {{yanNianDir}}, where you control the body.** The fixed Southwest is about the *space*; your relationship direction is about *you* inside it. The tradition's move is to turn the body toward {{yanNianDir}} in the moments that ask for connection - the chair you take for a conversation that matters, the side of the table you choose, and, where the room allows it, the headboard wall in a season focused on partnership. This is the lever you actually hold, because chairs turn and beds occasionally move even when walls do not.
+For couples, the same logic matures into symmetry without sameness: matched nightstands and lamps rather than identical everything, one shared top cover rather than two separate ones, and nothing in the room that belonged to a previous partner. The room does not need to match a catalogue. It needs to read, at a glance, as a space two people hold equally.
 
-If your Southwest and your relationship direction happen to coincide, that is a clean, reinforcing read. If they do not, you simply have two tools instead of one: tend the fixed corner as a space, and orient your body toward {{yanNianDir}} as a personal direction. Both are correct readings of the same system.
+## Your reading
+
+{{sectorVerdictPanel}}
+
+{{#supportive}}
+Your chart seats {{sectorStar}} in the Southwest, a supportive star, so the fixed relationship sector and your own map agree here. The tradition reads that as a doubled corner: the ground given to connection is also ground your chart treats as favourable, {{firstName}}.
+
+Lean into it in the ways this chapter has already described, only more deliberately. Let the Southwest hold the anchors that matter most: the same-source pair, the photograph of two people, or, if you are seeking, the paired objects kept ready. If the room allows two chairs or a small sofa in that corner, take the conversations that matter there, and let shared evenings actually happen in it.
+
+Time is the quiet activator. A supportive Southwest asks for presence more than ornament, so treat the corner as somewhere you go, not just somewhere you decorate.
+
+*If your chart had placed a cautious star here instead, the guidance would soften to tend and keep clear, and your supportive directions would carry the anchoring.*
+{{/supportive}}
+{{#cautious}}
+Your chart seats {{sectorStar}} in the Southwest, one of the stars the tradition handles with care. The corner keeps its meaning and keeps its claim on your upkeep: clear, clean, lit, and never the household's dumping ground. What softens is the anchoring.
+
+Do not stage the room's emotional centre here. One modest paired object is enough for this corner, and the fuller display belongs elsewhere: the photograph wall, the paired lamps, the seat you take for the conversations that matter all sit better along your supportive directions, {{shengQiDir}}, {{tianYiDir}}, {{yanNianDir}}, and {{fuWeiDir}}. In particular, let {{yanNianDir}}, your relationship direction, carry what the Southwest would otherwise hold: face it for the conversations you care about, and give the paired photograph a wall along that bearing.
+
+Tend the fixed corner; let your own directions do the carrying. That division of labour is the whole cautious reading.
+
+*If your chart had placed a supportive star here instead, this corner would read doubly strong and could hold your daily anchors.*
+{{/cautious}}
+
+## Your relationship direction, {{yanNianDir}}
+
+Whatever the fixed corner reads for you, one personal direction stays yours to use in every room: **{{yanNianDir}}**, the direction your chart ties to connection and harmony between people. The Southwest is about the *space*; {{yanNianDir}} is about *you* inside it.
+
+The tradition's move is to turn the body toward {{yanNianDir}} in the moments that ask for connection: the chair you take for a conversation that matters, the side of the table you choose, and, where the room allows it, the headboard wall in a season focused on partnership. This is the lever you always hold, because chairs turn and beds occasionally move even when walls do not.
 
 ## What to take away
 
-The Southwest is the relationship corner for every home, given to receptivity, nurture, and partnership in all its forms. Keep it clear and cared for first; that single act of upkeep is the move the tradition weights most. Then think in pairs rather than singles, in earth tones and earth shapes, and remember the bedroom carries the same reading at its own smaller scale. Finally, lay your own map over the fixed one: check whether your Southwest is supportive or one to handle with care, and use your relationship direction, {{yanNianDir}}, in the moments you can steer. The reading arranges a space to point toward connection. What you do with that orientation is yours.
+The Southwest is the relationship corner for every home, given to receptivity, nurture, and partnership in all its forms. Keep it clear and cared for first; that single act of upkeep is the move the tradition weights most. Then think in pairs rather than singles, in earth tones and earth shapes, and remember the bedroom carries the same reading at its own smaller scale. Your reading above has already laid your own map over the fixed one, and your relationship direction, {{yanNianDir}}, travels with you into every room. The reading arranges a space to point toward connection. What you do with that orientation is yours.
+
+<div class="tips-page">
+<h2>Tips and tricks for the relationship corner</h2>
+<div class="tip-grid">
+<div class="tip-card tip-card--renter"><p><strong>One pair from one set. <span class="renter-chip">renter-safe</span></strong> Two cups from the same set, placed together on a shelf in the Southwest. Same-source pairs carry the tradition's reading strongest, and this one costs nothing you do not already own.</p></div>
+<div class="tip-card tip-card--renter"><p><strong>Lean the photograph. <span class="renter-chip">renter-safe</span></strong> A framed photograph of two people, leaning on a shelf rather than hung. No drilling, no marks, and the corner's dominant image stops being empty space or a lone portrait.</p></div>
+<div class="tip-card tip-card--renter"><p><strong>Twin cushions or lamps. <span class="renter-chip">renter-safe</span></strong> A matched pair of cushions on the sofa's Southwest end, or two small matching lamps. Symmetry without a screwdriver, and it moves out with you.</p></div>
+<div class="tip-card"><p><strong>Face them well.</strong> Paired figures, mandarin ducks included, sit facing each other or facing the same way. A pair arranged as strangers loses the point of being a pair.</p></div>
+<div class="tip-card"><p><strong>Earth underfoot.</strong> Terracotta, soft pink, and warm brown are the corner's home palette, and low, square, settled shapes suit it better than tall or spiky ones. One warm ceramic piece does more here than a shelf of mixed ornaments.</p></div>
+<div class="tip-card"><p><strong>Retire the survivors.</strong> A paired emblem that has lost its partner, one duck, a lone phoenix, comes down. In relationship placements the tradition reads pairs only as pairs.</p></div>
+<div class="tip-card"><p><strong>Keep the empty half real.</strong> Drawer and wardrobe space genuinely available is part of the reading. A room with no room in it reads as already full.</p></div>
+</div>
+<div class="room-in-sector">
+<p><strong>If a junk or storage room sits in your Southwest:</strong> this is the single most-flagged anti-relationship pattern in practice, the area given to connection used as the place for what the home cannot face. The cure is ordinary: clear it, clean it, light it, and set one paired anchor where it can be seen.</p>
+<p><strong>If a bathroom or kitchen sits in your Southwest:</strong> not a verdict. Keep the room clean and ordered, and add a small paired anchor, two matching jars on a bathroom shelf, two bowls displayed as a pair in the kitchen.</p>
+<p><strong>If your bedroom sits in the Southwest:</strong> the two scales of the reading land in one room, which simply concentrates the same advice. Both sides of the bed reachable, pairs in what the room shows, and nothing from a previous relationship kept there.</p>
+</div>
+</div>
+
+<div class="chapter-recap">
+<p class="opener-kicker">THE RELATIONSHIP CORNER ON ONE CARD</p>
+<p><strong>Relationships.</strong> {{sectorName}} · {{sectorTrigram}} · {{sectorElement}}. Your verdict: {{sectorVerdict}}.</p>
+<p>This corner asks to be tended, never used as the home's dumping ground. Its element move is earth: warm terracotta tones, low square shapes, one same-source pair. Its one caution: nothing solitary as the centrepiece, and nothing from an ended relationship.</p>
+<p><strong>&#9744; Tonight:</strong> take one thing out of the Southwest corner that does not belong there, and set one pair from the same set in its place.</p>
+</div>

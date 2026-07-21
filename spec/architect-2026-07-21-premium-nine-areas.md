@@ -34,11 +34,11 @@ ATTRIBUTION_BLOCKS.md rows.
       fallback + next.config tracing + folder-budget smoke; prompts file saved.
 - [x] PRM-005 welcome-pillars ({{nineAreasMap}} at-a-glance) + closing-pillars +
       BlockId union + recipe swap; keepsake grid fix + gloss.
-- [ ] PRM-006 Chapters 1-3 (wealth, fame, relationships): verdict panel + branch
+- [x] PRM-006 Chapters 1-3 (wealth, fame, relationships): verdict panel + branch
       markers + enrichment + tips page + recap + attribution.
-- [ ] PRM-007 Chapters 4-6 (creativity, helpful-people, career): same; delete the
+- [x] PRM-007 Chapters 4-6 (creativity, helpful-people, career): same; delete the
       false "cannot assume" sentence.
-- [ ] PRM-008 Chapters 7-9 (knowledge, family, health): same; health neutral
+- [x] PRM-008 Chapters 7-9 (knowledge, family, health): same; health neutral
       centre panel, no markers.
 - [ ] PRM-009 scripts/smoke-pillars.mjs (8-Kua assertions) + CHAPTER_PLAN fill.
 - [ ] PRM-010 Render QA: bands (per-kind mini bands), photos-empty pagination
@@ -97,3 +97,21 @@ preview-imagery pass.
   Smoke 49 blocks green, typecheck + build green. Learning: the map page
   doubles as the reading-order aid, so the welcome prose never has to explain
   navigation - the picture already did.
+- PRM-006..008 (2026-07-21): all nine chapters rewritten in one three-writer
+  pass (chapters 1268-1607 words -> 2014-2559 words each). Every chapter now
+  opens its personal section with the resolved verdict panel and carries only
+  the buyer's branch (other branch = one italic footnote); the career
+  chapter's false "cannot assume" sentence is gone; the family chapter's
+  muddled health-direction paragraph became the clean fixed-sector vs Tian Yi
+  two-layer distinction; health keeps the neutral Centre panel with no
+  markers. Each chapter gained its fact-package depth (four gates, Period 9
+  South era, pair grading, Heaven's Gate, Wenchang, active/passive) plus a
+  tips page (5-7 cards, 2-3 renter-safe each) with room-in-sector cases and
+  a recap card with a Tonight checkbox. The workflow's verify agents hit the
+  session limit, so verification ran in the main loop instead: the 8-Kua
+  structural gate (smoke-pillars) green, both block smokes green (49 + 23),
+  zero dashes and zero promises by scan, spot-read of pillar-wealth confirmed
+  voice and structure. Eleven attribution rows appended. Learning: the
+  structural gate written BEFORE the writers ran is what made the lost verify
+  stage a non-event - acceptance criteria in code beat acceptance criteria in
+  agents.

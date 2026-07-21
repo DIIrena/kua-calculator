@@ -1,6 +1,6 @@
 # Your recognition corner, {{firstName}}
 
-There is one corner of any home the tradition ties to how you are seen: your work, your standing, the version of you that lives in other people's heads. It is the recognition sector, and it has a fixed address. It always sits in the **South**. Not the south of your body, not the south relative to your door, but compass south, the same wall for every home and every person. This reading is about what the tradition asks of that corner, and how to check whether South works with you or against you, {{firstName}}.
+There is one corner of any home the tradition ties to how you are seen: your work, your standing, the version of you that lives in other people's heads. It is the recognition sector, and it has a fixed address. It always sits in the **South**. Not the south of your body, not the south relative to your door, but compass south, the same wall for every home and every person. This reading is about what the tradition asks of that corner, and what your own chart has already settled about how the South sits with you, {{firstName}}.
 
 ## What the South corner is for
 
@@ -12,6 +12,12 @@ This is an association the system makes, not a result it promises. Brightening t
 
 <p class="pull-quote">The recognition corner is not about being loud. It is about being read the way you mean to be read.</p>
 
+## The South's own era
+
+There is a timing layer the tradition lays over the fixed map, and at the moment it points here. Classical feng shui runs on twenty-year cycles, and the current one, which began in early February 2024 and runs to early February 2044, is governed by the star the classics seat in the South. Practitioners call it Period 9.
+
+In plain terms: by the tradition's own calendar, this is the South's era. That is not a prediction about anyone's career, and this reading makes none. It simply means the corner this chapter describes is the one the tradition currently honours most, so a South kept clean, lit, and warm is, in this reading, kept in step with the whole twenty-year cycle and not just with the room. If you were ever going to give one sector a standing five minutes a week, the calendar argues for this one.
+
 ## Fire, light, and keeping it bright
 
 Because South is the Fire sector, the tradition's first instruction is simple: **keep it bright and keep it clear.**
@@ -21,6 +27,14 @@ Because South is the Fire sector, the tradition's first instruction is simple: *
 - **Mind water and damp.** Water puts fire out. The tradition is cautious about large mirrors, fountains, fish tanks, and heavy blues in the South, because the element that governs the corner is the one water weakens. A bathroom or a leak in the South is a classic flag for exactly this reason.
 
 None of this is mystical. A bright, uncluttered, deliberately arranged corner is a corner you keep in good order, and a corner you keep in good order tends to be one you are willing to be seen near. The tradition formalises an instinct most people already have.
+
+## Too dim, or too hot: the element moves
+
+The five-element logic gives the South two opposite failure modes, and each has its own move.
+
+- **A dim South wants feeding.** Fire is fed by Wood in the element cycle, so the cure for a cold, shadowed recognition corner is warmth plus growth: a warm-toned lamp, one deliberate red accent, a healthy plant. Small and alive beats large and inert.
+- **An overheated South wants draining.** A fireplace in this sector, harsh afternoon sun, a room where tempers seem to run short: the tradition reads all of that as fire running too high. The move is to drain the excess with Earth, ceramic pieces and clay tones, or to cool it with a blue rug underfoot. This is the one corner where a little blue at floor level works as a cure rather than a clash.
+- **The one that surprises people: no metal wind chimes.** In the element cycle metal weakens fire, so the chime that is perfectly at home in the Northeast is the wrong object on this wall. Same object, opposite meaning; the sector decides.
 
 ## What to display there
 
@@ -32,26 +46,64 @@ The South rewards things that *carry* the recognition theme. The tradition point
 
 And a short list the tradition reads as working against the corner: water features and aquariums, large mirrors, dominant blacks and deep blues, and dead or thirsty plants. The general rule is that anything that dampens, darkens, or clutters is moving the South the wrong way.
 
-## The Kua overlay: is your South supportive or cautious?
+## Your reading
 
-Here is where the fixed corner meets your personal chart, {{firstName}}. The South sits in the same place for everyone, but your Kua number, **{{kuaNumber}}**, sorts the eight directions into your own four supportive and four cautious ones. As a member of the **{{kuaGroup}} group**, your favourable and unfavourable directions follow a fixed pattern. So the real question is not *where* the recognition corner is, that is settled, but *how South lands for you specifically.*
+{{sectorVerdictPanel}}
 
-Check South against your own named directions:
+{{#supportive}}
+Your chart seats {{sectorStar}} in the South, a supportive star, and the tradition reads that overlap plainly: the fixed recognition sector and one of your own favourable directions occupy the same wall. This corner is yours to lean into, {{firstName}}.
 
-- Your four supportive directions are your generating direction **{{shengQiDir}}**, your steadying direction **{{tianYiDir}}**, your relationship direction **{{yanNianDir}}**, and your anchor direction **{{fuWeiDir}}**.
-- Your four cautious directions are **{{huoHaiDir}}**, **{{wuGuiDir}}**, **{{liuShaDir}}**, and **{{jueMingDir}}**.
+Leaning in looks like this. If the room allows it, let your desk live in or face the South, and take that seat for the work you want seen: the portfolio edit, the application, the call where you present. Anchor the evidence here, the framed piece, the certificate, the photograph from the proud moment, and give it the warmest lamp in the room rather than the leftover light.
 
-Now read your own list:
+With the tradition's current cycle honouring the South, this is also the corner where a small daily habit belongs: lamp on while you work, surface kept clear, one red accent kept deliberate rather than accumulated. Bright, warm, and slightly underfilled reads better here than crowded.
 
-- **If South is one of your four supportive directions,** the tradition reads this corner as doubly strong for you: the fixed recognition sector and a personally favourable direction sitting in the same place. This is the corner to lean into. Put your desk there if it fits, face that way during work that you want seen, and keep the corner brightly and proudly arranged.
-- **If South is one of your four cautious directions,** treat it gently. The tradition does not say to abandon the corner; the recognition sector still wants light and order. It says don't force your most demanding activities to face *into* a direction your chart treats with care. Keep the South bright and clear, but choose one of your four supportive directions, {{shengQiDir}}, {{tianYiDir}}, {{yanNianDir}}, or {{fuWeiDir}}, for the seat your body actually faces while you work.
+*If your chart had placed a cautious star here instead, the guidance would soften to tend and keep clear, and your supportive directions would carry the anchoring.*
+{{/supportive}}
+{{#cautious}}
+Your chart seats {{sectorStar}} in the South, one of the stars the tradition handles with care. Nothing about the corner's basic ask changes: the South still wants light, order, and dryness, and it still deserves better than becoming the room's forgotten shelf.
 
-If you are not sure which list South falls in for you, that is the whole point of checking your own directions rather than assuming. The fixed sector tells you *where the recognition corner is*; your Kua number tells you *how to handle it*. The two layers are meant to be read together.
+What changes is the anchoring. Do not set your desk to face into this corner for long working hours, and do not hang the whole account of your achievements on this wall. Keep the South's display modest: one framed piece, one warm lamp, a clear surface, and leave it at that.
+
+Let your supportive directions carry the working weight instead. Face {{shengQiDir}} for the work you want noticed, or {{tianYiDir}} on the days that ask for steadiness, and hang the fuller evidence wall where it accompanies that seat. The South stays bright and gently kept; your own directions hold the chair.
+
+*If your chart had placed a supportive star here instead, this corner would read doubly strong and could hold your daily anchors.*
+{{/cautious}}
 
 ## A move to try
 
 The lightest first move is simple: walk to the South wall of your main room and look at it the way a visitor would. Is it bright or dim? Clear or cluttered? Does it show anything you would actually want associated with you, or has it become the corner where things go to be forgotten?
 
-Then do one thing. Add a light, or clear one shelf, or hang one piece of evidence of work you are proud of. If South is one of your supportive directions, make that corner the deliberate centre of the room. If it is one to handle with care, keep it tidy and lit, and turn your working seat toward one of your four favourable directions instead.
+Then do one thing. Add a light, or clear one shelf, or hang one piece of evidence of work you are proud of.
+
+{{#supportive}}
+With a supportive star seated in your South, let that one thing set the tone: this corner can become the deliberate centre of the room, the first place a visitor's eye lands.
+{{/supportive}}
+{{#cautious}}
+With a cautious star seated in your South, keep the move modest: tidy, lit, and dry is the whole brief, with your working seat turned toward {{shengQiDir}} rather than into the corner itself.
+{{/cautious}}
 
 Recognition, in this tradition, is not summoned. It is *kept ready for*. The South corner is where you keep it ready, {{firstName}}.
+
+<div class="tips-page">
+<h2>Tips and tricks for the recognition corner</h2>
+<div class="tip-grid">
+<div class="tip-card tip-card--renter"><p><strong>The picture light. <span class="renter-chip">renter-safe</span></strong> A battery picture light clipped or stuck above one framed piece gives the South aimed, warm light with no cable and no new fitting. Charge it on a fixed day so it never sits dark.</p></div>
+<div class="tip-card tip-card--renter"><p><strong>Lean, do not drill. <span class="renter-chip">renter-safe</span></strong> A framed piece of your own work leaning on a shelf or mantel carries the same reading as a hung one. Choose the one piece you would want a stranger to ask about.</p></div>
+<div class="tip-card tip-card--renter"><p><strong>The warm bulb swap. <span class="renter-chip">renter-safe</span></strong> Trade the South corner's cool white bulb for a warm one. Fire is warmth as much as brightness, and the swap takes one minute and leaves no trace.</p></div>
+<div class="tip-card"><p><strong>Candle discipline.</strong> A lit candle is the element at work; an unlit one is decoration. Light it for a working hour, put it out when you leave the room, and never let symbolism outrank safety.</p></div>
+<div class="tip-card"><p><strong>One red accent.</strong> A cushion, a mat, a run of book spines: one deliberate red carries the fire reading. A red wall shouts, and the tradition asks this corner to be legible, not loud.</p></div>
+<div class="tip-card"><p><strong>The chime check.</strong> A metal wind chime hanging in the South is the right object on the wrong wall, since metal weakens fire in the element cycle. Move it to the Northeast, where the same chime is read as at home.</p></div>
+<div class="tip-card"><p><strong>Dust the light itself.</strong> A shaded, film-covered fixture dims the sector's own element. Clean the bulbs and shades in this corner first, and replace any that flicker.</p></div>
+</div>
+<div class="room-in-sector">
+<p><strong>If a fireplace sits in your South:</strong> fire on the fire sector can tip into the overheated reading, especially with harsh sun or a room where tempers run short. Settle it with Earth: ceramic and clay-toned objects on the mantel, and a cooler blue rug in front of the hearth.</p>
+<p><strong>If a bathroom sits in your South:</strong> water sitting on the fire sector is the classic tension here. Keep the room dry, bright, and warm-toned, with good ventilation, warm towels, and no standing damp.</p>
+</div>
+</div>
+
+<div class="chapter-recap">
+<p class="opener-kicker">THE RECOGNITION CORNER ON ONE CARD</p>
+<p><strong>Recognition.</strong> {{sectorName}} · {{sectorTrigram}} · {{sectorElement}}. Your verdict: {{sectorVerdict}}.</p>
+<p>This corner asks to be the brightest, driest, clearest wall you own. Its element move is fire fed by wood: warm light, one red accent, a living plant. Its one caution: no water features, large mirrors, or metal chimes here.</p>
+<p><strong>&#9744; Tonight:</strong> put a warm bulb in the South corner's lamp and set one piece of work you are proud of beneath it.</p>
+</div>
