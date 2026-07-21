@@ -16,6 +16,8 @@ import path from "node:path";
 import type { Product } from "@/lib/products";
 import type { BlockContext } from "@/lib/blocks";
 import { brandMarkSvg } from "@/lib/pdf/svg-marks";
+import { PILLAR_META } from "@/lib/pillar-sectors";
+import { photoDataUri } from "@/lib/pdf/photos";
 
 // Brand palette - matches the CSS custom properties in globals.css.
 const BRAND = {
@@ -76,6 +78,35 @@ export function buildHtml(
   // Running header text in CSS @page margin box. Escaped so a hypothetical
   // first name with a quote does not break the rule.
   const headerText = cssEscape(fullTitle);
+
+  // Named-page running footers for the pillar chapters: each chapter's
+  // pages carry its area + sector in the footer ("Wealth - Southeast - 12").
+  // Generated from PILLAR_META so the nine rules stay in one place. If a
+  // Chromium build ignores named pages the global footer still applies -
+  // a cosmetic-only degradation.
+  const pillarPageCss = Object.entries(PILLAR_META)
+    .map(
+      ([id, m]) => `
+  .block--${id} { page: ${id}; }
+  @page ${id} {
+    @bottom-center {
+      content: "${cssEscape(m.areaLabel)} - ${cssEscape(m.sectorLabel)} - " counter(page);
+      font-family: "Hanken Grotesk", "Noto Sans TC", system-ui, sans-serif;
+      font-size: 8.5pt;
+      color: ${BRAND.ink};
+      padding-bottom: 6mm;
+      letter-spacing: 0.04em;
+    }
+  }`,
+    )
+    .join("\n");
+
+  // Cover photo plate (premium design). Fixed height either way so the
+  // cover composition is identical with and without the owner's image.
+  const coverPhoto = photoDataUri("cover");
+  const coverPlate = coverPhoto
+    ? `<div class="cover-plate" style="background-image:url('${coverPhoto}')"></div>`
+    : `<div class="cover-plate cover-plate--fallback">${brandMarkSvg(64, BRAND.hairline)}</div>`;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -592,6 +623,237 @@ export function buildHtml(
     padding: 14mm 12mm;
   }
 
+  /* ------------------------------------------------------------------
+     PRM-003 (2026-07-21): the premium magazine layer.
+     Scoped to the pillar chapters and the two pillar framing blocks;
+     every other product keeps its existing look untouched.
+     ------------------------------------------------------------------ */
+
+  /* Cover photo plate: fixed height with or without the owner's image,
+     so the cover composition never shifts. */
+  .cover-plate {
+    width: 128mm;
+    height: 96mm;
+    margin: 12mm auto 0 auto;
+    border-radius: 3mm;
+    background-size: cover;
+    background-position: center;
+    background-color: ${BRAND.sand};
+  }
+  .cover-plate--fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(150deg, ${BRAND.sand} 0%, ${BRAND.cream} 60%, ${BRAND.sand} 100%);
+  }
+
+  /* Chapter opener: photo band, kicker, mini-map + verdict chip. The
+     header is injected by assembleProductHtml for blocks with a
+     PILLAR_META entry; the markdown H1 follows it unchanged. */
+  .chapter-opener {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+    margin: 0 0 6mm 0;
+  }
+  .opener-photo {
+    height: 62mm;
+    border-radius: 3mm;
+    background-size: cover;
+    background-position: center;
+    background-color: ${BRAND.sand};
+    margin: 0 0 6mm 0;
+  }
+  .opener-photo--fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(150deg, ${BRAND.sand} 0%, ${BRAND.cream} 55%, ${BRAND.sand} 100%);
+  }
+  .opener-photo--fallback svg {
+    width: 22mm;
+    height: 22mm;
+    opacity: 0.55;
+  }
+  .opener-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 6mm;
+  }
+  .opener-kicker {
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: ${BRAND.clay};
+    margin: 0 0 2mm 0;
+    padding-top: 1.5mm;
+    border-top: 0.8mm solid ${BRAND.clay};
+    display: inline-block;
+    text-align: left;
+  }
+  .opener-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2mm;
+    flex: 0 0 auto;
+  }
+
+  .verdict-chip {
+    display: inline-block;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 1mm 3.5mm;
+    border-radius: 6mm;
+    white-space: nowrap;
+  }
+  .verdict-chip--supportive { background: #dde6e0; color: ${BRAND.ink}; }
+  .verdict-chip--cautious   { background: #f8d8c5; color: ${BRAND.ink}; }
+  .verdict-chip--centre     { background: ${BRAND.sand}; color: ${BRAND.ink}; }
+
+  /* The resolved "Your reading" panel (built in lib/pillar-sectors.ts). */
+  .verdict-panel {
+    border-radius: 3mm;
+    padding: 6mm 7mm 5mm 7mm;
+    margin: 6mm 0;
+    page-break-inside: avoid;
+  }
+  .verdict-panel--supportive { background: #dde6e0; border-left: 1.6mm solid ${BRAND.olive}; }
+  .verdict-panel--cautious   { background: #f8d8c5; border-left: 1.6mm solid ${BRAND.clay}; }
+  .verdict-panel--centre     { background: ${BRAND.sand}; border-left: 1.6mm solid ${BRAND.rule}; }
+  .verdict-panel__kicker {
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: ${BRAND.clay};
+    margin: 0 0 2mm 0;
+    text-align: left;
+  }
+  .verdict-panel__verdict {
+    font-size: 12.5pt;
+    font-weight: 800;
+    line-height: 1.4;
+    color: ${BRAND.ink};
+    margin: 0 0 2mm 0;
+    text-align: left;
+  }
+  .verdict-panel__detail {
+    font-size: 10pt;
+    color: ${BRAND.ink};
+    margin: 0;
+    text-align: left;
+  }
+
+  /* Tips and tricks page: two-column card grid. CSS grid rather than
+     CSS columns because column balancing across print pages is
+     unreliable in Chromium. */
+  .tips-page {
+    page-break-before: always;
+  }
+  .tip-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4mm;
+    margin: 5mm 0;
+  }
+  .tip-card {
+    border: 0.5pt solid ${BRAND.hairline};
+    border-radius: 2.5mm;
+    padding: 4mm 4.5mm;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .tip-card p { margin: 0; text-align: left; hyphens: none; }
+  .tip-card strong { display: block; margin-bottom: 1mm; }
+  .tip-card--renter { border-left: 1.4mm solid ${BRAND.olive}; }
+  .renter-chip {
+    display: inline-block;
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: ${BRAND.olive};
+    background: #dde6e0;
+    padding: 0.5mm 2mm;
+    border-radius: 4mm;
+    margin-left: 1.5mm;
+    vertical-align: middle;
+  }
+  .room-in-sector {
+    background: ${BRAND.sand};
+    border-radius: 3mm;
+    padding: 5mm 6mm;
+    margin: 5mm 0;
+    page-break-inside: avoid;
+    font-size: 9.5pt;
+    line-height: 1.6;
+  }
+  .room-in-sector p { text-align: left; hyphens: none; margin: 0 0 2.5mm 0; }
+  .room-in-sector p:last-child { margin-bottom: 0; }
+
+  /* Chapter recap card: owns the chapter's last page and absorbs the
+     tail whitespace the old layout left blank. */
+  .chapter-recap {
+    page-break-before: always;
+    page-break-inside: avoid;
+    border: 0.5pt solid ${BRAND.hairline};
+    border-radius: 3mm;
+    padding: 7mm 8mm;
+    margin-top: 4mm;
+  }
+  .chapter-recap p { text-align: left; hyphens: none; margin: 0 0 2.5mm 0; }
+  .chapter-recap table { width: 100%; }
+
+  /* Magazine body: pillar chapters + pillar framing read ragged-right
+     at a calmer measure. Attribute selector so all nine pillar blocks
+     and the two new framing blocks are covered without listing them. */
+  [class*="block--pillar-"] p,
+  .block--welcome-pillars p,
+  .block--closing-pillars p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  [class*="block--pillar-"],
+  .block--welcome-pillars,
+  .block--closing-pillars {
+    max-width: 152mm;
+  }
+
+  /* Standfirst: the first paragraph after a pillar H1 reads larger and
+     quieter, magazine-style. Pure CSS, no content changes. */
+  [class*="block--pillar-"] h1 + p {
+    font-size: 12.5pt;
+    line-height: 1.55;
+    color: #4f5b53;
+  }
+
+  /* The recap card is each pillar chapter's designed ending; the
+     generic end-of-block hairline would double it. */
+  [class*="block--pillar-"]::after { display: none; }
+
+  /* Pull quotes gain a hairline so they survive pale home printers. */
+  .pull-quote {
+    border-top: 0.5pt solid ${BRAND.hairline};
+    border-bottom: 0.5pt solid ${BRAND.hairline};
+  }
+
+  /* Keepsake card: both tables on one shared grid. */
+  .keepsake table { table-layout: fixed; }
+  .keepsake th:first-child, .keepsake td:first-child { width: 34%; }
+  .keepsake-gloss {
+    font-size: 8pt;
+    color: #4f5b53;
+    margin: 2mm 0 0 0;
+  }
+
+  ${pillarPageCss}
+
   /* Keepsake reference card: the last page renders the reader's eight
      directions as a cut-out card. The dashed rule is the cut line. */
   .keepsake {
@@ -675,6 +937,7 @@ export function buildHtml(
 
   <div class="cover-center">
     <h1 class="cover-title">${product.coverTitleHtml(escapeHtml(context.firstName))}</h1>
+    ${coverPlate}
   </div>
 
   <div class="cover-bottom">

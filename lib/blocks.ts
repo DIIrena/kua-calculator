@@ -51,6 +51,7 @@ import {
   sectorVerdictPanelHtml,
 } from "@/lib/pillar-sectors";
 import { nineAreasMapSvg, sectorMiniMapSvg } from "@/lib/pdf/svg-marks";
+import { photoDataUri } from "@/lib/pdf/photos";
 
 /** Age threshold (exclusive) below which we prefer the `-child.md`
  *  variant of a block if it exists. Below this we swap the adult
@@ -284,14 +285,56 @@ export async function loadBlock(
   return String(file);
 }
 
+/** The injected chapter-opener header for pillar blocks: fixed-height
+ *  photo band (or its element-icon fallback), clay kicker, sector
+ *  mini-map and verdict chip. The markdown H1 follows it unchanged.
+ *  `numbered` adds "AREA N OF 9" in multi-pillar recipes; single-pillar
+ *  minis get the sector-only kicker. */
+function chapterOpenerHtml(
+  blockId: BlockId,
+  context: BlockContext,
+  numbered: boolean,
+): string {
+  const meta = PILLAR_META[blockId];
+  if (!meta) return "";
+  const dir = meta.sector ? context.byCompass[meta.sector] : null;
+  const fav = dir ? dir.favourable : null;
+
+  const photo = photoDataUri(blockId);
+  const band = photo
+    ? `<div class="opener-photo" style="background-image:url('${photo}')"></div>`
+    : `<div class="opener-photo opener-photo--fallback">${elementIconSvg(meta.element)}</div>`;
+
+  const kickerParts = numbered
+    ? [`AREA ${meta.order} OF 9`, meta.sectorLabel, meta.elementLabel]
+    : [meta.sectorLabel, meta.elementLabel];
+  const kicker = kickerParts.join(" · ").toUpperCase();
+
+  const chip =
+    fav === null
+      ? `<span class="verdict-chip verdict-chip--centre">the still point</span>`
+      : fav
+        ? `<span class="verdict-chip verdict-chip--supportive">&#10022; supportive - lean in</span>`
+        : `<span class="verdict-chip verdict-chip--cautious">&#9675; handle with care</span>`;
+
+  return `<header class="chapter-opener">${band}
+<div class="opener-head">
+<p class="opener-kicker">${kicker}</p>
+<div class="opener-side">${sectorMiniMapSvg(meta, fav)}${chip}</div>
+</div>
+</header>`;
+}
+
 export async function assembleProductHtml(
   product: Product,
   context: BlockContext,
 ): Promise<string> {
+  const pillarCount = product.blocks.filter((b) => PILLAR_META[b]).length;
   const parts = await Promise.all(
     product.blocks.map(async (blockId) => {
       const html = await loadBlock(blockId, context);
-      return `<section class="block block--${blockId}">${html}</section>`;
+      const opener = chapterOpenerHtml(blockId, context, pillarCount >= 2);
+      return `<section class="block block--${blockId}">${opener}${html}</section>`;
     }),
   );
   return parts.join("\n");

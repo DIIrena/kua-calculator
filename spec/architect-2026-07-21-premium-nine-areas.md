@@ -28,7 +28,7 @@ ATTRIBUTION_BLOCKS.md rows.
       in lib/blocks.ts, .cover box-sizing fix, smoke scripts taught markers +
       token stubs.
 - [x] PRM-002 SVG: nineAreasMapSvg, sectorMiniMapSvg, sector compass extension.
-- [ ] PRM-003 Design system: template.ts components + opener injection in
+- [x] PRM-003 Design system: template.ts components + opener injection in
       assembleProductHtml + named-page footers (verify, degrade gracefully).
 - [x] PRM-004 Photo pipeline: content/photos/ + lib/pdf/photos.ts fixed-height
       fallback + next.config tracing + folder-budget smoke; prompts file saved.
@@ -73,3 +73,16 @@ preview-imagery pass.
   shipped to spec/image-prompts-nine-areas-2026-07-21.md for the owner.
   Learning: caching null (missing file stays missing per instance) is what
   makes the fallback contract cheap - no per-render fs probing.
+- PRM-003 (2026-07-21): the magazine layer landed in template.ts, scoped by
+  attribute selector to pillar + pillar-framing blocks so every other product
+  keeps its exact look. Components: cover photo plate (fixed height either
+  way), chapter-opener band + kicker + mini-map + verdict chip (injected by
+  assembleProductHtml from PILLAR_META, zero markdown churn; numbered kicker
+  only in 2+ pillar recipes so single minis stay coherent), verdict panel
+  variants, tips grid (CSS grid, not columns), room-in-sector box, renter
+  chip, chapter recap card (suppresses the generic end-hairline), standfirst
+  via h1+p, ragged-right 152mm measure, pull-quote hairlines, keepsake fixed
+  table grid, and nine named-page footers generated from PILLAR_META.
+  Typecheck + build green. Footer support verified at first render (PRM-010).
+  Learning: injecting the opener in the assembler instead of markdown means
+  the nine mini compasses inherit the whole design with no per-file edits.
