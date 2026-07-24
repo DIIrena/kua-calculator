@@ -40,3 +40,6 @@ visual-production/contact-sheets/**/*.webm
 visual-production/dashboard-app/node_modules/
 visual-production/dashboard-app/.cache/
 visual-production/dashboard-app/*.log
+
+# owner-generated source images (originals; processed copies live in content/photos)
+content/photos-source/

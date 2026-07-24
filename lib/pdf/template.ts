@@ -31,8 +31,12 @@ const BRAND = {
   rule: "#b9b4a5",      // write-on ruled lines in worksheets
 };
 
-let fontsCache: { regular: string; bold: string; extraBold: string } | null =
-  null;
+let fontsCache: {
+  regular: string;
+  bold: string;
+  extraBold: string;
+  masthead: string;
+} | null = null;
 
 function fontBase64(filename: string): string {
   const filePath = path.join(process.cwd(), "lib", "fonts", filename);
@@ -45,6 +49,7 @@ function loadFonts() {
       regular: fontBase64("HankenGrotesk-Regular.ttf"),
       bold: fontBase64("HankenGrotesk-Bold.ttf"),
       extraBold: fontBase64("HankenGrotesk-ExtraBold.ttf"),
+      masthead: fontBase64("BodoniModa-Variable.ttf"),
     };
   }
   return fontsCache;
@@ -101,12 +106,16 @@ export function buildHtml(
     )
     .join("\n");
 
-  // Cover photo plate (premium design). Fixed height either way so the
-  // cover composition is identical with and without the owner's image.
-  const coverPhoto = photoDataUri("cover");
-  const coverPlate = coverPhoto
-    ? `<div class="cover-plate" style="background-image:url('${coverPhoto}')"></div>`
-    : `<div class="cover-plate cover-plate--fallback">${brandMarkSvg(64, BRAND.hairline)}</div>`;
+  // Magazine cover (2026-07-23): the photo bleeds across the whole first
+  // page under deep-green scrims; without the owner's image the same
+  // composition renders on the calm sand gradient. One page either way,
+  // so the page-count invariance holds. Each product may carry its own
+  // cover plate (cover-<slug>.jpg); the shared cover.jpg is the fallback.
+  const coverPhoto =
+    photoDataUri(`cover-${product.slug}`) ?? photoDataUri("cover");
+  const coverBleed = coverPhoto
+    ? `<div class="cover-bleed" style="background-image:url('${coverPhoto}')"></div><div class="cover-scrim"></div>`
+    : "";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -148,6 +157,15 @@ export function buildHtml(
     font-style: normal;
     src: url(data:font/ttf;base64,${fonts.extraBold}) format("truetype");
   }
+  /* Masthead face: Bodoni Moda (OFL), variable weight + optical size.
+     At masthead sizes the opsz axis gives the razor-thin Didone
+     hairlines of a fashion-magazine logotype. Cover masthead only. */
+  @font-face {
+    font-family: "Bodoni Moda";
+    font-weight: 400 900;
+    font-style: normal;
+    src: url(data:font/ttf;base64,${fonts.masthead}) format("truetype");
+  }
 
   /* ------------------------------------------------------------------
      Paged-media rules - running header + page number footer.
@@ -177,6 +195,8 @@ export function buildHtml(
   }
 
   @page :first {
+    /* Magazine cover: the photo bleeds to the page edges. */
+    margin: 0;
     @top-center { content: ""; }
     @bottom-center { content: ""; }
   }
@@ -230,56 +250,89 @@ export function buildHtml(
      ------------------------------------------------------------------ */
   .cover {
     page-break-after: always;
-    height: 253mm; /* A4 297mm minus 22mm margins top+bottom */
-    /* border-box so the framed-cover padding and border stay INSIDE the
-       253mm; without this the cover overflowed onto a broken page 2. */
+    /* Full-bleed magazine cover: @page :first drops its margins, so this
+       section IS the page. A hair under 297mm so rounding never spills a
+       blank page 2. */
+    width: 210mm;
+    height: 296.5mm;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     text-align: center;
   }
 
+  /* Photo layer + deep-green legibility scrims (top for the masthead,
+     bottom for the cover lines). */
+  .cover-bleed {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-color: ${BRAND.sand};
+  }
+  .cover-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(14, 59, 44, 0.52) 0%, rgba(14, 59, 44, 0.16) 26%, rgba(14, 59, 44, 0) 44%),
+      linear-gradient(0deg, rgba(14, 59, 44, 0.62) 0%, rgba(14, 59, 44, 0.22) 26%, rgba(14, 59, 44, 0) 50%);
+  }
+
   .cover-top {
-    padding-top: 8mm;
+    position: relative;
+    padding-top: 12mm;
   }
 
   .cover-logo {
     display: block;
-    margin: 0 auto 5mm auto;
-    width: 28mm;
-    height: 28mm;
+    margin: 0 auto 3mm auto;
+    width: 21mm;
+    height: 21mm;
+  }
+  .cover-logo svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Masthead: one word at Vogue scale in the Didone face, nearly
+     touching the side edges. */
+  .cover-masthead {
+    margin: 0;
+    font-family: "Bodoni Moda", "Didot", "Bodoni MT", serif;
+    font-size: 108pt;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    text-indent: 0.015em; /* recentre: tracking adds a trailing gap */
+    text-transform: uppercase;
+    color: ${BRAND.cream};
+    text-shadow: 0 1px 6px rgba(14, 59, 44, 0.35);
   }
 
   .cover-brand {
-    font-size: 9pt;
-    letter-spacing: 0.28em;
+    font-size: 10pt;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
     text-transform: uppercase;
-    color: ${BRAND.olive};
+    color: ${BRAND.cream};
+    margin: 3mm 0 0 0;
   }
 
-  .cover-rule {
-    width: 22mm;
-    height: 1px;
-    background: ${BRAND.sand};
-    margin: 6mm auto 16mm auto;
-  }
-
-  .cover-center {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 10mm;
+  .cover-bottom {
+    position: relative;
+    padding-bottom: 15mm;
   }
 
   .cover-title {
-    font-size: 32pt;
-    line-height: 1.12;
+    font-size: 24pt;
+    line-height: 1.15;
     font-weight: 800;
-    margin: 0;
-    max-width: 140mm;
-    color: ${BRAND.ink};
+    margin: 0 auto 5mm auto;
+    max-width: 168mm;
+    color: ${BRAND.cream};
   }
 
   .cover-title em {
@@ -288,22 +341,34 @@ export function buildHtml(
     font-weight: 800;
   }
 
-  .cover-bottom {
-    padding-bottom: 12mm;
-  }
-
   .cover-kua {
     font-size: 11pt;
     font-weight: 700;
-    color: ${BRAND.olive};
-    margin: 0 0 3mm 0;
-    letter-spacing: 0.04em;
+    color: ${BRAND.cream};
+    margin: 0 0 2.5mm 0;
+    letter-spacing: 0.14em;
   }
 
   .cover-date {
-    font-size: 10pt;
-    color: ${BRAND.ink};
+    font-size: 9.5pt;
+    color: rgba(252, 252, 248, 0.85);
     margin: 0;
+  }
+
+  /* Photo-less fallback: identical composition on the calm sand
+     gradient, dark text, same single page. */
+  .cover--plain {
+    background: linear-gradient(160deg, ${BRAND.sand} 0%, ${BRAND.cream} 55%, ${BRAND.sand} 100%);
+  }
+  .cover--plain .cover-masthead,
+  .cover--plain .cover-brand,
+  .cover--plain .cover-title,
+  .cover--plain .cover-kua {
+    color: ${BRAND.ink};
+    text-shadow: none;
+  }
+  .cover--plain .cover-date {
+    color: ${BRAND.olive};
   }
 
   /* ------------------------------------------------------------------
@@ -616,36 +681,11 @@ export function buildHtml(
     margin: 11mm auto 0 auto;
   }
 
-  /* Framed cover: a single warm hairline border set inside the page
-     margins turns the title page into a plate. */
-  .cover {
-    border: 0.6pt solid ${BRAND.hairline};
-    padding: 14mm 12mm;
-  }
-
   /* ------------------------------------------------------------------
      PRM-003 (2026-07-21): the premium magazine layer.
      Scoped to the pillar chapters and the two pillar framing blocks;
      every other product keeps its existing look untouched.
      ------------------------------------------------------------------ */
-
-  /* Cover photo plate: fixed height with or without the owner's image,
-     so the cover composition never shifts. */
-  .cover-plate {
-    width: 128mm;
-    height: 82mm;
-    margin: 10mm auto 0 auto;
-    border-radius: 3mm;
-    background-size: cover;
-    background-position: center;
-    background-color: ${BRAND.sand};
-  }
-  .cover-plate--fallback {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(150deg, ${BRAND.sand} 0%, ${BRAND.cream} 60%, ${BRAND.sand} 100%);
-  }
 
   /* Chapter opener: photo band, kicker, mini-map + verdict chip. The
      header is injected by assembleProductHtml for blocks with a
@@ -928,19 +968,16 @@ export function buildHtml(
 </head>
 <body>
 
-<section class="cover">
+<section class="cover ${coverPhoto ? "cover--photo" : "cover--plain"}">
+  ${coverBleed}
   <div class="cover-top">
-    <div class="cover-logo">${brandMarkSvg(106, BRAND.olive)}</div>
+    <div class="cover-logo">${brandMarkSvg(106, BRAND.clay)}</div>
+    <h1 class="cover-masthead">Compass</h1>
     <p class="cover-brand">My Feng Shui Home</p>
-    <div class="cover-rule"></div>
-  </div>
-
-  <div class="cover-center">
-    <h1 class="cover-title">${product.coverTitleHtml(escapeHtml(context.firstName))}</h1>
-    ${coverPlate}
   </div>
 
   <div class="cover-bottom">
+    <p class="cover-title">${product.coverTitleHtml(escapeHtml(context.firstName))}</p>
     <p class="cover-kua">KUA ${context.kuaNumber} · ${groupLabel.toUpperCase()}</p>
     <p class="cover-date">${date}</p>
   </div>
