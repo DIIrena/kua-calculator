@@ -106,24 +106,31 @@ for (const f of files) {
   }
   if (problems.length) { failures++; console.log(`  FAIL ${f.padEnd(26)} ${problems.join("; ")}`); }
 }
-// Photo-folder budget: content/photos JPEGs must total <= 2.5MB so the
-// finished PDF stays under Vercel's 4.5MB response limit.
+// Photo budget: the constraint is that any single product PDF stays
+// under Vercel's 4.5MB response limit, so we bound the EMBEDDED image
+// payload, not the raw folder. Covers are per-product (cover-<slug>.jpg)
+// and mutually exclusive: a PDF embeds at most one cover plus the plates
+// it renders. So the worst-case payload is every non-cover plate plus the
+// single largest cover; that is what must stay <= 2.5MB.
 try {
   const { statSync } = await import("node:fs");
   const photosDir = path.join(BLOCKS_DIR, "..", "photos");
   const jpgs = readdirSync(photosDir).filter((f) => f.endsWith(".jpg"));
-  const total = jpgs.reduce(
-    (n, f) => n + statSync(path.join(photosDir, f)).size,
-    0,
-  );
-  if (total > 2.5 * 1024 * 1024) {
+  const sizeOf = (f) => statSync(path.join(photosDir, f)).size;
+  const covers = jpgs.filter((f) => f.startsWith("cover"));
+  const plates = jpgs.filter((f) => !f.startsWith("cover"));
+  const platesTotal = plates.reduce((n, f) => n + sizeOf(f), 0);
+  const largestCover = covers.reduce((m, f) => Math.max(m, sizeOf(f)), 0);
+  const worstPdf = platesTotal + largestCover;
+  const folderTotal = jpgs.reduce((n, f) => n + sizeOf(f), 0);
+  if (worstPdf > 2.5 * 1024 * 1024) {
     failures++;
     console.log(
-      `  FAIL content/photos/ over budget: ${(total / 1048576).toFixed(2)}MB of 2.50MB across ${jpgs.length} file(s)`,
+      `  FAIL photo payload over budget: worst-case single PDF ${(worstPdf / 1048576).toFixed(2)}MB of 2.50MB (${plates.length} plate(s) + largest of ${covers.length} cover(s))`,
     );
   } else if (jpgs.length) {
     console.log(
-      `  photos: ${jpgs.length} plate(s), ${(total / 1048576).toFixed(2)}MB of 2.50MB budget`,
+      `  photos: ${plates.length} plate(s) + ${covers.length} cover(s), worst-case PDF ${(worstPdf / 1048576).toFixed(2)}MB of 2.50MB budget; folder ${(folderTotal / 1048576).toFixed(2)}MB on disk`,
     );
   }
 } catch {
