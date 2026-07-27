@@ -1,10 +1,12 @@
-# Visual recharge - diagram plan (2026-07-27)
+# Visual recharge - diagram plan (2026-07-27, updated 2026-07-28)
 
 The editor-in-chief synthesis of the expert audit. Principle: one visual system, not 44 pictures. Diagrams are inline-SVG line-art in the book's olive / clay / sand style; several are reusable components placed in more than one chapter.
 
 > The brief is 44 one-off asks; the line needs one visual system, not 44 pictures. I did three things. First, consolidation as restraint: several requests are the same reusable component placed in many chapters, so I collapsed them into single builds with reuse noted (a five-element cycle that serves kua-element, the five-elements workbook and Heaven's Gate; the existing bagua grid that serves the starter deck and the diagnostic workbook; the cautious-direction ordinal scale that orients all four cautious chapters; the bedroom and desk command plans that double as product-page sample diagrams). Second, I killed the two genuinely decorative items: the bathroom contain-versus-amplify colour swatch (the text already states the rule) and the healthy-home nine-conditions ring (a completeness ring with vague icons). Third, ranking by real impact. Buildables lead the plan because the olive/clay/sand line diagrams do the comprehension and trust work that protects against refunds and justifies paid personalisation; the single revenue exception sits at the very top, the shop reading-depth comparison matrix, which anchors the $49 flagship and lifts average order value at the point of choice. Photos are ranked by funnel position, not prettiness: the shop hero, the free Good-Days page, the broken-looking bundle card and the high-emotion bedroom come first; the remaining product-page heroes all follow one quiet-luxury recipe and mainly exist to give text-only pages a hero and an OG image, so they cluster at medium. Every photo keeps its three prompts intact and on the owner's ivory, pool-table green and terracotta direction.
 
-**Already built and shipped (this session):** five-element cycle (kua-element), kitchen work-triangle (kitchen), bedroom command position (bedroom), entrance layout (entrance).
+**Built and shipped so far (9):** five-element cycle (kua-element), kitchen work-triangle (kitchen), bedroom command position (bedroom), entrance layout (entrance), three-ways-to-read-a-direction triptych (how-to-use), command position good/poor (before-the-compass), desk command plan (room-desk), living-room conversation circle (living-room), house facing/sitting axis (house-match). Marked [BUILT] below.
+
+**Not yet built (the roadmap):** the remaining items below, plus the one web asset the audit ranked top for revenue, the reading-depth comparison matrix on the shop /products page (a React/HTML build, not a PDF diagram).
 
 ---
 
@@ -18,7 +20,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The only pure-revenue asset in the set and the top of the plan. The comparison currently lives only on the flagship sales page, so a shopper on the shelf cannot see why the middle and top tiers cost more. Surfacing the ladder at the shelf anchors the $49 flagship, lifts average order value, and answers which-one-do-I-need at the point of choice. Building it in the diagram style keeps it reading as premium, not spreadsheet.
 
-### Command position, good versus poor
+### Command position, good versus poor **[BUILT]**
 
 **Where:** PDF method: before-the-compass.md (Take the command position)
 
@@ -26,7 +28,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The spine rule of the whole tradition and the honest hierarchy the book is built on. Command position is described only in prose yet ranked above compass direction; a good-versus-poor contrast teaches the seat-to-door relation faster than any paragraph and visibly reinforces the trust claim. This is the canonical command diagram that the bedroom, desk and living-room plans all inherit their visual language from.
 
-### Three ways to read a direction (triptych)
+### Three ways to read a direction (triptych) **[BUILT]**
 
 **Where:** PDF method: how-to-use.md (How to read a direction)
 
@@ -50,7 +52,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The highest-leverage decision in the whole book, and it fuses three rules (headboard wall, door lane, command sightline) the prose states separately. One build serves two surfaces: the chapter and the bedroom-reset product page, which currently promises bed readings but shows none. Making it legible raises the odds the reader actually moves the bed, which is what converts a page into felt value.
 
-### Desk command plan
+### Desk command plan **[BUILT]**
 
 **Where:** room-desk.md (see the door but not in its line + the desk clinic template); reused by pillar-knowledge and business-money
 
@@ -66,7 +68,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The fire-and-water conflict mediated by wood is the chapter's signature idea and is inherently about position, so placing the wood buffer in the exact gap makes the most-quoted kitchen rule actionable rather than abstract. Layering it over the familiar work triangle and the door sightline lets one clean image carry three lessons while reusing the established five-element vocabulary.
 
-### Living-room conversation circle with command seat
+### Living-room conversation circle with command seat **[BUILT]**
 
 **Where:** space-living-room.md (main seat in command + the conversation circle + clear flow)
 
@@ -74,7 +76,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The tradition reads the shape the seats make together, the one thing pure text cannot convey, so a plan of the circle teaches almost the whole chapter at a glance. It also corrects the single most common real-world mistake, every chair aimed at the screen, which makes the diagram feel immediately relevant.
 
-### Facing versus sitting, the house axis
+### Facing versus sitting, the house axis **[BUILT]**
 
 **Where:** PDF method: house-match.md (find your home's facing)
 
