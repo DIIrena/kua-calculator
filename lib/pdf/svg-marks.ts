@@ -771,3 +771,48 @@ export function fiveElementCycleSvg(): string {
 <p class="figure-caption">Each element feeds the next around the ring, and keeps one in check across the star. This is the engine behind every colour and material choice in your reading.</p>
 </div>`;
 }
+
+// ============================================================
+// Kitchen layout: the two rules a kitchen reading turns on. Fire
+// (stove) and water (sink) kept from touching by a wood buffer, and
+// the stove / sink / fridge working triangle that no through-path
+// crosses. Static line-art. Placed in the kitchen chapter.
+// ============================================================
+export function kitchenLayoutSvg(): string {
+  const water = "#dbe0ea";
+  const waterEdge = "#3a4a6b";
+  const metal = "#ecebe5";
+  const metalEdge = "#8a8577";
+  const stove = { x: 118, y: 62, w: 88, h: 32, cx: 162, cy: 78 };
+  const sink = { x: 262, y: 62, w: 88, h: 32, cx: 306, cy: 78 };
+  const fridge = { x: 470, y: 150, w: 44, h: 92, cx: 492, cy: 196 };
+  const tri = `M ${stove.cx} ${stove.cy} L ${sink.cx} ${sink.cy} L ${fridge.cx} ${fridge.cy} Z`;
+  return `<div class="figure">
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" width="520" height="334" style="display:block;margin:0 auto;" role="img" aria-label="Kitchen layout: fire, water, wood buffer and the working triangle">
+  <rect x="50" y="56" width="464" height="266" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="50" y1="56" x2="514" y2="56" stroke="${C.ink}" stroke-width="4"/>
+  <text x="282" y="46" text-anchor="middle" font-family="Hanken Grotesk" font-size="11.5" font-weight="700" fill="${C.ink2}">solid back wall, stove not under a window</text>
+  <path d="${tri}" fill="none" stroke="${C.clay}" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <rect x="${stove.x}" y="${stove.y}" width="${stove.w}" height="${stove.h}" rx="3" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.5"/>
+  <circle cx="${stove.cx - 20}" cy="${stove.cy}" r="4.5" fill="none" stroke="${C.clay}" stroke-width="1.6"/>
+  <circle cx="${stove.cx + 20}" cy="${stove.cy}" r="4.5" fill="none" stroke="${C.clay}" stroke-width="1.6"/>
+  <path d="M ${stove.cx} ${stove.cy - 5} q 6 5 0 10 q -6 -5 0 -10 Z" fill="${C.clay}"/>
+  <text x="${stove.cx}" y="112" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.ink}">stove (fire)</text>
+  <circle cx="234" cy="78" r="13" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <path d="M 234 84 L 234 73 M 234 76 q -6 -3 -8 -8 M 234 76 q 6 -3 8 -8" fill="none" stroke="${C.olive}" stroke-width="1.4"/>
+  <text x="234" y="112" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.olive}">wood buffer</text>
+  <rect x="${sink.x}" y="${sink.y}" width="${sink.w}" height="${sink.h}" rx="3" fill="${water}" stroke="${waterEdge}" stroke-width="1.5"/>
+  <path d="M ${sink.cx - 22} ${sink.cy + 2} q 7 -6 14 0 t 14 0 t 14 0" fill="none" stroke="${waterEdge}" stroke-width="1.4"/>
+  <text x="${sink.cx}" y="112" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.ink}">sink (water)</text>
+  <rect x="${fridge.x}" y="${fridge.y}" width="${fridge.w}" height="${fridge.h}" rx="3" fill="${metal}" stroke="${metalEdge}" stroke-width="1.5"/>
+  <line x1="${fridge.x + 8}" y1="${fridge.y + 34}" x2="${fridge.x + fridge.w - 8}" y2="${fridge.y + 34}" stroke="${metalEdge}" stroke-width="1.2"/>
+  <text x="${fridge.cx}" y="256" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.ink}">fridge</text>
+  <text x="300" y="176" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.clay}" letter-spacing="0.5">the work triangle</text>
+  <text x="300" y="193" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">no through-path crosses it</text>
+  <rect x="238" y="318" width="84" height="8" fill="${C.paper}"/>
+  <path d="M 238 322 a 84 84 0 0 1 84 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="280" y="342" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="600" fill="${C.ink2}">door</text>
+</svg>
+<p class="figure-caption">A kitchen reading turns on two things: keep fire and water from touching, and let the stove, sink, and fridge form a triangle no one has to walk through.</p>
+</div>`;
+}

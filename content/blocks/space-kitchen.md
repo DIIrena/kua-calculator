@@ -48,6 +48,8 @@ The mediator the tradition reaches for is wood, because in the five-element cycl
 
 If your layout simply does not allow the separation, and many do not, place one of these wood elements in the line between fire and water and treat the conflict as softened rather than solved. The reading is a decision tool, not a demand for a renovation.
 
+{{kitchenLayout}}
+
 ## Where your own directions come in
 
 Everything above is the same for every household. Your personal directions add one optional layer on top, for the parts of kitchen work that are focused and deliberate rather than quick.

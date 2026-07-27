@@ -37,6 +37,7 @@ import {
   floorPlanExampleSvg,
   elementIconSvg,
   fiveElementCycleSvg,
+  kitchenLayoutSvg,
 } from "@/lib/pdf/svg-marks";
 import {
   kuaElement,
@@ -185,6 +186,7 @@ function substituteTokens(
     kuaElementDress: () => elementProfile(context.kuaNumber).dress,
     kuaElementIcon: () => elementIconSvg(kuaElement(context.kuaNumber)),
     elementCycle: () => fiveElementCycleSvg(),
+    kitchenLayout: () => kitchenLayoutSvg(),
     yanNianActivation: () => yanNianActivation(context.kuaNumber),
     personalBagua: () =>
       (cachedPersonalBagua ??= personalBaguaSvg(
