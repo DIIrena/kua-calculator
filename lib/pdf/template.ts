@@ -16,8 +16,8 @@ import path from "node:path";
 import type { Product } from "@/lib/products";
 import type { BlockContext } from "@/lib/blocks";
 import { brandMarkSvg, personalBaguaSvg } from "@/lib/pdf/svg-marks";
-import { PILLAR_META } from "@/lib/pillar-sectors";
 import { photoDataUri } from "@/lib/pdf/photos";
+import { PILLAR_META } from "@/lib/pillar-sectors";
 
 // Brand palette - matches the CSS custom properties in globals.css.
 const BRAND = {
@@ -93,9 +93,9 @@ export function buildHtml(
 
   // Named-page running footers for the pillar chapters: each chapter's
   // pages carry its area + sector in the footer ("Wealth - Southeast - 12").
-  // Generated from PILLAR_META so the nine rules stay in one place. If a
-  // Chromium build ignores named pages the global footer still applies -
-  // a cosmetic-only degradation.
+  // Generated from PILLAR_META so the nine rules stay in one place. The
+  // named @page inherits the default page margin, so it must not set a
+  // different one (a divergent margin here silently shifts the content).
   const pillarPageCss = Object.entries(PILLAR_META)
     .map(
       ([id, m]) => `
@@ -939,21 +939,10 @@ export function buildHtml(
   .chapter-recap p { text-align: left; hyphens: none; margin: 0 0 2.5mm 0; }
   .chapter-recap table { width: 100%; }
 
-  /* Magazine body: pillar chapters + pillar framing read ragged-right
-     at a calmer measure. Attribute selector so all nine pillar blocks
-     and the two new framing blocks are covered without listing them. */
-  [class*="block--pillar-"] p,
-  .block--welcome-pillars p,
-  .block--closing-pillars p {
-    text-align: left;
-    hyphens: none;
-    -webkit-hyphens: none;
-  }
-  [class*="block--pillar-"],
-  .block--welcome-pillars,
-  .block--closing-pillars {
-    max-width: 152mm;
-  }
+  /* Pillar chapters read justified at the full content measure, the same
+     as every other chapter, so their margins stay symmetric and match
+     the rest of the book. (They previously used a narrower 152mm,
+     left-aligned measure, which left an uneven right margin.) */
 
   /* Standfirst: the first paragraph after a pillar H1 reads larger and
      quieter, magazine-style. Pure CSS, no content changes. */
