@@ -816,3 +816,34 @@ export function kitchenLayoutSvg(): string {
 <p class="figure-caption">A kitchen reading turns on two things: keep fire and water from touching, and let the stove, sink, and fridge form a triangle no one has to walk through.</p>
 </div>`;
 }
+
+// ============================================================
+// Bedroom command position: the one move the bedroom chapter weights
+// most. Headboard against a solid wall, bed set diagonally from the
+// door so the sleeper sees it without lying in its direct line, both
+// sides reachable. Static line-art. Placed in the bedroom chapter.
+// ============================================================
+export function bedroomLayoutSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 356" xmlns="http://www.w3.org/2000/svg" width="500" height="318" style="display:block;margin:0 auto;" role="img" aria-label="Bedroom command position">
+  <rect x="52" y="54" width="456" height="268" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="52" y1="54" x2="508" y2="54" stroke="${C.ink}" stroke-width="4"/>
+  <text x="200" y="44" text-anchor="middle" font-family="Hanken Grotesk" font-size="11.5" font-weight="700" fill="${C.ink2}">headboard on a solid wall</text>
+  <line x1="200" y1="138" x2="426" y2="300" stroke="${C.olive}" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <rect x="132" y="60" width="136" height="164" rx="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <rect x="132" y="60" width="136" height="12" fill="${C.olive}"/>
+  <rect x="146" y="78" width="46" height="24" rx="4" fill="${C.paper}" stroke="${C.olive}" stroke-width="1"/>
+  <rect x="208" y="78" width="46" height="24" rx="4" fill="${C.paper}" stroke="${C.olive}" stroke-width="1"/>
+  <rect x="100" y="60" width="24" height="30" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <rect x="276" y="60" width="24" height="30" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <text x="200" y="250" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.ink}">your bed</text>
+  <text x="200" y="266" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">both sides reachable</text>
+  <text x="352" y="214" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.olive}">you see the door</text>
+  <text x="352" y="230" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">without lying in its line</text>
+  <rect x="410" y="318" width="72" height="8" fill="${C.paper}"/>
+  <path d="M 410 322 a 72 72 0 0 1 72 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="446" y="342" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="600" fill="${C.ink2}">door</text>
+</svg>
+<p class="figure-caption">The strongest bed position: headboard against a solid wall, set diagonally from the door so you can see it without lying directly in its line.</p>
+</div>`;
+}

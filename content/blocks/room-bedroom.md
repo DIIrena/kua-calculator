@@ -26,6 +26,8 @@ If the bedroom is shared, there is a third good wall worth knowing. **{{yanNianD
 
 Stand in the doorway and read the room the way qi enters it: from the door, inward. Note where the door is, where the window is, where the solid interior walls run. The headboard wants a solid wall behind it, the door wants to be visible from the pillow without sitting up, and the bed wants to sit off the door's direct line rather than square in its path. Once you know which walls are solid and which carry your good directions, the headboard usually has only one or two sensible homes.
 
+{{bedroomLayout}}
+
 ## Keep the cautious corners for storage
 
 You have four cautious directions, and two of them the tradition treats as the most careful: **{{jueMingDir}}**, your Jue Ming, and **{{wuGuiDir}}**, your Wu Gui. These are not walls to point your sleeping head at. They are exactly the corners to spend on the things that do not sleep. Put the wardrobe there. Let the storage live there. If the room has a bathroom, that corner is a reasonable place for it. The cautious directions do useful work absorbing the furniture you would rather not give a good wall to, which frees the supportive walls for the bed.
