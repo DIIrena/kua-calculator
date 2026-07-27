@@ -36,6 +36,8 @@ None of this is mystical. A clear, lit, undamaged approach is what the tradition
 
 What you meet in the first second inside the door sets the read for the whole home. The tradition gives the entry hall a specific job: let the arriving energy land in open space and settle before it spreads.
 
+{{entranceLayout}}
+
 - **Land in openness.** The first three steps inside should meet room to breathe, not a wall at the nose or a clutter of belongings. If the door opens onto a tight corner, a lamp, a small console, or a piece of art at eye level gives the eye somewhere to rest and the energy somewhere to gather.
 - **Avoid the straight-through.** A direct line of sight from the front door to an opposing window or back door is read as energy entering and leaving in the same breath. Where you have that line, the tradition places something at chest height between the two - a console, a tall plant, a screen - to slow the path and let qi circulate rather than rush through.
 - **A welcoming first impression.** A long view into a tidy room, a soft light, one living plant, art at the visual horizon. The tradition treats the entry as the home's handshake. A wall of coats, a heap of shoes, or a direct view into a bathroom is read as a weak one.

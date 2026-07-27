@@ -847,3 +847,37 @@ export function bedroomLayoutSvg(): string {
 <p class="figure-caption">The strongest bed position: headboard against a solid wall, set diagonally from the door so you can see it without lying directly in its line.</p>
 </div>`;
 }
+
+// ============================================================
+// Entrance: the mouth of the house. The door opens onto open floor
+// (the bright hall), qi enters and spreads rather than shooting
+// straight through, a settling zone sits to the side, and no mirror
+// faces the door. Static line-art. Placed in the entrance chapter.
+// ============================================================
+export function entranceLayoutSvg(): string {
+  const water = "#dbe0ea";
+  return `<div class="figure">
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" width="500" height="321" style="display:block;margin:0 auto;" role="img" aria-label="Entrance: the door, the bright hall, and where qi settles">
+  <rect x="50" y="54" width="460" height="268" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="238" y="238" width="82" height="82" rx="4" fill="${C.oliveSoft}" opacity="0.55"/>
+  <text x="279" y="278" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">open floor</text>
+  <text x="279" y="293" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">the first steps land clear</text>
+  <path d="M 279 306 C 279 210 210 200 165 176" fill="none" stroke="${C.olive}" stroke-width="1.8" stroke-dasharray="5 4"/>
+  <path d="M 165 176 L 178 178 L 172 167 Z" fill="${C.olive}"/>
+  <text x="150" y="150" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.olive}">qi enters</text>
+  <text x="150" y="165" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.olive}">and settles</text>
+  <rect x="492" y="150" width="18" height="86" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <rect x="495" y="120" width="14" height="22" rx="2" fill="${C.paper}" stroke="${C.olive}" stroke-width="1.2"/>
+  <text x="470" y="258" text-anchor="end" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">settling zone</text>
+  <text x="470" y="272" text-anchor="end" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">console, art, a lamp</text>
+  <rect x="249" y="55" width="60" height="7" fill="${water}" stroke="${C.ink2}" stroke-width="0.8"/>
+  <line x1="251" y1="55" x2="307" y2="62" stroke="${C.clay}" stroke-width="1.8"/>
+  <line x1="307" y1="55" x2="251" y2="62" stroke="${C.clay}" stroke-width="1.8"/>
+  <text x="279" y="80" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.clay}">no mirror facing the door</text>
+  <rect x="238" y="318" width="82" height="8" fill="${C.paper}"/>
+  <path d="M 238 322 a 82 82 0 0 1 82 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="279" y="345" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="600" fill="${C.ink2}">front door</text>
+</svg>
+<p class="figure-caption">The door opens onto open floor so qi can spread instead of stalling or bouncing back, the settling zone sits to the side, and no mirror is hung facing the door to bounce arriving energy straight out.</p>
+</div>`;
+}
