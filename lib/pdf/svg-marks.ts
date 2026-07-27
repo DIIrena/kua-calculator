@@ -698,3 +698,76 @@ export function sectorMiniMapSvg(
 ${cells.join("\n")}
 </svg>`;
 }
+
+// ============================================================
+// Five-element cycle: the generating ring (each element feeds the
+// next) and the controlling star (each keeps another in check).
+// Static line-art, no per-reader data. Placed in the kua-element
+// chapter so the reader can see how their element sits in the whole.
+// ============================================================
+export function fiveElementCycleSvg(): string {
+  const cx = 260;
+  const cy = 205;
+  const R = 150;
+  const nodeR = 45;
+  const els = [
+    { key: "Wood", fill: "#dde6e0", stroke: C.olive, sub: "green, tall" },
+    { key: "Fire", fill: "#f8d8c5", stroke: C.clay, sub: "warm light" },
+    { key: "Earth", fill: "#efe6cf", stroke: "#b08a3e", sub: "clay, square" },
+    { key: "Metal", fill: "#ecebe5", stroke: "#8a8577", sub: "white, round" },
+    { key: "Water", fill: "#dbe0ea", stroke: "#3a4a6b", sub: "ink, wavy" },
+  ];
+  const pos = els.map((_, i) => {
+    const a = ((-90 + i * 72) * Math.PI) / 180;
+    return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a) };
+  });
+  const arrow = (
+    p: { x: number; y: number },
+    q: { x: number; y: number },
+    color: string,
+    dashed: boolean,
+  ) => {
+    const dx = q.x - p.x;
+    const dy = q.y - p.y;
+    const len = Math.hypot(dx, dy);
+    const ux = dx / len;
+    const uy = dy / len;
+    const off = nodeR + 7;
+    const sx = p.x + ux * off;
+    const sy = p.y + uy * off;
+    const ex = q.x - ux * off;
+    const ey = q.y - uy * off;
+    const ah = 10;
+    const px = -uy;
+    const py = ux;
+    const b1x = ex - ux * ah + px * ah * 0.55;
+    const b1y = ey - uy * ah + py * ah * 0.55;
+    const b2x = ex - ux * ah - px * ah * 0.55;
+    const b2y = ey - uy * ah - py * ah * 0.55;
+    return `<line x1="${sx.toFixed(1)}" y1="${sy.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${ey.toFixed(1)}" stroke="${color}" stroke-width="2.2"${dashed ? ' stroke-dasharray="5 4"' : ""}/>
+  <path d="M ${ex.toFixed(1)} ${ey.toFixed(1)} L ${b1x.toFixed(1)} ${b1y.toFixed(1)} L ${b2x.toFixed(1)} ${b2y.toFixed(1)} Z" fill="${color}"/>`;
+  };
+  const ctrl = pos.map((p, i) => arrow(p, pos[(i + 2) % 5], C.clay, true)).join("\n  ");
+  const gen = pos.map((p, i) => arrow(p, pos[(i + 1) % 5], C.olive, false)).join("\n  ");
+  const nodes = els
+    .map(
+      (e, i) => `<circle cx="${pos[i].x.toFixed(1)}" cy="${pos[i].y.toFixed(1)}" r="${nodeR}" fill="${e.fill}" stroke="${e.stroke}" stroke-width="2"/>
+  <text x="${pos[i].x.toFixed(1)}" y="${(pos[i].y - 3).toFixed(1)}" text-anchor="middle" font-family="Hanken Grotesk" font-size="15" font-weight="800" fill="${C.ink}">${e.key}</text>
+  <text x="${pos[i].x.toFixed(1)}" y="${(pos[i].y + 13).toFixed(1)}" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">${e.sub}</text>`,
+    )
+    .join("\n  ");
+  return `<div class="figure">
+<svg viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" width="440" height="389" style="display:block;margin:0 auto;" role="img" aria-label="The five-element generating and controlling cycles">
+  ${ctrl}
+  ${gen}
+  ${nodes}
+  <line x1="132" y1="424" x2="164" y2="424" stroke="${C.olive}" stroke-width="2.2"/>
+  <path d="M 164 424 L 156 420 L 156 428 Z" fill="${C.olive}"/>
+  <text x="172" y="428" font-family="Hanken Grotesk" font-size="11" fill="${C.ink}">feeds the next</text>
+  <line x1="300" y1="424" x2="332" y2="424" stroke="${C.clay}" stroke-width="2.2" stroke-dasharray="5 4"/>
+  <path d="M 332 424 L 324 420 L 324 428 Z" fill="${C.clay}"/>
+  <text x="340" y="428" font-family="Hanken Grotesk" font-size="11" fill="${C.ink}">keeps in check</text>
+</svg>
+<p class="figure-caption">Each element feeds the next around the ring, and keeps one in check across the star. This is the engine behind every colour and material choice in your reading.</p>
+</div>`;
+}

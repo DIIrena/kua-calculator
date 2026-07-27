@@ -8,6 +8,8 @@ The eight directions are one half of what your Kua gives you. The other half is 
 
 The five elements - wood, fire, earth, metal, water - are the tradition's vocabulary for qualities of energy, and each Kua number belongs to one of them. The identity chapter showed you the elements of your whole group; this page narrows it to the single element that is yours. The tradition uses it the way a tailor uses a measurement: it tells you which colours, materials, and forms are read as *feeding* you, so that when two options look equally good, you have a reason to choose one.
 
+{{elementCycle}}
+
 Hold it the way you hold everything else in this book. Wearing your element's colour will not change your bank balance, and the tradition, honestly read, does not claim it will. What it offers is a coherent palette: a way of choosing clothes, objects, and corners that agree with your chart instead of arguing with it.
 
 ## In the wardrobe
