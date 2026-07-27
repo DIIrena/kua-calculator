@@ -1,4 +1,4 @@
-# Your balcony, {{firstName}}
+# Your balcony
 
 A balcony, a terrace, even a narrow ledge with room for one chair: the tradition treats this as the home's *breathing edge*. It is the seam where inside meets outside, where light and air arrive before anything else does, and where the home gets to exhale. Most readings spend their time on the rooms you live inside. This one steps to the threshold and looks out.
 

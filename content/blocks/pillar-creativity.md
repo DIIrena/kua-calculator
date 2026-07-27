@@ -1,4 +1,4 @@
-# Your creativity corner, {{firstName}}
+# Your creativity corner
 
 There is one sector of the map the tradition hands to the parts of life that are unfinished on purpose. The new idea. The half-built project. The thing made for the joy of making it. The children in the house, and the more childlike pull toward play. In the eight-direction map that older feng shui draws over a home, all of that lives in one fixed place: the **West**.
 
@@ -68,7 +68,7 @@ Most classical figures float freely around a home, placed wherever a seller sugg
 {{sectorVerdictPanel}}
 
 {{#supportive}}
-Your chart supports this corner, {{firstName}}. The West is one of your four favourable directions, so the fixed creativity sector and your own map point at the same patch of floor. The tradition reads that overlap as a corner to lean into, and leaning in here is concrete: this is where the making goes. If you have any say over where the worktable, the easel, or the instrument lives, choose the West room or the West side of the room you use most.
+Your chart supports this corner. The West is one of your four favourable directions, so the fixed creativity sector and your own map point at the same patch of floor. The tradition reads that overlap as a corner to lean into, and leaning in here is concrete: this is where the making goes. If you have any say over where the worktable, the easel, or the instrument lives, choose the West room or the West side of the room you use most.
 
 Anchor it with the work itself. The sketchbook left open, the half-built project on its own shelf, the tools where your hands can find them. Add one round metal object as the sector's marker, a brass dish or a curved frame, and let white or soft grey carry the palette. If children share your home, their room or play corner sitting here reads doubly natural, so give their made things wall space at this end of the house.
 
@@ -77,7 +77,7 @@ For the sitting itself, this corner can hold your daily creative session. Keep a
 *If your chart had placed a cautious star here instead, the guidance would soften to tend and keep clear, and your supportive directions would carry the anchoring.*
 {{/supportive}}
 {{#cautious}}
-Your chart runs cautious in the West, {{firstName}}, so hold this corner lightly. Nothing about the fixed map changes: the West still belongs to children, creativity, and joy, and it still wants to be open, tended, and a little playful. What changes is how much of your own body time you give it. This is not the wall to face for hours of deep work, and not the corner for the chair you sit in every day.
+Your chart runs cautious in the West, so hold this corner lightly. Nothing about the fixed map changes: the West still belongs to children, creativity, and joy, and it still wants to be open, tended, and a little playful. What changes is how much of your own body time you give it. This is not the wall to face for hours of deep work, and not the corner for the chair you sit in every day.
 
 So split the roles. Let the West be the display corner: finished pieces, work in progress shown rather than worked, the children's art, one round metal object, the pale palette. Keep it clear of stagnant storage, and let red stay a visitor there rather than the host. Tend it the way you would water a plant, briefly and often.
 

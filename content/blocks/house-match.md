@@ -1,4 +1,4 @@
-# Does your home match you, {{firstName}}?
+# Does your home match you?
 
 Here is a question almost nobody thinks to ask, and it changes how you read everything else in this book: **your house has a Kua too.** The same eight trigrams that sorted you into the {{kuaGroup}} group also sort every building into a group of its own. Which means there is a match to check: you and the home you live in are either playing for the same team or politely working across the line. This chapter shows you how to find out, with the compass skills you already have.
 

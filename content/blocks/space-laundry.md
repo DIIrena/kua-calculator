@@ -1,4 +1,4 @@
-# Your laundry, {{firstName}}
+# Your laundry
 
 Laundry is the most physical work a home does. Water heats, fabric tumbles, damp hangs in the air, and a pile of unwashed clothes turns into a small mountain by Thursday. It is plain work, and it is not pretty work, and the tradition has a clear opinion about where in your home that kind of work belongs.
 

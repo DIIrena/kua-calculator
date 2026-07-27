@@ -1,4 +1,4 @@
-# Your relationship corner, {{firstName}}
+# Your relationship corner
 
 In the eight-sided map that feng shui lays over a home, one sector is fixed to the love and partnership life-area for everyone, regardless of who lives there or how they sleep. It sits in the **Southwest**. The tradition gives this corner the Kun trigram - three soft, broken lines, the most yielding shape in the whole system - and reads it as the receptive, nurturing ground where relationship lives. The Southwest does not move with your birth chart. It is the same compass sector in your home as in everyone else's. What changes from person to person is how your own directions land on top of it, and that part of the reading has already been worked out for you in this chapter.
 

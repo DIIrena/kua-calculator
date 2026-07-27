@@ -1,4 +1,4 @@
-# Your health centre, {{firstName}}
+# Your health centre
 
 Of all the life areas on the map, this is the one that does not move to a wall. While most areas are read at the edges of a home, health, {{firstName}}, is read at the **Centre**, the still point the tradition calls the *Tai Chi* point. The middle of a home is the middle for everyone, which is part of why this area matters so much.
 
@@ -42,7 +42,7 @@ This active-and-passive principle runs under every page of this reading, and the
 
 {{sectorVerdictPanel}}
 
-The Centre is the one part of this reading that is identical for everyone. Every compass sector of your home lands somewhere on your personal chart and picks up a verdict there; the middle does not, because it faces no direction at all. Whatever your chart says about your corners, {{firstName}}, the middle of your home asks exactly what the middle of every home asks: kept open, kept clear, tended before the edges.
+The Centre is the one part of this reading that is identical for everyone. Every compass sector of your home lands somewhere on your personal chart and picks up a verdict there; the middle does not, because it faces no direction at all. Whatever your chart says about your corners, the middle of your home asks exactly what the middle of every home asks: kept open, kept clear, tended before the edges.
 
 One personal thread survives, and it is a light one. Notice which direction you naturally face when you pause at the centre. If your body opens toward one of your four supportive directions, and especially toward {{tianYiDir}}, the bearing the tradition ties to steadiness, the reading treats that as a quiet reinforcement of an already grounded spot. Nothing needs rearranging on its account; the noticing is the whole practice.
 
@@ -79,7 +79,7 @@ The tradition does not promise that a tidy centre changes anything about you. It
 </div>
 </div>
 
-Start there, {{firstName}}. Walk to the middle of your home and clear it. Then, and only then, go to the edges.
+Start there. Walk to the middle of your home and clear it. Then, and only then, go to the edges.
 
 <div class="chapter-recap">
 <p class="opener-kicker">THE HEALTH CENTRE ON ONE CARD</p>

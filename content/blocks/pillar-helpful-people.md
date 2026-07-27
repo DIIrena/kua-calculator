@@ -1,4 +1,4 @@
-# Your helpful-people corner, {{firstName}}
+# Your helpful-people corner
 
 The tradition keeps one corner of the home for the people who help you from the outside: mentors, allies, useful contacts, the person who knows the person, the colleague who vouches for you. The same corner is read as the one tied to travel and to movement beyond your own walls. To work with it, {{firstName}}, you first have to find it. The tradition maps this theme to the **Northwest** of a space, so the move is to stand with a compass, locate the Northwest of your home or of a single room, and read what is actually sitting there. The compass direction is the same for any space; what you do with the corner you find is the part this reading is about.
 
@@ -50,7 +50,7 @@ If your kitchen happens to sit there, nothing is wrong with your house and nobod
 {{sectorVerdictPanel}}
 
 {{#supportive}}
-The corner and your chart agree, {{firstName}}. The Northwest is one of your four supportive directions, so the home's helpful-people sector sits somewhere the tradition already reads as easy for you. This is a corner to use, not merely to tend.
+The corner and your chart agree. The Northwest is one of your four supportive directions, so the home's helpful-people sector sits somewhere the tradition already reads as easy for you. This is a corner to use, not merely to tend.
 
 Using it looks like this. When you sit down to write the message that asks for help, take the seat that lets your body face Northwest. Take the call that matters facing the same way. If the Northwest room is yours to arrange, it is a natural home for the desk, with the command rule still first: solid wall behind you, door in view, and then the facing.
 
@@ -59,7 +59,7 @@ Anchor the corner deliberately. One metal object you actually like, the photogra
 *If your chart had placed a cautious star here instead, the guidance would soften to tend and keep clear, and your supportive directions would carry the anchoring.*
 {{/supportive}}
 {{#cautious}}
-Your chart runs cautious in the Northwest, {{firstName}}, so this corner takes a lighter hand from you. The theme does not move: this is still the home's helpful-people and travel sector, and it still wants to be clear, orderly, and visited. What your chart asks is that you do not park your body here for hours. This is not the seat to face all day, and not the direction for your sleeping head if the bed gives you a choice.
+Your chart runs cautious in the Northwest, so this corner takes a lighter hand from you. The theme does not move: this is still the home's helpful-people and travel sector, and it still wants to be clear, orderly, and visited. What your chart asks is that you do not park your body here for hours. This is not the seat to face all day, and not the direction for your sleeping head if the bed gives you a choice.
 
 Tend rather than anchor. Keep the corner dusted and open, place the one metal piece and the grey-and-white tones, keep the images of the people who have helped you, and give the space a reason to be visited once a week. What you do not put here is your daily desk, your reading chair, or your longest sitting hours.
 

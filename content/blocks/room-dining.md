@@ -1,4 +1,4 @@
-# Your table, {{firstName}}
+# Your table
 
 A dining table is one of the few places in a home where seating is shared and chosen fresh each meal. The chair you take, and the chairs you offer others, can be read the same way the system reads any seat: by the direction the body faces. For you, {{firstName}}, in the {{kuaGroup}} group with Kua number {{kuaNumber}}, three of your favourable directions do most of the work at the table.
 

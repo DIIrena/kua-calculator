@@ -1,4 +1,4 @@
-# Your kitchen, {{firstName}}
+# Your kitchen
 
 The kitchen is where the home is fed. Of all the rooms a feng shui reading looks at, this one tends to come first or close to it, because the central object, the stove, is treated as the place the household is sustained. The tradition reads a kitchen the way it reads few other rooms: not by mood or palette, but by the working condition of the thing that cooks.
 

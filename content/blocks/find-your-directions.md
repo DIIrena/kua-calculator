@@ -1,4 +1,4 @@
-# Find your eight directions, {{firstName}}
+# Find your eight directions
 
 You now know your directions by name. This chapter turns the names into walls.
 

@@ -1,4 +1,4 @@
-# Your garage, {{firstName}}
+# Your garage
 
 A garage is the plainest room you own. Nobody asks it to be pretty. It holds the car, the tools, the bags of things you have not decided about yet. The tradition does not treat it the way it treats a bedroom or a kitchen, and that is the point worth understanding first.
 

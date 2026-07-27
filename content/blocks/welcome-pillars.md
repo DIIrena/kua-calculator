@@ -8,7 +8,7 @@ Every cell above is already read for you. The green cells are the life areas who
 
 <div style="page-break-before: always;"></div>
 
-# Nine areas, one home, {{firstName}}
+# Nine areas, one home
 
 {{introPhotoBand}}
 

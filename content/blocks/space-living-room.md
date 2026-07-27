@@ -1,4 +1,4 @@
-# Your living room, {{firstName}}
+# Your living room
 
 The living room is the social heart of a home. It is where the energy that came in through your front door is meant to slow down, pool, and circulate, the way water settles in a wide basin before it moves on. It is the most public room you have, the one that holds conversation, rest, and the small daily traffic of a household. Because so much of waking life happens here, the tradition treats how you arrange it as one of the higher-leverage decisions in the home.
 

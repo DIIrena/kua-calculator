@@ -1,4 +1,4 @@
-# The hard cases, {{firstName}}
+# The hard cases
 
 Every home eventually asks a question this book's clean rules do not answer on their own. These are the five I am asked most, with the honest answers. None of them ends in "your home is wrong." Homes are never wrong. They are just specific.
 

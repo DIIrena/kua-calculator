@@ -1,4 +1,4 @@
-# Your desk, {{firstName}}
+# Your desk
 
 Of all the placements in this reading, the desk is the one you can usually change today. The bed needs a wall and a clear path. The front door is fixed. But a chair turns. That is why the working-direction move is often the most useful adjustment you can make for someone whose work is the thing they push forward.
 

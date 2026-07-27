@@ -1,4 +1,4 @@
-# Your entrance, {{firstName}}
+# Your entrance
 
 The entrance is the most worked-on square metre in this whole reading, {{firstName}}, and for a simple reason. It is where the home draws its energy in. The tradition calls the front door the mouth of the house: the opening through which qi arrives, and the first thing the home says to anyone, including you, who crosses it. Get the first few steps right and you have done the single highest-leverage piece of work a feng shui pass offers.
 
@@ -50,7 +50,7 @@ So check it against your own set rather than assume. If the compass sector your 
 
 The entrance is the rare high-leverage fix you can finish in fifteen minutes. Clear the threshold: move every shoe and bag out of the door's swing arc so it opens fully. Wipe the door, polish the handle, check that the light works. Then look at where the first three steps land and give that spot one calm anchor - a small lamp, a mat, a single plant, one piece of art at eye level.
 
-You will not have changed which way your door faces, {{firstName}}, and you do not need to. You will have given the mouth of your home a clear, lit, open place to draw energy in, which is the part the tradition reads most closely and the part that was always yours to set.
+You will not have changed which way your door faces, and you do not need to. You will have given the mouth of your home a clear, lit, open place to draw energy in, which is the part the tradition reads most closely and the part that was always yours to set.
 
 ## The approach reads first
 

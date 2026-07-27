@@ -1,4 +1,4 @@
-# Your bedroom, {{firstName}}
+# Your bedroom
 
 The bedroom is the room where the body spends the most time with its guard down. Roughly a third of your life happens here, defences low, the same room doing its work on you night after night without resistance. That is why the tradition reads the bedroom carefully, and why the one move it weights most is simple: which wall your headboard sits against.
 

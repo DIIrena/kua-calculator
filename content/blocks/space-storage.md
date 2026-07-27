@@ -1,4 +1,4 @@
-# Your storage, {{firstName}}
+# Your storage
 
 Every home has directions that pull two ways. Four of your eight are favourable: the {{kuaGroup}} group that the reading treats as supportive for someone with Kua {{kuaNumber}}. The other four are the cautious ones: {{huoHaiDir}}, {{wuGuiDir}}, {{liuShaDir}}, and {{jueMingDir}}. The question most readers ask is what to *do* with those four. The reading offers a clear, unglamorous answer, {{firstName}}, and it is one of the most practical moves in the whole approach: give them to your storage.
 
@@ -47,4 +47,4 @@ No fixed sector tells you which life-quality it "is" for you; that depends on yo
 
 Pick the one corner of your home that you most avoid: the overflowing closet, the box room, the cupboard whose door no longer shuts. Find its direction. If it is one of {{huoHaiDir}}, {{wuGuiDir}}, {{liuShaDir}}, or {{jueMingDir}}, you are already half right: the location suits storage. The work is containment. Give everything inside an edge, get the door to close, and let that corner do its quiet job.
 
-Then look at your supportive walls. If a wardrobe or a stack of boxes is sitting on a {{shengQiDir}}, {{tianYiDir}}, {{yanNianDir}}, or {{fuWeiDir}} wall, ask what could move there instead. Storage out of the good corners, storage into the cautious ones, doors closed on all of it. That single rotation is most of what your storage asks of you, {{firstName}}, and it costs nothing but an afternoon.
+Then look at your supportive walls. If a wardrobe or a stack of boxes is sitting on a {{shengQiDir}}, {{tianYiDir}}, {{yanNianDir}}, or {{fuWeiDir}} wall, ask what could move there instead. Storage out of the good corners, storage into the cautious ones, doors closed on all of it. That single rotation is most of what your storage asks of you, and it costs nothing but an afternoon.

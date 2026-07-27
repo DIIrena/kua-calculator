@@ -1,4 +1,4 @@
-# Your knowledge corner, {{firstName}}
+# Your knowledge corner
 
 In the fixed map of the home, the Northeast is the sector the tradition gives to knowledge. Not knowledge as a stack of facts, but the quieter kind: study, reflection, self-cultivation, the slow work of understanding something, including yourself. Wherever the Northeast falls in your home, that corner is the one the tradition reads as the seat of stillness and learning. It is the same sector for everyone, {{firstName}}, which is the first thing worth knowing about it. Your personal Kua directions move around the compass from person to person. This life-area does not. The Northeast holds knowledge in your home exactly as it does in any other.
 
@@ -49,7 +49,7 @@ Hang the very same chime in the South and the reading flips. The South carries f
 
 ## Your anchor direction for sitting work
 
-Here is where the fixed sector meets *you*, {{firstName}}. The Northeast is the same for everyone, but the direction you face while you sit there is personal, and the tradition treats facing as a real lever.
+Here is where the fixed sector meets *you*. The Northeast is the same for everyone, but the direction you face while you sit there is personal, and the tradition treats facing as a real lever.
 
 For quiet, settled, inward work, reading, studying, reflecting, the tradition points you to **Fu Wei**, your anchor direction, which for you is {{fuWeiDir}}. Fu Wei is read as the direction of stability and steadiness, the one the tradition associates with calm focus rather than push. The desk drives forward; the anchor holds still. The knowledge corner is anchor work, so {{fuWeiDir}} is the way to turn your chair.
 
@@ -62,14 +62,14 @@ If your quiet corner cannot face {{fuWeiDir}}, the wall is wrong, the window is 
 {{sectorVerdictPanel}}
 
 {{#supportive}}
-Your chart places a supportive star in the Northeast, {{firstName}}, so this corner is one you can lean into without reservation. The fixed knowledge sector and your personal map agree here, and the practical translation is simple: this is where your reading chair belongs. Give it the wall at its back, the low lamp beside it, and the one shelf within reach, and let this corner become the default place you sit when the work is thinking.
+Your chart places a supportive star in the Northeast, so this corner is one you can lean into without reservation. The fixed knowledge sector and your personal map agree here, and the practical translation is simple: this is where your reading chair belongs. Give it the wall at its back, the low lamp beside it, and the one shelf within reach, and let this corner become the default place you sit when the work is thinking.
 
 Anchor the quiet things here. The book you are actually reading, the journal, the course folder, the notes for whatever you are trying to master: gather them at this corner rather than scattering them through the home. Sit with your body facing {{fuWeiDir}} where the room allows, and let the corner hold the habit for you. A supportive Northeast is a corner that can take daily use, so use it daily; ten settled minutes there most evenings does more than an elaborate arrangement you never sit in.
 
 *If your chart had placed a cautious star here instead, the guidance would soften to tend and keep clear, and your supportive directions would carry the anchoring.*
 {{/supportive}}
 {{#cautious}}
-Your chart runs cautious in the Northeast, {{firstName}}, so the guidance here softens. The corner does not stop being the knowledge sector of your home; that layer is fixed. What changes is how heavily you lean on it. Keep it clean, calm, lit, and uncluttered, exactly as this chapter describes, but treat it as a corner you tend rather than the corner you live in.
+Your chart runs cautious in the Northeast, so the guidance here softens. The corner does not stop being the knowledge sector of your home; that layer is fixed. What changes is how heavily you lean on it. Keep it clean, calm, lit, and uncluttered, exactly as this chapter describes, but treat it as a corner you tend rather than the corner you live in.
 
 What not to anchor here is your longest sitting. Do not make this the seat where you study for hours at a stretch, and do not let your working day quietly revolve around it. Carry the anchoring to your supportive directions instead. Set the reading chair where your body can face {{fuWeiDir}}, the direction the tradition ties most closely to stillness, or toward {{shengQiDir}}, {{tianYiDir}}, or {{yanNianDir}} if the room only allows those. The quiet corner can live anywhere those bearings allow. The Northeast simply keeps its role as the sector you hold in good order rather than the one that holds you.
 
@@ -100,7 +100,7 @@ The easy first move is the chair, because a chair turns. Find your quiet corner,
 </div>
 </div>
 
-That is the knowledge corner, {{firstName}}: one quiet place, a wall at your back, your body turned toward {{fuWeiDir}}, and as little going on around you as the room will allow.
+That is the knowledge corner: one quiet place, a wall at your back, your body turned toward {{fuWeiDir}}, and as little going on around you as the room will allow.
 
 <div class="chapter-recap">
 <p class="opener-kicker">THE KNOWLEDGE CORNER ON ONE CARD</p>

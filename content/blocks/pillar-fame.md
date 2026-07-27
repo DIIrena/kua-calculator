@@ -1,4 +1,4 @@
-# Your recognition corner, {{firstName}}
+# Your recognition corner
 
 There is one corner of any home the tradition ties to how you are seen: your work, your standing, the version of you that lives in other people's heads. It is the recognition sector, and it has a fixed address. It always sits in the **South**. Not the south of your body, not the south relative to your door, but compass south, the same wall for every home and every person. This reading is about what the tradition asks of that corner, and what your own chart has already settled about how the South sits with you, {{firstName}}.
 
@@ -51,7 +51,7 @@ And a short list the tradition reads as working against the corner: water featur
 {{sectorVerdictPanel}}
 
 {{#supportive}}
-Your chart seats {{sectorStar}} in the South, a supportive star, and the tradition reads that overlap plainly: the fixed recognition sector and one of your own favourable directions occupy the same wall. This corner is yours to lean into, {{firstName}}.
+Your chart seats {{sectorStar}} in the South, a supportive star, and the tradition reads that overlap plainly: the fixed recognition sector and one of your own favourable directions occupy the same wall. This corner is yours to lean into.
 
 Leaning in looks like this. If the room allows it, let your desk live in or face the South, and take that seat for the work you want seen: the portfolio edit, the application, the call where you present. Anchor the evidence here, the framed piece, the certificate, the photograph from the proud moment, and give it the warmest lamp in the room rather than the leftover light.
 
@@ -82,7 +82,7 @@ With a supportive star seated in your South, let that one thing set the tone: th
 With a cautious star seated in your South, keep the move modest: tidy, lit, and dry is the whole brief, with your working seat turned toward {{shengQiDir}} rather than into the corner itself.
 {{/cautious}}
 
-Recognition, in this tradition, is not summoned. It is *kept ready for*. The South corner is where you keep it ready, {{firstName}}.
+Recognition, in this tradition, is not summoned. It is *kept ready for*. The South corner is where you keep it ready.
 
 <div class="tips-page">
 <h2>Tips and tricks for the recognition corner</h2>

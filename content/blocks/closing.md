@@ -10,7 +10,7 @@ A real feng shui book rewards a second reading. The first time, you follow the a
 
 ## What you have, in one paragraph
 
-You are {{firstName}}, Kua {{kuaNumber}}, {{kuaGroup}} group. Your generating direction is the one the tradition gives to active, ambitious work, and to the bed in a season that needs a push. Your healing direction is the one it points the bed toward in ordinary seasons. Your relationship direction is for shared furniture and the seats where connection happens. Your anchor direction is for slow, sitting, focused work. Your four cautious directions are the corners the tradition would hand to storage, laundry, hallways, and the bathroom: lower-priority placements, not curses, each with a quiet and useful job. That is the whole reading. Everything else in the book is its elaboration.
+You are Kua {{kuaNumber}}, {{kuaGroup}} group. Your generating direction is the one the tradition gives to active, ambitious work, and to the bed in a season that needs a push. Your healing direction is the one it points the bed toward in ordinary seasons. Your relationship direction is for shared furniture and the seats where connection happens. Your anchor direction is for slow, sitting, focused work. Your four cautious directions are the corners the tradition would hand to storage, laundry, hallways, and the bathroom: lower-priority placements, not curses, each with a quiet and useful job. That is the whole reading. Everything else in the book is its elaboration.
 
 ## What may come next
 

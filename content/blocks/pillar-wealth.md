@@ -1,4 +1,4 @@
-# Your wealth corner, {{firstName}}
+# Your wealth corner
 
 Every home and every room has a wealth corner, and it is always in the same place: the **Southeast**. This is one of the fixed sectors of the bagua, the eight-direction map laid over a space. Southeast does not move with your birth year, your Kua number, or where your front door faces. It is Southeast for you, {{firstName}}, and Southeast for everyone else.
 
@@ -58,7 +58,7 @@ Then let the corner have a little daily attention. A minute of tidying, leaves w
 {{#cautious}}
 The panel above settles the personal question this corner always raises. Your chart seats {{sectorStar}} in the Southeast, one of the stars the tradition handles with care. The corner does not stop being your wealth sector, and nothing about the maintenance changes: the clutter still goes, the light still comes up, the broken things still get repaired.
 
-What changes is how hard you lean. Do not make this the seat you face for hours of money work, and do not load the corner with activators. Skip the fountain here, and let one healthy, well-tended plant be the most the sector holds. A clean, lit, quiet Southeast is the whole assignment for you, {{firstName}}.
+What changes is how hard you lean. Do not make this the seat you face for hours of money work, and do not load the corner with activators. Skip the fountain here, and let one healthy, well-tended plant be the most the sector holds. A clean, lit, quiet Southeast is the whole assignment for you.
 
 The anchoring moves to your supportive directions instead: {{shengQiDir}}, {{tianYiDir}}, {{yanNianDir}}, and {{fuWeiDir}}. Face {{shengQiDir}} for the budget review and the focused money work, and keep the household's financial folder somewhere along one of those four bearings. The wealth corner stays tended; your own directions do the carrying.
 

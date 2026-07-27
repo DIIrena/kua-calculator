@@ -80,9 +80,11 @@ export function buildHtml(
   const groupLabel = context.kuaGroup === "east" ? "East group" : "West group";
   const date = formatDate();
 
-  // Running header text in CSS @page margin box. Escaped so a hypothetical
-  // first name with a quote does not break the rule.
-  const headerText = cssEscape(fullTitle);
+  // Running header text in CSS @page margin box: the impersonal book
+  // name (not the "{firstName}'s ..." possessive), so the reader's name
+  // is not repeated on every page. Escaped so a title with a quote does
+  // not break the rule.
+  const headerText = cssEscape(product.shortTitle);
 
   // Named-page running footers for the pillar chapters: each chapter's
   // pages carry its area + sector in the footer ("Wealth - Southeast - 12").
@@ -178,13 +180,36 @@ export function buildHtml(
     margin: 22mm 20mm 22mm 20mm;
     background: ${BRAND.paper};
 
-    @top-center {
+    /* Running head: the book name sits to the side (top-left), and a
+       hairline rule runs the full width beneath it to divide the header
+       from the text. The rule is drawn as a shared border-bottom across
+       the three top margin boxes, each given the same height + bottom
+       alignment so the segments join into one continuous line. */
+    @top-left {
       content: "${headerText}";
       font-family: "Hanken Grotesk", "Noto Sans TC", system-ui, sans-serif;
-      font-size: 8.5pt;
+      font-size: 8pt;
       color: ${BRAND.olive};
-      padding-top: 6mm;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      height: 16mm;
+      vertical-align: bottom;
+      padding-bottom: 2.5mm;
+      border-bottom: 0.4pt solid ${BRAND.hairline};
+    }
+    @top-center {
+      content: "";
+      height: 16mm;
+      vertical-align: bottom;
+      padding-bottom: 2.5mm;
+      border-bottom: 0.4pt solid ${BRAND.hairline};
+    }
+    @top-right {
+      content: "";
+      height: 16mm;
+      vertical-align: bottom;
+      padding-bottom: 2.5mm;
+      border-bottom: 0.4pt solid ${BRAND.hairline};
     }
 
     @bottom-center {
@@ -199,7 +224,9 @@ export function buildHtml(
   @page :first {
     /* Magazine cover: the photo bleeds to the page edges. */
     margin: 0;
-    @top-center { content: ""; }
+    @top-left { content: ""; border-bottom: none; }
+    @top-center { content: ""; border-bottom: none; }
+    @top-right { content: ""; border-bottom: none; }
     @bottom-center { content: ""; }
   }
 
@@ -387,18 +414,7 @@ export function buildHtml(
     font-weight: 800;
     margin: 0 0 9mm 0;
     letter-spacing: -0.005em;
-  }
-
-  /* Chapter opener mark: a short clay bar above every block h1, the
-     same on every chapter, so page-flipping readers always know where
-     a chapter starts. */
-  .block h1::before {
-    content: "";
-    display: block;
-    width: 14mm;
-    height: 1.2mm;
-    background: ${BRAND.clay};
-    margin-bottom: 5mm;
+    text-align: center;
   }
 
   .block h2 {
@@ -407,6 +423,7 @@ export function buildHtml(
     font-weight: 700;
     margin: 10mm 0 3mm 0;
     color: ${BRAND.olive};
+    text-align: center;
   }
 
   .block h3 {
@@ -414,7 +431,19 @@ export function buildHtml(
     font-weight: 700;
     margin: 6mm 0 2mm 0;
     color: ${BRAND.ink};
+    text-align: center;
   }
+
+  /* The brand mark that opens every chapter, centred above the photo
+     band (room/area chapters) or directly above the H1 (text chapters).
+     Injected per block by assembleProductHtml. */
+  .chapter-logo {
+    display: block;
+    width: 13mm;
+    height: 13mm;
+    margin: 0 auto 6mm auto;
+  }
+  .chapter-logo svg { width: 100%; height: 100%; }
 
   .block ul, .block ol {
     margin: 0 0 3.5mm 0;
@@ -698,7 +727,8 @@ export function buildHtml(
     margin: 0 0 6mm 0;
   }
   .opener-photo {
-    height: 62mm;
+    width: 100%;
+    aspect-ratio: 3 / 2;
     border-radius: 3mm;
     background-size: cover;
     background-position: center;
