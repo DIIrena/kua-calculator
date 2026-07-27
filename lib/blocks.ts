@@ -43,6 +43,8 @@ import {
   threeReadingsSvg,
   commandGoodPoorSvg,
   deskCommandSvg,
+  livingRoomSvg,
+  houseAxisSvg,
 } from "@/lib/pdf/svg-marks";
 import {
   kuaElement,
@@ -197,6 +199,8 @@ function substituteTokens(
     threeReadings: () => threeReadingsSvg(),
     commandGoodPoor: () => commandGoodPoorSvg(),
     deskCommand: () => deskCommandSvg(),
+    livingRoom: () => livingRoomSvg(),
+    houseAxis: () => houseAxisSvg(),
     yanNianActivation: () => yanNianActivation(context.kuaNumber),
     personalBagua: () =>
       (cachedPersonalBagua ??= personalBaguaSvg(

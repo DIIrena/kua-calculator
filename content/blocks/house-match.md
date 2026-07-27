@@ -6,6 +6,8 @@ Here is a question almost nobody thinks to ask, and it changes how you read ever
 
 Every compass technique past the Kua number needs two bearings for the building itself: the **facing**, the direction it presents to the world, and the **sitting**, the direction where its back rests. The two are always exactly opposite, 180 degrees apart, so determine one and you have both.
 
+{{houseAxis}}
+
 Popular sources will tell you the facing is "the direction of the front door." That is right often enough to be dangerous. The field method practitioners actually use is a short ranked checklist:
 
 1. **The main door decides in most cases.** In roughly nine houses out of ten, the main entrance sits on the facing side, and the door's outward bearing is the facing direction. Stand in the doorway looking out, take the bearing with the three-reading protocol from the measuring chapter, and you are usually done.

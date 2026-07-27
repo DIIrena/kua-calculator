@@ -29,6 +29,8 @@ You do not have to choose only one. A large living room can hold more than one s
 
 A living room is not one seat, it is a group of them, and the tradition reads the *shape* they make together as much as any single placement. The working pattern is a loose circle or a soft U, close enough that two people can talk without raising their voices, open enough that someone can walk behind a sofa without turning sideways.
 
+{{livingRoom}}
+
 A few things the tradition and plain comfort agree on:
 
 - **Seats should face each other, not all face the television.** When every chair points at a screen, the room reads as a waiting area, and when the screen is off there is nothing for the eye to rest on. Give the room a second anchor that is not the television: a window view, a piece of art at eye level, a generous plant, a fireplace.

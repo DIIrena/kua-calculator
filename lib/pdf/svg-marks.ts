@@ -993,3 +993,64 @@ export function deskCommandSvg(): string {
 <p class="figure-caption">The command desk: your back to a solid wall, your body facing the room, and the door in view but not sitting on your direct line.</p>
 </div>`;
 }
+
+// ============================================================
+// Living-room conversation circle: the seat you use most in command,
+// the others in a loose circle close enough to talk and open enough
+// to walk around. Static. Placed in space-living-room.md.
+// ============================================================
+export function livingRoomSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" width="500" height="286" style="display:block;margin:0 auto;" role="img" aria-label="Living-room conversation circle with a command seat">
+  <rect x="50" y="52" width="460" height="250" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <ellipse cx="280" cy="176" rx="150" ry="104" fill="none" stroke="${C.olive}" stroke-width="1.3" stroke-dasharray="5 5"/>
+  <rect x="176" y="58" width="208" height="34" rx="5" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <rect x="176" y="58" width="208" height="9" fill="${C.olive}"/>
+  <text x="280" y="112" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">the seat you use most, in command</text>
+  <ellipse cx="280" cy="182" rx="46" ry="30" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="280" y="186" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">table</text>
+  <rect x="96" y="150" width="44" height="52" rx="5" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <rect x="96" y="150" width="9" height="52" fill="${C.ink2}"/>
+  <rect x="420" y="150" width="44" height="52" rx="5" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <rect x="455" y="150" width="9" height="52" fill="${C.ink2}"/>
+  <rect x="220" y="246" width="120" height="30" rx="5" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <rect x="220" y="270" width="120" height="6" fill="${C.ink2}"/>
+  <text x="392" y="196" text-anchor="start" font-family="Hanken Grotesk" font-size="9.5" fill="${C.olive}">the circle:</text>
+  <text x="392" y="209" text-anchor="start" font-family="Hanken Grotesk" font-size="9.5" fill="${C.olive}">close to talk,</text>
+  <text x="392" y="222" text-anchor="start" font-family="Hanken Grotesk" font-size="9.5" fill="${C.olive}">open to pass</text>
+  <rect x="126" y="298" width="70" height="8" fill="${C.paper}"/>
+  <path d="M 126 302 a 70 70 0 0 1 70 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="161" y="290" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">entry</text>
+</svg>
+<p class="figure-caption">A living room is read as a group of seats: a loose circle close enough to talk and open enough to walk around, with the seat you use most in command.</p>
+</div>`;
+}
+
+// ============================================================
+// House facing vs sitting: the two bearings every compass technique
+// needs. Facing is the open, bright side it presents to the world;
+// sitting is the solid side where its back rests, always 180 degrees
+// opposite. Static. Placed in house-match.md.
+// ============================================================
+export function houseAxisSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" width="420" height="280" style="display:block;margin:0 auto;" role="img" aria-label="A home's facing and sitting bearings">
+  <line x1="240" y1="20" x2="240" y2="300" stroke="${C.hairline}" stroke-width="1.2" stroke-dasharray="4 5"/>
+  <path d="M 160 120 L 240 74 L 320 120 Z" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="168" y="120" width="144" height="110" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="228" y="188" width="24" height="42" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.2"/>
+  <rect x="184" y="140" width="26" height="24" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1"/>
+  <rect x="270" y="140" width="26" height="24" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1"/>
+  <line x1="240" y1="230" x2="240" y2="272" stroke="${C.olive}" stroke-width="3"/>
+  <path d="M 240 282 L 232 268 L 248 268 Z" fill="${C.olive}"/>
+  <text x="240" y="300" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="800" fill="${C.olive}">FACING</text>
+  <text x="240" y="315" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">the open side it presents, bright and yang</text>
+  <circle cx="240" cy="60" r="5" fill="${C.clay}"/>
+  <text x="240" y="42" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="800" fill="${C.clay}">SITTING</text>
+  <text x="240" y="27" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">the solid side its back rests on, yin</text>
+  <text x="366" y="176" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">always 180</text>
+  <text x="366" y="189" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">degrees apart</text>
+</svg>
+<p class="figure-caption">Every building has two bearings: the facing it presents to the world, bright and open, and the sitting where its back rests. They are always exactly opposite, so find one and you have both.</p>
+</div>`;
+}
