@@ -920,3 +920,76 @@ export function threeReadingsSvg(): string {
 <p class="figure-caption">The same word reads three ways. Match it to what the spot is for: your head where you sleep, your body where you sit, the opening for a door.</p>
 </div>`;
 }
+
+// ============================================================
+// Command position, good vs poor: the spine rule. A solid wall
+// behind you and the door in view beats a favourable facing with
+// your back exposed. Static. Placed in before-the-compass.md.
+// ============================================================
+export function commandGoodPoorSvg(): string {
+  const tick = (cx: number, cy: number) =>
+    `<circle cx="${cx}" cy="${cy}" r="12" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <path d="M ${cx - 5} ${cy} l 3.5 4 l 6.5 -8" fill="none" stroke="${C.olive}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const cross = (cx: number, cy: number) =>
+    `<circle cx="${cx}" cy="${cy}" r="12" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.5"/>
+  <path d="M ${cx - 5} ${cy - 5} l 10 10 M ${cx + 5} ${cy - 5} l -10 10" fill="none" stroke="${C.clay}" stroke-width="2" stroke-linecap="round"/>`;
+  return `<div class="figure">
+<svg viewBox="0 0 560 268" xmlns="http://www.w3.org/2000/svg" width="520" height="249" style="display:block;margin:0 auto;" role="img" aria-label="Command position, good versus poor">
+  <rect x="20" y="42" width="232" height="176" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <text x="136" y="32" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="800" fill="${C.olive}">GOOD</text>
+  ${tick(232, 60)}
+  <line x1="204" y1="86" x2="86" y2="200" stroke="${C.olive}" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <rect x="176" y="48" width="60" height="18" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="206" cy="86" r="14" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.6"/>
+  <path d="M 190 72 a 20 20 0 0 1 32 0" fill="none" stroke="${C.ink2}" stroke-width="1.3"/>
+  <rect x="42" y="200" width="60" height="8" fill="${C.paper}"/>
+  <path d="M 42 200 a 60 60 0 0 0 60 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="72" y="196" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">door</text>
+  <text x="136" y="236" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink}">wall behind, door in view</text>
+  <rect x="308" y="42" width="232" height="176" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <text x="424" y="32" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="800" fill="${C.clay}">AVOID</text>
+  ${cross(520, 60)}
+  <rect x="394" y="48" width="60" height="18" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="424" cy="86" r="14" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.6"/>
+  <path d="M 408 100 a 20 20 0 0 1 32 0" fill="none" stroke="${C.ink2}" stroke-width="1.3"/>
+  <line x1="424" y1="104" x2="424" y2="192" stroke="${C.clay}" stroke-width="1.3" stroke-dasharray="4 4"/>
+  <rect x="394" y="200" width="60" height="8" fill="${C.paper}"/>
+  <path d="M 394 200 a 60 60 0 0 0 60 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="424" y="196" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">door</text>
+  <text x="424" y="236" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink}">back to the door</text>
+</svg>
+<p class="figure-caption">Command position outranks the compass direction: a solid wall behind you and the door in view beats a favourable facing with your back exposed.</p>
+</div>`;
+}
+
+// ============================================================
+// Desk command plan: back to a solid wall, body facing the room, the
+// door in view but off its direct line. Static (no per-reader data),
+// for the room-desk chapter. Reused conceptually by knowledge and
+// business-money.
+// ============================================================
+export function deskCommandSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg" width="500" height="295" style="display:block;margin:0 auto;" role="img" aria-label="Desk command plan">
+  <rect x="50" y="54" width="460" height="248" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="50" y1="54" x2="510" y2="54" stroke="${C.ink}" stroke-width="4"/>
+  <text x="220" y="44" text-anchor="middle" font-family="Hanken Grotesk" font-size="11.5" font-weight="700" fill="${C.ink2}">solid wall behind you</text>
+  <line x1="222" y1="120" x2="430" y2="290" stroke="${C.olive}" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="222" y1="120" x2="222" y2="290" stroke="${C.clay}" stroke-width="1.2" stroke-dasharray="3 5"/>
+  <rect x="150" y="128" width="150" height="30" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="225" y="148" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">desk</text>
+  <circle cx="225" cy="98" r="16" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.8"/>
+  <path d="M 205 80 a 20 20 0 0 1 40 0" fill="none" stroke="${C.ink2}" stroke-width="1.4"/>
+  <line x1="225" y1="114" x2="225" y2="124" stroke="${C.ink}" stroke-width="2"/>
+  <text x="150" y="196" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.ink}">your body</text>
+  <text x="150" y="211" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.ink}">faces the room</text>
+  <text x="360" y="212" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.olive}">door in view,</text>
+  <text x="360" y="227" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.olive}">off its direct line</text>
+  <rect x="392" y="298" width="76" height="8" fill="${C.paper}"/>
+  <path d="M 392 302 a 76 76 0 0 1 76 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="430" y="322" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="600" fill="${C.ink2}">door</text>
+  <text x="150" y="285" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">turn the chair, not the desk</text>
+</svg>
+<p class="figure-caption">The command desk: your back to a solid wall, your body facing the room, and the door in view but not sitting on your direct line.</p>
+</div>`;
+}

@@ -6,6 +6,8 @@ The classical teachers had a strict order of operations: **form first, compass s
 
 At the desk, never sit with your back to the door. Turn the chair so a wall backs you and the door falls somewhere in your view; if the only workable spot puts a window at your back, hang a good heavy curtain and keep it drawn while you work. This rule outranks direction: a favourable facing with the door behind you is a worse seat than a neutral facing in command of the room. When you can have both - wall at your back, favourable direction ahead - you have the best seat the tradition knows how to give.
 
+{{commandGoodPoor}}
+
 ## 2. Give the bed a solid back
 
 The headboard wants a solid wall behind it: not a window, not a door, not a flimsy partition that carries every sound. Choose the quietest, most restful room you have for sleeping, and let the bed be the most important object in it. Every direction chapter that talks about the headboard assumes this check has already passed; a bed pointed perfectly at your best direction but backed by a rattling window has failed the earlier, more important test.

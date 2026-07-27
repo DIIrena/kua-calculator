@@ -30,6 +30,8 @@ If the layout forces it, that is fine - most rooms only allow so many arrangemen
 
 Independent of direction, the seat itself wants the command position. Two parts:
 
+{{deskCommand}}
+
 1. **You can see the door without turning.** Sitting with your back to the door is read across the tradition as a low-grade alert state - you can never quite settle, because something can enter behind you. Arrange the chair so the door is in view.
 2. **You are not directly in line with the door.** Sitting square in front of an open door puts you in the rush of qi entering the room. The working compromise is the angle: place the seat so you see the door diagonally, off to one side, rather than facing straight down its path.
 
