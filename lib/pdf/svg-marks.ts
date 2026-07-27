@@ -176,8 +176,8 @@ export function personalBaguaSvg(
   // ViewBox extends to 480px tall to leave room for the legend below
   // the bagua. Render width stays 280px; height scales proportionally
   // (280 * 480 / 400 = 336).
-  const w = compact ? 180 : 280;
-  const h = compact ? 216 : 336;
+  const w = compact ? 300 : 500;
+  const h = compact ? 360 : 600;
   const mg = compact ? "2mm auto 3mm auto" : "10mm auto 12mm auto";
 
   return `<svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" style="display:block;margin:${mg};">
@@ -447,7 +447,7 @@ export function miniCompassSvg(
   const dirSize = dirWord.length > 7 ? 20 : 26;
 
   return `<div class="figure">
-<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="185" height="185" style="display:block;margin:0 auto;">
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="340" height="340" style="display:block;margin:0 auto;">
   <circle cx="${CENTER}" cy="${CENTER}" r="${R_OUTER + 4}" fill="none" stroke="${C.hairline}" stroke-width="0.8"/>
   ${sectors}
   ${hitOutline}
@@ -474,7 +474,7 @@ export function bedPlacementSvg(
   const accent = favourable ? C.olive : C.clay;
   const soft = favourable ? C.oliveSoft : C.claySoft;
   return `<div class="figure">
-<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" width="440" height="220" style="display:block;margin:0 auto;">
+<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" width="600" height="300" style="display:block;margin:0 auto;">
   <!-- Room -->
   <rect x="40" y="52" width="280" height="230" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
   <!-- The target wall, emphasised -->
@@ -512,7 +512,7 @@ export function deskPlacementSvg(
   const accent = favourable ? C.olive : C.clay;
   const soft = favourable ? C.oliveSoft : C.claySoft;
   return `<div class="figure">
-<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" width="440" height="220" style="display:block;margin:0 auto;">
+<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" width="600" height="300" style="display:block;margin:0 auto;">
   <!-- Room -->
   <rect x="40" y="52" width="280" height="230" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
   <line x1="40" y1="52" x2="320" y2="52" stroke="${accent}" stroke-width="5"/>
@@ -562,7 +562,7 @@ export function floorPlanExampleSvg(): string {
     `<text x="${x}" y="${y}" text-anchor="middle" font-family="Hanken Grotesk" font-size="11.5" font-weight="700" fill="${C.ink2}" letter-spacing="1.2">${label}</text>`;
 
   return `<div class="figure">
-<svg viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" width="470" height="345" style="display:block;margin:0 auto;">
+<svg viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" width="620" height="455" style="display:block;margin:0 auto;">
   <!-- Outer walls -->
   <rect x="120" y="60" width="400" height="344" fill="${C.paper}" stroke="${C.ink}" stroke-width="3"/>
   <!-- Inner walls -->

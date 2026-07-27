@@ -361,15 +361,13 @@ export async function assembleProductHtml(
 ): Promise<string> {
   const pillarCount = product.blocks.filter((b) => PILLAR_META[b]).length;
   const compact = product.compactPhotos ?? false;
-  // The brand mark opens every chapter, centred at the top of the page.
-  const chapterLogo = `<div class="chapter-logo">${brandMarkSvg(48)}</div>`;
   const parts = await Promise.all(
     product.blocks.map(async (blockId) => {
       const html = await loadBlock(blockId, context);
       const opener =
         chapterOpenerHtml(blockId, context, pillarCount >= 2, compact) ||
         roomOpenerHtml(blockId, compact);
-      return `<section class="block block--${blockId}">${chapterLogo}${opener}${html}</section>`;
+      return `<section class="block block--${blockId}">${opener}${html}</section>`;
     }),
   );
   return parts.join("\n");

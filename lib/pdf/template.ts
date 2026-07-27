@@ -85,6 +85,11 @@ export function buildHtml(
   // is not repeated on every page. Escaped so a title with a quote does
   // not break the rule.
   const headerText = cssEscape(product.shortTitle);
+  // The brand mark, centred in the running header above the divider rule,
+  // as a base64 data URI so it can be a margin-box `content: url(...)`.
+  const headerLogoUri = `data:image/svg+xml;base64,${Buffer.from(
+    brandMarkSvg(30, BRAND.olive),
+  ).toString("base64")}`;
 
   // Named-page running footers for the pillar chapters: each chapter's
   // pages carry its area + sector in the footer ("Wealth - Southeast - 12").
@@ -119,6 +124,17 @@ export function buildHtml(
     photoDataUri("cover", compact);
   const coverBleed = coverPhoto
     ? `<div class="cover-bleed" style="background-image:url('${coverPhoto}')"></div><div class="cover-scrim"></div>`
+    : "";
+
+  // Back cover: the closing photo full-bleed on the final page, echoing
+  // the front cover. Omitted entirely when the closing plate is absent,
+  // so there is no empty trailing page.
+  const closingPhoto = photoDataUri("closing", compact);
+  const backCover = closingPhoto
+    ? `<section class="back-cover" style="background-image:url('${closingPhoto}')"><div class="back-cover-scrim"></div><div class="back-cover-mark">${brandMarkSvg(
+        40,
+        BRAND.cream,
+      )}<p class="back-cover-brand">My Feng Shui Home</p></div></section>`
     : "";
 
   return `<!DOCTYPE html>
@@ -188,20 +204,20 @@ export function buildHtml(
     @top-left {
       content: "${headerText}";
       font-family: "Hanken Grotesk", "Noto Sans TC", system-ui, sans-serif;
-      font-size: 8pt;
+      font-size: 9pt;
+      font-style: italic;
       color: ${BRAND.olive};
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      letter-spacing: 0.01em;
       height: 16mm;
       vertical-align: bottom;
       padding-bottom: 2.5mm;
       border-bottom: 0.4pt solid ${BRAND.hairline};
     }
     @top-center {
-      content: "";
+      content: url("${headerLogoUri}");
       height: 16mm;
       vertical-align: bottom;
-      padding-bottom: 2.5mm;
+      padding-bottom: 2mm;
       border-bottom: 0.4pt solid ${BRAND.hairline};
     }
     @top-right {
@@ -223,6 +239,15 @@ export function buildHtml(
 
   @page :first {
     /* Magazine cover: the photo bleeds to the page edges. */
+    margin: 0;
+    @top-left { content: ""; border-bottom: none; }
+    @top-center { content: ""; border-bottom: none; }
+    @top-right { content: ""; border-bottom: none; }
+    @bottom-center { content: ""; }
+  }
+
+  /* Back cover: full-bleed closing photo on the final page. */
+  @page backcover {
     margin: 0;
     @top-left { content: ""; border-bottom: none; }
     @top-center { content: ""; border-bottom: none; }
@@ -401,6 +426,50 @@ export function buildHtml(
   }
 
   /* ------------------------------------------------------------------
+     Back cover: full-bleed closing photo on the final page, bookending
+     the cover. Uses the margin-free @page backcover so the photo bleeds
+     to the page edges.
+     ------------------------------------------------------------------ */
+  .back-cover {
+    page: backcover;
+    page-break-before: always;
+    width: 210mm;
+    height: 296.5mm;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-color: ${BRAND.sand};
+  }
+  .back-cover-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(14, 59, 44, 0.60) 0%, rgba(14, 59, 44, 0.15) 30%, rgba(14, 59, 44, 0) 55%);
+  }
+  .back-cover-mark {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 24mm;
+    text-align: center;
+  }
+  .back-cover-mark svg {
+    display: block;
+    margin: 0 auto;
+    width: 15mm;
+    height: 15mm;
+  }
+  .back-cover-brand {
+    margin: 5mm 0 0 0;
+    font-size: 10pt;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    text-transform: uppercase;
+    color: ${BRAND.cream};
+  }
+
+  /* ------------------------------------------------------------------
      Content blocks.
      Each block starts on a new page.
      ------------------------------------------------------------------ */
@@ -433,17 +502,6 @@ export function buildHtml(
     color: ${BRAND.ink};
     text-align: center;
   }
-
-  /* The brand mark that opens every chapter, centred above the photo
-     band (room/area chapters) or directly above the H1 (text chapters).
-     Injected per block by assembleProductHtml. */
-  .chapter-logo {
-    display: block;
-    width: 13mm;
-    height: 13mm;
-    margin: 0 auto 6mm auto;
-  }
-  .chapter-logo svg { width: 100%; height: 100%; }
 
   .block ul, .block ol {
     margin: 0 0 3.5mm 0;
@@ -1018,6 +1076,8 @@ export function buildHtml(
 ${assembledBlocksHtml}
 
 ${keepsakeCardHtml(context, groupLabel)}
+
+${backCover}
 
 </body>
 </html>`;
