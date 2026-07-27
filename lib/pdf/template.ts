@@ -111,8 +111,10 @@ export function buildHtml(
   // composition renders on the calm sand gradient. One page either way,
   // so the page-count invariance holds. Each product may carry its own
   // cover plate (cover-<slug>.jpg); the shared cover.jpg is the fallback.
+  const compact = product.compactPhotos ?? false;
   const coverPhoto =
-    photoDataUri(`cover-${product.slug}`) ?? photoDataUri("cover");
+    photoDataUri(`cover-${product.slug}`, compact) ??
+    photoDataUri("cover", compact);
   const coverBleed = coverPhoto
     ? `<div class="cover-bleed" style="background-image:url('${coverPhoto}')"></div><div class="cover-scrim"></div>`
     : "";

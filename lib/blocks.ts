@@ -299,6 +299,21 @@ function photoBandHtml(name: string): string {
     : `<div class="opener-photo opener-photo--fallback">${brandMarkSvg(56)}</div>`;
 }
 
+/** Room and space blocks (room-*, space-*) carry a plain fixed-height
+ *  photo band above their H1, keyed by block id (room-bedroom.jpg,
+ *  space-kitchen.jpg, ...). No sector mini-map or verdict chip: rooms
+ *  are not one of the nine directional areas. Fixed height with or
+ *  without the image, so page counts stay stable either way. */
+const ROOM_BLOCK = /^(?:room|space)-/;
+function roomOpenerHtml(blockId: BlockId, compact: boolean): string {
+  if (!ROOM_BLOCK.test(blockId)) return "";
+  const photo = photoDataUri(blockId, compact);
+  const band = photo
+    ? `<div class="opener-photo" style="background-image:url('${photo}')"></div>`
+    : `<div class="opener-photo opener-photo--fallback">${brandMarkSvg(56)}</div>`;
+  return `<header class="chapter-opener chapter-opener--room">${band}</header>`;
+}
+
 /** The injected chapter-opener header for pillar blocks: fixed-height
  *  photo band (or its element-icon fallback), clay kicker, sector
  *  mini-map and verdict chip. The markdown H1 follows it unchanged.
@@ -308,13 +323,14 @@ function chapterOpenerHtml(
   blockId: BlockId,
   context: BlockContext,
   numbered: boolean,
+  compact: boolean,
 ): string {
   const meta = PILLAR_META[blockId];
   if (!meta) return "";
   const dir = meta.sector ? context.byCompass[meta.sector] : null;
   const fav = dir ? dir.favourable : null;
 
-  const photo = photoDataUri(blockId);
+  const photo = photoDataUri(blockId, compact);
   const band = photo
     ? `<div class="opener-photo" style="background-image:url('${photo}')"></div>`
     : `<div class="opener-photo opener-photo--fallback">${elementIconSvg(meta.element)}</div>`;
@@ -344,10 +360,13 @@ export async function assembleProductHtml(
   context: BlockContext,
 ): Promise<string> {
   const pillarCount = product.blocks.filter((b) => PILLAR_META[b]).length;
+  const compact = product.compactPhotos ?? false;
   const parts = await Promise.all(
     product.blocks.map(async (blockId) => {
       const html = await loadBlock(blockId, context);
-      const opener = chapterOpenerHtml(blockId, context, pillarCount >= 2);
+      const opener =
+        chapterOpenerHtml(blockId, context, pillarCount >= 2, compact) ||
+        roomOpenerHtml(blockId, compact);
       return `<section class="block block--${blockId}">${opener}${html}</section>`;
     }),
   );

@@ -108,29 +108,49 @@ for (const f of files) {
 }
 // Photo budget: the constraint is that any single product PDF stays
 // under Vercel's 4.5MB response limit, so we bound the EMBEDDED image
-// payload, not the raw folder. Covers are per-product (cover-<slug>.jpg)
-// and mutually exclusive: a PDF embeds at most one cover plus the plates
-// it renders. So the worst-case payload is every non-cover plate plus the
-// single largest cover; that is what must stay <= 2.5MB.
+// payload per product, not the raw folder. No single PDF embeds every
+// plate: covers are per-product and mutually exclusive, the pillar
+// products embed the 9 pillar plates, the spaces products embed the 12
+// room plates, and the flagship embeds pillars + rooms but from the
+// leaner compact/ variants (see lib/pdf/photos.ts + products.ts). So we
+// bound the realistic worst-case bundles, each of which must stay
+// <= 2.5MB (leaving headroom for fonts and text under the 4.5MB limit).
 try {
-  const { statSync } = await import("node:fs");
+  const { statSync, existsSync } = await import("node:fs");
   const photosDir = path.join(BLOCKS_DIR, "..", "photos");
+  const compactDir = path.join(photosDir, "compact");
   const jpgs = readdirSync(photosDir).filter((f) => f.endsWith(".jpg"));
   const sizeOf = (f) => statSync(path.join(photosDir, f)).size;
-  const covers = jpgs.filter((f) => f.startsWith("cover"));
-  const plates = jpgs.filter((f) => !f.startsWith("cover"));
-  const platesTotal = plates.reduce((n, f) => n + sizeOf(f), 0);
-  const largestCover = covers.reduce((m, f) => Math.max(m, sizeOf(f)), 0);
-  const worstPdf = platesTotal + largestCover;
-  const folderTotal = jpgs.reduce((n, f) => n + sizeOf(f), 0);
-  if (worstPdf > 2.5 * 1024 * 1024) {
+  const sum = (arr) => arr.reduce((n, f) => n + sizeOf(f), 0);
+  const largestCover = jpgs
+    .filter((f) => f.startsWith("cover"))
+    .reduce((m, f) => Math.max(m, sizeOf(f)), 0);
+  // Bundle A: a pillar product (9 pillar plates + intro/closing bands).
+  const pillarBundle =
+    sum(jpgs.filter((f) => f.startsWith("pillar-"))) +
+    sum(jpgs.filter((f) => f === "intro.jpg" || f === "closing.jpg")) +
+    largestCover;
+  // Bundle B: a spaces product (12 room/space plates + a cover).
+  const roomBundle =
+    sum(jpgs.filter((f) => /^(?:room|space)-/.test(f))) + largestCover;
+  // Bundle C: the flagship, all plates but from compact/ variants.
+  let compactBundle = 0;
+  if (existsSync(compactDir)) {
+    const cjpgs = readdirSync(compactDir).filter((f) => f.endsWith(".jpg"));
+    compactBundle = cjpgs.reduce(
+      (n, f) => n + statSync(path.join(compactDir, f)).size,
+      0,
+    );
+  }
+  const worst = Math.max(pillarBundle, roomBundle, compactBundle);
+  if (worst > 2.5 * 1024 * 1024) {
     failures++;
     console.log(
-      `  FAIL photo payload over budget: worst-case single PDF ${(worstPdf / 1048576).toFixed(2)}MB of 2.50MB (${plates.length} plate(s) + largest of ${covers.length} cover(s))`,
+      `  FAIL photo payload over budget: worst product bundle ${(worst / 1048576).toFixed(2)}MB of 2.50MB (pillar ${(pillarBundle / 1048576).toFixed(2)}, rooms ${(roomBundle / 1048576).toFixed(2)}, flagship-compact ${(compactBundle / 1048576).toFixed(2)})`,
     );
   } else if (jpgs.length) {
     console.log(
-      `  photos: ${plates.length} plate(s) + ${covers.length} cover(s), worst-case PDF ${(worstPdf / 1048576).toFixed(2)}MB of 2.50MB budget; folder ${(folderTotal / 1048576).toFixed(2)}MB on disk`,
+      `  photos: worst product bundle ${(worst / 1048576).toFixed(2)}MB of 2.50MB (pillar ${(pillarBundle / 1048576).toFixed(2)}, rooms ${(roomBundle / 1048576).toFixed(2)}, flagship-compact ${(compactBundle / 1048576).toFixed(2)})`,
     );
   }
 } catch {
