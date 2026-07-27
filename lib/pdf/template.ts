@@ -15,7 +15,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import type { Product } from "@/lib/products";
 import type { BlockContext } from "@/lib/blocks";
-import { brandMarkSvg } from "@/lib/pdf/svg-marks";
+import { brandMarkSvg, personalBaguaSvg } from "@/lib/pdf/svg-marks";
 import { PILLAR_META } from "@/lib/pillar-sectors";
 import { photoDataUri } from "@/lib/pdf/photos";
 
@@ -88,7 +88,7 @@ export function buildHtml(
   // The brand mark, centred in the running header above the divider rule,
   // as a base64 data URI so it can be a margin-box `content: url(...)`.
   const headerLogoUri = `data:image/svg+xml;base64,${Buffer.from(
-    brandMarkSvg(30, BRAND.olive),
+    brandMarkSvg(46, BRAND.olive),
   ).toString("base64")}`;
 
   // Named-page running footers for the pillar chapters: each chapter's
@@ -1007,6 +1007,25 @@ export function buildHtml(
     page-break-inside: avoid;
   }
 
+  .keepsake .keepsake-logo {
+    text-align: center;
+  }
+  .keepsake .keepsake-logo svg {
+    width: 12mm;
+    height: 12mm;
+    margin: 0 auto;
+  }
+  .keepsake .keepsake-chart {
+    text-align: center;
+    margin: 2mm 0 4mm 0;
+  }
+  .keepsake .keepsake-chart svg {
+    display: block;
+    width: 72mm;
+    height: auto;
+    margin: 0 auto;
+  }
+
   .keepsake .keepsake-name {
     font-size: 13pt;
     font-weight: 800;
@@ -1095,12 +1114,19 @@ function keepsakeCardHtml(context: BlockContext, groupLabel: string): string {
   const care = sorted.filter((d) => !d.favourable);
   const row = (d: (typeof dirs)[number]) =>
     `<tr><td>${d.compassLabel}</td><td>${d.pinyin}</td><td>${d.gloss}</td></tr>`;
+  const chart = personalBaguaSvg(
+    context.kuaNumber,
+    context.kuaGroup,
+    context.byQuality,
+    true,
+  );
   return `<section class="keepsake">
   <p class="keepsake-hint">Cut along the dashed line and keep this where you plan your week.</p>
   <div class="keepsake-card">
-    ${brandMarkSvg(34, BRAND.olive)}
+    <div class="keepsake-logo">${brandMarkSvg(40, BRAND.olive)}</div>
     <p class="keepsake-name">${escapeHtml(context.firstName)}'s directions</p>
     <p class="keepsake-kua">KUA ${context.kuaNumber} · ${groupLabel.toUpperCase()}</p>
+    <div class="keepsake-chart">${chart}</div>
     <table class="keepsake-good">
       <thead><tr><th>Supportive</th><th></th><th></th></tr></thead>
       <tbody>${good.map(row).join("")}</tbody>
