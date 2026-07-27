@@ -881,3 +881,42 @@ export function entranceLayoutSvg(): string {
 <p class="figure-caption">The door opens onto open floor so qi can spread instead of stalling or bouncing back, the settling zone sits to the side, and no mirror is hung facing the door to bounce arriving energy straight out.</p>
 </div>`;
 }
+
+// ============================================================
+// Three ways to read a direction: the one ambiguity that breaks the
+// method for beginners. For sleeping the head points the way; for
+// sitting the body faces the way; for a door the opening faces the
+// way. Static triptych. Placed in how-to-use.md.
+// ============================================================
+export function threeReadingsSvg(): string {
+  const box = (x: number, title: string, sub: string) =>
+    `<rect x="${x}" y="40" width="196" height="150" rx="5" fill="${C.paper}" stroke="${C.hairline}" stroke-width="1.2"/>
+  <text x="${x + 98}" y="28" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="800" fill="${C.ink}">${title}</text>
+  <text x="${x + 98}" y="210" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">${sub}</text>`;
+  return `<div class="figure">
+<svg viewBox="0 0 640 232" xmlns="http://www.w3.org/2000/svg" width="560" height="203" style="display:block;margin:0 auto;" role="img" aria-label="Three ways to read a direction: sleeping, sitting, a door">
+  ${box(14, "For sleeping", "the wall your head points to")}
+  <rect x="77" y="74" width="70" height="96" rx="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.4"/>
+  <rect x="77" y="74" width="70" height="12" fill="${C.olive}"/>
+  <rect x="88" y="90" width="20" height="14" rx="3" fill="${C.paper}" stroke="${C.olive}" stroke-width="0.8"/>
+  <rect x="116" y="90" width="20" height="14" rx="3" fill="${C.paper}" stroke="${C.olive}" stroke-width="0.8"/>
+  <line x1="112" y1="72" x2="112" y2="52" stroke="${C.olive}" stroke-width="3"/>
+  <path d="M 112 46 L 106 58 L 118 58 Z" fill="${C.olive}"/>
+  ${box(222, "For sitting", "the way your body faces")}
+  <rect x="285" y="72" width="70" height="18" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.2"/>
+  <circle cx="320" cy="128" r="15" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.6"/>
+  <path d="M 302 150 a 18 18 0 0 1 36 0" fill="none" stroke="${C.ink2}" stroke-width="1.3"/>
+  <line x1="320" y1="111" x2="320" y2="96" stroke="${C.olive}" stroke-width="3"/>
+  <path d="M 320 90 L 314 102 L 326 102 Z" fill="${C.olive}"/>
+  ${box(430, "For a door", "the way the door opens")}
+  <line x1="528" y1="70" x2="528" y2="98" stroke="${C.ink2}" stroke-width="2.5"/>
+  <line x1="528" y1="150" x2="528" y2="122" stroke="${C.ink2}" stroke-width="2.5"/>
+  <line x1="528" y1="98" x2="528" y2="122" stroke="${C.hairline}" stroke-width="1"/>
+  <path d="M 528 122 a 24 24 0 0 0 24 -24" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <line x1="532" y1="110" x2="566" y2="110" stroke="${C.olive}" stroke-width="3"/>
+  <path d="M 572 110 L 560 104 L 560 116 Z" fill="${C.olive}"/>
+  <text x="320" y="228" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="600" fill="${C.olive}">the olive arrow is the direction in each case</text>
+</svg>
+<p class="figure-caption">The same word reads three ways. Match it to what the spot is for: your head where you sleep, your body where you sit, the opening for a door.</p>
+</div>`;
+}

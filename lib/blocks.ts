@@ -40,6 +40,7 @@ import {
   kitchenLayoutSvg,
   bedroomLayoutSvg,
   entranceLayoutSvg,
+  threeReadingsSvg,
 } from "@/lib/pdf/svg-marks";
 import {
   kuaElement,
@@ -191,6 +192,7 @@ function substituteTokens(
     kitchenLayout: () => kitchenLayoutSvg(),
     bedroomLayout: () => bedroomLayoutSvg(),
     entranceLayout: () => entranceLayoutSvg(),
+    threeReadings: () => threeReadingsSvg(),
     yanNianActivation: () => yanNianActivation(context.kuaNumber),
     personalBagua: () =>
       (cachedPersonalBagua ??= personalBaguaSvg(
