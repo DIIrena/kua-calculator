@@ -1833,3 +1833,28 @@ export function januaryTimelineSvg(): string {
 <p class="figure-caption">The Chinese year turns at the Chinese New Year for most lineages, and at Li Chun (about 4 February) for some, so a late-January or early-February birthday can read two ways. Born before both dates, like 28 January 1990, you belong to the previous year either way.</p>
 </div>`;
 }
+
+// ============================================================
+// Desk clinic: four common working-seat faults and their fixes.
+// 2x2 grid. Placed in room-desk.md.
+// ============================================================
+export function deskClinicSvg(): string {
+  const cell = (ox: number, oy: number, fault: string, fix: string, icon: string) =>
+    `<rect x="${ox}" y="${oy}" width="256" height="106" rx="6" fill="${C.paper}" stroke="${C.hairline}" stroke-width="1.2"/>
+  ${icon}
+  <text x="${ox + 92}" y="${oy + 30}" font-family="Hanken Grotesk" font-size="10.5" font-weight="800" fill="${C.clay}">${fault}</text>
+  <text x="${ox + 92}" y="${oy + 52}" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">fix:</text>
+  <text x="${ox + 112}" y="${oy + 52}" font-family="Hanken Grotesk" font-size="9.5" font-weight="700" fill="${C.olive}">${fix.split("|")[0]}</text>
+  <text x="${ox + 92}" y="${oy + 68}" font-family="Hanken Grotesk" font-size="9.5" font-weight="700" fill="${C.olive}">${fix.split("|")[1] || ""}</text>`;
+  const deskIcon = (ox: number, oy: number, extra: string) =>
+    `<rect x="${ox + 20}" y="${oy + 28}" width="44" height="12" rx="2" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/><circle cx="${ox + 42}" cy="${oy + 58}" r="9" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.3"/>${extra}`;
+  return `<div class="figure">
+<svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" width="520" height="232" style="display:block;margin:0 auto;" role="img" aria-label="The desk clinic: four faults and their fixes">
+  ${cell(20, 20, "back to a window", "high-backed chair,|a drawn blind", deskIcon(20, 20, `<rect x="36" y="76" width="12" height="6" fill="#dbe0ea" stroke="${C.ink2}" stroke-width="0.8"/>`))}
+  ${cell(288, 20, "mirror behind you", "move the mirror|off the desk line", deskIcon(288, 20, `<rect x="316" y="76" width="14" height="6" fill="#dbe0ea" stroke="${C.clay}" stroke-width="1"/>`))}
+  ${cell(20, 138, "beam or glare above", "task light forward|and to the side", deskIcon(20, 138, `<line x1="42" y1="150" x2="42" y2="158" stroke="${C.clay}" stroke-width="2"/>`))}
+  ${cell(288, 138, "open-plan traffic", "a side screen builds|a solid back", deskIcon(288, 138, `<rect x="356" y="150" width="6" height="40" fill="${C.olive}"/>`))}
+</svg>
+<p class="figure-caption">Four faults account for most working seats, and each has a settled repair: a window at your back, a mirror on the desk line, a beam or glare overhead, or an open-plan thoroughfare behind you.</p>
+</div>`;
+}

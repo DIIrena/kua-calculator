@@ -83,6 +83,7 @@ import {
   sectorVerdictFor,
   sectorVerdictPanelHtml,
 } from "@/lib/pillar-sectors";
+import { deskClinicSvg } from "@/lib/pdf/svg-marks";
 import { nineAreasMapSvg, sectorMiniMapSvg } from "@/lib/pdf/svg-marks";
 import { photoDataUri } from "@/lib/pdf/photos";
 
@@ -249,6 +250,7 @@ function substituteTokens(
     threeReadingProtocol: () => threeReadingProtocolSvg(),
     jueMingProtocol: () => jueMingProtocolSvg(),
     januaryTimeline: () => januaryTimelineSvg(),
+    deskClinic: () => deskClinicSvg(),
     yanNianActivation: () => yanNianActivation(context.kuaNumber),
     personalBagua: () =>
       (cachedPersonalBagua ??= personalBaguaSvg(
