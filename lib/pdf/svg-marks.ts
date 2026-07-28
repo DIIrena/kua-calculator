@@ -1054,3 +1054,121 @@ export function houseAxisSvg(): string {
 <p class="figure-caption">Every building has two bearings: the facing it presents to the world, bright and open, and the sitting where its back rests. They are always exactly opposite, so find one and you have both.</p>
 </div>`;
 }
+
+// ============================================================
+// Cautious-direction ordinal scale: the four to handle with care,
+// ranked mildest to most cautious, with the current chapter marked.
+// An order of priority, not a danger meter. Reused in huo-hai,
+// wu-gui, liu-sha, jue-ming.
+// ============================================================
+export function cautiousScaleSvg(current: string): string {
+  const q = [
+    { code: "HH", name: "Huo Hai", gloss: "mishap" },
+    { code: "WG", name: "Wu Gui", gloss: "five ghosts" },
+    { code: "LS", name: "Liu Sha", gloss: "six killings" },
+    { code: "JM", name: "Jue Ming", gloss: "total loss" },
+  ];
+  const x0 = 60;
+  const w = 440;
+  const tickX = (i: number) => x0 + (i + 0.5) * (w / 4);
+  const labels = q
+    .map(
+      (e, i) => `<line x1="${tickX(i)}" y1="52" x2="${tickX(i)}" y2="76" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="${tickX(i)}" y="92" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.ink}">${e.name}</text>
+  <text x="${tickX(i)}" y="105" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">${e.gloss}</text>`,
+    )
+    .join("\n  ");
+  const idx = q.findIndex((e) => e.code === current);
+  const marker =
+    idx >= 0
+      ? `<circle cx="${tickX(idx)}" cy="64" r="6.5" fill="${C.clay}" stroke="${C.paper}" stroke-width="1.5"/>
+  <line x1="${tickX(idx)}" y1="40" x2="${tickX(idx)}" y2="58" stroke="${C.clay}" stroke-width="1.6"/>
+  <text x="${tickX(idx)}" y="34" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" font-weight="700" fill="${C.clay}">this chapter</text>`
+      : "";
+  return `<div class="figure">
+<svg viewBox="0 0 560 140" xmlns="http://www.w3.org/2000/svg" width="520" height="130" style="display:block;margin:0 auto;" role="img" aria-label="The four cautious directions ranked mildest to most cautious">
+  <defs><linearGradient id="cautiongrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${C.sand}"/><stop offset="1" stop-color="${C.clay}"/></linearGradient></defs>
+  <rect x="${x0}" y="58" width="${w}" height="12" rx="6" fill="url(#cautiongrad)"/>
+  <text x="${x0}" y="124" text-anchor="start" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">mildest</text>
+  <text x="${x0 + w}" y="124" text-anchor="end" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">most cautious</text>
+  ${labels}
+  ${marker}
+</svg>
+<p class="figure-caption">The four directions to handle with care, ranked mildest to most cautious. This is an order of priority for where to spend them, not a danger meter.</p>
+</div>`;
+}
+
+// ============================================================
+// Four gates for a water feature: the ordered checklist a
+// practitioner walks before placing water in the Southeast. It goes
+// in only if it passes all four. Placed in pillar-wealth.md.
+// ============================================================
+export function fourGatesSvg(): string {
+  const gates = [
+    ["1", "The person", "does moving water suit the resident"],
+    ["2", "The building", "the flow curves inward, never out"],
+    ["3", "The time", "rest the water in a bad-star year"],
+    ["4", "The physical", "kept spotless, clear and moving"],
+  ];
+  const panels = gates
+    .map(([n, t, s], i) => {
+      const y = 18 + i * 78;
+      const arrow =
+        i < 3
+          ? `<line x1="240" y1="${y + 58}" x2="240" y2="${y + 74}" stroke="${C.clay}" stroke-width="2"/>
+  <path d="M 240 ${y + 78} L 234 ${y + 68} L 246 ${y + 68} Z" fill="${C.clay}"/>`
+          : "";
+      return `<rect x="110" y="${y}" width="260" height="56" rx="6" fill="${C.paper}" stroke="${C.olive}" stroke-width="1.5"/>
+  <circle cx="138" cy="${y + 28}" r="15" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.4"/>
+  <text x="138" y="${y + 32}" text-anchor="middle" font-family="Hanken Grotesk" font-size="14" font-weight="800" fill="${C.olive}">${n}</text>
+  <text x="166" y="${y + 24}" font-family="Hanken Grotesk" font-size="12" font-weight="800" fill="${C.ink}">${t}</text>
+  <text x="166" y="${y + 40}" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">${s}</text>
+  ${arrow}`;
+    })
+    .join("\n  ");
+  return `<div class="figure">
+<svg viewBox="0 0 480 410" xmlns="http://www.w3.org/2000/svg" width="380" height="325" style="display:block;margin:0 auto;" role="img" aria-label="The four gates before placing a water feature">
+  ${panels}
+  <rect x="70" y="346" width="340" height="46" rx="23" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <text x="240" y="368" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="800" fill="${C.ink}">All four pass: place it.</text>
+  <text x="240" y="384" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">Any gate fails: a clean, clear corner wins.</text>
+</svg>
+<p class="figure-caption">Before any water feature goes into the Southeast, walk the four gates in order. It goes in only if it passes all four, and a clear corner beats a wrong fountain every time.</p>
+</div>`;
+}
+
+// ============================================================
+// Sheng Qi repeats at room scale: the whole-house grid repeats
+// inside every room at the same orientation. Placed in sheng-qi.md.
+// ============================================================
+export function shengQiZoomSvg(): string {
+  const grid = (ox: number, oy: number, s: number, deskCell: boolean) => {
+    let g = "";
+    for (let r = 0; r < 3; r++)
+      for (let c = 0; c < 3; c++) {
+        const isSE = r === 2 && c === 2;
+        const fill = isSE ? C.claySoft : C.paper;
+        g += `<rect x="${ox + c * s}" y="${oy + r * s}" width="${s}" height="${s}" fill="${fill}" stroke="${C.ink2}" stroke-width="1"/>`;
+      }
+    if (deskCell) {
+      const dx = ox + 2 * s;
+      const dy = oy + 2 * s;
+      g += `<rect x="${dx + s * 0.2}" y="${dy + s * 0.28}" width="${s * 0.6}" height="${s * 0.16}" rx="2" fill="${C.sand}" stroke="${C.ink2}" stroke-width="0.8"/><circle cx="${dx + s * 0.5}" cy="${dy + s * 0.6}" r="${s * 0.1}" fill="${C.paper}" stroke="${C.ink}" stroke-width="1"/>`;
+    }
+    return g;
+  };
+  const s = 58;
+  return `<div class="figure">
+<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" width="520" height="242" style="display:block;margin:0 auto;" role="img" aria-label="The Sheng Qi sector repeats at room scale">
+  <text x="105" y="30" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink2}">your whole home (N up)</text>
+  ${grid(16, 44, s, false)}
+  <rect x="${16 + 2 * s}" y="${44 + 2 * s}" width="${s}" height="${s}" fill="none" stroke="${C.olive}" stroke-width="2.5"/>
+  <text x="${16 + 2.5 * s}" y="${44 + 2.5 * s + 4}" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.olive}">SE</text>
+  <path d="M ${16 + 3 * s + 6} ${44 + 2.5 * s} C 300 130, 320 130, 356 130" fill="none" stroke="${C.ink2}" stroke-width="1.2" stroke-dasharray="3 4"/>
+  <text x="455" y="30" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink2}">one room inside it (N up)</text>
+  ${grid(366, 44, s, true)}
+  <text x="${366 + 2.5 * s}" y="${44 + 2.5 * s - 12}" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.clay}">SE</text>
+</svg>
+<p class="figure-caption">The nine-sector grid repeats inside every room at the same orientation. North in the house is north in the room, so your Sheng Qi corner exists at both scales, even when the whole-house one falls somewhere you cannot use.</p>
+</div>`;
+}

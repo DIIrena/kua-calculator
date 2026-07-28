@@ -45,6 +45,9 @@ import {
   deskCommandSvg,
   livingRoomSvg,
   houseAxisSvg,
+  cautiousScaleSvg,
+  fourGatesSvg,
+  shengQiZoomSvg,
 } from "@/lib/pdf/svg-marks";
 import {
   kuaElement,
@@ -201,6 +204,9 @@ function substituteTokens(
     deskCommand: () => deskCommandSvg(),
     livingRoom: () => livingRoomSvg(),
     houseAxis: () => houseAxisSvg(),
+    cautiousScale: () => (direction ? cautiousScaleSvg(direction.qualityCode) : ""),
+    fourGates: () => fourGatesSvg(),
+    shengQiZoom: () => shengQiZoomSvg(),
     yanNianActivation: () => yanNianActivation(context.kuaNumber),
     personalBagua: () =>
       (cachedPersonalBagua ??= personalBaguaSvg(

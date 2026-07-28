@@ -69,6 +69,8 @@ The anchoring moves to your supportive directions instead: {{shengQiDir}}, {{tia
 
 Moving water is the classic Southeast activator, and it is also the easiest one to get wrong. In practice a water feature is never an impulse buy. Before placing one, practitioners walk four gates in order, and the feature goes in only if it passes all four.
 
+{{fourGates}}
+
 1. **The person.** The Southeast sits with the East group of directions, which is why the same fountain can suit one chart and sit poorly with another; East-group and West-group charts read it differently. You do not need to work this gate out yourself: the panel in your reading above has already answered it.
 2. **The building.** Water flows toward the house and into the room, never out toward a door or a window, and the tradition steers firmly away from twin features flanking the front door.
 3. **The time.** The tradition's calendar sends its harsher visiting stars, the 5 Yellow and the 2 Black, around the compass year by year, and any sector can host one for a year at a time. Where they visit, water rests: covered, drained, or moved until the year turns.
