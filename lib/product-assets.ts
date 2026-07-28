@@ -76,6 +76,7 @@ export const CARD_COVER_SLUGS: ReadonlySet<string> = new Set([
 export const HERO_SLUGS: ReadonlySet<string> = new Set([
   "good-days-calendar-2026",
   "annual-feng-shui-planner-2026",
+  "bedroom-reset",
   "business-money-feng-shui",
   "cures-catalog",
   "five-elements-workbook",
@@ -90,6 +91,7 @@ export const HERO_SLUGS: ReadonlySet<string> = new Set([
 // Of the heroes above, the portrait (tall) ones. These are capped to a
 // narrower max-width so they do not tower over the reading column.
 export const HERO_TALL: ReadonlySet<string> = new Set([
+  "bedroom-reset",
   "business-money-feng-shui",
   "home-diagnostic-workbook",
   "starter-deck",
