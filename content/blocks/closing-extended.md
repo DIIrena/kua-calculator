@@ -8,7 +8,7 @@ Pick one move this week. Just one. The desk is the easiest to try, because a cha
 
 ## What you have, in one paragraph
 
-You are {{firstName}}, Kua {{kuaNumber}}, the {{kuaGroup}} group. Your generating direction is {{shengQiDir}}, the one the tradition links to active, ambitious work. Your healing direction is {{tianYiDir}}, where it points the bed in ordinary seasons. Your relationship direction is {{yanNianDir}}, for the seats where people sit together. Your anchor direction is {{fuWeiDir}}, for slow, sitting, focused work. Your four cautious corners are {{huoHaiDir}}, {{wuGuiDir}}, {{liuShaDir}}, and {{jueMingDir}}, the placements the tradition would hand to storage, hallways, laundry, and the bathroom: lower-priority, not curses, each with a quiet and useful job. Your rooms are now read for you on top of that. Everything else in this report is its elaboration.
+You are Kua {{kuaNumber}}, the {{kuaGroup}} group. Your generating direction is {{shengQiDir}}, the one the tradition links to active, ambitious work. Your healing direction is {{tianYiDir}}, where it points the bed in ordinary seasons. Your relationship direction is {{yanNianDir}}, for the seats where people sit together. Your anchor direction is {{fuWeiDir}}, for slow, sitting, focused work. Your four cautious corners are {{huoHaiDir}}, {{wuGuiDir}}, {{liuShaDir}}, and {{jueMingDir}}, the placements the tradition would hand to storage, hallways, laundry, and the bathroom: lower-priority, not curses, each with a quiet and useful job. Your rooms are now read for you on top of that. Everything else in this report is its elaboration.
 
 ## What may come next
 

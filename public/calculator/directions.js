@@ -25,56 +25,56 @@
       hanzi: "生氣",
       gloss: "Generating energy",
       favourable: true,
-      meaning: "Your most energising direction. Face it at your desk for ambitious work, or point your bed's headboard this way if you want to wake energetic."
+      meaning: "Your most energising direction, tied in the tradition to drive and ambition."
     },
     TY: {
       pinyin: "Tian Yi",
       hanzi: "天醫",
       gloss: "Heavenly doctor",
       favourable: true,
-      meaning: "Your restorative direction. Practitioners often prioritise it for the bedroom over Sheng Qi. Also a steady choice for the dining seat."
+      meaning: "Your restorative direction, tied in the tradition to health and recovery."
     },
     YN: {
       pinyin: "Yan Nian",
       hanzi: "延年",
       gloss: "Longevity",
       favourable: true,
-      meaning: "Your relationship direction. The traditional choice for a couple's bed orientation and for any seat where steady connection matters."
+      meaning: "Your relationship direction, tied in the tradition to steady connection."
     },
     FW: {
       pinyin: "Fu Wei",
       hanzi: "伏位",
       gloss: "Stability",
       favourable: true,
-      meaning: "Your anchor direction. Use it for study, meditation, and deep-focus work where calm matters more than energy."
+      meaning: "Your anchor direction, tied in the tradition to calm, focus, and stillness."
     },
     HH: {
       pinyin: "Huo Hai",
       hanzi: "禍害",
       gloss: "Mishap",
       favourable: false,
-      meaning: "The mildest direction to avoid. A hobby corner is fine here, but keep your main desk and bed elsewhere."
+      meaning: "The mildest of your four to handle with care, tied in the tradition to small setbacks."
     },
     WG: {
       pinyin: "Wu Gui",
       hanzi: "五鬼",
       gloss: "Five ghosts",
       favourable: false,
-      meaning: "Associated with arguments and friction. Avoid placing a conference seat or difficult-conversation chair here. Storage is a better use."
+      meaning: "One to handle with care, tied in the tradition to friction and argument."
     },
     LS: {
       pinyin: "Liu Sha",
       hanzi: "六煞",
       gloss: "Six killings",
       favourable: false,
-      meaning: "A lower-priority direction. Generally avoid anchoring important functions here when the layout gives you a choice. Hallways, utility rooms, or rarely-entered spaces are an appropriate use."
+      meaning: "A lower-priority direction the tradition keeps for minor, low-demand uses."
     },
     JM: {
       pinyin: "Jue Ming",
       hanzi: "絕命",
       gloss: "Total loss",
       favourable: false,
-      meaning: "The direction the tradition treats with the most care. Generally avoid pointing your head here in sleep, or facing it at your main work seat, when the layout gives you a choice. A bathroom or storage room is the standard lower-priority use."
+      meaning: "The direction the tradition treats with the most care of all."
     }
   };
 

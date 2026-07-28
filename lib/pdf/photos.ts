@@ -29,16 +29,27 @@ const PHOTOS_DIR = path.join(process.cwd(), "content", "photos");
 const cache = new Map<string, string | null>();
 
 /** The photo as a data URI, or null when the file is absent. `name` is
- *  the bare manifest name without extension, e.g. "pillar-wealth". */
-export function photoDataUri(name: string): string | null {
-  if (cache.has(name)) return cache.get(name)!;
+ *  the bare manifest name without extension, e.g. "pillar-wealth".
+ *  When `compact` is true the leaner content/photos/compact/<name>.jpg
+ *  is used if it exists, falling back to the full plate otherwise; this
+ *  keeps a very long product (all photos in one PDF) under Vercel's
+ *  response limit without softening the standalone products. */
+export function photoDataUri(name: string, compact = false): string | null {
+  const key = compact ? `compact:${name}` : name;
+  if (cache.has(key)) return cache.get(key)!;
   let uri: string | null = null;
-  try {
-    const buf = readFileSync(path.join(PHOTOS_DIR, `${name}.jpg`));
-    uri = `data:image/jpeg;base64,${buf.toString("base64")}`;
-  } catch {
-    uri = null;
+  const candidates = compact
+    ? [path.join(PHOTOS_DIR, "compact", `${name}.jpg`), path.join(PHOTOS_DIR, `${name}.jpg`)]
+    : [path.join(PHOTOS_DIR, `${name}.jpg`)];
+  for (const file of candidates) {
+    try {
+      const buf = readFileSync(file);
+      uri = `data:image/jpeg;base64,${buf.toString("base64")}`;
+      break;
+    } catch {
+      // try the next candidate
+    }
   }
-  cache.set(name, uri);
+  cache.set(key, uri);
   return uri;
 }

@@ -1,7 +1,9 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import BuyButton, { type BuyButtonState } from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
+import ProductHero from "@/components/ProductHero";
 import FlagshipChooser, { type Flagship } from "@/components/FlagshipChooser";
 import { autolinkProducts } from "@/components/autolinkProducts";
 import { TrustRow, GuaranteeNote } from "@/components/TrustRow";
@@ -42,6 +44,9 @@ export type LandingConfig = {
   steps: { title: string; body: string }[];
   /** What's inside bullets. */
   inside: string[];
+  /** Optional line-art sample rendered below the inside list, previewing the
+   *  product's key deliverable (e.g. the money-channel plan). */
+  insideSample?: ReactNode;
   forWho: string[];
   notForWho: string[];
   faq: { q: string; a: string }[];
@@ -187,6 +192,7 @@ export default function ProductLanding({
 
       {/* 4. Look inside */}
       <ProductPreview slug={c.slug} title={c.title} />
+      <ProductHero slug={c.slug} alt={`A room that pictures the ${c.title}`} />
 
       {/* 4b. Value anchor (P6): the tier comparison, flagship only */}
       {c.comparison ? (
@@ -274,6 +280,7 @@ export default function ProductLanding({
             <li key={b.slice(0, 24)}>{autolinkProducts(b, c.slug)}</li>
           ))}
         </ul>
+        {c.insideSample ?? null}
       </section>
 
       {/* 7. Who it's for / not for */}

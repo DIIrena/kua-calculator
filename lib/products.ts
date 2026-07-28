@@ -97,6 +97,15 @@ export type Product = {
   blocks: BlockId[];
   /** Target page count band; used by smoke tests to flag layout drift. */
   targetPages: { min: number; max: number };
+  /** When true, the PDF embeds the leaner `content/photos/compact/`
+   *  variants instead of the full plates, keeping a very long product
+   *  (all photos in one file) under Vercel's 4.5MB response limit. Set
+   *  on the flagship only; standalone products keep the full plates. */
+  compactPhotos?: boolean;
+  /** Full-bleed typographic part-title pages inserted immediately before
+   *  the keyed block, grouping a long assembled book into named parts.
+   *  Flagship only; single-topic products do not need them. */
+  sectionDividers?: Partial<Record<BlockId, { part: string; title: string }>>;
 };
 
 export const PRODUCTS: Record<string, Product> = {
@@ -239,6 +248,15 @@ PRODUCTS["complete-home-compass"] = {
   priceCents: 4900,
   currency: "usd",
   stripeEnvKey: "STRIPE_PRICE_FLAGSHIP",
+  compactPhotos: true,
+  // Group the 200-page book into four named parts with full-bleed
+  // part-title pages, so the flagship reads as a bound volume.
+  sectionDividers: {
+    "sheng-qi": { part: "Part One", title: "Your Eight Directions" },
+    "room-bedroom": { part: "Part Two", title: "Your Home, Room by Room" },
+    "pillar-wealth": { part: "Part Three", title: "Your Nine Life Areas" },
+    "year-overlay": { part: "Part Four", title: "The Year Ahead" },
+  },
   blocks: [
     "welcome-extended", "identity", "kua-element", "summary", "find-your-directions",
     "how-to-use",

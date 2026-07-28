@@ -1,6 +1,8 @@
-# Your career corner, {{firstName}}
+# Your career corner
 
 The career life-area is fixed in the **North**. On the map of your home, North is North for everyone, so this corner sits in the same place for you as it does for anyone else. What changes from person to person is not where the corner is, but how your own directions land on top of it. We will get to that overlay at the end. First, what the tradition puts here.
+{{fountainInOut}}
+
 
 ## What the North holds
 
@@ -62,7 +64,7 @@ You do not need the desk to physically stand in the North corner of the room to 
 {{sectorVerdictPanel}}
 
 {{#supportive}}
-The North supports you, {{firstName}}. The home's fixed career sector and one of your own four favourable directions sit on the same patch of floor, and the tradition reads that overlap as reinforcing. Lean into it: this corner can carry your working life's furniture, not just its theme.
+The North supports you. The home's fixed career sector and one of your own four favourable directions sit on the same patch of floor, and the tradition reads that overlap as reinforcing. Lean into it: this corner can carry your working life's furniture, not just its theme.
 
 Concretely, if the layout allows it, let the North side of your main room hold the desk or the working chair, command position first as always. Facing North for focused work reads as supported for you, so when the walls give you a choice between North and a neutral direction, take North. Anchor the corner with the small permanent metal object, a deep-blue accent, and one image of clear moving water, then keep the floor around it open and the light good.
 
@@ -71,7 +73,7 @@ Hold the calm-North note even here. Supported does not mean loud. You are keepin
 *If your chart had placed a cautious star here instead, the guidance would soften to tend and keep clear, and your supportive directions would carry the anchoring.*
 {{/supportive}}
 {{#cautious}}
-The North runs cautious in your chart, {{firstName}}, so the career corner takes a light hand from you. At room level almost nothing changes: keep it clear, keep it lit, repair what is broken there, and let it stay gently moving. The corner still belongs to path and work on the fixed map, and stagnation there still reads as a silted path, whatever your chart says about the direction.
+The North runs cautious in your chart, so the career corner takes a light hand from you. At room level almost nothing changes: keep it clear, keep it lit, repair what is broken there, and let it stay gently moving. The corner still belongs to path and work on the fixed map, and stagnation there still reads as a silted path, whatever your chart says about the direction.
 
 What changes is your body. Do not make the North the seat you face for long hours, and do not point your sleeping head that way when the bed offers an alternative. Tend the corner in passing, the way you water a hallway plant, and resist the urge to over-cure it. One small metal object and a clear floor is the whole assignment; the calm-North note above makes restraint doubly right for you.
 

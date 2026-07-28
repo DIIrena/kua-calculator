@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProductLanding, { type LandingConfig } from "@/components/ProductLanding";
+import { MoneyChannelSample } from "@/components/ProductSampleDiagrams";
 
 // Business and Money Feng Shui Kit on the landing template (B4).
 
@@ -67,6 +68,7 @@ const CONFIG: LandingConfig = {
     "A daily money practice drawn from the tradition. No mysticism, no promises.",
     "A worked example: a freelancer's home office, showing how the moves combine.",
   ],
+  insideSample: <MoneyChannelSample />,
   forWho: [
     "You work from home, or your kitchen table is sometimes an office.",
     "You have heard of the wealth corner and want it read honestly, not sold to.",

@@ -3,6 +3,8 @@ import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
+import { BaguaGridSample } from "@/components/ProductSampleDiagrams";
+import ProductHero from "@/components/ProductHero";
 
 export const metadata: Metadata = {
   title: "Learn Feng Shui Starter Deck | My Feng Shui Home",
@@ -63,6 +65,11 @@ export default async function StarterDeckPage(props: {
 
       <ProductPreview slug="starter-deck" title="Learn Feng Shui Starter Deck" />
 
+      <ProductHero
+        slug="starter-deck"
+        alt="A calm study nook with fanned cards and a compass chart in soft daylight"
+      />
+
       <section className="product-section">
         <h2>What is inside</h2>
         <ul>
@@ -81,6 +88,7 @@ export default async function StarterDeckPage(props: {
             makes, in order, each labelled Tested or Traditional.
           </li>
         </ul>
+        <BaguaGridSample />
       </section>
 
       <section className="product-section">

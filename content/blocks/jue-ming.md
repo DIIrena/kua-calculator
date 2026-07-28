@@ -1,6 +1,10 @@
 # Your Jue Ming direction is {{direction}}
 
 Jue Ming is the last of your four cautious directions and the one the tradition treats with the most care. The name translates as **"Total Loss"**, strong language inherited from the older texts. It is a traditional caution, not a verdict on your life or your home. For you, {{firstName}}, it points **{{direction}}**.
+{{jueMingProtocol}}
+
+{{cautiousScale}}
+
 
 Say the practical truth early: a bedroom whose only workable layout points the bed at Jue Ming is *common*, and it is fine. Homes are built around plumbing, windows, and front doors, not around your Kua number. This chapter treats the direction with respect and then hands it back to you as a small, manageable thing.
 

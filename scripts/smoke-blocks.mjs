@@ -39,6 +39,20 @@ const TOKENS = {
   nineAreasMap: "<svg></svg>",
   introPhotoBand: "<div class=\"opener-photo\"></div>",
   closingPhotoBand: "<div class=\"opener-photo\"></div>",
+  // Inline-SVG diagram tokens (visual recharge 2026-07). Presence is the
+  // test; the real resolvers live in lib/blocks.ts + lib/pdf/svg-marks.ts.
+  elementCycle: "<svg></svg>", kitchenLayout: "<svg></svg>", bedroomLayout: "<svg></svg>",
+  entranceLayout: "<svg></svg>", threeReadings: "<svg></svg>", commandGoodPoor: "<svg></svg>",
+  deskCommand: "<svg></svg>", livingRoom: "<svg></svg>", houseAxis: "<svg></svg>",
+  cautiousScale: "<svg></svg>", fourGates: "<svg></svg>", shengQiZoom: "<svg></svg>",
+  diningPockets: "<svg></svg>", hallwayPlan: "<svg></svg>", storageAllocation: "<svg></svg>",
+  balconyRecipe: "<svg></svg>", garagePlan: "<svg></svg>", bathroomStack: "<svg></svg>",
+  fountainInOut: "<svg></svg>", readingChair: "<svg></svg>", relationshipSymmetry: "<svg></svg>",
+  clearCentre: "<svg></svg>", southFire: "<svg></svg>", yanNianTable: "<svg></svg>",
+  heavensGate: "<svg></svg>", compatibilityRings: "<svg></svg>", studioWedges: "<svg></svg>",
+  yearOverlayKey: "<svg></svg>", laundryLoop: "<svg></svg>", roomShape: "<svg></svg>",
+  threeReadingProtocol: "<svg></svg>", jueMingProtocol: "<svg></svg>", januaryTimeline: "<svg></svg>",
+  deskClinic: "<svg></svg>",
 };
 
 // The eight pillar blocks with a fixed compass sector; their markdown may
@@ -106,24 +120,51 @@ for (const f of files) {
   }
   if (problems.length) { failures++; console.log(`  FAIL ${f.padEnd(26)} ${problems.join("; ")}`); }
 }
-// Photo-folder budget: content/photos JPEGs must total <= 2.5MB so the
-// finished PDF stays under Vercel's 4.5MB response limit.
+// Photo budget: the constraint is that any single product PDF stays
+// under Vercel's 4.5MB response limit, so we bound the EMBEDDED image
+// payload per product, not the raw folder. No single PDF embeds every
+// plate: covers are per-product and mutually exclusive, the pillar
+// products embed the 9 pillar plates, the spaces products embed the 12
+// room plates, and the flagship embeds pillars + rooms but from the
+// leaner compact/ variants (see lib/pdf/photos.ts + products.ts). So we
+// bound the realistic worst-case bundles, each of which must stay
+// <= 2.5MB (leaving headroom for fonts and text under the 4.5MB limit).
 try {
-  const { statSync } = await import("node:fs");
+  const { statSync, existsSync } = await import("node:fs");
   const photosDir = path.join(BLOCKS_DIR, "..", "photos");
+  const compactDir = path.join(photosDir, "compact");
   const jpgs = readdirSync(photosDir).filter((f) => f.endsWith(".jpg"));
-  const total = jpgs.reduce(
-    (n, f) => n + statSync(path.join(photosDir, f)).size,
-    0,
-  );
-  if (total > 2.5 * 1024 * 1024) {
+  const sizeOf = (f) => statSync(path.join(photosDir, f)).size;
+  const sum = (arr) => arr.reduce((n, f) => n + sizeOf(f), 0);
+  const largestCover = jpgs
+    .filter((f) => f.startsWith("cover"))
+    .reduce((m, f) => Math.max(m, sizeOf(f)), 0);
+  // Bundle A: a pillar product (9 pillar plates + intro/closing bands).
+  const pillarBundle =
+    sum(jpgs.filter((f) => f.startsWith("pillar-"))) +
+    sum(jpgs.filter((f) => f === "intro.jpg" || f === "closing.jpg")) +
+    largestCover;
+  // Bundle B: a spaces product (12 room/space plates + a cover).
+  const roomBundle =
+    sum(jpgs.filter((f) => /^(?:room|space)-/.test(f))) + largestCover;
+  // Bundle C: the flagship, all plates but from compact/ variants.
+  let compactBundle = 0;
+  if (existsSync(compactDir)) {
+    const cjpgs = readdirSync(compactDir).filter((f) => f.endsWith(".jpg"));
+    compactBundle = cjpgs.reduce(
+      (n, f) => n + statSync(path.join(compactDir, f)).size,
+      0,
+    );
+  }
+  const worst = Math.max(pillarBundle, roomBundle, compactBundle);
+  if (worst > 2.5 * 1024 * 1024) {
     failures++;
     console.log(
-      `  FAIL content/photos/ over budget: ${(total / 1048576).toFixed(2)}MB of 2.50MB across ${jpgs.length} file(s)`,
+      `  FAIL photo payload over budget: worst product bundle ${(worst / 1048576).toFixed(2)}MB of 2.50MB (pillar ${(pillarBundle / 1048576).toFixed(2)}, rooms ${(roomBundle / 1048576).toFixed(2)}, flagship-compact ${(compactBundle / 1048576).toFixed(2)})`,
     );
   } else if (jpgs.length) {
     console.log(
-      `  photos: ${jpgs.length} plate(s), ${(total / 1048576).toFixed(2)}MB of 2.50MB budget`,
+      `  photos: worst product bundle ${(worst / 1048576).toFixed(2)}MB of 2.50MB (pillar ${(pillarBundle / 1048576).toFixed(2)}, rooms ${(roomBundle / 1048576).toFixed(2)}, flagship-compact ${(compactBundle / 1048576).toFixed(2)})`,
     );
   }
 } catch {

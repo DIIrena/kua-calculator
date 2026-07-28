@@ -1,4 +1,4 @@
-# Your family corner, {{firstName}}
+# Your family corner
 
 There is one corner of every home the tradition hands to family. It does not move from person to person. It does not shift with your Kua number. It sits, fixed, in the **East**, the same East for you, {{firstName}}, as for everyone else who has ever laid this map over a floor plan. What changes is what you put there, how you tend it, and whether your own directions happen to fall in agreement with it. That last part is where you come in, and this reading will get you there.
 
@@ -57,14 +57,14 @@ The move is a habit rather than an object. If your East has a window, open its c
 {{sectorVerdictPanel}}
 
 {{#supportive}}
-Your chart places a supportive star in the East, {{firstName}}, so this corner can carry weight for you. Lean into it. This is the natural home for the generations wall and the thriving plant, and it is a corner to actually use rather than only tend: a chair for reading to a child, the seat you take for a long call home, the table where the household ends up together. The fixed family sector and your personal map agree here, and the tradition reads that agreement as a corner that can hold daily life.
+Your chart places a supportive star in the East, so this corner can carry weight for you. Lean into it. This is the natural home for the generations wall and the thriving plant, and it is a corner to actually use rather than only tend: a chair for reading to a child, the seat you take for a long call home, the table where the household ends up together. The fixed family sector and your personal map agree here, and the tradition reads that agreement as a corner that can hold daily life.
 
 Anchor the family things here deliberately. Gather the photographs into this corner rather than leaving them scattered, keep the plant where the morning light reaches it, and if the room allows a seat, let it be one somebody genuinely sits in. A supportive East rewards presence. The corner is read at its best when the family thread that runs through it is active rather than merely displayed.
 
 *If your chart had placed a cautious star here instead, the guidance would soften to tend and keep clear, and your supportive directions would carry the anchoring.*
 {{/supportive}}
 {{#cautious}}
-Your chart runs cautious in the East, {{firstName}}, so the guidance here is gentler. The East remains the family corner of your home; that layer is fixed, and nothing in your chart removes it. What your chart changes is the leaning. Keep this corner clean, cared for, and alive: the plant genuinely thriving, the photographs current and dusted, the boxes cleared. Tend it the way you would tend a garden bed you pass every day but do not sit in.
+Your chart runs cautious in the East, so the guidance here is gentler. The East remains the family corner of your home; that layer is fixed, and nothing in your chart removes it. What your chart changes is the leaning. Keep this corner clean, cared for, and alive: the plant genuinely thriving, the photographs current and dusted, the boxes cleared. Tend it the way you would tend a garden bed you pass every day but do not sit in.
 
 What not to anchor here is your long sitting and your rest. Do not make this corner the seat where you spend hours at a stretch, and do not point your sleep or your longest evenings into it. Carry that anchoring to your supportive directions instead: rest and recovery toward {{tianYiDir}}, the bearing the tradition ties to steadiness, settled sitting toward {{fuWeiDir}}, and the together-time of the household toward {{yanNianDir}}, your relationship bearing. The family thread still lives in the East; you simply honour it with care rather than with hours.
 
@@ -100,7 +100,7 @@ The easy first move for the East is the plant, because it asks almost nothing of
 </div>
 </div>
 
-The tradition holds the family corner in the East, {{firstName}}, and it has held it there the whole time. What it asks of you is small and ongoing: keep it living, keep it clear, and keep it current.
+The tradition holds the family corner in the East, and it has held it there the whole time. What it asks of you is small and ongoing: keep it living, keep it clear, and keep it current.
 
 <div class="chapter-recap">
 <p class="opener-kicker">THE FAMILY CORNER ON ONE CARD</p>

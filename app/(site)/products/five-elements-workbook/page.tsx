@@ -3,6 +3,7 @@ import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
+import ProductHero from "@/components/ProductHero";
 
 export const metadata: Metadata = {
   title: "Five Elements Home Styling Workbook | My Feng Shui Home",
@@ -61,6 +62,11 @@ export default async function FiveElementsWorkbookPage(props: {
       </section>
 
       <ProductPreview slug="five-elements-workbook" title="Five Elements Home Styling Workbook" />
+
+      <ProductHero
+        slug="five-elements-workbook"
+        alt="A calm living room quietly holding all five elements"
+      />
 
       <section className="product-section">
         <h2>What is inside</h2>

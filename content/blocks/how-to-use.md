@@ -18,6 +18,8 @@ Each chapter names a compass direction for one quality - for example, "Your Shen
 
 When a chapter is about the bed, read "direction" as where the head points. When it is about a desk, a dining seat, or a reading chair, read it as where the body faces. Each chapter says which it means, but the rule above is the one to keep in your pocket.
 
+{{threeReadings}}
+
 ## A week is the unit
 
 Feng shui changes, when they do anything, tend to be gradual and quiet rather than sudden. The realistic unit of testing is about a week. Make one change. Leave it in place for seven days. Notice, without forcing the question, whether anything feels different. If it does, keep it. If it does not, you have lost nothing but the few minutes it took to move a chair.

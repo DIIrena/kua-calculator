@@ -3,6 +3,7 @@ import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
+import ProductHero from "@/components/ProductHero";
 
 export const metadata: Metadata = {
   title:
@@ -63,6 +64,11 @@ export default async function BedroomResetPage(props: {
       </section>
 
       <ProductPreview slug="bedroom-reset" title="Bedroom and Relationship Reset" />
+
+      <ProductHero
+        slug="bedroom-reset"
+        alt="A serene couples bedroom with the bed in command position at soft dawn light"
+      />
 
       <section className="product-section">
         <h2>Who it is for</h2>

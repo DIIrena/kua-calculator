@@ -1,6 +1,8 @@
 # Your Wu Gui direction is {{direction}}
 
 Wu Gui is the second of your four cautious directions. Its name translates as **Five Ghosts**, which sounds far more dramatic than the thing it describes, and for you, {{firstName}}, it points **{{direction}}**.
+{{cautiousScale}}
+
 
 So let us defuse the name first. There are no ghosts. The label is old shorthand for a direction the tradition associates with small friction: arguments, crossed wires, the thing that gets misplaced and turns up a week later in a coat pocket. Lost car keys, not lost years.
 

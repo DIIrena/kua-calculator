@@ -1,4 +1,4 @@
-# Your kitchen, {{firstName}}
+# Your kitchen
 
 The kitchen is where the home is fed. Of all the rooms a feng shui reading looks at, this one tends to come first or close to it, because the central object, the stove, is treated as the place the household is sustained. The tradition reads a kitchen the way it reads few other rooms: not by mood or palette, but by the working condition of the thing that cooks.
 
@@ -47,6 +47,8 @@ The mediator the tradition reaches for is wood, because in the five-element cycl
 - A length of clear **working surface** between the two, kept as a buffer rather than crowded with appliances.
 
 If your layout simply does not allow the separation, and many do not, place one of these wood elements in the line between fire and water and treat the conflict as softened rather than solved. The reading is a decision tool, not a demand for a renovation.
+
+{{kitchenLayout}}
 
 ## Where your own directions come in
 

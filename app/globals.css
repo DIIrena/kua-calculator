@@ -8210,3 +8210,267 @@ a:hover { color: var(--clay-deep); }
 .post-result-card-actions {
   text-align: center;
 }
+
+/* ============================================================
+   Reading-depth comparison matrix (shop shelf, above the grid).
+   The three-tier ladder as a tick matrix in the book palette.
+   ============================================================ */
+.reading-depth-matrix {
+  max-width: 62rem;
+  margin: 0 auto 2.75rem;
+  padding: 0 1.25rem;
+}
+
+.matrix-heading {
+  text-align: center;
+  color: var(--ink);
+  font-size: clamp(1.35rem, 3.4vw, 1.85rem);
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+
+.matrix-lede {
+  text-align: center;
+  color: var(--ink-2);
+  max-width: 40rem;
+  margin: 0 auto 1.6rem;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+/* The swipe hint only appears when the table can actually overflow. */
+.matrix-hint {
+  display: none;
+  text-align: center;
+  color: var(--clay);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin: -0.6rem 0 1rem;
+}
+
+/* The wrapper lets the table scroll sideways on narrow screens rather
+   than crushing the tier columns. A right-edge fade signals more content. */
+.matrix-scroll {
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.matrix-table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.matrix-table th,
+.matrix-table td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.matrix-table tbody tr:last-child th,
+.matrix-table tbody tr:last-child td {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.matrix-corner {
+  background: var(--sand);
+  border-bottom: 1px solid var(--hairline);
+}
+
+/* Column headers: tier name over price, centred; the flagship column is
+   tinted and bordered to anchor the $49. */
+.matrix-tier {
+  text-align: center;
+  background: var(--sand);
+  width: 22%;
+}
+
+.matrix-tier-title {
+  display: block;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.98rem;
+  line-height: 1.2;
+}
+
+.matrix-tier-price {
+  display: block;
+  color: var(--clay);
+  font-weight: 800;
+  font-size: 1.15rem;
+  margin-top: 0.15rem;
+}
+
+.matrix-flag-tag {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.4rem;
+}
+
+.matrix-tier.is-flag,
+.matrix-cell.is-flag,
+.matrix-cta.is-flag {
+  background: var(--green-soft);
+}
+
+.matrix-tier.is-flag {
+  border-left: 2px solid var(--green);
+  border-right: 2px solid var(--green);
+}
+
+.matrix-cell.is-flag {
+  border-left: 2px solid var(--green);
+  border-right: 2px solid var(--green);
+}
+
+.matrix-cta.is-flag {
+  border-left: 2px solid var(--green);
+  border-right: 2px solid var(--green);
+  border-bottom: 2px solid var(--green);
+}
+
+/* Row labels: left-aligned, secondary weight. */
+.matrix-rowlabel {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  max-width: 20rem;
+}
+
+.matrix-cell {
+  text-align: center;
+}
+
+.matrix-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matrix-mark-yes {
+  color: var(--clay);
+}
+
+.matrix-mark-no {
+  color: var(--sand-deep);
+}
+
+.matrix-note {
+  color: var(--ink-2);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.matrix-cta {
+  text-align: center;
+  background: var(--sand);
+}
+
+.matrix-view {
+  display: inline-block;
+  color: var(--green-deep);
+  font-weight: 700;
+  font-size: 0.86rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.matrix-view:hover,
+.matrix-view:focus-visible {
+  color: var(--clay);
+  border-bottom-color: var(--clay);
+}
+
+@media (max-width: 46rem) {
+  .matrix-hint {
+    display: block;
+  }
+}
+
+/* Product-page sample diagrams (bagua grid, four-pillars, money channel).
+   A centred figure in a soft card, matching the book's line-art. */
+.product-sample-figure {
+  margin: 1.5rem auto 0.5rem;
+  max-width: 30rem;
+  padding: 1.25rem 1.25rem 0.5rem;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.product-sample-figure svg {
+  max-width: 100%;
+}
+
+.product-sample-caption {
+  margin: 0.9rem 0 0;
+  color: var(--ink-2);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Lifestyle-photo hero band on a product page, below the cover. Landscape
+   heroes span the column; portrait ones are capped narrower. */
+.product-hero-photo {
+  margin: 2rem auto 1.5rem;
+  max-width: 640px;
+  padding: 0 1.25rem;
+}
+
+.product-hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.product-hero-photo.is-tall {
+  max-width: 400px;
+}
+
+/* The shop's opening plate: a wide threshold view above the comparison
+   matrix, with a calm zone for the overlaid wordmark. */
+.shop-hero-band {
+  max-width: 74rem;
+  margin: 0 auto 2rem;
+  padding: 0 1.25rem;
+}
+
+.shop-hero-band img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 30rem) {
+  .matrix-table th,
+  .matrix-table td {
+    padding: 0.7rem 0.6rem;
+  }
+  .matrix-rowlabel {
+    font-size: 0.84rem;
+  }
+}

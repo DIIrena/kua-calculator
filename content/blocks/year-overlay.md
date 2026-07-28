@@ -1,6 +1,8 @@
 # Your year, in method
 
 Everything else in this report is fixed. Your Kua number, your group, your four good directions and your four cautious ones - those belong to you and do not change from one year to the next. This chapter is about a second layer that sits on top of all of that and moves on its own schedule, and it teaches you the method, so that every year of your life you know how to read the new arrangement when it arrives.
+{{yearOverlayKey}}
+
 
 ## The annual layer
 

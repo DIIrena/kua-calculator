@@ -36,6 +36,39 @@ import {
   deskPlacementSvg,
   floorPlanExampleSvg,
   elementIconSvg,
+  fiveElementCycleSvg,
+  kitchenLayoutSvg,
+  bedroomLayoutSvg,
+  entranceLayoutSvg,
+  threeReadingsSvg,
+  commandGoodPoorSvg,
+  deskCommandSvg,
+  livingRoomSvg,
+  houseAxisSvg,
+  cautiousScaleSvg,
+  fourGatesSvg,
+  shengQiZoomSvg,
+  diningPocketsSvg,
+  hallwaySvg,
+  storageAllocationSvg,
+  balconyRecipeSvg,
+  garagePlanSvg,
+  bathroomStackSvg,
+  fountainInOutSvg,
+  readingChairSvg,
+  relationshipSymmetrySvg,
+  clearCentreSvg,
+  southFireSvg,
+  yanNianTableSvg,
+  heavensGateSvg,
+  compatibilityRingsSvg,
+  studioWedgesSvg,
+  yearOverlaySvg,
+  laundryLoopSvg,
+  roomShapeSvg,
+  threeReadingProtocolSvg,
+  jueMingProtocolSvg,
+  januaryTimelineSvg,
 } from "@/lib/pdf/svg-marks";
 import {
   kuaElement,
@@ -50,6 +83,7 @@ import {
   sectorVerdictFor,
   sectorVerdictPanelHtml,
 } from "@/lib/pillar-sectors";
+import { deskClinicSvg } from "@/lib/pdf/svg-marks";
 import { nineAreasMapSvg, sectorMiniMapSvg } from "@/lib/pdf/svg-marks";
 import { photoDataUri } from "@/lib/pdf/photos";
 
@@ -183,6 +217,40 @@ function substituteTokens(
     kuaElementMaterials: () => elementProfile(context.kuaNumber).materials,
     kuaElementDress: () => elementProfile(context.kuaNumber).dress,
     kuaElementIcon: () => elementIconSvg(kuaElement(context.kuaNumber)),
+    elementCycle: () => fiveElementCycleSvg(),
+    kitchenLayout: () => kitchenLayoutSvg(),
+    bedroomLayout: () => bedroomLayoutSvg(),
+    entranceLayout: () => entranceLayoutSvg(),
+    threeReadings: () => threeReadingsSvg(),
+    commandGoodPoor: () => commandGoodPoorSvg(),
+    deskCommand: () => deskCommandSvg(),
+    livingRoom: () => livingRoomSvg(),
+    houseAxis: () => houseAxisSvg(),
+    cautiousScale: () => (direction ? cautiousScaleSvg(direction.qualityCode) : ""),
+    fourGates: () => fourGatesSvg(),
+    shengQiZoom: () => shengQiZoomSvg(),
+    diningPockets: () => diningPocketsSvg(),
+    hallwayPlan: () => hallwaySvg(),
+    storageAllocation: () => storageAllocationSvg(),
+    balconyRecipe: () => balconyRecipeSvg(),
+    garagePlan: () => garagePlanSvg(),
+    bathroomStack: () => bathroomStackSvg(),
+    fountainInOut: () => fountainInOutSvg(),
+    readingChair: () => readingChairSvg(dirLabel("FW")),
+    relationshipSymmetry: () => relationshipSymmetrySvg(),
+    clearCentre: () => clearCentreSvg(),
+    southFire: () => southFireSvg(),
+    yanNianTable: () => yanNianTableSvg(dirLabel("YN")),
+    heavensGate: () => heavensGateSvg(),
+    compatibilityRings: () => compatibilityRingsSvg(),
+    studioWedges: () => studioWedgesSvg(),
+    yearOverlayKey: () => yearOverlaySvg(),
+    laundryLoop: () => laundryLoopSvg(),
+    roomShape: () => roomShapeSvg(),
+    threeReadingProtocol: () => threeReadingProtocolSvg(),
+    jueMingProtocol: () => jueMingProtocolSvg(),
+    januaryTimeline: () => januaryTimelineSvg(),
+    deskClinic: () => deskClinicSvg(),
     yanNianActivation: () => yanNianActivation(context.kuaNumber),
     personalBagua: () =>
       (cachedPersonalBagua ??= personalBaguaSvg(
@@ -299,6 +367,37 @@ function photoBandHtml(name: string): string {
     : `<div class="opener-photo opener-photo--fallback">${brandMarkSvg(56)}</div>`;
 }
 
+/** Room and space blocks (room-*, space-*) carry a plain fixed-height
+ *  photo band above their H1, keyed by block id (room-bedroom.jpg,
+ *  space-kitchen.jpg, ...). No sector mini-map or verdict chip: rooms
+ *  are not one of the nine directional areas. Fixed height with or
+ *  without the image, so page counts stay stable either way. */
+const ROOM_BLOCK = /^(?:room|space)-/;
+function roomOpenerHtml(blockId: BlockId, compact: boolean): string {
+  if (!ROOM_BLOCK.test(blockId)) return "";
+  const photo = photoDataUri(blockId, compact);
+  const band = photo
+    ? `<div class="opener-photo" style="background-image:url('${photo}')"></div>`
+    : `<div class="opener-photo opener-photo--fallback">${brandMarkSvg(56)}</div>`;
+  return `<header class="chapter-opener chapter-opener--room">${band}</header>`;
+}
+
+/** The four cautious-direction chapters (huo-hai, wu-gui, liu-sha, jue-ming)
+ *  carry a plain fixed-height photo band above their H1, keyed by block id
+ *  (wu-gui.jpg, ...), the same treatment as the room chapters. Each plate
+ *  reframes an alarming name as a calm, cared-for corner. Fixed height with
+ *  or without the image, so page counts stay stable; missing plates fall
+ *  back to the brand mark until the owner installs them. */
+const CAUTIOUS_BLOCK = /^(?:huo-hai|wu-gui|liu-sha|jue-ming)$/;
+function cautiousOpenerHtml(blockId: BlockId, compact: boolean): string {
+  if (!CAUTIOUS_BLOCK.test(blockId)) return "";
+  const photo = photoDataUri(blockId, compact);
+  const band = photo
+    ? `<div class="opener-photo" style="background-image:url('${photo}')"></div>`
+    : `<div class="opener-photo opener-photo--fallback">${brandMarkSvg(56)}</div>`;
+  return `<header class="chapter-opener chapter-opener--room">${band}</header>`;
+}
+
 /** The injected chapter-opener header for pillar blocks: fixed-height
  *  photo band (or its element-icon fallback), clay kicker, sector
  *  mini-map and verdict chip. The markdown H1 follows it unchanged.
@@ -308,13 +407,14 @@ function chapterOpenerHtml(
   blockId: BlockId,
   context: BlockContext,
   numbered: boolean,
+  compact: boolean,
 ): string {
   const meta = PILLAR_META[blockId];
   if (!meta) return "";
   const dir = meta.sector ? context.byCompass[meta.sector] : null;
   const fav = dir ? dir.favourable : null;
 
-  const photo = photoDataUri(blockId);
+  const photo = photoDataUri(blockId, compact);
   const band = photo
     ? `<div class="opener-photo" style="background-image:url('${photo}')"></div>`
     : `<div class="opener-photo opener-photo--fallback">${elementIconSvg(meta.element)}</div>`;
@@ -339,16 +439,36 @@ function chapterOpenerHtml(
 </header>`;
 }
 
+/** A full-bleed typographic part-title page, deep green with an ivory
+ *  Didone title and a clay part kicker. Near-zero bytes: no photo. */
+function sectionDividerHtml(d: { part: string; title: string }): string {
+  return `<section class="section-divider">
+<div class="divider-inner">
+<p class="divider-part">${d.part}</p>
+<h2 class="divider-title">${d.title}</h2>
+<div class="divider-rule"></div>
+<div class="divider-mark">${brandMarkSvg(40, "#f2f2ee")}</div>
+</div>
+</section>`;
+}
+
 export async function assembleProductHtml(
   product: Product,
   context: BlockContext,
 ): Promise<string> {
   const pillarCount = product.blocks.filter((b) => PILLAR_META[b]).length;
+  const compact = product.compactPhotos ?? false;
+  const dividers = product.sectionDividers ?? {};
   const parts = await Promise.all(
     product.blocks.map(async (blockId) => {
       const html = await loadBlock(blockId, context);
-      const opener = chapterOpenerHtml(blockId, context, pillarCount >= 2);
-      return `<section class="block block--${blockId}">${opener}${html}</section>`;
+      const opener =
+        chapterOpenerHtml(blockId, context, pillarCount >= 2, compact) ||
+        roomOpenerHtml(blockId, compact) ||
+        cautiousOpenerHtml(blockId, compact);
+      const divider = dividers[blockId];
+      const dividerHtml = divider ? sectionDividerHtml(divider) : "";
+      return `${dividerHtml}<section class="block block--${blockId}">${opener}${html}</section>`;
     }),
   );
   return parts.join("\n");

@@ -7,6 +7,7 @@ import FlagshipChooser from "@/components/FlagshipChooser";
 import { joinProductWaitlist } from "@/app/actions/product-waitlist";
 
 import PlannerSourceTracker from "@/components/PlannerSourceTracker";
+import ProductHero from "@/components/ProductHero";
 
 export const metadata: Metadata = {
   title:
@@ -193,6 +194,11 @@ export default async function PlannerPage(props: {
           </div>
         </div>
       </section>
+
+      <ProductHero
+        slug="annual-feng-shui-planner-2026"
+        alt="A dawn planning desk with the open planner, a cup of tea and a brass lamp"
+      />
 
       <section
         className="product-top-waitlist"

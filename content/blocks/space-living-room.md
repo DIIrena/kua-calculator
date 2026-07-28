@@ -1,4 +1,4 @@
-# Your living room, {{firstName}}
+# Your living room
 
 The living room is the social heart of a home. It is where the energy that came in through your front door is meant to slow down, pool, and circulate, the way water settles in a wide basin before it moves on. It is the most public room you have, the one that holds conversation, rest, and the small daily traffic of a household. Because so much of waking life happens here, the tradition treats how you arrange it as one of the higher-leverage decisions in the home.
 
@@ -28,6 +28,8 @@ You do not have to choose only one. A large living room can hold more than one s
 ## The conversation circle
 
 A living room is not one seat, it is a group of them, and the tradition reads the *shape* they make together as much as any single placement. The working pattern is a loose circle or a soft U, close enough that two people can talk without raising their voices, open enough that someone can walk behind a sofa without turning sideways.
+
+{{livingRoom}}
 
 A few things the tradition and plain comfort agree on:
 

@@ -65,6 +65,38 @@ export const CARD_COVER_SLUGS: ReadonlySet<string> = new Set([
   "seven-day-home-reset",
   "all-twelve-spaces-compass",
   "all-nine-pillars-compass",
+  "whole-home-starter-bundle",
+]);
+
+// Products with an installed lifestyle-photo hero at
+// public/products/<slug>/hero.jpg, shown below the cover on the sales page.
+// Guards ProductHero so a page never points at a missing file. Add a slug
+// here once its hero.jpg is in place. (The good-days hero renders on the
+// free /good-days page, not on the delisted product page.)
+export const HERO_SLUGS: ReadonlySet<string> = new Set([
+  "good-days-calendar-2026",
+  "annual-feng-shui-planner-2026",
+  "bedroom-reset",
+  "business-money-feng-shui",
+  "cures-catalog",
+  "five-elements-workbook",
+  "daily-ritual-pack",
+  "home-diagnostic-workbook",
+  "healthy-home-audit",
+  "starter-deck",
+  "bazi-basics",
+  "whole-home-starter-bundle",
+]);
+
+// Of the heroes above, the portrait (tall) ones. These are capped to a
+// narrower max-width so they do not tower over the reading column.
+export const HERO_TALL: ReadonlySet<string> = new Set([
+  "bedroom-reset",
+  "business-money-feng-shui",
+  "home-diagnostic-workbook",
+  "starter-deck",
+  "bazi-basics",
+  "daily-ritual-pack",
 ]);
 
 // Products that ship a booklet-mockup cover (cover-mockup.png) for the

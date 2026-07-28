@@ -1,6 +1,8 @@
-# Your bathroom, {{firstName}}
+# Your bathroom
 
 Every home loses water somewhere, and the bathroom is where it leaves fastest. The tradition reads this room as a *draining* room: the place with the most active plumbing, the most moisture, and the most water moving out of the house. That single fact decides almost everything the tradition has to say about it. You do not activate a bathroom. You contain it.
+{{bathroomStack}}
+
 
 Because the room drains, the tradition treats it differently from a bedroom or a desk. A bedroom or a working seat is somewhere you want to sit *in* one of your supportive directions. A bathroom is the rare case where the tradition is content to see it sit in one of your *cautious* directions instead. There is a logic to that, and it is worth understanding before you go looking at your own floor plan.
 

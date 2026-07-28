@@ -3,6 +3,7 @@ import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
+import ProductHero from "@/components/ProductHero";
 
 export const metadata: Metadata = {
   title: "Healthy Home Audit | My Feng Shui Home",
@@ -62,6 +63,11 @@ export default async function HealthyHomeAuditPage(props: {
       </section>
 
       <ProductPreview slug="healthy-home-audit" title="Healthy Home Audit" />
+
+      <ProductHero
+        slug="healthy-home-audit"
+        alt="An airy, light-filled room with billowing sheer curtains and plants"
+      />
 
       <section className="product-section">
         <h2>What is inside</h2>

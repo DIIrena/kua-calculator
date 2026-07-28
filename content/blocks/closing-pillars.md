@@ -1,7 +1,5 @@
 # You have walked all nine, {{firstName}}
 
-{{closingPhotoBand}}
-
 You have now read the whole map: nine life areas, nine verdicts, each one keyed to your Kua. That is more than most people ever learn about their own floor plan, and it is enough to act on for a year.
 
 ## How to choose, now that you know everything

@@ -1,6 +1,8 @@
 # Your Huo Hai direction is {{direction}}
 
 Huo Hai is the gentlest of the four directions the tradition treats with caution. Its name, *Huo Hai* (<span lang="zh-Hant">禍害</span>), translates as **Mishap**, and for you, {{firstName}}, it points **{{direction}}**.
+{{cautiousScale}}
+
 
 Before anything else: nothing about this quarter of your compass is dangerous. Four of your directions are read as supportive and four are handled with more care, and Huo Hai is the mildest of the careful four. What the next four chapters hand you is not a hazard map. It is a filing system.
 

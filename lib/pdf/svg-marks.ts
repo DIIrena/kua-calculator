@@ -176,8 +176,8 @@ export function personalBaguaSvg(
   // ViewBox extends to 480px tall to leave room for the legend below
   // the bagua. Render width stays 280px; height scales proportionally
   // (280 * 480 / 400 = 336).
-  const w = compact ? 180 : 280;
-  const h = compact ? 216 : 336;
+  const w = compact ? 300 : 500;
+  const h = compact ? 360 : 600;
   const mg = compact ? "2mm auto 3mm auto" : "10mm auto 12mm auto";
 
   return `<svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" style="display:block;margin:${mg};">
@@ -447,7 +447,7 @@ export function miniCompassSvg(
   const dirSize = dirWord.length > 7 ? 20 : 26;
 
   return `<div class="figure">
-<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="185" height="185" style="display:block;margin:0 auto;">
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="340" height="340" style="display:block;margin:0 auto;">
   <circle cx="${CENTER}" cy="${CENTER}" r="${R_OUTER + 4}" fill="none" stroke="${C.hairline}" stroke-width="0.8"/>
   ${sectors}
   ${hitOutline}
@@ -474,7 +474,7 @@ export function bedPlacementSvg(
   const accent = favourable ? C.olive : C.clay;
   const soft = favourable ? C.oliveSoft : C.claySoft;
   return `<div class="figure">
-<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" width="440" height="220" style="display:block;margin:0 auto;">
+<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" width="600" height="300" style="display:block;margin:0 auto;">
   <!-- Room -->
   <rect x="40" y="52" width="280" height="230" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
   <!-- The target wall, emphasised -->
@@ -512,7 +512,7 @@ export function deskPlacementSvg(
   const accent = favourable ? C.olive : C.clay;
   const soft = favourable ? C.oliveSoft : C.claySoft;
   return `<div class="figure">
-<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" width="440" height="220" style="display:block;margin:0 auto;">
+<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" width="600" height="300" style="display:block;margin:0 auto;">
   <!-- Room -->
   <rect x="40" y="52" width="280" height="230" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
   <line x1="40" y1="52" x2="320" y2="52" stroke="${accent}" stroke-width="5"/>
@@ -562,7 +562,7 @@ export function floorPlanExampleSvg(): string {
     `<text x="${x}" y="${y}" text-anchor="middle" font-family="Hanken Grotesk" font-size="11.5" font-weight="700" fill="${C.ink2}" letter-spacing="1.2">${label}</text>`;
 
   return `<div class="figure">
-<svg viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" width="470" height="345" style="display:block;margin:0 auto;">
+<svg viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" width="620" height="455" style="display:block;margin:0 auto;">
   <!-- Outer walls -->
   <rect x="120" y="60" width="400" height="344" fill="${C.paper}" stroke="${C.ink}" stroke-width="3"/>
   <!-- Inner walls -->
@@ -697,4 +697,1164 @@ export function sectorMiniMapSvg(
   <text x="${W / 2}" y="9" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" font-weight="700" letter-spacing="1.5" fill="${C.ink2}">N</text>
 ${cells.join("\n")}
 </svg>`;
+}
+
+// ============================================================
+// Five-element cycle: the generating ring (each element feeds the
+// next) and the controlling star (each keeps another in check).
+// Static line-art, no per-reader data. Placed in the kua-element
+// chapter so the reader can see how their element sits in the whole.
+// ============================================================
+export function fiveElementCycleSvg(): string {
+  const cx = 260;
+  const cy = 205;
+  const R = 150;
+  const nodeR = 45;
+  const els = [
+    { key: "Wood", fill: "#dde6e0", stroke: C.olive, sub: "green, tall" },
+    { key: "Fire", fill: "#f8d8c5", stroke: C.clay, sub: "warm light" },
+    { key: "Earth", fill: "#efe6cf", stroke: "#b08a3e", sub: "clay, square" },
+    { key: "Metal", fill: "#ecebe5", stroke: "#8a8577", sub: "white, round" },
+    { key: "Water", fill: "#dbe0ea", stroke: "#3a4a6b", sub: "ink, wavy" },
+  ];
+  const pos = els.map((_, i) => {
+    const a = ((-90 + i * 72) * Math.PI) / 180;
+    return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a) };
+  });
+  const arrow = (
+    p: { x: number; y: number },
+    q: { x: number; y: number },
+    color: string,
+    dashed: boolean,
+  ) => {
+    const dx = q.x - p.x;
+    const dy = q.y - p.y;
+    const len = Math.hypot(dx, dy);
+    const ux = dx / len;
+    const uy = dy / len;
+    const off = nodeR + 7;
+    const sx = p.x + ux * off;
+    const sy = p.y + uy * off;
+    const ex = q.x - ux * off;
+    const ey = q.y - uy * off;
+    const ah = 10;
+    const px = -uy;
+    const py = ux;
+    const b1x = ex - ux * ah + px * ah * 0.55;
+    const b1y = ey - uy * ah + py * ah * 0.55;
+    const b2x = ex - ux * ah - px * ah * 0.55;
+    const b2y = ey - uy * ah - py * ah * 0.55;
+    return `<line x1="${sx.toFixed(1)}" y1="${sy.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${ey.toFixed(1)}" stroke="${color}" stroke-width="2.2"${dashed ? ' stroke-dasharray="5 4"' : ""}/>
+  <path d="M ${ex.toFixed(1)} ${ey.toFixed(1)} L ${b1x.toFixed(1)} ${b1y.toFixed(1)} L ${b2x.toFixed(1)} ${b2y.toFixed(1)} Z" fill="${color}"/>`;
+  };
+  const ctrl = pos.map((p, i) => arrow(p, pos[(i + 2) % 5], C.clay, true)).join("\n  ");
+  const gen = pos.map((p, i) => arrow(p, pos[(i + 1) % 5], C.olive, false)).join("\n  ");
+  const nodes = els
+    .map(
+      (e, i) => `<circle cx="${pos[i].x.toFixed(1)}" cy="${pos[i].y.toFixed(1)}" r="${nodeR}" fill="${e.fill}" stroke="${e.stroke}" stroke-width="2"/>
+  <text x="${pos[i].x.toFixed(1)}" y="${(pos[i].y - 3).toFixed(1)}" text-anchor="middle" font-family="Hanken Grotesk" font-size="15" font-weight="800" fill="${C.ink}">${e.key}</text>
+  <text x="${pos[i].x.toFixed(1)}" y="${(pos[i].y + 13).toFixed(1)}" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">${e.sub}</text>`,
+    )
+    .join("\n  ");
+  return `<div class="figure">
+<svg viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" width="440" height="389" style="display:block;margin:0 auto;" role="img" aria-label="The five-element generating and controlling cycles">
+  ${ctrl}
+  ${gen}
+  ${nodes}
+  <line x1="132" y1="424" x2="164" y2="424" stroke="${C.olive}" stroke-width="2.2"/>
+  <path d="M 164 424 L 156 420 L 156 428 Z" fill="${C.olive}"/>
+  <text x="172" y="428" font-family="Hanken Grotesk" font-size="11" fill="${C.ink}">feeds the next</text>
+  <line x1="300" y1="424" x2="332" y2="424" stroke="${C.clay}" stroke-width="2.2" stroke-dasharray="5 4"/>
+  <path d="M 332 424 L 324 420 L 324 428 Z" fill="${C.clay}"/>
+  <text x="340" y="428" font-family="Hanken Grotesk" font-size="11" fill="${C.ink}">keeps in check</text>
+</svg>
+<p class="figure-caption">Each element feeds the next around the ring, and keeps one in check across the star. This is the engine behind every colour and material choice in your reading.</p>
+</div>`;
+}
+
+// ============================================================
+// Kitchen layout: the two rules a kitchen reading turns on. Fire
+// (stove) and water (sink) kept from touching by a wood buffer, and
+// the stove / sink / fridge working triangle that no through-path
+// crosses. Static line-art. Placed in the kitchen chapter.
+// ============================================================
+export function kitchenLayoutSvg(): string {
+  const water = "#dbe0ea";
+  const waterEdge = "#3a4a6b";
+  const metal = "#ecebe5";
+  const metalEdge = "#8a8577";
+  const stove = { x: 118, y: 62, w: 88, h: 32, cx: 162, cy: 78 };
+  const sink = { x: 262, y: 62, w: 88, h: 32, cx: 306, cy: 78 };
+  const fridge = { x: 470, y: 150, w: 44, h: 92, cx: 492, cy: 196 };
+  const tri = `M ${stove.cx} ${stove.cy} L ${sink.cx} ${sink.cy} L ${fridge.cx} ${fridge.cy} Z`;
+  return `<div class="figure">
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" width="520" height="334" style="display:block;margin:0 auto;" role="img" aria-label="Kitchen layout: fire, water, wood buffer and the working triangle">
+  <rect x="50" y="56" width="464" height="266" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="50" y1="56" x2="514" y2="56" stroke="${C.ink}" stroke-width="4"/>
+  <text x="282" y="46" text-anchor="middle" font-family="Hanken Grotesk" font-size="11.5" font-weight="700" fill="${C.ink2}">solid back wall, stove not under a window</text>
+  <path d="${tri}" fill="none" stroke="${C.clay}" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <rect x="${stove.x}" y="${stove.y}" width="${stove.w}" height="${stove.h}" rx="3" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.5"/>
+  <circle cx="${stove.cx - 20}" cy="${stove.cy}" r="4.5" fill="none" stroke="${C.clay}" stroke-width="1.6"/>
+  <circle cx="${stove.cx + 20}" cy="${stove.cy}" r="4.5" fill="none" stroke="${C.clay}" stroke-width="1.6"/>
+  <path d="M ${stove.cx} ${stove.cy - 5} q 6 5 0 10 q -6 -5 0 -10 Z" fill="${C.clay}"/>
+  <text x="${stove.cx}" y="112" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.ink}">stove (fire)</text>
+  <circle cx="234" cy="78" r="13" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <path d="M 234 84 L 234 73 M 234 76 q -6 -3 -8 -8 M 234 76 q 6 -3 8 -8" fill="none" stroke="${C.olive}" stroke-width="1.4"/>
+  <text x="234" y="112" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.olive}">wood buffer</text>
+  <rect x="${sink.x}" y="${sink.y}" width="${sink.w}" height="${sink.h}" rx="3" fill="${water}" stroke="${waterEdge}" stroke-width="1.5"/>
+  <path d="M ${sink.cx - 22} ${sink.cy + 2} q 7 -6 14 0 t 14 0 t 14 0" fill="none" stroke="${waterEdge}" stroke-width="1.4"/>
+  <text x="${sink.cx}" y="112" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.ink}">sink (water)</text>
+  <rect x="${fridge.x}" y="${fridge.y}" width="${fridge.w}" height="${fridge.h}" rx="3" fill="${metal}" stroke="${metalEdge}" stroke-width="1.5"/>
+  <line x1="${fridge.x + 8}" y1="${fridge.y + 34}" x2="${fridge.x + fridge.w - 8}" y2="${fridge.y + 34}" stroke="${metalEdge}" stroke-width="1.2"/>
+  <text x="${fridge.cx}" y="256" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.ink}">fridge</text>
+  <text x="300" y="176" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.clay}" letter-spacing="0.5">the work triangle</text>
+  <text x="300" y="193" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">no through-path crosses it</text>
+  <rect x="238" y="318" width="84" height="8" fill="${C.paper}"/>
+  <path d="M 238 322 a 84 84 0 0 1 84 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="280" y="342" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="600" fill="${C.ink2}">door</text>
+</svg>
+<p class="figure-caption">A kitchen reading turns on two things: keep fire and water from touching, and let the stove, sink, and fridge form a triangle no one has to walk through.</p>
+</div>`;
+}
+
+// ============================================================
+// Bedroom command position: the one move the bedroom chapter weights
+// most. Headboard against a solid wall, bed set diagonally from the
+// door so the sleeper sees it without lying in its direct line, both
+// sides reachable. Static line-art. Placed in the bedroom chapter.
+// ============================================================
+export function bedroomLayoutSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 356" xmlns="http://www.w3.org/2000/svg" width="500" height="318" style="display:block;margin:0 auto;" role="img" aria-label="Bedroom command position">
+  <rect x="52" y="54" width="456" height="268" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="52" y1="54" x2="508" y2="54" stroke="${C.ink}" stroke-width="4"/>
+  <text x="200" y="44" text-anchor="middle" font-family="Hanken Grotesk" font-size="11.5" font-weight="700" fill="${C.ink2}">headboard on a solid wall</text>
+  <line x1="200" y1="138" x2="426" y2="300" stroke="${C.olive}" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <rect x="132" y="60" width="136" height="164" rx="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <rect x="132" y="60" width="136" height="12" fill="${C.olive}"/>
+  <rect x="146" y="78" width="46" height="24" rx="4" fill="${C.paper}" stroke="${C.olive}" stroke-width="1"/>
+  <rect x="208" y="78" width="46" height="24" rx="4" fill="${C.paper}" stroke="${C.olive}" stroke-width="1"/>
+  <rect x="100" y="60" width="24" height="30" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <rect x="276" y="60" width="24" height="30" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <text x="200" y="250" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.ink}">your bed</text>
+  <text x="200" y="266" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">both sides reachable</text>
+  <text x="352" y="214" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.olive}">you see the door</text>
+  <text x="352" y="230" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">without lying in its line</text>
+  <rect x="410" y="318" width="72" height="8" fill="${C.paper}"/>
+  <path d="M 410 322 a 72 72 0 0 1 72 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="446" y="342" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="600" fill="${C.ink2}">door</text>
+</svg>
+<p class="figure-caption">The strongest bed position: headboard against a solid wall, set diagonally from the door so you can see it without lying directly in its line.</p>
+</div>`;
+}
+
+// ============================================================
+// Entrance: the mouth of the house. The door opens onto open floor
+// (the bright hall), qi enters and spreads rather than shooting
+// straight through, a settling zone sits to the side, and no mirror
+// faces the door. Static line-art. Placed in the entrance chapter.
+// ============================================================
+export function entranceLayoutSvg(): string {
+  const water = "#dbe0ea";
+  return `<div class="figure">
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" width="500" height="321" style="display:block;margin:0 auto;" role="img" aria-label="Entrance: the door, the bright hall, and where qi settles">
+  <rect x="50" y="54" width="460" height="268" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="238" y="238" width="82" height="82" rx="4" fill="${C.oliveSoft}" opacity="0.55"/>
+  <text x="279" y="278" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">open floor</text>
+  <text x="279" y="293" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">the first steps land clear</text>
+  <path d="M 279 306 C 279 210 210 200 165 176" fill="none" stroke="${C.olive}" stroke-width="1.8" stroke-dasharray="5 4"/>
+  <path d="M 165 176 L 178 178 L 172 167 Z" fill="${C.olive}"/>
+  <text x="150" y="150" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.olive}">qi enters</text>
+  <text x="150" y="165" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.olive}">and settles</text>
+  <rect x="492" y="150" width="18" height="86" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <rect x="495" y="120" width="14" height="22" rx="2" fill="${C.paper}" stroke="${C.olive}" stroke-width="1.2"/>
+  <text x="470" y="258" text-anchor="end" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">settling zone</text>
+  <text x="470" y="272" text-anchor="end" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">console, art, a lamp</text>
+  <rect x="249" y="55" width="60" height="7" fill="${water}" stroke="${C.ink2}" stroke-width="0.8"/>
+  <line x1="251" y1="55" x2="307" y2="62" stroke="${C.clay}" stroke-width="1.8"/>
+  <line x1="307" y1="55" x2="251" y2="62" stroke="${C.clay}" stroke-width="1.8"/>
+  <text x="279" y="80" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.clay}">no mirror facing the door</text>
+  <rect x="238" y="318" width="82" height="8" fill="${C.paper}"/>
+  <path d="M 238 322 a 82 82 0 0 1 82 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="279" y="345" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="600" fill="${C.ink2}">front door</text>
+</svg>
+<p class="figure-caption">The door opens onto open floor so qi can spread instead of stalling or bouncing back, the settling zone sits to the side, and no mirror is hung facing the door to bounce arriving energy straight out.</p>
+</div>`;
+}
+
+// ============================================================
+// Three ways to read a direction: the one ambiguity that breaks the
+// method for beginners. For sleeping the head points the way; for
+// sitting the body faces the way; for a door the opening faces the
+// way. Static triptych. Placed in how-to-use.md.
+// ============================================================
+export function threeReadingsSvg(): string {
+  const box = (x: number, title: string, sub: string) =>
+    `<rect x="${x}" y="40" width="196" height="150" rx="5" fill="${C.paper}" stroke="${C.hairline}" stroke-width="1.2"/>
+  <text x="${x + 98}" y="28" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="800" fill="${C.ink}">${title}</text>
+  <text x="${x + 98}" y="210" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">${sub}</text>`;
+  return `<div class="figure">
+<svg viewBox="0 0 640 232" xmlns="http://www.w3.org/2000/svg" width="560" height="203" style="display:block;margin:0 auto;" role="img" aria-label="Three ways to read a direction: sleeping, sitting, a door">
+  ${box(14, "For sleeping", "the wall your head points to")}
+  <rect x="77" y="74" width="70" height="96" rx="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.4"/>
+  <rect x="77" y="74" width="70" height="12" fill="${C.olive}"/>
+  <rect x="88" y="90" width="20" height="14" rx="3" fill="${C.paper}" stroke="${C.olive}" stroke-width="0.8"/>
+  <rect x="116" y="90" width="20" height="14" rx="3" fill="${C.paper}" stroke="${C.olive}" stroke-width="0.8"/>
+  <line x1="112" y1="72" x2="112" y2="52" stroke="${C.olive}" stroke-width="3"/>
+  <path d="M 112 46 L 106 58 L 118 58 Z" fill="${C.olive}"/>
+  ${box(222, "For sitting", "the way your body faces")}
+  <rect x="285" y="72" width="70" height="18" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.2"/>
+  <circle cx="320" cy="128" r="15" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.6"/>
+  <path d="M 302 150 a 18 18 0 0 1 36 0" fill="none" stroke="${C.ink2}" stroke-width="1.3"/>
+  <line x1="320" y1="111" x2="320" y2="96" stroke="${C.olive}" stroke-width="3"/>
+  <path d="M 320 90 L 314 102 L 326 102 Z" fill="${C.olive}"/>
+  ${box(430, "For a door", "the way the door opens")}
+  <line x1="528" y1="70" x2="528" y2="98" stroke="${C.ink2}" stroke-width="2.5"/>
+  <line x1="528" y1="150" x2="528" y2="122" stroke="${C.ink2}" stroke-width="2.5"/>
+  <line x1="528" y1="98" x2="528" y2="122" stroke="${C.hairline}" stroke-width="1"/>
+  <path d="M 528 122 a 24 24 0 0 0 24 -24" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <line x1="532" y1="110" x2="566" y2="110" stroke="${C.olive}" stroke-width="3"/>
+  <path d="M 572 110 L 560 104 L 560 116 Z" fill="${C.olive}"/>
+  <text x="320" y="228" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="600" fill="${C.olive}">the olive arrow is the direction in each case</text>
+</svg>
+<p class="figure-caption">The same word reads three ways. Match it to what the spot is for: your head where you sleep, your body where you sit, the opening for a door.</p>
+</div>`;
+}
+
+// ============================================================
+// Command position, good vs poor: the spine rule. A solid wall
+// behind you and the door in view beats a favourable facing with
+// your back exposed. Static. Placed in before-the-compass.md.
+// ============================================================
+export function commandGoodPoorSvg(): string {
+  const tick = (cx: number, cy: number) =>
+    `<circle cx="${cx}" cy="${cy}" r="12" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <path d="M ${cx - 5} ${cy} l 3.5 4 l 6.5 -8" fill="none" stroke="${C.olive}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const cross = (cx: number, cy: number) =>
+    `<circle cx="${cx}" cy="${cy}" r="12" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.5"/>
+  <path d="M ${cx - 5} ${cy - 5} l 10 10 M ${cx + 5} ${cy - 5} l -10 10" fill="none" stroke="${C.clay}" stroke-width="2" stroke-linecap="round"/>`;
+  return `<div class="figure">
+<svg viewBox="0 0 560 268" xmlns="http://www.w3.org/2000/svg" width="520" height="249" style="display:block;margin:0 auto;" role="img" aria-label="Command position, good versus poor">
+  <rect x="20" y="42" width="232" height="176" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <text x="136" y="32" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="800" fill="${C.olive}">GOOD</text>
+  ${tick(232, 60)}
+  <line x1="204" y1="86" x2="86" y2="200" stroke="${C.olive}" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <rect x="176" y="48" width="60" height="18" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="206" cy="86" r="14" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.6"/>
+  <path d="M 190 72 a 20 20 0 0 1 32 0" fill="none" stroke="${C.ink2}" stroke-width="1.3"/>
+  <rect x="42" y="200" width="60" height="8" fill="${C.paper}"/>
+  <path d="M 42 200 a 60 60 0 0 0 60 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="72" y="196" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">door</text>
+  <text x="136" y="236" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink}">wall behind, door in view</text>
+  <rect x="308" y="42" width="232" height="176" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <text x="424" y="32" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="800" fill="${C.clay}">AVOID</text>
+  ${cross(520, 60)}
+  <rect x="394" y="48" width="60" height="18" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="424" cy="86" r="14" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.6"/>
+  <path d="M 408 100 a 20 20 0 0 1 32 0" fill="none" stroke="${C.ink2}" stroke-width="1.3"/>
+  <line x1="424" y1="104" x2="424" y2="192" stroke="${C.clay}" stroke-width="1.3" stroke-dasharray="4 4"/>
+  <rect x="394" y="200" width="60" height="8" fill="${C.paper}"/>
+  <path d="M 394 200 a 60 60 0 0 0 60 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="424" y="196" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">door</text>
+  <text x="424" y="236" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink}">back to the door</text>
+</svg>
+<p class="figure-caption">Command position outranks the compass direction: a solid wall behind you and the door in view beats a favourable facing with your back exposed.</p>
+</div>`;
+}
+
+// ============================================================
+// Desk command plan: back to a solid wall, body facing the room, the
+// door in view but off its direct line. Static (no per-reader data),
+// for the room-desk chapter. Reused conceptually by knowledge and
+// business-money.
+// ============================================================
+export function deskCommandSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg" width="500" height="295" style="display:block;margin:0 auto;" role="img" aria-label="Desk command plan">
+  <rect x="50" y="54" width="460" height="248" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="50" y1="54" x2="510" y2="54" stroke="${C.ink}" stroke-width="4"/>
+  <text x="220" y="44" text-anchor="middle" font-family="Hanken Grotesk" font-size="11.5" font-weight="700" fill="${C.ink2}">solid wall behind you</text>
+  <line x1="222" y1="120" x2="430" y2="290" stroke="${C.olive}" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="222" y1="120" x2="222" y2="290" stroke="${C.clay}" stroke-width="1.2" stroke-dasharray="3 5"/>
+  <rect x="150" y="128" width="150" height="30" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="225" y="148" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">desk</text>
+  <circle cx="225" cy="98" r="16" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.8"/>
+  <path d="M 205 80 a 20 20 0 0 1 40 0" fill="none" stroke="${C.ink2}" stroke-width="1.4"/>
+  <line x1="225" y1="114" x2="225" y2="124" stroke="${C.ink}" stroke-width="2"/>
+  <text x="150" y="196" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.ink}">your body</text>
+  <text x="150" y="211" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.ink}">faces the room</text>
+  <text x="360" y="212" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.olive}">door in view,</text>
+  <text x="360" y="227" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.olive}">off its direct line</text>
+  <rect x="392" y="298" width="76" height="8" fill="${C.paper}"/>
+  <path d="M 392 302 a 76 76 0 0 1 76 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="430" y="322" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="600" fill="${C.ink2}">door</text>
+  <text x="150" y="285" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">turn the chair, not the desk</text>
+</svg>
+<p class="figure-caption">The command desk: your back to a solid wall, your body facing the room, and the door in view but not sitting on your direct line.</p>
+</div>`;
+}
+
+// ============================================================
+// Living-room conversation circle: the seat you use most in command,
+// the others in a loose circle close enough to talk and open enough
+// to walk around. Static. Placed in space-living-room.md.
+// ============================================================
+export function livingRoomSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" width="500" height="286" style="display:block;margin:0 auto;" role="img" aria-label="Living-room conversation circle with a command seat">
+  <rect x="50" y="52" width="460" height="250" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <ellipse cx="280" cy="176" rx="150" ry="104" fill="none" stroke="${C.olive}" stroke-width="1.3" stroke-dasharray="5 5"/>
+  <rect x="176" y="58" width="208" height="34" rx="5" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <rect x="176" y="58" width="208" height="9" fill="${C.olive}"/>
+  <text x="280" y="112" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">the seat you use most, in command</text>
+  <ellipse cx="280" cy="182" rx="46" ry="30" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="280" y="186" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">table</text>
+  <rect x="96" y="150" width="44" height="52" rx="5" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <rect x="96" y="150" width="9" height="52" fill="${C.ink2}"/>
+  <rect x="420" y="150" width="44" height="52" rx="5" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <rect x="455" y="150" width="9" height="52" fill="${C.ink2}"/>
+  <rect x="220" y="246" width="120" height="30" rx="5" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <rect x="220" y="270" width="120" height="6" fill="${C.ink2}"/>
+  <text x="392" y="196" text-anchor="start" font-family="Hanken Grotesk" font-size="9.5" fill="${C.olive}">the circle:</text>
+  <text x="392" y="209" text-anchor="start" font-family="Hanken Grotesk" font-size="9.5" fill="${C.olive}">close to talk,</text>
+  <text x="392" y="222" text-anchor="start" font-family="Hanken Grotesk" font-size="9.5" fill="${C.olive}">open to pass</text>
+  <rect x="126" y="298" width="70" height="8" fill="${C.paper}"/>
+  <path d="M 126 302 a 70 70 0 0 1 70 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="161" y="290" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">entry</text>
+</svg>
+<p class="figure-caption">A living room is read as a group of seats: a loose circle close enough to talk and open enough to walk around, with the seat you use most in command.</p>
+</div>`;
+}
+
+// ============================================================
+// House facing vs sitting: the two bearings every compass technique
+// needs. Facing is the open, bright side it presents to the world;
+// sitting is the solid side where its back rests, always 180 degrees
+// opposite. Static. Placed in house-match.md.
+// ============================================================
+export function houseAxisSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" width="420" height="280" style="display:block;margin:0 auto;" role="img" aria-label="A home's facing and sitting bearings">
+  <line x1="240" y1="20" x2="240" y2="300" stroke="${C.hairline}" stroke-width="1.2" stroke-dasharray="4 5"/>
+  <path d="M 160 120 L 240 74 L 320 120 Z" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="168" y="120" width="144" height="110" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="228" y="188" width="24" height="42" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.2"/>
+  <rect x="184" y="140" width="26" height="24" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1"/>
+  <rect x="270" y="140" width="26" height="24" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1"/>
+  <line x1="240" y1="230" x2="240" y2="272" stroke="${C.olive}" stroke-width="3"/>
+  <path d="M 240 282 L 232 268 L 248 268 Z" fill="${C.olive}"/>
+  <text x="240" y="300" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="800" fill="${C.olive}">FACING</text>
+  <text x="240" y="315" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">the open side it presents, bright and yang</text>
+  <circle cx="240" cy="60" r="5" fill="${C.clay}"/>
+  <text x="240" y="42" text-anchor="middle" font-family="Hanken Grotesk" font-size="12.5" font-weight="800" fill="${C.clay}">SITTING</text>
+  <text x="240" y="27" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">the solid side its back rests on, yin</text>
+  <text x="366" y="176" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">always 180</text>
+  <text x="366" y="189" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">degrees apart</text>
+</svg>
+<p class="figure-caption">Every building has two bearings: the facing it presents to the world, bright and open, and the sitting where its back rests. They are always exactly opposite, so find one and you have both.</p>
+</div>`;
+}
+
+// ============================================================
+// Cautious-direction ordinal scale: the four to handle with care,
+// ranked mildest to most cautious, with the current chapter marked.
+// An order of priority, not a danger meter. Reused in huo-hai,
+// wu-gui, liu-sha, jue-ming.
+// ============================================================
+export function cautiousScaleSvg(current: string): string {
+  const q = [
+    { code: "HH", name: "Huo Hai", gloss: "mishap" },
+    { code: "WG", name: "Wu Gui", gloss: "five ghosts" },
+    { code: "LS", name: "Liu Sha", gloss: "six killings" },
+    { code: "JM", name: "Jue Ming", gloss: "total loss" },
+  ];
+  const x0 = 60;
+  const w = 440;
+  const tickX = (i: number) => x0 + (i + 0.5) * (w / 4);
+  const labels = q
+    .map(
+      (e, i) => `<line x1="${tickX(i)}" y1="52" x2="${tickX(i)}" y2="76" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="${tickX(i)}" y="92" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="700" fill="${C.ink}">${e.name}</text>
+  <text x="${tickX(i)}" y="105" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">${e.gloss}</text>`,
+    )
+    .join("\n  ");
+  const idx = q.findIndex((e) => e.code === current);
+  const marker =
+    idx >= 0
+      ? `<circle cx="${tickX(idx)}" cy="64" r="6.5" fill="${C.clay}" stroke="${C.paper}" stroke-width="1.5"/>
+  <line x1="${tickX(idx)}" y1="40" x2="${tickX(idx)}" y2="58" stroke="${C.clay}" stroke-width="1.6"/>
+  <text x="${tickX(idx)}" y="34" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" font-weight="700" fill="${C.clay}">this chapter</text>`
+      : "";
+  return `<div class="figure">
+<svg viewBox="0 0 560 140" xmlns="http://www.w3.org/2000/svg" width="520" height="130" style="display:block;margin:0 auto;" role="img" aria-label="The four cautious directions ranked mildest to most cautious">
+  <defs><linearGradient id="cautiongrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${C.sand}"/><stop offset="1" stop-color="${C.clay}"/></linearGradient></defs>
+  <rect x="${x0}" y="58" width="${w}" height="12" rx="6" fill="url(#cautiongrad)"/>
+  <text x="${x0}" y="124" text-anchor="start" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">mildest</text>
+  <text x="${x0 + w}" y="124" text-anchor="end" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">most cautious</text>
+  ${labels}
+  ${marker}
+</svg>
+<p class="figure-caption">The four directions to handle with care, ranked mildest to most cautious. This is an order of priority for where to spend them, not a danger meter.</p>
+</div>`;
+}
+
+// ============================================================
+// Four gates for a water feature: the ordered checklist a
+// practitioner walks before placing water in the Southeast. It goes
+// in only if it passes all four. Placed in pillar-wealth.md.
+// ============================================================
+export function fourGatesSvg(): string {
+  const gates = [
+    ["1", "The person", "does moving water suit the resident"],
+    ["2", "The building", "the flow curves inward, never out"],
+    ["3", "The time", "rest the water in a bad-star year"],
+    ["4", "The physical", "kept spotless, clear and moving"],
+  ];
+  const panels = gates
+    .map(([n, t, s], i) => {
+      const y = 18 + i * 78;
+      const arrow =
+        i < 3
+          ? `<line x1="240" y1="${y + 58}" x2="240" y2="${y + 74}" stroke="${C.clay}" stroke-width="2"/>
+  <path d="M 240 ${y + 78} L 234 ${y + 68} L 246 ${y + 68} Z" fill="${C.clay}"/>`
+          : "";
+      return `<rect x="110" y="${y}" width="260" height="56" rx="6" fill="${C.paper}" stroke="${C.olive}" stroke-width="1.5"/>
+  <circle cx="138" cy="${y + 28}" r="15" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.4"/>
+  <text x="138" y="${y + 32}" text-anchor="middle" font-family="Hanken Grotesk" font-size="14" font-weight="800" fill="${C.olive}">${n}</text>
+  <text x="166" y="${y + 24}" font-family="Hanken Grotesk" font-size="12" font-weight="800" fill="${C.ink}">${t}</text>
+  <text x="166" y="${y + 40}" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">${s}</text>
+  ${arrow}`;
+    })
+    .join("\n  ");
+  return `<div class="figure">
+<svg viewBox="0 0 480 410" xmlns="http://www.w3.org/2000/svg" width="380" height="325" style="display:block;margin:0 auto;" role="img" aria-label="The four gates before placing a water feature">
+  ${panels}
+  <rect x="70" y="346" width="340" height="46" rx="23" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <text x="240" y="368" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="800" fill="${C.ink}">All four pass: place it.</text>
+  <text x="240" y="384" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">Any gate fails: a clean, clear corner wins.</text>
+</svg>
+<p class="figure-caption">Before any water feature goes into the Southeast, walk the four gates in order. It goes in only if it passes all four, and a clear corner beats a wrong fountain every time.</p>
+</div>`;
+}
+
+// ============================================================
+// Sheng Qi repeats at room scale: the whole-house grid repeats
+// inside every room at the same orientation. Placed in sheng-qi.md.
+// ============================================================
+export function shengQiZoomSvg(): string {
+  const grid = (ox: number, oy: number, s: number, deskCell: boolean) => {
+    let g = "";
+    for (let r = 0; r < 3; r++)
+      for (let c = 0; c < 3; c++) {
+        const isSE = r === 2 && c === 2;
+        const fill = isSE ? C.claySoft : C.paper;
+        g += `<rect x="${ox + c * s}" y="${oy + r * s}" width="${s}" height="${s}" fill="${fill}" stroke="${C.ink2}" stroke-width="1"/>`;
+      }
+    if (deskCell) {
+      const dx = ox + 2 * s;
+      const dy = oy + 2 * s;
+      g += `<rect x="${dx + s * 0.2}" y="${dy + s * 0.28}" width="${s * 0.6}" height="${s * 0.16}" rx="2" fill="${C.sand}" stroke="${C.ink2}" stroke-width="0.8"/><circle cx="${dx + s * 0.5}" cy="${dy + s * 0.6}" r="${s * 0.1}" fill="${C.paper}" stroke="${C.ink}" stroke-width="1"/>`;
+    }
+    return g;
+  };
+  const s = 58;
+  return `<div class="figure">
+<svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" width="520" height="242" style="display:block;margin:0 auto;" role="img" aria-label="The Sheng Qi sector repeats at room scale">
+  <text x="105" y="30" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink2}">your whole home (N up)</text>
+  ${grid(16, 44, s, false)}
+  <rect x="${16 + 2 * s}" y="${44 + 2 * s}" width="${s}" height="${s}" fill="none" stroke="${C.olive}" stroke-width="2.5"/>
+  <text x="${16 + 2.5 * s}" y="${44 + 2.5 * s + 4}" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.olive}">SE</text>
+  <path d="M ${16 + 3 * s + 6} ${44 + 2.5 * s} C 300 130, 320 130, 356 130" fill="none" stroke="${C.ink2}" stroke-width="1.2" stroke-dasharray="3 4"/>
+  <text x="455" y="30" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink2}">one room inside it (N up)</text>
+  ${grid(366, 44, s, true)}
+  <text x="${366 + 2.5 * s}" y="${44 + 2.5 * s - 12}" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.clay}">SE</text>
+</svg>
+<p class="figure-caption">The nine-sector grid repeats inside every room at the same orientation. North in the house is north in the room, so your Sheng Qi corner exists at both scales, even when the whole-house one falls somewhere you cannot use.</p>
+</div>`;
+}
+
+// ============================================================
+// Dining pockets read from the doorway. Placed in room-dining.md.
+// ============================================================
+export function diningPocketsSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" width="500" height="286" style="display:block;margin:0 auto;" role="img" aria-label="Dining room pockets read from the doorway">
+  <rect x="50" y="52" width="460" height="250" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <ellipse cx="280" cy="176" rx="86" ry="52" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <text x="280" y="180" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">the table holds the centre</text>
+  <circle cx="92" cy="90" r="12" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.3"/>
+  <path d="M 92 84 v 12 M 86 90 h 12" stroke="${C.clay}" stroke-width="1.2"/>
+  <text x="82" y="118" text-anchor="start" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">wealth pocket</text>
+  <text x="82" y="131" text-anchor="start" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">a warm lamp, one gold accent</text>
+  <circle cx="462" cy="86" r="8" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.2"/>
+  <circle cx="478" cy="86" r="8" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.2"/>
+  <text x="478" y="116" text-anchor="end" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">relationships pocket</text>
+  <text x="478" y="129" text-anchor="end" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">a matching pair</text>
+  <rect x="50" y="196" width="7" height="54" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <text x="64" y="222" text-anchor="start" font-family="Hanken Grotesk" font-size="9" fill="${C.clay}">window: a slow leak,</text>
+  <text x="64" y="234" text-anchor="start" font-family="Hanken Grotesk" font-size="9" fill="${C.clay}">weight it with curtains + a rug</text>
+  <rect x="252" y="298" width="56" height="8" fill="${C.paper}"/>
+  <line x1="280" y1="298" x2="280" y2="260" stroke="${C.olive}" stroke-width="2.2"/>
+  <path d="M 280 254 L 274 266 L 286 266 Z" fill="${C.olive}"/>
+  <text x="280" y="318" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" font-weight="600" fill="${C.ink2}">stand in the doorway</text>
+</svg>
+<p class="figure-caption">Read the dining room from its doorway: the far-left corner is the wealth pocket, the far-right the relationships pocket, and the table holds the centre. A window in a corner is a slow leak, weighted with heavier curtains and a rug.</p>
+</div>`;
+}
+
+// ============================================================
+// Hallway pause-points: a rushing corridor versus a slowed one.
+// Placed in space-hallway.md.
+// ============================================================
+export function hallwaySvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" width="500" height="268" style="display:block;margin:0 auto;" role="img" aria-label="Hallway rushing versus slowed">
+  <text x="60" y="30" text-anchor="start" font-family="Hanken Grotesk" font-size="11" font-weight="800" fill="${C.clay}">RUSHING</text>
+  <rect x="60" y="40" width="440" height="66" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="490" y="52" width="10" height="42" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1"/>
+  <line x1="80" y1="73" x2="470" y2="73" stroke="${C.clay}" stroke-width="3"/>
+  <path d="M 478 73 L 464 66 L 464 80 Z" fill="${C.clay}"/>
+  <text x="270" y="98" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">bare walls, qi accelerates at a closed door</text>
+  <text x="60" y="150" text-anchor="start" font-family="Hanken Grotesk" font-size="11" font-weight="800" fill="${C.olive}">SLOWED</text>
+  <rect x="60" y="160" width="440" height="112" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="490" y="182" width="10" height="68" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <rect x="78" y="248" width="360" height="16" fill="${C.sand}" stroke="${C.ink2}" stroke-width="0.8"/>
+  <rect x="150" y="172" width="20" height="26" fill="${C.paper}" stroke="${C.olive}" stroke-width="1.2"/>
+  <rect x="300" y="172" width="20" height="26" fill="${C.paper}" stroke="${C.olive}" stroke-width="1.2"/>
+  <rect x="392" y="196" width="26" height="10" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="405" cy="190" r="7" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <path d="M 80 216 q 30 -12 60 0 t 60 0 t 60 0 t 60 0 t 60 0" fill="none" stroke="${C.olive}" stroke-width="2.2"/>
+  <circle cx="140" cy="216" r="3.5" fill="${C.clay}"/><circle cx="260" cy="216" r="3.5" fill="${C.clay}"/><circle cx="380" cy="216" r="3.5" fill="${C.clay}"/>
+  <path d="M 476 216 L 462 209 L 462 223 Z" fill="${C.olive}"/>
+  <text x="270" y="290" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">runner, art at eye level, a plant: the run becomes a gentle walk with pauses</text>
+</svg>
+<p class="figure-caption">A long bare corridor lets qi accelerate toward a closed door. A runner, art at eye level, and a plant partway down turn the same run into a gentle, paused walk.</p>
+</div>`;
+}
+
+// ============================================================
+// Storage allocation: supportive walls for the body, cautious
+// corners for closed storage. Placed in space-storage.md.
+// ============================================================
+export function storageAllocationSvg(): string {
+  const s = 92;
+  const ox = 130;
+  const oy = 40;
+  const sup = new Set(["0,1", "1,0", "1,2", "2,1"]); // edges = supportive (sand)
+  let cells = "";
+  for (let r = 0; r < 3; r++)
+    for (let c = 0; c < 3; c++) {
+      if (r === 1 && c === 1) {
+        cells += `<rect x="${ox + c * s}" y="${oy + r * s}" width="${s}" height="${s}" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1"/><text x="${ox + c * s + s / 2}" y="${oy + r * s + s / 2 + 3}" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">centre, clear</text>`;
+        continue;
+      }
+      const isSup = sup.has(`${r},${c}`);
+      const fill = isSup ? C.sand : C.paper;
+      cells += `<rect x="${ox + c * s}" y="${oy + r * s}" width="${s}" height="${s}" fill="${fill}" stroke="${C.ink2}" stroke-width="1"/>`;
+      const cx = ox + c * s + s / 2;
+      const cy = oy + r * s + s / 2;
+      if (isSup) {
+        cells += `<rect x="${cx - 18}" y="${cy - 12}" width="36" height="20" rx="3" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/><text x="${cx}" y="${cy + 22}" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">body</text>`;
+      } else {
+        cells += `<rect x="${cx - 16}" y="${cy - 14}" width="32" height="26" rx="2" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1"/><line x1="${cx}" y1="${cy - 14}" x2="${cx}" y2="${cy + 12}" stroke="${C.clay}" stroke-width="0.8"/><text x="${cx}" y="${cy + 24}" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">storage</text>`;
+      }
+    }
+  return `<div class="figure">
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" width="500" height="321" style="display:block;margin:0 auto;" role="img" aria-label="Storage allocation across supportive and cautious sectors">
+  ${cells}
+  <rect x="130" y="322" width="14" height="14" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <text x="150" y="333" text-anchor="start" font-family="Hanken Grotesk" font-size="10" fill="${C.ink}">supportive walls: the body (bed, desk, chair)</text>
+  <rect x="130" y="342" width="14" height="14" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1"/>
+  <text x="150" y="353" text-anchor="start" font-family="Hanken Grotesk" font-size="10" fill="${C.ink}">cautious corners: closed storage, contained</text>
+</svg>
+<p class="figure-caption">Give your supportive walls to the body, the bed, the desk, the chair, and hand the cautious corners the wardrobe and the closed boxes. Storage is the useful job the careful directions do best.</p>
+</div>`;
+}
+
+// ============================================================
+// Balcony four-part recipe. Placed in space-balcony.md.
+// ============================================================
+export function balconyRecipeSvg(): string {
+  const items = [
+    ["1", "Water", "one small bowl or self-contained fountain"],
+    ["2", "Stone", "one feature pebble or small statue"],
+    ["3", "Plants", "one or two pots near the rail"],
+    ["4", "A seat", "one you use, with a side surface"],
+  ];
+  const rows = items
+    .map(([n, t, s], i) => {
+      const y = 60 + i * 52;
+      return `<circle cx="316" cy="${y}" r="15" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.4"/><text x="316" y="${y + 4}" text-anchor="middle" font-family="Hanken Grotesk" font-size="13" font-weight="800" fill="${C.olive}">${n}</text><text x="342" y="${y - 3}" font-family="Hanken Grotesk" font-size="12" font-weight="800" fill="${C.ink}">${t}</text><text x="342" y="${y + 13}" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">${s}</text>`;
+    })
+    .join("\n  ");
+  return `<div class="figure">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" width="500" height="268" style="display:block;margin:0 auto;" role="img" aria-label="The balcony four-part garden recipe">
+  <rect x="40" y="46" width="230" height="210" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="40" y1="46" x2="270" y2="46" stroke="${C.hairline}" stroke-width="3"/>
+  <text x="155" y="38" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">open to the sky</text>
+  <rect x="60" y="200" width="60" height="40" rx="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.2"/>
+  <text x="90" y="224" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">seat</text>
+  <circle cx="200" cy="90" r="14" fill="#dbe0ea" stroke="#3a4a6b" stroke-width="1.2"/>
+  <circle cx="235" cy="120" r="9" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.2"/>
+  <circle cx="90" cy="70" r="12" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.2"/>
+  <circle cx="140" cy="66" r="12" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.2"/>
+  ${rows}
+</svg>
+<p class="figure-caption">A balcony is a garden in miniature. It needs only four things: one water element, one stone, a plant or two, and a seat you actually use, with an open view to the sky.</p>
+</div>`;
+}
+
+// ============================================================
+// Garage door-to-door plan. Placed in space-garage.md.
+// ============================================================
+export function garagePlanSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" width="500" height="286" style="display:block;margin:0 auto;" role="img" aria-label="Garage door-to-door path and zoned storage">
+  <rect x="50" y="50" width="460" height="240" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="150" y="110" width="260" height="120" rx="26" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <text x="280" y="174" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">the car</text>
+  <path d="M 100 285 C 100 250, 120 240, 150 240 L 430 240 C 470 240, 470 120, 430 100 L 300 100 C 280 100, 280 70, 300 60" fill="none" stroke="${C.clay}" stroke-width="2.2" stroke-dasharray="6 5"/>
+  <rect x="70" y="285" width="60" height="8" fill="${C.paper}"/>
+  <text x="100" y="308" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="600" fill="${C.ink2}">outer door</text>
+  <rect x="270" y="50" width="60" height="8" fill="${C.paper}"/>
+  <text x="300" y="40" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="600" fill="${C.olive}">door into the home</text>
+  <circle cx="266" cy="66" r="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <circle cx="334" cy="66" r="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <rect x="58" y="60" width="70" height="30" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <text x="93" y="79" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">tools</text>
+  <rect x="432" y="240" width="72" height="44" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <text x="468" y="266" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">seasonal</text>
+  <text x="200" y="270" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.clay}">a clear path, door to door</text>
+</svg>
+<p class="figure-caption">Keep one clear path from the outer door around the car to the door into the home, storage zoned along the walls, and both sides of the inner threshold clean and lit. The garage is a real threshold into the house.</p>
+</div>`;
+}
+
+// ============================================================
+// Bathroom two-storey stacking cross-section. Placed in
+// space-bathroom.md.
+// ============================================================
+export function bathroomStackSvg(): string {
+  const section = (ox: number, title: string, lower: string) =>
+    `<rect x="${ox}" y="44" width="180" height="72" fill="#dbe0ea" stroke="${C.ink2}" stroke-width="1.3"/>
+  <text x="${ox + 90}" y="66" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" font-weight="700" fill="${C.ink}">bathroom above</text>
+  <ellipse cx="${ox + 90}" cy="98" rx="20" ry="8" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1"/>
+  <line x1="${ox}" y1="116" x2="${ox + 180}" y2="116" stroke="${C.ink}" stroke-width="2"/>
+  <rect x="${ox}" y="118" width="180" height="72" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <text x="${ox + 90}" y="170" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" font-weight="700" fill="${C.ink}">${lower}</text>
+  <line x1="${ox + 90}" y1="98" x2="${ox + 90}" y2="150" stroke="${C.clay}" stroke-width="1.8" stroke-dasharray="4 4"/>
+  <circle cx="${ox + 90}" cy="205" r="9" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.3"/>
+  <path d="M ${ox + 90} 200 v 6 M ${ox + 90} 209 v 1" stroke="${C.clay}" stroke-width="1.4"/>
+  <text x="${ox + 90}" y="30" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="800" fill="${C.ink}">${title}</text>`;
+  return `<div class="figure">
+<svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" width="500" height="214" style="display:block;margin:0 auto;" role="img" aria-label="Bathroom stacking cross-sections">
+  ${section(70, "over a bed", "bed below")}
+  ${section(310, "over a stove", "stove below")}
+</svg>
+<p class="figure-caption">The tradition avoids placing a bathroom directly above a bed or a stove, the drain sitting over the head or the hearth. Avoid it where you choose the layout; where you inherit it, keep the bathroom scrupulously contained.</p>
+</div>`;
+}
+
+// ============================================================
+// Fountain inward vs outward. Placed in pillar-career.md.
+// ============================================================
+export function fountainInOutSvg(): string {
+  const water = "#dbe0ea";
+  const wEdge = "#3a4a6b";
+  const room = (ox: number) =>
+    `<rect x="${ox}" y="44" width="200" height="150" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="${ox + 70}" y="188" width="60" height="8" fill="${C.paper}"/>
+  <path d="M ${ox + 70} 192 a 60 60 0 0 1 60 0" fill="none" stroke="${C.ink2}" stroke-width="1"/>
+  <rect x="${ox}" y="80" width="7" height="46" fill="${water}" stroke="${wEdge}" stroke-width="1"/>`;
+  return `<div class="figure">
+<svg viewBox="0 0 560 236" xmlns="http://www.w3.org/2000/svg" width="500" height="211" style="display:block;margin:0 auto;" role="img" aria-label="A fountain flowing inward versus outward">
+  ${room(50)}
+  <circle cx="150" cy="150" r="16" fill="${water}" stroke="${wEdge}" stroke-width="1.5"/>
+  <path d="M 150 138 q 40 -20 44 20" fill="none" stroke="${wEdge}" stroke-width="2.2"/>
+  <path d="M 194 158 L 186 146 L 198 148 Z" fill="${wEdge}"/>
+  <circle cx="118" cy="30" r="11" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <path d="M 113 30 l 3.5 4 l 6.5 -8" fill="none" stroke="${C.olive}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="150" y="222" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">flows in: the path opens</text>
+  ${room(310)}
+  <circle cx="410" cy="150" r="16" fill="${water}" stroke="${wEdge}" stroke-width="1.5"/>
+  <path d="M 410 138 q -40 -30 -96 -30" fill="none" stroke="${wEdge}" stroke-width="2.2"/>
+  <path d="M 314 108 L 326 104 L 322 116 Z" fill="${wEdge}"/>
+  <circle cx="522" cy="30" r="11" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.5"/>
+  <path d="M 517 25 l 10 10 M 527 25 l -10 10" fill="none" stroke="${C.clay}" stroke-width="2" stroke-linecap="round"/>
+  <text x="410" y="222" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">flows out: it drains away</text>
+</svg>
+<p class="figure-caption">Career water must flow toward the room's interior, never out through a door or window. Water aimed outward is read as the path, and the money it stands for, draining away.</p>
+</div>`;
+}
+
+// ============================================================
+// Reading-chair quiet corner. Placed in pillar-knowledge.md.
+// ============================================================
+export function readingChairSvg(fuWei: string): string {
+  return `<div class="figure">
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" width="420" height="263" style="display:block;margin:0 auto;" role="img" aria-label="A quiet reading corner in command">
+  <rect x="60" y="40" width="360" height="230" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="60" y1="40" x2="60" y2="270" stroke="${C.ink}" stroke-width="4"/>
+  <line x1="60" y1="40" x2="420" y2="40" stroke="${C.ink}" stroke-width="4"/>
+  <rect x="86" y="96" width="86" height="92" rx="10" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <rect x="82" y="96" width="12" height="92" fill="${C.olive}"/>
+  <rect x="86" y="86" width="86" height="12" fill="${C.olive}"/>
+  <line x1="176" y1="142" x2="256" y2="142" stroke="${C.olive}" stroke-width="3"/>
+  <path d="M 264 142 L 250 135 L 250 149 Z" fill="${C.olive}"/>
+  <text x="300" y="138" text-anchor="start" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.olive}">face ${fuWei}</text>
+  <text x="300" y="153" text-anchor="start" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">Fu Wei, stillness</text>
+  <rect x="84" y="200" width="26" height="10" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="97" cy="192" r="7" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <text x="97" y="228" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">lamp</text>
+  <rect x="360" y="200" width="40" height="10" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <text x="380" y="226" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">one shelf</text>
+  <text x="240" y="258" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">the chair faces, not the furniture</text>
+</svg>
+<p class="figure-caption">The reading corner: a solid wall behind the chair, an open view in front, a low lamp and one shelf within reach, the seat turned to face ${fuWei}, your anchor direction for stillness and focus.</p>
+</div>`;
+}
+
+// ============================================================
+// Relationship-symmetry bedroom plan. Placed in pillar-relationships.md.
+// ============================================================
+export function relationshipSymmetrySvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" width="500" height="286" style="display:block;margin:0 auto;" role="img" aria-label="A bedroom arranged for symmetry, held equally by two">
+  <rect x="50" y="52" width="460" height="250" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="50" y1="52" x2="510" y2="52" stroke="${C.ink}" stroke-width="4"/>
+  <rect x="210" y="58" width="140" height="160" rx="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <rect x="210" y="58" width="140" height="12" fill="${C.olive}"/>
+  <rect x="224" y="76" width="48" height="20" rx="3" fill="${C.paper}" stroke="${C.olive}" stroke-width="0.8"/>
+  <rect x="288" y="76" width="48" height="20" rx="3" fill="${C.paper}" stroke="${C.olive}" stroke-width="0.8"/>
+  <rect x="178" y="58" width="24" height="30" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="190" cy="52" r="5" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <rect x="358" y="58" width="24" height="30" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="370" cy="52" r="5" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <path d="M 208 190 a 26 26 0 0 0 -26 -26" fill="none" stroke="${C.ink2}" stroke-width="1.1" stroke-dasharray="4 4"/>
+  <path d="M 352 190 a 26 26 0 0 1 26 -26" fill="none" stroke="${C.ink2}" stroke-width="1.1" stroke-dasharray="4 4"/>
+  <text x="280" y="244" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">matched sides, both reachable</text>
+  <rect x="70" y="250" width="70" height="40" rx="3" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="105" y="274" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">wardrobe,</text>
+  <text x="105" y="285" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">half empty</text>
+  <rect x="430" y="120" width="8" height="60" fill="#dbe0ea" stroke="${C.ink2}" stroke-width="0.8"/>
+  <path d="M 428 122 l 12 56 M 440 122 l -12 56" stroke="${C.clay}" stroke-width="1.8"/>
+  <text x="434" y="196" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.clay}">no mirror</text>
+</svg>
+<p class="figure-caption">A shared bedroom is arranged for symmetry, not command: matched (not identical) nightstands and lamps on both sides, both sides reachable, a wardrobe half genuinely empty, and no mirror facing the bed. A space two people hold equally.</p>
+</div>`;
+}
+
+// ============================================================
+// Clear the centre before the edges. Placed in pillar-health.md.
+// ============================================================
+export function clearCentreSvg(): string {
+  const house = (ox: number, blocked: boolean) => {
+    const cx = ox + 110;
+    const cy = 150;
+    const spokes = Array.from({ length: 8 }, (_, i) => {
+      const a = (i * 45 * Math.PI) / 180;
+      const ex = cx + 92 * Math.cos(a);
+      const ey = cy + 92 * Math.sin(a);
+      const mx = cx + 34 * Math.cos(a);
+      const my = cy + 34 * Math.sin(a);
+      return blocked
+        ? `<line x1="${mx.toFixed(0)}" y1="${my.toFixed(0)}" x2="${((mx + ex) / 2).toFixed(0)}" y2="${((my + ey) / 2).toFixed(0)}" stroke="${C.hairline}" stroke-width="1.4"/>`
+        : `<line x1="${mx.toFixed(0)}" y1="${my.toFixed(0)}" x2="${ex.toFixed(0)}" y2="${ey.toFixed(0)}" stroke="${C.olive}" stroke-width="1.6"/>`;
+    }).join("");
+    return `<rect x="${ox + 18}" y="58" width="184" height="184" rx="24" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  ${spokes}
+  <circle cx="${cx}" cy="${cy}" r="30" fill="${blocked ? C.claySoft : C.paper}" stroke="${blocked ? C.clay : C.olive}" stroke-width="1.8"/>
+  <text x="${cx}" y="${cy + 3}" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" font-weight="700" fill="${blocked ? C.clay : C.olive}">${blocked ? "blocked" : "clear"}</text>
+  <text x="${cx}" y="262" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="800" fill="${blocked ? C.clay : C.olive}">${blocked ? "a stagnant heart drags on all eight" : "a clear centre feeds all eight"}</text>`;
+  };
+  return `<div class="figure">
+<svg viewBox="0 0 560 288" xmlns="http://www.w3.org/2000/svg" width="500" height="257" style="display:block;margin:0 auto;" role="img" aria-label="Clear the centre before the edges">
+  ${house(40, true)}
+  ${house(300, false)}
+</svg>
+<p class="figure-caption">The centre, the Tai Chi point, feeds every edge of the home. A cluttered centre drags on all eight areas at once, so the tradition clears the middle first and only then fusses the edges.</p>
+</div>`;
+}
+
+// ============================================================
+// South and Fire, the three element relationships. pillar-fame.md.
+// ============================================================
+export function southFireSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" width="500" height="250" style="display:block;margin:0 auto;" role="img" aria-label="South and Fire element relationships">
+  <line x1="150" y1="140" x2="228" y2="140" stroke="${C.olive}" stroke-width="2.2"/>
+  <path d="M 236 140 L 222 133 L 222 147 Z" fill="${C.olive}"/>
+  <line x1="332" y1="140" x2="410" y2="140" stroke="${C.clay}" stroke-width="2.2"/>
+  <path d="M 418 140 L 404 133 L 404 147 Z" fill="${C.clay}"/>
+  <circle cx="90" cy="140" r="44" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="2"/>
+  <text x="90" y="136" text-anchor="middle" font-family="Hanken Grotesk" font-size="14" font-weight="800" fill="${C.ink}">Wood</text>
+  <text x="90" y="152" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">lamp, plant, one red</text>
+  <circle cx="280" cy="140" r="48" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="2.5"/>
+  <text x="280" y="134" text-anchor="middle" font-family="Hanken Grotesk" font-size="15" font-weight="800" fill="${C.ink}">SOUTH</text>
+  <text x="280" y="150" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.clay}">Fire</text>
+  <circle cx="470" cy="140" r="44" fill="#efe6cf" stroke="#b08a3e" stroke-width="2"/>
+  <text x="470" y="136" text-anchor="middle" font-family="Hanken Grotesk" font-size="14" font-weight="800" fill="${C.ink}">Earth</text>
+  <text x="470" y="152" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">ceramics, cool rug</text>
+  <text x="190" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.olive}">feeds a dim South</text>
+  <text x="374" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.clay}">cools a hot South</text>
+  <circle cx="280" cy="238" r="16" fill="#ecebe5" stroke="#8a8577" stroke-width="1.5"/>
+  <text x="280" y="242" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">Metal</text>
+  <line x1="264" y1="222" x2="296" y2="254" stroke="${C.clay}" stroke-width="1.8"/>
+  <text x="360" y="242" text-anchor="start" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">no metal wind chimes here</text>
+</svg>
+<p class="figure-caption">South is Fire. Feed a dim recognition corner with Wood (a lamp, a plant, one red accent); cool an overheated one with Earth (ceramics, clay tones, a cool rug). Keep hard Metal out, it clashes with Fire.</p>
+</div>`;
+}
+
+// ============================================================
+// Yan Nian shared table, two-seat convergence. yan-nian.md.
+// ============================================================
+export function yanNianTableSvg(dir: string): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" width="500" height="250" style="display:block;margin:0 auto;" role="img" aria-label="Two seats converging at a shared table">
+  <ellipse cx="200" cy="150" rx="96" ry="70" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.4"/>
+  <circle cx="120" cy="120" r="18" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.5"/>
+  <path d="M 100 142 a 20 20 0 0 1 40 0" fill="none" stroke="${C.ink2}" stroke-width="1.3"/>
+  <circle cx="200" cy="92" r="18" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.5"/>
+  <path d="M 180 90 a 20 20 0 0 1 40 0" fill="none" stroke="${C.ink2}" stroke-width="1.3"/>
+  <circle cx="184" cy="150" r="7" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="216" cy="150" r="7" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1"/>
+  <line x1="132" y1="132" x2="176" y2="120" stroke="${C.clay}" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <line x1="200" y1="112" x2="200" y2="132" stroke="${C.clay}" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <text x="200" y="238" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.clay}">both open toward ${dir}</text>
+  <line x1="360" y1="150" x2="360" y2="70" stroke="${C.hairline}" stroke-width="1" stroke-dasharray="3 4"/>
+  <rect x="410" y="120" width="90" height="18" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="455" cy="170" r="16" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.4"/>
+  <path d="M 437 190 a 18 18 0 0 1 36 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <line x1="455" y1="154" x2="455" y2="142" stroke="${C.clay}" stroke-width="1.8"/>
+  <path d="M 455 136 L 449 148 L 461 148 Z" fill="${C.clay}"/>
+  <text x="455" y="222" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">solo: the long-call chair,</text>
+  <text x="455" y="234" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">same direction</text>
+</svg>
+<p class="figure-caption">Yan Nian is the direction of steady connection. Seat two people on adjacent sides of a shared table, each opening loosely toward ${dir}, or, alone, take the one good chair that faces the same way for the calls that matter.</p>
+</div>`;
+}
+
+// ============================================================
+// Fire at Heaven's Gate corner and step-down. pillar-helpful-people.md.
+// ============================================================
+export function heavensGateSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" width="500" height="268" style="display:block;margin:0 auto;" role="img" aria-label="Fire at Heaven's Gate with an earth buffer and step-down">
+  <rect x="60" y="30" width="200" height="150" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="60" y1="30" x2="60" y2="180" stroke="${C.ink}" stroke-width="4"/>
+  <line x1="60" y1="30" x2="260" y2="30" stroke="${C.ink}" stroke-width="4"/>
+  <text x="86" y="24" text-anchor="start" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.ink2}">NW: Heaven's Gate</text>
+  <rect x="150" y="120" width="60" height="40" rx="4" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.5"/>
+  <path d="M 180 128 q 6 6 0 12 q -6 -6 0 -12 Z" fill="${C.clay}"/>
+  <text x="180" y="176" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">hob (fire)</text>
+  <rect x="96" y="70" width="34" height="30" rx="4" fill="#efe6cf" stroke="#b08a3e" stroke-width="1.4"/>
+  <text x="113" y="112" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="#b08a3e">earth buffer</text>
+  <text x="340" y="60" text-anchor="start" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">earth steps the heat down</text>
+  <circle cx="330" cy="130" r="26" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.6"/>
+  <text x="330" y="134" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">Fire</text>
+  <line x1="358" y1="130" x2="392" y2="130" stroke="${C.ink2}" stroke-width="2"/>
+  <path d="M 400 130 L 386 123 L 386 137 Z" fill="${C.ink2}"/>
+  <circle cx="428" cy="130" r="26" fill="#efe6cf" stroke="#b08a3e" stroke-width="1.6"/>
+  <text x="428" y="134" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">Earth</text>
+  <line x1="456" y1="130" x2="490" y2="130" stroke="${C.ink2}" stroke-width="2"/>
+  <path d="M 498 130 L 484 123 L 484 137 Z" fill="${C.ink2}"/>
+  <circle cx="526" cy="130" r="26" fill="#ecebe5" stroke="#8a8577" stroke-width="1.6"/>
+  <text x="526" y="134" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">Metal</text>
+  <text x="428" y="188" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">toward the corner's own metal, not straight at it</text>
+</svg>
+<p class="figure-caption">A stove or strong heat at the Northwest, the corner the tradition calls Heaven's Gate, is softened with an earth-element buffer between the fire and the corner, so the heat steps down through earth toward the corner's own metal instead of burning straight at it.</p>
+</div>`;
+}
+
+// ============================================================
+// Compatibility: two inverted compass rings. compatibility.md.
+// ============================================================
+export function compatibilityRingsSvg(): string {
+  const wedge = (cx: number, cy: number, r: number, i: number, fav: boolean) => {
+    const a0 = ((-90 + i * 45 - 22.5) * Math.PI) / 180;
+    const a1 = ((-90 + i * 45 + 22.5) * Math.PI) / 180;
+    const x0 = cx + r * Math.cos(a0);
+    const y0 = cy + r * Math.sin(a0);
+    const x1 = cx + r * Math.cos(a1);
+    const y1 = cy + r * Math.sin(a1);
+    return `<path d="M ${cx} ${cy} L ${x0.toFixed(1)} ${y0.toFixed(1)} A ${r} ${r} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)} Z" fill="${fav ? C.oliveSoft : C.claySoft}" stroke="${C.paper}" stroke-width="1.5"/>`;
+  };
+  const labels = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+  const eastFav = new Set([0, 2, 3, 4]);
+  const ring = (cx: number, cy: number, invert: boolean) => {
+    let g = "";
+    for (let i = 0; i < 8; i++) {
+      const fav = invert ? !eastFav.has(i) : eastFav.has(i);
+      g += wedge(cx, cy, 82, i, fav);
+    }
+    for (let i = 0; i < 8; i++) {
+      const a = ((-90 + i * 45) * Math.PI) / 180;
+      g += `<text x="${(cx + 60 * Math.cos(a)).toFixed(1)}" y="${(cy + 60 * Math.sin(a) + 3).toFixed(1)}" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">${labels[i]}</text>`;
+    }
+    return g;
+  };
+  return `<div class="figure">
+<svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" width="500" height="223" style="display:block;margin:0 auto;" role="img" aria-label="East and West group compass rings, mirror images">
+  <text x="150" y="26" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="800" fill="${C.ink}">your group</text>
+  ${ring(150, 122, false)}
+  <text x="410" y="26" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="800" fill="${C.ink}">the other group</text>
+  ${ring(410, 122, true)}
+  <rect x="150" y="228" width="14" height="14" fill="${C.oliveSoft}" stroke="${C.ink2}" stroke-width="0.8"/>
+  <text x="170" y="239" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">supportive</text>
+  <rect x="290" y="228" width="14" height="14" fill="${C.claySoft}" stroke="${C.ink2}" stroke-width="0.8"/>
+  <text x="310" y="239" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">handle with care</text>
+</svg>
+<p class="figure-caption">The two groups tile the whole compass between them. A same-group partner shares your supportive directions; an other-group partner holds their mirror image, so their good walls are your careful ones.</p>
+</div>`;
+}
+
+// ============================================================
+// Studio and open-plan wedges. faq-hard-cases.md.
+// ============================================================
+export function studioWedgesSvg(): string {
+  const cx = 210;
+  const cy = 176;
+  const spokes = Array.from({ length: 8 }, (_, i) => {
+    const a = ((-90 + i * 45 + 22.5) * Math.PI) / 180;
+    return `<line x1="${cx}" y1="${cy}" x2="${(cx + 150 * Math.cos(a)).toFixed(0)}" y2="${(cy + 150 * Math.sin(a)).toFixed(0)}" stroke="${C.hairline}" stroke-width="1"/>`;
+  }).join("");
+  return `<div class="figure">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" width="500" height="286" style="display:block;margin:0 auto;" role="img" aria-label="Reading one open-plan room from its centre">
+  <rect x="50" y="52" width="320" height="250" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  ${spokes}
+  <circle cx="${cx}" cy="${cy}" r="6" fill="${C.ink}"/>
+  <text x="${cx}" y="${cy + 22}" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">stand here once</text>
+  <rect x="120" y="66" width="90" height="30" rx="3" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.3"/>
+  <text x="165" y="86" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">bed (best wall)</text>
+  <rect x="278" y="130" width="70" height="20" rx="3" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.3"/>
+  <text x="313" y="144" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">desk</text>
+  <rect x="70" y="255" width="70" height="40" rx="3" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.2"/>
+  <text x="105" y="279" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">wardrobe,</text>
+  <text x="105" y="290" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">laundry</text>
+  <text x="450" y="150" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.olive}">sage wedges:</text>
+  <text x="450" y="164" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">the body</text>
+  <text x="450" y="188" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.clay}">peach wedges:</text>
+  <text x="450" y="202" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">storage</text>
+</svg>
+<p class="figure-caption">Read one undivided room from its centre once, and place functions into wedges: the bed on your best wall, the desk in a favourable wedge, the wardrobe and laundry parked in the cautious ones.</p>
+</div>`;
+}
+
+// ============================================================
+// Year overlay: the Lo Shu nine-number key. year-overlay.md.
+// ============================================================
+export function yearOverlaySvg(): string {
+  const grid = [
+    [4, 9, 2],
+    [3, 5, 7],
+    [8, 1, 6],
+  ];
+  const label: Record<number, string> = { 1: "career", 2: "illness", 3: "conflict", 4: "study", 5: "chaos", 6: "helpers", 7: "loss", 8: "prosperity", 9: "celebration" };
+  const s = 96;
+  const ox = 136;
+  const oy = 30;
+  let cells = "";
+  for (let r = 0; r < 3; r++)
+    for (let c = 0; c < 3; c++) {
+      const n = grid[r][c];
+      const good = n === 8 || n === 9;
+      const bad = n === 2 || n === 5;
+      const fill = good ? C.oliveSoft : bad ? C.claySoft : C.paper;
+      const x = ox + c * s;
+      const y = oy + r * s;
+      cells += `<rect x="${x}" y="${y}" width="${s}" height="${s}" fill="${fill}" stroke="${C.ink2}" stroke-width="1"/><text x="${x + s / 2}" y="${y + s / 2 - 2}" text-anchor="middle" font-family="Hanken Grotesk" font-size="26" font-weight="800" fill="${C.ink}">${n}</text><text x="${x + s / 2}" y="${y + s / 2 + 20}" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">${label[n]}</text>`;
+    }
+  return `<div class="figure">
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" width="440" height="283" style="display:block;margin:0 auto;" role="img" aria-label="The Lo Shu nine-number key">
+  ${cells}
+  <rect x="136" y="326" width="14" height="14" fill="${C.oliveSoft}" stroke="${C.ink2}" stroke-width="0.8"/>
+  <text x="156" y="337" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">steady friends, 8 and 9</text>
+  <rect x="320" y="326" width="14" height="14" fill="${C.claySoft}" stroke="${C.ink2}" stroke-width="0.8"/>
+  <text x="340" y="337" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">cautions, 2 and 5</text>
+</svg>
+<p class="figure-caption">Each of the nine visiting numbers keeps its meaning every year while its position turns. The two you watch are 5 and 2; the two you welcome are 8 and 9. Where they sit this year lives in the Planner.</p>
+</div>`;
+}
+
+// ============================================================
+// Laundry cycle loop. space-laundry.md.
+// ============================================================
+export function laundryLoopSvg(): string {
+  const nodes = [
+    ["In", "basket"],
+    ["Washed", "drum"],
+    ["Dried", "rail"],
+    ["Folded", "stack"],
+    ["Away", "drawer"],
+  ];
+  const cx = 210;
+  const cy = 200;
+  const R = 130;
+  const pos = nodes.map((_, i) => {
+    const a = ((-90 + i * 72) * Math.PI) / 180;
+    return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a) };
+  });
+  const arrows = pos
+    .map((p, i) => {
+      const q = pos[(i + 1) % 5];
+      const dx = q.x - p.x;
+      const dy = q.y - p.y;
+      const len = Math.hypot(dx, dy);
+      const ux = dx / len;
+      const uy = dy / len;
+      const sx = p.x + ux * 42;
+      const sy = p.y + uy * 42;
+      const ex = q.x - ux * 42;
+      const ey = q.y - uy * 42;
+      const stall = i === 3;
+      return `<line x1="${sx.toFixed(1)}" y1="${sy.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${ey.toFixed(1)}" stroke="${stall ? C.clay : C.clay}" stroke-width="2.2"${stall ? ' stroke-dasharray="5 4"' : ""}/>
+  <path d="M ${ex.toFixed(1)} ${ey.toFixed(1)} L ${(ex - ux * 10 + -uy * 5).toFixed(1)} ${(ey - uy * 10 + ux * 5).toFixed(1)} L ${(ex - ux * 10 - -uy * 5).toFixed(1)} ${(ey - uy * 10 - ux * 5).toFixed(1)} Z" fill="${C.clay}"/>${stall ? `<text x="${((p.x + q.x) / 2 + 30).toFixed(0)}" y="${((p.y + q.y) / 2).toFixed(0)}" font-family="Hanken Grotesk" font-size="8.5" fill="${C.clay}">pile forms here</text>` : ""}`;
+    })
+    .join("\n  ");
+  const circles = nodes
+    .map(
+      (n, i) => `<circle cx="${pos[i].x.toFixed(1)}" cy="${pos[i].y.toFixed(1)}" r="38" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.6"/>
+  <text x="${pos[i].x.toFixed(1)}" y="${(pos[i].y - 2).toFixed(1)}" text-anchor="middle" font-family="Hanken Grotesk" font-size="12" font-weight="800" fill="${C.ink}">${n[0]}</text>
+  <text x="${pos[i].x.toFixed(1)}" y="${(pos[i].y + 12).toFixed(1)}" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">${n[1]}</text>`,
+    )
+    .join("\n  ");
+  return `<div class="figure">
+<svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" width="380" height="326" style="display:block;margin:0 auto;" role="img" aria-label="The laundry cycle as a loop">
+  ${arrows}
+  ${circles}
+</svg>
+<p class="figure-caption">A laundry is a loop: in, washed, dried, folded, away. The pile that reads as a stalled corner forms at one point only, between folded and away. A laundry that keeps moving is a laundry at rest.</p>
+</div>`;
+}
+
+// ============================================================
+// Room-shape typology, five verdicts. room-bedroom.md.
+// ============================================================
+export function roomShapeSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg" width="520" height="149" style="display:block;margin:0 auto;" role="img" aria-label="Five room shapes and their verdicts">
+  <rect x="20" y="24" width="90" height="70" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <text x="65" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="800" fill="${C.ink}">square</text>
+  <text x="65" y="132" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.olive}">circulates evenly</text>
+  <circle cx="175" cy="59" r="35" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.5"/>
+  <text x="175" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="800" fill="${C.ink}">round</text>
+  <text x="175" y="132" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.clay}">no backing, weak</text>
+  <path d="M 250 30 L 330 24 L 330 94 L 250 88 Z" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <text x="290" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="800" fill="${C.ink}">trapezium</text>
+  <text x="290" y="132" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">bed on parallel walls</text>
+  <path d="M 355 24 L 415 24 L 415 60 L 445 60 L 445 94 L 355 94 Z" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <rect x="418" y="63" width="24" height="28" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="400" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="800" fill="${C.ink}">L-shape</text>
+  <text x="400" y="132" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.olive}">fill the notch</text>
+  <path d="M 470 24 L 540 24 L 540 48 L 560 48 L 500 48 L 500 94 L 490 94 L 490 48 L 470 48 Z" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <circle cx="500" cy="48" r="4" fill="${C.clay}"/>
+  <text x="512" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="800" fill="${C.ink}">T-shape</text>
+  <text x="512" y="132" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.clay}">watch the inner corner</text>
+</svg>
+<p class="figure-caption">The room's own shape carries a verdict: a square or rectangle circulates evenly, a round room gives no backing, a trapezium wants the bed along its parallel walls, an L becomes a rectangle again once the notch is filled, and a T flags its inner projecting corner.</p>
+</div>`;
+}
+
+// ============================================================
+// Three-reading field protocol. find-your-directions.md.
+// ============================================================
+export function threeReadingProtocolSvg(): string {
+  const dial = (x: number, deg: number, off: boolean) => {
+    const a = ((deg - 90) * Math.PI) / 180;
+    return `<circle cx="${x}" cy="150" r="26" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <line x1="${x}" y1="150" x2="${(x + 20 * Math.cos(a)).toFixed(1)}" y2="${(150 + 20 * Math.sin(a)).toFixed(1)}" stroke="${off ? C.clay : C.olive}" stroke-width="2.2"/>
+  <path d="M ${(x + 26 * Math.cos(a)).toFixed(1)} ${(150 + 26 * Math.sin(a)).toFixed(1)} l -6 -3 l 2 7 Z" fill="${off ? C.clay : C.olive}"/>
+  <text x="${x}" y="196" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${off ? C.clay : C.ink2}">${off ? "nudged off" : "agrees"}</text>`;
+  };
+  return `<div class="figure">
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" width="440" height="220" style="display:block;margin:0 auto;" role="img" aria-label="The three-reading field protocol">
+  <line x1="40" y1="60" x2="440" y2="60" stroke="${C.ink}" stroke-width="4"/>
+  <rect x="250" y="52" width="24" height="8" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="0.8"/>
+  <text x="262" y="44" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.clay}">a pipe in the wall</text>
+  <line x1="90" y1="66" x2="90" y2="124" stroke="${C.hairline}" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="240" y1="66" x2="240" y2="124" stroke="${C.hairline}" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="390" y1="66" x2="390" y2="124" stroke="${C.hairline}" stroke-width="1" stroke-dasharray="3 3"/>
+  ${dial(90, 12, false)}
+  ${dial(240, 40, true)}
+  ${dial(390, 12, false)}
+  <text x="240" y="228" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">two agree, one off: use the centre reading</text>
+</svg>
+<p class="figure-caption">Take the bearing three times, at the left, centre, and right of the wall, the same short distance out. If all three agree, any serves. If one is nudged off by metal in the wall, the two that agree win, and the centre reading is your tie-breaker.</p>
+</div>`;
+}
+
+// ============================================================
+// Jue Ming cannot-avoid-it bedroom protocol. jue-ming.md.
+// ============================================================
+export function jueMingProtocolSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" width="500" height="286" style="display:block;margin:0 auto;" role="img" aria-label="Softening a bed on a Jue Ming wall">
+  <rect x="50" y="52" width="460" height="250" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="50" y="52" width="460" height="10" fill="${C.claySoft}"/>
+  <text x="280" y="46" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.clay}">the Jue Ming wall (no better option)</text>
+  <rect x="210" y="66" width="140" height="150" rx="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <rect x="204" y="62" width="152" height="16" fill="${C.ink}"/>
+  <text x="280" y="74" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.paper}">solid, weighted headboard</text>
+  <rect x="220" y="44" width="120" height="12" fill="none" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 2"/>
+  <path d="M 224 46 h 112 M 224 50 h 112 M 224 54 h 112" stroke="${C.hairline}" stroke-width="0.8"/>
+  <text x="392" y="70" text-anchor="start" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">weight on the wall</text>
+  <rect x="120" y="150" width="10" height="90" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="100" y="260" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">a screen breaks</text>
+  <text x="100" y="271" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">the sightline</text>
+  <rect x="410" y="230" width="70" height="20" rx="3" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.3"/>
+  <circle cx="445" cy="270" r="12" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.4"/>
+  <text x="445" y="292" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.olive}">win the desk instead</text>
+</svg>
+<p class="figure-caption">When the layout forces the headboard onto your Jue Ming wall, three softeners answer: a solid weighted headboard, real weight hung on the wall behind, and a screen breaking the diagonal sightline, and you win the desk by facing its chair to a favourable wall.</p>
+</div>`;
+}
+
+// ============================================================
+// January year-boundary timeline. faq-hard-cases.md.
+// ============================================================
+export function januaryTimelineSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" width="500" height="179" style="display:block;margin:0 auto;" role="img" aria-label="The January year-boundary window">
+  <line x1="40" y1="90" x2="520" y2="90" stroke="${C.ink2}" stroke-width="2"/>
+  <text x="40" y="118" text-anchor="start" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">Jan 1</text>
+  <text x="520" y="118" text-anchor="end" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">Feb 28</text>
+  <rect x="250" y="82" width="110" height="16" fill="${C.claySoft}"/>
+  <line x1="250" y1="72" x2="250" y2="108" stroke="${C.clay}" stroke-width="2"/>
+  <text x="250" y="66" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.clay}">Chinese New Year</text>
+  <text x="250" y="126" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">(moves, late Jan to mid Feb)</text>
+  <line x1="360" y1="72" x2="360" y2="108" stroke="${C.olive}" stroke-width="2"/>
+  <text x="360" y="66" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.olive}">Li Chun</text>
+  <text x="360" y="126" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">(fixed, ~Feb 4)</text>
+  <circle cx="170" cy="90" r="5" fill="${C.ink}"/>
+  <text x="170" y="150" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.ink}">28 Jan 1990</text>
+  <text x="170" y="164" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">before both, so it counts as 1989</text>
+</svg>
+<p class="figure-caption">The Chinese year turns at the Chinese New Year for most lineages, and at Li Chun (about 4 February) for some, so a late-January or early-February birthday can read two ways. Born before both dates, like 28 January 1990, you belong to the previous year either way.</p>
+</div>`;
+}
+
+// ============================================================
+// Desk clinic: four common working-seat faults and their fixes.
+// 2x2 grid. Placed in room-desk.md.
+// ============================================================
+export function deskClinicSvg(): string {
+  const cell = (ox: number, oy: number, fault: string, fix: string, icon: string) =>
+    `<rect x="${ox}" y="${oy}" width="256" height="106" rx="6" fill="${C.paper}" stroke="${C.hairline}" stroke-width="1.2"/>
+  ${icon}
+  <text x="${ox + 92}" y="${oy + 30}" font-family="Hanken Grotesk" font-size="10.5" font-weight="800" fill="${C.clay}">${fault}</text>
+  <text x="${ox + 92}" y="${oy + 52}" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">fix:</text>
+  <text x="${ox + 112}" y="${oy + 52}" font-family="Hanken Grotesk" font-size="9.5" font-weight="700" fill="${C.olive}">${fix.split("|")[0]}</text>
+  <text x="${ox + 92}" y="${oy + 68}" font-family="Hanken Grotesk" font-size="9.5" font-weight="700" fill="${C.olive}">${fix.split("|")[1] || ""}</text>`;
+  const deskIcon = (ox: number, oy: number, extra: string) =>
+    `<rect x="${ox + 20}" y="${oy + 28}" width="44" height="12" rx="2" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/><circle cx="${ox + 42}" cy="${oy + 58}" r="9" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.3"/>${extra}`;
+  return `<div class="figure">
+<svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" width="520" height="232" style="display:block;margin:0 auto;" role="img" aria-label="The desk clinic: four faults and their fixes">
+  ${cell(20, 20, "back to a window", "high-backed chair,|a drawn blind", deskIcon(20, 20, `<rect x="36" y="76" width="12" height="6" fill="#dbe0ea" stroke="${C.ink2}" stroke-width="0.8"/>`))}
+  ${cell(288, 20, "mirror behind you", "move the mirror|off the desk line", deskIcon(288, 20, `<rect x="316" y="76" width="14" height="6" fill="#dbe0ea" stroke="${C.clay}" stroke-width="1"/>`))}
+  ${cell(20, 138, "beam or glare above", "task light forward|and to the side", deskIcon(20, 138, `<line x1="42" y1="150" x2="42" y2="158" stroke="${C.clay}" stroke-width="2"/>`))}
+  ${cell(288, 138, "open-plan traffic", "a side screen builds|a solid back", deskIcon(288, 138, `<rect x="356" y="150" width="6" height="40" fill="${C.olive}"/>`))}
+</svg>
+<p class="figure-caption">Four faults account for most working seats, and each has a settled repair: a window at your back, a mirror on the desk line, a beam or glare overhead, or an open-plan thoroughfare behind you.</p>
+</div>`;
 }

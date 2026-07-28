@@ -25,7 +25,9 @@ In the older star vocabulary the tradition gives this direction a name of its ow
 
 ## The wealth extension
 
-One modern practice lineage goes a step further with this direction and treats Sheng Qi as your **personal wealth direction**, extending it from where you face into how you move through the home. Three applications, in rising order of commitment:
+One modern practice lineage goes a step further with this direction and treats Sheng Qi as your **personal wealth direction**, extending it from where you face into how you move through the home. {{shengQiZoom}}
+
+Three applications, in rising order of commitment:
 
 - **Enter through it when you can.** If your home has more than one way in, or your route to the door crosses the floor plan, favour the path that passes through your {{direction}} quadrant.
 - **Enter your working room through it.** Same idea one scale down: where the room has two approaches, take the one through the room's own {{direction}} portion.

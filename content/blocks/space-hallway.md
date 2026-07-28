@@ -1,6 +1,8 @@
-# Your hallways, {{firstName}}
+# Your hallways
 
 A hallway is not a room you live in. It is the space between rooms, the connective tissue the rest of the home hangs on. Nobody sits in a corridor for an evening. But you pass through it many times a day, and the tradition treats that passage as worth getting right, because a hallway is the path qi takes to reach everywhere else.
+{{hallwayPlan}}
+
 
 ## A pass-through space, by design
 

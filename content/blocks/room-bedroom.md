@@ -1,6 +1,8 @@
-# Your bedroom, {{firstName}}
+# Your bedroom
 
 The bedroom is the room where the body spends the most time with its guard down. Roughly a third of your life happens here, defences low, the same room doing its work on you night after night without resistance. That is why the tradition reads the bedroom carefully, and why the one move it weights most is simple: which wall your headboard sits against.
+{{roomShape}}
+
 
 ## The rule of the headboard
 
@@ -25,6 +27,8 @@ If the bedroom is shared, there is a third good wall worth knowing. **{{yanNianD
 ## Reading the room from the door inward
 
 Stand in the doorway and read the room the way qi enters it: from the door, inward. Note where the door is, where the window is, where the solid interior walls run. The headboard wants a solid wall behind it, the door wants to be visible from the pillow without sitting up, and the bed wants to sit off the door's direct line rather than square in its path. Once you know which walls are solid and which carry your good directions, the headboard usually has only one or two sensible homes.
+
+{{bedroomLayout}}
 
 ## Keep the cautious corners for storage
 

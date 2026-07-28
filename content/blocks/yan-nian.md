@@ -1,6 +1,8 @@
 # Your Yan Nian direction is {{direction}}
 
 Yan Nian is your *relationship* direction, the one the tradition assigns to the parts of life that need to **last**. For you, {{firstName}}, it points **{{direction}}**.
+{{yanNianTable}}
+
 
 To know what that quality is meant to feel like, picture a room doing the work well. It is nearly midnight and two people who love each other are still at the kitchen island. The dishes are stacked. Two coffee cups sit between them, one long cold. Somebody's phone buzzed twenty minutes ago and neither of them got up. They are not solving anything. They are inside the quiet between two people who do not need to fill the silence, and the room is letting them stay there.
 
