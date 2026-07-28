@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Storefront from "@/components/Storefront";
+import ReadingDepthMatrix from "@/components/ReadingDepthMatrix";
 import { TrustRow, GuaranteeNote } from "@/components/TrustRow";
 
 export const metadata: Metadata = {
@@ -48,6 +49,8 @@ export default async function ProductsPage(props: {
         ) : null}
         <TrustRow className="products-shelf-trust" />
       </section>
+
+      <ReadingDepthMatrix />
 
       <Storefront />
 
