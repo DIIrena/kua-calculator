@@ -8405,6 +8405,30 @@ a:hover { color: var(--clay-deep); }
   }
 }
 
+/* Product-page sample diagrams (bagua grid, four-pillars, money channel).
+   A centred figure in a soft card, matching the book's line-art. */
+.product-sample-figure {
+  margin: 1.5rem auto 0.5rem;
+  max-width: 30rem;
+  padding: 1.25rem 1.25rem 0.5rem;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.product-sample-figure svg {
+  max-width: 100%;
+}
+
+.product-sample-caption {
+  margin: 0.9rem 0 0;
+  color: var(--ink-2);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
 @media (max-width: 30rem) {
   .matrix-table th,
   .matrix-table td {

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import BuyButton, { type BuyButtonState } from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
@@ -42,6 +43,9 @@ export type LandingConfig = {
   steps: { title: string; body: string }[];
   /** What's inside bullets. */
   inside: string[];
+  /** Optional line-art sample rendered below the inside list, previewing the
+   *  product's key deliverable (e.g. the money-channel plan). */
+  insideSample?: ReactNode;
   forWho: string[];
   notForWho: string[];
   faq: { q: string; a: string }[];
@@ -274,6 +278,7 @@ export default function ProductLanding({
             <li key={b.slice(0, 24)}>{autolinkProducts(b, c.slug)}</li>
           ))}
         </ul>
+        {c.insideSample ?? null}
       </section>
 
       {/* 7. Who it's for / not for */}

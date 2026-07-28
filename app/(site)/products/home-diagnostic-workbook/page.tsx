@@ -3,6 +3,7 @@ import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
+import { BaguaGridSample } from "@/components/ProductSampleDiagrams";
 
 export const metadata: Metadata = {
   title: "10-Step Home Diagnostic Workbook | My Feng Shui Home",
@@ -86,6 +87,7 @@ export default async function DiagnosticWorkbookPage(props: {
             Preference throughout, the same labelling the guide uses.
           </li>
         </ul>
+        <BaguaGridSample />
       </section>
 
       <section className="product-section">

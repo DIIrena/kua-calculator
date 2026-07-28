@@ -3,6 +3,7 @@ import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
+import { FourPillarsSample } from "@/components/ProductSampleDiagrams";
 
 export const metadata: Metadata = {
   title: "BaZi Basics: Read Your Own Chart | My Feng Shui Home",
@@ -81,6 +82,7 @@ export default async function BaziBasicsPage(props: {
             what it is not. A worked example chart read start to finish.
           </li>
         </ul>
+        <FourPillarsSample />
       </section>
 
       <section className="product-section">
