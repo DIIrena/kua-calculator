@@ -1,12 +1,10 @@
 # Visual recharge - diagram plan (2026-07-27, updated 2026-07-28)
 
-The editor-in-chief synthesis of the expert audit. Principle: one visual system, not 44 pictures. Diagrams are inline-SVG line-art in the book's olive / clay / sand style; several are reusable components placed in more than one chapter.
+The editor-in-chief synthesis of the expert audit. Principle: one visual system, not 44 pictures. Diagrams are inline-SVG line-art in the book olive / clay / sand style; several are reusable components placed in more than one chapter.
 
 > The brief is 44 one-off asks; the line needs one visual system, not 44 pictures. I did three things. First, consolidation as restraint: several requests are the same reusable component placed in many chapters, so I collapsed them into single builds with reuse noted (a five-element cycle that serves kua-element, the five-elements workbook and Heaven's Gate; the existing bagua grid that serves the starter deck and the diagnostic workbook; the cautious-direction ordinal scale that orients all four cautious chapters; the bedroom and desk command plans that double as product-page sample diagrams). Second, I killed the two genuinely decorative items: the bathroom contain-versus-amplify colour swatch (the text already states the rule) and the healthy-home nine-conditions ring (a completeness ring with vague icons). Third, ranking by real impact. Buildables lead the plan because the olive/clay/sand line diagrams do the comprehension and trust work that protects against refunds and justifies paid personalisation; the single revenue exception sits at the very top, the shop reading-depth comparison matrix, which anchors the $49 flagship and lifts average order value at the point of choice. Photos are ranked by funnel position, not prettiness: the shop hero, the free Good-Days page, the broken-looking bundle card and the high-emotion bedroom come first; the remaining product-page heroes all follow one quiet-luxury recipe and mainly exist to give text-only pages a hero and an OG image, so they cluster at medium. Every photo keeps its three prompts intact and on the owner's ivory, pool-table green and terracotta direction.
 
-**Built and shipped so far (9):** five-element cycle (kua-element), kitchen work-triangle (kitchen), bedroom command position (bedroom), entrance layout (entrance), three-ways-to-read-a-direction triptych (how-to-use), command position good/poor (before-the-compass), desk command plan (room-desk), living-room conversation circle (living-room), house facing/sitting axis (house-match). Marked [BUILT] below.
-
-**Not yet built (the roadmap):** the remaining items below, plus the one web asset the audit ranked top for revenue, the reading-depth comparison matrix on the shop /products page (a React/HTML build, not a PDF diagram).
+**Status: 34 of 38 built and shipped.** All PDF-book diagrams are done. The four not built are web components (they live on shop / product sales pages, not in the PDFs): the shop reading-depth comparison matrix (top revenue asset), and three product-page sample diagrams (bagua grid for the starter deck and diagnostic workbook, four-pillars skeleton for BaZi basics, money channel for the business kit). Items marked [BUILT] below.
 
 ---
 
@@ -36,7 +34,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** Resolves the single ambiguity that silently breaks the method for beginners, whether your direction means where the head points, the body faces or the door opens. Settling it at a glance makes every later placement sentence land correctly, which is the difference between a guide people act on and one they misapply, and it directly protects against confused refunds.
 
-### Sheng Qi repeats at room scale
+### Sheng Qi repeats at room scale **[BUILT]**
 
 **Where:** content/blocks/sheng-qi.md (The wealth extension)
 
@@ -84,7 +82,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** Facing and sitting is a brand-new spatial concept readers conflate with the front door. One annotated plan makes the 180-degree axis and the East/West sitting sectors obvious, turning the worksheet from a leap of faith into a lookup, which is what delivers the read-it-from-the-pavement house-hunting tool the practitioner tip promises.
 
-### Four gates for a water feature
+### Four gates for a water feature **[BUILT]**
 
 **Where:** pillar-wealth.md (walk the four gates)
 
@@ -94,7 +92,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 ## Medium priority
 
-### Dining pockets read from the doorway
+### Dining pockets read from the doorway **[BUILT]**
 
 **Where:** room-dining.md (read the room's own corners)
 
@@ -110,7 +108,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The front-door-to-back-door straight-through is the most mis-pictured idea in the chapter, and readers cannot tell whether their own layout has the fault until they see the sightline drawn. A before/after turns an abstract warning into a self-diagnosis they can run in seconds, which is exactly the fifteen-minute high-leverage fix the chapter promises.
 
-### South and Fire, the three element relationships
+### South and Fire, the three element relationships **[BUILT]**
 
 **Where:** pillar-fame.md (too dim, or too hot: the element moves)
 
@@ -126,7 +124,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** One component consolidates three separate requests and reuses icons and swatches the site already owns, so it is cheap to build and does heavy comprehension lifting across the line. It makes feeding concrete without turning into a shopping list, matching the chapters' restraint.
 
-### Hallway pause-points along a long run
+### Hallway pause-points along a long run **[BUILT]**
 
 **Where:** space-hallway (a long straight run)
 
@@ -134,7 +132,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The cure is rhythmic, a resting point every couple of metres, and that spacing is hard to grasp in prose. A plan that marks the pause points shows readers not just what to add but where, and visually justifies why a very long corridor can take all three interventions, so the advice reads as scaling rather than contradicting itself.
 
-### Cautious-direction ordinal scale (reusable across four chapters)
+### Cautious-direction ordinal scale (reusable across four chapters) **[BUILT]**
 
 **Where:** liu-sha.md, and reused in huo-hai, wu-gui, jue-ming
 
@@ -142,7 +140,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** Answers the reader's real question, how much should I worry about this one, faster and more calmly than a paragraph. Built once and highlighting whichever direction the reader is on, it becomes a consistent anxiety-lowering wayfinding element across all four cautious chapters, which is exactly the kind of reuse that earns a build.
 
-### Jue Ming cannot-avoid-it bedroom protocol
+### Jue Ming cannot-avoid-it bedroom protocol **[BUILT]**
 
 **Where:** content/blocks/jue-ming.md (when you cannot avoid it)
 
@@ -150,7 +148,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** Jue Ming is the chapter readers fear most, the Total Loss name plus a bed they often cannot move. Showing the whole remedy as one uncluttered room turns dread into a checklist the reader can picture finishing, the anxiety-to-competence shift that makes a worried reader trust and value the book.
 
-### Compatibility, two inverted compass rings
+### Compatibility, two inverted compass rings **[BUILT]**
 
 **Where:** PDF method: compatibility.md (the two halves of the compass)
 
@@ -158,7 +156,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The chapter's pull-quote is a geometric claim, and geometry is what a picture beats prose at. Two inverted rings make the compass splits cleanly in half self-evident and defuse a mixed couple's worry faster than the comparison table alone, turning a potential anxiety into an elegant, shareable insight.
 
-### Studio and open-plan wedges
+### Studio and open-plan wedges **[BUILT]**
 
 **Where:** PDF method: faq-hard-cases.md (I live in a studio / open-plan)
 
@@ -166,7 +164,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** Studio, open-plan and renting are three of the most common hard cases and all rest on one idea, that the eight-wedge grid works at furniture scale inside one room. Proving the renter-proof promise visually rescues the readers most likely to feel the system does not fit their home, which is exactly where disappointment and refunds come from.
 
-### Clear the centre before the edges
+### Clear the centre before the edges **[BUILT]**
 
 **Where:** pillar-health.md (clear the centre before you fuss the edges)
 
@@ -190,7 +188,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** A four-pillars primer is opaque without seeing the chart structure. A clean skeleton shows exactly what the reader will learn to fill in, demystifies the method, and reinforces the honest read your own chart, know where it stops framing that keeps BaZi from reading as fortune-telling.
 
-### Storage allocation, supportive versus cautious
+### Storage allocation, supportive versus cautious **[BUILT]**
 
 **Where:** space-storage (the fixed sectors, checked against you)
 
@@ -198,7 +196,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The chapter's whole thesis is an allocation, and allocation is inherently spatial. One plan showing both halves at once lets the reader grasp the trade in a glance instead of assembling it from four paragraphs, and seeing the good walls visibly freed for the bed and desk makes the payoff tangible enough to go rearrange.
 
-### Desk clinic, 2x2 fault and fix grid
+### Desk clinic, 2x2 fault and fix grid **[BUILT]**
 
 **Where:** room-desk.md (the desk clinic)
 
@@ -206,7 +204,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** Four named faults each with a settled repair is exactly the content a diagnostic grid renders better than prose; the reader self-identifies their fault and sees the correction in one glance. This clinic device is a signature quiet-luxury reference touch that lifts the perceived competence of the book.
 
-### Room-shape typology, five verdicts
+### Room-shape typology, five verdicts **[BUILT]**
 
 **Where:** room-bedroom.md (the room itself has a verdict)
 
@@ -222,7 +220,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The money-channel promise is abstract until it is drawn. A compact plan previews the exact deliverable and demonstrates the kit is a precise practitioner tool rather than generic advice. It inherits the desk command plan so it is a light variant, not a fresh design.
 
-### Relationship-symmetry bedroom plan
+### Relationship-symmetry bedroom plan **[BUILT]**
 
 **Where:** pillar-relationships.md (a room ready to be shared)
 
@@ -230,7 +228,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The ready-to-be-shared checklist is six spatial signals a reader has to picture in a real room. A labelled plan makes the symmetry instantly checkable and gives the relationships product a concrete, ownable asset distinct from the command-position bed diagrams used elsewhere, so it does not read as a repeat.
 
-### Reading-chair quiet corner
+### Reading-chair quiet corner **[BUILT]**
 
 **Where:** pillar-knowledge.md (the reading chair and the quiet corner)
 
@@ -238,7 +236,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The chapter's payload is a specific low-traffic setup most readers have never arranged deliberately. A template plan makes it copyable and cleanly distinguishes the still-facing reading nook from the forward-facing work desk, reusing the desk plan's language while teaching the opposite intent.
 
-### Fountain inward versus outward
+### Fountain inward versus outward **[BUILT]**
 
 **Where:** pillar-career.md (water is its element, keep it clear and moving)
 
@@ -246,7 +244,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** Flow direction is the single easiest thing to get wrong with a water feature, and the draining-away consequence is far clearer shown than told. A compact plan prevents the most common activation mistake. It overlaps the wealth four gates (Gate 2), so it ranks as a lighter chapter-specific reinforcement rather than a headline build.
 
-### Yan Nian shared table, two-seat convergence
+### Yan Nian shared table, two-seat convergence **[BUILT]**
 
 **Where:** content/blocks/yan-nian.md (do this)
 
@@ -254,7 +252,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** Yan Nian's distinctive practice is shared, repeated time at a table, and both bodies open loosely toward the direction is vague in words. A top-down layout makes the two-seat convergence instantly readable, and since the art direction forbids people in photos, a faceless line diagram is the only honest way to show two at a table. The inset keeps the large solo-reader segment included, protecting conversion.
 
-### Fire at Heaven's Gate corner and step-down
+### Fire at Heaven's Gate corner and step-down **[BUILT]**
 
 **Where:** pillar-helpful-people.md (Fire at Heaven's Gate)
 
@@ -262,7 +260,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** Fire at Heaven's Gate is the chapter's one hard caution, and the earth-buffer fix only makes sense once the step-down is visible. Rendering the productive cycle as the reason for the ceramic buffer converts a memorable warning into an understood, actionable fix. The bottom strip is a reuse of the five-element component, so build cost is low.
 
-### Three-reading field protocol
+### Three-reading field protocol **[BUILT]**
 
 **Where:** PDF method: find-your-directions.md (three-reading protocol)
 
@@ -270,7 +268,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The three-reading protocol is the credibility move that separates this guide from a horoscope, and it is referenced again from house-match. A quick diagram makes the technique repeatable and visibly rigorous, improving measurement accuracy while signalling the honest, physics-aware authority the brand trades on.
 
-### Year overlay, nine visitors Lo Shu key
+### Year overlay, nine visitors Lo Shu key **[BUILT]**
 
 **Where:** PDF method: year-overlay.md (the nine visitors)
 
@@ -278,7 +276,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The chapter hands the reader a lifelong method but leaves the nine meanings as a bare list to memorise. A colour-coded key becomes the one-page reference they reach for each February, teaches the gentleness-where-5-and-2-land logic at a glance, and honestly bridges to the Planner upsell without overclaiming.
 
-### Laundry cycle loop
+### Laundry cycle loop **[BUILT]**
 
 **Where:** space-laundry (do not let the pile become a stalled corner)
 
@@ -286,7 +284,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The chapter reframes laundry as motion versus a stalled pile, and a closed loop is the natural, memorable picture of that idea. Echoing the book's element-cycle motif keeps it on-brand and gives the reader one glanceable model to check their routine against, which is stickier than the bulleted steps.
 
-### Balcony four-part recipe
+### Balcony four-part recipe **[BUILT]**
 
 **Where:** space-balcony (the garden, miniaturised)
 
@@ -294,7 +292,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The section hands the reader a precise four-part recipe, and a recipe is more persuasive shown than listed. A labelled layout turns an aspirational idea into a copyable shopping-and-placement list (I could build this on Saturday) and fixes the common misread that a balcony garden is just plants by making the stone and water visibly part of the set.
 
-### Garage door-to-door plan
+### Garage door-to-door plan **[BUILT]**
 
 **Where:** space-garage (the threshold into the home + light and a clear path)
 
@@ -302,7 +300,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** A garage is pure spatial logic, zoned walls, a walkable line and one guarded threshold, and prose forces the reader to hold three rules at once. One plan resolves them into a picture they can match against their own route, and highlighting the home threshold as the one square metre worth real care enforces the chapter's key hierarchy.
 
-### Bathroom two-storey stacking cross-section
+### Bathroom two-storey stacking cross-section **[BUILT]**
 
 **Where:** space-bathroom.md (what to avoid placing above a bathroom)
 
@@ -312,7 +310,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 ## Low priority
 
-### January year-boundary timeline
+### January year-boundary timeline **[BUILT]**
 
 **Where:** PDF method: faq-hard-cases.md (born in January, calculators disagree)
 
