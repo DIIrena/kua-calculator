@@ -1,16 +1,16 @@
-# Visual recharge - diagram plan (2026-07-27, updated 2026-07-28)
+# Visual recharge - diagram plan (2026-07-27, completed 2026-07-28)
 
 The editor-in-chief synthesis of the expert audit. Principle: one visual system, not 44 pictures. Diagrams are inline-SVG line-art in the book olive / clay / sand style; several are reusable components placed in more than one chapter.
 
 > The brief is 44 one-off asks; the line needs one visual system, not 44 pictures. I did three things. First, consolidation as restraint: several requests are the same reusable component placed in many chapters, so I collapsed them into single builds with reuse noted (a five-element cycle that serves kua-element, the five-elements workbook and Heaven's Gate; the existing bagua grid that serves the starter deck and the diagnostic workbook; the cautious-direction ordinal scale that orients all four cautious chapters; the bedroom and desk command plans that double as product-page sample diagrams). Second, I killed the two genuinely decorative items: the bathroom contain-versus-amplify colour swatch (the text already states the rule) and the healthy-home nine-conditions ring (a completeness ring with vague icons). Third, ranking by real impact. Buildables lead the plan because the olive/clay/sand line diagrams do the comprehension and trust work that protects against refunds and justifies paid personalisation; the single revenue exception sits at the very top, the shop reading-depth comparison matrix, which anchors the $49 flagship and lifts average order value at the point of choice. Photos are ranked by funnel position, not prettiness: the shop hero, the free Good-Days page, the broken-looking bundle card and the high-emotion bedroom come first; the remaining product-page heroes all follow one quiet-luxury recipe and mainly exist to give text-only pages a hero and an OG image, so they cluster at medium. Every photo keeps its three prompts intact and on the owner's ivory, pool-table green and terracotta direction.
 
-**Status: 34 of 38 built and shipped.** All PDF-book diagrams are done. The four not built are web components (they live on shop / product sales pages, not in the PDFs): the shop reading-depth comparison matrix (top revenue asset), and three product-page sample diagrams (bagua grid for the starter deck and diagnostic workbook, four-pillars skeleton for BaZi basics, money channel for the business kit). Items marked [BUILT] below.
+**Status: all 38 built and shipped.** The 34 in-PDF book diagrams render across all five personalised products (zero blank pages, flagship 4.22MB / 200pp). The 4 web components ship on the site: the shop reading-depth comparison matrix (top revenue asset, above the storefront grid), the bagua 3x3 life-area grid (starter-deck + home-diagnostic-workbook), the four-pillars chart skeleton (bazi-basics), and the money-channel office plan (business-money-feng-shui). Every item is marked [BUILT].
 
 ---
 
 ## High priority
 
-### Reading-depth comparison matrix
+### Reading-depth comparison matrix **[BUILT]**
 
 **Where:** Shop (/products), band above the storefront grid
 
@@ -172,7 +172,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The chapter's strongest instruction is a counter-intuitive order of operations justified by the centre touching all eight edges. A before/after that shows flow reaching the edges only when the middle is open makes the causal claim visible and anchors the product's most memorable, most actionable rule.
 
-### Bagua 3x3 grid (reuse existing BaguaDiagram)
+### Bagua 3x3 grid (reuse existing BaguaDiagram) **[BUILT]**
 
 **Where:** starter-deck sample + home-diagnostic-workbook sample
 
@@ -180,7 +180,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The site already renders a BaguaDiagram, so this is nearly free and previews the exact map both products ship. Reusing one grid across the starter deck and the diagnostic workbook reassures buyers the products are clear, usable tools rather than loose cards or a bullet list.
 
-### Four-pillars chart skeleton
+### Four-pillars chart skeleton **[BUILT]**
 
 **Where:** Product page bazi-basics (sample in What is inside)
 
@@ -212,7 +212,7 @@ The editor-in-chief synthesis of the expert audit. Principle: one visual system,
 
 **Why:** The idea that an outline problem caps what placement can fix is genuinely useful but buried in a dense paragraph. A compact shape typology turns it into at-a-glance self-diagnosis and surfaces the wardrobe-fills-the-notch repair most readers would never derive from text, while reading as expert and premium.
 
-### Money channel: desk, stove and wealth corner
+### Money channel: desk, stove and wealth corner **[BUILT]**
 
 **Where:** Product page business-money-feng-shui (sample in What is inside)
 
