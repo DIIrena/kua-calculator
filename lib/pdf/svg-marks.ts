@@ -1172,3 +1172,185 @@ export function shengQiZoomSvg(): string {
 <p class="figure-caption">The nine-sector grid repeats inside every room at the same orientation. North in the house is north in the room, so your Sheng Qi corner exists at both scales, even when the whole-house one falls somewhere you cannot use.</p>
 </div>`;
 }
+
+// ============================================================
+// Dining pockets read from the doorway. Placed in room-dining.md.
+// ============================================================
+export function diningPocketsSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" width="500" height="286" style="display:block;margin:0 auto;" role="img" aria-label="Dining room pockets read from the doorway">
+  <rect x="50" y="52" width="460" height="250" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <ellipse cx="280" cy="176" rx="86" ry="52" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <text x="280" y="180" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">the table holds the centre</text>
+  <circle cx="92" cy="90" r="12" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.3"/>
+  <path d="M 92 84 v 12 M 86 90 h 12" stroke="${C.clay}" stroke-width="1.2"/>
+  <text x="82" y="118" text-anchor="start" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">wealth pocket</text>
+  <text x="82" y="131" text-anchor="start" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">a warm lamp, one gold accent</text>
+  <circle cx="462" cy="86" r="8" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.2"/>
+  <circle cx="478" cy="86" r="8" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.2"/>
+  <text x="478" y="116" text-anchor="end" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">relationships pocket</text>
+  <text x="478" y="129" text-anchor="end" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">a matching pair</text>
+  <rect x="50" y="196" width="7" height="54" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <text x="64" y="222" text-anchor="start" font-family="Hanken Grotesk" font-size="9" fill="${C.clay}">window: a slow leak,</text>
+  <text x="64" y="234" text-anchor="start" font-family="Hanken Grotesk" font-size="9" fill="${C.clay}">weight it with curtains + a rug</text>
+  <rect x="252" y="298" width="56" height="8" fill="${C.paper}"/>
+  <line x1="280" y1="298" x2="280" y2="260" stroke="${C.olive}" stroke-width="2.2"/>
+  <path d="M 280 254 L 274 266 L 286 266 Z" fill="${C.olive}"/>
+  <text x="280" y="318" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" font-weight="600" fill="${C.ink2}">stand in the doorway</text>
+</svg>
+<p class="figure-caption">Read the dining room from its doorway: the far-left corner is the wealth pocket, the far-right the relationships pocket, and the table holds the centre. A window in a corner is a slow leak, weighted with heavier curtains and a rug.</p>
+</div>`;
+}
+
+// ============================================================
+// Hallway pause-points: a rushing corridor versus a slowed one.
+// Placed in space-hallway.md.
+// ============================================================
+export function hallwaySvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" width="500" height="268" style="display:block;margin:0 auto;" role="img" aria-label="Hallway rushing versus slowed">
+  <text x="60" y="30" text-anchor="start" font-family="Hanken Grotesk" font-size="11" font-weight="800" fill="${C.clay}">RUSHING</text>
+  <rect x="60" y="40" width="440" height="66" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="490" y="52" width="10" height="42" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1"/>
+  <line x1="80" y1="73" x2="470" y2="73" stroke="${C.clay}" stroke-width="3"/>
+  <path d="M 478 73 L 464 66 L 464 80 Z" fill="${C.clay}"/>
+  <text x="270" y="98" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">bare walls, qi accelerates at a closed door</text>
+  <text x="60" y="150" text-anchor="start" font-family="Hanken Grotesk" font-size="11" font-weight="800" fill="${C.olive}">SLOWED</text>
+  <rect x="60" y="160" width="440" height="112" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="490" y="182" width="10" height="68" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <rect x="78" y="248" width="360" height="16" fill="${C.sand}" stroke="${C.ink2}" stroke-width="0.8"/>
+  <rect x="150" y="172" width="20" height="26" fill="${C.paper}" stroke="${C.olive}" stroke-width="1.2"/>
+  <rect x="300" y="172" width="20" height="26" fill="${C.paper}" stroke="${C.olive}" stroke-width="1.2"/>
+  <rect x="392" y="196" width="26" height="10" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="405" cy="190" r="7" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <path d="M 80 216 q 30 -12 60 0 t 60 0 t 60 0 t 60 0 t 60 0" fill="none" stroke="${C.olive}" stroke-width="2.2"/>
+  <circle cx="140" cy="216" r="3.5" fill="${C.clay}"/><circle cx="260" cy="216" r="3.5" fill="${C.clay}"/><circle cx="380" cy="216" r="3.5" fill="${C.clay}"/>
+  <path d="M 476 216 L 462 209 L 462 223 Z" fill="${C.olive}"/>
+  <text x="270" y="290" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">runner, art at eye level, a plant: the run becomes a gentle walk with pauses</text>
+</svg>
+<p class="figure-caption">A long bare corridor lets qi accelerate toward a closed door. A runner, art at eye level, and a plant partway down turn the same run into a gentle, paused walk.</p>
+</div>`;
+}
+
+// ============================================================
+// Storage allocation: supportive walls for the body, cautious
+// corners for closed storage. Placed in space-storage.md.
+// ============================================================
+export function storageAllocationSvg(): string {
+  const s = 92;
+  const ox = 130;
+  const oy = 40;
+  const sup = new Set(["0,1", "1,0", "1,2", "2,1"]); // edges = supportive (sand)
+  let cells = "";
+  for (let r = 0; r < 3; r++)
+    for (let c = 0; c < 3; c++) {
+      if (r === 1 && c === 1) {
+        cells += `<rect x="${ox + c * s}" y="${oy + r * s}" width="${s}" height="${s}" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1"/><text x="${ox + c * s + s / 2}" y="${oy + r * s + s / 2 + 3}" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">centre, clear</text>`;
+        continue;
+      }
+      const isSup = sup.has(`${r},${c}`);
+      const fill = isSup ? C.sand : C.paper;
+      cells += `<rect x="${ox + c * s}" y="${oy + r * s}" width="${s}" height="${s}" fill="${fill}" stroke="${C.ink2}" stroke-width="1"/>`;
+      const cx = ox + c * s + s / 2;
+      const cy = oy + r * s + s / 2;
+      if (isSup) {
+        cells += `<rect x="${cx - 18}" y="${cy - 12}" width="36" height="20" rx="3" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/><text x="${cx}" y="${cy + 22}" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">body</text>`;
+      } else {
+        cells += `<rect x="${cx - 16}" y="${cy - 14}" width="32" height="26" rx="2" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1"/><line x1="${cx}" y1="${cy - 14}" x2="${cx}" y2="${cy + 12}" stroke="${C.clay}" stroke-width="0.8"/><text x="${cx}" y="${cy + 24}" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">storage</text>`;
+      }
+    }
+  return `<div class="figure">
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" width="500" height="321" style="display:block;margin:0 auto;" role="img" aria-label="Storage allocation across supportive and cautious sectors">
+  ${cells}
+  <rect x="130" y="322" width="14" height="14" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <text x="150" y="333" text-anchor="start" font-family="Hanken Grotesk" font-size="10" fill="${C.ink}">supportive walls: the body (bed, desk, chair)</text>
+  <rect x="130" y="342" width="14" height="14" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1"/>
+  <text x="150" y="353" text-anchor="start" font-family="Hanken Grotesk" font-size="10" fill="${C.ink}">cautious corners: closed storage, contained</text>
+</svg>
+<p class="figure-caption">Give your supportive walls to the body, the bed, the desk, the chair, and hand the cautious corners the wardrobe and the closed boxes. Storage is the useful job the careful directions do best.</p>
+</div>`;
+}
+
+// ============================================================
+// Balcony four-part recipe. Placed in space-balcony.md.
+// ============================================================
+export function balconyRecipeSvg(): string {
+  const items = [
+    ["1", "Water", "one small bowl or self-contained fountain"],
+    ["2", "Stone", "one feature pebble or small statue"],
+    ["3", "Plants", "one or two pots near the rail"],
+    ["4", "A seat", "one you use, with a side surface"],
+  ];
+  const rows = items
+    .map(([n, t, s], i) => {
+      const y = 60 + i * 52;
+      return `<circle cx="316" cy="${y}" r="15" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.4"/><text x="316" y="${y + 4}" text-anchor="middle" font-family="Hanken Grotesk" font-size="13" font-weight="800" fill="${C.olive}">${n}</text><text x="342" y="${y - 3}" font-family="Hanken Grotesk" font-size="12" font-weight="800" fill="${C.ink}">${t}</text><text x="342" y="${y + 13}" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">${s}</text>`;
+    })
+    .join("\n  ");
+  return `<div class="figure">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" width="500" height="268" style="display:block;margin:0 auto;" role="img" aria-label="The balcony four-part garden recipe">
+  <rect x="40" y="46" width="230" height="210" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="40" y1="46" x2="270" y2="46" stroke="${C.hairline}" stroke-width="3"/>
+  <text x="155" y="38" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">open to the sky</text>
+  <rect x="60" y="200" width="60" height="40" rx="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.2"/>
+  <text x="90" y="224" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">seat</text>
+  <circle cx="200" cy="90" r="14" fill="#dbe0ea" stroke="#3a4a6b" stroke-width="1.2"/>
+  <circle cx="235" cy="120" r="9" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.2"/>
+  <circle cx="90" cy="70" r="12" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.2"/>
+  <circle cx="140" cy="66" r="12" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.2"/>
+  ${rows}
+</svg>
+<p class="figure-caption">A balcony is a garden in miniature. It needs only four things: one water element, one stone, a plant or two, and a seat you actually use, with an open view to the sky.</p>
+</div>`;
+}
+
+// ============================================================
+// Garage door-to-door plan. Placed in space-garage.md.
+// ============================================================
+export function garagePlanSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" width="500" height="286" style="display:block;margin:0 auto;" role="img" aria-label="Garage door-to-door path and zoned storage">
+  <rect x="50" y="50" width="460" height="240" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="150" y="110" width="260" height="120" rx="26" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <text x="280" y="174" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">the car</text>
+  <path d="M 100 285 C 100 250, 120 240, 150 240 L 430 240 C 470 240, 470 120, 430 100 L 300 100 C 280 100, 280 70, 300 60" fill="none" stroke="${C.clay}" stroke-width="2.2" stroke-dasharray="6 5"/>
+  <rect x="70" y="285" width="60" height="8" fill="${C.paper}"/>
+  <text x="100" y="308" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="600" fill="${C.ink2}">outer door</text>
+  <rect x="270" y="50" width="60" height="8" fill="${C.paper}"/>
+  <text x="300" y="40" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="600" fill="${C.olive}">door into the home</text>
+  <circle cx="266" cy="66" r="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <circle cx="334" cy="66" r="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <rect x="58" y="60" width="70" height="30" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <text x="93" y="79" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">tools</text>
+  <rect x="432" y="240" width="72" height="44" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <text x="468" y="266" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">seasonal</text>
+  <text x="200" y="270" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.clay}">a clear path, door to door</text>
+</svg>
+<p class="figure-caption">Keep one clear path from the outer door around the car to the door into the home, storage zoned along the walls, and both sides of the inner threshold clean and lit. The garage is a real threshold into the house.</p>
+</div>`;
+}
+
+// ============================================================
+// Bathroom two-storey stacking cross-section. Placed in
+// space-bathroom.md.
+// ============================================================
+export function bathroomStackSvg(): string {
+  const section = (ox: number, title: string, lower: string) =>
+    `<rect x="${ox}" y="44" width="180" height="72" fill="#dbe0ea" stroke="${C.ink2}" stroke-width="1.3"/>
+  <text x="${ox + 90}" y="66" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" font-weight="700" fill="${C.ink}">bathroom above</text>
+  <ellipse cx="${ox + 90}" cy="98" rx="20" ry="8" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1"/>
+  <line x1="${ox}" y1="116" x2="${ox + 180}" y2="116" stroke="${C.ink}" stroke-width="2"/>
+  <rect x="${ox}" y="118" width="180" height="72" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <text x="${ox + 90}" y="170" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" font-weight="700" fill="${C.ink}">${lower}</text>
+  <line x1="${ox + 90}" y1="98" x2="${ox + 90}" y2="150" stroke="${C.clay}" stroke-width="1.8" stroke-dasharray="4 4"/>
+  <circle cx="${ox + 90}" cy="205" r="9" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.3"/>
+  <path d="M ${ox + 90} 200 v 6 M ${ox + 90} 209 v 1" stroke="${C.clay}" stroke-width="1.4"/>
+  <text x="${ox + 90}" y="30" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="800" fill="${C.ink}">${title}</text>`;
+  return `<div class="figure">
+<svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" width="500" height="214" style="display:block;margin:0 auto;" role="img" aria-label="Bathroom stacking cross-sections">
+  ${section(70, "over a bed", "bed below")}
+  ${section(310, "over a stove", "stove below")}
+</svg>
+<p class="figure-caption">The tradition avoids placing a bathroom directly above a bed or a stove, the drain sitting over the head or the hearth. Avoid it where you choose the layout; where you inherit it, keep the bathroom scrupulously contained.</p>
+</div>`;
+}

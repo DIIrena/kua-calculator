@@ -1,6 +1,8 @@
 # Your storage
 
 Every home has directions that pull two ways. Four of your eight are favourable: the {{kuaGroup}} group that the reading treats as supportive for someone with Kua {{kuaNumber}}. The other four are the cautious ones: {{huoHaiDir}}, {{wuGuiDir}}, {{liuShaDir}}, and {{jueMingDir}}. The question most readers ask is what to *do* with those four. The reading offers a clear, unglamorous answer, {{firstName}}, and it is one of the most practical moves in the whole approach: give them to your storage.
+{{storageAllocation}}
+
 
 ## The job the cautious directions do best
 
