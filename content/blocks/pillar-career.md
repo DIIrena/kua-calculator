@@ -1,6 +1,8 @@
 # Your career corner
 
 The career life-area is fixed in the **North**. On the map of your home, North is North for everyone, so this corner sits in the same place for you as it does for anyone else. What changes from person to person is not where the corner is, but how your own directions land on top of it. We will get to that overlay at the end. First, what the tradition puts here.
+{{fountainInOut}}
+
 
 ## What the North holds
 

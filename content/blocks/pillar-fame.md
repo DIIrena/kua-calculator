@@ -1,6 +1,8 @@
 # Your recognition corner
 
 There is one corner of any home the tradition ties to how you are seen: your work, your standing, the version of you that lives in other people's heads. It is the recognition sector, and it has a fixed address. It always sits in the **South**. Not the south of your body, not the south relative to your door, but compass south, the same wall for every home and every person. This reading is about what the tradition asks of that corner, and what your own chart has already settled about how the South sits with you, {{firstName}}.
+{{southFire}}
+
 
 ## What the South corner is for
 

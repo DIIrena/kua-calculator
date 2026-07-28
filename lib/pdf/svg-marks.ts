@@ -1354,3 +1354,215 @@ export function bathroomStackSvg(): string {
 <p class="figure-caption">The tradition avoids placing a bathroom directly above a bed or a stove, the drain sitting over the head or the hearth. Avoid it where you choose the layout; where you inherit it, keep the bathroom scrupulously contained.</p>
 </div>`;
 }
+
+// ============================================================
+// Fountain inward vs outward. Placed in pillar-career.md.
+// ============================================================
+export function fountainInOutSvg(): string {
+  const water = "#dbe0ea";
+  const wEdge = "#3a4a6b";
+  const room = (ox: number) =>
+    `<rect x="${ox}" y="44" width="200" height="150" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="${ox + 70}" y="188" width="60" height="8" fill="${C.paper}"/>
+  <path d="M ${ox + 70} 192 a 60 60 0 0 1 60 0" fill="none" stroke="${C.ink2}" stroke-width="1"/>
+  <rect x="${ox}" y="80" width="7" height="46" fill="${water}" stroke="${wEdge}" stroke-width="1"/>`;
+  return `<div class="figure">
+<svg viewBox="0 0 560 236" xmlns="http://www.w3.org/2000/svg" width="500" height="211" style="display:block;margin:0 auto;" role="img" aria-label="A fountain flowing inward versus outward">
+  ${room(50)}
+  <circle cx="150" cy="150" r="16" fill="${water}" stroke="${wEdge}" stroke-width="1.5"/>
+  <path d="M 150 138 q 40 -20 44 20" fill="none" stroke="${wEdge}" stroke-width="2.2"/>
+  <path d="M 194 158 L 186 146 L 198 148 Z" fill="${wEdge}"/>
+  <circle cx="118" cy="30" r="11" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <path d="M 113 30 l 3.5 4 l 6.5 -8" fill="none" stroke="${C.olive}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="150" y="222" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">flows in: the path opens</text>
+  ${room(310)}
+  <circle cx="410" cy="150" r="16" fill="${water}" stroke="${wEdge}" stroke-width="1.5"/>
+  <path d="M 410 138 q -40 -30 -96 -30" fill="none" stroke="${wEdge}" stroke-width="2.2"/>
+  <path d="M 314 108 L 326 104 L 322 116 Z" fill="${wEdge}"/>
+  <circle cx="522" cy="30" r="11" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.5"/>
+  <path d="M 517 25 l 10 10 M 527 25 l -10 10" fill="none" stroke="${C.clay}" stroke-width="2" stroke-linecap="round"/>
+  <text x="410" y="222" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">flows out: it drains away</text>
+</svg>
+<p class="figure-caption">Career water must flow toward the room's interior, never out through a door or window. Water aimed outward is read as the path, and the money it stands for, draining away.</p>
+</div>`;
+}
+
+// ============================================================
+// Reading-chair quiet corner. Placed in pillar-knowledge.md.
+// ============================================================
+export function readingChairSvg(fuWei: string): string {
+  return `<div class="figure">
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" width="420" height="263" style="display:block;margin:0 auto;" role="img" aria-label="A quiet reading corner in command">
+  <rect x="60" y="40" width="360" height="230" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="60" y1="40" x2="60" y2="270" stroke="${C.ink}" stroke-width="4"/>
+  <line x1="60" y1="40" x2="420" y2="40" stroke="${C.ink}" stroke-width="4"/>
+  <rect x="86" y="96" width="86" height="92" rx="10" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <rect x="82" y="96" width="12" height="92" fill="${C.olive}"/>
+  <rect x="86" y="86" width="86" height="12" fill="${C.olive}"/>
+  <line x1="176" y1="142" x2="256" y2="142" stroke="${C.olive}" stroke-width="3"/>
+  <path d="M 264 142 L 250 135 L 250 149 Z" fill="${C.olive}"/>
+  <text x="300" y="138" text-anchor="start" font-family="Hanken Grotesk" font-size="11" font-weight="700" fill="${C.olive}">face ${fuWei}</text>
+  <text x="300" y="153" text-anchor="start" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">Fu Wei, stillness</text>
+  <rect x="84" y="200" width="26" height="10" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="97" cy="192" r="7" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <text x="97" y="228" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">lamp</text>
+  <rect x="360" y="200" width="40" height="10" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <text x="380" y="226" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">one shelf</text>
+  <text x="240" y="258" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">the chair faces, not the furniture</text>
+</svg>
+<p class="figure-caption">The reading corner: a solid wall behind the chair, an open view in front, a low lamp and one shelf within reach, the seat turned to face ${fuWei}, your anchor direction for stillness and focus.</p>
+</div>`;
+}
+
+// ============================================================
+// Relationship-symmetry bedroom plan. Placed in pillar-relationships.md.
+// ============================================================
+export function relationshipSymmetrySvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" width="500" height="286" style="display:block;margin:0 auto;" role="img" aria-label="A bedroom arranged for symmetry, held equally by two">
+  <rect x="50" y="52" width="460" height="250" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="50" y1="52" x2="510" y2="52" stroke="${C.ink}" stroke-width="4"/>
+  <rect x="210" y="58" width="140" height="160" rx="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <rect x="210" y="58" width="140" height="12" fill="${C.olive}"/>
+  <rect x="224" y="76" width="48" height="20" rx="3" fill="${C.paper}" stroke="${C.olive}" stroke-width="0.8"/>
+  <rect x="288" y="76" width="48" height="20" rx="3" fill="${C.paper}" stroke="${C.olive}" stroke-width="0.8"/>
+  <rect x="178" y="58" width="24" height="30" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="190" cy="52" r="5" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <rect x="358" y="58" width="24" height="30" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="370" cy="52" r="5" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1"/>
+  <path d="M 208 190 a 26 26 0 0 0 -26 -26" fill="none" stroke="${C.ink2}" stroke-width="1.1" stroke-dasharray="4 4"/>
+  <path d="M 352 190 a 26 26 0 0 1 26 -26" fill="none" stroke="${C.ink2}" stroke-width="1.1" stroke-dasharray="4 4"/>
+  <text x="280" y="244" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">matched sides, both reachable</text>
+  <rect x="70" y="250" width="70" height="40" rx="3" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="105" y="274" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">wardrobe,</text>
+  <text x="105" y="285" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">half empty</text>
+  <rect x="430" y="120" width="8" height="60" fill="#dbe0ea" stroke="${C.ink2}" stroke-width="0.8"/>
+  <path d="M 428 122 l 12 56 M 440 122 l -12 56" stroke="${C.clay}" stroke-width="1.8"/>
+  <text x="434" y="196" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.clay}">no mirror</text>
+</svg>
+<p class="figure-caption">A shared bedroom is arranged for symmetry, not command: matched (not identical) nightstands and lamps on both sides, both sides reachable, a wardrobe half genuinely empty, and no mirror facing the bed. A space two people hold equally.</p>
+</div>`;
+}
+
+// ============================================================
+// Clear the centre before the edges. Placed in pillar-health.md.
+// ============================================================
+export function clearCentreSvg(): string {
+  const house = (ox: number, blocked: boolean) => {
+    const cx = ox + 110;
+    const cy = 150;
+    const spokes = Array.from({ length: 8 }, (_, i) => {
+      const a = (i * 45 * Math.PI) / 180;
+      const ex = cx + 92 * Math.cos(a);
+      const ey = cy + 92 * Math.sin(a);
+      const mx = cx + 34 * Math.cos(a);
+      const my = cy + 34 * Math.sin(a);
+      return blocked
+        ? `<line x1="${mx.toFixed(0)}" y1="${my.toFixed(0)}" x2="${((mx + ex) / 2).toFixed(0)}" y2="${((my + ey) / 2).toFixed(0)}" stroke="${C.hairline}" stroke-width="1.4"/>`
+        : `<line x1="${mx.toFixed(0)}" y1="${my.toFixed(0)}" x2="${ex.toFixed(0)}" y2="${ey.toFixed(0)}" stroke="${C.olive}" stroke-width="1.6"/>`;
+    }).join("");
+    return `<rect x="${ox + 18}" y="58" width="184" height="184" rx="24" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  ${spokes}
+  <circle cx="${cx}" cy="${cy}" r="30" fill="${blocked ? C.claySoft : C.paper}" stroke="${blocked ? C.clay : C.olive}" stroke-width="1.8"/>
+  <text x="${cx}" y="${cy + 3}" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" font-weight="700" fill="${blocked ? C.clay : C.olive}">${blocked ? "blocked" : "clear"}</text>
+  <text x="${cx}" y="262" text-anchor="middle" font-family="Hanken Grotesk" font-size="10.5" font-weight="800" fill="${blocked ? C.clay : C.olive}">${blocked ? "a stagnant heart drags on all eight" : "a clear centre feeds all eight"}</text>`;
+  };
+  return `<div class="figure">
+<svg viewBox="0 0 560 288" xmlns="http://www.w3.org/2000/svg" width="500" height="257" style="display:block;margin:0 auto;" role="img" aria-label="Clear the centre before the edges">
+  ${house(40, true)}
+  ${house(300, false)}
+</svg>
+<p class="figure-caption">The centre, the Tai Chi point, feeds every edge of the home. A cluttered centre drags on all eight areas at once, so the tradition clears the middle first and only then fusses the edges.</p>
+</div>`;
+}
+
+// ============================================================
+// South and Fire, the three element relationships. pillar-fame.md.
+// ============================================================
+export function southFireSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" width="500" height="250" style="display:block;margin:0 auto;" role="img" aria-label="South and Fire element relationships">
+  <line x1="150" y1="140" x2="228" y2="140" stroke="${C.olive}" stroke-width="2.2"/>
+  <path d="M 236 140 L 222 133 L 222 147 Z" fill="${C.olive}"/>
+  <line x1="332" y1="140" x2="410" y2="140" stroke="${C.clay}" stroke-width="2.2"/>
+  <path d="M 418 140 L 404 133 L 404 147 Z" fill="${C.clay}"/>
+  <circle cx="90" cy="140" r="44" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="2"/>
+  <text x="90" y="136" text-anchor="middle" font-family="Hanken Grotesk" font-size="14" font-weight="800" fill="${C.ink}">Wood</text>
+  <text x="90" y="152" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">lamp, plant, one red</text>
+  <circle cx="280" cy="140" r="48" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="2.5"/>
+  <text x="280" y="134" text-anchor="middle" font-family="Hanken Grotesk" font-size="15" font-weight="800" fill="${C.ink}">SOUTH</text>
+  <text x="280" y="150" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.clay}">Fire</text>
+  <circle cx="470" cy="140" r="44" fill="#efe6cf" stroke="#b08a3e" stroke-width="2"/>
+  <text x="470" y="136" text-anchor="middle" font-family="Hanken Grotesk" font-size="14" font-weight="800" fill="${C.ink}">Earth</text>
+  <text x="470" y="152" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">ceramics, cool rug</text>
+  <text x="190" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.olive}">feeds a dim South</text>
+  <text x="374" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.clay}">cools a hot South</text>
+  <circle cx="280" cy="238" r="16" fill="#ecebe5" stroke="#8a8577" stroke-width="1.5"/>
+  <text x="280" y="242" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">Metal</text>
+  <line x1="264" y1="222" x2="296" y2="254" stroke="${C.clay}" stroke-width="1.8"/>
+  <text x="360" y="242" text-anchor="start" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">no metal wind chimes here</text>
+</svg>
+<p class="figure-caption">South is Fire. Feed a dim recognition corner with Wood (a lamp, a plant, one red accent); cool an overheated one with Earth (ceramics, clay tones, a cool rug). Keep hard Metal out, it clashes with Fire.</p>
+</div>`;
+}
+
+// ============================================================
+// Yan Nian shared table, two-seat convergence. yan-nian.md.
+// ============================================================
+export function yanNianTableSvg(dir: string): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" width="500" height="250" style="display:block;margin:0 auto;" role="img" aria-label="Two seats converging at a shared table">
+  <ellipse cx="200" cy="150" rx="96" ry="70" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.4"/>
+  <circle cx="120" cy="120" r="18" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.5"/>
+  <path d="M 100 142 a 20 20 0 0 1 40 0" fill="none" stroke="${C.ink2}" stroke-width="1.3"/>
+  <circle cx="200" cy="92" r="18" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.5"/>
+  <path d="M 180 90 a 20 20 0 0 1 40 0" fill="none" stroke="${C.ink2}" stroke-width="1.3"/>
+  <circle cx="184" cy="150" r="7" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="216" cy="150" r="7" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1"/>
+  <line x1="132" y1="132" x2="176" y2="120" stroke="${C.clay}" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <line x1="200" y1="112" x2="200" y2="132" stroke="${C.clay}" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <text x="200" y="238" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.clay}">both open toward ${dir}</text>
+  <line x1="360" y1="150" x2="360" y2="70" stroke="${C.hairline}" stroke-width="1" stroke-dasharray="3 4"/>
+  <rect x="410" y="120" width="90" height="18" rx="3" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1"/>
+  <circle cx="455" cy="170" r="16" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.4"/>
+  <path d="M 437 190 a 18 18 0 0 1 36 0" fill="none" stroke="${C.ink2}" stroke-width="1.2"/>
+  <line x1="455" y1="154" x2="455" y2="142" stroke="${C.clay}" stroke-width="1.8"/>
+  <path d="M 455 136 L 449 148 L 461 148 Z" fill="${C.clay}"/>
+  <text x="455" y="222" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">solo: the long-call chair,</text>
+  <text x="455" y="234" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">same direction</text>
+</svg>
+<p class="figure-caption">Yan Nian is the direction of steady connection. Seat two people on adjacent sides of a shared table, each opening loosely toward ${dir}, or, alone, take the one good chair that faces the same way for the calls that matter.</p>
+</div>`;
+}
+
+// ============================================================
+// Fire at Heaven's Gate corner and step-down. pillar-helpful-people.md.
+// ============================================================
+export function heavensGateSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" width="500" height="268" style="display:block;margin:0 auto;" role="img" aria-label="Fire at Heaven's Gate with an earth buffer and step-down">
+  <rect x="60" y="30" width="200" height="150" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <line x1="60" y1="30" x2="60" y2="180" stroke="${C.ink}" stroke-width="4"/>
+  <line x1="60" y1="30" x2="260" y2="30" stroke="${C.ink}" stroke-width="4"/>
+  <text x="86" y="24" text-anchor="start" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.ink2}">NW: Heaven's Gate</text>
+  <rect x="150" y="120" width="60" height="40" rx="4" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.5"/>
+  <path d="M 180 128 q 6 6 0 12 q -6 -6 0 -12 Z" fill="${C.clay}"/>
+  <text x="180" y="176" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">hob (fire)</text>
+  <rect x="96" y="70" width="34" height="30" rx="4" fill="#efe6cf" stroke="#b08a3e" stroke-width="1.4"/>
+  <text x="113" y="112" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="#b08a3e">earth buffer</text>
+  <text x="340" y="60" text-anchor="start" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">earth steps the heat down</text>
+  <circle cx="330" cy="130" r="26" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.6"/>
+  <text x="330" y="134" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">Fire</text>
+  <line x1="358" y1="130" x2="392" y2="130" stroke="${C.ink2}" stroke-width="2"/>
+  <path d="M 400 130 L 386 123 L 386 137 Z" fill="${C.ink2}"/>
+  <circle cx="428" cy="130" r="26" fill="#efe6cf" stroke="#b08a3e" stroke-width="1.6"/>
+  <text x="428" y="134" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">Earth</text>
+  <line x1="456" y1="130" x2="490" y2="130" stroke="${C.ink2}" stroke-width="2"/>
+  <path d="M 498 130 L 484 123 L 484 137 Z" fill="${C.ink2}"/>
+  <circle cx="526" cy="130" r="26" fill="#ecebe5" stroke="#8a8577" stroke-width="1.6"/>
+  <text x="526" y="134" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">Metal</text>
+  <text x="428" y="188" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">toward the corner's own metal, not straight at it</text>
+</svg>
+<p class="figure-caption">A stove or strong heat at the Northwest, the corner the tradition calls Heaven's Gate, is softened with an earth-element buffer between the fire and the corner, so the heat steps down through earth toward the corner's own metal instead of burning straight at it.</p>
+</div>`;
+}

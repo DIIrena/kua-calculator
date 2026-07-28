@@ -1,6 +1,8 @@
 # Your knowledge corner
 
 In the fixed map of the home, the Northeast is the sector the tradition gives to knowledge. Not knowledge as a stack of facts, but the quieter kind: study, reflection, self-cultivation, the slow work of understanding something, including yourself. Wherever the Northeast falls in your home, that corner is the one the tradition reads as the seat of stillness and learning. It is the same sector for everyone, {{firstName}}, which is the first thing worth knowing about it. Your personal Kua directions move around the compass from person to person. This life-area does not. The Northeast holds knowledge in your home exactly as it does in any other.
+{{readingChair}}
+
 
 ## What the tradition associates with it
 

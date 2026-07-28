@@ -1,6 +1,8 @@
 # Your helpful-people corner
 
 The tradition keeps one corner of the home for the people who help you from the outside: mentors, allies, useful contacts, the person who knows the person, the colleague who vouches for you. The same corner is read as the one tied to travel and to movement beyond your own walls. To work with it, {{firstName}}, you first have to find it. The tradition maps this theme to the **Northwest** of a space, so the move is to stand with a compass, locate the Northwest of your home or of a single room, and read what is actually sitting there. The compass direction is the same for any space; what you do with the corner you find is the part this reading is about.
+{{heavensGate}}
+
 
 ## What the tradition puts here
 

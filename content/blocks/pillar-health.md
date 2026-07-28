@@ -1,6 +1,8 @@
 # Your health centre
 
 Of all the life areas on the map, this is the one that does not move to a wall. While most areas are read at the edges of a home, health, {{firstName}}, is read at the **Centre**, the still point the tradition calls the *Tai Chi* point. The middle of a home is the middle for everyone, which is part of why this area matters so much.
+{{clearCentre}}
+
 
 This reading is about the home, not the body. Nothing here is a medical claim. What the tradition treats the centre as governing is the *condition of the dwelling itself*: how open it is, how clear, how easy it is for everything to reach everything else. A home that is well at its centre, in this older sense, is a home that supports the people moving through it. That is the whole of the claim, and it is enough.
 

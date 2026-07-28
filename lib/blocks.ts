@@ -54,6 +54,13 @@ import {
   balconyRecipeSvg,
   garagePlanSvg,
   bathroomStackSvg,
+  fountainInOutSvg,
+  readingChairSvg,
+  relationshipSymmetrySvg,
+  clearCentreSvg,
+  southFireSvg,
+  yanNianTableSvg,
+  heavensGateSvg,
 } from "@/lib/pdf/svg-marks";
 import {
   kuaElement,
@@ -219,6 +226,13 @@ function substituteTokens(
     balconyRecipe: () => balconyRecipeSvg(),
     garagePlan: () => garagePlanSvg(),
     bathroomStack: () => bathroomStackSvg(),
+    fountainInOut: () => fountainInOutSvg(),
+    readingChair: () => readingChairSvg(dirLabel("FW")),
+    relationshipSymmetry: () => relationshipSymmetrySvg(),
+    clearCentre: () => clearCentreSvg(),
+    southFire: () => southFireSvg(),
+    yanNianTable: () => yanNianTableSvg(dirLabel("YN")),
+    heavensGate: () => heavensGateSvg(),
     yanNianActivation: () => yanNianActivation(context.kuaNumber),
     personalBagua: () =>
       (cachedPersonalBagua ??= personalBaguaSvg(
