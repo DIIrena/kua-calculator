@@ -1,6 +1,8 @@
 # Two people, one home
 
 A home is rarely arranged for one body. When two people share it, the eight directions get read twice, once for each of you, and the two readings do not always agree. This page is about how the {{kuaGroup}} group meets the other group under one roof, and how couples settle the places where the two maps point different ways.
+{{compatibilityRings}}
+
 
 ## The two halves of the compass
 

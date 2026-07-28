@@ -1,6 +1,8 @@
 # Your Jue Ming direction is {{direction}}
 
 Jue Ming is the last of your four cautious directions and the one the tradition treats with the most care. The name translates as **"Total Loss"**, strong language inherited from the older texts. It is a traditional caution, not a verdict on your life or your home. For you, {{firstName}}, it points **{{direction}}**.
+{{jueMingProtocol}}
+
 {{cautiousScale}}
 
 

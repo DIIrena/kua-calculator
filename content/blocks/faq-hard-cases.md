@@ -20,6 +20,8 @@ One room does everything, so the eight-wedge map can feel like a joke. It is not
 - **Let zones overlap without guilt.** A cautious wedge with a wardrobe and a laundry basket in it is a solved wedge, even if it is two steps from the bed.
 - **Spend your effort on the two body positions** you hold longest, sleeping and working. In a studio those two choices are most of the game.
 
+{{studioWedges}}
+
 One clear move: give the headboard the best favourable wall the room offers, and hand the worst wedge the wardrobe.
 
 ## "The bed truly cannot move"
@@ -58,6 +60,8 @@ They disagree about the calendar, not about you. Your Kua comes from the *Chines
 
 - **The arithmetic is never the problem.** When two calculators disagree about a January or early-February birth, the year boundary is almost always the reason.
 - **A worked example:** someone born on 28 January 1990 belongs, for Kua purposes, to 1989 under both conventions, because both boundaries fall after that date in 1990.
+
+{{januaryTimeline}}
 - **If your birthday sits in the gap** between 4 February and that year's Chinese New Year, run the free calculator once with your real birth date and once as if born the year before, and read both profiles. The honest tiebreak is the same seven-day test this book uses for everything else: give the disputed bed or seat a week under each reading and keep the one your own mornings vote for.
 
 One clear move: check the year boundary before doubting the reading. Boundary first, arithmetic second.

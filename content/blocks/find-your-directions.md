@@ -1,6 +1,8 @@
 # Find your eight directions
 
 You now know your directions by name. This chapter turns the names into walls.
+{{threeReadingProtocol}}
+
 
 Everything after this page assumes you can stand in your own home and point at your {{shengQiDir}} wall without guessing. That takes a phone, a piece of paper, and about twenty minutes. Do it once and it is done for as long as you live there.
 

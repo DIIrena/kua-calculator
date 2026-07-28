@@ -1566,3 +1566,270 @@ export function heavensGateSvg(): string {
 <p class="figure-caption">A stove or strong heat at the Northwest, the corner the tradition calls Heaven's Gate, is softened with an earth-element buffer between the fire and the corner, so the heat steps down through earth toward the corner's own metal instead of burning straight at it.</p>
 </div>`;
 }
+
+// ============================================================
+// Compatibility: two inverted compass rings. compatibility.md.
+// ============================================================
+export function compatibilityRingsSvg(): string {
+  const wedge = (cx: number, cy: number, r: number, i: number, fav: boolean) => {
+    const a0 = ((-90 + i * 45 - 22.5) * Math.PI) / 180;
+    const a1 = ((-90 + i * 45 + 22.5) * Math.PI) / 180;
+    const x0 = cx + r * Math.cos(a0);
+    const y0 = cy + r * Math.sin(a0);
+    const x1 = cx + r * Math.cos(a1);
+    const y1 = cy + r * Math.sin(a1);
+    return `<path d="M ${cx} ${cy} L ${x0.toFixed(1)} ${y0.toFixed(1)} A ${r} ${r} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)} Z" fill="${fav ? C.oliveSoft : C.claySoft}" stroke="${C.paper}" stroke-width="1.5"/>`;
+  };
+  const labels = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+  const eastFav = new Set([0, 2, 3, 4]);
+  const ring = (cx: number, cy: number, invert: boolean) => {
+    let g = "";
+    for (let i = 0; i < 8; i++) {
+      const fav = invert ? !eastFav.has(i) : eastFav.has(i);
+      g += wedge(cx, cy, 82, i, fav);
+    }
+    for (let i = 0; i < 8; i++) {
+      const a = ((-90 + i * 45) * Math.PI) / 180;
+      g += `<text x="${(cx + 60 * Math.cos(a)).toFixed(1)}" y="${(cy + 60 * Math.sin(a) + 3).toFixed(1)}" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.ink}">${labels[i]}</text>`;
+    }
+    return g;
+  };
+  return `<div class="figure">
+<svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" width="500" height="223" style="display:block;margin:0 auto;" role="img" aria-label="East and West group compass rings, mirror images">
+  <text x="150" y="26" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="800" fill="${C.ink}">your group</text>
+  ${ring(150, 122, false)}
+  <text x="410" y="26" text-anchor="middle" font-family="Hanken Grotesk" font-size="11" font-weight="800" fill="${C.ink}">the other group</text>
+  ${ring(410, 122, true)}
+  <rect x="150" y="228" width="14" height="14" fill="${C.oliveSoft}" stroke="${C.ink2}" stroke-width="0.8"/>
+  <text x="170" y="239" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">supportive</text>
+  <rect x="290" y="228" width="14" height="14" fill="${C.claySoft}" stroke="${C.ink2}" stroke-width="0.8"/>
+  <text x="310" y="239" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">handle with care</text>
+</svg>
+<p class="figure-caption">The two groups tile the whole compass between them. A same-group partner shares your supportive directions; an other-group partner holds their mirror image, so their good walls are your careful ones.</p>
+</div>`;
+}
+
+// ============================================================
+// Studio and open-plan wedges. faq-hard-cases.md.
+// ============================================================
+export function studioWedgesSvg(): string {
+  const cx = 210;
+  const cy = 176;
+  const spokes = Array.from({ length: 8 }, (_, i) => {
+    const a = ((-90 + i * 45 + 22.5) * Math.PI) / 180;
+    return `<line x1="${cx}" y1="${cy}" x2="${(cx + 150 * Math.cos(a)).toFixed(0)}" y2="${(cy + 150 * Math.sin(a)).toFixed(0)}" stroke="${C.hairline}" stroke-width="1"/>`;
+  }).join("");
+  return `<div class="figure">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" width="500" height="286" style="display:block;margin:0 auto;" role="img" aria-label="Reading one open-plan room from its centre">
+  <rect x="50" y="52" width="320" height="250" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  ${spokes}
+  <circle cx="${cx}" cy="${cy}" r="6" fill="${C.ink}"/>
+  <text x="${cx}" y="${cy + 22}" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">stand here once</text>
+  <rect x="120" y="66" width="90" height="30" rx="3" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.3"/>
+  <text x="165" y="86" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">bed (best wall)</text>
+  <rect x="278" y="130" width="70" height="20" rx="3" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.3"/>
+  <text x="313" y="144" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">desk</text>
+  <rect x="70" y="255" width="70" height="40" rx="3" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.2"/>
+  <text x="105" y="279" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">wardrobe,</text>
+  <text x="105" y="290" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">laundry</text>
+  <text x="450" y="150" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.olive}">sage wedges:</text>
+  <text x="450" y="164" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">the body</text>
+  <text x="450" y="188" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.clay}">peach wedges:</text>
+  <text x="450" y="202" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">storage</text>
+</svg>
+<p class="figure-caption">Read one undivided room from its centre once, and place functions into wedges: the bed on your best wall, the desk in a favourable wedge, the wardrobe and laundry parked in the cautious ones.</p>
+</div>`;
+}
+
+// ============================================================
+// Year overlay: the Lo Shu nine-number key. year-overlay.md.
+// ============================================================
+export function yearOverlaySvg(): string {
+  const grid = [
+    [4, 9, 2],
+    [3, 5, 7],
+    [8, 1, 6],
+  ];
+  const label: Record<number, string> = { 1: "career", 2: "illness", 3: "conflict", 4: "study", 5: "chaos", 6: "helpers", 7: "loss", 8: "prosperity", 9: "celebration" };
+  const s = 96;
+  const ox = 136;
+  const oy = 30;
+  let cells = "";
+  for (let r = 0; r < 3; r++)
+    for (let c = 0; c < 3; c++) {
+      const n = grid[r][c];
+      const good = n === 8 || n === 9;
+      const bad = n === 2 || n === 5;
+      const fill = good ? C.oliveSoft : bad ? C.claySoft : C.paper;
+      const x = ox + c * s;
+      const y = oy + r * s;
+      cells += `<rect x="${x}" y="${y}" width="${s}" height="${s}" fill="${fill}" stroke="${C.ink2}" stroke-width="1"/><text x="${x + s / 2}" y="${y + s / 2 - 2}" text-anchor="middle" font-family="Hanken Grotesk" font-size="26" font-weight="800" fill="${C.ink}">${n}</text><text x="${x + s / 2}" y="${y + s / 2 + 20}" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">${label[n]}</text>`;
+    }
+  return `<div class="figure">
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" width="440" height="283" style="display:block;margin:0 auto;" role="img" aria-label="The Lo Shu nine-number key">
+  ${cells}
+  <rect x="136" y="326" width="14" height="14" fill="${C.oliveSoft}" stroke="${C.ink2}" stroke-width="0.8"/>
+  <text x="156" y="337" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">steady friends, 8 and 9</text>
+  <rect x="320" y="326" width="14" height="14" fill="${C.claySoft}" stroke="${C.ink2}" stroke-width="0.8"/>
+  <text x="340" y="337" font-family="Hanken Grotesk" font-size="10" fill="${C.ink2}">cautions, 2 and 5</text>
+</svg>
+<p class="figure-caption">Each of the nine visiting numbers keeps its meaning every year while its position turns. The two you watch are 5 and 2; the two you welcome are 8 and 9. Where they sit this year lives in the Planner.</p>
+</div>`;
+}
+
+// ============================================================
+// Laundry cycle loop. space-laundry.md.
+// ============================================================
+export function laundryLoopSvg(): string {
+  const nodes = [
+    ["In", "basket"],
+    ["Washed", "drum"],
+    ["Dried", "rail"],
+    ["Folded", "stack"],
+    ["Away", "drawer"],
+  ];
+  const cx = 210;
+  const cy = 200;
+  const R = 130;
+  const pos = nodes.map((_, i) => {
+    const a = ((-90 + i * 72) * Math.PI) / 180;
+    return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a) };
+  });
+  const arrows = pos
+    .map((p, i) => {
+      const q = pos[(i + 1) % 5];
+      const dx = q.x - p.x;
+      const dy = q.y - p.y;
+      const len = Math.hypot(dx, dy);
+      const ux = dx / len;
+      const uy = dy / len;
+      const sx = p.x + ux * 42;
+      const sy = p.y + uy * 42;
+      const ex = q.x - ux * 42;
+      const ey = q.y - uy * 42;
+      const stall = i === 3;
+      return `<line x1="${sx.toFixed(1)}" y1="${sy.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${ey.toFixed(1)}" stroke="${stall ? C.clay : C.clay}" stroke-width="2.2"${stall ? ' stroke-dasharray="5 4"' : ""}/>
+  <path d="M ${ex.toFixed(1)} ${ey.toFixed(1)} L ${(ex - ux * 10 + -uy * 5).toFixed(1)} ${(ey - uy * 10 + ux * 5).toFixed(1)} L ${(ex - ux * 10 - -uy * 5).toFixed(1)} ${(ey - uy * 10 - ux * 5).toFixed(1)} Z" fill="${C.clay}"/>${stall ? `<text x="${((p.x + q.x) / 2 + 30).toFixed(0)}" y="${((p.y + q.y) / 2).toFixed(0)}" font-family="Hanken Grotesk" font-size="8.5" fill="${C.clay}">pile forms here</text>` : ""}`;
+    })
+    .join("\n  ");
+  const circles = nodes
+    .map(
+      (n, i) => `<circle cx="${pos[i].x.toFixed(1)}" cy="${pos[i].y.toFixed(1)}" r="38" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.6"/>
+  <text x="${pos[i].x.toFixed(1)}" y="${(pos[i].y - 2).toFixed(1)}" text-anchor="middle" font-family="Hanken Grotesk" font-size="12" font-weight="800" fill="${C.ink}">${n[0]}</text>
+  <text x="${pos[i].x.toFixed(1)}" y="${(pos[i].y + 12).toFixed(1)}" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">${n[1]}</text>`,
+    )
+    .join("\n  ");
+  return `<div class="figure">
+<svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" width="380" height="326" style="display:block;margin:0 auto;" role="img" aria-label="The laundry cycle as a loop">
+  ${arrows}
+  ${circles}
+</svg>
+<p class="figure-caption">A laundry is a loop: in, washed, dried, folded, away. The pile that reads as a stalled corner forms at one point only, between folded and away. A laundry that keeps moving is a laundry at rest.</p>
+</div>`;
+}
+
+// ============================================================
+// Room-shape typology, five verdicts. room-bedroom.md.
+// ============================================================
+export function roomShapeSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg" width="520" height="149" style="display:block;margin:0 auto;" role="img" aria-label="Five room shapes and their verdicts">
+  <rect x="20" y="24" width="90" height="70" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <text x="65" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="800" fill="${C.ink}">square</text>
+  <text x="65" y="132" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.olive}">circulates evenly</text>
+  <circle cx="175" cy="59" r="35" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1.5"/>
+  <text x="175" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="800" fill="${C.ink}">round</text>
+  <text x="175" y="132" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.clay}">no backing, weak</text>
+  <path d="M 250 30 L 330 24 L 330 94 L 250 88 Z" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <text x="290" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="800" fill="${C.ink}">trapezium</text>
+  <text x="290" y="132" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">bed on parallel walls</text>
+  <path d="M 355 24 L 415 24 L 415 60 L 445 60 L 445 94 L 355 94 Z" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <rect x="418" y="63" width="24" height="28" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="400" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="800" fill="${C.ink}">L-shape</text>
+  <text x="400" y="132" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.olive}">fill the notch</text>
+  <path d="M 470 24 L 540 24 L 540 48 L 560 48 L 500 48 L 500 94 L 490 94 L 490 48 L 470 48 Z" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <circle cx="500" cy="48" r="4" fill="${C.clay}"/>
+  <text x="512" y="118" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="800" fill="${C.ink}">T-shape</text>
+  <text x="512" y="132" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.clay}">watch the inner corner</text>
+</svg>
+<p class="figure-caption">The room's own shape carries a verdict: a square or rectangle circulates evenly, a round room gives no backing, a trapezium wants the bed along its parallel walls, an L becomes a rectangle again once the notch is filled, and a T flags its inner projecting corner.</p>
+</div>`;
+}
+
+// ============================================================
+// Three-reading field protocol. find-your-directions.md.
+// ============================================================
+export function threeReadingProtocolSvg(): string {
+  const dial = (x: number, deg: number, off: boolean) => {
+    const a = ((deg - 90) * Math.PI) / 180;
+    return `<circle cx="${x}" cy="150" r="26" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.3"/>
+  <line x1="${x}" y1="150" x2="${(x + 20 * Math.cos(a)).toFixed(1)}" y2="${(150 + 20 * Math.sin(a)).toFixed(1)}" stroke="${off ? C.clay : C.olive}" stroke-width="2.2"/>
+  <path d="M ${(x + 26 * Math.cos(a)).toFixed(1)} ${(150 + 26 * Math.sin(a)).toFixed(1)} l -6 -3 l 2 7 Z" fill="${off ? C.clay : C.olive}"/>
+  <text x="${x}" y="196" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" fill="${off ? C.clay : C.ink2}">${off ? "nudged off" : "agrees"}</text>`;
+  };
+  return `<div class="figure">
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" width="440" height="220" style="display:block;margin:0 auto;" role="img" aria-label="The three-reading field protocol">
+  <line x1="40" y1="60" x2="440" y2="60" stroke="${C.ink}" stroke-width="4"/>
+  <rect x="250" y="52" width="24" height="8" fill="${C.claySoft}" stroke="${C.clay}" stroke-width="0.8"/>
+  <text x="262" y="44" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.clay}">a pipe in the wall</text>
+  <line x1="90" y1="66" x2="90" y2="124" stroke="${C.hairline}" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="240" y1="66" x2="240" y2="124" stroke="${C.hairline}" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="390" y1="66" x2="390" y2="124" stroke="${C.hairline}" stroke-width="1" stroke-dasharray="3 3"/>
+  ${dial(90, 12, false)}
+  ${dial(240, 40, true)}
+  ${dial(390, 12, false)}
+  <text x="240" y="228" text-anchor="middle" font-family="Hanken Grotesk" font-size="9.5" fill="${C.ink2}">two agree, one off: use the centre reading</text>
+</svg>
+<p class="figure-caption">Take the bearing three times, at the left, centre, and right of the wall, the same short distance out. If all three agree, any serves. If one is nudged off by metal in the wall, the two that agree win, and the centre reading is your tie-breaker.</p>
+</div>`;
+}
+
+// ============================================================
+// Jue Ming cannot-avoid-it bedroom protocol. jue-ming.md.
+// ============================================================
+export function jueMingProtocolSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" width="500" height="286" style="display:block;margin:0 auto;" role="img" aria-label="Softening a bed on a Jue Ming wall">
+  <rect x="50" y="52" width="460" height="250" fill="${C.paper}" stroke="${C.ink2}" stroke-width="1.5"/>
+  <rect x="50" y="52" width="460" height="10" fill="${C.claySoft}"/>
+  <text x="280" y="46" text-anchor="middle" font-family="Hanken Grotesk" font-size="10" font-weight="700" fill="${C.clay}">the Jue Ming wall (no better option)</text>
+  <rect x="210" y="66" width="140" height="150" rx="4" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.5"/>
+  <rect x="204" y="62" width="152" height="16" fill="${C.ink}"/>
+  <text x="280" y="74" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.paper}">solid, weighted headboard</text>
+  <rect x="220" y="44" width="120" height="12" fill="none" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 2"/>
+  <path d="M 224 46 h 112 M 224 50 h 112 M 224 54 h 112" stroke="${C.hairline}" stroke-width="0.8"/>
+  <text x="392" y="70" text-anchor="start" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">weight on the wall</text>
+  <rect x="120" y="150" width="10" height="90" fill="${C.sand}" stroke="${C.ink2}" stroke-width="1.2"/>
+  <text x="100" y="260" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">a screen breaks</text>
+  <text x="100" y="271" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">the sightline</text>
+  <rect x="410" y="230" width="70" height="20" rx="3" fill="${C.oliveSoft}" stroke="${C.olive}" stroke-width="1.3"/>
+  <circle cx="445" cy="270" r="12" fill="${C.paper}" stroke="${C.ink}" stroke-width="1.4"/>
+  <text x="445" y="292" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.olive}">win the desk instead</text>
+</svg>
+<p class="figure-caption">When the layout forces the headboard onto your Jue Ming wall, three softeners answer: a solid weighted headboard, real weight hung on the wall behind, and a screen breaking the diagonal sightline, and you win the desk by facing its chair to a favourable wall.</p>
+</div>`;
+}
+
+// ============================================================
+// January year-boundary timeline. faq-hard-cases.md.
+// ============================================================
+export function januaryTimelineSvg(): string {
+  return `<div class="figure">
+<svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" width="500" height="179" style="display:block;margin:0 auto;" role="img" aria-label="The January year-boundary window">
+  <line x1="40" y1="90" x2="520" y2="90" stroke="${C.ink2}" stroke-width="2"/>
+  <text x="40" y="118" text-anchor="start" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">Jan 1</text>
+  <text x="520" y="118" text-anchor="end" font-family="Hanken Grotesk" font-size="9" fill="${C.ink2}">Feb 28</text>
+  <rect x="250" y="82" width="110" height="16" fill="${C.claySoft}"/>
+  <line x1="250" y1="72" x2="250" y2="108" stroke="${C.clay}" stroke-width="2"/>
+  <text x="250" y="66" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.clay}">Chinese New Year</text>
+  <text x="250" y="126" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">(moves, late Jan to mid Feb)</text>
+  <line x1="360" y1="72" x2="360" y2="108" stroke="${C.olive}" stroke-width="2"/>
+  <text x="360" y="66" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.olive}">Li Chun</text>
+  <text x="360" y="126" text-anchor="middle" font-family="Hanken Grotesk" font-size="8" fill="${C.ink2}">(fixed, ~Feb 4)</text>
+  <circle cx="170" cy="90" r="5" fill="${C.ink}"/>
+  <text x="170" y="150" text-anchor="middle" font-family="Hanken Grotesk" font-size="9" font-weight="700" fill="${C.ink}">28 Jan 1990</text>
+  <text x="170" y="164" text-anchor="middle" font-family="Hanken Grotesk" font-size="8.5" fill="${C.ink2}">before both, so it counts as 1989</text>
+</svg>
+<p class="figure-caption">The Chinese year turns at the Chinese New Year for most lineages, and at Li Chun (about 4 February) for some, so a late-January or early-February birthday can read two ways. Born before both dates, like 28 January 1990, you belong to the previous year either way.</p>
+</div>`;
+}

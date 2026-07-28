@@ -61,6 +61,14 @@ import {
   southFireSvg,
   yanNianTableSvg,
   heavensGateSvg,
+  compatibilityRingsSvg,
+  studioWedgesSvg,
+  yearOverlaySvg,
+  laundryLoopSvg,
+  roomShapeSvg,
+  threeReadingProtocolSvg,
+  jueMingProtocolSvg,
+  januaryTimelineSvg,
 } from "@/lib/pdf/svg-marks";
 import {
   kuaElement,
@@ -233,6 +241,14 @@ function substituteTokens(
     southFire: () => southFireSvg(),
     yanNianTable: () => yanNianTableSvg(dirLabel("YN")),
     heavensGate: () => heavensGateSvg(),
+    compatibilityRings: () => compatibilityRingsSvg(),
+    studioWedges: () => studioWedgesSvg(),
+    yearOverlayKey: () => yearOverlaySvg(),
+    laundryLoop: () => laundryLoopSvg(),
+    roomShape: () => roomShapeSvg(),
+    threeReadingProtocol: () => threeReadingProtocolSvg(),
+    jueMingProtocol: () => jueMingProtocolSvg(),
+    januaryTimeline: () => januaryTimelineSvg(),
     yanNianActivation: () => yanNianActivation(context.kuaNumber),
     personalBagua: () =>
       (cachedPersonalBagua ??= personalBaguaSvg(
