@@ -439,12 +439,26 @@ function chapterOpenerHtml(
 </header>`;
 }
 
+/** A full-bleed typographic part-title page, deep green with an ivory
+ *  Didone title and a clay part kicker. Near-zero bytes: no photo. */
+function sectionDividerHtml(d: { part: string; title: string }): string {
+  return `<section class="section-divider">
+<div class="divider-inner">
+<p class="divider-part">${d.part}</p>
+<h2 class="divider-title">${d.title}</h2>
+<div class="divider-rule"></div>
+<div class="divider-mark">${brandMarkSvg(40, "#f2f2ee")}</div>
+</div>
+</section>`;
+}
+
 export async function assembleProductHtml(
   product: Product,
   context: BlockContext,
 ): Promise<string> {
   const pillarCount = product.blocks.filter((b) => PILLAR_META[b]).length;
   const compact = product.compactPhotos ?? false;
+  const dividers = product.sectionDividers ?? {};
   const parts = await Promise.all(
     product.blocks.map(async (blockId) => {
       const html = await loadBlock(blockId, context);
@@ -452,7 +466,9 @@ export async function assembleProductHtml(
         chapterOpenerHtml(blockId, context, pillarCount >= 2, compact) ||
         roomOpenerHtml(blockId, compact) ||
         cautiousOpenerHtml(blockId, compact);
-      return `<section class="block block--${blockId}">${opener}${html}</section>`;
+      const divider = dividers[blockId];
+      const dividerHtml = divider ? sectionDividerHtml(divider) : "";
+      return `${dividerHtml}<section class="block block--${blockId}">${opener}${html}</section>`;
     }),
   );
   return parts.join("\n");

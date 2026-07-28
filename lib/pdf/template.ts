@@ -255,6 +255,15 @@ export function buildHtml(
     @bottom-center { content: ""; }
   }
 
+  /* Section dividers: full-bleed typographic part-title pages. */
+  @page divider {
+    margin: 0;
+    @top-left { content: ""; border-bottom: none; }
+    @top-center { content: ""; border-bottom: none; }
+    @top-right { content: ""; border-bottom: none; }
+    @bottom-center { content: ""; }
+  }
+
   /* ------------------------------------------------------------------
      Base typography.
      ------------------------------------------------------------------ */
@@ -467,6 +476,60 @@ export function buildHtml(
     text-indent: 0.42em;
     text-transform: uppercase;
     color: ${BRAND.cream};
+  }
+
+  /* ------------------------------------------------------------------
+     Section dividers (part-title pages). Full-bleed deep green with an
+     ivory Didone title, a clay part kicker, and the brand mark.
+     ------------------------------------------------------------------ */
+  .section-divider {
+    page: divider;
+    page-break-before: always;
+    page-break-after: always;
+    width: 210mm;
+    height: 296.5mm;
+    box-sizing: border-box;
+    background: ${BRAND.olive};
+    color: ${BRAND.cream};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .divider-inner {
+    max-width: 160mm;
+    padding: 0 20mm;
+  }
+  .divider-part {
+    margin: 0 0 11mm 0;
+    font-family: "Hanken Grotesk", sans-serif;
+    color: ${BRAND.clay};
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    text-transform: uppercase;
+  }
+  .divider-title {
+    margin: 0 0 11mm 0;
+    font-family: "Bodoni Moda", "Didot", "Bodoni MT", serif;
+    font-weight: 500;
+    font-size: 40pt;
+    line-height: 1.12;
+    color: ${BRAND.cream};
+  }
+  .divider-rule {
+    width: 44mm;
+    height: 1px;
+    margin: 0 auto 11mm auto;
+    background: rgba(242, 242, 238, 0.4);
+  }
+  .divider-mark svg {
+    display: block;
+    margin: 0 auto;
+    width: 14mm;
+    height: 14mm;
   }
 
   /* ------------------------------------------------------------------
