@@ -39,6 +39,20 @@ const TOKENS = {
   nineAreasMap: "<svg></svg>",
   introPhotoBand: "<div class=\"opener-photo\"></div>",
   closingPhotoBand: "<div class=\"opener-photo\"></div>",
+  // Inline-SVG diagram tokens (visual recharge 2026-07). Presence is the
+  // test; the real resolvers live in lib/blocks.ts + lib/pdf/svg-marks.ts.
+  elementCycle: "<svg></svg>", kitchenLayout: "<svg></svg>", bedroomLayout: "<svg></svg>",
+  entranceLayout: "<svg></svg>", threeReadings: "<svg></svg>", commandGoodPoor: "<svg></svg>",
+  deskCommand: "<svg></svg>", livingRoom: "<svg></svg>", houseAxis: "<svg></svg>",
+  cautiousScale: "<svg></svg>", fourGates: "<svg></svg>", shengQiZoom: "<svg></svg>",
+  diningPockets: "<svg></svg>", hallwayPlan: "<svg></svg>", storageAllocation: "<svg></svg>",
+  balconyRecipe: "<svg></svg>", garagePlan: "<svg></svg>", bathroomStack: "<svg></svg>",
+  fountainInOut: "<svg></svg>", readingChair: "<svg></svg>", relationshipSymmetry: "<svg></svg>",
+  clearCentre: "<svg></svg>", southFire: "<svg></svg>", yanNianTable: "<svg></svg>",
+  heavensGate: "<svg></svg>", compatibilityRings: "<svg></svg>", studioWedges: "<svg></svg>",
+  yearOverlayKey: "<svg></svg>", laundryLoop: "<svg></svg>", roomShape: "<svg></svg>",
+  threeReadingProtocol: "<svg></svg>", jueMingProtocol: "<svg></svg>", januaryTimeline: "<svg></svg>",
+  deskClinic: "<svg></svg>",
 };
 
 // The eight pillar blocks with a fixed compass sector; their markdown may

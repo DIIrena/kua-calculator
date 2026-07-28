@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import GoodDaysForm from "@/components/GoodDaysForm";
+import ProductHero from "@/components/ProductHero";
 import calendar from "@/lib/day-calendar-2026.json";
 
 // The free Good Days page (shop-redesign task A2). The traffic asset:
@@ -65,6 +66,11 @@ export default function GoodDaysPage() {
       <article className="page-prose good-days-page">
         <p className="eyebrow">The date calendar</p>
         <h1>Good days in 2026 and 2027.</h1>
+
+        <ProductHero
+          slug="good-days-calendar-2026"
+          alt="A calm morning corner with a wall calendar, steaming tea and sheer curtains"
+        />
 
         <section className="good-days-legend" aria-label="How to read this">
           <p>

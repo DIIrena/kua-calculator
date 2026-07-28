@@ -3,6 +3,7 @@ import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
+import ProductHero from "@/components/ProductHero";
 
 export const metadata: Metadata = {
   title: "Daily Ritual and Twenty Laws Pack | My Feng Shui Home",
@@ -62,6 +63,11 @@ export default async function DailyRitualPackPage(props: {
       </section>
 
       <ProductPreview slug="daily-ritual-pack" title="Daily Ritual and Twenty Laws Pack" />
+
+      <ProductHero
+        slug="daily-ritual-pack"
+        alt="A candlelit ritual corner at dusk with a small stack of cards"
+      />
 
       <section className="product-section">
         <h2>What is inside</h2>

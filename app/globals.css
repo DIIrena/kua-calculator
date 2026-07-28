@@ -8429,6 +8429,42 @@ a:hover { color: var(--clay-deep); }
   text-align: center;
 }
 
+/* Lifestyle-photo hero band on a product page, below the cover. Landscape
+   heroes span the column; portrait ones are capped narrower. */
+.product-hero-photo {
+  margin: 2rem auto 1.5rem;
+  max-width: 640px;
+  padding: 0 1.25rem;
+}
+
+.product-hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.product-hero-photo.is-tall {
+  max-width: 400px;
+}
+
+/* The shop's opening plate: a wide threshold view above the comparison
+   matrix, with a calm zone for the overlaid wordmark. */
+.shop-hero-band {
+  max-width: 74rem;
+  margin: 0 auto 2rem;
+  padding: 0 1.25rem;
+}
+
+.shop-hero-band img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
 @media (max-width: 30rem) {
   .matrix-table th,
   .matrix-table td {

@@ -4,6 +4,7 @@ import BuyButton from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
 import { BaguaGridSample } from "@/components/ProductSampleDiagrams";
+import ProductHero from "@/components/ProductHero";
 
 export const metadata: Metadata = {
   title: "10-Step Home Diagnostic Workbook | My Feng Shui Home",
@@ -63,6 +64,11 @@ export default async function DiagnosticWorkbookPage(props: {
       </section>
 
       <ProductPreview slug="home-diagnostic-workbook" title="10-Step Home Diagnostic Workbook" />
+
+      <ProductHero
+        slug="home-diagnostic-workbook"
+        alt="A floor-plan worksheet with a pencil and brass ruler on an oak table"
+      />
 
       <section className="product-section">
         <h2>What is inside</h2>

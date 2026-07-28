@@ -3,6 +3,7 @@ import Link from "next/link";
 import BuyButton, { type BuyButtonState } from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
+import ProductHero from "@/components/ProductHero";
 import FlagshipChooser, { type Flagship } from "@/components/FlagshipChooser";
 import { autolinkProducts } from "@/components/autolinkProducts";
 import { TrustRow, GuaranteeNote } from "@/components/TrustRow";
@@ -191,6 +192,7 @@ export default function ProductLanding({
 
       {/* 4. Look inside */}
       <ProductPreview slug={c.slug} title={c.title} />
+      <ProductHero slug={c.slug} alt={`A room that pictures the ${c.title}`} />
 
       {/* 4b. Value anchor (P6): the tier comparison, flagship only */}
       {c.comparison ? (

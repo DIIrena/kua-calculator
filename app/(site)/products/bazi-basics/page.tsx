@@ -4,6 +4,7 @@ import BuyButton from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import ProductPreview from "@/components/ProductPreview";
 import { FourPillarsSample } from "@/components/ProductSampleDiagrams";
+import ProductHero from "@/components/ProductHero";
 
 export const metadata: Metadata = {
   title: "BaZi Basics: Read Your Own Chart | My Feng Shui Home",
@@ -63,6 +64,11 @@ export default async function BaziBasicsPage(props: {
       </section>
 
       <ProductPreview slug="bazi-basics" title="BaZi Basics: Read Your Own Chart" />
+
+      <ProductHero
+        slug="bazi-basics"
+        alt="A quiet study desk at evening lamplight with an open primer and a reading lamp"
+      />
 
       <section className="product-section">
         <h2>What is inside</h2>
