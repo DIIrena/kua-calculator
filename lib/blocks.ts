@@ -382,6 +382,22 @@ function roomOpenerHtml(blockId: BlockId, compact: boolean): string {
   return `<header class="chapter-opener chapter-opener--room">${band}</header>`;
 }
 
+/** The four cautious-direction chapters (huo-hai, wu-gui, liu-sha, jue-ming)
+ *  carry a plain fixed-height photo band above their H1, keyed by block id
+ *  (wu-gui.jpg, ...), the same treatment as the room chapters. Each plate
+ *  reframes an alarming name as a calm, cared-for corner. Fixed height with
+ *  or without the image, so page counts stay stable; missing plates fall
+ *  back to the brand mark until the owner installs them. */
+const CAUTIOUS_BLOCK = /^(?:huo-hai|wu-gui|liu-sha|jue-ming)$/;
+function cautiousOpenerHtml(blockId: BlockId, compact: boolean): string {
+  if (!CAUTIOUS_BLOCK.test(blockId)) return "";
+  const photo = photoDataUri(blockId, compact);
+  const band = photo
+    ? `<div class="opener-photo" style="background-image:url('${photo}')"></div>`
+    : `<div class="opener-photo opener-photo--fallback">${brandMarkSvg(56)}</div>`;
+  return `<header class="chapter-opener chapter-opener--room">${band}</header>`;
+}
+
 /** The injected chapter-opener header for pillar blocks: fixed-height
  *  photo band (or its element-icon fallback), clay kicker, sector
  *  mini-map and verdict chip. The markdown H1 follows it unchanged.
@@ -434,7 +450,8 @@ export async function assembleProductHtml(
       const html = await loadBlock(blockId, context);
       const opener =
         chapterOpenerHtml(blockId, context, pillarCount >= 2, compact) ||
-        roomOpenerHtml(blockId, compact);
+        roomOpenerHtml(blockId, compact) ||
+        cautiousOpenerHtml(blockId, compact);
       return `<section class="block block--${blockId}">${opener}${html}</section>`;
     }),
   );
