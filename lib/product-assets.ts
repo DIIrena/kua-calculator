@@ -112,6 +112,17 @@ export const MOCKUP_COVER_SLUGS: ReadonlySet<string> = new Set([
   "all-nine-pillars-compass",
   "business-money-feng-shui",
   "cures-catalog",
+  // Premium magazine covers for the printables (2026-07-31): hero photo +
+  // Didone masthead, rendered by scripts/build-premium-cover.mjs.
+  "annual-feng-shui-planner-2026",
+  "five-elements-workbook",
+  "healthy-home-audit",
+  "bazi-basics",
+  "home-diagnostic-workbook",
+  "bedroom-reset",
+  "daily-ritual-pack",
+  "starter-deck",
+  "good-days-calendar-2026",
 ]);
 
 // Optional page-count copy, used in the "what you receive" anchor only
