@@ -57,11 +57,16 @@ function coverHtml(p) {
 html,body{font-family:"Hanken Grotesk",sans-serif}
 .cover{width:210mm;height:296.5mm;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;text-align:center}
 .cover-bleed{position:absolute;inset:0;background-image:url(data:image/jpeg;base64,${photo});background-size:cover;background-position:center;background-color:#f2f2ee}
+.cover-spine{position:absolute;${process.env.SPINE_SIDE === "right" ? "right:0" : "left:0"};top:0;bottom:0;width:12mm;display:flex;align-items:center;justify-content:center;z-index:4}
+.cover-spine span{writing-mode:vertical-rl;transform:rotate(180deg);text-transform:uppercase;letter-spacing:.26em;text-indent:.26em;font-size:8.5pt;font-weight:800;color:#fcfcf8;white-space:nowrap}
 .cover-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,59,44,.52) 0%,rgba(14,59,44,.16) 26%,rgba(14,59,44,0) 44%),linear-gradient(0deg,rgba(14,59,44,.62) 0%,rgba(14,59,44,.22) 26%,rgba(14,59,44,0) 50%)}
 .cover-top{position:relative;padding-top:12mm}
 .cover-logo{width:21mm;height:21mm;margin:0 auto 3mm auto}
 .cover-masthead{font-family:"Bodoni Moda","Didot",serif;font-size:${mfs}pt;line-height:1;font-weight:600;letter-spacing:.015em;text-indent:.015em;text-transform:uppercase;color:#fcfcf8;text-shadow:0 1px 8px rgba(14,59,44,.45);white-space:nowrap;font-style:italic;${vary}}
 .cover-brand{font-size:10pt;letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:#fcfcf8;margin-top:3mm}
+.cover-series{display:flex;align-items:center;justify-content:center;gap:9px;margin:5mm auto 0}
+.cover-series .r{height:1px;width:34px;background:rgba(252,252,248,.55)}
+.cover-series .t{font-size:8.5pt;letter-spacing:.34em;text-indent:.34em;text-transform:uppercase;color:#fcfcf8;font-weight:700}
 .cover-bottom{position:relative;padding-bottom:15mm}
 .cover-title{font-size:24pt;line-height:1.15;font-weight:800;margin:0 auto 4mm auto;max-width:168mm;color:#fcfcf8}
 .cover-title em{font-style:italic;color:#d9531a;font-weight:800}
@@ -70,10 +75,12 @@ html,body{font-family:"Hanken Grotesk",sans-serif}
 <div class="cover">
   <div class="cover-bleed"></div>
   <div class="cover-scrim"></div>
+  <div class="cover-spine" style="background:${process.env.SPINE_COLOR || "#a8d8d0"}"><span style="color:${process.env.SPINE_TEXT_COLOR || "#0e3b2c"}">${process.env.SPINE_TEXT || "Kits & Guides Collection"}</span></div>
   <div class="cover-top">
     <div class="cover-logo">${MARK}</div>
     <p class="cover-masthead">${p.masthead}</p>
     <p class="cover-brand">My Feng Shui Home</p>
+    ${process.env.SERIES ? `<div class="cover-series"><span class="r"></span><span class="t">${process.env.SERIES}</span><span class="r"></span></div>` : ""}
   </div>
   <div class="cover-bottom">
     <h1 class="cover-title">${p.title}</h1>
@@ -99,7 +106,10 @@ for (const p of list) {
   await page.evaluate(() => {
     const el = document.querySelector(".cover-masthead");
     const cover = document.querySelector(".cover");
-    const avail = cover.clientWidth * 0.92;
+    const spine = document.querySelector(".cover-spine");
+    const spineW = spine ? spine.offsetWidth : 0;
+    // Keep the centred masthead clear of the spine on either side.
+    const avail = (cover.clientWidth - 2 * spineW) * 0.94;
     if (el.scrollWidth > avail) {
       const base = parseFloat(getComputedStyle(el).fontSize);
       el.style.fontSize = (base * avail) / el.scrollWidth + "px";
