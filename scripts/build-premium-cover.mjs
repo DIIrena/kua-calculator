@@ -39,8 +39,15 @@ const MARK = `<svg viewBox="0 0 709 709" xmlns="http://www.w3.org/2000/svg" widt
 
 function coverHtml(p) {
   const photo = b64(`public/products/${p.slug}/hero.jpg`);
-  // Auto-size the masthead so long words stay within the page width.
-  const mfs = Math.min(108, Math.round((108 * 7.2) / Math.max(7.2, p.masthead.length)));
+  // One uniform masthead size across the whole line (MFS), so a short word
+  // like CURES is not larger than ELEMENTS. Falls back to the old auto-fit
+  // only if MFS is unset.
+  const mfs = process.env.MFS ? Number(process.env.MFS) : 80; // one uniform size
+  // Pin the optical size low (opsz 20) so the Didone hairlines stay visible;
+  // auto optical sizing at display sizes makes the thin strokes vanish.
+  const opsz = process.env.OPSZ || "20";
+  const wght = process.env.WGHT || "640";
+  const vary = `font-optical-sizing:none;font-variation-settings:"opsz" ${opsz},"wght" ${wght};font-weight:${wght};`;
   return `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:"Bodoni Moda";font-style:normal;src:url(data:font/ttf;base64,${bodoni}) format("truetype");}
 @font-face{font-family:"Bodoni Moda";font-style:italic;src:url(data:font/ttf;base64,${bodoniItalic}) format("truetype");}
@@ -53,7 +60,7 @@ html,body{font-family:"Hanken Grotesk",sans-serif}
 .cover-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,59,44,.52) 0%,rgba(14,59,44,.16) 26%,rgba(14,59,44,0) 44%),linear-gradient(0deg,rgba(14,59,44,.62) 0%,rgba(14,59,44,.22) 26%,rgba(14,59,44,0) 50%)}
 .cover-top{position:relative;padding-top:12mm}
 .cover-logo{width:21mm;height:21mm;margin:0 auto 3mm auto}
-.cover-masthead{font-family:"Bodoni Moda","Didot",serif;font-size:${mfs}pt;line-height:1;font-weight:600;letter-spacing:.015em;text-indent:.015em;text-transform:uppercase;color:#fcfcf8;text-shadow:0 1px 6px rgba(14,59,44,.35);white-space:nowrap;${process.env.ITALIC === "1" ? "font-style:italic;" : ""}}
+.cover-masthead{font-family:"Bodoni Moda","Didot",serif;font-size:${mfs}pt;line-height:1;font-weight:600;letter-spacing:.015em;text-indent:.015em;text-transform:uppercase;color:#fcfcf8;text-shadow:0 1px 8px rgba(14,59,44,.45);white-space:nowrap;font-style:italic;${vary}}
 .cover-brand{font-size:10pt;letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:#fcfcf8;margin-top:3mm}
 .cover-bottom{position:relative;padding-bottom:15mm}
 .cover-title{font-size:24pt;line-height:1.15;font-weight:800;margin:0 auto 4mm auto;max-width:168mm;color:#fcfcf8}
