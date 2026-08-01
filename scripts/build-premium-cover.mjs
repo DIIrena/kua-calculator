@@ -51,7 +51,7 @@ html,body{font-family:"Hanken Grotesk",sans-serif}
 .cover-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,59,44,.52) 0%,rgba(14,59,44,.16) 26%,rgba(14,59,44,0) 44%),linear-gradient(0deg,rgba(14,59,44,.62) 0%,rgba(14,59,44,.22) 26%,rgba(14,59,44,0) 50%)}
 .cover-top{position:relative;padding-top:12mm}
 .cover-logo{width:21mm;height:21mm;margin:0 auto 3mm auto}
-.cover-masthead{font-family:"Bodoni Moda","Didot",serif;font-size:${mfs}pt;line-height:1;font-weight:600;letter-spacing:.015em;text-indent:.015em;text-transform:uppercase;color:#fcfcf8;text-shadow:0 1px 6px rgba(14,59,44,.35);white-space:nowrap}
+.cover-masthead{font-family:"Bodoni Moda","Didot",serif;font-size:${mfs}pt;line-height:1;font-weight:600;letter-spacing:.015em;text-indent:.015em;text-transform:uppercase;color:#fcfcf8;text-shadow:0 1px 6px rgba(14,59,44,.35);white-space:nowrap;${process.env.ITALIC === "1" ? "font-style:italic;" : ""}}
 .cover-brand{font-size:10pt;letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:#fcfcf8;margin-top:3mm}
 .cover-bottom{position:relative;padding-bottom:15mm}
 .cover-title{font-size:24pt;line-height:1.15;font-weight:800;margin:0 auto 4mm auto;max-width:168mm;color:#fcfcf8}
@@ -79,12 +79,14 @@ const page = await br.newPage();
 page.setDefaultTimeout(120000);
 page.setDefaultNavigationTimeout(120000);
 await page.setViewport({ width: 794, height: 1121, deviceScaleFactor: 2 });
-for (const p of PRODUCTS) {
+const list = process.env.ONLY ? PRODUCTS.filter((p) => p.slug === process.env.ONLY) : PRODUCTS;
+for (const p of list) {
   await page.setContent(coverHtml(p), { waitUntil: "load", timeout: 120000 });
   await page.evaluate(async () => { await document.fonts.ready; });
   await new Promise((r) => setTimeout(r, 400));
-  await page.screenshot({ path: `public/products/${p.slug}/cover-portrait.png`, clip: { x: 0, y: 0, width: 794, height: 1121 } });
-  console.log("cover:", p.slug, p.masthead);
+  const out = process.env.OUT || `public/products/${p.slug}/cover-portrait.png`;
+  await page.screenshot({ path: out, clip: { x: 0, y: 0, width: 794, height: 1121 } });
+  console.log("cover:", p.slug, p.masthead, process.env.ITALIC === "1" ? "(italic)" : "", "->", out);
 }
 await br.close();
 console.log("done", PRODUCTS.length, "covers");

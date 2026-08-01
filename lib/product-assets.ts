@@ -123,6 +123,9 @@ export const MOCKUP_COVER_SLUGS: ReadonlySet<string> = new Set([
   "daily-ritual-pack",
   "starter-deck",
   "good-days-calendar-2026",
+  // The Whole-Home Bundle card: its three real component covers fanned
+  // (Diagnostic, Ritual, Cures). Built by scripts/build_bundle_cover.py.
+  "whole-home-starter-bundle",
 ]);
 
 // Optional page-count copy, used in the "what you receive" anchor only
