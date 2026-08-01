@@ -42,7 +42,7 @@ function coverHtml(p) {
   // One uniform masthead size across the whole line (MFS), so a short word
   // like CURES is not larger than ELEMENTS. Falls back to the old auto-fit
   // only if MFS is unset.
-  const mfs = process.env.MFS ? Number(process.env.MFS) : 80; // one uniform size
+  const mfs = process.env.MFS ? Number(process.env.MFS) : 140; // cap; auto-fit shrinks longer words to the page width
   // Pin the optical size low (opsz 20) so the Didone hairlines stay visible;
   // auto optical sizing at display sizes makes the thin strokes vanish.
   const opsz = process.env.OPSZ || "20";
@@ -93,11 +93,24 @@ for (const p of list) {
   await page.setContent(coverHtml(p), { waitUntil: "load", timeout: 120000 });
   await page.evaluate(async () => { await document.fonts.ready; });
   await new Promise((r) => setTimeout(r, 400));
+  // Auto-fit: keep the masthead at its cap size unless it is wider than the
+  // page, then shrink just enough to fit. So short words stay big and long
+  // words settle at the largest size that fits.
+  await page.evaluate(() => {
+    const el = document.querySelector(".cover-masthead");
+    const cover = document.querySelector(".cover");
+    const avail = cover.clientWidth * 0.92;
+    if (el.scrollWidth > avail) {
+      const base = parseFloat(getComputedStyle(el).fontSize);
+      el.style.fontSize = (base * avail) / el.scrollWidth + "px";
+    }
+  });
+  await new Promise((r) => setTimeout(r, 120));
   const out = process.env.OUTDIR
     ? `${process.env.OUTDIR}/${p.slug}.png`
     : process.env.OUT || `public/products/${p.slug}/cover-portrait.png`;
   await page.screenshot({ path: out, clip: { x: 0, y: 0, width: 794, height: 1121 } });
-  console.log("cover:", p.slug, p.masthead, process.env.ITALIC === "1" ? "(italic)" : "", "->", out);
+  console.log("cover:", p.slug, p.masthead, "->", out);
 }
 await br.close();
 console.log("done", PRODUCTS.length, "covers");
