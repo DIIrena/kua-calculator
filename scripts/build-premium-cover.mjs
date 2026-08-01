@@ -42,7 +42,7 @@ function coverHtml(p) {
   // One uniform masthead size across the whole line (MFS), so a short word
   // like CURES is not larger than ELEMENTS. Falls back to the old auto-fit
   // only if MFS is unset.
-  const mfs = process.env.MFS ? Number(process.env.MFS) : 140; // cap; auto-fit shrinks longer words to the page width
+  const mfs = process.env.MFS ? Number(process.env.MFS) : 120; // uniform size; auto-fit only shrinks a word that would overflow the page
   // Pin the optical size low (opsz 20) so the Didone hairlines stay visible;
   // auto optical sizing at display sizes makes the thin strokes vanish.
   const opsz = process.env.OPSZ || "20";
