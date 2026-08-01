@@ -24,6 +24,7 @@ const PRODUCTS = [
 const exe = ["C:/Program Files/Google/Chrome/Application/chrome.exe"].find(existsSync);
 const b64 = (p) => readFileSync(p).toString("base64");
 const bodoni = b64("lib/fonts/BodoniModa-Variable.ttf");
+const bodoniItalic = b64("lib/fonts/BodoniModa-Italic-Variable.ttf");
 const hankenXB = b64("lib/fonts/HankenGrotesk-ExtraBold.ttf");
 const hanken = b64("lib/fonts/HankenGrotesk-Regular.ttf");
 
@@ -41,7 +42,8 @@ function coverHtml(p) {
   // Auto-size the masthead so long words stay within the page width.
   const mfs = Math.min(108, Math.round((108 * 7.2) / Math.max(7.2, p.masthead.length)));
   return `<!doctype html><html><head><meta charset="utf-8"><style>
-@font-face{font-family:"Bodoni Moda";src:url(data:font/ttf;base64,${bodoni}) format("truetype");}
+@font-face{font-family:"Bodoni Moda";font-style:normal;src:url(data:font/ttf;base64,${bodoni}) format("truetype");}
+@font-face{font-family:"Bodoni Moda";font-style:italic;src:url(data:font/ttf;base64,${bodoniItalic}) format("truetype");}
 @font-face{font-family:"Hanken Grotesk";font-weight:800;src:url(data:font/ttf;base64,${hankenXB}) format("truetype");}
 @font-face{font-family:"Hanken Grotesk";font-weight:400;src:url(data:font/ttf;base64,${hanken}) format("truetype");}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -84,7 +86,9 @@ for (const p of list) {
   await page.setContent(coverHtml(p), { waitUntil: "load", timeout: 120000 });
   await page.evaluate(async () => { await document.fonts.ready; });
   await new Promise((r) => setTimeout(r, 400));
-  const out = process.env.OUT || `public/products/${p.slug}/cover-portrait.png`;
+  const out = process.env.OUTDIR
+    ? `${process.env.OUTDIR}/${p.slug}.png`
+    : process.env.OUT || `public/products/${p.slug}/cover-portrait.png`;
   await page.screenshot({ path: out, clip: { x: 0, y: 0, width: 794, height: 1121 } });
   console.log("cover:", p.slug, p.masthead, process.env.ITALIC === "1" ? "(italic)" : "", "->", out);
 }
