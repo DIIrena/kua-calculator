@@ -18,6 +18,7 @@ const PRODUCTS = [
   { slug: "daily-ritual-pack", masthead: "RITUAL", title: "Daily <em>Ritual</em> &amp; Twenty Laws", sub: "A calm daily rhythm" },
   { slug: "starter-deck", masthead: "STARTER", title: "Learn Feng Shui <em>Starter</em> Deck", sub: "The working vocabulary, twenty-four cards" },
   { slug: "good-days-calendar-2026", masthead: "GOOD DAYS", title: "2026 <em>Good-Days</em> Calendar", sub: "Plan around the favourable days" },
+  { slug: "seven-day-home-reset", masthead: "SEVEN DAYS", title: "7-Day Home <em>Reset</em>", sub: "One calm task a day, room by room" },
 ];
 
 const exe = ["C:/Program Files/Google/Chrome/Application/chrome.exe"].find(existsSync);
