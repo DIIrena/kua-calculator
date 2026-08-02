@@ -8,7 +8,7 @@ The tradition keeps one corner of the home for the people who help you from the 
 
 The Northwest carries the trigram *Qian* and the element **Metal**. In the eight-area map, this is the sector the tradition associates with *helpful people* and *travel*, the two read as one theme, because both are about reaching outward and being met halfway. The helpful-people side covers mentors, patrons, benefactors, and the loose web of contacts who open doors you cannot open alone. The travel side covers journeys, relocations, and movement that takes you outside the familiar.
 
-Hold the language carefully. The tradition *associates* this corner with support and useful connection. It does not promise that tending it will deliver a mentor or a trip. The reading is a decision tool, not a forecast. What it gives you is a place to direct attention, and a set of long-standing rules for how to direct it.
+Hold the language carefully. The tradition *associates* this corner with support and useful connection. What it gives you is a place to direct attention, and a set of long-standing rules for how to direct it - a way to keep the door open to the help that tends to arrive when a home is ready for it.
 
 *Qian* is also the trigram the tradition links to the head of the household and to authority in general. That is why it reads the Northwest as the seat of the figures who hold some standing in your life, and why the corner carries two labels that turn out to be one theme: mentors and benefactors on one side, travel on the other. Both are the same outward reach, toward people and places beyond your own walls, and both answer to this one corner.
 

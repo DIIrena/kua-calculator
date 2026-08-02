@@ -4,11 +4,11 @@ Every home and every room has a wealth corner, and it is always in the same plac
 
 ## What the corner is for
 
-The Southeast sector carries the trigram Xun and the Wood element, and it is associated with the life area of wealth, abundance, and savings. Hold the word "wealth" loosely here. This corner is not a switch that turns money on. It reads as the part of a space that speaks to *resourcefulness and flow*: the sense of resources moving toward a household and gathering there, rather than draining away or sitting stuck.
+The Southeast sector carries the trigram Xun and the Wood element, and it is associated with the life area of wealth, abundance, and savings. Hold the word "wealth" loosely here. This corner reads as the part of a space that speaks to *resourcefulness and flow*: the sense of resources moving toward a household and gathering there, rather than draining away or sitting stuck.
 
-That is the plain frame, and it is worth saying plainly before anything else.
+That is the frame, and it is worth holding before anything else.
 
-**This corner is a place to direct attention and care. It is not a promise of money, and nothing in this reading can guarantee a financial result.**
+**This corner is a place to direct attention and care.** The tradition reads it as resourcefulness and flow; the earning itself stays yours to do.
 
 What a cared-for Southeast does is real and specific. It changes the cues your space gives you about money each day. It removes the small frictions, a dark corner, a pile of broken things, that quietly cost you attention. And it gives one fixed spot for the intention you already hold. It supports the work; it does not replace it.
 
@@ -26,7 +26,7 @@ If your home is an irregular shape and the Southeast falls in a "missing" corner
 
 The single most consistent thing this sector asks of you is unglamorous: keep it clear, keep it lit, keep it cared for. Most of the real work is maintenance, not decoration.
 
-- **Clear the clutter.** A Southeast corner used as a dumping ground, recycling, boxes, the things that have nowhere else to go, is the most common wealth-corner problem there is. Stacked clutter in this sector reads as stalled flow. In plain terms, a corner you avoid looking at is a corner you have stopped tending.
+- **Clear the clutter.** A Southeast corner used as a dumping ground, recycling, boxes, the things that have nowhere else to go, is the most common wealth-corner problem there is. Stacked clutter in this sector reads as stalled flow. A corner you avoid looking at is a corner you have stopped tending.
 - **Bring up the light.** This corner should not be the darkest spot in the room. A lamp, a brighter bulb, a cleaned fixture: light here reads as movement, and a dim corner as a settled, stagnant one.
 - **Repair what is broken.** A chipped pot, an unlit lamp, a wobbly shelf. Broken things in the wealth sector read as broken flow, and in practical terms they are small open loops that quietly demand attention.
 - **Keep it clean.** Dust the surfaces, wipe the floor, treat the corner as one you are proud of rather than one you hide.
@@ -96,7 +96,7 @@ If you do one thing this week, clear and light the Southeast corner of the room 
 
 In practice, when a whole home is worked through, the moves are ranked, and the top of the list is stable: the entrance is handled first, the Southeast corner second, and outstanding repairs third. So if your front door area is dim or cluttered, give it the same afternoon; the tradition reads the wealth corner in the context of a home that is easy to enter.
 
-The plant, the water, and the seating are refinements you can layer on once the corner is clear. None of them is a guarantee, and none of them is the point. The point is a corner you tend rather than avoid, in the one fixed sector long tied to flow.
+The plant, the water, and the seating are refinements you can layer on once the corner is clear. The heart of it is simpler: a corner you tend rather than avoid, in the one fixed sector long tied to flow.
 
 <div class="tips-page">
 <h2>Tips and tricks for the wealth corner</h2>

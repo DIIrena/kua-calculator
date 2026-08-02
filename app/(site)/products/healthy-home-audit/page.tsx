@@ -105,14 +105,14 @@ export default async function HealthyHomeAuditPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          It makes no medical claims. These pages read conditions and
-          conditions are all they read; they do not diagnose, treat,
-          or explain anything happening in a body. Mould and persistent
-          damp are jobs for proper remediation, and if something about
-          your health concerns you, that belongs with a doctor. Nothing
-          in this workbook stands in front of that.
+          It reads the nine conditions a home can support - air, light,
+          damp, sound, and the rest - room by room, so the place you live
+          in feels easier to breathe in and easier to rest in. Mould and
+          persistent damp are jobs for proper remediation, and anything
+          about your own health belongs with a doctor; this workbook tends
+          the room around you.
         </p>
       </section>
 

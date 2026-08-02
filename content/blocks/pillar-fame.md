@@ -18,7 +18,7 @@ This is an association the system makes, not a result it promises. Brightening t
 
 There is a timing layer the tradition lays over the fixed map, and at the moment it points here. Classical feng shui runs on twenty-year cycles, and the current one, which began in early February 2024 and runs to early February 2044, is governed by the star the classics seat in the South. Practitioners call it Period 9.
 
-In plain terms: by the tradition's own calendar, this is the South's era. That is not a prediction about anyone's career, and this reading makes none. It simply means the corner this chapter describes is the one the tradition currently honours most, so a South kept clean, lit, and warm is, in this reading, kept in step with the whole twenty-year cycle and not just with the room. If you were ever going to give one sector a standing five minutes a week, the calendar argues for this one.
+Put simply: by the tradition's own calendar, this is the South's era. It means the corner this chapter describes is the one the tradition currently honours most, so a South kept clean, lit, and warm is, in this reading, kept in step with the whole twenty-year cycle and not just with the room. If you were ever going to give one sector a standing five minutes a week, the calendar argues for this one.
 
 ## Fire, light, and keeping it bright
 

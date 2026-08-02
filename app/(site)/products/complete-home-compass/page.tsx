@@ -44,8 +44,8 @@ const CONFIG: LandingConfig = {
     "A personalised feng shui reading of the whole home: eight directions, twelve rooms, nine life areas, compatibility, and the 2026 overlay, keyed to your Kua number.",
   promise: [
     "Most feng shui advice arrives in fragments: a tip for the bedroom, a rule for the desk, a warning about mirrors. None of it is necessarily wrong, but a home is one system, and fragments read in isolation are how the advice starts to contradict itself. You fix the bedroom by the bedroom rule and break the money corner by the money rule, and nobody tells you which one should win.",
-    "The Complete Home Compass reads everything together, and reads it for you specifically. Your Kua number decides which directions the tradition marks as supportive for you and which to handle with care, and that one thread runs through every chapter: every room, every life area, every placement call is made against your profile, not a generic reader's. Where a recommendation rests on design evidence, the book says so. Where it is tradition, it says that too, plainly.",
-    "It reads your direction profile, not your floor plan, and it promises no outcomes. What it gives you is the complete, structured map for deciding how your home is arranged: one book, one system, no contradictions.",
+    "The Complete Home Compass reads everything together, and reads it for you specifically. Your Kua number decides which directions the tradition marks as supportive for you and which to handle with care, and that one thread runs through every chapter: every room, every life area, every placement call is made against your profile, not a generic reader's. Where a recommendation rests on design evidence, the book says so. Where it is tradition, it says that too.",
+    "It reads your direction profile and gives you the complete, structured map for deciding how your home is arranged: one book, one system, no contradictions, keyed to you.",
   ],
   steps: [
     {
@@ -78,8 +78,8 @@ const CONFIG: LandingConfig = {
     "You would rather read one coherent book than reconcile twenty tips.",
   ],
   notForWho: [
-    "You want a fortune. This is a structured reading of your direction profile, not a prediction.",
-    "You want a floor-plan consultation. It reads your directions, not your blueprints, and we sell no consultations.",
+    "You are after a fortune-teller. This is a structured reading of your own directions - a clear way to decide how your home is arranged.",
+    "You want a one-on-one floor-plan consultation. This reads your directions and hands you the map to apply yourself.",
     "You only need one room or your own directions: the smaller Compasses below do exactly that for less.",
   ],
   faq: [

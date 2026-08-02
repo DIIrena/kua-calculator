@@ -87,7 +87,7 @@ const CONFIG: LandingConfig = {
     },
     {
       q: "Is the discount real?",
-      a: "The three books sell separately at $14, $9, and $9 ($32). The bundle is $29. We say so plainly because the real reason to buy the set is the sequence, not the three dollars.",
+      a: "The three books sell separately at $14, $9, and $9 ($32). The bundle is $29. The real reason to buy the set is the sequence: the three books build on each other in order.",
     },
     {
       q: "What format are they?",

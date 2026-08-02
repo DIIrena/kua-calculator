@@ -1,4 +1,4 @@
-Feng shui is **not** a fortune. It is not a way to make money appear, and it is not a list of red things to put by your front door. Most of what reaches the open web is borrowed from a magazine, and most of the magazine version is wrong about what the tradition actually does.
+Feng shui is a way of looking at your home that helps you decide: where the bed goes, which way to face your desk, why one room is easy to be in and another quietly is not. Most of what reaches the open web is borrowed from a magazine, and the magazine version is mostly wrong about what the tradition actually does.
 
 Here is the version without the magazine gloss.
 
@@ -14,9 +14,9 @@ Some of those changes are *traditional*. The wealth corner. The mirror rules. Th
 
 That is the whole deal.
 
-## What it is not
+## What it gives you
 
-It is not a horoscope. It will not predict your year. It will not tell you what is going to happen. It will not make a difficult thing easy. It shapes the *conditions* a room offers. The year is not the book. The year is what you do with it.
+It works on the room in front of you: the light, the bed, the chair, the door. It shapes the *conditions* a room offers, and what you do inside those conditions stays yours. You bring the year; the book hands you the compass. That is where the value lives.
 
 ## Where to go next
 

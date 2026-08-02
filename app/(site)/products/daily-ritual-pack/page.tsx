@@ -98,12 +98,13 @@ export default async function DailyRitualPackPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          The laws are traditional framings, not guarantees. They are
-          kept because households have found them worth keeping, and
-          the pack presents them that way: as a practice to try, one
-          week at a time, not a promise about what follows.
+          The twenty laws are traditional framings that households have
+          kept because they are worth keeping, and the pack hands them to
+          you as a practice to try, one week at a time. A small daily
+          rhythm gives the home a steady, cared-for feel and leaves you a
+          little calmer at the close of each day.
         </p>
       </section>
 

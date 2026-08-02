@@ -1,8 +1,4 @@
-A home shapes the **conditions** a body lives inside, rather than treating or curing anyone. This cluster walks through the few moves a home can make that the evidence agrees are worth making, in the same vocabulary the cures cluster uses.
-
-## What this cluster is not
-
-This is not medical advice. It is not a substitute for clinical care. It is not a detox programme. It does not claim that arrangement cures illness, prevents disease, removes toxins, or boosts immunity. Plants are not measurable air purifiers; they earn their place as visible life, not as filtration. Said once, calmly. Moving on.
+A home shapes the **conditions** a body lives inside: the air it holds, the light it lets in, how dry it stays, and how well it lets you rest. This cluster walks through the few moves a home can make that the evidence agrees are worth making, in the same vocabulary the cures cluster uses.
 
 ## Here is the working version
 
@@ -36,3 +32,5 @@ Open one window for ten minutes today. Move one object that blocks light, air, o
 - **Ten minutes**: read [bedroom, kitchen, and bathroom health check](/guide/healthy-home/bedroom-kitchen-and-bathroom-health-check) for the room-by-room health read.
 - **An afternoon**: read [plants, materials, cleanliness, and daily rhythm](/guide/healthy-home/plants-materials-cleanliness-and-daily-rhythm) for the closer on what lives in the room and what tending it looks like.
 - **Deeper read**: [the foundations of feng shui](/guide/foundations/what-feng-shui-is-plainly) for the foundation, [what the bagua is](/guide/bagua/what-the-bagua-is) for the East and Health sector traditionally, [how to read any room](/guide/rooms/how-to-read-any-room) for the room-reading method this cluster sits on, and [the methodology page](/methodology) for how this site decides what to keep.
+
+A closing note: anything about your own health belongs with a doctor. This cluster reads the room around you, not the body inside it.

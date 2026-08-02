@@ -31,7 +31,7 @@ const CONFIG: LandingConfig = {
   slug: "move-in-kit",
   title: "The Move-In Date Report",
   eyebrow: "For the move",
-  headline: "Choose your move-in day with a method, not a guess.",
+  headline: "Choose your move-in day with a method you can trust.",
   subhead:
     "You give us the window you might move within; we read every day in it against the verified 2026 day calendar and your own Kua. Your best days pulled out, the ones to handle with care flagged, your directions for the new home, and a first-week sequence for settling in.",
   heroPromise:
@@ -44,7 +44,7 @@ const CONFIG: LandingConfig = {
   promise: [
     "The box is taped, the keys are in your hand, and the only thing left is choosing the day you walk in. Most people pick whatever the van company had free. The tradition has an actual method for this, and it takes your birth data and your dates, not your hopes.",
     "The Move-In Date Report reads every day in your window against the verified 2026 day calendar: which dates it treats as favourable for a move, which suit settling, and which to handle with care, each with the reason named. Then it adds the part no generic calendar can: your own Kua directions for the new home, so the bed and the main work seat start in the right place on day one.",
-    "It closes with a first-week sequence: the threshold, light and air, the kitchen, the bed, the work seat, in order. A calm structured start, not a superstition checklist, and it says plainly which parts are tradition.",
+    "It closes with a first-week sequence: the threshold, light and air, the kitchen, the bed, the work seat, in order. A calm, structured start that names which parts are tradition.",
   ],
   steps: [
     {
@@ -73,7 +73,7 @@ const CONFIG: LandingConfig = {
   ],
   notForWho: [
     "Your date is already fixed and unchangeable: the report still reads your week-one setup, but its main job is choosing the day.",
-    "You want a guarantee the move goes well. It reads a traditional calendar; it promises nothing.",
+    "You want a guarantee the move goes well. This reads a traditional calendar and gives you the strongest days to choose from.",
     "Your window falls outside July 2026 to February 2027 (the verified calendar's current range).",
   ],
   faq: [

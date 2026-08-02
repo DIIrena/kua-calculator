@@ -8,11 +8,11 @@ This page explains what that number is, what the West group means, and how to re
 
 ## What the Kua number is
 
-Your Kua is a single digit between one and nine, with no five, calculated from your birth year and your gender. It is not your astrology. It is not a fortune. The most useful way to hold it is as a **coordinator**: a non-arbitrary way to choose between options that otherwise look equivalent.
+Your Kua is a single digit between one and nine, with no five, calculated from your birth year and your gender. The most useful way to hold it is as a **coordinator**: a non-arbitrary way to choose between options that otherwise look equivalent - which wall, which seat, which way to face, when every choice looks the same until something helps you decide.
 
 There are eight compass directions a person can face. Most of the time you do not notice which one you are facing, because most of the time it does not seem to matter. The Eight Mansions tradition proposes that, for any given person, four of those eight directions are treated as supportive and four are treated with more caution. Your Kua number is what sorts them.
 
-The system rests on a long-established yin-yang and trigram cosmology and has been used as a structured framework in traditional practice for a long stretch of its history. It survived because households found it gave them something concrete to decide with: where to put a bed, which seat the head of the family takes at dinner, where to put the safe. That is what it is for. It does not predict your future. It gives you a structured way to choose.
+The system rests on a long-established yin-yang and trigram cosmology and has been used as a structured framework in traditional practice for a long stretch of its history. It survived because households found it gave them something concrete to decide with: where to put a bed, which seat the head of the family takes at dinner, where to put the safe. That is what it is for: a structured way to choose, and the quiet confidence of having chosen well.
 
 ## What West group means
 
@@ -31,7 +31,7 @@ The four it treats with more caution are north, east, southeast, and south.
 
 {{elementSwatches}}
 
-Look at the supportive four. Two are earth, two are metal: elements the tradition associates with *gathering* rather than motion. Earth holds and ripens; metal refines and completes. The tradition reads West group as oriented toward consolidation: deepening what is already there, finishing well, holding the harvest. That does not mean every West group person is slow. Plenty move quickly. It is a description of the qualities the tradition associates with your favourable directions, not a personality test.
+Look at the supportive four. Two are earth, two are metal: elements the tradition associates with *gathering* rather than motion. Earth holds and ripens; metal refines and completes. The tradition reads West group as oriented toward consolidation: deepening what is already there, finishing well, holding the harvest. That does not mean every West group person is slow. Plenty move quickly. It describes the qualities the tradition associates with your favourable directions - a lens for reading your rooms, held lightly.
 
 <p class="pull-quote">The tradition reads these four as your supportive directions: <strong>Southwest, West, Northwest, Northeast</strong>.</p>
 

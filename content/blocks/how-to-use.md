@@ -2,7 +2,7 @@
 
 Three kinds of claim appear in the pages ahead, and it is worth knowing which is which before you start. We keep them separate on purpose.
 
-**Tradition.** Most of what follows is traditional Eight Mansions guidance: which direction the tradition calls supportive for a given quality, and the placements long associated with each. We mark this with words like "traditionally" and "the tradition associates." It is a structured way of deciding between otherwise equivalent options. It is not a claim that an outcome is guaranteed.
+**Tradition.** Most of what follows is traditional Eight Mansions guidance: which direction the tradition calls supportive for a given quality, and the placements long associated with each. We mark this with words like "traditionally" and "the tradition associates." It is a structured way of deciding between otherwise equivalent options, so a choice that used to be a coin-flip becomes one you can make with confidence.
 
 **Observation.** Some of it is testable in your own home over a week or two: whether a chair feels easier to settle into, whether you wake more rested, whether a room you avoided becomes one you use. We invite you to notice these, not to expect them.
 

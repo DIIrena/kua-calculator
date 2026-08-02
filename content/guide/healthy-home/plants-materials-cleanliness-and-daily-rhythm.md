@@ -40,6 +40,6 @@ Pick one plant and water it on a schedule you can keep. Set up a one-bag-a-week 
 
 - For the four environmental conditions, see [air, light, damp, and stale corners](/guide/healthy-home/air-light-damp-and-stale-corners).
 - For the room-by-room health read, see [the bedroom, kitchen, and bathroom health check](/guide/healthy-home/bedroom-kitchen-and-bathroom-health-check).
-- For the no-promises frame the cluster opens with, see [healthy home feng shui without health promises](/guide/healthy-home/healthy-home-feng-shui-without-health-promises).
+- For the framing the cluster opens with, see [healthy-home feng shui: air, light, damp, and rest](/guide/healthy-home/healthy-home-feng-shui-without-health-promises).
 - For the synthesis behind the whole site, see [the methodology page](/methodology).
 - Ten seconds: get your number from [the Kua calculator](/kua-calculator).

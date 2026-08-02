@@ -101,13 +101,13 @@ export default async function GoodDaysCalendarPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          It is not a forecast. The tradition reads days as better or
-          worse suited to kinds of activity; it does not predict what
-          happens on them. Treat it as a structured way to choose
-          between otherwise equal days. If a date cannot move, the
-          calendar does not ask you to move it.
+          The tradition reads days as better or worse suited to kinds of
+          activity, so you get a simple, structured way to pick between
+          otherwise equal days: which to start things on, which to finish
+          them on. When a date cannot move, the calendar leaves it be - it
+          is here for the choices that are still open.
         </p>
         <p>
           The full sector-by-sector reading of the year lives in the{" "}

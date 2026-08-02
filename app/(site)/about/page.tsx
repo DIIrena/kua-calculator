@@ -16,7 +16,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About My Feng Shui Home",
   description:
-    "This site is run by an architect who reads feng shui as spatial guidance, not fortune-telling.",
+    "This site is run by an architect who reads feng shui as spatial guidance you can actually use.",
   alternates: { canonical: "https://myfengshuihome.com/about" },
   robots: { index: false, follow: false },
   openGraph: {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: "https://myfengshuihome.com/about",
     title: "About My Feng Shui Home",
     description:
-      "Who runs this site, where the method comes from, and what this site is not.",
+      "Who runs this site, where the method comes from, and how it reads feng shui.",
   },
 };
 

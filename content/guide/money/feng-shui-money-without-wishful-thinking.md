@@ -1,8 +1,4 @@
-Money is handled, not summoned. And the places in a home where it gets handled - the kitchen counter, the southeast corner, the front door, the desk, the drawer where the bills live - respond to the same six levers as every other cure in the practice.
-
-## What this cluster is not
-
-This cluster will not promise that a figurine in a corner changes your bank balance. No object is asked to do the work of an income. If you came for that kind of promise, this is the wrong shelf. For the broader framing, the longer piece on [what feng shui really is and is not](/articles/what-is-feng-shui-really) sits alongside this cluster.
+Money is handled, not summoned. This cluster reads the flow, care, visibility, and preparation of the places where money actually moves through a home - the kitchen counter, the southeast corner, the front door, the desk, the drawer where the bills live - which respond to the same six levers as every other cure in the practice.
 
 ## Here is the working version
 
@@ -48,3 +44,5 @@ If you do nothing else, do these. Find one money surface in the home. The desk, 
 - Then walk through [how money moves through the kitchen](/guide/money/kitchen-stove-and-money-flow).
 - Then look at [the desk and door as the working money positions](/guide/money/desk-door-and-business-money).
 - For the canonical per-room starter moves, the [Money life-area page](/life/money) is the route.
+
+A closing note: no object is asked to do the work of an income. A money place responds to real conditions you can tend, rather than a guaranteed result. For the broader framing, see the longer piece on [what feng shui really is](/articles/what-is-feng-shui-really).

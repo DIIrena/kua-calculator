@@ -78,12 +78,13 @@ export default async function PickThreeSpacesPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          It reads your direction profile, the eight directions that
-          follow from your Kua, not your floor plan, and it does not
-          promise outcomes. It is a structured way to decide how each
-          chosen room is set up, not a fortune.
+          It reads your direction profile - the eight directions that
+          follow from your Kua - and turns "I cannot tell which
+          arrangement is better" into a clear, non-arbitrary choice. A
+          structured way to decide how each of the three rooms you choose
+          is set up, so they start working with you.
         </p>
       </section>
 

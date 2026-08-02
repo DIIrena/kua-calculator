@@ -8,7 +8,7 @@ The career life-area is fixed in the **North**. On the map of your home, North i
 
 The tradition reads the North as the sector of **path, work, and forward motion**, the long line of a working life rather than any single job. Where some sectors are about people or rest or recognition, this one is about movement: the direction you are heading, the way the next stretch of road opens up in front of you. The classical labels are career, life path, and new beginnings. Hold all three loosely. The point is not a promotion. The point is *flow forward*, the sense that the path is open and that you can move along it.
 
-Because the theme is movement, the tradition is most concerned with whether this corner is **clear and moving** or **stuck and stagnant**. A North corner buried under stored boxes, a North wall that nothing can pass, a North room that has become the place where unfinished things pile up: each of these is read as a path that has silted up. The reading does not promise that clearing the corner advances your career. It treats a clear, moving North as the configuration that matches an open path, and a clogged North as the one that matches a path you cannot see down.
+Because the theme is movement, the tradition is most concerned with whether this corner is **clear and moving** or **stuck and stagnant**. A North corner buried under stored boxes, a North wall that nothing can pass, a North room that has become the place where unfinished things pile up: each of these is read as a path that has silted up. A clear, moving North is the configuration the tradition reads as an open path; a clogged North, the one that matches a path you cannot see down.
 
 ## Water is its element
 

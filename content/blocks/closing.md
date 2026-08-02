@@ -20,7 +20,7 @@ If you want to go further, the same three-field reading extends in three directi
 
 ## What this book promises
 
-We will not promise this book changes your life. The tradition does not, and neither will we. What it offers is smaller and more durable: a structured way to read your Kua and your eight directions, so that when two arrangements look equally good you have a non-arbitrary way to choose, drawn from a long tradition of making that choice. That is what a decision tool is. It is not a fortune.
+Here is what this book leaves you with: a structured way to read your Kua and your eight directions, so that when two arrangements look equally good you have a non-arbitrary way to choose, drawn from a long tradition of making that choice. Small and durable, and yours to keep - a clearer, calmer way to decide about the rooms you live in.
 
 ## A last line
 

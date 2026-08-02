@@ -13,8 +13,8 @@ This is the extended reading, so it goes past the eight directions into the room
 - **The bedroom**, the desk, and the dining table - one section each, on how the tradition orients the body in the place built for rest, the place built for work, and the place built for sharing a meal.
 - **The 2026 solar year**, read against your own directions rather than as a general forecast.
 
-<p class="pull-quote">This is a map of placements to test in your own home, not a prediction about your life.</p>
+<p class="pull-quote">This is a map of placements to test in your own home, drawn from your own eight directions.</p>
 
-The report does not know your floor plan, your windows, or which rooms you have. So you will not find an instruction to move the sofa. You will find traditional placements and a clear way to test each one against the home you live in. You stay the expert on your rooms. The tradition just hands you the compass.
+The report works from your directions rather than your floor plan, so instead of an instruction to move the sofa you get traditional placements and a clear way to test each one against the home you live in. You stay the expert on your rooms. The tradition just hands you the compass.
 
 Read it once for the shape of it. Then read it again with a pencil, marking the one or two moves you could actually make this week.

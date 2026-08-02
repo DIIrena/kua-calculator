@@ -2,9 +2,9 @@ Feng shui reads a place. It works on the room rather than the person or the date
 
 That is the whole job. Everything else that travels beside it - the natal chart, the timing chart, the bowl of stones on a shelf - belongs to a different question and a different tradition. This page draws that outer boundary. If you have already met [the four schools inside feng shui](/guide/schools/four-feng-shui-schools-in-one-map), this is the page that begins where that one ends.
 
-## What this cluster is not
+## What this cluster maps
 
-Not a fortune-telling cluster. Not a crystal-healing cluster. Not a spell-craft cluster. Said once, calmly. Moving on.
+This cluster maps the outer edge of feng shui: the place-reading craft, and the three disciplines that travel beside it. BaZi reads the person, Qi Men Dun Jia reads the moment, and crystals sit alongside as optional cultural objects. Naming each one keeps them clear and lets you reach for the right one on purpose.
 
 ## The four questions
 

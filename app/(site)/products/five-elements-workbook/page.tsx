@@ -105,13 +105,13 @@ export default async function FiveElementsWorkbookPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          It is not a decorating service or a rulebook that overrides
-          your taste. It gives you a vocabulary for reading what a room
-          already holds, so the next choice is deliberate rather than a
-          guess. None of the five experiments inside requires a
-          purchase.
+          It gives you a vocabulary for reading what a room already holds
+          in Wood, Fire, Earth, Metal, and Water, so the next choice is
+          deliberate rather than a guess. Your taste stays in charge, and
+          the styling starts to feel like a calm, deliberate read of the
+          room instead of trial and error.
         </p>
       </section>
 

@@ -72,8 +72,8 @@ const CONFIG: LandingConfig = {
   ],
   notForWho: [
     "You also want the nine life areas, compatibility, and the 2026 year: the Complete Home Compass contains this entire book and the rest.",
-    "You want a prediction. It reads your direction profile; it promises no outcomes.",
-    "You want floor-plan-specific consulting. It reads your directions per room, not your blueprints.",
+    "You want a prediction. This reads your direction profile, room by room, into practical placement calls.",
+    "You want one-on-one floor-plan consulting. This reads your directions per room and hands you the calls to make.",
   ],
   faq: [
     {
