@@ -126,6 +126,10 @@ export const MOCKUP_COVER_SLUGS: ReadonlySet<string> = new Set([
   // The Whole-Home Bundle card: its three real component covers fanned
   // (Diagnostic, Ritual, Cures). Built by scripts/build_bundle_cover.py.
   "whole-home-starter-bundle",
+  // The Compass line got the same magazine treatment (teal spine) via
+  // build-premium-cover.mjs LINE=compass. The others were already listed.
+  "extended-personal-kua-report",
+  "couple-compatibility-compass",
 ]);
 
 // Optional page-count copy, used in the "what you receive" anchor only

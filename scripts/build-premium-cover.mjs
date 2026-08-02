@@ -21,6 +21,30 @@ const PRODUCTS = [
   { slug: "seven-day-home-reset", masthead: "SEVEN DAYS", title: "7-Day Home <em>Reset</em>", sub: "One calm task a day, room by room" },
 ];
 
+// The personalised Compass line (teal spine). Photos are each product's
+// existing cover plate; move-in borrows the shop threshold shot.
+const COMPASS_PRODUCTS = [
+  { slug: "personal-feng-shui-compass", masthead: "PERSONAL", title: "Personal Feng Shui <em>Compass</em>", sub: "Your Kua and your eight directions, in depth", photo: "content/photos/cover-personal-compass.jpg" },
+  { slug: "all-twelve-spaces-compass", masthead: "SPACES", title: "Twelve <em>Spaces</em> Compass", sub: "Every room of your home, read for your Kua", photo: "content/photos/cover-all-twelve-spaces-compass.jpg" },
+  { slug: "complete-home-compass", masthead: "COMPLETE", title: "Complete <em>Home</em> Compass", sub: "Rooms, life areas, compatibility and the 2026 year", photo: "content/photos/cover-complete-home-compass.jpg" },
+  { slug: "extended-personal-kua-report", masthead: "EXTENDED", title: "Extended Personal <em>Kua</em> Report", sub: "Directions, three rooms, compatibility and 2026", photo: "content/photos/cover-extended-personal-kua.jpg" },
+  { slug: "all-nine-pillars-compass", masthead: "LIFE AREAS", title: "Nine <em>Life Areas</em> Compass", sub: "All nine bagua areas, read for your Kua", photo: "content/photos/cover.jpg" },
+  { slug: "move-in-kit", masthead: "MOVE-IN", title: "Move-In <em>Date</em> Report", sub: "Choose your moving day with reasons in hand", photo: "public/shop-hero.jpg" },
+  { slug: "couple-compatibility-compass", masthead: "COUPLE", title: "Couple <em>Compatibility</em> Compass", sub: "Two people, one home, read together", photo: "content/photos/cover.jpg" },
+];
+
+// Page geometry. Defaults are the A4-proportioned shop cover (210 x 296.5mm
+// at 794 x 1121 CSS px). The planner PDF build overrides these to US Letter
+// (215.9 x 279.4mm at 816 x 1056) so the cover art is composed for the trim
+// size it will actually print at, rather than cropped to fit.
+const PAGE_W_MM = process.env.PAGE_W_MM || "210";
+const PAGE_H_MM = process.env.PAGE_H_MM || "296.5";
+const VIEW_W = Number(process.env.VIEW_W || 794);
+const VIEW_H = Number(process.env.VIEW_H || 1121);
+const SCALE = Number(process.env.SCALE || 2);
+const FORMAT = process.env.FORMAT || "png";
+const QUALITY = Number(process.env.QUALITY || 90);
+
 const exe = ["C:/Program Files/Google/Chrome/Application/chrome.exe"].find(existsSync);
 const b64 = (p) => readFileSync(p).toString("base64");
 const bodoni = b64("lib/fonts/BodoniModa-Variable.ttf");
@@ -38,7 +62,7 @@ const MARK = `<svg viewBox="0 0 709 709" xmlns="http://www.w3.org/2000/svg" widt
 </svg>`;
 
 function coverHtml(p) {
-  const photo = b64(`public/products/${p.slug}/hero.jpg`);
+  const photo = b64(p.photo || `public/products/${p.slug}/hero.jpg`);
   // One uniform masthead size across the whole line (MFS), so a short word
   // like CURES is not larger than ELEMENTS. Falls back to the old auto-fit
   // only if MFS is unset.
@@ -48,6 +72,11 @@ function coverHtml(p) {
   const opsz = process.env.OPSZ || "20";
   const wght = process.env.WGHT || "640";
   const vary = `font-optical-sizing:none;font-variation-settings:"opsz" ${opsz},"wght" ${wght};font-weight:${wght};`;
+  // Collection spine defaults by line (Kits = pale turquoise, Compass = teal).
+  const isCompass = process.env.LINE === "compass";
+  const spineColor = process.env.SPINE_COLOR || (isCompass ? "#2f5d62" : "#a8d8d0");
+  const spineTextColor = process.env.SPINE_TEXT_COLOR || (isCompass ? "#fcfcf8" : "#0e3b2c");
+  const spineText = process.env.SPINE_TEXT || (isCompass ? "The Compass Collection" : "Kits & Guides Collection");
   return `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:"Bodoni Moda";font-style:normal;src:url(data:font/ttf;base64,${bodoni}) format("truetype");}
 @font-face{font-family:"Bodoni Moda";font-style:italic;src:url(data:font/ttf;base64,${bodoniItalic}) format("truetype");}
@@ -55,7 +84,7 @@ function coverHtml(p) {
 @font-face{font-family:"Hanken Grotesk";font-weight:400;src:url(data:font/ttf;base64,${hanken}) format("truetype");}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{font-family:"Hanken Grotesk",sans-serif}
-.cover{width:210mm;height:296.5mm;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;text-align:center}
+.cover{width:${PAGE_W_MM}mm;height:${PAGE_H_MM}mm;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;text-align:center}
 .cover-bleed{position:absolute;inset:0;background-image:url(data:image/jpeg;base64,${photo});background-size:cover;background-position:center;background-color:#f2f2ee}
 .cover-spine{position:absolute;${process.env.SPINE_SIDE === "right" ? "right:0" : "left:0"};top:0;bottom:0;width:12mm;display:flex;align-items:center;justify-content:center;z-index:4}
 .cover-spine span{writing-mode:vertical-rl;transform:rotate(180deg);text-transform:uppercase;letter-spacing:.26em;text-indent:.26em;font-size:8.5pt;font-weight:800;color:#fcfcf8;white-space:nowrap}
@@ -75,7 +104,7 @@ html,body{font-family:"Hanken Grotesk",sans-serif}
 <div class="cover">
   <div class="cover-bleed"></div>
   <div class="cover-scrim"></div>
-  <div class="cover-spine" style="background:${process.env.SPINE_COLOR || "#a8d8d0"}"><span style="color:${process.env.SPINE_TEXT_COLOR || "#0e3b2c"}">${process.env.SPINE_TEXT || "Kits & Guides Collection"}</span></div>
+  <div class="cover-spine" style="background:${spineColor}"><span style="color:${spineTextColor}">${spineText}</span></div>
   <div class="cover-top">
     <div class="cover-logo">${MARK}</div>
     <p class="cover-masthead">${p.masthead}</p>
@@ -94,8 +123,9 @@ const br = await puppeteer.launch({ executablePath: exe, headless: true, args: [
 const page = await br.newPage();
 page.setDefaultTimeout(120000);
 page.setDefaultNavigationTimeout(120000);
-await page.setViewport({ width: 794, height: 1121, deviceScaleFactor: 2 });
-const list = process.env.ONLY ? PRODUCTS.filter((p) => p.slug === process.env.ONLY) : PRODUCTS;
+await page.setViewport({ width: VIEW_W, height: VIEW_H, deviceScaleFactor: SCALE });
+const LINE = process.env.LINE === "compass" ? COMPASS_PRODUCTS : PRODUCTS;
+const list = process.env.ONLY ? LINE.filter((p) => p.slug === process.env.ONLY) : LINE;
 for (const p of list) {
   await page.setContent(coverHtml(p), { waitUntil: "load", timeout: 120000 });
   await page.evaluate(async () => { await document.fonts.ready; });
@@ -117,10 +147,14 @@ for (const p of list) {
   });
   await new Promise((r) => setTimeout(r, 120));
   const out = process.env.OUTDIR
-    ? `${process.env.OUTDIR}/${p.slug}.png`
-    : process.env.OUT || `public/products/${p.slug}/cover-portrait.png`;
-  await page.screenshot({ path: out, clip: { x: 0, y: 0, width: 794, height: 1121 } });
+    ? `${process.env.OUTDIR}/${p.slug}.${FORMAT}`
+    : process.env.OUT || `public/products/${p.slug}/cover-portrait.${FORMAT}`;
+  // JPEG is the format for covers bound into a PDF: a lossless PNG of a
+  // full-bleed photo adds megabytes to a file readers download.
+  const shot = { path: out, clip: { x: 0, y: 0, width: VIEW_W, height: VIEW_H } };
+  if (FORMAT === "jpeg") { shot.type = "jpeg"; shot.quality = QUALITY; }
+  await page.screenshot(shot);
   console.log("cover:", p.slug, p.masthead, "->", out);
 }
 await br.close();
-console.log("done", PRODUCTS.length, "covers");
+console.log("done", list.length, "covers");
