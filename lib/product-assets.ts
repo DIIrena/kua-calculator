@@ -112,6 +112,24 @@ export const MOCKUP_COVER_SLUGS: ReadonlySet<string> = new Set([
   "all-nine-pillars-compass",
   "business-money-feng-shui",
   "cures-catalog",
+  // Premium magazine covers for the printables (2026-07-31): hero photo +
+  // Didone masthead, rendered by scripts/build-premium-cover.mjs.
+  "annual-feng-shui-planner-2026",
+  "five-elements-workbook",
+  "healthy-home-audit",
+  "bazi-basics",
+  "home-diagnostic-workbook",
+  "bedroom-reset",
+  "daily-ritual-pack",
+  "starter-deck",
+  "good-days-calendar-2026",
+  // The Whole-Home Bundle card: its three real component covers fanned
+  // (Diagnostic, Ritual, Cures). Built by scripts/build_bundle_cover.py.
+  "whole-home-starter-bundle",
+  // The Compass line got the same magazine treatment (teal spine) via
+  // build-premium-cover.mjs LINE=compass. The others were already listed.
+  "extended-personal-kua-report",
+  "couple-compatibility-compass",
 ]);
 
 // Optional page-count copy, used in the "what you receive" anchor only
