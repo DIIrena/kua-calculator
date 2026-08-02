@@ -20,7 +20,7 @@ If you would like the year in full rather than the outline given here, the 2026 
 
 ## What this report promises
 
-We will not promise this report changes your life. The tradition does not, and neither will we. What it offers is smaller and more durable: a structured way to read your Kua, your group, and your eight directions, so that when two arrangements look equally good you have a non-arbitrary way to choose. That is what a decision tool is. It is not a fortune.
+Here is what this report leaves you with: a structured way to read your Kua, your group, and your eight directions, so that when two arrangements look equally good you have a non-arbitrary way to choose. Small and durable, and yours to keep - a clearer, calmer way to decide about the rooms you live in.
 
 ## A last line
 

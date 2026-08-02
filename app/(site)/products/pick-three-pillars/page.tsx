@@ -78,12 +78,14 @@ export default async function PickThreePillarsPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          It reads your direction profile, not your floor plan, and it
-          does not promise outcomes. The life areas are corners the
-          tradition associates with parts of life; this is a structured
-          way to decide where to put your attention, not a fortune.
+          It reads your direction profile - the eight directions that
+          follow from your Kua - and turns "I cannot tell which corner to
+          focus on" into a clear, non-arbitrary choice. The life areas are
+          corners the tradition associates with parts of life; a structured
+          way to decide where to put your attention across the three you
+          choose, so they start working with you.
         </p>
       </section>
 

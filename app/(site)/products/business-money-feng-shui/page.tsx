@@ -43,9 +43,9 @@ const CONFIG: LandingConfig = {
   seoDescription:
     "A practical feng shui reading of the money channel in a home: the desk, the office, the wealth corner, and the stove, with honest labelling of tradition versus design evidence.",
   promise: [
-    "Money advice is the loudest, least honest corner of feng shui: wealth vases, frog figurines, promises. This Kit takes the opposite posture. The tradition does have a coherent reading of how money moves through a home, and it runs through unglamorous places: the stove, the desk, the corner you never dust.",
+    "There is a coherent tradition of how money moves through a home, and it runs through unglamorous places: the stove, the desk, the corner you never dust. This Kit takes that reading seriously and honestly, and hands you the levers that actually matter.",
     "The Kit reads that channel end to end: the desk (position, facing, the wall behind you, the window), the wealth corner walkthrough including which symbolic cures the tradition uses and which we deliberately leave out, and the kitchen and stove section, the part most people skip and the part the tradition weighs heaviest.",
-    "Every claim is labelled: design evidence, tradition, or preference. There is a daily money practice drawn from the tradition, with no mysticism attached, and a worked example of a freelancer's home office showing how the moves combine. No promised outcomes, ever: a home cannot sign clients. It can make the work seat easier to sit down at.",
+    "Every claim is labelled: design evidence, tradition, or preference. There is a daily money practice drawn from the tradition, and a worked example of a freelancer's home office showing how the moves combine. What it gives you is a work seat you actually want to sit down at, and a money channel you have finally tended.",
   ],
   steps: [
     {
@@ -65,7 +65,7 @@ const CONFIG: LandingConfig = {
     "The desk reading: position, facing, the wall behind, the window.",
     "The wealth-corner walkthrough, with the small symbolic cures the tradition uses and the ones we leave out, named.",
     "The kitchen and stove section: the part most people skip and the part that quietly matters most in the traditional reading.",
-    "A daily money practice drawn from the tradition. No mysticism, no promises.",
+    "A daily money practice drawn from the tradition, in five quiet minutes a day.",
     "A worked example: a freelancer's home office, showing how the moves combine.",
   ],
   insideSample: <MoneyChannelSample />,
@@ -75,9 +75,9 @@ const CONFIG: LandingConfig = {
     "You want the desk, the corner, and the stove treated as one system.",
   ],
   notForWho: [
-    "You want a promise of income. This book will not make one.",
+    "You want a guaranteed jump in income. This tends the home's money channel; the earning stays yours to do.",
     "You want your full direction profile read: that is the Personal Compass; the two pair well.",
-    "You expect crystals-fix-everything content. The cures chapter is the most sceptical text we publish.",
+    "You expect crystals-fix-everything content. The cures chapter is clear-eyed about which symbolic cures earn their place.",
   ],
   faq: [
     {
@@ -90,7 +90,7 @@ const CONFIG: LandingConfig = {
     },
     {
       q: "Will it tell me to buy a wealth vase or a money frog?",
-      a: "No. The wealth-corner chapter names the traditional cures, explains what the tradition claims for them, labels every claim, and tells you plainly which ones we consider preference rather than practice.",
+      a: "No. The wealth-corner chapter names the traditional cures, explains what the tradition claims for them, labels every claim, and tells you which ones we consider preference rather than practice.",
     },
     {
       q: "What format is it?",

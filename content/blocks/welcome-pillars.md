@@ -21,7 +21,7 @@ Here is how the keying works. Each life area lives in a *fixed* compass sector, 
 Each chapter has the same rhythm, so by chapter two you will know your way around:
 
 - **The opener** names the area, its sector, its element, and your verdict at a glance.
-- **The reading** explains what the tradition asks of that corner and why, in plain terms.
+- **The reading** explains what the tradition asks of that corner, and why.
 - **Your reading** is the personal panel: your verdict, the star that lands there for you, and only the guidance that applies to your chart.
 - **Tips and tricks** is a page of small, specific moves, including what to do when a kitchen, bathroom, or bedroom happens to sit in that sector. Moves marked renter-safe need no drill and no permission.
 - **The recap card** closes the chapter with the whole thing on one card, and one move for tonight.

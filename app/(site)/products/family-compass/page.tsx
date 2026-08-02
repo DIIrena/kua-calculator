@@ -93,12 +93,12 @@ export default async function FamilyCompassPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          It reads your direction profile, the eight directions that follow
-          from your Kua, not your floor plan. It does not promise outcomes.
-          It is a structured way to choose between arrangements that
-          otherwise look equivalent, not a fortune.
+          It reads your direction profile - the eight directions that follow
+          from your Kua - and turns "I cannot tell which arrangement is
+          better" into a clear, non-arbitrary choice. A structured way to
+          decide, so the corner starts working with you.
         </p>
       </section>
 

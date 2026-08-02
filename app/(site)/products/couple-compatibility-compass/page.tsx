@@ -108,14 +108,14 @@ export default async function CoupleCompatibilityCompassPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          It does not make a claim about your relationship, and it does
-          not promise anything. It reads two direction profiles, not your
-          floor plan, and gives you a structured, non-arbitrary way to
-          choose between arrangements that otherwise look equal. The
-          tradition makes the associations; you stay the experts on your
-          own home.
+          It reads both of your direction profiles together and gives you
+          a structured, non-arbitrary way to choose between arrangements
+          that otherwise look equal, so the two of you can settle the
+          shared bed and table with a clear, calm decision instead of a
+          standoff. The tradition makes the associations; you stay the
+          experts on your own home.
         </p>
       </section>
 

@@ -7,7 +7,7 @@ import ProductLanding, { type LandingConfig } from "@/components/ProductLanding"
 export const metadata: Metadata = {
   title: "7-Day Home Reset | My Feng Shui Home",
   description:
-    "A seven-day email course. One short email a day, one small task, nothing to buy or redecorate. Reset your home room by room. No outcome promises.",
+    "A seven-day email course. One short email a day, one small task, nothing to buy or redecorate. Reset your home room by room, for a calmer home by Sunday.",
   alternates: {
     canonical: "https://myfengshuihome.com/products/seven-day-home-reset",
   },
@@ -40,11 +40,11 @@ const CONFIG: LandingConfig = {
   priceCents: 1900,
   cover: "/products/seven-day-home-reset/cover-portrait.png",
   seoDescription:
-    "A seven-day feng shui email course: one small task per day, room by room, with nothing to buy and no outcome promises.",
+    "A seven-day feng shui email course: one small task per day, room by room, with nothing to buy - a calmer home by Sunday.",
   promise: [
     "Most of what helps a home is small and quiet, and most of us never get to it because it never becomes a plan. The list of little fixes lives in the back of your head, gets longer, and turns into dread. A free weekend never rescues it.",
     "The 7-Day Home Reset is the plan. For seven days you get one short email a day, each with a single small task in a deliberate order: a slow look around, the front door, light and air, the bedroom, the desk, the kitchen, the clutter that has stopped moving, and a final day on keeping the one change that helped most.",
-    "The voice is calm and practical throughout: a way to read and adjust your rooms, not a fortune. Do the task, or skip it; the next email comes either way, and the series simply ends after day seven.",
+    "The voice is calm and practical throughout: a way to read and adjust your rooms so each one feels a little more settled. Do the task, or skip it; the next email comes either way, and the series simply ends after day seven.",
   ],
   steps: [
     {

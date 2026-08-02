@@ -72,7 +72,7 @@ const CONFIG: LandingConfig = {
   ],
   notForWho: [
     "You also want the twelve rooms, compatibility, and the 2026 year: the Complete Home Compass contains this entire book and the rest.",
-    "You want a prediction about wealth or relationships. It reads corners of a home; it promises nothing about life.",
+    "You want a prediction about wealth or relationships. This reads the nine life-area corners of your home and what the tradition gives each one.",
     "You only care about one area: a single-area Compass still exists at its own address.",
   ],
   faq: [

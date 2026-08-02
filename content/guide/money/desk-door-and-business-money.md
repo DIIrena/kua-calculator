@@ -2,7 +2,7 @@ Money paper has to enter the home somewhere, and it has to live somewhere. The d
 
 This page is about the working zones. The door where the bill crosses the threshold. The desk where the bill gets opened, paid, filed, or lost. And, for anyone earning from home, the studio or treatment room where the work that pays the bills actually happens.
 
-For the broader framing, see the cluster opener on [feng shui and money without wishful thinking](/guide/money/feng-shui-money-without-wishful-thinking). For the southeast read, see [how to read the southeast as a living surface](/guide/money/the-southeast-wealth-area-and-how-to-read-it). For the kitchen as flow zone, see [how money moves through the kitchen](/guide/money/kitchen-stove-and-money-flow).
+For the broader framing, see the cluster opener on [feng shui and money: what the money places respond to](/guide/money/feng-shui-money-without-wishful-thinking). For the southeast read, see [how to read the southeast as a living surface](/guide/money/the-southeast-wealth-area-and-how-to-read-it). For the kitchen as flow zone, see [how money moves through the kitchen](/guide/money/kitchen-stove-and-money-flow).
 
 ## The door as a money-paper station
 
@@ -54,7 +54,7 @@ Two. Give the desk you actually work at one weekly reset so the surface stays vi
 
 ## Where to go next
 
-For the cluster opener, read [money and feng shui without wishful thinking](/guide/money/feng-shui-money-without-wishful-thinking).
+For the cluster opener, read [feng shui and money: what the money places respond to](/guide/money/feng-shui-money-without-wishful-thinking).
 
 For the diagnostic corner, read [how to read the southeast as a living surface](/guide/money/the-southeast-wealth-area-and-how-to-read-it).
 

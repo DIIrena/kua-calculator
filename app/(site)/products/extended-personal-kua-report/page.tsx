@@ -173,18 +173,15 @@ export default async function ExtendedPersonalKuaReportPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          It is not a reading of your floor plan. The report reads your
-          direction profile, the eight directions that follow from your
-          Kua. It does not know where your bedroom door is, and it never
-          asks. The tradition supplies the rules; you apply them to your
-          own rooms. You stay the expert on your own home.
-        </p>
-        <p>
-          It does not promise outcomes. What it offers is a structured way
-          to choose between arrangements that otherwise look equivalent.
-          That is what a decision tool is.
+          It reads your direction profile - the eight directions that
+          follow from your Kua - in depth, and turns it into a structured
+          way to choose between arrangements that otherwise look
+          equivalent. You get one clear reading for the rooms you live in,
+          so the bedroom, the desk, and the table start working with you.
+          The tradition supplies the rules; you apply them to your own
+          rooms and stay the expert on your own home.
         </p>
       </section>
 

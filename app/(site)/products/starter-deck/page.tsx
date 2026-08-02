@@ -107,12 +107,13 @@ export default async function StarterDeckPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          It is not the whole guide. It is the door into it: the words
-          you need before the rest of the practice stops sounding like
-          a single muddled tradition. Everything the cards name is
-          covered in more depth in the free guide.
+          It is the door into the practice: the twenty-four words you need
+          first, so the rest of feng shui starts to sound like one clear
+          tradition. Learn the deck and you can pick up any room, or the
+          fuller guide, already knowing the language, which feels a lot
+          like finally getting your footing.
         </p>
       </section>
 

@@ -62,7 +62,7 @@ A studio flat has a centre like any other home: the middle of the single volume,
 
 Pull the threads together. The centre is the fixed middle of your home. Its element is earth, so it asks for stillness and grounding rather than activity. It touches every other life area, so the tradition treats it as the heart that the whole arrangement depends on. And the single most important thing you can do with it is the simplest: keep it open and clear, *before* you turn your attention to any corner.
 
-The tradition does not promise that a tidy centre changes anything about you. It makes a quieter claim, and a plainer one: a home whose heart is open is a home where everything else can reach everything else, and that is the condition it associates with a dwelling that supports the lives inside it. You tend the centre not for a result it hands you, but because a clear heart is the ground the rest of the home stands on.
+The tradition makes a quiet claim here: a home whose heart is open is a home where everything else can reach everything else, and that is the condition it associates with a dwelling that supports the lives inside it. You tend the centre because a clear heart is the ground the rest of the home stands on.
 
 <div class="tips-page">
 <h2>Tips and tricks for the centre of your home</h2>

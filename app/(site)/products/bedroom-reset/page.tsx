@@ -119,8 +119,8 @@ export default async function BedroomResetPage(props: {
             two different Kua numbers settling into one room.
           </li>
           <li>
-            A short single-reader section that does not promise a
-            partner arrives.
+            A short single-reader section, for setting the room up
+            around your own rest first.
           </li>
           <li>
             A small seven-day experiment to test a single change.
@@ -146,12 +146,13 @@ export default async function BedroomResetPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          It is not a guarantee about sleep or relationships. The
-          tradition does not promise those, and neither will we. It
-          is a structured way to choose how the bedroom is set up,
-          using a method the tradition has refined over a long time.
+          It gives you a structured way to set up the bedroom - which
+          wall the headboard wants, which side the bed sits - using a
+          method the tradition has refined over a long time. The reward
+          is a room that feels calmer to sleep in, and one less thing to
+          second-guess at the end of the day.
         </p>
       </section>
 

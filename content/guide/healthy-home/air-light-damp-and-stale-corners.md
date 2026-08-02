@@ -12,7 +12,7 @@ One thing this page will not do: claim plants purify the air. Live plants belong
 
 Morning **daylight** on the face supports the body's clock. Step to a window, or step outside, in the first hour of the day. Layered lamps then let a room move between alert and restful through the rest of the day. *Keep working areas bright and resting areas dim.* Warm bulbs at 2700 K and below for the evening; cooler, brighter light only where you actually work.
 
-**Let the evening be dark.** Screens dimmed, overheads off, one warm lamp by the chair. This supports the conditions for rest; it does not promise a particular night's sleep.
+**Let the evening be dark.** Screens dimmed, overheads off, one warm lamp by the chair. This supports the conditions for rest.
 
 ## Damp
 
@@ -42,7 +42,7 @@ Cross-ventilate the home for ten minutes today. Get daylight on the face inside 
 
 - For the room-by-room read on bedroom, kitchen, and bathroom, see [the bedroom, kitchen, and bathroom health check](/guide/healthy-home/bedroom-kitchen-and-bathroom-health-check).
 - For plants in the room and the daily rhythm of cleanliness, see [plants, materials, cleanliness, and daily rhythm](/guide/healthy-home/plants-materials-cleanliness-and-daily-rhythm).
-- For the no-promises frame the cluster opens with, see [healthy home feng shui without health promises](/guide/healthy-home/healthy-home-feng-shui-without-health-promises).
+- For the framing the cluster opens with, see [healthy-home feng shui: air, light, damp, and rest](/guide/healthy-home/healthy-home-feng-shui-without-health-promises).
 - For the canonical per-room starters, see [the Health life-area page](/life/health), [the space bedroom page](/space/bedroom), and [the space kitchen page](/space/kitchen).
 - For the walk-the-home practice, see [the diagnostic walkthrough article](/articles/diagnostic-walkthrough).
 - Ten seconds: find your number on [the Kua calculator](/kua-calculator).

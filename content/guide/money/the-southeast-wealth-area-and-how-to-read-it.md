@@ -2,7 +2,7 @@ You have found it. Now how do you read it?
 
 The southeast corner is a **surface**. A small patch of your home that, if you watch it closely, tells you how the rest of the house is doing. The find-it walkthrough lives in [the longer read on the wealth corner](/articles/bagua-map-wealth-corner). This page assumes the corner is already mapped and asks the next question. What is it actually doing?
 
-The framing for the cluster sits in [feng shui and money without wishful thinking](/guide/money/feng-shui-money-without-wishful-thinking). The six levers used below come from [what feng shui cures actually are](/guide/cures/what-feng-shui-cures-actually-are).
+The framing for the cluster sits in [feng shui and money: what the money places respond to](/guide/money/feng-shui-money-without-wishful-thinking). The six levers used below come from [what feng shui cures actually are](/guide/cures/what-feng-shui-cures-actually-are).
 
 ## 1. Element: is anything alive in here
 
@@ -40,7 +40,7 @@ Two. <span class="guide-badge guide-badge-preference">Preference</span> **Pick t
 
 ## Where to go next
 
-- For the cluster framing, read [feng shui and money without wishful thinking](/guide/money/feng-shui-money-without-wishful-thinking).
+- For the cluster framing, read [feng shui and money: what the money places respond to](/guide/money/feng-shui-money-without-wishful-thinking).
 - For the kitchen as the flow zone, read [how money moves through the kitchen](/guide/money/kitchen-stove-and-money-flow).
 - For the working zones, read [the desk and door as money-paper stations](/guide/money/desk-door-and-business-money).
 - For the per-room money treatment across the home, see [the Money life-area page](/life/money).

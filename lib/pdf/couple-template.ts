@@ -167,7 +167,7 @@ export function buildCoupleHtml(data: CoupleData): string {
 
 <section class="section">
   <h1>What this is, and what it is not</h1>
-  <p>This is a structured way for two people to choose between arrangements that otherwise look equal, drawn from both of your Kua readings. It does not make a claim about your relationship, and it does not promise anything. The tradition makes associations; you stay the experts on your own home.</p>
+  <p>This is a structured way for two people to choose between arrangements that otherwise look equal, drawn from both of your Kua readings. The tradition makes the associations; the two of you stay the experts on your own home, and on each other.</p>
   <p>Pick one shared move this week, leave it for seven days, and notice together whether the room feels any easier to be in. That is the whole method.</p>
 </section>
 

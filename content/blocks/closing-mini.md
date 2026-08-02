@@ -12,6 +12,6 @@ A fixed compass sector means the same thing for everyone, but your directions ar
 
 The free Kua calculator on the site gives your full eight-direction reading, all four supportive and all four cautious, whenever you are ready for the wider map.
 
-We will not promise this changes anything. The tradition makes associations; it does not hand out results. What you have is a structured way to decide between two arrangements that both look fine - not a fortune, just a clearer basis for the choice.
+What you have now is a structured way to decide between two arrangements that both look fine - a clearer, calmer basis for the choice, drawn from a long tradition of making it.
 
 Thank you for reading, {{firstName}}. The direction is yours to test.

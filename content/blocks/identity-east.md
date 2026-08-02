@@ -8,11 +8,11 @@ This page explains what that number is, what the East group means, and how to re
 
 ## What the Kua number is
 
-Your Kua is a single digit between one and nine, with no five, calculated from your birth year and your gender. It is not your astrology. It is not a fortune. The most useful way to hold it is as a **coordinator**: a non-arbitrary way to choose between options that otherwise look equivalent.
+Your Kua is a single digit between one and nine, with no five, calculated from your birth year and your gender. The most useful way to hold it is as a **coordinator**: a non-arbitrary way to choose between options that otherwise look equivalent - which wall, which seat, which way to face, when every choice looks the same until something helps you decide.
 
 There are eight compass directions a person can face. Most of the time you do not notice which one you are facing, because most of the time it does not seem to matter. The Eight Mansions tradition proposes that, for any given person, four of those eight directions are treated as supportive and four are treated with more caution. Your Kua number is what sorts them.
 
-The system rests on a long-established yin-yang and trigram cosmology and has been used as a structured framework in traditional practice for a long stretch of its history. It survived because households found it gave them something concrete to decide with: where to put a bed, which seat the head of the family takes at dinner, which way the cook faces at the stove. That is what it is for. It does not predict your future. It gives you a structured way to choose.
+The system rests on a long-established yin-yang and trigram cosmology and has been used as a structured framework in traditional practice for a long stretch of its history. It survived because households found it gave them something concrete to decide with: where to put a bed, which seat the head of the family takes at dinner, which way the cook faces at the stove. That is what it is for: a structured way to choose, and the quiet confidence of having chosen well.
 
 ## What East group means
 
@@ -31,7 +31,7 @@ The four it treats with more caution are northeast, southwest, west, and northwe
 
 {{elementSwatches}}
 
-Look at the supportive four. One is water, one is fire, and two are wood. Water and wood are the elements the tradition associates with *motion* - water flows, wood grows - so three of your four directions lean that way; the fourth, fire in the South, is the direction of being seen. The tradition reads East group as oriented toward expansion: learning, building, generating, being recognised. That does not mean every East group person is loud. Plenty are quiet. It is a description of the qualities the tradition associates with your favourable directions, not a personality test.
+Look at the supportive four. One is water, one is fire, and two are wood. Water and wood are the elements the tradition associates with *motion* - water flows, wood grows - so three of your four directions lean that way; the fourth, fire in the South, is the direction of being seen. The tradition reads East group as oriented toward expansion: learning, building, generating, being recognised. That does not mean every East group person is loud. Plenty are quiet. It describes the qualities the tradition associates with your favourable directions - a lens for reading your rooms, held lightly.
 
 <p class="pull-quote">The tradition reads these four as your supportive directions: <strong>North, South, East, Southeast</strong>.</p>
 

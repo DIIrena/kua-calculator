@@ -10,7 +10,7 @@ To know what that quality is meant to feel like, picture a room doing the work w
 
 ## What this means
 
-The full name is *Yan Nian* (<span lang="zh-Hant">延年</span>), literally **"longevity"** - lengthening the years. If Sheng Qi is for action and Tian Yi is for recovery, Yan Nian is for *connection*: the marriage, the friendship that survives three moves and one bad year, the sibling called when nothing in particular has happened. The name does not promise a long life or a lasting partnership. It names the kind of arrangement the tradition reads as holding across long time, and it gives that quality a wall in your home.
+The full name is *Yan Nian* (<span lang="zh-Hant">延年</span>), literally **"longevity"** - lengthening the years. If Sheng Qi is for action and Tian Yi is for recovery, Yan Nian is for *connection*: the marriage, the friendship that survives three moves and one bad year, the sibling called when nothing in particular has happened. The name points at the kind of arrangement the tradition reads as holding across long time, and it gives that quality a wall in your home.
 
 Hold the claim loosely, because it is small and testable. Some configurations of body and direction are *said to* make the conversations that build connection feel slightly easier. You cannot prove a seat lengthened a friendship. You can notice, over a season, whether a corner became the one your household keeps returning to.
 

@@ -128,7 +128,7 @@ const CORE: Omit<StoreProduct, "priceLabel">[] = [
     href: "/products/healthy-home-audit",
     title: "Healthy Home Audit",
     oneLiner:
-      "Nine conditions a home can support - air, light, damp, sound, more - audited with worksheets. No medical claims.",
+      "Nine conditions a home can support - air, light, damp, sound, more - audited room by room with worksheets, so your home feels easier to live in.",
     priceCents: 1900,
     category: "printable",
   },

@@ -2,9 +2,9 @@ A BaZi chart maps the materials a person arrived with. It describes rather than 
 
 BaZi is a sister discipline to feng shui, not a branch of it. Feng shui reads the place. BaZi reads the person. Treating them as the same thing is the error this cluster is built to prevent, and it is the reason we wrote a separate page for each.
 
-## What this page is not
+## What a BaZi chart tells you
 
-This is not a fortune-telling page. It will not tell you when you will marry, what job to take, or what year your luck turns. *Said once, calmly. Moving on.*
+A BaZi chart offers language for who a person tends to be and when their attention shifts: temperament, formative environment, and the seasons the luck cycle moves through. Read it as a working sketch, and the four pillars below are where that sketch begins.
 
 ## The four pillars at overview altitude
 

@@ -75,7 +75,7 @@ export default function GoodDaysPage() {
         <section className="good-days-legend" aria-label="How to read this">
           <p>
             The tradition assigns each day one of twelve officers, and each
-            officer a character. We group them plainly: <strong>favourable</strong>{" "}
+            officer a character. We group them: <strong>favourable</strong>{" "}
             days suit beginnings and agreements; <strong>settling</strong> days
             suit finishing and tidying; <strong>neutral</strong> days are
             ordinary operating days; <strong>caution</strong> days suit routine

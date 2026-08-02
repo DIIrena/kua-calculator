@@ -74,9 +74,9 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
   {
     slug: "foundations",
     label: "Foundations",
-    tagline: "What feng shui is, what it is not, and the few ideas everything else uses.",
+    tagline: "What feng shui actually is, and the few ideas everything else uses.",
     description:
-      "One page on the foundations: what feng shui is, what it is not, and the small set of ideas the rest of the guide stands on.",
+      "One page on the foundations: what feng shui actually is, and the small set of ideas the rest of the guide stands on.",
     order: 1,
     sourceChapters: ["01"],
   },
@@ -130,7 +130,7 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     label: "Cures",
     tagline: "Cures as practical adjustments, read through six levers.",
     description:
-      "Four pages on cures as practical adjustments, not magic objects. What a cure actually is, the five-element cure per room, the six cure families, and the rule that decides what rotates each year vs what stays put.",
+      "Four pages on cures as practical adjustments you can actually make: what a cure actually is, the five-element cure per room, the six cure families, and the rule that decides what rotates each year vs what stays put.",
     order: 7,
     sourceChapters: ["09"],
   },
@@ -139,23 +139,23 @@ export const GUIDE_CLUSTERS: ReadonlyArray<GuideCluster> = [
     label: "Money",
     tagline: "Money as flow, care, visibility, and preparation.",
     description:
-      "Four pages on the places in the home where money is handled: the southeast sector, the kitchen, the desk, and the door. No promises, no activation, no magic. The six levers applied to flow, care, visibility, and preparation.",
+      "Four pages on the places in the home where money is handled: the southeast sector, the kitchen, the desk, and the door. The six levers applied to flow, care, visibility, and preparation.",
     order: 8,
     sourceChapters: ["18"],
   },
   {
     slug: "healthy-home",
     label: "Healthy Home",
-    tagline: "Health as conditions a home can support, not promises a room can make.",
+    tagline: "Health as the conditions a home can support: air, light, damp, and rest.",
     description:
-      "Four pages on health as conditions the home supports, with no medical claims: the four environmental conditions (air, light, damp, stale corners), the room-by-room health read, and plants, materials, cleanliness, and the daily rhythm.",
+      "Four pages on health as conditions the home supports: the four environmental conditions (air, light, damp, stale corners), the room-by-room health read, and plants, materials, cleanliness, and the daily rhythm.",
     order: 9,
     sourceChapters: ["20"],
   },
   {
     slug: "sister-disciplines",
     label: "Sister Disciplines",
-    tagline: "What sits beside feng shui, and what does not.",
+    tagline: "What sits beside feng shui, and what each one is for.",
     description:
       "Four pages on the traditions that travel beside feng shui. Feng shui reads the home. BaZi reads the person. Qi Men Dun Jia reads timing. Crystals are optional cultural objects. Four different questions, four different tools.",
     order: 10,
@@ -176,11 +176,11 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "foundations",
     slug: "what-feng-shui-is-plainly",
-    title: "What feng shui is - and what it is not",
+    title: "What feng shui actually is",
     description:
-      "A three-minute read on what feng shui is, what it isn't, and the small idea the rest of the guide depends on.",
+      "A three-minute read on what feng shui actually is, and the one idea the rest of the guide depends on.",
     teaser:
-      "The three-minute version, before the rest of the guide. No jargon. No outcome promises.",
+      "The three-minute version, before the rest of the guide. Clear, and genuinely useful in three minutes.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "3 minutes",
@@ -459,11 +459,11 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "money",
     slug: "feng-shui-money-without-wishful-thinking",
-    title: "Feng shui and money without wishful thinking",
+    title: "Feng shui and money: what the home's money places respond to",
     description:
-      "Money is handled, not summoned. The four observable things that the home's money places respond to (flow, care, visibility, preparation) and the six levers from the cures cluster applied to the southeast, the kitchen, the door, the desk, and storage.",
+      "The four observable things the home's money places respond to - flow, care, visibility, and preparation - and the six levers from the cures cluster applied to the southeast, the kitchen, the door, the desk, and storage.",
     teaser:
-      "Money is handled, not summoned. Four observable things, six levers, five places in the home where money is handled.",
+      "Four observable things, six levers, and five places in the home where money is actually handled: flow, care, visibility, and preparation.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "5 minutes",
@@ -507,11 +507,11 @@ export const GUIDE_PAGES: ReadonlyArray<GuidePage> = [
   {
     cluster: "healthy-home",
     slug: "healthy-home-feng-shui-without-health-promises",
-    title: "Healthy-home feng shui without health promises",
+    title: "Healthy-home feng shui: air, light, damp, and rest",
     description:
-      "A home does not treat or cure. It shapes the conditions a body lives inside: rest, air, light, moisture, food preparation, and wet-room containment. The six levers applied where tradition and contemporary environmental design agree.",
+      "A home shapes the conditions a body lives inside: rest, air, light, moisture, food preparation, and wet-room containment. The six levers applied where tradition and contemporary environmental design agree.",
     teaser:
-      "Health is not a thing a room delivers. It is a set of conditions the home can support. Six conditions, six levers, two practices underneath: declutter and repair.",
+      "A home can support the conditions health needs: rest, air, light, and clean preparation. Six conditions, six levers, two practices underneath: declutter and repair.",
     lastUpdated: "2026-06-07",
     gated: false,
     readingTime: "5 minutes",

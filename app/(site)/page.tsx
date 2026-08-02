@@ -333,9 +333,10 @@ export default async function HomePage(props: {
           </h2>
           <p className="home-section-lede">
             Each gives you a structured way to decide what to do in the
-            room you are standing in. One-time prices, instant delivery, no
-            outcome promises. The spotlight one is below; the rest of the
-            shelf is one click away.
+            room you are standing in - and to feel more settled once you
+            have. One-time prices, instant delivery, everything yours to
+            keep. The spotlight one is below; the rest of the shelf is one
+            click away.
           </p>
           <div className="map-offer-grid">
             <div className="map-offer-text">

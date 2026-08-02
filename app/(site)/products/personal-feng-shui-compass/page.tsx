@@ -46,7 +46,7 @@ const CONFIG: LandingConfig = {
     "A personalised feng shui reading of one person's Kua number and eight directions, with diagrams, worked examples, and printable worksheets.",
   promise: [
     "Pick an ordinary morning. The kettle is beginning to sound, the light has reached one familiar surface, and for no dramatic reason the room feels easy to be in. Then think of another morning in the same home, when the chair, the bed, or the angle of your body felt slightly wrong. The tradition has a structured way of talking about that difference, and it starts with one number.",
-    "The Personal Feng Shui Compass reads your Kua number and tells you which directions in your home traditionally support you and which to handle with care, then walks you through using them: which wall the headboard sits against, which way the desk faces, where the long conversations happen. Every recommendation is labelled: design evidence, tradition, or preference, said plainly.",
+    "The Personal Feng Shui Compass reads your Kua number and tells you which directions in your home traditionally support you and which to handle with care, then walks you through using them: which wall the headboard sits against, which way the desk faces, where the long conversations happen. Every recommendation is labelled: design evidence, tradition, or preference.",
     "It is the foundation product we built first, because it is the one you will use longest: your Kua number does not change, and the reading travels with you to every home you will ever live in.",
   ],
   steps: [
@@ -80,7 +80,7 @@ const CONFIG: LandingConfig = {
   ],
   notForWho: [
     "You want the whole home read: the Twelve Spaces and Complete Home Compasses below go further.",
-    "You want a prediction. This reads your direction profile; it promises nothing about outcomes.",
+    "You want a prediction. This reads your direction profile and turns it into clear, practical placement calls.",
     "You expect a consultation. It is a book, deliberately, and priced like one.",
   ],
   faq: [

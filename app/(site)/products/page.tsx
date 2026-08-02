@@ -6,7 +6,7 @@ import { TrustRow, GuaranteeNote } from "@/components/TrustRow";
 export const metadata: Metadata = {
   title: "Shop | My Feng Shui Home",
   description:
-    "Nine calm products: personalised Kua readings at three depths, printable kits, and a 7-day course. One-time prices, instant delivery, no outcome promises.",
+    "Nine calm products: personalised Kua readings at three depths, printable kits, and a 7-day course. One-time prices, instant delivery, everything yours to keep.",
   alternates: { canonical: "https://myfengshuihome.com/products" },
   openGraph: {
     type: "website",

@@ -16,6 +16,6 @@ Notice, without forcing the question, whether the room feels different after a w
 
 This book reads the nine life areas. The **Complete Home Compass** is the full version of the same instrument: everything here, plus your eight personal directions chapter by chapter, all twelve spaces of the home, your home's own House Trigram match, and the year overlay that tells you how each February shifts the picture. If this reading earned its place on your shelf, that one is its natural next step at myfengshuihome.com.
 
-We will not promise any of this changes anything. The tradition makes associations; it does not hand out results. What you have is a calm, structured way to decide between arrangements that all look reasonable - not a fortune, just a clearer basis for choice, nine times over.
+What you have now is a calm, structured way to decide between arrangements that all look reasonable - a clearer basis for choice, nine times over, drawn from a long tradition of making exactly these calls.
 
 Thank you for walking the whole map, {{firstName}}. The corners are yours now.

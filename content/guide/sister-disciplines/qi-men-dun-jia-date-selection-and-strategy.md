@@ -2,9 +2,9 @@
 
 This is the third sister discipline in this cluster, and it sits across from the other two by design. If you have already met [where feng shui ends and the sister disciplines begin](/guide/sister-disciplines/what-belongs-to-feng-shui-and-what-sits-beside-it), you know the spine: place, person, moment. *Qi Men Dun Jia*, usually shortened to **QMDJ**, owns the moment.
 
-## What this page is not
+## What QMDJ is for
 
-This is not a lucky-hour shop. It is not a promise that a meeting goes well because the clock said so. It is not an annual Flying Stars layer. Said once, calmly. Moving on.
+QMDJ reads a single moment of action: a two-hour window and the direction that suits it. Practitioners use it to compare candidate moments and choose one deliberately, for a discrete act like a signing, a launch, or a move-in.
 
 ## The three-way contrast
 
@@ -22,7 +22,7 @@ We are naming the layers, not teaching them. A serious treatment is years of stu
 
 One feature non-practitioners can grasp directly is the seasonal flip. Charts cast in one half of the year use *Yang Dun* and charts cast in the other half use *Yin Dun*, switching at Winter Solstice and Summer Solstice. The same clock-hour reads differently in February than in August before any other variable changes.
 
-## QMDJ is not Flying Stars
+## How QMDJ differs from Flying Stars
 
 Both systems use a nine-palace grid. Both are time-aware. The differences are load-bearing.
 

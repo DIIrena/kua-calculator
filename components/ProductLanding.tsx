@@ -285,7 +285,7 @@ export default function ProductLanding({
 
       {/* 7. Who it's for / not for */}
       <section className="product-section landing-who" aria-labelledby="who-h">
-        <h2 id="who-h">Who it is for, and who it is not</h2>
+        <h2 id="who-h">Who it is for</h2>
         <div className="landing-who-grid">
           <div>
             <h3>For you if</h3>
@@ -315,7 +315,7 @@ export default function ProductLanding({
 
       {/* 8. FAQ */}
       <section className="product-section" aria-labelledby="faq-h">
-        <h2 id="faq-h">Questions, answered plainly</h2>
+        <h2 id="faq-h">Common questions</h2>
         {c.faq.map((qa) => (
           <details key={qa.q} className="product-faq-item">
             <summary>{qa.q}</summary>

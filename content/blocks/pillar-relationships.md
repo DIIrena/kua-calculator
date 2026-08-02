@@ -8,7 +8,7 @@ In the eight-sided map that feng shui lays over a home, one sector is fixed to t
 
 Kun is Earth, and it is the receptive principle. Where other corners are about pushing, building, or arriving, this one is about holding and receiving. The tradition associates the Southwest with partnership, with being open to another person, and with the patient, unglamorous work of nurture that keeps a bond steady. It is read as a "feminine" or yielding pole in the old language, not as a statement about any one occupant, but as a quality the corner is given: softness, settling, the capacity to make room.
 
-Two things follow from that, and both are worth holding plainly:
+Two things follow from that, and both are worth holding onto:
 
 - The Southwest is associated with *relationships of all kinds*, not only romance. Close friendship, the bond between people who share a home, the steadiness of a long partnership - the corner reads them all under the same heading of connection.
 - It is associated with *receiving* rather than *seeking*. The tradition treats this corner as the ground you keep ready, not a switch that produces a partner. Tending it is a way of orienting your attention, not a guarantee about who walks through the door.

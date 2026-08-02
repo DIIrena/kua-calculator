@@ -1,10 +1,10 @@
-A crystal does not heal anyone. It is a coloured, weighty object placed in a room with a folk vocabulary attached. Crystals are an **adjacent** practice, not core feng shui. This page treats them the way the rest of the cluster treats [BaZi as the natal-time reading of the person](/guide/sister-disciplines/bazi-birth-data-and-personal-timing) and [Qi Men Dun Jia as the moment-and-direction reading](/guide/sister-disciplines/qi-men-dun-jia-date-selection-and-strategy). A sister body of knowledge that travels beside feng shui without being it.
+A crystal is a coloured, weighty object with a folk vocabulary attached, placed in a room for the way it catches light and holds attention. Crystals are an **adjacent** practice that travels beside feng shui rather than sitting at its core. This page treats them the way the rest of the cluster treats [BaZi as the natal-time reading of the person](/guide/sister-disciplines/bazi-birth-data-and-personal-timing) and [Qi Men Dun Jia as the moment-and-direction reading](/guide/sister-disciplines/qi-men-dun-jia-date-selection-and-strategy). A sister body of knowledge that travels beside feng shui without being it.
 
 This page does not redo the cures catalogue. The canonical home for the symbolic-objects family on this site is [the cures page on mirrors, plants, light, sound, and symbols](/guide/cures/mirrors-plants-light-sound-and-symbols). That page covers mirrors, plants, light, sound, and symbols as a cure family inside feng shui itself. What you are reading now extends that family outward to cover crystals and other optional objects that sit *beside* the cures catalogue. If you find these meaningful, here is how this page holds them.
 
-## What this page is not
+## What a crystal is here
 
-Crystals do not heal disease. They do not cleanse auras. They do not raise vibrations. They do not align chakras. They do not charge or program anything. They do not shield electromagnetic radiation. Said once, calmly. Moving on.
+A crystal here is a coloured, weighty object placed with intention and carrying a folk vocabulary. Its secure ground is aesthetic and attentional: the colour marks a sector, the weight slows the hand, a clear piece catches the light. Any energetic reading stays attributed to the tradition, named as the tradition's framing rather than asserted as fact.
 
 ## The two readings, held together
 

@@ -39,7 +39,7 @@ Here is how it works. For the next seven days, you will get one short email like
 
 The reset is really one simple habit: noticing how your rooms support you, and making one quiet adjustment at a time. Some days you will move a piece of furniture a few inches. Some days you will just clear a surface or open a window. Small, doable, calm.
 
-This is a practical home routine. Think of it as a way to read a home as something you can pay attention to and gently adjust, room by room. It is a decision tool for arranging the spaces you live in, not a prediction or a promise. You are simply learning to notice what a room is doing and to respond.
+This is a practical home routine. Think of it as a way to read a home as something you can pay attention to and gently adjust, room by room. It is a decision tool for arranging the spaces you live in, a way to make small, deliberate choices about your rooms. You are simply learning to notice what a room is doing and to respond.
 
 A few things to keep in mind:
 

@@ -9,7 +9,7 @@ import ProductHero from "@/components/ProductHero";
 export const metadata: Metadata = {
   title: "BaZi Basics: Read Your Own Chart | My Feng Shui Home",
   description:
-    "An educational primer on the four pillars, the day master, and the Ten Gods: enough to read your own birth chart the way the tradition reads it. Not fortune-telling.",
+    "Read your own birth chart the way the tradition reads it: the four pillars, your day master, and the ten relationships that show how you are built.",
   alternates: {
     canonical: "https://myfengshuihome.com/products/bazi-basics",
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "BaZi Basics: Read Your Own Chart",
     description:
-      "Read your own birth chart the way the tradition reads it. A self-description system, not a prediction.",
+      "Read your own birth chart the way the tradition reads it: structure, day master, and the Ten Gods - language for how you are built.",
     url: "https://myfengshuihome.com/products/bazi-basics",
     images: [
       {
@@ -52,8 +52,8 @@ export default async function BaziBasicsPage(props: {
           packet: what kind of plant this is, and which conditions it
           tends to favour. This primer teaches the four pillars, the
           day master, and the Ten Gods, enough to read your own chart
-          the way the tradition reads it, and to know exactly where the
-          reading stops. $14, one-time. 24 pages.
+          the way the tradition reads it, and to come away with language
+          for how you are built. $14, one-time. 24 pages.
         </p>
         <p className="product-hero-launch-state">
           Available now. The files arrive by email the moment you buy.
@@ -85,7 +85,7 @@ export default async function BaziBasicsPage(props: {
           <li>
             The Ten Gods explained as relationships between elements,
             each as a card: what it represents, how it shows up, and
-            what it is not. A worked example chart read start to finish.
+            what it is really about. A worked example chart read start to finish.
           </li>
         </ul>
         <FourPillarsSample />
@@ -107,15 +107,13 @@ export default async function BaziBasicsPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          It is not fortune-telling. Nothing in these pages forecasts
-          events, dates, windfalls, or losses. BaZi is a traditional
-          self-description system, not a prediction of your life: the
-          chart describes a structure laid down at birth, and what
-          happens inside that structure is decided by choices,
-          circumstances, and people, none of which appear in any
-          pillar.
+          You come away with language for how you are built: your day
+          master, the ten relationships around it, and the quiet "yes,
+          that is me" of reading your own chart. It is a mirror drawn
+          from the moment you were born, and it keeps giving the longer
+          you sit with it.
         </p>
       </section>
 

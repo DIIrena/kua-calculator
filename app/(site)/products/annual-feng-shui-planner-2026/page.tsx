@@ -482,15 +482,13 @@ export default async function PlannerPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What the Planner does not do</h2>
+        <h2>What the Planner does</h2>
         <p>
-          Feng shui does not promise outcomes. The Planner does not
-          predict your year and it will not tell you what will happen.
-          What it does is shape conditions: the small moves the
-          tradition has long associated with each sector for this
-          particular chart, written so you can act on them without
-          having to learn the system first. The year is not the book.
-          The year is what you do with it.
+          It shapes conditions: the small moves the tradition has long
+          associated with each sector for this particular chart, written
+          so you can act on them without having to learn the system
+          first. You bring the year; the Planner hands you the compass,
+          and what you do with it is where the value lives.
         </p>
       </section>
 

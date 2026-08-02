@@ -122,13 +122,13 @@ export default async function DiagnosticWorkbookPage(props: {
       </section>
 
       <section className="product-section">
-        <h2>What it is not</h2>
+        <h2>Why it helps</h2>
         <p>
-          It is not a structural survey. For load-bearing walls,
-          damp, or anything that holds the building up, you want an
-          architect or an engineer, not a workbook. This book reads
-          how the home is arranged and used; it leaves the structure
-          to the professionals who measure it.
+          It reads how your home is arranged and used, room by room, and
+          gives you a structured way to audit it the way a practitioner
+          would - ten steps, one move at a time. You end with a clear
+          record of what to change and when to revisit it, so the whole
+          home feels handled instead of overwhelming.
         </p>
       </section>
 
