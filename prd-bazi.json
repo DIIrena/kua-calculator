@@ -1,0 +1,72 @@
+{
+  "project": "BaZi (Four Pillars) Calculator - account-gated",
+  "spec": "spec/architect-2026-08-04.md",
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Solar-term engine",
+      "description": "lib/bazi.ts: sun apparent-longitude (Meeus low-precision) + a root-finder for solar-term instants. Verify Li Chun ~Feb 4 and the equinoxes/solstices land on the right dates across a spread of years.",
+      "passes": true
+    },
+    {
+      "id": 2,
+      "title": "Four pillars + Day Master",
+      "description": "Year pillar (Li Chun boundary), month pillar (solar term + Five Tigers stem rule), day pillar (JDN mod 60 anchor), hour pillar (Five Rats rule + double-hour, optional local-solar-time). Day Master = day stem. Data tables for 10 stems + 12 branches (element, polarity, animal, main-qi hidden stem).",
+      "passes": true
+    },
+    {
+      "id": 3,
+      "title": "Ten Gods + element balance + time-unknown",
+      "description": "Label the 7 non-day-master characters via element relation + polarity vs the Day Master. Count the five elements across the chart. Support time-unknown (6 characters, skip hour pillar).",
+      "passes": true
+    },
+    {
+      "id": 4,
+      "title": "Reference-chart verification",
+      "description": "Cross-check the engine against ~10 authoritative reference charts (spanning pre/post Li Chun, month boundaries, near-midnight, time-unknown). Calibrate the day anchor. Ship only when it matches.",
+      "passes": true
+    },
+    {
+      "id": 5,
+      "title": "DB migration + gated server action",
+      "description": "supabase/migrations bazi_charts table (FK next_auth.users). app/actions/bazi.ts: session-gated server action that computes, saves, and returns the chart; rejects when signed out.",
+      "passes": true
+    },
+    {
+      "id": 6,
+      "title": "Form + results card",
+      "description": "components/BaziCalculatorForm.tsx: date, optional time, city/timezone. Results card leading with the Day Master, then the coloured pillar grid, element bars, Ten Gods. Reuse the PDF visual language in globals.css.",
+      "passes": true
+    },
+    {
+      "id": 7,
+      "title": "Page + sign-in gate + SEO + sitemap",
+      "description": "app/(site)/bazi-calculator/page.tsx: public page ranking for both terms; signed-out sees pitch + 'Sign in free' CTA; signed-in sees the form. Add to sitemap. JSON-LD.",
+      "passes": true
+    },
+    {
+      "id": 8,
+      "title": "Saved-chart account view",
+      "description": "Show the user's saved BaZi chart in the account area, mirroring the saved-Kua-chart view.",
+      "passes": true
+    },
+    {
+      "id": 9,
+      "title": "Accessibility + build gate",
+      "description": "Labels, focus, 4.5:1 contrast, keyboard. npm run build + npm run start clean. No em dashes.",
+      "passes": true
+    },
+    {
+      "id": 10,
+      "title": "[Phase 2] PDF friend-tone rewrite + glossary",
+      "description": "Rewrite BaZi Basics: friend tone, Day-Master-first, machinery to a back appendix, plain-language glossary. Per bazi-visual-plan-2026-08-04.md.",
+      "passes": false
+    },
+    {
+      "id": 11,
+      "title": "[Phase 2] Wire PDF to calculator + rebuild",
+      "description": "Replace 'go to some online calculator' with links to /bazi-calculator; add the new diagrams + photos; rebuild + review.",
+      "passes": false
+    }
+  ]
+}

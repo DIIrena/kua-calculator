@@ -5,6 +5,7 @@ import { auth } from "@/auth";
 import { createAdminClient } from "@/lib/supabase/server";
 import { saveDetails, saveAndEmailMyChart, deleteAccount } from "./actions";
 import { deleteChart, updateChartLabel } from "@/app/actions/save-chart";
+import { deleteBaziChart } from "@/app/actions/bazi";
 import { compareCharts } from "@/app/actions/compare-charts";
 import BrandMark from "@/components/BrandMark";
 import CalculatorIsland from "@/components/CalculatorIsland";
@@ -29,6 +30,17 @@ type SavedChart = {
   id: string;
   kua_number: number | null;
   kua_group: string | null;
+  label: string | null;
+  created_at: string;
+};
+
+type SavedBaziChart = {
+  id: string;
+  day_master: string | null;
+  birth_year: number | null;
+  birth_month: number | null;
+  birth_day: number | null;
+  time_known: boolean | null;
   label: string | null;
   created_at: string;
 };
@@ -95,6 +107,14 @@ export default async function AccountPage() {
     .order("created_at", { ascending: false });
 
   const charts: SavedChart[] = chartsData ?? [];
+
+  const { data: baziData } = await admin
+    .from("bazi_charts")
+    .select("id, day_master, birth_year, birth_month, birth_day, time_known, label, created_at")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false });
+
+  const baziCharts: SavedBaziChart[] = baziData ?? [];
 
   return (
     <div className="page-content account-page">
@@ -350,6 +370,57 @@ export default async function AccountPage() {
             </form>
           </div>
         ) : null}
+      </section>
+
+      <section className="account-section" aria-labelledby="bazi-heading">
+        <h2 id="bazi-heading">Your BaZi charts</h2>
+        {baziCharts.length === 0 ? (
+          <p>
+            You haven&apos;t made a BaZi chart yet.{" "}
+            <Link href="/bazi-calculator">Open the BaZi calculator</Link> to read
+            your Day Master and your four pillars.
+          </p>
+        ) : (
+          <ul className="account-saved-list">
+            {baziCharts.map((c) => {
+              const born =
+                c.birth_year && c.birth_month && c.birth_day
+                  ? `${MONTHS[c.birth_month - 1]} ${c.birth_day}, ${c.birth_year}`
+                  : null;
+              const created = new Date(c.created_at).toLocaleDateString(undefined, {
+                year: "numeric", month: "short", day: "numeric",
+              });
+              return (
+                <li key={c.id} className="saved-chart-row">
+                  <div className="saved-chart-main">
+                    <p className="saved-chart-title">
+                      {c.label ?? `${c.day_master ?? "BaZi"} Day Master`}
+                    </p>
+                    <p className="saved-chart-meta">
+                      Day Master {c.day_master ?? "?"}
+                      {born ? ` · Born ${born}` : ""}
+                      {c.time_known === false ? " · time unknown" : ""}
+                      {" · Saved "}
+                      {created}
+                    </p>
+                  </div>
+                  <div className="saved-chart-actions">
+                    <Link href={`/account/bazi/${c.id}`} className="cta-secondary">
+                      View
+                    </Link>
+                    <form action={deleteBaziChart}>
+                      <input type="hidden" name="id" value={c.id} />
+                      <button type="submit" className="btn-danger-sm">Delete</button>
+                    </form>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+        <p style={{ marginTop: "1rem" }}>
+          <Link href="/bazi-calculator" className="cta-secondary">Make a new BaZi chart</Link>
+        </p>
       </section>
 
       <section className="account-section">
