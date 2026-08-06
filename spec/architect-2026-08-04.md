@@ -46,21 +46,44 @@ Owner decisions (2026-08-04): calculator depth = **chart + reading labels**
 both terms** (/bazi-calculator, title "Free BaZi Calculator (Four Pillars)");
 sequence = **calculator first**; the PDF must include a **glossary in simple language**. Access (2026-08-04): the calculator is **account-gated** - only signed-in users can run it, and the chart saves to their account.
 
-## Access model - account-gated (owner directive 2026-08-04)
+## Access model - public + email-gate (REVISED 2026-08-06, owner feedback)
 
-Only signed-in users can run the calculator. The `/bazi-calculator` page stays
-public so it can rank for "bazi calculator" / "four pillars calculator", but the
-tool itself sits behind the existing Auth.js v5 sign-in (Google + Resend magic
-link). Signed-out visitors get the pitch and a "Sign in free to get your chart"
-CTA; signed-in visitors get the calculator, and their chart is saved to their
-account.
+The v1 account-gate (deployed 2026-08-05) proved too much friction on the first
+touch - you had to sign in before you could even try it, and nothing on the site
+linked to it. Revised to a lower-friction lead magnet.
 
-This shifts the strategy away from the Kua calculator's anonymous top-of-funnel:
-the BaZi calculator is a **lead-gen / account-activation** tool. The SEO page
-still draws visitors; the value (your chart) converts them into free accounts.
-It also means compute is **server-side** (`lib/bazi.ts` via a gated server
-action), not a client island, because the user is authenticated and we save the
-result. The anonymous Kua calculator and `/embed` are untouched.
+**Public calculator, email-gate the reading.** Anyone opens `/bazi-calculator`
+(no login) and enters their birth data, exactly like the Kua calculator. To
+reveal the reading they enter their **email** - captured as a lead, and we email
+them a copy. After the result, offer "create a free account to save it and
+compare charts" (converts the keen ones to full accounts). Signed-in users skip
+the email step; their chart still saves to their account.
+
+This maximises email capture (the goal) at minimum friction, keeping the account
+path as an upsell. Birth data + email leave the browser deliberately - this is a
+lead-capture tool, like the 14-point checklist lead magnet, not the privacy-pure
+Kua core. Consent: the reading email is the transactional value exchange; a
+separate opt-in checkbox covers ongoing guidance.
+
+**The free reading = the chart + a light teaser, not the full reading.** Show the
+four pillars grid (Day Master marked), the element balance, and the Ten Gods
+labels, PLUS a short brain-tickler: the Day Master name + one line, the strongest
+element, and the dominant Ten Gods lean in a phrase. The full personal reading is
+held back for the paid Personal BaZi Reading.
+
+## Product ladder (BaZi) - owner direction 2026-08-06
+
+- **Free BaZi Calculator** (public + email-gate) - the chart + the teaser. Captures email + discoverable from the nav/homepage/Kua page/guide.
+- **Personal BaZi Reading** (NEW paid product, price TBD ~$14-19) - a full
+  personalized reading of the buyer's own chart: their Day Master portrait, their
+  Ten Gods read in plain words, their element balance interpreted. The done-for-you
+  version, mirroring the Compass line. Generated from their computed chart. Needs
+  its own scoping before build.
+- **BaZi Basics** ($14) - stays the educational primer: learn to read ANY chart
+  yourself. Already built (Phase 2 in progress).
+- **Bundle**: Personal Reading + BaZi Basics at a small discount - the done-for-you
+  and the teach-yourself together (covers "separate product" and "add-on, either
+  direction").
 
 ## Architecture decision
 

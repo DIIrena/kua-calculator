@@ -55,6 +55,10 @@ export default async function BaziBasicsPage(props: {
           the way the tradition reads it, and to come away with language
           for how you are built. $14, one-time. 24 pages.
         </p>
+        <p className="product-lede">
+          New to all this? <Link href="/bazi-calculator">Get your chart free with the BaZi calculator</Link>{" "}
+          first, then this guide teaches you to read it, kindly and in plain words.
+        </p>
         <p className="product-hero-launch-state">
           Available now. The files arrive by email the moment you buy.
         </p>

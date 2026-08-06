@@ -10,9 +10,9 @@ const MONTHS = [
   "July", "August", "September", "October", "November", "December",
 ];
 
-// Birthplace timezone offsets (standard time). BaZi keeps birthplace-local
-// time; we never convert to Beijing. Offset is what the engine needs to place
-// the birth instant for the solar-term (year/month) boundaries.
+// Birthplace timezone offsets (standard time). BaZi keeps birthplace-local time;
+// we never convert to Beijing. The offset is what the engine needs to place the
+// birth instant for the solar-term (year/month) boundaries.
 const TZ_OPTIONS: { v: string; label: string }[] = [
   { v: "-8", label: "UTC-8 · Los Angeles, Vancouver" },
   { v: "-7", label: "UTC-7 · Denver, Phoenix" },
@@ -42,7 +42,7 @@ const labelStyle: CSSProperties = { display: "block", fontWeight: 600, color: "#
 const fieldStyle: CSSProperties = { width: "100%", padding: "9px 10px", border: "1px solid #cbbfa9", borderRadius: 8, fontSize: "1rem" };
 const rowStyle: CSSProperties = { marginBottom: "1rem" };
 
-export default function BaziCalculatorForm() {
+export default function BaziCalculatorForm({ signedIn }: { signedIn: boolean }) {
   const [state, formAction, pending] = useActionState(computeBaziAction, initial);
   const [timeKnown, setTimeKnown] = useState(true);
 
@@ -65,12 +65,7 @@ export default function BaziCalculatorForm() {
 
         <div style={rowStyle}>
           <label style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 600, color: "#0e3b2c" }}>
-            <input
-              type="checkbox"
-              name="timeKnown"
-              checked={timeKnown}
-              onChange={(e) => setTimeKnown(e.target.checked)}
-            />
+            <input type="checkbox" name="timeKnown" checked={timeKnown} onChange={(e) => setTimeKnown(e.target.checked)} />
             I know my birth time
           </label>
           {timeKnown ? (
@@ -80,15 +75,15 @@ export default function BaziCalculatorForm() {
             </div>
           ) : (
             <p style={{ margin: "6px 0 0", fontSize: "0.85rem", color: "#4f5b53" }}>
-              No problem. You will get your Day Master and six characters; only the hour pillar is left off.
+              No problem at all. You will still get your Day Master and six of your characters; only the hour is left off.
             </p>
           )}
         </div>
 
         <div style={rowStyle}>
-          <label htmlFor="tz" style={labelStyle}>Birthplace timezone</label>
+          <label htmlFor="tz" style={labelStyle}>Where you were born (timezone)</label>
           <select id="tz" name="tz" required defaultValue="" style={fieldStyle}>
-            <option value="" disabled>Select the timezone of your birthplace</option>
+            <option value="" disabled>Pick the timezone of your birthplace</option>
             {TZ_OPTIONS.map((o) => (
               <option key={o.v} value={o.v}>{o.label}</option>
             ))}
@@ -96,12 +91,25 @@ export default function BaziCalculatorForm() {
         </div>
 
         <div style={rowStyle}>
-          <label htmlFor="city" style={labelStyle}>Birthplace <span style={{ fontWeight: 400, color: "#4f5b53" }}>(optional, for your records)</span></label>
+          <label htmlFor="city" style={labelStyle}>Town or city <span style={{ fontWeight: 400, color: "#4f5b53" }}>(optional, just for your records)</span></label>
           <input id="city" name="city" type="text" maxLength={80} placeholder="e.g. London" style={fieldStyle} />
         </div>
 
+        {!signedIn ? (
+          <>
+            <div style={rowStyle}>
+              <label htmlFor="email" style={labelStyle}>Your email <span style={{ fontWeight: 400, color: "#4f5b53" }}>(so you can see your reading)</span></label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com" style={fieldStyle} />
+            </div>
+            <label style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: "0.85rem", color: "#4f5b53", marginBottom: "1rem" }}>
+              <input type="checkbox" name="optIn" style={{ marginTop: 3 }} />
+              <span>Send me the occasional friendly feng shui note as well. You can stop any time.</span>
+            </label>
+          </>
+        ) : null}
+
         <button type="submit" className="cta-primary" disabled={pending}>
-          {pending ? "Reading your chart..." : "Get my BaZi chart"}
+          {pending ? "Reading your chart..." : "Show me my chart"}
         </button>
       </form>
 
@@ -112,11 +120,20 @@ export default function BaziCalculatorForm() {
       {state.status === "ok" ? (
         <>
           <BaziResult chart={state.chart} bornLine={bornLine} />
-          <p style={{ marginTop: "1.5rem", padding: "1rem 1.2rem", background: "#f7f2e9", borderRadius: 10 }}>
-            Want to know what it all means? <Link href="/products/bazi-basics">Read your chart with BaZi Basics</Link> - your
-            Day Master&apos;s portrait, the people around you, and how to read the whole thing. Your chart is saved to
-            your <Link href="/account">account</Link>.
-          </p>
+          <div style={{ marginTop: "1.5rem", padding: "1.1rem 1.3rem", background: "#f7f2e9", borderRadius: 10 }}>
+            <p style={{ marginTop: 0 }}>
+              That is the outline of you. If you want to understand the rest of your chart - your full Day Master
+              portrait, the people and forces around you, what your elements really mean - {" "}
+              <Link href="/products/bazi-basics">BaZi Basics</Link> walks you through reading the whole thing yourself, kindly and in plain words.
+            </p>
+            {!signedIn ? (
+              <p style={{ marginBottom: 0 }}>
+                Want to keep this chart? <Link href="/sign-in">Create a free account</Link> and it is saved for you, ready to open any time.
+              </p>
+            ) : (
+              <p style={{ marginBottom: 0 }}>Your chart is saved to your <Link href="/account">account</Link>.</p>
+            )}
+          </div>
         </>
       ) : null}
     </div>

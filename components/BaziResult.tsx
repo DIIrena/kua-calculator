@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { ELEMENT_COLORS, ELEMENT_INK, type BaziChart, type Element } from "@/lib/bazi";
+import { DAY_MASTER_HOOKS, GROUP_LEANS, dominantGroup, strongestElement } from "@/lib/bazi-readings";
 
 // Presentational results card for a computed BaZi chart. Leads with the Day
 // Master (the headline), then the coloured pillar grid, the element balance,
@@ -50,6 +51,9 @@ export default function BaziResult({
         </p>
         <p style={{ margin: "0.3rem 0 0", fontSize: "1rem", opacity: 0.92 }}>
           {dm.polarity} {dm.element}
+        </p>
+        <p style={{ margin: "0.6rem auto 0", fontSize: "0.95rem", opacity: 0.96, maxWidth: "27rem", lineHeight: 1.45 }}>
+          The tradition reads a {dm.pinyin} like you as {DAY_MASTER_HOOKS[chart.dayMaster.index]}.
         </p>
         {bornLine ? (
           <p style={{ margin: "0.5rem 0 0", fontSize: "0.82rem", opacity: 0.85 }}>{bornLine}</p>
@@ -131,8 +135,13 @@ export default function BaziResult({
           );
         })}
       </div>
+      <p style={{ marginTop: "1.1rem", fontSize: "0.95rem", color: "#0e3b2c", lineHeight: 1.5 }}>
+        The short version of you: you run strongest in <strong>{strongestElement(chart)}</strong>, and
+        your chart leans toward <strong>{GROUP_LEANS[dominantGroup(chart)]}</strong>. That is the outline
+        of who you are - the full picture, drawn just for you, is where a reading goes deeper.
+      </p>
       {!chart.timeKnown ? (
-        <p style={{ marginTop: "1rem", fontSize: "0.85rem", color: "#4f5b53" }}>
+        <p style={{ marginTop: "0.8rem", fontSize: "0.85rem", color: "#4f5b53" }}>
           Read as six characters: without a birth time, the hour pillar is left off. Your Day
           Master and the rest of the chart are unaffected.
         </p>

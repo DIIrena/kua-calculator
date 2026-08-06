@@ -6,10 +6,12 @@ import { auth } from "@/auth";
 import { createAdminClient } from "@/lib/supabase/server";
 import { computeBazi, type BaziChart } from "@/lib/bazi";
 
-// The BaZi calculator is account-gated. This server action recomputes the
-// chart on the server for the signed-in user (so a client can never persist
-// a chart that does not match its inputs), saves it, and returns it for
-// inline rendering. Shaped for useActionState.
+// The BaZi calculator is public and email-gated: anyone can run it, and to
+// reveal the reading a visitor enters their email (captured as a lead). The
+// chart is recomputed on the server so a client can never persist a chart that
+// does not match its inputs. If the visitor happens to be signed in, we skip
+// the email (using the account's) and link the chart to their account. Shaped
+// for useActionState.
 
 export type BaziActionState =
   | { status: "idle" }
@@ -27,16 +29,23 @@ export interface SavedInput {
 }
 
 const MONTHS_MAX = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
 export async function computeBaziAction(
   _prev: BaziActionState,
   formData: FormData,
 ): Promise<BaziActionState> {
   const session = await auth();
-  if (!session?.user?.id) {
-    return { status: "error", message: "Please sign in (free) to get your chart." };
+  const userId = session?.user?.id ?? null;
+  const sessionEmail = session?.user?.email ?? null;
+
+  // Email gate: required to reveal the reading unless already signed in.
+  const emailRaw = String(formData.get("email") ?? "").trim().toLowerCase();
+  const email = userId ? (sessionEmail ?? emailRaw) : emailRaw;
+  if (!userId && !EMAIL_RE.test(email)) {
+    return { status: "error", message: "Please enter a valid email to see your reading." };
   }
-  const userId = session.user.id;
+  const optIn = String(formData.get("optIn") ?? "") === "on";
 
   // Birth date: an <input type="date"> gives YYYY-MM-DD.
   const dateRaw = String(formData.get("birthdate") ?? "").trim();
@@ -86,6 +95,8 @@ export async function computeBaziAction(
     .from("bazi_charts")
     .insert({
       user_id: userId,
+      email: email || null,
+      opt_in: optIn,
       birth_year: year,
       birth_month: month,
       birth_day: day,
@@ -101,7 +112,7 @@ export async function computeBaziAction(
     .single();
 
   if (error || !data) {
-    return { status: "error", message: "We could not save your chart. Please try again in a moment." };
+    return { status: "error", message: "We could not build your chart just now. Please try again in a moment." };
   }
 
   return {
@@ -112,8 +123,8 @@ export async function computeBaziAction(
   };
 }
 
-// Delete a saved BaZi chart. Scoped by user_id so a user cannot delete
-// another user's chart even if they craft the id.
+// Delete a saved BaZi chart. Scoped by user_id so a user cannot delete another
+// user's chart even if they craft the id.
 export async function deleteBaziChart(formData: FormData) {
   const session = await auth();
   if (!session?.user?.id) redirect("/sign-in");

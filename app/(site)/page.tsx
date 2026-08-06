@@ -181,7 +181,7 @@ export default async function HomePage(props: {
         <div className="page-content">
           <h2 id="free-tools-heading">Start here. Free, no account.</h2>
           <p className="home-section-lede">
-            Three doors into the practice. The calculator is fastest; the
+            A few doors into the practice. The calculators are fastest; the
             guide is deepest; the methodology page sits between them.
           </p>
           <div className="free-tools-grid">
@@ -193,6 +193,15 @@ export default async function HomePage(props: {
                 unfavourable directions, each with a one-line meaning.
               </p>
               <span className="tool-card-cta">Calculate my Kua &rarr;</span>
+            </Link>
+            <Link href="/bazi-calculator" className="tool-card">
+              <h3>The BaZi (Four Pillars) calculator</h3>
+              <p>
+                Enter your birth date, time, and place. Meet your Day Master -
+                the one character that is really you - with your four pillars,
+                your five elements, and the pattern your chart leans toward.
+              </p>
+              <span className="tool-card-cta">Read my BaZi chart &rarr;</span>
             </Link>
             <Link href="/guide" className="tool-card">
               <h3>The Ultimate Feng Shui Guide</h3>
