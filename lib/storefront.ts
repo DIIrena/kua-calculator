@@ -263,13 +263,22 @@ const CORE: Omit<StoreProduct, "priceLabel">[] = [
     priceCents: 1900,
     category: "course",
   },
-  // --- free tool ---
+  // --- free tools ---
   {
     slug: "kua-calculator",
     href: "/kua-calculator",
     title: "Kua Number Calculator",
     oneLiner:
       "Your Kua number and your eight personal directions, in ten seconds. Always free.",
+    priceCents: 0,
+    category: "free",
+  },
+  {
+    slug: "bazi-calculator",
+    href: "/bazi-calculator",
+    title: "BaZi (Four Pillars) Calculator",
+    oneLiner:
+      "Your Day Master and your full four pillars, in seconds. Always free.",
     priceCents: 0,
     category: "free",
   },

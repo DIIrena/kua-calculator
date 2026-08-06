@@ -188,6 +188,14 @@ export default async function KuaCalculatorPage() {
         </div>
       </section>
 
+      <div className="page-content" style={{ textAlign: "center", padding: "1.25rem 0" }}>
+        <p style={{ margin: 0 }}>
+          Curious about your BaZi chart too? Your Kua number reads your directions;
+          your <strong>BaZi</strong> reads <em>you</em>.{" "}
+          <Link href="/bazi-calculator">Try the free BaZi (Four Pillars) calculator &rarr;</Link>
+        </p>
+      </div>
+
       <section className="explainer" aria-labelledby="what-is-heading">
         <div className="explainer-inner">
           <h2 id="what-is-heading">What is a Kua number?</h2>
