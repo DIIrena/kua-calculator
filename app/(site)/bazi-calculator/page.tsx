@@ -62,10 +62,37 @@ export default async function BaziCalculatorPage() {
           <li>Your <strong>five-element balance</strong> - where you run strong, and where you run quiet.</li>
           <li>Your <strong>Ten Gods</strong>, and the pattern your chart leans toward.</li>
         </ul>
-        <p>
-          Want to learn to read the whole thing yourself, kindly and in plain words?{" "}
-          <Link href="/products/bazi-basics">BaZi Basics</Link> is the friendly guide that teaches you how.
-        </p>
+      </section>
+
+      {/* Interim offer stack (marketing-ux-plan 2026-08-14, Path C item 6).
+          When the Personal BaZi Reading ships, its card replaces the
+          BaZi Basics card here and the locked-chapter tease moves into
+          the result flow. */}
+      <section className="product-section" aria-label="After your chart">
+        <h2>After your chart</h2>
+        <div className="free-tools-grid">
+          <Link href="/products/bazi-basics" className="tool-card">
+            <h3>The Birth Code: Your BaZi Chart, $14</h3>
+            <p>
+              The friendly guide that teaches you to read the chart you are
+              looking at: your Day Master, your Ten Gods, your lucky element,
+              and your decades ahead, one gentle chapter at a time.
+            </p>
+            <span className="tool-card-cta">See the guide &rarr;</span>
+          </Link>
+          <Link
+            href="/products/personal-feng-shui-compass"
+            className="tool-card"
+          >
+            <h3>Your Personal Feng Shui Compass, $19</h3>
+            <p>
+              BaZi reads the person. Feng shui reads the place the person
+              lives. The Compass turns your Kua into placements for your own
+              rooms: the bed, the desk, the dining seat.
+            </p>
+            <span className="tool-card-cta">See the Compass &rarr;</span>
+          </Link>
+        </div>
       </section>
     </div>
   );

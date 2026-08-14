@@ -133,47 +133,9 @@ export default async function HomePage(props: {
         </div>
       </section>
 
-      {/* Section 2 - What feng shui actually is (affirmative) */}
-      <section
-        className="home-section home-section-paper honest-block"
-        id="what-it-is"
-        aria-labelledby="what-it-is-heading"
-      >
-        <div className="page-prose">
-          <h2 id="what-it-is-heading">What feng shui actually is.</h2>
-          <p>
-            Feng shui is a <strong>structured way of looking at a room</strong>.
-            It asks where the door is. Where the bed is. Where the stove is.
-            Where the light comes in. Where the air moves. Where <em>you</em> sit
-            when you work.
-          </p>
-          <p>Then it gives you a small number of changes to try.</p>
-          <p>
-            Some of those changes have a plain, practical rationale. Better
-            light helps you read. A clean stove makes you cook more. A clear
-            path to the door is easier to walk.
-          </p>
-          <p>
-            Some of them are <em>traditional</em>: the wealth corner, the mirror
-            rules, the five-element pairings. Where a recommendation is
-            traditional, we say so, and we tell you what the evidence supports.
-          </p>
-          <p className="home-credibility">
-            Underneath the schools and the cures, feng shui is a way of
-            reading space: orientation, movement, light, proportion,
-            entrance, rest. My Feng Shui Home reads it that way because
-            the site is written by an architect.
-          </p>
-          <p>
-            The shortest way in is your Kua number. It names the four
-            directions in your home that traditionally <em>support</em> you and
-            the four to handle with more care. It is right at the top of this
-            page, and it takes ten seconds.
-          </p>
-        </div>
-      </section>
-
-      {/* Section 3 - Free tools */}
+      {/* Section 2 - Free tools. Directly under the calculator so the
+          first scroll offers more free doors before any education
+          (marketing-ux-plan 2026-08-14, Path A). */}
       <section
         className="home-section home-section-cream free-tools"
         aria-labelledby="free-tools-heading"
@@ -224,6 +186,46 @@ export default async function HomePage(props: {
           <p className="free-tools-next">
             When you want the next practical tool for your own home,{" "}
             <Link href="/products">see what to use</Link>.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 3 - What feng shui actually is (affirmative) */}
+      <section
+        className="home-section home-section-paper honest-block"
+        id="what-it-is"
+        aria-labelledby="what-it-is-heading"
+      >
+        <div className="page-prose">
+          <h2 id="what-it-is-heading">What feng shui actually is.</h2>
+          <p>
+            Feng shui is a <strong>structured way of looking at a room</strong>.
+            It asks where the door is. Where the bed is. Where the stove is.
+            Where the light comes in. Where the air moves. Where <em>you</em> sit
+            when you work.
+          </p>
+          <p>Then it gives you a small number of changes to try.</p>
+          <p>
+            Some of those changes have a plain, practical rationale. Better
+            light helps you read. A clean stove makes you cook more. A clear
+            path to the door is easier to walk.
+          </p>
+          <p>
+            Some of them are <em>traditional</em>: the wealth corner, the mirror
+            rules, the five-element pairings. Where a recommendation is
+            traditional, we say so, and we tell you what the evidence supports.
+          </p>
+          <p className="home-credibility">
+            Underneath the schools and the cures, feng shui is a way of
+            reading space: orientation, movement, light, proportion,
+            entrance, rest. My Feng Shui Home reads it that way because
+            the site is written by an architect.
+          </p>
+          <p>
+            The shortest way in is your Kua number. It names the four
+            directions in your home that traditionally <em>support</em> you and
+            the four to handle with more care. It is right at the top of this
+            page, and it takes ten seconds.
           </p>
         </div>
       </section>
@@ -390,11 +392,15 @@ export default async function HomePage(props: {
 
           <div className="map-offer-shelf-teaser">
             <p>
-              Also on the shelf: the{" "}
-              <strong>Personal Feng Shui Compass</strong>, the{" "}
-              <strong>Twelve Spaces Compass</strong>, the{" "}
-              <strong>Move-In Date Report</strong>, and the{" "}
-              <strong>Business and Money Kit</strong>. Each is its own
+              One book, three depths: the{" "}
+              <strong>Personal Feng Shui Compass, $19</strong>, reads your
+              eight directions; the{" "}
+              <strong>Twelve Spaces Compass, $29</strong>, adds every room of
+              your home; the Complete Home Compass above is the whole map.
+            </p>
+            <p>
+              Also on the shelf: the <strong>Move-In Date Report</strong> and
+              the <strong>Business and Money Kit</strong>. Each is its own
               focused book.
             </p>
             <p>

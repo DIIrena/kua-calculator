@@ -386,6 +386,27 @@ export default function CalculatorIsland({
             </a>
           </p>
         </article>
+
+        {/* The free rung (marketing-ux-plan 2026-08-14, Path B): the
+            visitor who is not buying today leaves with a reason to hand
+            over an email instead of leaving with nothing. Carries
+            .post-result-card-compass so /embed hides it like the other
+            marketing cards. */}
+        <article className="post-result-card secondary post-result-card-compass post-result-card-gooddays">
+          <h3 className="post-result-card-heading">
+            Plan around the good days, free.
+          </h3>
+          <p className="post-result-card-body">
+            Your directions are one half of the timing. The Good-Days
+            calendar marks the days this season favours for beginnings,
+            free on the page, and we email you the printable link.
+          </p>
+          <p className="post-result-card-actions">
+            <a href="/good-days?from=kua-calculator" className="cta-secondary">
+              Open the Good-Days calendar
+            </a>
+          </p>
+        </article>
       </section>
 
       {showSaveCta ? (
