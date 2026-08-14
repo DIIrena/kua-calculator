@@ -1,18 +1,18 @@
 # Walkthrough: sending the overdue waitlist + first newsletter emails
 
-> **STOP - updated 2026-08-14.** The newsletter list is contaminated. Bot signups
-> flooded the footer form starting around 2026-08-10: the list went from ~20
-> addresses to 87 in five days (dotted-Gmail patterns, random corporate inboxes).
-> **Do not run the newsletter `--live` command** until the list is scrubbed and
-> the form is protected; sending to bot addresses and spam traps damages the
-> domain's email reputation before the business has one. The three single-person
-> product waitlist sends go to the owner's own test addresses and remain safe.
-> Cleanup plan: see the 2026-08-14 conversation / upcoming list-hygiene tasks.
+> **Updated 2026-08-14.** A bot flood (2026-08-10..14) pushed the newsletter
+> list to 87 addresses; the scrub deleted 73 bot rows (`scripts/scrub-newsletter-list.mjs`),
+> leaving **14 real subscribers**. All four public email forms now carry the
+> honeypot + timing guard (commit d0cd564, deployed). The four launch emails
+> were rewritten in the affirmative house voice the same day; previews in
+> `scripts/out/` are current. **Sending is owner-gated:** the owner has chosen
+> not to send yet. When she says go, Part C below works as written (the
+> newsletter send reaches the 14 real people).
 
-You have 23 people who left their email on the site and have never received anything:
-20 newsletter subscribers (footer form, collecting since June 7) and 1 person each on
-the Planner, Personal Compass and Move-In Report waitlists. Nothing sends until you run
-the `--live` commands in Part C. Every command below is safe to run as written.
+You have 14 newsletter subscribers (footer form) and 1 person each on the
+Planner, Personal Compass and Move-In Report waitlists, none of whom have ever
+received anything. Nothing sends until you run the `--live` commands in Part C.
+Every command below is safe to run as written.
 
 ## Part A - Review the four emails (5 minutes)
 
