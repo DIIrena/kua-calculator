@@ -10,6 +10,7 @@ import {
 } from "@/lib/guide";
 import AuthorByline from "@/components/AuthorByline";
 import GuideReadState from "@/components/GuideReadState";
+import { CLUSTER_CTAS } from "@/lib/guide-ctas";
 
 type Params = Promise<{ cluster: string; slug: string }>;
 
@@ -165,18 +166,25 @@ export default async function GuidePage(props: { params: Params }) {
             className="guide-page-body markdown-content"
             dangerouslySetInnerHTML={{ __html: html ?? "" }}
           />
-          {page.cta ? (
-            <aside className="in-article-cta" aria-label="What to do next">
-              {page.cta.rationale ? (
-                <p className="in-article-cta-text">{page.cta.rationale}</p>
-              ) : null}
-              <p className="in-article-cta-actions">
-                <Link href={page.cta.href} className="cta-primary cta-buy">
-                  {page.cta.label}
-                </Link>
-              </p>
-            </aside>
-          ) : null}
+          {(() => {
+            // Per-page CTA wins; otherwise the cluster default, so every
+            // guide page ends with one contextual next step
+            // (marketing-ux-plan 2026-08-14, Path E).
+            const cta = page.cta ?? CLUSTER_CTAS[cluster];
+            if (!cta) return null;
+            return (
+              <aside className="in-article-cta" aria-label="What to do next">
+                {cta.rationale ? (
+                  <p className="in-article-cta-text">{cta.rationale}</p>
+                ) : null}
+                <p className="in-article-cta-actions">
+                  <Link href={cta.href} className="cta-primary cta-buy">
+                    {cta.label}
+                  </Link>
+                </p>
+              </aside>
+            );
+          })()}
           {(() => {
             // Prev/next within the cluster, in registry order, so the
             // 38 pages read like a course rather than a pile.

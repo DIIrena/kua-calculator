@@ -30,12 +30,12 @@ export default function GoodDaysForm() {
       <p className="lead-magnet-checkbox-row">
         <label htmlFor="gd-notes">
           <input id="gd-notes" name="notes" type="checkbox" value="yes" />{" "}
-          Also send me the occasional calm feng shui note (optional)
+          Occasional notes too: a season turning, a good day coming
+          (optional)
         </label>
       </p>
       <p className="lead-magnet-note">
-        One email with the link. Unless you tick the box, we do not add you
-        to any list.
+        One email with the link. Notes arrive only if you tick the box.
       </p>
     </form>
   );

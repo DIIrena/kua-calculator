@@ -29,6 +29,37 @@ const jsonLd = {
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
 
+// FAQ schema mirrors the visible FAQ section below, question for
+// question (search layer, marketing-ux-plan 2026-08-14).
+const FAQS: Array<{ q: string; a: string }> = [
+  {
+    q: "Is the BaZi calculator free?",
+    a: "Yes. Sign in free (Google or an email link) and run it as often as you like. Your chart saves to your account so you can return to it any time.",
+  },
+  {
+    q: "What do I need to get my chart?",
+    a: "Your birth date, your birth city, and your birth time if you know it. The calculator handles the solar-term boundaries and local time for you.",
+  },
+  {
+    q: "What if I do not know my birth time?",
+    a: "You still get a real chart. The calculator reads the six characters of your year, month, and day, and your Day Master, the heart of the chart, is unaffected.",
+  },
+  {
+    q: "What is a Day Master?",
+    a: "The single character of your day of birth, the one the whole chart revolves around. The tradition reads it as a portrait of how you are built, and every other character is described by its relationship to it.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default async function BaziCalculatorPage() {
   const session = await auth();
   const signedIn = Boolean(session?.user?.id);
@@ -36,6 +67,7 @@ export default async function BaziCalculatorPage() {
   return (
     <div className="page-content">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <section className="product-hero">
         <p className="eyebrow">My Feng Shui Home</p>
@@ -62,6 +94,20 @@ export default async function BaziCalculatorPage() {
           <li>Your <strong>five-element balance</strong> - where you run strong, and where you run quiet.</li>
           <li>Your <strong>Ten Gods</strong>, and the pattern your chart leans toward.</li>
         </ul>
+      </section>
+
+      <section className="faq" aria-labelledby="bazi-faq-heading">
+        <div className="faq-inner">
+          <h2 id="bazi-faq-heading">Common questions</h2>
+          {FAQS.map((f) => (
+            <details className="faq-item" key={f.q}>
+              <summary>{f.q}</summary>
+              <div className="faq-answer">
+                <p>{f.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
       </section>
 
       {/* Interim offer stack (marketing-ux-plan 2026-08-14, Path C item 6).

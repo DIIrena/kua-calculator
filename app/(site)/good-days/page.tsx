@@ -57,7 +57,10 @@ function dayNumber(iso: string): string {
   return String(Number(iso.slice(8, 10)));
 }
 
-export default function GoodDaysPage() {
+export default async function GoodDaysPage(props: {
+  searchParams: Promise<{ email?: string }>;
+}) {
+  const { email: emailStatus } = await props.searchParams;
   const days = (calendar as { days: Day[] }).days;
   const months = Object.keys(MONTH_NAMES);
 
@@ -126,12 +129,60 @@ export default function GoodDaysPage() {
         </p>
 
         <section className="good-days-email" id="gd-email" aria-label="Email me the calendar">
-          <h2>Keep it by the calendar.</h2>
-          <p>
-            We can email you the link so it is easy to find again, and easy
-            to print. The whole page prints cleanly.
-          </p>
-          <GoodDaysForm />
+          {emailStatus === "sent" ? (
+            /* The thank-you handoff (marketing-ux-plan 2026-08-14, Path
+               D): a capture moment is the best navigation moment, so the
+               success state hands over the next free step instead of
+               ending. */
+            <>
+              <h2>The link is on its way.</h2>
+              <p
+                className="lead-magnet-status lead-magnet-status-ok"
+                role="status"
+              >
+                Check your inbox in the next minute or two. The page prints
+                cleanly whenever you need it.
+              </p>
+              <p>
+                While it lands: your Kua number takes ten seconds, and it
+                names the four directions of your home that support you.
+              </p>
+              <p>
+                <Link
+                  href="/kua-calculator?from=good-days"
+                  className="cta-primary"
+                >
+                  Get your free Kua reading
+                </Link>
+              </p>
+            </>
+          ) : (
+            <>
+              <h2>Keep it by the calendar.</h2>
+              <p>
+                We can email you the link so it is easy to find again, and easy
+                to print. The whole page prints cleanly.
+              </p>
+              {emailStatus === "invalid" ? (
+                <p
+                  className="lead-magnet-status lead-magnet-status-err"
+                  role="alert"
+                >
+                  That does not look like a complete email address. One more
+                  try?
+                </p>
+              ) : null}
+              {emailStatus === "error" ? (
+                <p
+                  className="lead-magnet-status lead-magnet-status-err"
+                  role="alert"
+                >
+                  Something went wrong on our side. Try again in a minute.
+                </p>
+              ) : null}
+              <GoodDaysForm />
+            </>
+          )}
         </section>
 
         <section className="good-days-upsell" aria-label="Read the year for your own home">
