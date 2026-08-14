@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { subscribe, type SubscribeState } from "@/app/actions/subscribe";
+import FormGuardFields from "@/components/FormGuardFields";
 
 const initial: SubscribeState = { status: "idle" };
 
@@ -12,6 +13,7 @@ export default function FooterSubscribe() {
 
   return (
     <form action={formAction} className="footer-subscribe-form">
+      <FormGuardFields />
       <label htmlFor="footer-subscribe-email" className="visually-hidden">
         Email address
       </label>

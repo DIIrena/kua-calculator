@@ -2,6 +2,7 @@
 
 import { createAdminClient } from "@/lib/supabase/server";
 import { sendEmail } from "@/lib/resend";
+import { botCheck } from "@/lib/form-guard";
 
 // Footer newsletter subscribe. Captures an email into the shared
 // product_waitlist table with product_slug = "newsletter" (no new
@@ -27,6 +28,13 @@ export async function subscribe(
   const email = String(formData.get("email") ?? "")
     .trim()
     .toLowerCase();
+
+  // Bots get a convincing success and nothing else: no row, no email.
+  const bot = botCheck(formData);
+  if (bot) {
+    console.warn("[subscribe] bot rejected:", bot);
+    return { status: "ok", message: "You are on the list. Check your inbox." };
+  }
 
   if (!EMAIL_RE.test(email)) {
     return { status: "invalid", message: "Please enter a valid email address." };

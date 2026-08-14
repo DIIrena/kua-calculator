@@ -5,6 +5,7 @@ import BuyButton from "@/components/BuyButton";
 import FulfillmentBlock from "@/components/FulfillmentBlock";
 import FlagshipChooser from "@/components/FlagshipChooser";
 import { joinProductWaitlist } from "@/app/actions/product-waitlist";
+import FormGuardFields from "@/components/FormGuardFields";
 
 import PlannerSourceTracker from "@/components/PlannerSourceTracker";
 import ProductHero from "@/components/ProductHero";
@@ -532,6 +533,7 @@ export default async function PlannerPage(props: {
           renewal offer.
         </p>
         <form action={joinProductWaitlist} className="lead-magnet-form">
+          <FormGuardFields />
           <input
             type="hidden"
             name="productSlug"

@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { createAdminClient } from "@/lib/supabase/server";
+import { botCheck } from "@/lib/form-guard";
 
 // Good Days lead-magnet action (mirrors lead-magnet.ts / sendChecklist).
 // Emails a link to the free printable /good-days page. By default the
@@ -55,6 +56,13 @@ Open the calendar: https://myfengshuihome.com/good-days
 My Feng Shui Home - myfengshuihome.com`;
 
 export async function sendGoodDays(formData: FormData) {
+  // Bots get the success redirect and nothing else: no row, no email.
+  const bot = botCheck(formData);
+  if (bot) {
+    console.warn("[good-days] bot rejected:", bot);
+    redirect("/good-days?email=sent#gd-email");
+  }
+
   const email = String(formData.get("email") ?? "").trim().toLowerCase();
   const wantsNotes = formData.get("notes") === "yes";
 

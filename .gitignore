@@ -12,6 +12,10 @@ out/
 # Editor / OS
 .DS_Store
 
+# Email ops output - sent logs and scrub sheets contain subscriber
+# addresses (PII); previews are regenerable. Never commit.
+scripts/out/
+
 # Build artifacts
 dist/
 build/

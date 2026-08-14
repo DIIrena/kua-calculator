@@ -1,6 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import { botCheck } from "@/lib/form-guard";
 
 // Lead-magnet server action invoked by LeadMagnetForm on /. Validates
 // the email and sends a branded email pointing to /checklist (a
@@ -61,6 +62,13 @@ Open the checklist: https://myfengshuihome.com/checklist
 My Feng Shui Home - myfengshuihome.com`;
 
 export async function sendChecklist(formData: FormData) {
+  // Bots get the success redirect and nothing else: no row, no email.
+  const bot = botCheck(formData);
+  if (bot) {
+    console.warn("[lead-magnet] bot rejected:", bot);
+    redirect("/?checklist=sent#checklist-heading");
+  }
+
   const email = String(formData.get("email") ?? "").trim().toLowerCase();
   const optedIn = formData.get("newsletter_opt_in") === "on";
 

@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Product Funnel · My Feng Shui Home · 2026-08-14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#fcfcf8; --panel:#f2f2ee; --card:#ffffff;
+    --green:#0e3b2c; --orange:#d9531a;
+    --soft-green:#90d6a5; --coral:#f7a184; --gold:#f3cf76;
+    --silver:#bfd9e0; --teal:#85c3d4;
+    --ink:#0e3b2c; --muted:#4a6157;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--ivory); color:var(--ink);
+    font-family:'Hanken Grotesk', 'Segoe UI', system-ui, sans-serif;
+    line-height:1.45; padding:40px 20px 70px;
+  }
+  .wrap{max-width:1060px; margin:0 auto;}
+  header{ text-align:center; margin-bottom:34px;}
+  header .kicker{
+    display:inline-block; letter-spacing:.22em; text-transform:uppercase;
+    font-size:11px; font-weight:600; color:var(--orange); margin-bottom:10px;
+  }
+  header h1{font-size:34px; font-weight:700; letter-spacing:-.01em;}
+  header p{color:var(--muted); margin-top:8px; font-size:15px;}
+  header .thesis{
+    display:inline-block; margin-top:14px; background:var(--green); color:#fff;
+    padding:9px 22px; border-radius:999px; font-size:15px; font-weight:600;
+  }
+
+  .stage-label{
+    text-align:center; letter-spacing:.2em; text-transform:uppercase;
+    font-size:11px; font-weight:700; color:var(--muted); margin:0 0 10px;
+  }
+  .band{
+    background:var(--card); border:1px solid #e4e4dc; border-radius:14px;
+    padding:18px 22px; box-shadow:0 1px 2px rgba(14,59,44,.05);
+  }
+  .arrow{ text-align:center; font-size:20px; color:var(--orange); padding:8px 0; line-height:1;}
+
+  .attention{ text-align:center;}
+  .attention .channels{ font-weight:600; margin-bottom:6px;}
+  .hooks{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:10px;}
+  .hook{
+    background:var(--panel); border-radius:10px; padding:8px 14px; font-size:14px;
+  }
+  .hook b{color:var(--orange);}
+
+  .doors{ display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media (max-width:720px){ .doors{grid-template-columns:1fr;} }
+  .door{ border-top:5px solid var(--green); position:relative;}
+  .door.person{ border-top-color:var(--orange);}
+  .door h3{ font-size:18px; margin-bottom:2px;}
+  .door .sub{ color:var(--muted); font-size:13.5px; margin-bottom:10px;}
+  .door ul{ list-style:none;}
+  .door li{ padding:5px 0 5px 20px; position:relative; font-size:14.5px;}
+  .door li::before{ content:"›"; position:absolute; left:4px; color:var(--orange); font-weight:700;}
+  .capture{
+    margin-top:12px; background:var(--panel); border-radius:10px; padding:9px 13px;
+    font-size:13.5px; font-weight:600;
+  }
+  .capture span{ color:var(--orange);}
+
+  .offer{
+    background:var(--green); color:#fff; border:none; text-align:center;
+    padding:24px 22px;
+  }
+  .offer .price{ font-size:38px; font-weight:700; color:var(--gold);}
+  .offer h3{ font-size:21px; margin:4px 0 6px;}
+  .offer p{ font-size:14.5px; opacity:.92; max-width:560px; margin:0 auto;}
+
+  .bridge{ text-align:center; background:var(--panel); border-style:dashed;}
+  .bridge em{ font-style:italic; font-size:16px;}
+  .bridge .note{ color:var(--muted); font-size:13px; margin-top:4px;}
+
+  .ladder{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;}
+  @media (max-width:720px){ .ladder{grid-template-columns:1fr;} }
+  .rung{ text-align:center; padding:18px 14px;}
+  .rung .price{ font-size:26px; font-weight:700; color:var(--orange);}
+  .rung h4{ font-size:15.5px; margin:4px 0 3px;}
+  .rung p{ font-size:13px; color:var(--muted);}
+  .rung.star{ outline:2.5px solid var(--orange); outline-offset:-2.5px;}
+  .rung.star .flag{
+    display:inline-block; background:var(--orange); color:#fff; font-size:10.5px;
+    letter-spacing:.12em; text-transform:uppercase; font-weight:700;
+    border-radius:999px; padding:3px 10px; margin-bottom:6px;
+  }
+
+  .rows2{ display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media (max-width:720px){ .rows2{grid-template-columns:1fr;} }
+  .mini h3{ font-size:15px; margin-bottom:8px;}
+  .mini ul{ list-style:none;}
+  .mini li{ font-size:13.5px; padding:4px 0 4px 18px; position:relative;}
+  .mini li::before{ content:"·"; position:absolute; left:4px; color:var(--orange); font-weight:700;}
+
+  .chips{ display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; justify-content:center;}
+  .chip{
+    font-size:11.5px; font-weight:600; border-radius:999px; padding:4px 11px;
+    background:var(--panel); color:var(--muted);
+  }
+  .chip.g{background:#e7f5ec; color:#1e6b47;}
+  .chip.o{background:#fbe9df; color:#a53c0f;}
+  .chip.b{background:#e8f2f6; color:#2c6274;}
+
+  .panels{ display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:18px; margin-top:44px;}
+  @media (max-width:860px){ .panels{grid-template-columns:1fr;} }
+  .panel{ background:var(--card); border:1px solid #e4e4dc; border-radius:14px; padding:20px;}
+  .panel h3{ font-size:15px; margin-bottom:10px; padding-bottom:8px; border-bottom:2px solid var(--panel);}
+  .panel ol{ padding-left:20px;}
+  .panel ol li, .panel ul li{ font-size:13.5px; padding:3.5px 0;}
+  .panel ul{ list-style:none;}
+  .panel ul li{ padding-left:18px; position:relative;}
+  .panel ul li::before{ content:"·"; position:absolute; left:4px; color:var(--orange); font-weight:700;}
+  .panel.decide h3{ border-bottom-color:#fbe9df;}
+  .panel .q{ font-weight:600;}
+  .panel .a{ color:var(--muted); font-size:12.5px;}
+
+  .never{ margin-top:18px; background:var(--panel); border-radius:14px; padding:16px 20px;}
+  .never h3{ font-size:14px; margin-bottom:6px;}
+  .never p{ font-size:13.5px; color:var(--muted);}
+
+  footer{ text-align:center; margin-top:36px; color:var(--muted); font-size:12.5px;}
+  footer code{ background:var(--panel); border-radius:6px; padding:2px 7px; font-size:11.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="kicker">My Feng Shui Home · Funnel Plan · 2026-08-14</span>
+    <h1>The Product Funnel</h1>
+    <p>Two free doors in, one bridge across, one ladder up, one yearly rhythm to stay.</p>
+    <div class="thesis">BaZi opens the relationship. The home closes it.</div>
+  </header>
+
+  <p class="stage-label">Stage 0 · Attention</p>
+  <div class="band attention">
+    <div class="channels">Short vertical video · Pinterest · Instagram · TikTok · YouTube Shorts</div>
+    <div class="hooks">
+      <div class="hook"><b>Identity hooks</b> "Your birth date has a code in it" → BaZi door</div>
+      <div class="hook"><b>Home hooks</b> "The direction your bed faces matters" → Home door</div>
+    </div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <p class="stage-label">Stage 1-2 · The free gift, then capture</p>
+  <div class="doors">
+    <div class="band door person">
+      <h3>The Person door</h3>
+      <div class="sub">/bazi-calculator · the acquisition engine</div>
+      <ul>
+        <li>Free full chart: four pillars + Day Master</li>
+        <li>Sign-in to run, chart saved to the account</li>
+        <li>Locked, titled chapters tease the Reading</li>
+      </ul>
+      <div class="capture">Captures: <span>email + saved chart, every single user</span></div>
+    </div>
+    <div class="band door">
+      <h3>The Home door</h3>
+      <div class="sub">/kua-calculator · /good-days · /guide</div>
+      <ul>
+        <li>Kua number in ten seconds, anonymous by design</li>
+        <li>Good-Days calendar page, emailed printable</li>
+        <li>The Guide library for searchers and readers</li>
+      </ul>
+      <div class="capture">Captures: <span>email via the Good-Days catcher</span></div>
+    </div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <p class="stage-label">Stage 3 · The first sale</p>
+  <div class="band offer">
+    <div class="price">$19</div>
+    <h3>Personal BaZi Reading</h3>
+    <p>Around 32 pages about the one subject nobody skips: themselves. Rendered from the chart they already hold, delivered in minutes. The free result opens the loop; the Reading closes it.</p>
+    <div class="chips">
+      <span class="chip o">Zeigarnik open loop</span>
+      <span class="chip o">Endowment: their saved chart</span>
+      <span class="chip o">Instant delivery</span>
+      <span class="chip o">$49 anchor beside it</span>
+    </div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <p class="stage-label">Stage 4 · The bridge</p>
+  <div class="band bridge">
+    <em>"BaZi reads the person. Feng shui reads the place the person lives."</em>
+    <div class="note">Closing spread of the Reading + its delivery email. One call, pointing at the ladder. The welcome sequence carries both doors here, one CTA per email.</div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <p class="stage-label">Stage 5 · The home ladder, the shop's one decision</p>
+  <div class="ladder">
+    <div class="band rung">
+      <div class="price">$19</div>
+      <h4>Personal Feng Shui Compass</h4>
+      <p>Just you: your eight directions</p>
+    </div>
+    <div class="band rung">
+      <div class="price">$29</div>
+      <h4>Twelve Spaces Compass</h4>
+      <p>Every room of your home</p>
+    </div>
+    <div class="band rung star">
+      <div><span class="flag">Most complete</span></div>
+      <div class="price">$49</div>
+      <h4>Complete Home Compass</h4>
+      <p>Everything, the whole map</p>
+    </div>
+  </div>
+  <div class="chips">
+    <span class="chip g">Good-better-best</span>
+    <span class="chip g">Anchoring</span>
+    <span class="chip g">Second $19 yes is the easiest sale</span>
+    <span class="chip g">Never show all 45 products</span>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <p class="stage-label">Stage 6-7 · Deepen, then stay</p>
+  <div class="rows2">
+    <div class="band mini">
+      <h3>Deepening, on triggers only</h3>
+      <ul>
+        <li>Move-In Date Report $29, when moving</li>
+        <li>7-Day Home Reset $19, when overwhelmed</li>
+        <li>Kits $9-29 as add-ons and postscripts</li>
+        <li>$7 singles = hidden side doors that upsell to their $29 bundle</li>
+      </ul>
+    </div>
+    <div class="band mini">
+      <h3>Retention, the yearly rhythm</h3>
+      <ul>
+        <li>Newsletter + welcome sequence</li>
+        <li>Year Ahead Compass $9</li>
+        <li>2027 Planner + calendar editions</li>
+        <li>Future: annual BaZi year letter</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="never">
+    <h3>What this funnel never does</h3>
+    <p>No fake scarcity or countdown timers. No permanent discounts that train waiting. No catalogue dumps: one CTA per email, one question per page, ten products on the shelf. BaZi Basics ($14) is cross-sold after the Reading, never beside it.</p>
+  </div>
+
+  <div class="panels">
+    <div class="panel">
+      <h3>Build list to switch it on</h3>
+      <ol>
+        <li>Finish the Reading visuals (owner: two icon sheets; Claude: wire the template)</li>
+        <li>Register the Reading: commerce + product page + Stripe price</li>
+        <li>Shelf: one-card "About you" row beside the ladder</li>
+        <li>Locked-chapter tease + one CTA on the calculator result</li>
+        <li>Bridge spread in the PDF + delivery-email copy</li>
+        <li>BaZi branch of the welcome sequence</li>
+        <li>UTM scheme + funnel-readout stage columns</li>
+      </ol>
+    </div>
+    <div class="panel">
+      <h3>The four numbers</h3>
+      <ul>
+        <li>Door sessions, by door and channel</li>
+        <li>Capture rate: sessions → emails</li>
+        <li>First-purchase rate: emails → sales</li>
+        <li>Ascension rate: second purchase in 30 days</li>
+      </ul>
+    </div>
+    <div class="panel decide">
+      <h3>Owner decisions open</h3>
+      <ul>
+        <li><span class="q">Reading price?</span><br><span class="a">$19 recommended</span></li>
+        <li><span class="q">"About you" shelf row?</span><br><span class="a">yes or no</span></li>
+        <li><span class="q">Annual BaZi year letter later?</span><br><span class="a">after the Reading proves itself</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    Full plan: <code>spec/funnel-plan-2026-08-14.md</code> · Catalogue map: <code>spec/all-products-tree-2026-08-14.md</code> · Visuals: <code>spec/bazi-reading-visual-plan-2026-08-14.md</code>
+  </footer>
+
+</div>
+</body>
+</html>

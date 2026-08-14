@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { createAdminClient } from "@/lib/supabase/server";
 import { COMPASS_CATALOGUE } from "@/lib/compass-catalogue";
+import { botCheck } from "@/lib/form-guard";
 
 // Product-waitlist server action. Used by BuyButton in waitlist mode
 // while live payments are not yet wired. Captures email + product
@@ -273,6 +274,13 @@ export async function joinProductWaitlist(formData: FormData) {
     redirect("/products?waitlist=unknown-product");
   }
   const redirectBase = product.redirectPath;
+
+  // Bots get the success redirect and nothing else: no row, no email.
+  const bot = botCheck(formData);
+  if (bot) {
+    console.warn("[product-waitlist] bot rejected:", bot);
+    redirect(`${redirectBase}?waitlist=sent`);
+  }
 
   if (!EMAIL_RE.test(email)) {
     redirect(`${redirectBase}?waitlist=invalid`);

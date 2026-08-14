@@ -1,4 +1,5 @@
 import { sendChecklist } from "@/app/actions/lead-magnet";
+import FormGuardFields from "@/components/FormGuardFields";
 
 // Inline lead-magnet form. Posts directly to the sendChecklist server
 // action, which validates the email, rate-limits, sends the PDF via
@@ -13,6 +14,7 @@ type Props = {
 export default function LeadMagnetForm({ preFilledEmail }: Props) {
   return (
     <form action={sendChecklist} className="lead-magnet-form">
+      <FormGuardFields />
       <label className="lead-magnet-label" htmlFor="lead-magnet-email">
         Your email
       </label>

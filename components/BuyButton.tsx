@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { joinProductWaitlist } from "@/app/actions/product-waitlist";
+import FormGuardFields from "@/components/FormGuardFields";
 import { trackEvent } from "@/lib/analytics";
 
 // Provider-agnostic Buy Button. The same component renders four
@@ -165,6 +166,7 @@ export default function BuyButton({
           onSubmit={handleSubmit}
           className="buy-button-form"
         >
+          <FormGuardFields />
           <input type="hidden" name="productSlug" value={productSlug} />
           <label
             htmlFor={`waitlist-email-${productSlug}`}

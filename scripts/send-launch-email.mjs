@@ -45,68 +45,64 @@ const SITE = "https://myfengshuihome.com";
 const FROM = "My Feng Shui Home <hello@myfengshuihome.com>";
 
 // ---------- launch copy per product ----------
-// Calm voice. A real deadline (the coupon expires in Stripe), no
-// theater. One CTA. No outcome promises. No em dashes.
+// House voice (voice-storytelling-copy v1.2.0): benefit-led, warm,
+// affirmative. A real deadline (the coupon expires in Stripe), no
+// theater. One CTA. No outcome promises. No refund talk in a welcome
+// moment. No defensive negations. No em dashes.
 const TEMPLATES = {
   "annual-feng-shui-planner-2026": {
     subject: "The 2026 Annual Feng Shui Planner is ready. Your early price is inside.",
     heading: "It is ready.",
     paragraphs: [
-      "You joined the waitlist for the 2026 Annual Feng Shui Planner. Checkout is now open.",
-      "The Planner is a printable book of more than 80 pages for the 2026 solar year, July 2026 through February 2027: the annual chart explained, nine sector treatments, a 243-day day-by-day calendar (with a phone calendar file included), and a ten-step walkthrough for your own home.",
-      "Your waitlist price: use the code EARLYLIST at checkout for 5 dollars off. The code works for 14 days, then it expires for good.",
-      "7-day refund, code or no code.",
+      "You asked us to tell you the moment the 2026 Annual Feng Shui Planner was ready. This is that note. Checkout is open.",
+      "Inside are more than 80 pages for moving through the rest of the solar year, July 2026 through February 2027, with a plan in hand: the annual chart explained, nine sector treatments for your own rooms, a 243-day day-by-day calendar with a phone calendar file included, and a ten-step walkthrough of your home. The good days are marked, and the reason stands beside each one.",
+      "Your early place comes with something: the code EARLYLIST takes 5 dollars off at checkout, and it is yours for the next 14 days.",
     ],
-    ctaLabel: "See the Planner and buy",
+    ctaLabel: "See the Planner",
     ctaUrl: `${SITE}/products/annual-feng-shui-planner-2026`,
   },
   "personal-feng-shui-compass": {
     subject: "The Personal Feng Shui Compass is live. Your early price is inside.",
     heading: "The Compass is live.",
     paragraphs: [
-      "You joined the waitlist for the Personal Feng Shui Compass. Checkout is now open.",
-      "It is a personalised PDF keyed to your Kua number: your East or West group, your four supportive directions and your four to handle with care, with traditional placements for the bed, the desk, and the dining seat, plus a seven-day experiment. You pay, fill in three fields, and the PDF is rendered and emailed to you within about a minute.",
-      "Your waitlist price: use the code EARLYLIST at checkout for the launch discount. The code works for 14 days, then it expires for good.",
-      "7-day refund.",
+      "You asked us to tell you when the Personal Feng Shui Compass was ready. It is, and checkout is open.",
+      "The Compass reads your own Kua number as a personal PDF: your East or West group, the four directions that support you and the four to handle with care, the traditional placements for your bed, your desk, and your dining seat, and a seven-day experiment to try it in your own rooms. You fill in three fields at checkout and the PDF arrives in your inbox within about a minute.",
+      "Your early place comes with something: the code EARLYLIST takes the launch discount off at checkout, and it is yours for the next 14 days.",
     ],
-    ctaLabel: "See the Compass and buy",
+    ctaLabel: "See the Compass",
     ctaUrl: `${SITE}/products/personal-feng-shui-compass`,
   },
   "move-in-kit": {
     subject: "The Move-In Date Report is live.",
     heading: "Your move date, mapped.",
     paragraphs: [
-      "You joined the waitlist for the Move-In Date Report. Checkout is now open.",
-      "Give it your moving window and it maps the traditional day quality across every date in it: the days classical calendars favour for a move, the days they advise around, and why, in plain English. You pay, enter your window, and the report is rendered and emailed to you within about a minute.",
-      "7-day refund.",
+      "You asked us to tell you when the Move-In Date Report was ready. It is, and checkout is open.",
+      "Give it your moving window and it reads the traditional day quality across every date in it: the days classical calendars favour for a move, the days they advise around, and the reason for each. You enter your window at checkout and the report arrives in your inbox within about a minute, ready to settle the date with care instead of guesswork.",
     ],
-    ctaLabel: "See the Move-In Report and buy",
+    ctaLabel: "See the Move-In Report",
     ctaUrl: `${SITE}/products/move-in-kit`,
   },
   newsletter: {
-    subject: "You subscribed at myfengshuihome.com. Here is your first note.",
-    heading: "Hello from My Feng Shui Home.",
+    subject: "Welcome to My Feng Shui Home",
+    heading: "Welcome in.",
     paragraphs: [
-      "You left your email in the footer of myfengshuihome.com to hear from us. This is the first note we have ever sent, so thank you for the patience.",
-      "Here is what is live for you today. The free Kua calculator gives you your number, your East or West group, and your eight personal directions in under a minute, nothing to sign up for. Around it sits a free guide of 38 pages, from a room-by-room walkthrough to the honest explanation of what feng shui can and cannot do.",
-      "If you want the personal version, the Personal Feng Shui Compass ($19) turns your Kua into a full reading for your own rooms, rendered as a PDF and emailed within about a minute of checkout. Every product carries a 7-day refund.",
-      "We write rarely and only when there is something worth your time. Reply with the word unsubscribe and we remove you the same day; reply with anything else and a person reads it.",
+      "It is good to have you here. My Feng Shui Home is about one feeling: a home that is on your side. Rooms that hold you, a bed that faces the right way for you, choices made with care instead of guesswork.",
+      "The best first step is your Kua number. It is free, it takes about ten seconds, and it hands you your East or West group and your eight personal directions, four that support you and four to handle with care. Once you have it, the site starts speaking your language: the room-by-room guide reads differently when you know your directions, and the Good-Days calendar marks the days the season favours for beginnings.",
+      "And when you are curious about the person the home is for, the new BaZi calculator reads the day you were born the way the Kua reads your rooms.",
+      "Notes from us arrive when there is something real to open: a season turning, a good day coming, something new made for you.",
     ],
-    ctaLabel: "Get your Kua number free",
-    ctaUrl: `${SITE}/`,
+    ctaLabel: "Get your free Kua reading",
+    ctaUrl: `${SITE}/kua-calculator`,
   },
 };
 
 // --no-coupon support: strip any paragraph that references the EARLYLIST
-// Stripe code (for sends where the owner has not created the coupon), and
-// normalise the refund line that referenced the code.
+// Stripe code (for sends where the owner has not created the coupon).
 function withoutCoupon(t) {
   return {
     ...t,
     subject: t.subject.replace(" Your early price is inside.", "").trim(),
-    paragraphs: t.paragraphs
-      .filter((p) => !p.includes("EARLYLIST"))
-      .map((p) => (p === "7-day refund, code or no code." ? "7-day refund." : p)),
+    paragraphs: t.paragraphs.filter((p) => !p.includes("EARLYLIST")),
   };
 }
 
@@ -124,7 +120,7 @@ function unsubscribeUrl(email) {
 
 function unsubFooterHtml(email) {
   if (product !== "newsletter") return "";
-  return ` <a href="${unsubscribeUrl(email)}" style="color:#4f5b53;">Unsubscribe with one click</a> and your address is deleted from the list.`;
+  return ` <a href="${unsubscribeUrl(email)}" style="color:#4f5b53;">Unsubscribe with one click</a>.`;
 }
 
 function renderHtml(t, recipientEmail = "preview@example.com") {
@@ -150,8 +146,8 @@ function renderHtml(t, recipientEmail = "preview@example.com") {
         <tr><td style="padding-top:24px;font:13px/1.5 sans-serif;color:#4f5b53;border-top:1px solid #e2dac5;">
           ${
             product === "newsletter"
-              ? `You receive this because you subscribed on myfengshuihome.com. Reply to this email and a person reads it.${unsubFooterHtml(recipientEmail)}`
-              : "You receive this because you joined this product's waitlist on myfengshuihome.com. This is the launch email you signed up for; there is no recurring newsletter behind it. Reply to this email and a person reads it."
+              ? `You receive this because you subscribed at myfengshuihome.com.${unsubFooterHtml(recipientEmail)}`
+              : "You receive this because you joined this product's waitlist at myfengshuihome.com."
           }
         </td></tr>
       </table>
@@ -169,8 +165,9 @@ function renderText(t) {
     ...t.paragraphs.flatMap((p) => [p, ""]),
     `${t.ctaLabel}: ${t.ctaUrl}`,
     "",
-    "You receive this because you joined this product's waitlist on",
-    "myfengshuihome.com. Reply to this email and a person reads it.",
+    product === "newsletter"
+      ? "You receive this because you subscribed at myfengshuihome.com."
+      : "You receive this because you joined this product's waitlist at myfengshuihome.com.",
   ].join("\n");
 }
 

@@ -1,4 +1,5 @@
 import { sendGoodDays } from "@/app/actions/good-days";
+import FormGuardFields from "@/components/FormGuardFields";
 
 // Email-capture form for the free Good Days page. Posts to the
 // sendGoodDays server action, which emails a link to this page and,
@@ -8,6 +9,7 @@ import { sendGoodDays } from "@/app/actions/good-days";
 export default function GoodDaysForm() {
   return (
     <form action={sendGoodDays} className="lead-magnet-form">
+      <FormGuardFields />
       <label className="lead-magnet-label" htmlFor="gd-email-input">
         Your email
       </label>
