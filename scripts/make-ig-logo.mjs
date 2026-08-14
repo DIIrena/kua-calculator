@@ -19,12 +19,19 @@ const HEART_PATHS = `
 <path d="M2660 3330 l0 -470 885 0 885 0 0 470 0 470 -175 0 -175 0 0 -290 0 -290 -535 0 -535 0 0 290 0 290 -175 0 -175 0 0 -470z" />
 `;
 
-// 1080 canvas; the mark sits at ~55% so Instagram's circle crop never
-// clips it. 709 * 0.8379 ~ 594px, centred offset (1080-594)/2 = 243.
+// 1080 canvas. The mark is scaled so its widest points graze the
+// inscribed circle (the Instagram crop circle, radius 540): the heart's
+// drawn bounding box inside the 709 viewBox is ~x 62..647, y 98..605
+// (centre ~354.5, 351.5), and the widest row sits above the bbox
+// centre, which caps the scale at ~1.74; 1.70 keeps a hair of air.
+const S = 1.7;
+const TX = 540 - 354.5 * S;
+const TY = 540 - 351.5 * S;
+
 function avatarSvg(bg, fg) {
   return `<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
   <rect width="1080" height="1080" fill="${bg}"/>
-  <g transform="translate(243,243) scale(0.8379)">
+  <g transform="translate(${TX},${TY}) scale(${S})">
     <g transform="translate(0,709) scale(0.1,-0.1)" fill="${fg}" stroke="none">${HEART_PATHS}</g>
   </g>
 </svg>`;
