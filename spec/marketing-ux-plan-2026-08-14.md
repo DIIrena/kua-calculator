@@ -44,9 +44,12 @@ visitor who arrives before the paths are wired is spent, not invested.
    feng shui, wealth corner, five elements, good days, moving house,
    home office, BaZi basics, feng shui for beginners). Board names are
    search terms, not brand poetry.
-7. Create Instagram @myfengshuihome (business), bio line = one benefit +
-   one link to /good-days (with UTM). Create TikTok and YouTube handles,
-   same name, same bio pattern. Create the two Facebook pages (Home +
+7. Create Instagram (business; handle logged in the setup checklist),
+   bio line = one benefit + one link to /bazi-calculator (with UTM;
+   owner decision 2026-08-14: on the single-link platforms the bio
+   matches the identity-led content mix). YouTube's channel link stays
+   /good-days since its videos carry their own per-video links. Create
+   TikTok and YouTube handles, same name, same bio pattern. Create the two Facebook pages (Home +
    Love), switch on Instagram-to-Facebook crossposting in Meta Business
    Suite, then never think about Facebook again.
 8. Park the @myfengshuilove handles everywhere now (no posts until that

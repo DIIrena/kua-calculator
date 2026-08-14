@@ -26,7 +26,7 @@ Examples:
 ```
 https://myfengshuihome.com/bazi-calculator?utm_source=pinterest&utm_medium=social&utm_campaign=wk34-identity
 https://myfengshuihome.com/good-days?utm_source=tiktok&utm_medium=social&utm_campaign=wk34-home
-https://myfengshuihome.com/good-days?utm_source=instagram&utm_medium=bio&utm_campaign=bio
+https://myfengshuihome.com/bazi-calculator?utm_source=instagram&utm_medium=bio&utm_campaign=bio
 ```
 
 ## Internal cross-links

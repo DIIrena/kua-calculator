@@ -104,12 +104,16 @@ Feng Shui for Beginners    - First steps, plain words, real homes.
 - [ ] 16. Paste the bio and the link:
 
 ```
-Feng shui for real homes. Your Kua number free, in ten seconds.
+Feng shui for real homes. Your birth date has a code in it: free chart below.
 ```
 
 ```
-https://myfengshuihome.com/good-days?utm_source=instagram&utm_medium=bio&utm_campaign=bio
+https://myfengshuihome.com/bazi-calculator?utm_source=instagram&utm_medium=bio&utm_campaign=bio
 ```
+
+(Owner decision 2026-08-14: the bio link leads with the BaZi door. On
+Instagram and TikTok the bio is the only clickable link, and the content
+mix leads with identity hooks, so the landing must match the promise.)
 
 ## Phase 3 - TikTok (15 min)
 
@@ -126,7 +130,7 @@ Feng shui for real homes. Free tools in the link.
       `Home and Garden`, then add the link:
 
 ```
-https://myfengshuihome.com/good-days?utm_source=tiktok&utm_medium=bio&utm_campaign=bio
+https://myfengshuihome.com/bazi-calculator?utm_source=tiktok&utm_medium=bio&utm_campaign=bio
 ```
 
 ## Phase 4 - YouTube (10 min)
