@@ -47,19 +47,14 @@ Zoho Mail (free plan) becomes the receiving inbox.
 - [x] 0b.6. DNS verified by Claude 2026-08-14: MX live (Zoho EU),
       Resend's SPF is scoped to the `send.` subdomain, no root SPF
       exists. Enabling Zoho sending is conflict-free. Do 0b.6a-0b.6d.
-- [ ] 0b.6a. Zoho SPF: in Hostinger DNS click `Add record`: Type `TXT`,
-      Name `@`, Value exactly `v=spf1 include:zoho.eu ~all`. (A domain
-      carries at most ONE root SPF record; this is now that one.)
-- [ ] 0b.6b. Zoho DKIM: open `mailadmin.zoho.eu` > `Domains` >
-      `myfengshuihome.com` > `Email Configuration` > `DKIM`. Add a
-      selector named `zmail`, copy the shown TXT value. In Hostinger:
-      `Add record`: Type `TXT`, Name `zmail._domainkey`, paste the
-      value. Back in Zoho click `Verify` and enable the selector.
-- [ ] 0b.6c. Optional but recommended (anti-spoofing, zero risk at this
-      setting): `Add record`: Type `TXT`, Name `_dmarc`, Value
-      `v=DMARC1; p=none; rua=mailto:hello@myfengshuihome.com`.
-- [ ] 0b.6d. Tell Claude these are in; Claude re-verifies with a DNS
-      lookup.
+- [x] 0b.6a. Zoho SPF: DONE, verified in DNS 2026-08-14
+      (`v=spf1 include:zohomail.eu ~all`, the value from Zoho's screen).
+- [x] 0b.6b. Zoho DKIM: TXT published and verified in DNS 2026-08-14.
+      One thing to double-check in `mailadmin.zoho.eu` > `Email
+      Configuration` > `DKIM`: the `zmail` selector row must show as
+      VERIFIED / enabled, so Zoho actually signs outgoing mail with it.
+- [x] 0b.6c. DMARC: DONE, verified in DNS (`v=DMARC1; p=none;`).
+- [x] 0b.6d. Claude re-verified all three by DNS lookup 2026-08-14.
 - [ ] 0b.7. Test both directions at `mail.zoho.eu`: (1) email
       `hello@myfengshuihome.com` from your personal Gmail and watch it
       arrive; (2) reply to it FROM Zoho and confirm it lands in your
