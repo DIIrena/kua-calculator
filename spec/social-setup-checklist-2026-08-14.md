@@ -14,9 +14,7 @@ Everything below signs up with ONE dedicated address, so your personal
 inbox stays clean and the business survives any personal account issue.
 
 - [ ] 1. Go to `gmail.com`, click `Create account`, choose `For work or my business`.
-- [ ] 2. Try the name `myfengshuihome@gmail.com`. If taken, try
-      `myfengshuihome.social@gmail.com`, then `hello.myfengshuihome@gmail.com`.
-      Write the winner here: ________________
+- [x] 2. Done: the address is `myfengshuihomeusa@gmail.com`.
 - [ ] 3. Recovery email: `diirena@gmail.com`. Recovery phone: your phone.
 - [ ] 4. After signup, open `myaccount.google.com` > `Security` >
       `2-Step Verification` and turn it ON with your phone.
@@ -46,12 +44,31 @@ Zoho Mail (free plan) becomes the receiving inbox.
       `mx2.zoho.com` 20, `mx3.zoho.com` 50; use exactly what your Zoho
       screen shows). Add each in Hostinger DNS: Type `MX`, Name `@`,
       the mail server, its priority.
-- [ ] 0b.6. Skip Zoho's SPF and DKIM screens for now: Resend does our
-      sending, and touching SPF carelessly can hurt it. Tell Claude when
-      0b.5 is done; Claude verifies the DNS before anything sends.
-- [ ] 0b.7. Test: from your personal Gmail, email
-      `hello@myfengshuihome.com` and watch it arrive at
-      `mail.zoho.com`. Check that inbox weekly once things send.
+- [x] 0b.6. DNS verified by Claude 2026-08-14: MX live (Zoho EU),
+      Resend's SPF is scoped to the `send.` subdomain, no root SPF
+      exists. Enabling Zoho sending is conflict-free. Do 0b.6a-0b.6d.
+- [ ] 0b.6a. Zoho SPF: in Hostinger DNS click `Add record`: Type `TXT`,
+      Name `@`, Value exactly `v=spf1 include:zoho.eu ~all`. (A domain
+      carries at most ONE root SPF record; this is now that one.)
+- [ ] 0b.6b. Zoho DKIM: open `mailadmin.zoho.eu` > `Domains` >
+      `myfengshuihome.com` > `Email Configuration` > `DKIM`. Add a
+      selector named `zmail`, copy the shown TXT value. In Hostinger:
+      `Add record`: Type `TXT`, Name `zmail._domainkey`, paste the
+      value. Back in Zoho click `Verify` and enable the selector.
+- [ ] 0b.6c. Optional but recommended (anti-spoofing, zero risk at this
+      setting): `Add record`: Type `TXT`, Name `_dmarc`, Value
+      `v=DMARC1; p=none; rua=mailto:hello@myfengshuihome.com`.
+- [ ] 0b.6d. Tell Claude these are in; Claude re-verifies with a DNS
+      lookup.
+- [ ] 0b.7. Test both directions at `mail.zoho.eu`: (1) email
+      `hello@myfengshuihome.com` from your personal Gmail and watch it
+      arrive; (2) reply to it FROM Zoho and confirm it lands in your
+      Gmail inbox, not spam. Check the hello@ inbox weekly once things
+      send.
+
+Division of labour, permanent: **Resend** sends everything automated
+(site emails, launch sends). **Zoho** is for human mail from hello@:
+replies, support, outreach. Bulk never goes through Zoho.
 
 ## Phase 1 - Pinterest: only the boards remain (15 min)
 
