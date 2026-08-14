@@ -25,6 +25,34 @@ inbox stays clean and the business survives any personal account issue.
 - [ ] 6. Keep `hello@myfengshuihome.com` as the public contact address in
       bios; the new Gmail is for logins only.
 
+## Phase 0b - Make hello@ a real mailbox with Zoho Mail (20 min)
+
+**Required before the newsletter send.** Checked 2026-08-14: the domain
+has NO MX records, so replies to hello@myfengshuihome.com currently
+bounce, and our emails invite replies. Resend keeps doing the sending;
+Zoho Mail (free plan) becomes the receiving inbox.
+
+- [ ] 0b.1. Go to `zoho.com/mail`, open `Pricing`, scroll to the bottom
+      and pick the `Forever Free` plan. Sign up with the new Gmail.
+- [ ] 0b.2. Choose `Add an existing domain`, enter `myfengshuihome.com`
+      (organisation: Mens Sana LLC).
+- [ ] 0b.3. Verify the domain: Zoho shows a TXT record. In a new tab open
+      `hpanel.hostinger.com` (your DNS lives at Hostinger, NOT Vercel),
+      go to `Domains` > `myfengshuihome.com` > `DNS / Nameservers`, click
+      `Add record`: Type `TXT`, Name `@`, paste the Zoho value, `Add
+      record`. Back in Zoho click `Verify`.
+- [ ] 0b.4. Create the mailbox user: `hello@myfengshuihome.com`.
+- [ ] 0b.5. MX records: Zoho shows three (like `mx.zoho.com` priority 10,
+      `mx2.zoho.com` 20, `mx3.zoho.com` 50; use exactly what your Zoho
+      screen shows). Add each in Hostinger DNS: Type `MX`, Name `@`,
+      the mail server, its priority.
+- [ ] 0b.6. Skip Zoho's SPF and DKIM screens for now: Resend does our
+      sending, and touching SPF carelessly can hurt it. Tell Claude when
+      0b.5 is done; Claude verifies the DNS before anything sends.
+- [ ] 0b.7. Test: from your personal Gmail, email
+      `hello@myfengshuihome.com` and watch it arrive at
+      `mail.zoho.com`. Check that inbox weekly once things send.
+
 ## Phase 1 - Pinterest: business + domain + the 8 boards (25 min)
 
 - [ ] 7. Sign in to `pinterest.com` (your existing account).
@@ -33,10 +61,10 @@ inbox stays clean and the business survives any personal account issue.
       prompts (keeps your pins).
 - [ ] 9. Claim the website: `Settings` > `Claimed accounts` > `Claim` next
       to Websites. Choose the `DNS TXT record` method and copy the record.
-- [ ] 10. In a new tab open `vercel.com`, sign in, open the team dashboard,
-      click `Domains` in the left sidebar, click `myfengshuihome.com`,
-      then `DNS Records`. Click `Add Record`: Type `TXT`, Name `@`, paste
-      the Pinterest value, `Save`.
+- [ ] 10. In a new tab open `hpanel.hostinger.com` (the domain's DNS is
+      managed at Hostinger), go to `Domains` > `myfengshuihome.com` >
+      `DNS / Nameservers`, click `Add record`: Type `TXT`, Name `@`,
+      paste the Pinterest value, `Add record`.
 - [ ] 11. Back in Pinterest click `Verify`. (If it says pending, continue;
       it verifies within a few hours.)
 - [ ] 12. Create the 8 boards (`+` > `Board`, paste name, `Create`; then
@@ -156,6 +184,8 @@ Zero posts anywhere; the point is owning the names before launch.
       `Deployments` > latest > `...` > `Redeploy`.
 
 **C. The first send (~10 min)**
+- [ ] C0. Phase 0b must be done first (hello@ can receive), because the
+      emails invite replies.
 - [ ] C1. Tell Claude `send` first, so the previews are re-verified current.
 - [ ] C2. Decide the coupon (Part B of
       [waitlist-send-walkthrough-2026-07-20.md](waitlist-send-walkthrough-2026-07-20.md)):
