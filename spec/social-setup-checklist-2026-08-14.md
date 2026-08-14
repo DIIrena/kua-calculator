@@ -53,23 +53,22 @@ Zoho Mail (free plan) becomes the receiving inbox.
       `hello@myfengshuihome.com` and watch it arrive at
       `mail.zoho.com`. Check that inbox weekly once things send.
 
-## Phase 1 - Pinterest: business + domain + the 8 boards (25 min)
+## Phase 1 - Pinterest: only the boards remain (15 min)
 
-- [ ] 7. Sign in to `pinterest.com` (your existing account).
-- [ ] 8. Check the account type: `Settings` > `Account management`. If it
-      says Personal, click `Convert to a business account` and follow the
-      prompts (keeps your pins).
-- [ ] 9. Claim the website: `Settings` > `Claimed accounts` > `Claim` next
-      to Websites. Choose the `DNS TXT record` method and copy the record.
-- [ ] 10. In a new tab open `hpanel.hostinger.com` (the domain's DNS is
-      managed at Hostinger), go to `Domains` > `myfengshuihome.com` >
-      `DNS / Nameservers`, click `Add record`: Type `TXT`, Name `@`,
-      paste the Pinterest value, `Add record`.
-- [ ] 11. Back in Pinterest click `Verify`. (If it says pending, continue;
-      it verifies within a few hours.)
-- [ ] 12. Create the 8 boards (`+` > `Board`, paste name, `Create`; then
-      board `Edit` > paste the description). Names are search terms on
-      purpose; keep them exactly:
+Already done in the June 2026 setup session: the business account exists
+(Creator type) and `myfengshuihome.com` is claimed and verified. Three
+boards exist from June (Compass School Basics, Reading Your Home Corner
+by Corner, and the third from that session).
+
+- [x] 7. Business account: done June 2026.
+- [x] 8-11. Domain claimed and verified: done June 2026.
+- [ ] 11b. Quick confirm (1 min): `Settings` > `Claimed accounts` still
+      shows the green check next to `myfengshuihome.com`.
+- [ ] 12. Create the 8 search-term boards below (`+` > `Board`, paste
+      name, `Create`; then board `Edit` > paste the description). They
+      sit beside the June boards. If a new name overlaps an existing
+      board's topic, keep the existing board and paste the new
+      description into it instead of duplicating:
 
 ```
 Bedroom Feng Shui          - Bed direction, headboard walls, and calmer sleep, one change at a time.
