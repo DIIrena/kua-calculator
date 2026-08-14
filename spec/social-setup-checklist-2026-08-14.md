@@ -207,4 +207,11 @@ Zero posts anywhere; the point is owning the names before launch.
 ---
 
 Handle exceptions log (fill in if a name was taken):
+- Instagram: `myfengshuihome` was taken; the handle is `myfengshuihomecom`.
 - Platform: __________ chosen handle: __________
+
+Avatar files (2026-08-14, rendered from the site's brand mark at
+1080x1080): `brand/ig-avatar-ivory-on-green.jpg` (recommended: the green
+disc stays visible against Instagram's white interface) and
+`brand/ig-avatar-green-on-ivory.jpg` (the site-header look). Regenerate
+any time with `node scripts/make-ig-logo.mjs`.
