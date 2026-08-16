@@ -182,13 +182,10 @@ Zero posts anywhere; the point is owning the names before launch.
 
 ## Whenever ready (separate from the sitting, any order)
 
-**A. The Reading's two icon sheets (~20 min in Nano Banana)**
-- [ ] A1. Open [bazi-reading-visual-plan-2026-08-14.md](bazi-reading-visual-plan-2026-08-14.md),
-      scroll to `Generation prompts`.
-- [ ] A2. Generate Set 1 (twelve zodiac animals, one 3x4 sheet) and Set 2
-      (ten forces emblems, one 2x5 sheet), regenerating until you like them.
-- [ ] A3. Save per the After generation steps in that file, then tell
-      Claude: the sheets are in.
+**A. The Reading's two icon sheets - DONE**
+- [x] A1-A3. Done 2026-08-16: both sets generated, all 22 tiles cropped
+      and saved to `content/photos/bazi-reading/`, and the final Reading
+      PDF embeds them (confirmed on disk).
 
 **B. Welcome sequence ON (~10 min)**
 - [ ] B1. Follow [welcome-sequence-runbook.md](welcome-sequence-runbook.md):
