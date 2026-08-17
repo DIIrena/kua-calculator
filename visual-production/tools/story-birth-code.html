@@ -60,7 +60,7 @@
     <rect x="0" y="0" width="1080" height="700" fill="#0e3b2c"/>
     <g id="logo" opacity="0"></g>
     <text x="540" y="330" text-anchor="middle" font-size="72" font-weight="700" fill="#fcfcf8" id="cta1" opacity="0">Meet your Day Master.</text>
-    <text x="540" y="420" text-anchor="middle" font-size="52" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">Ten seconds. Free.</text>
+    <text x="540" y="420" text-anchor="middle" font-size="52" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">The free BaZi calculator. Ten seconds.</text>
     <line id="ctaline" x1="540" y1="470" x2="540" y2="470" stroke="#d9531a" stroke-width="4"/>
     <text x="540" y="560" text-anchor="middle" font-size="40" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" id="url" opacity="0">myfengshuihome.com</text>
   </g>
@@ -96,6 +96,26 @@ function narration(linesArr, sizePx, italic) {
 }
 const L1 = narration(["The day you were born,"], 76, false);
 const L2 = narration(["was written in", "eight characters."], 76, false);
+// The naming beat (voice rule: name the system). "BaZi" carries the
+// weight of the line.
+const L2b = (() => {
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  const el = document.createElementNS(NS, "text");
+  el.setAttribute("x", 540); el.setAttribute("y", 340);
+  el.setAttribute("text-anchor", "middle");
+  el.setAttribute("font-size", 76); el.setAttribute("font-weight", 600);
+  el.setAttribute("fill", GREEN);
+  const t1 = document.createElementNS(NS, "tspan");
+  t1.textContent = "The tradition calls it ";
+  const t2 = document.createElementNS(NS, "tspan");
+  t2.setAttribute("font-weight", 700);
+  t2.textContent = "BaZi.";
+  el.appendChild(t1); el.appendChild(t2);
+  g.appendChild(el);
+  linesG.appendChild(g);
+  return g;
+})();
 const L3 = narration(["The world knows", "one of them."], 76, false);
 const L4 = narration(["The tradition", "watches another."], 76, false);
 const L5 = narration(["Yours might be the river,", "or the flame,", "or the mountain."], 64, true);
@@ -180,18 +200,19 @@ function fadeSlide(g, p, dy) {
 window.seek = function (t) {
   // narration
   fadeSlide(L1, inOut(t, 0.3, 1.2, 3.4, 4.0), 24);
-  fadeSlide(L2, inOut(t, 3.8, 4.7, 7.2, 7.8), 24);
-  fadeSlide(L3, inOut(t, 7.6, 8.5, 10.7, 11.3), 24);
-  fadeSlide(L4, inOut(t, 11.1, 12.0, 14.1, 14.6), 24);
-  fadeSlide(L5, ease(seg(t, 14.6, 15.6)), 24);
+  fadeSlide(L2, inOut(t, 3.8, 4.7, 6.2, 6.7), 24);
+  fadeSlide(L2b, inOut(t, 6.7, 7.6, 9.1, 9.6), 24);
+  fadeSlide(L3, inOut(t, 9.7, 10.6, 11.8, 12.3), 24);
+  fadeSlide(L4, inOut(t, 12.4, 13.2, 14.9, 15.3), 24);
+  fadeSlide(L5, ease(seg(t, 15.5, 16.4)), 24);
 
   // cards rise, staggered
   cardEls.forEach((c, i) => {
     const p = ease(seg(t, 4.2 + i * 0.45, 5.2 + i * 0.45));
     // dim all but DAY in scene 4 (and hold dim through the end)
-    const dim = i === 2 ? 0 : ease(seg(t, 11.4, 12.3)) * 0.75;
+    const dim = i === 2 ? 0 : ease(seg(t, 12.6, 13.5)) * 0.75;
     c.g.setAttribute("opacity", p * (1 - dim));
-    const lift = i === 2 ? ease(seg(t, 11.4, 12.5)) : 0;
+    const lift = i === 2 ? ease(seg(t, 12.6, 13.7)) : 0;
     const s = 1 + 0.10 * lift;
     const oy = CY + CH / 2;
     c.g.setAttribute(
@@ -206,16 +227,16 @@ window.seek = function (t) {
   dg.setAttribute("transform", `translate(${540 - 540 * drift} ${880 - 880 * drift}) scale(${drift})`);
 
   // year animal pops (slight overshoot)
-  const pa = seg(t, 8.0, 8.9);
+  const pa = seg(t, 10.0, 10.9);
   const sA = pa === 0 ? 0 : 1 + Math.sin(Math.min(pa, 1) * Math.PI) * 0.08;
   animalG.setAttribute("opacity", ease(pa));
   animalG.setAttribute("transform", `translate(189 545) scale(${sA * ease(pa)}) translate(-189 -545)`);
 
   // the ring draws around the Day stem disc
-  const pr = ease(seg(t, 12.5, 13.7));
+  const pr = ease(seg(t, 13.8, 15.0));
   ring.setAttribute("opacity", pr > 0 ? 1 : 0);
   ring.setAttribute("stroke-dashoffset", RC * (1 - pr));
-  const capP = ease(seg(t, 13.2, 13.9));
+  const capP = ease(seg(t, 14.5, 15.2));
   const cap = document.getElementById("dmCaption");
   cap.setAttribute("opacity", capP);
 
