@@ -1,0 +1,238 @@
+<!doctype html>
+<!--
+  Story video V1: "The Birth Code" (1080x1920, 22s, silent).
+  A reveal narrative, not an ad. House voice; Zeigarnik close.
+
+  Scenes: (1) "The day you were born," (2) "was written in eight
+  characters." + four pillar cards rise; (3) "The world knows one of
+  them." + the year animal tile pops (horse, 2026); (4) "The tradition
+  watches another." + the other cards dim, the Day card lifts, an
+  orange ring draws its stem disc + "your Day Master" caption;
+  (5) "Yours might be the river, or the flame, or the mountain.";
+  (6) green panel rises: "Meet your Day Master." / "Ten seconds. Free."
+  + logo + url.
+
+  Render: node render-pin-video.js story-birth-code.html wk34-v1-birth-code-story 22 30 1080x1920
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #fcfcf8; }
+  #stage { width: 1080px; height: 1920px; position: relative; overflow: hidden; }
+  svg { display: block; }
+  text { font-family: "EB Garamond", serif; }
+</style>
+</head>
+<body>
+<div id="stage">
+<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#0e3b2c" flood-opacity="0.14"/>
+    </filter>
+    <clipPath id="animalClip"><circle cx="189" cy="545" r="86"/></clipPath>
+  </defs>
+  <rect width="1080" height="1920" fill="#fcfcf8"/>
+
+  <!-- narration lines (top third) -->
+  <g id="lines"></g>
+
+  <!-- the four pillar cards -->
+  <g id="cardsDrift">
+    <g id="cards"></g>
+    <!-- year animal tile -->
+    <g id="animal" opacity="0">
+      <circle cx="189" cy="545" r="104" fill="#f7a184" opacity="0.3"/>
+      <circle cx="189" cy="545" r="90" fill="#ffffff"/>
+      <image id="horseImg" x="104" y="460" width="170" height="170" clip-path="url(#animalClip)"
+        href="file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/content/photos/bazi-reading/horse.png"/>
+      <circle cx="189" cy="545" r="90" fill="none" stroke="#f7a184" stroke-width="4"/>
+    </g>
+    <!-- orange ring for the Day stem disc (drawn in seek) -->
+    <circle id="ring" cx="0" cy="0" r="70" fill="none" stroke="#d9531a" stroke-width="6" opacity="0" transform=""/>
+  </g>
+  <text id="dmCaption" x="540" y="1190" text-anchor="middle" font-size="42" font-weight="700"
+    fill="#d9531a" letter-spacing="6" opacity="0">YOUR DAY MASTER</text>
+
+  <!-- end panel -->
+  <g id="panel" transform="translate(0,1920)">
+    <rect x="0" y="0" width="1080" height="700" fill="#0e3b2c"/>
+    <g id="logo" opacity="0"></g>
+    <text x="540" y="330" text-anchor="middle" font-size="72" font-weight="700" fill="#fcfcf8" id="cta1" opacity="0">Meet your Day Master.</text>
+    <text x="540" y="420" text-anchor="middle" font-size="52" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">Ten seconds. Free.</text>
+    <line id="ctaline" x1="540" y1="470" x2="540" y2="470" stroke="#d9531a" stroke-width="4"/>
+    <text x="540" y="560" text-anchor="middle" font-size="40" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" id="url" opacity="0">myfengshuihome.com</text>
+  </g>
+
+  <rect id="progress" x="0" y="1912" width="0" height="8" fill="#d9531a"/>
+</svg>
+</div>
+<script>
+const NS = "http://www.w3.org/2000/svg";
+const GREEN = "#0e3b2c", ORANGE = "#d9531a", IVORY = "#fcfcf8";
+const DUR = 22;
+
+// Element pastels (the Reading's palette).
+const WOOD = "#90d6a5", FIRE = "#f7a184", EARTH = "#f3cf76", METAL = "#bfd9e0", WATER = "#85c3d4";
+
+// ---- narration lines ----
+const linesG = document.getElementById("lines");
+function narration(linesArr, sizePx, italic) {
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  linesArr.forEach((txt, i) => {
+    const el = document.createElementNS(NS, "text");
+    el.setAttribute("x", 540); el.setAttribute("y", 320 + i * 92);
+    el.setAttribute("text-anchor", "middle");
+    el.setAttribute("font-size", sizePx); el.setAttribute("font-weight", 600);
+    el.setAttribute("fill", GREEN);
+    if (italic) el.setAttribute("font-style", "italic");
+    el.textContent = txt;
+    g.appendChild(el);
+  });
+  linesG.appendChild(g);
+  return g;
+}
+const L1 = narration(["The day you were born,"], 76, false);
+const L2 = narration(["was written in", "eight characters."], 76, false);
+const L3 = narration(["The world knows", "one of them."], 76, false);
+const L4 = narration(["The tradition", "watches another."], 76, false);
+const L5 = narration(["Yours might be the river,", "or the flame,", "or the mountain."], 64, true);
+
+// ---- the four pillar cards ----
+// Sample chart: Year fire/fire (the 2026 horse), Month earth/metal,
+// Day WATER/wood (the day master disc is the ringed one), Hour metal/water.
+const CARDS = [
+  { label: "YEAR",  discs: [FIRE, FIRE] },
+  { label: "MONTH", discs: [EARTH, METAL] },
+  { label: "DAY",   discs: [WATER, WOOD] },
+  { label: "HOUR",  discs: [METAL, WATER] },
+];
+const CW = 210, CH = 360, GAP = 24;
+const X0 = (1080 - (CW * 4 + GAP * 3)) / 2;
+const CY = 700;
+const cardsG = document.getElementById("cards");
+const cardEls = CARDS.map((c, i) => {
+  const x = X0 + i * (CW + GAP);
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  const r = document.createElementNS(NS, "rect");
+  r.setAttribute("x", x); r.setAttribute("y", CY);
+  r.setAttribute("width", CW); r.setAttribute("height", CH);
+  r.setAttribute("rx", 18);
+  r.setAttribute("fill", "#ffffff");
+  r.setAttribute("stroke", "#e2dac5"); r.setAttribute("stroke-width", 2);
+  r.setAttribute("filter", "url(#soft)");
+  g.appendChild(r);
+  const lb = document.createElementNS(NS, "text");
+  lb.setAttribute("x", x + CW / 2); lb.setAttribute("y", CY + 58);
+  lb.setAttribute("text-anchor", "middle");
+  lb.setAttribute("font-size", 30); lb.setAttribute("font-weight", 700);
+  lb.setAttribute("letter-spacing", 5); lb.setAttribute("fill", GREEN);
+  lb.textContent = c.label;
+  g.appendChild(lb);
+  c.discs.forEach((col, j) => {
+    const d = document.createElementNS(NS, "circle");
+    d.setAttribute("cx", x + CW / 2); d.setAttribute("cy", CY + 145 + j * 130);
+    d.setAttribute("r", 52); d.setAttribute("fill", col);
+    g.appendChild(d);
+  });
+  cardsG.appendChild(g);
+  return { g, cx: x + CW / 2 };
+});
+
+// Day card stem disc centre (for the ring).
+const DAY_CX = cardEls[2].cx, DAY_DISC_CY = CY + 145;
+const ring = document.getElementById("ring");
+ring.setAttribute("cx", DAY_CX); ring.setAttribute("cy", DAY_DISC_CY);
+const RC = 2 * Math.PI * 70;
+ring.setAttribute("stroke-dasharray", RC);
+ring.setAttribute("transform", `rotate(-90 ${DAY_CX} ${DAY_DISC_CY})`);
+// The ring lives inside the Day card's group so it inherits the lift
+// and scale and stays centred on the stem disc.
+cardEls[2].g.appendChild(ring);
+
+// Animal tile sits above the YEAR card.
+const animalG = document.getElementById("animal");
+
+// End-panel logo.
+const logoG = document.getElementById("logo");
+fetch("file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/assets/logo.svg")
+  .then((r) => r.text())
+  .then((raw) => {
+    const inner = raw.slice(raw.indexOf("<g"), raw.lastIndexOf("</g>") + 4).replace("#0e3b2c", "#d9531a");
+    logoG.innerHTML = '<svg x="475" y="70" width="130" height="130" viewBox="0 0 709 709">' + inner + "</svg>";
+    window.__logoReady = true;
+  });
+
+const clamp01 = (v) => Math.max(0, Math.min(1, v));
+const ease = (v) => 1 - Math.pow(1 - v, 3);
+const easeIO = (v) => (v < 0.5 ? 2 * v * v : 1 - Math.pow(-2 * v + 2, 2) / 2);
+const seg = (t, a, b) => clamp01((t - a) / (b - a));
+const inOut = (t, a, b, c, d) => clamp01(ease(seg(t, a, b)) - ease(seg(t, c, d)));
+
+function fadeSlide(g, p, dy) {
+  g.setAttribute("opacity", p);
+  g.setAttribute("transform", `translate(0 ${(1 - p) * dy})`);
+}
+
+window.seek = function (t) {
+  // narration
+  fadeSlide(L1, inOut(t, 0.3, 1.2, 3.4, 4.0), 24);
+  fadeSlide(L2, inOut(t, 3.8, 4.7, 7.2, 7.8), 24);
+  fadeSlide(L3, inOut(t, 7.6, 8.5, 10.7, 11.3), 24);
+  fadeSlide(L4, inOut(t, 11.1, 12.0, 14.1, 14.6), 24);
+  fadeSlide(L5, ease(seg(t, 14.6, 15.6)), 24);
+
+  // cards rise, staggered
+  cardEls.forEach((c, i) => {
+    const p = ease(seg(t, 4.2 + i * 0.45, 5.2 + i * 0.45));
+    // dim all but DAY in scene 4 (and hold dim through the end)
+    const dim = i === 2 ? 0 : ease(seg(t, 11.4, 12.3)) * 0.75;
+    c.g.setAttribute("opacity", p * (1 - dim));
+    const lift = i === 2 ? ease(seg(t, 11.4, 12.5)) : 0;
+    const s = 1 + 0.10 * lift;
+    const oy = CY + CH / 2;
+    c.g.setAttribute(
+      "transform",
+      `translate(0 ${(1 - p) * 60 - lift * 34}) translate(${c.cx} ${oy}) scale(${s}) translate(${-c.cx} ${-oy})`,
+    );
+  });
+
+  // slow drift on the whole card group (life between beats)
+  const drift = 1 + 0.045 * easeIO(seg(t, 4.5, 17.0));
+  const dg = document.getElementById("cardsDrift");
+  dg.setAttribute("transform", `translate(${540 - 540 * drift} ${880 - 880 * drift}) scale(${drift})`);
+
+  // year animal pops (slight overshoot)
+  const pa = seg(t, 8.0, 8.9);
+  const sA = pa === 0 ? 0 : 1 + Math.sin(Math.min(pa, 1) * Math.PI) * 0.08;
+  animalG.setAttribute("opacity", ease(pa));
+  animalG.setAttribute("transform", `translate(189 545) scale(${sA * ease(pa)}) translate(-189 -545)`);
+
+  // the ring draws around the Day stem disc
+  const pr = ease(seg(t, 12.5, 13.7));
+  ring.setAttribute("opacity", pr > 0 ? 1 : 0);
+  ring.setAttribute("stroke-dashoffset", RC * (1 - pr));
+  const capP = ease(seg(t, 13.2, 13.9));
+  const cap = document.getElementById("dmCaption");
+  cap.setAttribute("opacity", capP);
+
+  // end panel rises
+  const pp = easeIO(seg(t, 17.6, 18.8));
+  document.getElementById("panel").setAttribute("transform", `translate(0 ${1920 - 700 * pp})`);
+  document.getElementById("cta1").setAttribute("opacity", ease(seg(t, 18.5, 19.3)));
+  document.getElementById("cta2").setAttribute("opacity", ease(seg(t, 18.9, 19.7)));
+  logoG.setAttribute("opacity", ease(seg(t, 18.7, 19.5)));
+  const half = 220 * ease(seg(t, 19.5, 20.3));
+  const cl = document.getElementById("ctaline");
+  cl.setAttribute("x1", 540 - half); cl.setAttribute("x2", 540 + half);
+  document.getElementById("url").setAttribute("opacity", ease(seg(t, 19.9, 20.7)));
+
+  document.getElementById("progress").setAttribute("width", 1080 * clamp01(t / DUR));
+};
+window.seek(0);
+</script>
+</body>
+</html>
