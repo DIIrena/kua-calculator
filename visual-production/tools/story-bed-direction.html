@@ -1,0 +1,203 @@
+<!doctype html>
+<!-- Story V4: "Is your bed facing the wrong way?" (1080x1920, 18s).
+     Hook -> the room draws -> the compass rose, four directions bold
+     -> the bed swings to a supportive wall and is ringed.
+     Render: node render-pin-video.js story-bed-direction.html wk34-v4-bed-story 18 30 1080x1920 -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #fcfcf8; }
+  #stage { width: 1080px; height: 1920px; position: relative; overflow: hidden; }
+  svg { display: block; }
+  text { font-family: "EB Garamond", serif; }
+</style>
+</head>
+<body>
+<div id="stage">
+<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#0e3b2c" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="1080" height="1920" fill="#fcfcf8"/>
+  <g id="lines"></g>
+
+  <!-- the room -->
+  <rect id="room" x="190" y="620" width="700" height="500" rx="8" fill="none"
+    stroke="#0e3b2c" stroke-width="5"/>
+  <!-- the bed (drawn about its own centre; positioned in seek) -->
+  <g id="bed" opacity="0">
+    <rect x="-75" y="-115" width="150" height="230" rx="16" fill="#ffffff" stroke="#0e3b2c" stroke-width="4" filter="url(#soft)"/>
+    <rect x="-55" y="-98" width="110" height="52" rx="10" fill="#f2f2ee" stroke="#0e3b2c" stroke-width="3"/>
+  </g>
+  <circle id="bedring" cx="540" cy="770" r="150" fill="none" stroke="#d9531a" stroke-width="6" opacity="0" transform="rotate(-90 540 770)"/>
+  <text id="bedCaption" x="540" y="1210" text-anchor="middle" font-size="42" font-weight="700"
+    fill="#d9531a" letter-spacing="6" opacity="0">A SUPPORTIVE WALL</text>
+
+  <!-- compass rose -->
+  <g id="rose" opacity="0"></g>
+
+  <g id="panel" transform="translate(0,1920)">
+    <rect x="0" y="0" width="1080" height="700" fill="#0e3b2c"/>
+    <g id="logo" opacity="0"></g>
+    <text x="540" y="330" text-anchor="middle" font-size="72" font-weight="700" fill="#fcfcf8" id="cta1" opacity="0">Find your four directions.</text>
+    <text x="540" y="420" text-anchor="middle" font-size="52" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">The free Kua calculator. Ten seconds.</text>
+    <line id="ctaline" x1="540" y1="470" x2="540" y2="470" stroke="#d9531a" stroke-width="4"/>
+    <text x="540" y="560" text-anchor="middle" font-size="40" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" id="url" opacity="0">myfengshuihome.com</text>
+  </g>
+  <rect id="progress" x="0" y="1912" width="0" height="8" fill="#d9531a"/>
+</svg>
+</div>
+<script>
+const NS = "http://www.w3.org/2000/svg";
+const GREEN = "#0e3b2c", ORANGE = "#d9531a";
+const DUR = 18;
+
+const linesG = document.getElementById("lines");
+function narration(arr, size, italic) {
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  arr.forEach((txt, i) => {
+    const el = document.createElementNS(NS, "text");
+    el.setAttribute("x", 540); el.setAttribute("y", 320 + i * 92);
+    el.setAttribute("text-anchor", "middle");
+    el.setAttribute("font-size", size); el.setAttribute("font-weight", 600);
+    el.setAttribute("fill", GREEN);
+    if (italic) el.setAttribute("font-style", "italic");
+    el.textContent = txt;
+    g.appendChild(el);
+  });
+  linesG.appendChild(g);
+  return g;
+}
+const HOOK = (() => {
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  const l1 = document.createElementNS(NS, "text");
+  l1.setAttribute("x", 540); l1.setAttribute("y", 310);
+  l1.setAttribute("text-anchor", "middle"); l1.setAttribute("font-size", 88);
+  l1.setAttribute("font-weight", 700); l1.setAttribute("fill", GREEN);
+  l1.textContent = "Is your bed facing";
+  const l2 = document.createElementNS(NS, "text");
+  l2.setAttribute("x", 540); l2.setAttribute("y", 412);
+  l2.setAttribute("text-anchor", "middle"); l2.setAttribute("font-size", 88);
+  l2.setAttribute("font-weight", 700); l2.setAttribute("fill", GREEN);
+  const a = document.createElementNS(NS, "tspan"); a.textContent = "the ";
+  const b = document.createElementNS(NS, "tspan"); b.setAttribute("fill", ORANGE); b.textContent = "wrong way";
+  const c = document.createElementNS(NS, "tspan"); c.textContent = "?";
+  l2.appendChild(a); l2.appendChild(b); l2.appendChild(c);
+  g.appendChild(l1); g.appendChild(l2);
+  linesG.appendChild(g);
+  return g;
+})();
+const L2 = narration(["The tradition gives you four", "supportive directions."], 70, false);
+const L3 = narration(["Your birth year picks them:", "your Kua number."], 70, false);
+const L4 = narration(["Headboard to a supportive", "wall, says the system."], 70, false);
+
+// compass rose: 8 spokes, 4 bold green (the supportive four), 4 pale
+const rose = document.getElementById("rose");
+const RCX = 540, RCY = 1400, RIN = 46, ROUT = 130;
+const SUPPORTIVE = new Set([0, 2, 3, 6]);
+const spokes = [];
+for (let i = 0; i < 8; i++) {
+  const a = (i * 45 - 90) * (Math.PI / 180);
+  const el = document.createElementNS(NS, "line");
+  const x1 = RCX + Math.cos(a) * RIN, y1 = RCY + Math.sin(a) * RIN;
+  el.setAttribute("x1", x1); el.setAttribute("y1", y1);
+  el.setAttribute("x2", x1); el.setAttribute("y2", y1);
+  const sup = SUPPORTIVE.has(i);
+  el.setAttribute("stroke", sup ? GREEN : "#c9d3cc");
+  el.setAttribute("stroke-width", sup ? 10 : 4);
+  el.setAttribute("stroke-linecap", "round");
+  rose.appendChild(el);
+  spokes.push({ el, x1, y1, x2: RCX + Math.cos(a) * ROUT, y2: RCY + Math.sin(a) * ROUT });
+}
+const hub = document.createElementNS(NS, "circle");
+hub.setAttribute("cx", RCX); hub.setAttribute("cy", RCY); hub.setAttribute("r", 14);
+hub.setAttribute("fill", GREEN);
+rose.appendChild(hub);
+
+const logoG = document.getElementById("logo");
+fetch("file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/assets/logo.svg")
+  .then((r) => r.text())
+  .then((raw) => {
+    const inner = raw.slice(raw.indexOf("<g"), raw.lastIndexOf("</g>") + 4).replace("#0e3b2c", "#d9531a");
+    logoG.innerHTML = '<svg x="475" y="70" width="130" height="130" viewBox="0 0 709 709">' + inner + "</svg>";
+    window.__logoReady = true;
+  });
+
+const clamp01 = (v) => Math.max(0, Math.min(1, v));
+const ease = (v) => 1 - Math.pow(1 - v, 3);
+const easeIO = (v) => (v < 0.5 ? 2 * v * v : 1 - Math.pow(-2 * v + 2, 2) / 2);
+const seg = (t, a, b) => clamp01((t - a) / (b - a));
+const inOut = (t, a, b, c, d) => clamp01(ease(seg(t, a, b)) - ease(seg(t, c, d)));
+function fadeSlide(g, p, dy) {
+  g.setAttribute("opacity", p);
+  g.setAttribute("transform", `translate(0 ${(1 - p) * dy})`);
+}
+function popIn(g, t, a, b, outA, outB) {
+  const pIn = ease(seg(t, a, b));
+  const pOut = ease(seg(t, outA, outB));
+  g.setAttribute("opacity", clamp01(pIn - pOut));
+  const s = 1.14 - 0.14 * pIn;
+  g.setAttribute("transform", `translate(540 360) scale(${s}) translate(-540 -360)`);
+}
+const lerp = (a, b, p) => a + (b - a) * p;
+
+const ROOM_PERIM = 2 * (700 + 500);
+const room = document.getElementById("room");
+room.setAttribute("stroke-dasharray", ROOM_PERIM);
+const RINGC = 2 * Math.PI * 150;
+const bedring = document.getElementById("bedring");
+bedring.setAttribute("stroke-dasharray", RINGC);
+
+window.seek = function (t) {
+  popIn(HOOK, t, 0.1, 0.5, 2.7, 3.2);
+  fadeSlide(L2, inOut(t, 3.3, 4.1, 6.2, 6.7), 24);
+  fadeSlide(L3, inOut(t, 6.8, 7.6, 9.5, 10.0), 24);
+  fadeSlide(L4, inOut(t, 10.1, 10.9, 13.6, 14.1), 24);
+
+  // room draws
+  const pr = ease(seg(t, 3.4, 4.6));
+  room.setAttribute("stroke-dashoffset", ROOM_PERIM * (1 - pr));
+  room.setAttribute("opacity", pr > 0 ? 1 : 0);
+
+  // compass rose draws, supportive spokes land last and bolder
+  const roseG = document.getElementById("rose");
+  roseG.setAttribute("opacity", ease(seg(t, 4.6, 5.4)));
+  spokes.forEach((s, i) => {
+    const p = ease(seg(t, 4.8 + i * 0.12, 5.5 + i * 0.12));
+    s.el.setAttribute("x2", lerp(s.x1, s.x2, p));
+    s.el.setAttribute("y2", lerp(s.y1, s.y2, p));
+  });
+
+  // the bed: appears against the left wall, then swings to the top wall
+  const bed = document.getElementById("bed");
+  bed.setAttribute("opacity", ease(seg(t, 7.0, 7.8)));
+  const m = easeIO(seg(t, 10.4, 11.7));
+  const bx = lerp(315, 540, m), by = lerp(900, 770, m), rot = lerp(90, 0, m);
+  bed.setAttribute("transform", `translate(${bx} ${by}) rotate(${rot})`);
+
+  // the ring confirms the supportive wall
+  const prr = ease(seg(t, 12.0, 13.2));
+  bedring.setAttribute("opacity", prr > 0 ? 1 : 0);
+  bedring.setAttribute("stroke-dashoffset", RINGC * (1 - prr));
+  document.getElementById("bedCaption").setAttribute("opacity", ease(seg(t, 12.7, 13.4)));
+
+  const pp = easeIO(seg(t, 14.4, 15.6));
+  document.getElementById("panel").setAttribute("transform", `translate(0 ${1920 - 700 * pp})`);
+  document.getElementById("cta1").setAttribute("opacity", ease(seg(t, 15.3, 16.1)));
+  document.getElementById("cta2").setAttribute("opacity", ease(seg(t, 15.7, 16.5)));
+  logoG.setAttribute("opacity", ease(seg(t, 15.5, 16.3)));
+  const half = 220 * ease(seg(t, 16.3, 17.1));
+  const cl = document.getElementById("ctaline");
+  cl.setAttribute("x1", 540 - half); cl.setAttribute("x2", 540 + half);
+  document.getElementById("url").setAttribute("opacity", ease(seg(t, 16.7, 17.5)));
+  document.getElementById("progress").setAttribute("width", 1080 * clamp01(t / DUR));
+};
+window.seek(0);
+</script>
+</body>
+</html>

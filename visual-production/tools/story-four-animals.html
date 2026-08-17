@@ -1,0 +1,211 @@
+<!doctype html>
+<!-- Story V2: "Your zodiac animal is only 1 of 4" (1080x1920, 18s).
+     Hook -> year medallion (the one the world knows) -> three more pop
+     -> the DAY medallion lifts and rings -> Day Master close.
+     Render: node render-pin-video.js story-four-animals.html wk34-v2-four-animals-story 18 30 1080x1920 -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #fcfcf8; }
+  #stage { width: 1080px; height: 1920px; position: relative; overflow: hidden; }
+  svg { display: block; }
+  text { font-family: "EB Garamond", serif; }
+</style>
+</head>
+<body>
+<div id="stage">
+<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#0e3b2c" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="1080" height="1920" fill="#fcfcf8"/>
+  <g id="lines"></g>
+  <g id="meds"></g>
+  <text id="dmCaption" x="540" y="1210" text-anchor="middle" font-size="42" font-weight="700"
+    fill="#d9531a" letter-spacing="6" opacity="0">YOUR DAY MASTER</text>
+  <g id="panel" transform="translate(0,1920)">
+    <rect x="0" y="0" width="1080" height="700" fill="#0e3b2c"/>
+    <g id="logo" opacity="0"></g>
+    <text x="540" y="330" text-anchor="middle" font-size="72" font-weight="700" fill="#fcfcf8" id="cta1" opacity="0">Meet your Day Master.</text>
+    <text x="540" y="420" text-anchor="middle" font-size="52" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">The free BaZi calculator. Ten seconds.</text>
+    <line id="ctaline" x1="540" y1="470" x2="540" y2="470" stroke="#d9531a" stroke-width="4"/>
+    <text x="540" y="560" text-anchor="middle" font-size="40" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" id="url" opacity="0">myfengshuihome.com</text>
+  </g>
+  <rect id="progress" x="0" y="1912" width="0" height="8" fill="#d9531a"/>
+</svg>
+</div>
+<script>
+const NS = "http://www.w3.org/2000/svg";
+const GREEN = "#0e3b2c", ORANGE = "#d9531a";
+const DUR = 18;
+const IMG = "file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/content/photos/bazi-reading/";
+
+const linesG = document.getElementById("lines");
+function narration(arr, size, italic) {
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  arr.forEach((txt, i) => {
+    const el = document.createElementNS(NS, "text");
+    el.setAttribute("x", 540); el.setAttribute("y", 320 + i * 92);
+    el.setAttribute("text-anchor", "middle");
+    el.setAttribute("font-size", size); el.setAttribute("font-weight", 600);
+    el.setAttribute("fill", GREEN);
+    if (italic) el.setAttribute("font-style", "italic");
+    el.textContent = txt;
+    g.appendChild(el);
+  });
+  linesG.appendChild(g);
+  return g;
+}
+// Hook with orange span.
+const HOOK = (() => {
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  const l1 = document.createElementNS(NS, "text");
+  l1.setAttribute("x", 540); l1.setAttribute("y", 310);
+  l1.setAttribute("text-anchor", "middle"); l1.setAttribute("font-size", 88);
+  l1.setAttribute("font-weight", 700); l1.setAttribute("fill", GREEN);
+  l1.textContent = "Your zodiac animal";
+  const l2 = document.createElementNS(NS, "text");
+  l2.setAttribute("x", 540); l2.setAttribute("y", 412);
+  l2.setAttribute("text-anchor", "middle"); l2.setAttribute("font-size", 88);
+  l2.setAttribute("font-weight", 700); l2.setAttribute("fill", GREEN);
+  const a = document.createElementNS(NS, "tspan"); a.textContent = "is only ";
+  const b = document.createElementNS(NS, "tspan"); b.setAttribute("fill", ORANGE); b.textContent = "1 of 4";
+  l2.appendChild(a); l2.appendChild(b);
+  g.appendChild(l1); g.appendChild(l2);
+  linesG.appendChild(g);
+  return g;
+})();
+const L2 = narration(["The year one,", "the world knows."], 76, false);
+const L3 = narration(["Three more hide", "in your chart."], 76, false);
+const L4 = narration(["The tradition reads the", "day one as the real you."], 72, false);
+const L5 = narration(["Not the loud one.", "The daily one."], 64, true);
+
+// Medallions: YEAR horse, MONTH rabbit, DAY rooster, HOUR snake.
+const MEDS = [
+  { label: "YEAR",  img: "horse.png",   ring: "#f7a184" },
+  { label: "MONTH", img: "rabbit.png",  ring: "#90d6a5" },
+  { label: "DAY",   img: "rooster.png", ring: "#85c3d4" },
+  { label: "HOUR",  img: "snake.png",   ring: "#f3cf76" },
+];
+const CY = 920, R = 95;
+const CXS = [165, 415, 665, 915];
+const medsG = document.getElementById("meds");
+const defs = document.querySelector("defs");
+const medEls = MEDS.map((m, i) => {
+  const cx = CXS[i];
+  const clip = document.createElementNS(NS, "clipPath");
+  clip.setAttribute("id", "clip" + i);
+  const cc = document.createElementNS(NS, "circle");
+  cc.setAttribute("cx", cx); cc.setAttribute("cy", CY); cc.setAttribute("r", R - 4);
+  clip.appendChild(cc); defs.appendChild(clip);
+
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  const bg = document.createElementNS(NS, "circle");
+  bg.setAttribute("cx", cx); bg.setAttribute("cy", CY); bg.setAttribute("r", R);
+  bg.setAttribute("fill", "#ffffff"); bg.setAttribute("filter", "url(#soft)");
+  g.appendChild(bg);
+  const im = document.createElementNS(NS, "image");
+  im.setAttribute("x", cx - (R - 14)); im.setAttribute("y", CY - (R - 14));
+  im.setAttribute("width", (R - 14) * 2); im.setAttribute("height", (R - 14) * 2);
+  im.setAttribute("clip-path", `url(#clip${i})`);
+  im.setAttribute("href", IMG + m.img);
+  g.appendChild(im);
+  const rim = document.createElementNS(NS, "circle");
+  rim.setAttribute("cx", cx); rim.setAttribute("cy", CY); rim.setAttribute("r", R);
+  rim.setAttribute("fill", "none"); rim.setAttribute("stroke", m.ring); rim.setAttribute("stroke-width", 4);
+  g.appendChild(rim);
+  const lb = document.createElementNS(NS, "text");
+  lb.setAttribute("x", cx); lb.setAttribute("y", CY + R + 58);
+  lb.setAttribute("text-anchor", "middle"); lb.setAttribute("font-size", 30);
+  lb.setAttribute("font-weight", 700); lb.setAttribute("letter-spacing", 5);
+  lb.setAttribute("fill", GREEN);
+  lb.textContent = m.label;
+  g.appendChild(lb);
+  medsG.appendChild(g);
+  return { g, cx };
+});
+// Orange reveal ring on the DAY medallion, inside its group.
+const ring = document.createElementNS(NS, "circle");
+ring.setAttribute("cx", CXS[2]); ring.setAttribute("cy", CY);
+ring.setAttribute("r", R + 16); ring.setAttribute("fill", "none");
+ring.setAttribute("stroke", ORANGE); ring.setAttribute("stroke-width", 6);
+ring.setAttribute("opacity", 0);
+const RC = 2 * Math.PI * (R + 16);
+ring.setAttribute("stroke-dasharray", RC);
+ring.setAttribute("transform", `rotate(-90 ${CXS[2]} ${CY})`);
+medEls[2].g.appendChild(ring);
+
+const logoG = document.getElementById("logo");
+fetch("file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/assets/logo.svg")
+  .then((r) => r.text())
+  .then((raw) => {
+    const inner = raw.slice(raw.indexOf("<g"), raw.lastIndexOf("</g>") + 4).replace("#0e3b2c", "#d9531a");
+    logoG.innerHTML = '<svg x="475" y="70" width="130" height="130" viewBox="0 0 709 709">' + inner + "</svg>";
+    window.__logoReady = true;
+  });
+
+const clamp01 = (v) => Math.max(0, Math.min(1, v));
+const ease = (v) => 1 - Math.pow(1 - v, 3);
+const easeIO = (v) => (v < 0.5 ? 2 * v * v : 1 - Math.pow(-2 * v + 2, 2) / 2);
+const seg = (t, a, b) => clamp01((t - a) / (b - a));
+const inOut = (t, a, b, c, d) => clamp01(ease(seg(t, a, b)) - ease(seg(t, c, d)));
+function fadeSlide(g, p, dy) {
+  g.setAttribute("opacity", p);
+  g.setAttribute("transform", `translate(0 ${(1 - p) * dy})`);
+}
+function popIn(g, t, a, b, outA, outB) {
+  const pIn = ease(seg(t, a, b));
+  const pOut = ease(seg(t, outA, outB));
+  g.setAttribute("opacity", clamp01(pIn - pOut));
+  const s = 1.14 - 0.14 * pIn;
+  g.setAttribute("transform", `translate(540 360) scale(${s}) translate(-540 -360)`);
+}
+
+const POPS = [3.6, 6.8, 7.4, 8.0]; // year, month, day, hour
+window.seek = function (t) {
+  popIn(HOOK, t, 0.1, 0.5, 2.7, 3.2);
+  fadeSlide(L2, inOut(t, 3.3, 4.1, 5.9, 6.4), 24);
+  fadeSlide(L3, inOut(t, 6.5, 7.3, 8.8, 9.3), 24);
+  fadeSlide(L4, inOut(t, 9.4, 10.2, 12.3, 12.7), 24);
+  fadeSlide(L5, ease(seg(t, 12.8, 13.7)), 24);
+
+  medEls.forEach((m, i) => {
+    const start = POPS[i];
+    const p = seg(t, start, start + 0.8);
+    const sc = p === 0 ? 0 : ease(p) + Math.sin(Math.min(p, 1) * Math.PI) * 0.06;
+    const dim = i === 2 ? 0 : ease(seg(t, 9.6, 10.4)) * 0.72;
+    const lift = i === 2 ? ease(seg(t, 9.6, 10.7)) : 0;
+    m.g.setAttribute("opacity", ease(p) * (1 - dim));
+    const s2 = sc * (1 + 0.12 * lift);
+    m.g.setAttribute(
+      "transform",
+      `translate(0 ${-lift * 30}) translate(${m.cx} ${CY}) scale(${s2}) translate(${-m.cx} ${-CY})`,
+    );
+  });
+
+  const pr = ease(seg(t, 10.8, 12.0));
+  ring.setAttribute("opacity", pr > 0 ? 1 : 0);
+  ring.setAttribute("stroke-dashoffset", RC * (1 - pr));
+  document.getElementById("dmCaption").setAttribute("opacity", ease(seg(t, 11.5, 12.2)));
+
+  const pp = easeIO(seg(t, 14.4, 15.6));
+  document.getElementById("panel").setAttribute("transform", `translate(0 ${1920 - 700 * pp})`);
+  document.getElementById("cta1").setAttribute("opacity", ease(seg(t, 15.3, 16.1)));
+  document.getElementById("cta2").setAttribute("opacity", ease(seg(t, 15.7, 16.5)));
+  logoG.setAttribute("opacity", ease(seg(t, 15.5, 16.3)));
+  const half = 220 * ease(seg(t, 16.3, 17.1));
+  const cl = document.getElementById("ctaline");
+  cl.setAttribute("x1", 540 - half); cl.setAttribute("x2", 540 + half);
+  document.getElementById("url").setAttribute("opacity", ease(seg(t, 16.7, 17.5)));
+  document.getElementById("progress").setAttribute("width", 1080 * clamp01(t / DUR));
+};
+window.seek(0);
+</script>
+</body>
+</html>

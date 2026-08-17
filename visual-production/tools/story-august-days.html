@@ -1,0 +1,209 @@
+<!doctype html>
+<!-- Story V5: "August's best days are already marked" (1080x1920, 18s).
+     Hook -> the month grid draws -> favourable days light up -> the
+     routine days step back -> one day is ringed -> Good-Days close.
+     Render: node render-pin-video.js story-august-days.html wk34-v5-august-story 18 30 1080x1920 -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #fcfcf8; }
+  #stage { width: 1080px; height: 1920px; position: relative; overflow: hidden; }
+  svg { display: block; }
+  text { font-family: "EB Garamond", serif; }
+</style>
+</head>
+<body>
+<div id="stage">
+<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1080" height="1920" fill="#fcfcf8"/>
+  <g id="lines"></g>
+  <text id="monthLabel" x="540" y="700" text-anchor="middle" font-size="44" font-weight="700"
+    letter-spacing="8" fill="#0e3b2c" opacity="0">AUGUST 2026</text>
+  <g id="cal"></g>
+  <g id="dots"></g>
+  <g id="dashes"></g>
+  <circle id="ring" cx="0" cy="0" r="44" fill="none" stroke="#d9531a" stroke-width="6" opacity="0"/>
+  <text id="dayCaption" x="540" y="1420" text-anchor="middle" font-size="42" font-weight="700"
+    fill="#d9531a" letter-spacing="6" opacity="0">EACH WITH ITS REASON</text>
+  <g id="panel" transform="translate(0,1920)">
+    <rect x="0" y="0" width="1080" height="700" fill="#0e3b2c"/>
+    <g id="logo" opacity="0"></g>
+    <text x="540" y="330" text-anchor="middle" font-size="72" font-weight="700" fill="#fcfcf8" id="cta1" opacity="0">See the Good-Days calendar.</text>
+    <text x="540" y="420" text-anchor="middle" font-size="52" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">Free, July 2026 to February 2027.</text>
+    <line id="ctaline" x1="540" y1="470" x2="540" y2="470" stroke="#d9531a" stroke-width="4"/>
+    <text x="540" y="560" text-anchor="middle" font-size="40" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" id="url" opacity="0">myfengshuihome.com</text>
+  </g>
+  <rect id="progress" x="0" y="1912" width="0" height="8" fill="#d9531a"/>
+</svg>
+</div>
+<script>
+const NS = "http://www.w3.org/2000/svg";
+const GREEN = "#0e3b2c", ORANGE = "#d9531a";
+const DUR = 18;
+
+const linesG = document.getElementById("lines");
+function narration(arr, size, italic) {
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  arr.forEach((txt, i) => {
+    const el = document.createElementNS(NS, "text");
+    el.setAttribute("x", 540); el.setAttribute("y", 320 + i * 92);
+    el.setAttribute("text-anchor", "middle");
+    el.setAttribute("font-size", size); el.setAttribute("font-weight", 600);
+    el.setAttribute("fill", GREEN);
+    if (italic) el.setAttribute("font-style", "italic");
+    el.textContent = txt;
+    g.appendChild(el);
+  });
+  linesG.appendChild(g);
+  return g;
+}
+const HOOK = (() => {
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  const l1 = document.createElementNS(NS, "text");
+  l1.setAttribute("x", 540); l1.setAttribute("y", 310);
+  l1.setAttribute("text-anchor", "middle"); l1.setAttribute("font-size", 88);
+  l1.setAttribute("font-weight", 700); l1.setAttribute("fill", GREEN);
+  l1.textContent = "August's best days";
+  const l2 = document.createElementNS(NS, "text");
+  l2.setAttribute("x", 540); l2.setAttribute("y", 412);
+  l2.setAttribute("text-anchor", "middle"); l2.setAttribute("font-size", 88);
+  l2.setAttribute("font-weight", 700); l2.setAttribute("fill", GREEN);
+  const a = document.createElementNS(NS, "tspan"); a.textContent = "are ";
+  const b = document.createElementNS(NS, "tspan"); b.setAttribute("fill", ORANGE); b.textContent = "already marked";
+  l2.appendChild(a); l2.appendChild(b);
+  g.appendChild(l1); g.appendChild(l2);
+  linesG.appendChild(g);
+  return g;
+})();
+const L2 = narration(["Days for starting,", "signing, and moving."], 72, false);
+const L3 = narration(["And days the month keeps", "for routine instead."], 68, false);
+const L4 = narration(["Every one listed,", "with the reason why."], 72, false);
+
+// the month grid
+const cols = 7, rows = 5, cell = 110;
+const W = cols * cell, H = rows * cell;
+const x0 = (1080 - W) / 2, y0 = 750;
+const calG = document.getElementById("cal");
+const gridLines = [];
+function addLine(x1, y1, x2, y2, w) {
+  const el = document.createElementNS(NS, "line");
+  el.setAttribute("x1", x1); el.setAttribute("y1", y1);
+  el.setAttribute("x2", x1); el.setAttribute("y2", y1);
+  el.setAttribute("stroke", GREEN); el.setAttribute("stroke-width", w);
+  calG.appendChild(el);
+  gridLines.push({ el, x1, y1, x2, y2 });
+}
+addLine(x0, y0, x0 + W, y0, 3.4);
+addLine(x0, y0 + H, x0 + W, y0 + H, 3.4);
+addLine(x0, y0, x0, y0 + H, 3.4);
+addLine(x0 + W, y0, x0 + W, y0 + H, 3.4);
+for (let i = 1; i < cols; i++) addLine(x0 + i * cell, y0, x0 + i * cell, y0 + H, 2.6);
+for (let j = 1; j < rows; j++) addLine(x0, y0 + j * cell, x0 + W, y0 + j * cell, 2.6);
+
+// favourable days (green dots) and routine days (pale dashes)
+const DOTS = [[1,0],[3,0],[5,1],[0,1],[2,2],[6,2],[1,3],[4,3],[3,4],[5,4]];
+const DASHES = [[6,0],[2,1],[4,2],[0,4]];
+const dotsG = document.getElementById("dots");
+const dotEls = DOTS.map(([c, rw]) => {
+  const el = document.createElementNS(NS, "circle");
+  el.setAttribute("cx", x0 + c * cell + cell / 2);
+  el.setAttribute("cy", y0 + rw * cell + cell / 2);
+  el.setAttribute("r", 0); el.setAttribute("fill", "#90d6a5");
+  el.setAttribute("stroke", GREEN); el.setAttribute("stroke-width", 2.5);
+  dotsG.appendChild(el);
+  return el;
+});
+const dashesG = document.getElementById("dashes");
+const dashEls = DASHES.map(([c, rw]) => {
+  const el = document.createElementNS(NS, "line");
+  const cx = x0 + c * cell + cell / 2, cy = y0 + rw * cell + cell / 2;
+  el.setAttribute("x1", cx - 16); el.setAttribute("y1", cy);
+  el.setAttribute("x2", cx + 16); el.setAttribute("y2", cy);
+  el.setAttribute("stroke", "#c9c2b2"); el.setAttribute("stroke-width", 6);
+  el.setAttribute("stroke-linecap", "round"); el.setAttribute("opacity", 0);
+  dashesG.appendChild(el);
+  return el;
+});
+// the ringed day: [4,3]
+const RING_X = x0 + 4 * cell + cell / 2, RING_Y = y0 + 3 * cell + cell / 2;
+const ring = document.getElementById("ring");
+ring.setAttribute("cx", RING_X); ring.setAttribute("cy", RING_Y);
+const RC = 2 * Math.PI * 44;
+ring.setAttribute("stroke-dasharray", RC);
+ring.setAttribute("transform", `rotate(-90 ${RING_X} ${RING_Y})`);
+
+const logoG = document.getElementById("logo");
+fetch("file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/assets/logo.svg")
+  .then((r) => r.text())
+  .then((raw) => {
+    const inner = raw.slice(raw.indexOf("<g"), raw.lastIndexOf("</g>") + 4).replace("#0e3b2c", "#d9531a");
+    logoG.innerHTML = '<svg x="475" y="70" width="130" height="130" viewBox="0 0 709 709">' + inner + "</svg>";
+    window.__logoReady = true;
+  });
+
+const clamp01 = (v) => Math.max(0, Math.min(1, v));
+const ease = (v) => 1 - Math.pow(1 - v, 3);
+const easeIO = (v) => (v < 0.5 ? 2 * v * v : 1 - Math.pow(-2 * v + 2, 2) / 2);
+const seg = (t, a, b) => clamp01((t - a) / (b - a));
+const inOut = (t, a, b, c, d) => clamp01(ease(seg(t, a, b)) - ease(seg(t, c, d)));
+const lerp = (a, b, p) => a + (b - a) * p;
+function fadeSlide(g, p, dy) {
+  g.setAttribute("opacity", p);
+  g.setAttribute("transform", `translate(0 ${(1 - p) * dy})`);
+}
+function popIn(g, t, a, b, outA, outB) {
+  const pIn = ease(seg(t, a, b));
+  const pOut = ease(seg(t, outA, outB));
+  g.setAttribute("opacity", clamp01(pIn - pOut));
+  const s = 1.14 - 0.14 * pIn;
+  g.setAttribute("transform", `translate(540 360) scale(${s}) translate(-540 -360)`);
+}
+
+window.seek = function (t) {
+  popIn(HOOK, t, 0.1, 0.5, 2.7, 3.2);
+  fadeSlide(L2, inOut(t, 3.3, 4.1, 6.2, 6.7), 24);
+  fadeSlide(L3, inOut(t, 6.8, 7.6, 9.5, 10.0), 24);
+  fadeSlide(L4, inOut(t, 10.1, 10.9, 13.6, 14.1), 24);
+
+  document.getElementById("monthLabel").setAttribute("opacity", ease(seg(t, 3.4, 4.2)));
+  gridLines.forEach((L, i) => {
+    const p = ease(seg(t, 3.5 + i * 0.06, 4.3 + i * 0.06));
+    L.el.setAttribute("x2", lerp(L.x1, L.x2, p));
+    L.el.setAttribute("y2", lerp(L.y1, L.y2, p));
+  });
+
+  // favourable days light up one by one
+  dotEls.forEach((el, i) => {
+    const p = seg(t, 4.9 + i * 0.33, 5.4 + i * 0.33);
+    const r = p === 0 ? 0 : 18 * (ease(p) + Math.sin(Math.min(p, 1) * Math.PI) * 0.15);
+    el.setAttribute("r", r);
+  });
+  // routine days step back
+  dashEls.forEach((el, i) => {
+    el.setAttribute("opacity", ease(seg(t, 7.4 + i * 0.25, 8.1 + i * 0.25)));
+  });
+
+  // one day is ringed
+  const pr = ease(seg(t, 10.6, 11.8));
+  ring.setAttribute("opacity", pr > 0 ? 1 : 0);
+  ring.setAttribute("stroke-dashoffset", RC * (1 - pr));
+  document.getElementById("dayCaption").setAttribute("opacity", ease(seg(t, 11.4, 12.1)));
+
+  const pp = easeIO(seg(t, 14.4, 15.6));
+  document.getElementById("panel").setAttribute("transform", `translate(0 ${1920 - 700 * pp})`);
+  document.getElementById("cta1").setAttribute("opacity", ease(seg(t, 15.3, 16.1)));
+  document.getElementById("cta2").setAttribute("opacity", ease(seg(t, 15.7, 16.5)));
+  logoG.setAttribute("opacity", ease(seg(t, 15.5, 16.3)));
+  const half = 220 * ease(seg(t, 16.3, 17.1));
+  const cl = document.getElementById("ctaline");
+  cl.setAttribute("x1", 540 - half); cl.setAttribute("x2", 540 + half);
+  document.getElementById("url").setAttribute("opacity", ease(seg(t, 16.7, 17.5)));
+  document.getElementById("progress").setAttribute("width", 1080 * clamp01(t / DUR));
+};
+window.seek(0);
+</script>
+</body>
+</html>

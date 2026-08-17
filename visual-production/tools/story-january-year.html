@@ -1,0 +1,203 @@
+<!doctype html>
+<!-- Story V3: "Born in January? Your sign may be wrong" (1080x1920, 18s).
+     Hook -> the January 1 card is struck through -> the Li Chun card
+     arrives -> rooster dims, monkey rings: the year before.
+     Render: node render-pin-video.js story-january-year.html wk34-v3-january-story 18 30 1080x1920 -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #fcfcf8; }
+  #stage { width: 1080px; height: 1920px; position: relative; overflow: hidden; }
+  svg { display: block; }
+  text { font-family: "EB Garamond", serif; }
+</style>
+</head>
+<body>
+<div id="stage">
+<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#0e3b2c" flood-opacity="0.14"/>
+    </filter>
+    <clipPath id="clipR"><circle cx="340" cy="1300" r="91"/></clipPath>
+    <clipPath id="clipM"><circle cx="740" cy="1300" r="91"/></clipPath>
+  </defs>
+  <rect width="1080" height="1920" fill="#fcfcf8"/>
+  <g id="lines"></g>
+
+  <!-- January card -->
+  <g id="jan" opacity="0">
+    <rect x="260" y="660" width="560" height="300" rx="20" fill="#ffffff" stroke="#e2dac5" stroke-width="2" filter="url(#soft)"/>
+    <text x="540" y="790" text-anchor="middle" font-size="64" font-weight="700" fill="#0e3b2c">JANUARY 1</text>
+    <text x="540" y="870" text-anchor="middle" font-size="32" font-weight="500" fill="#4f5b53">the calendar new year</text>
+    <line id="strike" x1="300" y1="810" x2="300" y2="810" stroke="#9aa69f" stroke-width="6"/>
+  </g>
+  <!-- Li Chun card -->
+  <g id="feb" opacity="0">
+    <rect x="260" y="660" width="560" height="300" rx="20" fill="#ffffff" stroke="#e2dac5" stroke-width="2" filter="url(#soft)"/>
+    <text x="540" y="790" text-anchor="middle" font-size="64" font-weight="700" fill="#0e3b2c">FEBRUARY 4</text>
+    <text x="540" y="870" text-anchor="middle" font-size="32" font-weight="600" fill="#d9531a" letter-spacing="4">LI CHUN · THE YEAR TURNS</text>
+    <line id="febline" x1="540" y1="815" x2="540" y2="815" stroke="#d9531a" stroke-width="4"/>
+  </g>
+
+  <!-- the two year medallions -->
+  <g id="roo" opacity="0">
+    <circle cx="340" cy="1300" r="95" fill="#ffffff" filter="url(#soft)"/>
+    <image x="253" y="1213" width="174" height="174" clip-path="url(#clipR)"
+      href="file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/content/photos/bazi-reading/rooster.png"/>
+    <circle cx="340" cy="1300" r="95" fill="none" stroke="#bfd9e0" stroke-width="4"/>
+    <text x="340" y="1448" text-anchor="middle" font-size="30" font-weight="700" letter-spacing="4" fill="#0e3b2c">2017 · ROOSTER</text>
+  </g>
+  <g id="mon" opacity="0">
+    <circle cx="740" cy="1300" r="95" fill="#ffffff" filter="url(#soft)"/>
+    <image x="653" y="1213" width="174" height="174" clip-path="url(#clipM)"
+      href="file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/content/photos/bazi-reading/monkey.png"/>
+    <circle cx="740" cy="1300" r="95" fill="none" stroke="#f3cf76" stroke-width="4"/>
+    <text x="740" y="1448" text-anchor="middle" font-size="30" font-weight="700" letter-spacing="4" fill="#0e3b2c">2016 · MONKEY</text>
+    <circle id="ring" cx="740" cy="1300" r="111" fill="none" stroke="#d9531a" stroke-width="6" opacity="0" transform="rotate(-90 740 1300)"/>
+  </g>
+
+  <g id="panel" transform="translate(0,1920)">
+    <rect x="0" y="0" width="1080" height="700" fill="#0e3b2c"/>
+    <g id="logo" opacity="0"></g>
+    <text x="540" y="330" text-anchor="middle" font-size="72" font-weight="700" fill="#fcfcf8" id="cta1" opacity="0">Check your true chart.</text>
+    <text x="540" y="420" text-anchor="middle" font-size="52" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">The free BaZi calculator. Ten seconds.</text>
+    <line id="ctaline" x1="540" y1="470" x2="540" y2="470" stroke="#d9531a" stroke-width="4"/>
+    <text x="540" y="560" text-anchor="middle" font-size="40" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" id="url" opacity="0">myfengshuihome.com</text>
+  </g>
+  <rect id="progress" x="0" y="1912" width="0" height="8" fill="#d9531a"/>
+</svg>
+</div>
+<script>
+const NS = "http://www.w3.org/2000/svg";
+const GREEN = "#0e3b2c", ORANGE = "#d9531a";
+const DUR = 18;
+
+const linesG = document.getElementById("lines");
+function narration(arr, size, italic) {
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  arr.forEach((txt, i) => {
+    const el = document.createElementNS(NS, "text");
+    el.setAttribute("x", 540); el.setAttribute("y", 320 + i * 92);
+    el.setAttribute("text-anchor", "middle");
+    el.setAttribute("font-size", size); el.setAttribute("font-weight", 600);
+    el.setAttribute("fill", GREEN);
+    if (italic) el.setAttribute("font-style", "italic");
+    el.textContent = txt;
+    g.appendChild(el);
+  });
+  linesG.appendChild(g);
+  return g;
+}
+const HOOK = (() => {
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  const l1 = document.createElementNS(NS, "text");
+  l1.setAttribute("x", 540); l1.setAttribute("y", 310);
+  l1.setAttribute("text-anchor", "middle"); l1.setAttribute("font-size", 88);
+  l1.setAttribute("font-weight", 700); l1.setAttribute("fill", GREEN);
+  l1.textContent = "Born in January?";
+  const l2 = document.createElementNS(NS, "text");
+  l2.setAttribute("x", 540); l2.setAttribute("y", 412);
+  l2.setAttribute("text-anchor", "middle"); l2.setAttribute("font-size", 88);
+  l2.setAttribute("font-weight", 700); l2.setAttribute("fill", GREEN);
+  const a = document.createElementNS(NS, "tspan"); a.textContent = "Your sign may be ";
+  const b = document.createElementNS(NS, "tspan"); b.setAttribute("fill", ORANGE); b.textContent = "wrong";
+  l2.appendChild(a); l2.appendChild(b);
+  g.appendChild(l1); g.appendChild(l2);
+  linesG.appendChild(g);
+  return g;
+})();
+const L2 = narration(["The year does not turn", "on January 1."], 72, false);
+const L3 = narration(["It turns at Li Chun,", "near February 4."], 72, false);
+const L4 = narration(["January babies often belong", "to the year before."], 66, false);
+const L5 = narration(["Yours might be", "the earlier one."], 64, true);
+
+const logoG = document.getElementById("logo");
+fetch("file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/assets/logo.svg")
+  .then((r) => r.text())
+  .then((raw) => {
+    const inner = raw.slice(raw.indexOf("<g"), raw.lastIndexOf("</g>") + 4).replace("#0e3b2c", "#d9531a");
+    logoG.innerHTML = '<svg x="475" y="70" width="130" height="130" viewBox="0 0 709 709">' + inner + "</svg>";
+    window.__logoReady = true;
+  });
+
+const clamp01 = (v) => Math.max(0, Math.min(1, v));
+const ease = (v) => 1 - Math.pow(1 - v, 3);
+const easeIO = (v) => (v < 0.5 ? 2 * v * v : 1 - Math.pow(-2 * v + 2, 2) / 2);
+const seg = (t, a, b) => clamp01((t - a) / (b - a));
+const inOut = (t, a, b, c, d) => clamp01(ease(seg(t, a, b)) - ease(seg(t, c, d)));
+function fadeSlide(g, p, dy) {
+  g.setAttribute("opacity", p);
+  g.setAttribute("transform", `translate(0 ${(1 - p) * dy})`);
+}
+function popIn(g, t, a, b, outA, outB) {
+  const pIn = ease(seg(t, a, b));
+  const pOut = ease(seg(t, outA, outB));
+  g.setAttribute("opacity", clamp01(pIn - pOut));
+  const s = 1.14 - 0.14 * pIn;
+  g.setAttribute("transform", `translate(540 360) scale(${s}) translate(-540 -360)`);
+}
+
+const RC = 2 * Math.PI * 111;
+document.getElementById("ring").setAttribute("stroke-dasharray", RC);
+
+window.seek = function (t) {
+  popIn(HOOK, t, 0.1, 0.5, 2.7, 3.2);
+  fadeSlide(L2, inOut(t, 3.3, 4.1, 5.9, 6.4), 24);
+  fadeSlide(L3, inOut(t, 6.5, 7.3, 9.2, 9.7), 24);
+  fadeSlide(L4, inOut(t, 9.8, 10.6, 13.0, 13.4), 24);
+  fadeSlide(L5, ease(seg(t, 13.5, 14.3)), 24);
+
+  // January card in, struck, then steps aside
+  const jan = document.getElementById("jan");
+  const pj = ease(seg(t, 3.5, 4.4));
+  const aside = ease(seg(t, 6.6, 7.5));
+  jan.setAttribute("opacity", pj * (1 - 0.75 * aside));
+  jan.setAttribute("transform", `translate(${-aside * 120} ${(1 - pj) * 40})`);
+  const ps = ease(seg(t, 5.1, 5.8));
+  const strike = document.getElementById("strike");
+  strike.setAttribute("x2", 300 + 480 * ps);
+  strike.setAttribute("y2", 810);
+
+  // Li Chun card arrives
+  const feb = document.getElementById("feb");
+  const pf = ease(seg(t, 6.9, 7.8));
+  feb.setAttribute("opacity", pf);
+  feb.setAttribute("transform", `translate(${(1 - pf) * 140} 0)`);
+  const half = 190 * ease(seg(t, 8.1, 8.9));
+  const fl = document.getElementById("febline");
+  fl.setAttribute("x1", 540 - half); fl.setAttribute("x2", 540 + half);
+
+  // medallions: rooster arrives then dims; monkey arrives and rings
+  const roo = document.getElementById("roo");
+  const pr1 = ease(seg(t, 10.0, 10.8));
+  const dim = ease(seg(t, 11.6, 12.4)) * 0.68;
+  roo.setAttribute("opacity", pr1 * (1 - dim));
+  roo.setAttribute("transform", `translate(0 ${(1 - pr1) * 40})`);
+  const mon = document.getElementById("mon");
+  const pm = ease(seg(t, 10.6, 11.4));
+  mon.setAttribute("opacity", pm);
+  mon.setAttribute("transform", `translate(0 ${(1 - pm) * 40})`);
+  const prr = ease(seg(t, 11.8, 13.0));
+  const ring = document.getElementById("ring");
+  ring.setAttribute("opacity", prr > 0 ? 1 : 0);
+  ring.setAttribute("stroke-dashoffset", RC * (1 - prr));
+
+  const pp = easeIO(seg(t, 14.4, 15.6));
+  document.getElementById("panel").setAttribute("transform", `translate(0 ${1920 - 700 * pp})`);
+  document.getElementById("cta1").setAttribute("opacity", ease(seg(t, 15.3, 16.1)));
+  document.getElementById("cta2").setAttribute("opacity", ease(seg(t, 15.7, 16.5)));
+  logoG.setAttribute("opacity", ease(seg(t, 15.5, 16.3)));
+  const h2 = 220 * ease(seg(t, 16.3, 17.1));
+  const cl = document.getElementById("ctaline");
+  cl.setAttribute("x1", 540 - h2); cl.setAttribute("x2", 540 + h2);
+  document.getElementById("url").setAttribute("opacity", ease(seg(t, 16.7, 17.5)));
+  document.getElementById("progress").setAttribute("width", 1080 * clamp01(t / DUR));
+};
+window.seek(0);
+</script>
+</body>
+</html>

@@ -1,10 +1,14 @@
 # Content batch - week 34 (2026-08-17)
 
-The first weekly batch of the traffic engine. Five vertical videos
-(1080x1920, 14s, silent), rendered deterministically in-repo:
+The first weekly batch of the traffic engine. Five vertical STORY videos
+(1080x1920, 18s, silent), owner-approved style: strong hook in frame
+one, a reveal narrative in the house voice, the destination named on the
+end card. Rendered deterministically in-repo:
 
-- Files: `visual-production/drafts/pins/wk34-*.mp4`
-- Re-render any of them: `node visual-production/tools/render-batch-wk34.js [name]`
+- Files: `visual-production/drafts/pins/wk34-v1..v5-*-story.mp4`
+- Re-render: `node visual-production/tools/render-pin-video.js story-<name>.html <out> 18 30 1080x1920`
+  (templates: story-birth-code, story-four-animals, story-january-year,
+  story-bed-direction, story-august-days)
 - Mix: 3 identity hooks, 2 home hooks (the 60/40 from the plan).
 
 Owner flow per video: watch it, then copy-paste the caption block for
@@ -30,7 +34,7 @@ Platform notes while accounts are young:
 
 ---
 
-## V1 - `wk34-i1-birth-code.mp4` (identity)
+## V1 - `wk34-v1-birth-code-story.mp4` (identity)
 
 **Pinterest** - board `BaZi and Four Pillars`
 Title:
@@ -63,7 +67,7 @@ Four pairs of characters: year, month, day, hour. One of them is your Day Master
 
 ---
 
-## V2 - `wk34-i2-not-just-your-animal.mp4` (identity)
+## V2 - `wk34-v2-four-animals-story.mp4` (identity)
 
 **Pinterest** - board `BaZi and Four Pillars`
 Title:
@@ -96,7 +100,7 @@ Month, day, and hour each add an animal, and the day one is the real you, says t
 
 ---
 
-## V3 - `wk34-i3-january-birthday.mp4` (identity)
+## V3 - `wk34-v3-january-story.mp4` (identity)
 
 **Pinterest** - board `BaZi and Four Pillars`
 Title:
@@ -129,16 +133,16 @@ The BaZi year turns at Li Chun, around February 4. Check your true chart free: h
 
 ---
 
-## V4 - `wk34-h1-bed-direction.mp4` (home)
+## V4 - `wk34-v4-bed-story.mp4` (home)
 
 **Pinterest** - board `Bedroom Feng Shui`
 Title:
 ```
-Which Way Your Bed Faces Matters: Find Your Four Supportive Directions
+Is Your Bed Facing the Wrong Way? The Feng Shui Bed Direction, Explained
 ```
 Description:
 ```
-The tradition gives every person four supportive directions, picked by birth year: the Kua number. Headboard to a supportive wall, says the system. Your number takes ten seconds, free.
+The tradition gives every person four supportive directions, picked by birth year: the Kua number. Headboard to a supportive wall, says the system. Your four take ten seconds to find, free.
 ```
 Destination link:
 ```
@@ -147,13 +151,13 @@ https://myfengshuihome.com/kua-calculator?utm_source=pinterest&utm_medium=social
 
 **TikTok caption:**
 ```
-Which way your bed faces matters. The tradition gives you four supportive directions, and your birth year picks them. Free tools in the bio.
+Is your bed facing the wrong way? The tradition gives you four supportive directions, and your birth year picks them. Find yours free, in the bio.
 #fengshui #bedroomfengshui #beddirection #kuanumber #sleepbetter #homedecor
 ```
 
 **YouTube Short** - title:
 ```
-Which way your bed faces matters (feng shui in 14 seconds)
+Is your bed facing the wrong way? (feng shui in 18 seconds)
 ```
 Description:
 ```
@@ -162,16 +166,16 @@ Four supportive directions, picked by your birth year. Find yours free: https://
 
 ---
 
-## V5 - `wk34-h2-august-good-days.mp4` (home)
+## V5 - `wk34-v5-august-story.mp4` (home)
 
 **Pinterest** - board `Good Days Calendar`
 Title:
 ```
-August 2026 Good Days: the Feng Shui Dates for Starting, Signing, and Moving
+August 2026's Best Days Are Already Marked: the Feng Shui Date Calendar
 ```
 Description:
 ```
-The tradition marks the days a month favours for beginnings, and the days it keeps for routine. Every favourable day from July 2026 to February 2027 is listed free, with the reason for each.
+The tradition marks the days a month favours for starting, signing, and moving, and the days it keeps for routine. Every favourable day from July 2026 to February 2027 is listed free, with the reason for each.
 ```
 Destination link:
 ```
@@ -180,13 +184,13 @@ https://myfengshuihome.com/good-days?utm_source=pinterest&utm_medium=social&utm_
 
 **TikTok caption:**
 ```
-August has its good days marked. The tradition names the days for starting and signing, and the ones to keep for routine. The full free calendar is in the bio link's site, at /good-days.
+August's best days are already marked. The tradition names the days for starting and signing, and the ones it keeps for routine. The full free calendar: link in bio, then /good-days.
 #fengshui #goodays #auspiciousdates #august2026 #chinesecalendar #planning
 ```
 
 **YouTube Short** - title:
 ```
-August 2026: the good days, marked
+August 2026's best days are already marked
 ```
 Description:
 ```
