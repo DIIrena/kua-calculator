@@ -71,7 +71,7 @@
 <script>
 const NS = "http://www.w3.org/2000/svg";
 const GREEN = "#0e3b2c", ORANGE = "#d9531a", IVORY = "#fcfcf8";
-const DUR = 22;
+const DUR = 18;
 
 // Element pastels (the Reading's palette).
 const WOOD = "#90d6a5", FIRE = "#f7a184", EARTH = "#f3cf76", METAL = "#bfd9e0", WATER = "#85c3d4";
@@ -94,8 +94,32 @@ function narration(linesArr, sizePx, italic) {
   linesG.appendChild(g);
   return g;
 }
-const L1 = narration(["The day you were born,"], 76, false);
-const L2 = narration(["was written in", "eight characters."], 76, false);
+// The hook (frame one, fast pop, "code" carries the orange).
+const HOOK = (() => {
+  const g = document.createElementNS(NS, "g");
+  g.setAttribute("opacity", 0);
+  const mk = (y) => {
+    const el = document.createElementNS(NS, "text");
+    el.setAttribute("x", 540); el.setAttribute("y", y);
+    el.setAttribute("text-anchor", "middle");
+    el.setAttribute("font-size", 88); el.setAttribute("font-weight", 700);
+    el.setAttribute("fill", GREEN);
+    g.appendChild(el);
+    return el;
+  };
+  mk(310).textContent = "Your birth date";
+  const l2 = mk(412);
+  const a = document.createElementNS(NS, "tspan");
+  a.textContent = "has a ";
+  const b = document.createElementNS(NS, "tspan");
+  b.setAttribute("fill", ORANGE);
+  b.textContent = "code";
+  const c = document.createElementNS(NS, "tspan");
+  c.textContent = " in it";
+  l2.appendChild(a); l2.appendChild(b); l2.appendChild(c);
+  linesG.appendChild(g);
+  return g;
+})();
 // The naming beat (voice rule: name the system). "BaZi" carries the
 // weight of the line.
 const L2b = (() => {
@@ -192,6 +216,15 @@ const easeIO = (v) => (v < 0.5 ? 2 * v * v : 1 - Math.pow(-2 * v + 2, 2) / 2);
 const seg = (t, a, b) => clamp01((t - a) / (b - a));
 const inOut = (t, a, b, c, d) => clamp01(ease(seg(t, a, b)) - ease(seg(t, c, d)));
 
+// Fast pop for the hook: scale settles 1.14 -> 1 while it appears.
+function popIn(g, t, a, b, outA, outB) {
+  const pIn = ease(seg(t, a, b));
+  const pOut = ease(seg(t, outA, outB));
+  g.setAttribute("opacity", clamp01(pIn - pOut));
+  const s = 1.14 - 0.14 * pIn;
+  g.setAttribute("transform", `translate(540 360) scale(${s}) translate(-540 -360)`);
+}
+
 function fadeSlide(g, p, dy) {
   g.setAttribute("opacity", p);
   g.setAttribute("transform", `translate(0 ${(1 - p) * dy})`);
@@ -199,20 +232,19 @@ function fadeSlide(g, p, dy) {
 
 window.seek = function (t) {
   // narration
-  fadeSlide(L1, inOut(t, 0.3, 1.2, 3.4, 4.0), 24);
-  fadeSlide(L2, inOut(t, 3.8, 4.7, 6.2, 6.7), 24);
-  fadeSlide(L2b, inOut(t, 6.7, 7.6, 9.1, 9.6), 24);
-  fadeSlide(L3, inOut(t, 9.7, 10.6, 11.8, 12.3), 24);
-  fadeSlide(L4, inOut(t, 12.4, 13.2, 14.9, 15.3), 24);
-  fadeSlide(L5, ease(seg(t, 15.5, 16.4)), 24);
+  popIn(HOOK, t, 0.1, 0.5, 2.7, 3.2);
+  fadeSlide(L2b, inOut(t, 3.3, 4.1, 5.8, 6.3), 24);
+  fadeSlide(L3, inOut(t, 6.4, 7.2, 8.6, 9.1), 24);
+  fadeSlide(L4, inOut(t, 9.2, 10.0, 12.1, 12.5), 24);
+  fadeSlide(L5, ease(seg(t, 12.6, 13.5)), 24);
 
   // cards rise, staggered
   cardEls.forEach((c, i) => {
-    const p = ease(seg(t, 4.2 + i * 0.45, 5.2 + i * 0.45));
+    const p = ease(seg(t, 3.5 + i * 0.4, 4.4 + i * 0.4));
     // dim all but DAY in scene 4 (and hold dim through the end)
-    const dim = i === 2 ? 0 : ease(seg(t, 12.6, 13.5)) * 0.75;
+    const dim = i === 2 ? 0 : ease(seg(t, 9.4, 10.2)) * 0.75;
     c.g.setAttribute("opacity", p * (1 - dim));
-    const lift = i === 2 ? ease(seg(t, 12.6, 13.7)) : 0;
+    const lift = i === 2 ? ease(seg(t, 9.4, 10.5)) : 0;
     const s = 1 + 0.10 * lift;
     const oy = CY + CH / 2;
     c.g.setAttribute(
@@ -222,34 +254,34 @@ window.seek = function (t) {
   });
 
   // slow drift on the whole card group (life between beats)
-  const drift = 1 + 0.045 * easeIO(seg(t, 4.5, 17.0));
+  const drift = 1 + 0.045 * easeIO(seg(t, 3.8, 14.2));
   const dg = document.getElementById("cardsDrift");
   dg.setAttribute("transform", `translate(${540 - 540 * drift} ${880 - 880 * drift}) scale(${drift})`);
 
   // year animal pops (slight overshoot)
-  const pa = seg(t, 10.0, 10.9);
+  const pa = seg(t, 6.7, 7.6);
   const sA = pa === 0 ? 0 : 1 + Math.sin(Math.min(pa, 1) * Math.PI) * 0.08;
   animalG.setAttribute("opacity", ease(pa));
   animalG.setAttribute("transform", `translate(189 545) scale(${sA * ease(pa)}) translate(-189 -545)`);
 
   // the ring draws around the Day stem disc
-  const pr = ease(seg(t, 13.8, 15.0));
+  const pr = ease(seg(t, 10.6, 11.8));
   ring.setAttribute("opacity", pr > 0 ? 1 : 0);
   ring.setAttribute("stroke-dashoffset", RC * (1 - pr));
-  const capP = ease(seg(t, 14.5, 15.2));
+  const capP = ease(seg(t, 11.3, 12.0));
   const cap = document.getElementById("dmCaption");
   cap.setAttribute("opacity", capP);
 
   // end panel rises
-  const pp = easeIO(seg(t, 17.6, 18.8));
+  const pp = easeIO(seg(t, 14.4, 15.6));
   document.getElementById("panel").setAttribute("transform", `translate(0 ${1920 - 700 * pp})`);
-  document.getElementById("cta1").setAttribute("opacity", ease(seg(t, 18.5, 19.3)));
-  document.getElementById("cta2").setAttribute("opacity", ease(seg(t, 18.9, 19.7)));
-  logoG.setAttribute("opacity", ease(seg(t, 18.7, 19.5)));
-  const half = 220 * ease(seg(t, 19.5, 20.3));
+  document.getElementById("cta1").setAttribute("opacity", ease(seg(t, 15.3, 16.1)));
+  document.getElementById("cta2").setAttribute("opacity", ease(seg(t, 15.7, 16.5)));
+  logoG.setAttribute("opacity", ease(seg(t, 15.5, 16.3)));
+  const half = 220 * ease(seg(t, 16.3, 17.1));
   const cl = document.getElementById("ctaline");
   cl.setAttribute("x1", 540 - half); cl.setAttribute("x2", 540 + half);
-  document.getElementById("url").setAttribute("opacity", ease(seg(t, 19.9, 20.7)));
+  document.getElementById("url").setAttribute("opacity", ease(seg(t, 16.7, 17.5)));
 
   document.getElementById("progress").setAttribute("width", 1080 * clamp01(t / DUR));
 };
