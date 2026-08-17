@@ -6,7 +6,9 @@
  * encodes an H.264 MP4 with the system ffmpeg. Silent by design
  * (Pinterest autoplays muted).
  *
- * Usage: node render-pin-video.js <animation.html> <out-name> [durationSec] [fps]
+ * Usage: node render-pin-video.js <animation.html> <out-name> [durationSec] [fps] [WxH]
+ * WxH defaults to 1000x1500 (the pin format); pass 1080x1920 for the
+ * vertical tip videos (Reels / TikTok / Shorts).
  * Output: visual-production/drafts/pins/<out-name>.mp4 (git-ignored).
  */
 
@@ -26,6 +28,7 @@ const htmlPath = path.resolve(__dirname, htmlFile);
 const outName = process.argv[3] || 'good-days-2026-video';
 const DUR = Number(process.argv[4] || 15);
 const FPS = Number(process.argv[5] || 30);
+const [VW, VH] = (process.argv[6] || '1000x1500').split('x').map(Number);
 
 (async () => {
   const frameDir = fs.mkdtempSync(path.join(os.tmpdir(), 'pin-frames-'));
@@ -35,7 +38,7 @@ const FPS = Number(process.argv[5] || 30);
     args: ['--no-sandbox', '--allow-file-access-from-files', '--hide-scrollbars', '--force-device-scale-factor=1'],
   });
   const page = await browser.newPage();
-  await page.setViewport({ width: 1000, height: 1500 });
+  await page.setViewport({ width: VW, height: VH });
   const url =
     'file:///' + htmlPath.replace(/\\/g, '/').replace(/ /g, '%20') +
     (htmlQuery ? '?' + htmlQuery : '');
@@ -48,7 +51,7 @@ const FPS = Number(process.argv[5] || 30);
     await page.evaluate((t) => window.seek(t), i / FPS);
     await page.screenshot({
       path: path.join(frameDir, `f${String(i).padStart(5, '0')}.png`),
-      clip: { x: 0, y: 0, width: 1000, height: 1500 },
+      clip: { x: 0, y: 0, width: VW, height: VH },
     });
     if (i % 60 === 0) console.log(`  frame ${i}/${total}`);
   }
@@ -71,7 +74,7 @@ const FPS = Number(process.argv[5] || 30);
 
   fs.rmSync(frameDir, { recursive: true, force: true });
   const size = fs.statSync(outPath).size;
-  console.log(`done: ${outPath} (${(size / 1e6).toFixed(2)} MB, ${DUR}s, 1000x1500)`);
+  console.log(`done: ${outPath} (${(size / 1e6).toFixed(2)} MB, ${DUR}s, ${VW}x${VH})`);
 })().catch((e) => {
   console.error('ERR', e.message);
   process.exit(1);

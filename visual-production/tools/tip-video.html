@@ -1,0 +1,152 @@
+<!doctype html>
+<!--
+  Parameterized vertical tip video (1080x1920, 9:16) for Reels, TikTok,
+  Shorts, and Pinterest. Same deterministic window.seek(t) contract as
+  the pin videos; render with render-pin-video.js and size 1080x1920.
+
+  Content arrives as a JSON config in the query string:
+    tip-video.html?cfg=<urlencoded JSON>
+  Shape: { "hook": ["line1","line2"],
+           "beats": [["l1","l2"],["l1"],["l1","l2"]],
+           "cta": ["line1"], "url": "myfengshuihome.com" }
+
+  Timeline (14s): 0-1.7 logo + hook in; 2.2-9.8 three beats (disc pops,
+  lines slide); 10.4-12.4 CTA + underline + url; hold to 14. Orange
+  progress bar throughout. Palette green #0e3b2c / ivory #fcfcf8 /
+  orange #d9531a; EB Garamond (system-installed).
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #fcfcf8; }
+  #stage { width: 1080px; height: 1920px; position: relative; overflow: hidden; }
+  svg { display: block; }
+  text { font-family: "EB Garamond", serif; }
+</style>
+</head>
+<body>
+<div id="stage">
+<svg id="pin" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1080" height="1920" fill="#fcfcf8"/>
+  <rect x="0" y="0" width="1080" height="600" fill="#0e3b2c"/>
+  <rect x="0" y="1560" width="1080" height="360" fill="#0e3b2c"/>
+  <line id="divider" x1="0" y1="600" x2="0" y2="600" stroke="#d9531a" stroke-width="3"/>
+  <g id="logo" opacity="0"></g>
+  <g id="hook"></g>
+  <g id="beats"></g>
+  <g id="ctaG"></g>
+  <line id="ctaline" x1="540" y1="0" x2="540" y2="0" stroke="#d9531a" stroke-width="4"/>
+  <text id="url" x="540" y="1850" text-anchor="middle" font-size="40" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" opacity="0"></text>
+  <rect id="progress" x="0" y="1912" width="0" height="8" fill="#d9531a"/>
+</svg>
+</div>
+<script>
+const GREEN = "#0e3b2c", ORANGE = "#d9531a", IVORY = "#fcfcf8";
+const DUR = 14;
+const NS = "http://www.w3.org/2000/svg";
+
+const params = new URLSearchParams(location.search);
+const CFG = JSON.parse(params.get("cfg") || "null") || {
+  hook: ["Your birth date", "has a code in it"],
+  beats: [["Four pairs of characters:", "year, month, day, hour."],
+          ["One of them is you:", "the Day Master."],
+          ["Yours takes ten seconds", "to find, free."]],
+  cta: ["Get your free BaZi chart"],
+  url: "myfengshuihome.com",
+};
+
+function textEl(parent, x, y, size, fill, weight, anchor, content) {
+  const el = document.createElementNS(NS, "text");
+  el.setAttribute("x", x); el.setAttribute("y", y);
+  el.setAttribute("font-size", size); el.setAttribute("fill", fill);
+  el.setAttribute("font-weight", weight);
+  el.setAttribute("text-anchor", anchor);
+  el.setAttribute("opacity", 0);
+  el.textContent = content;
+  parent.appendChild(el);
+  return el;
+}
+
+// Hook: up to 2 centred lines in the top band, below the logo.
+const hookG = document.getElementById("hook");
+const hookEls = CFG.hook.map((line, i) =>
+  textEl(hookG, 540, 425 + i * 92, 78, IVORY, 700, "middle", line));
+
+// Beats: numbered orange discs + up to 2 left-aligned lines each.
+const beatsG = document.getElementById("beats");
+const BEAT_Y = [780, 1090, 1400];
+const beatEls = CFG.beats.map((lines, i) => {
+  const y = BEAT_Y[i];
+  const disc = document.createElementNS(NS, "circle");
+  disc.setAttribute("cx", 170); disc.setAttribute("cy", y);
+  disc.setAttribute("r", 0); disc.setAttribute("fill", ORANGE);
+  beatsG.appendChild(disc);
+  const num = textEl(beatsG, 170, y + 19, 52, IVORY, 700, "middle", String(i + 1));
+  const text1 = textEl(beatsG, 262, y - 8, 56, GREEN, 600, "start", lines[0] || "");
+  const text2 = lines[1]
+    ? textEl(beatsG, 262, y + 62, 56, GREEN, 600, "start", lines[1])
+    : null;
+  return { disc, num, text1, text2 };
+});
+
+// CTA lines in the bottom band.
+const ctaG = document.getElementById("ctaG");
+const ctaEls = CFG.cta.map((line, i) =>
+  textEl(ctaG, 540, 1685 + i * 80, 62, IVORY, 700, "middle", line));
+document.getElementById("url").textContent = CFG.url;
+
+// Logo (orange heart-house) centred in the top band.
+const logoG = document.getElementById("logo");
+fetch("file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/assets/logo.svg")
+  .then((r) => r.text())
+  .then((raw) => {
+    const inner = raw.slice(raw.indexOf("<g"), raw.lastIndexOf("</g>") + 4).replace("#0e3b2c", ORANGE);
+    logoG.innerHTML = '<svg x="460" y="70" width="160" height="160" viewBox="0 0 709 709">' + inner + "</svg>";
+    window.__logoReady = true;
+  });
+
+const clamp01 = (v) => Math.max(0, Math.min(1, v));
+const ease = (v) => 1 - Math.pow(1 - v, 3);
+const seg = (t, a, b) => clamp01((t - a) / (b - a));
+
+window.seek = function (t) {
+  logoG.setAttribute("opacity", ease(seg(t, 0.0, 0.9)));
+  hookEls.forEach((el, i) => {
+    const p = ease(seg(t, 0.3 + i * 0.45, 1.25 + i * 0.45));
+    el.setAttribute("opacity", p);
+    el.setAttribute("transform", `translate(0 ${(1 - p) * 22})`);
+  });
+  document.getElementById("divider").setAttribute("x2", 1080 * ease(seg(t, 1.7, 2.6)));
+  beatEls.forEach((b, i) => {
+    const start = 2.4 + i * 2.5;
+    const pd = ease(seg(t, start, start + 0.5));
+    b.disc.setAttribute("r", 52 * pd);
+    b.num.setAttribute("opacity", ease(seg(t, start + 0.25, start + 0.6)));
+    const p1 = ease(seg(t, start + 0.3, start + 1.0));
+    b.text1.setAttribute("opacity", p1);
+    b.text1.setAttribute("transform", `translate(${(1 - p1) * 26} 0)`);
+    if (b.text2) {
+      const p2 = ease(seg(t, start + 0.55, start + 1.25));
+      b.text2.setAttribute("opacity", p2);
+      b.text2.setAttribute("transform", `translate(${(1 - p2) * 26} 0)`);
+    }
+  });
+  ctaEls.forEach((el, i) => {
+    const p = ease(seg(t, 10.4 + i * 0.3, 11.3 + i * 0.3));
+    el.setAttribute("opacity", p);
+    el.setAttribute("transform", `translate(0 ${(1 - p) * 18})`);
+  });
+  const lastCtaY = 1685 + (CFG.cta.length - 1) * 80;
+  const pu = ease(seg(t, 11.3, 12.2));
+  const half = 230 * pu;
+  const ctaline = document.getElementById("ctaline");
+  ctaline.setAttribute("x1", 540 - half); ctaline.setAttribute("x2", 540 + half);
+  ctaline.setAttribute("y1", lastCtaY + 36); ctaline.setAttribute("y2", lastCtaY + 36);
+  document.getElementById("url").setAttribute("opacity", ease(seg(t, 11.8, 12.7)));
+  document.getElementById("progress").setAttribute("width", 1080 * clamp01(t / DUR));
+};
+window.seek(0);
+</script>
+</body>
+</html>
