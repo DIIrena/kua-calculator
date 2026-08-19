@@ -18,21 +18,21 @@
 <svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
   <rect width="1080" height="1920" fill="#fcfcf8"/>
   <g id="lines"></g>
-  <text id="monthLabel" x="540" y="700" text-anchor="middle" font-size="44" font-weight="700"
+  <text id="monthLabel" x="540" y="700" text-anchor="middle" font-size="52" font-weight="700"
     letter-spacing="8" fill="#0e3b2c" opacity="0">AUGUST 2026</text>
   <g id="cal"></g>
   <g id="dots"></g>
   <g id="dashes"></g>
   <circle id="ring" cx="0" cy="0" r="44" fill="none" stroke="#d9531a" stroke-width="6" opacity="0"/>
-  <text id="dayCaption" x="540" y="1420" text-anchor="middle" font-size="42" font-weight="700"
+  <text id="dayCaption" x="540" y="1420" text-anchor="middle" font-size="50" font-weight="700"
     fill="#d9531a" letter-spacing="6" opacity="0">EACH WITH ITS REASON</text>
   <g id="panel" transform="translate(0,1920)">
     <rect x="0" y="0" width="1080" height="700" fill="#0e3b2c"/>
     <g id="logo" opacity="0"></g>
-    <text x="540" y="330" text-anchor="middle" font-size="72" font-weight="700" fill="#fcfcf8" id="cta1" opacity="0">See the Good-Days calendar.</text>
-    <text x="540" y="420" text-anchor="middle" font-size="52" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">Free, July 2026 to February 2027.</text>
+    <text x="540" y="330" text-anchor="middle" font-size="78" font-weight="700" fill="#fcfcf8" id="cta1" opacity="0">See the Good-Days calendar.</text>
+    <text x="540" y="424" text-anchor="middle" font-size="58" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">Free, July 2026 to February 2027.</text>
     <line id="ctaline" x1="540" y1="470" x2="540" y2="470" stroke="#d9531a" stroke-width="4"/>
-    <text x="540" y="560" text-anchor="middle" font-size="40" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" id="url" opacity="0">myfengshuihome.com</text>
+    <text x="540" y="566" text-anchor="middle" font-size="44" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" id="url" opacity="0">myfengshuihome.com</text>
   </g>
   <rect id="progress" x="0" y="1912" width="0" height="8" fill="#d9531a"/>
 </svg>
@@ -48,7 +48,7 @@ function narration(arr, size, italic) {
   g.setAttribute("opacity", 0);
   arr.forEach((txt, i) => {
     const el = document.createElementNS(NS, "text");
-    el.setAttribute("x", 540); el.setAttribute("y", 320 + i * 92);
+    el.setAttribute("x", 540); el.setAttribute("y", 320 + i * 104);
     el.setAttribute("text-anchor", "middle");
     el.setAttribute("font-size", size); el.setAttribute("font-weight", 600);
     el.setAttribute("fill", GREEN);
@@ -64,12 +64,12 @@ const HOOK = (() => {
   g.setAttribute("opacity", 0);
   const l1 = document.createElementNS(NS, "text");
   l1.setAttribute("x", 540); l1.setAttribute("y", 310);
-  l1.setAttribute("text-anchor", "middle"); l1.setAttribute("font-size", 88);
+  l1.setAttribute("text-anchor", "middle"); l1.setAttribute("font-size", 100);
   l1.setAttribute("font-weight", 700); l1.setAttribute("fill", GREEN);
   l1.textContent = "August's best days";
   const l2 = document.createElementNS(NS, "text");
-  l2.setAttribute("x", 540); l2.setAttribute("y", 412);
-  l2.setAttribute("text-anchor", "middle"); l2.setAttribute("font-size", 88);
+  l2.setAttribute("x", 540); l2.setAttribute("y", 424);
+  l2.setAttribute("text-anchor", "middle"); l2.setAttribute("font-size", 100);
   l2.setAttribute("font-weight", 700); l2.setAttribute("fill", GREEN);
   const a = document.createElementNS(NS, "tspan"); a.textContent = "are ";
   const b = document.createElementNS(NS, "tspan"); b.setAttribute("fill", ORANGE); b.textContent = "already marked";
@@ -78,9 +78,9 @@ const HOOK = (() => {
   linesG.appendChild(g);
   return g;
 })();
-const L2 = narration(["Days for starting,", "signing, and moving."], 72, false);
-const L3 = narration(["And days the month keeps", "for routine instead."], 68, false);
-const L4 = narration(["Every one listed,", "with the reason why."], 72, false);
+const L2 = narration(["Days for starting,", "signing, and moving."], 84, false);
+const L3 = narration(["And days the month keeps", "for routine instead."], 78, false);
+const L4 = narration(["Every one listed,", "with the reason why."], 84, false);
 
 // the month grid
 const cols = 7, rows = 5, cell = 110;

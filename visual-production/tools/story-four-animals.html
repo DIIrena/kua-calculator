@@ -24,15 +24,15 @@
   <rect width="1080" height="1920" fill="#fcfcf8"/>
   <g id="lines"></g>
   <g id="meds"></g>
-  <text id="dmCaption" x="540" y="1210" text-anchor="middle" font-size="42" font-weight="700"
+  <text id="dmCaption" x="540" y="1210" text-anchor="middle" font-size="50" font-weight="700"
     fill="#d9531a" letter-spacing="6" opacity="0">YOUR DAY MASTER</text>
   <g id="panel" transform="translate(0,1920)">
     <rect x="0" y="0" width="1080" height="700" fill="#0e3b2c"/>
     <g id="logo" opacity="0"></g>
-    <text x="540" y="330" text-anchor="middle" font-size="72" font-weight="700" fill="#fcfcf8" id="cta1" opacity="0">Meet your Day Master.</text>
-    <text x="540" y="420" text-anchor="middle" font-size="52" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">The free BaZi calculator. Ten seconds.</text>
+    <text x="540" y="330" text-anchor="middle" font-size="82" font-weight="700" fill="#fcfcf8" id="cta1" opacity="0">Meet your Day Master.</text>
+    <text x="540" y="424" text-anchor="middle" font-size="58" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">The free BaZi calculator. Ten seconds.</text>
     <line id="ctaline" x1="540" y1="470" x2="540" y2="470" stroke="#d9531a" stroke-width="4"/>
-    <text x="540" y="560" text-anchor="middle" font-size="40" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" id="url" opacity="0">myfengshuihome.com</text>
+    <text x="540" y="566" text-anchor="middle" font-size="44" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" id="url" opacity="0">myfengshuihome.com</text>
   </g>
   <rect id="progress" x="0" y="1912" width="0" height="8" fill="#d9531a"/>
 </svg>
@@ -49,7 +49,7 @@ function narration(arr, size, italic) {
   g.setAttribute("opacity", 0);
   arr.forEach((txt, i) => {
     const el = document.createElementNS(NS, "text");
-    el.setAttribute("x", 540); el.setAttribute("y", 320 + i * 92);
+    el.setAttribute("x", 540); el.setAttribute("y", 320 + i * 104);
     el.setAttribute("text-anchor", "middle");
     el.setAttribute("font-size", size); el.setAttribute("font-weight", 600);
     el.setAttribute("fill", GREEN);
@@ -66,12 +66,12 @@ const HOOK = (() => {
   g.setAttribute("opacity", 0);
   const l1 = document.createElementNS(NS, "text");
   l1.setAttribute("x", 540); l1.setAttribute("y", 310);
-  l1.setAttribute("text-anchor", "middle"); l1.setAttribute("font-size", 88);
+  l1.setAttribute("text-anchor", "middle"); l1.setAttribute("font-size", 100);
   l1.setAttribute("font-weight", 700); l1.setAttribute("fill", GREEN);
   l1.textContent = "Your zodiac animal";
   const l2 = document.createElementNS(NS, "text");
-  l2.setAttribute("x", 540); l2.setAttribute("y", 412);
-  l2.setAttribute("text-anchor", "middle"); l2.setAttribute("font-size", 88);
+  l2.setAttribute("x", 540); l2.setAttribute("y", 424);
+  l2.setAttribute("text-anchor", "middle"); l2.setAttribute("font-size", 100);
   l2.setAttribute("font-weight", 700); l2.setAttribute("fill", GREEN);
   const a = document.createElementNS(NS, "tspan"); a.textContent = "is only ";
   const b = document.createElementNS(NS, "tspan"); b.setAttribute("fill", ORANGE); b.textContent = "1 of 4";
@@ -80,10 +80,10 @@ const HOOK = (() => {
   linesG.appendChild(g);
   return g;
 })();
-const L2 = narration(["The year one,", "the world knows."], 76, false);
-const L3 = narration(["Three more hide", "in your chart."], 76, false);
-const L4 = narration(["The tradition reads the", "day one as the real you."], 72, false);
-const L5 = narration(["Not the loud one.", "The daily one."], 64, true);
+const L2 = narration(["The year one,", "the world knows."], 84, false);
+const L3 = narration(["Three more hide", "in your chart."], 84, false);
+const L4 = narration(["The tradition reads the", "day one as the real you."], 80, false);
+const L5 = narration(["Not the loud one.", "The daily one."], 76, true);
 
 // Medallions: YEAR horse, MONTH rabbit, DAY rooster, HOUR snake.
 const MEDS = [
@@ -122,7 +122,7 @@ const medEls = MEDS.map((m, i) => {
   g.appendChild(rim);
   const lb = document.createElementNS(NS, "text");
   lb.setAttribute("x", cx); lb.setAttribute("y", CY + R + 58);
-  lb.setAttribute("text-anchor", "middle"); lb.setAttribute("font-size", 30);
+  lb.setAttribute("text-anchor", "middle"); lb.setAttribute("font-size", 36);
   lb.setAttribute("font-weight", 700); lb.setAttribute("letter-spacing", 5);
   lb.setAttribute("fill", GREEN);
   lb.textContent = m.label;

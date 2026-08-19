@@ -29,15 +29,15 @@
   <!-- January card -->
   <g id="jan" opacity="0">
     <rect x="260" y="660" width="560" height="300" rx="20" fill="#ffffff" stroke="#e2dac5" stroke-width="2" filter="url(#soft)"/>
-    <text x="540" y="790" text-anchor="middle" font-size="64" font-weight="700" fill="#0e3b2c">JANUARY 1</text>
-    <text x="540" y="870" text-anchor="middle" font-size="32" font-weight="500" fill="#4f5b53">the calendar new year</text>
+    <text x="540" y="790" text-anchor="middle" font-size="72" font-weight="700" fill="#0e3b2c">JANUARY 1</text>
+    <text x="540" y="874" text-anchor="middle" font-size="36" font-weight="500" fill="#4f5b53">the calendar new year</text>
     <line id="strike" x1="300" y1="810" x2="300" y2="810" stroke="#9aa69f" stroke-width="6"/>
   </g>
   <!-- Li Chun card -->
   <g id="feb" opacity="0">
     <rect x="260" y="660" width="560" height="300" rx="20" fill="#ffffff" stroke="#e2dac5" stroke-width="2" filter="url(#soft)"/>
-    <text x="540" y="790" text-anchor="middle" font-size="64" font-weight="700" fill="#0e3b2c">FEBRUARY 4</text>
-    <text x="540" y="870" text-anchor="middle" font-size="32" font-weight="600" fill="#d9531a" letter-spacing="4">LI CHUN · THE YEAR TURNS</text>
+    <text x="540" y="790" text-anchor="middle" font-size="72" font-weight="700" fill="#0e3b2c">FEBRUARY 4</text>
+    <text x="540" y="874" text-anchor="middle" font-size="36" font-weight="600" fill="#d9531a" letter-spacing="4">LI CHUN · THE YEAR TURNS</text>
     <line id="febline" x1="540" y1="815" x2="540" y2="815" stroke="#d9531a" stroke-width="4"/>
   </g>
 
@@ -47,24 +47,24 @@
     <image x="253" y="1213" width="174" height="174" clip-path="url(#clipR)"
       href="file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/content/photos/bazi-reading/rooster.png"/>
     <circle cx="340" cy="1300" r="95" fill="none" stroke="#bfd9e0" stroke-width="4"/>
-    <text x="340" y="1448" text-anchor="middle" font-size="30" font-weight="700" letter-spacing="4" fill="#0e3b2c">2017 · ROOSTER</text>
+    <text x="340" y="1450" text-anchor="middle" font-size="36" font-weight="700" letter-spacing="4" fill="#0e3b2c">2017 · ROOSTER</text>
   </g>
   <g id="mon" opacity="0">
     <circle cx="740" cy="1300" r="95" fill="#ffffff" filter="url(#soft)"/>
     <image x="653" y="1213" width="174" height="174" clip-path="url(#clipM)"
       href="file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/content/photos/bazi-reading/monkey.png"/>
     <circle cx="740" cy="1300" r="95" fill="none" stroke="#f3cf76" stroke-width="4"/>
-    <text x="740" y="1448" text-anchor="middle" font-size="30" font-weight="700" letter-spacing="4" fill="#0e3b2c">2016 · MONKEY</text>
+    <text x="740" y="1450" text-anchor="middle" font-size="36" font-weight="700" letter-spacing="4" fill="#0e3b2c">2016 · MONKEY</text>
     <circle id="ring" cx="740" cy="1300" r="111" fill="none" stroke="#d9531a" stroke-width="6" opacity="0" transform="rotate(-90 740 1300)"/>
   </g>
 
   <g id="panel" transform="translate(0,1920)">
     <rect x="0" y="0" width="1080" height="700" fill="#0e3b2c"/>
     <g id="logo" opacity="0"></g>
-    <text x="540" y="330" text-anchor="middle" font-size="72" font-weight="700" fill="#fcfcf8" id="cta1" opacity="0">Check your true chart.</text>
-    <text x="540" y="420" text-anchor="middle" font-size="52" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">The free BaZi calculator. Ten seconds.</text>
+    <text x="540" y="330" text-anchor="middle" font-size="82" font-weight="700" fill="#fcfcf8" id="cta1" opacity="0">Check your true chart.</text>
+    <text x="540" y="424" text-anchor="middle" font-size="58" font-weight="500" fill="#fcfcf8" id="cta2" opacity="0">The free BaZi calculator. Ten seconds.</text>
     <line id="ctaline" x1="540" y1="470" x2="540" y2="470" stroke="#d9531a" stroke-width="4"/>
-    <text x="540" y="560" text-anchor="middle" font-size="40" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" id="url" opacity="0">myfengshuihome.com</text>
+    <text x="540" y="566" text-anchor="middle" font-size="44" font-weight="600" fill="#fcfcf8" letter-spacing="1.8" id="url" opacity="0">myfengshuihome.com</text>
   </g>
   <rect id="progress" x="0" y="1912" width="0" height="8" fill="#d9531a"/>
 </svg>
@@ -80,7 +80,7 @@ function narration(arr, size, italic) {
   g.setAttribute("opacity", 0);
   arr.forEach((txt, i) => {
     const el = document.createElementNS(NS, "text");
-    el.setAttribute("x", 540); el.setAttribute("y", 320 + i * 92);
+    el.setAttribute("x", 540); el.setAttribute("y", 320 + i * 104);
     el.setAttribute("text-anchor", "middle");
     el.setAttribute("font-size", size); el.setAttribute("font-weight", 600);
     el.setAttribute("fill", GREEN);
@@ -96,12 +96,12 @@ const HOOK = (() => {
   g.setAttribute("opacity", 0);
   const l1 = document.createElementNS(NS, "text");
   l1.setAttribute("x", 540); l1.setAttribute("y", 310);
-  l1.setAttribute("text-anchor", "middle"); l1.setAttribute("font-size", 88);
+  l1.setAttribute("text-anchor", "middle"); l1.setAttribute("font-size", 100);
   l1.setAttribute("font-weight", 700); l1.setAttribute("fill", GREEN);
   l1.textContent = "Born in January?";
   const l2 = document.createElementNS(NS, "text");
-  l2.setAttribute("x", 540); l2.setAttribute("y", 412);
-  l2.setAttribute("text-anchor", "middle"); l2.setAttribute("font-size", 88);
+  l2.setAttribute("x", 540); l2.setAttribute("y", 424);
+  l2.setAttribute("text-anchor", "middle"); l2.setAttribute("font-size", 100);
   l2.setAttribute("font-weight", 700); l2.setAttribute("fill", GREEN);
   const a = document.createElementNS(NS, "tspan"); a.textContent = "Your sign may be ";
   const b = document.createElementNS(NS, "tspan"); b.setAttribute("fill", ORANGE); b.textContent = "wrong";
@@ -110,10 +110,10 @@ const HOOK = (() => {
   linesG.appendChild(g);
   return g;
 })();
-const L2 = narration(["The year does not turn", "on January 1."], 72, false);
-const L3 = narration(["It turns at Li Chun,", "near February 4."], 72, false);
-const L4 = narration(["January babies often belong", "to the year before."], 66, false);
-const L5 = narration(["Yours might be", "the earlier one."], 64, true);
+const L2 = narration(["The year does not turn", "on January 1."], 84, false);
+const L3 = narration(["It turns at Li Chun,", "near February 4."], 84, false);
+const L4 = narration(["January babies often belong", "to the year before."], 76, false);
+const L5 = narration(["Yours might be", "the earlier one."], 76, true);
 
 const logoG = document.getElementById("logo");
 fetch("file:///c:/Users/User/Documents/IRENA/AI%20AUTOMATION/my-claude-workspace/projects/kua-calculator/assets/logo.svg")
